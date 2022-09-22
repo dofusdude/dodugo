@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **AnkamaId** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **EquipmentIds** | Pointer to **[]int32** |  | [optional] 
-**HasEffects** | Pointer to **bool** |  | [optional] 
 **Effects** | Pointer to [**[][]EffectsEntry**]([]EffectsEntry.md) |  | [optional] 
 **Level** | Pointer to **int32** |  | [optional] 
 
@@ -104,31 +103,6 @@ SetEquipmentIds sets EquipmentIds field to given value.
 `func (o *EquipmentSet) HasEquipmentIds() bool`
 
 HasEquipmentIds returns a boolean if a field has been set.
-
-### GetHasEffects
-
-`func (o *EquipmentSet) GetHasEffects() bool`
-
-GetHasEffects returns the HasEffects field if non-nil, zero value otherwise.
-
-### GetHasEffectsOk
-
-`func (o *EquipmentSet) GetHasEffectsOk() (*bool, bool)`
-
-GetHasEffectsOk returns a tuple with the HasEffects field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasEffects
-
-`func (o *EquipmentSet) SetHasEffects(v bool)`
-
-SetHasEffects sets HasEffects field to given value.
-
-### HasHasEffects
-
-`func (o *EquipmentSet) HasHasEffects() bool`
-
-HasHasEffects returns a boolean if a field has been set.
 
 ### GetEffects
 

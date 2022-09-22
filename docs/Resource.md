@@ -11,11 +11,8 @@ Name | Type | Description | Notes
 **Level** | Pointer to **int32** |  | [optional] 
 **Pods** | Pointer to **int32** |  | [optional] 
 **ImageUrls** | Pointer to [**ImageUrls**](ImageUrls.md) |  | [optional] 
-**HasEffects** | Pointer to **bool** |  | [optional] 
 **Effects** | Pointer to [**[]EffectsEntry**](EffectsEntry.md) |  | [optional] 
-**HasConditions** | Pointer to **bool** |  | [optional] 
 **Conditions** | Pointer to [**[]ConditionEntry**](ConditionEntry.md) |  | [optional] 
-**HasRecipe** | Pointer to **bool** |  | [optional] 
 **Recipe** | Pointer to [**[]RecipeEntry**](RecipeEntry.md) |  | [optional] 
 
 ## Methods
@@ -212,31 +209,6 @@ SetImageUrls sets ImageUrls field to given value.
 
 HasImageUrls returns a boolean if a field has been set.
 
-### GetHasEffects
-
-`func (o *Resource) GetHasEffects() bool`
-
-GetHasEffects returns the HasEffects field if non-nil, zero value otherwise.
-
-### GetHasEffectsOk
-
-`func (o *Resource) GetHasEffectsOk() (*bool, bool)`
-
-GetHasEffectsOk returns a tuple with the HasEffects field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasEffects
-
-`func (o *Resource) SetHasEffects(v bool)`
-
-SetHasEffects sets HasEffects field to given value.
-
-### HasHasEffects
-
-`func (o *Resource) HasHasEffects() bool`
-
-HasHasEffects returns a boolean if a field has been set.
-
 ### GetEffects
 
 `func (o *Resource) GetEffects() []EffectsEntry`
@@ -272,31 +244,6 @@ HasEffects returns a boolean if a field has been set.
 `func (o *Resource) UnsetEffects()`
 
 UnsetEffects ensures that no value is present for Effects, not even an explicit nil
-### GetHasConditions
-
-`func (o *Resource) GetHasConditions() bool`
-
-GetHasConditions returns the HasConditions field if non-nil, zero value otherwise.
-
-### GetHasConditionsOk
-
-`func (o *Resource) GetHasConditionsOk() (*bool, bool)`
-
-GetHasConditionsOk returns a tuple with the HasConditions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasConditions
-
-`func (o *Resource) SetHasConditions(v bool)`
-
-SetHasConditions sets HasConditions field to given value.
-
-### HasHasConditions
-
-`func (o *Resource) HasHasConditions() bool`
-
-HasHasConditions returns a boolean if a field has been set.
-
 ### GetConditions
 
 `func (o *Resource) GetConditions() []ConditionEntry`
@@ -332,31 +279,6 @@ HasConditions returns a boolean if a field has been set.
 `func (o *Resource) UnsetConditions()`
 
 UnsetConditions ensures that no value is present for Conditions, not even an explicit nil
-### GetHasRecipe
-
-`func (o *Resource) GetHasRecipe() bool`
-
-GetHasRecipe returns the HasRecipe field if non-nil, zero value otherwise.
-
-### GetHasRecipeOk
-
-`func (o *Resource) GetHasRecipeOk() (*bool, bool)`
-
-GetHasRecipeOk returns a tuple with the HasRecipe field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasRecipe
-
-`func (o *Resource) SetHasRecipe(v bool)`
-
-SetHasRecipe sets HasRecipe field to given value.
-
-### HasHasRecipe
-
-`func (o *Resource) HasHasRecipe() bool`
-
-HasHasRecipe returns a boolean if a field has been set.
-
 ### GetRecipe
 
 `func (o *Resource) GetRecipe() []RecipeEntry`

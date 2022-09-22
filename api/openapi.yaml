@@ -7,6 +7,7 @@ info:
   description: |+
     The last API for everything Dofus 🤯
 
+    ### JS Quickstart
     ```js
     var dofusdude = require("dofusdude-js");
 
@@ -102,7 +103,7 @@ info:
     - [luwnarya.fr](https://luwnarya.fr)
 
   title: Dofusdude
-  version: 0.5.3
+  version: 0.5.4
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -3390,23 +3391,6 @@ components:
       x-examples: {}
     Cosmetic:
       example:
-        level: 6
-        has_effects: true
-        recipe:
-        - quantity: 5
-          item_subtype: item_subtype
-          item_ankama_id: 1
-        - quantity: 5
-          item_subtype: item_subtype
-          item_ankama_id: 1
-        description: description
-        image_urls:
-          sd: sd
-          icon: icon
-          hq: hq
-          hd: hd
-        type:
-          name: name
         effects:
         - ignore_int_min: true
           ignore_int_max: true
@@ -3426,10 +3410,24 @@ components:
             name: name
             id: 2
           int_minimum: 5
-        has_conditions: true
-        has_recipe: true
+        level: 6
         name: name
+        recipe:
+        - quantity: 5
+          item_subtype: item_subtype
+          item_ankama_id: 1
+        - quantity: 5
+          item_subtype: item_subtype
+          item_ankama_id: 1
+        description: description
+        image_urls:
+          sd: sd
+          icon: icon
+          hq: hq
+          hd: hd
         pods: 1
+        type:
+          name: name
         conditions:
         - operator: operator
           int_value: 7
@@ -3459,22 +3457,16 @@ components:
           type: integer
         image_urls:
           $ref: '#/components/schemas/Image-Urls'
-        has_effects:
-          type: boolean
         effects:
           items:
             $ref: '#/components/schemas/Effects-Entry'
           nullable: true
           type: array
-        has_conditions:
-          type: boolean
         conditions:
           items:
             $ref: '#/components/schemas/Condition-Entry'
           nullable: true
           type: array
-        has_recipe:
-          type: boolean
         recipe:
           items:
             $ref: '#/components/schemas/Recipe-Entry'
@@ -3574,23 +3566,6 @@ components:
           hq: https://dofusdu.de/dofus/img/mount/1-400.png
     Resource:
       example:
-        level: 6
-        has_effects: true
-        recipe:
-        - quantity: 5
-          item_subtype: item_subtype
-          item_ankama_id: 1
-        - quantity: 5
-          item_subtype: item_subtype
-          item_ankama_id: 1
-        description: description
-        image_urls:
-          sd: sd
-          icon: icon
-          hq: hq
-          hd: hd
-        type:
-          name: name
         effects:
         - ignore_int_min: true
           ignore_int_max: true
@@ -3610,10 +3585,24 @@ components:
             name: name
             id: 2
           int_minimum: 5
-        has_conditions: true
-        has_recipe: true
+        level: 6
         name: name
+        recipe:
+        - quantity: 5
+          item_subtype: item_subtype
+          item_ankama_id: 1
+        - quantity: 5
+          item_subtype: item_subtype
+          item_ankama_id: 1
+        description: description
+        image_urls:
+          sd: sd
+          icon: icon
+          hq: hq
+          hd: hd
         pods: 1
+        type:
+          name: name
         conditions:
         - operator: operator
           int_value: 7
@@ -3643,22 +3632,16 @@ components:
           type: integer
         image_urls:
           $ref: '#/components/schemas/Image-Urls'
-        has_effects:
-          type: boolean
         effects:
           items:
             $ref: '#/components/schemas/Effects-Entry'
           nullable: true
           type: array
-        has_conditions:
-          type: boolean
         conditions:
           items:
             $ref: '#/components/schemas/Condition-Entry'
           nullable: true
           type: array
-        has_recipe:
-          type: boolean
         recipe:
           items:
             $ref: '#/components/schemas/Recipe-Entry'
@@ -3669,7 +3652,6 @@ components:
       x-examples: {}
     Item-List-Entry:
       example:
-        has_recipe: true
         level: 6
         name: name
         recipe:
@@ -3698,9 +3680,6 @@ components:
           type: integer
         image_urls:
           $ref: '#/components/schemas/Image-Urls'
-        has_recipe:
-          nullable: true
-          type: boolean
         recipe:
           items:
             $ref: '#/components/schemas/Recipe-Entry'
@@ -3749,7 +3728,6 @@ components:
               id: 2
             int_minimum: 5
         level: 1
-        has_effects: true
         name: name
         equipment_ids:
         - 6
@@ -3764,8 +3742,6 @@ components:
           items:
             type: integer
           type: array
-        has_effects:
-          type: boolean
         effects:
           items:
             items:
@@ -3819,7 +3795,6 @@ components:
             name: name
             id: 2
           int_minimum: 5
-        has_effects: true
         name: name
         image_urls:
           sd: sd
@@ -3837,8 +3812,6 @@ components:
           type: string
         image_urls:
           $ref: '#/components/schemas/Image-Urls'
-        has_effects:
-          type: boolean
         effects:
           items:
             $ref: '#/components/schemas/Effects-Entry'
@@ -3878,8 +3851,7 @@ components:
           prev: prev
           first: first
         items:
-        - has_recipe: true
-          level: 6
+        - level: 6
           name: name
           recipe:
           - quantity: 5
@@ -3896,8 +3868,7 @@ components:
           type:
             name: name
           ankama_id: 0
-        - has_recipe: true
-          level: 6
+        - level: 6
           name: name
           recipe:
           - quantity: 5
@@ -4048,29 +4019,21 @@ components:
           type: integer
         image_urls:
           $ref: '#/components/schemas/Image-Urls'
-        has_effects:
-          type: boolean
         effects:
           items:
             $ref: '#/components/schemas/Effects-Entry'
           nullable: true
           type: array
-        has_conditions:
-          type: boolean
         conditions:
           items:
             $ref: '#/components/schemas/Condition-Entry'
           nullable: true
           type: array
-        has_recipe:
-          type: boolean
         recipe:
           items:
             $ref: '#/components/schemas/Recipe-Entry'
           nullable: true
           type: array
-        has_parent_set:
-          type: boolean
         parent_set:
           $ref: '#/components/schemas/Equipment_parent_set'
       title: ""
@@ -4086,7 +4049,6 @@ components:
         is_two_handed: true
         level: 6
         is_weapon: true
-        has_effects: true
         recipe:
         - quantity: 5
           item_subtype: item_subtype
@@ -4094,7 +4056,6 @@ components:
         - quantity: 5
           item_subtype: item_subtype
           item_ankama_id: 1
-        has_parent_set: true
         description: description
         image_urls:
           sd: sd
@@ -4125,9 +4086,7 @@ components:
             name: name
             id: 2
           int_minimum: 5
-        has_conditions: true
         max_cast_per_turn: 2
-        has_recipe: true
         name: name
         ap_cost: 7
         pods: 1
@@ -4166,15 +4125,11 @@ components:
           type: integer
         image_urls:
           $ref: '#/components/schemas/Image-Urls'
-        has_effects:
-          type: boolean
         effects:
           items:
             $ref: '#/components/schemas/Effects-Entry'
           nullable: true
           type: array
-        has_conditions:
-          type: boolean
         conditions:
           items:
             $ref: '#/components/schemas/Condition-Entry'
@@ -4192,15 +4147,11 @@ components:
           type: integer
         range:
           $ref: '#/components/schemas/Weapon_range'
-        has_recipe:
-          type: boolean
         recipe:
           items:
             $ref: '#/components/schemas/Recipe-Entry'
           nullable: true
           type: array
-        has_parent_set:
-          type: boolean
         parent_set:
           $ref: '#/components/schemas/Equipment_parent_set'
       type: object

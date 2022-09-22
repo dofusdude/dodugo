@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **FamilyName** | Pointer to **string** |  | [optional] 
 **ImageUrls** | Pointer to [**ImageUrls**](ImageUrls.md) |  | [optional] 
-**HasEffects** | Pointer to **bool** |  | [optional] 
 **Effects** | Pointer to [**[]EffectsEntry**](EffectsEntry.md) |  | [optional] 
 
 ## Methods
@@ -129,31 +128,6 @@ SetImageUrls sets ImageUrls field to given value.
 `func (o *Mount) HasImageUrls() bool`
 
 HasImageUrls returns a boolean if a field has been set.
-
-### GetHasEffects
-
-`func (o *Mount) GetHasEffects() bool`
-
-GetHasEffects returns the HasEffects field if non-nil, zero value otherwise.
-
-### GetHasEffectsOk
-
-`func (o *Mount) GetHasEffectsOk() (*bool, bool)`
-
-GetHasEffectsOk returns a tuple with the HasEffects field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasEffects
-
-`func (o *Mount) SetHasEffects(v bool)`
-
-SetHasEffects sets HasEffects field to given value.
-
-### HasHasEffects
-
-`func (o *Mount) HasHasEffects() bool`
-
-HasHasEffects returns a boolean if a field has been set.
 
 ### GetEffects
 

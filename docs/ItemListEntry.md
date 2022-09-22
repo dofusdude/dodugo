@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **Type** | Pointer to [**ItemsListEntryTypedType**](ItemsListEntryTypedType.md) |  | [optional] 
 **Level** | Pointer to **int32** |  | [optional] 
 **ImageUrls** | Pointer to [**ImageUrls**](ImageUrls.md) |  | [optional] 
-**HasRecipe** | Pointer to **NullableBool** |  | [optional] 
 **Recipe** | Pointer to [**[]RecipeEntry**](RecipeEntry.md) |  | [optional] 
 
 ## Methods
@@ -156,41 +155,6 @@ SetImageUrls sets ImageUrls field to given value.
 
 HasImageUrls returns a boolean if a field has been set.
 
-### GetHasRecipe
-
-`func (o *ItemListEntry) GetHasRecipe() bool`
-
-GetHasRecipe returns the HasRecipe field if non-nil, zero value otherwise.
-
-### GetHasRecipeOk
-
-`func (o *ItemListEntry) GetHasRecipeOk() (*bool, bool)`
-
-GetHasRecipeOk returns a tuple with the HasRecipe field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasRecipe
-
-`func (o *ItemListEntry) SetHasRecipe(v bool)`
-
-SetHasRecipe sets HasRecipe field to given value.
-
-### HasHasRecipe
-
-`func (o *ItemListEntry) HasHasRecipe() bool`
-
-HasHasRecipe returns a boolean if a field has been set.
-
-### SetHasRecipeNil
-
-`func (o *ItemListEntry) SetHasRecipeNil(b bool)`
-
- SetHasRecipeNil sets the value for HasRecipe to be an explicit nil
-
-### UnsetHasRecipe
-`func (o *ItemListEntry) UnsetHasRecipe()`
-
-UnsetHasRecipe ensures that no value is present for HasRecipe, not even an explicit nil
 ### GetRecipe
 
 `func (o *ItemListEntry) GetRecipe() []RecipeEntry`

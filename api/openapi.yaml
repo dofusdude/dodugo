@@ -11,7 +11,8 @@ info:
     \ SDKs\n- [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js\
     \ --save\n- [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts\
     \ --save\n- [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo\n\
-    \nEverything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs).\
+    - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude\n\n\
+    Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs).\
     \ Consider it the Single Source of Truth. If there is a problem with the SDKs,\
     \ create an issue at the Docs Repo.\n\n## Main Features\n- \U0001f977 **seamless\
     \ auto-update** load data in the background when a new Dofus version is released\
@@ -55,7 +56,7 @@ info:
     \ by Lystina\n- [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina\n- [luwnarya.fr](https://luwnarya.fr)\n\
     \n"
   title: Dofusdude
-  version: 0.5.4
+  version: 0.5.5
 servers:
 - description: API
   url: https://api.dofusdu.de

@@ -33,9 +33,9 @@ import (
 func main() {
     language := "language_example" // string | a valid language code
     game := "dofus2" // string | 
-    filterFamilyName := "filterFamilyName_example" // string | only results with the translated family name (optional)
-    pageSize := int32(56) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
-    pageNumber := int32(56) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
+    filterFamilyName := "Dragoturkey" // string | only results with the translated family name (optional)
+    pageSize := int32(10) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
+    pageNumber := int32(1) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -110,10 +110,10 @@ import (
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
+    language := "fr" // string | a valid language code
     game := "dofus2" // string | 
-    query := "almond" // string | case sensitive search query
-    filterFamilyName := "rhineetle" // string | only results with the translated family name (optional)
+    query := "Dorée" // string | case sensitive search query
+    filterFamilyName := "Dragodinde" // string | only results with the translated family name (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -31,10 +31,10 @@ import (
 func main() {
     language := "language_example" // string | a valid language code
     game := "dofus2" // string | 
-    query := "hat" // string | case sensitive search query
-    filterTypeName := "filterTypeName_example" // string | only results with the translated type name across all item_subtypes (optional)
-    filterMinLevel := int32(56) // int32 | only results which level is equal or above this value (optional)
-    filterMaxLevel := int32(56) // int32 | only results which level is equal or below this value (optional)
+    query := "atcham" // string | case sensitive search query
+    filterTypeName := "Bottes" // string | only results with the translated type name across all item_subtypes (optional)
+    filterMinLevel := int32(190) // int32 | only results which level is equal or above this value (optional)
+    filterMaxLevel := int32(200) // int32 | only results which level is equal or below this value (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

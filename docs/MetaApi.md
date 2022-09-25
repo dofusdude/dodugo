@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    language := "language_example" // string | 
+    language := "fr" // string | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

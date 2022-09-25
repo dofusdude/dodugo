@@ -26,12 +26,13 @@ import (
     "context"
     "fmt"
     "os"
+    "time"
     openapiclient "./openapi"
 )
 
 func main() {
-    language := "language_example" // string | code
-    date := "date_example" // string | yyyy-mm-dd
+    language := "fr" // string | code
+    date := time.Now() // string | yyyy-mm-dd
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -99,16 +100,17 @@ import (
     "context"
     "fmt"
     "os"
+    "time"
     openapiclient "./openapi"
 )
 
 func main() {
-    language := "language_example" // string | code
+    language := "fr" // string | code
     filterBonusType := "experience-points" // string | ids from meta/{language}/almanax/bonuses (optional)
-    rangeFrom := "rangeFrom_example" // string | yyyy-mm-dd (optional)
-    rangeTo := "rangeTo_example" // string | yyyy-mm-dd (optional)
-    rangeSize := int32(56) // int32 | size of the returned range (optional)
-    timezone := "timezone_example" // string | determine what the current time is. If you live in Brazil, \"today\" will be hours apart from Paris. Use your timezone to get results relative to your location. (optional) (default to "Europe/Paris")
+    rangeFrom := time.Now() // string | yyyy-mm-dd (optional)
+    rangeTo := time.Now() // string | yyyy-mm-dd (optional)
+    rangeSize := int32(-1) // int32 | size of the returned range (optional)
+    timezone := "Europe/Paris" // string | determine what the current time is. If you live in Brazil, \"today\" will be hours apart from Paris. Use your timezone to get results relative to your location. (optional) (default to "Europe/Paris")
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

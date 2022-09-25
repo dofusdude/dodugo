@@ -33,11 +33,11 @@ import (
 func main() {
     language := "language_example" // string | a valid language code
     game := "dofus2" // string | 
-    sortLevel := "sortLevel_example" // string | sort the resulting list by level, default unsorted (optional)
-    filterMinHighestEquipmentLevel := int32(56) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
-    filterMaxHighestEquipmentLevel := int32(56) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
-    pageSize := int32(56) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
-    pageNumber := int32(56) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
+    sortLevel := "asc" // string | sort the resulting list by level, default unsorted (optional)
+    filterMinHighestEquipmentLevel := int32(190) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
+    filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
+    pageSize := int32(20) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
+    pageNumber := int32(1) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -117,8 +117,8 @@ func main() {
     language := "language_example" // string | a valid language code
     game := "dofus2" // string | 
     query := "Des" // string | case sensitive search query
-    filterMinHighestEquipmentLevel := int32(56) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
-    filterMaxHighestEquipmentLevel := int32(56) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
+    filterMinHighestEquipmentLevel := int32(195) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
+    filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

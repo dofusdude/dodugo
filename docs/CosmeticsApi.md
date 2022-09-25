@@ -31,14 +31,14 @@ import (
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
+    language := "fr" // string | a valid language code
     game := "dofus2" // string | 
-    sortLevel := "sortLevel_example" // string | sort the resulting list by level, default unsorted (optional)
-    filterTypeName := "filterTypeName_example" // string | only results with the translated type name (optional)
-    filterMinLevel := int32(56) // int32 | only results which level is equal or above this value (optional)
-    filterMaxLevel := int32(56) // int32 | only results which level is equal or below this value (optional)
-    pageSize := int32(56) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
-    pageNumber := int32(56) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
+    sortLevel := "asc" // string | sort the resulting list by level, default unsorted (optional)
+    filterTypeName := "Chapeau d'apparat" // string | only results with the translated type name (optional)
+    filterMinLevel := int32(1) // int32 | only results which level is equal or above this value (optional)
+    filterMaxLevel := int32(5) // int32 | only results which level is equal or below this value (optional)
+    pageSize := int32(5) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
+    pageNumber := int32(1) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
     fieldsItem := "recipe" // string | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -120,10 +120,10 @@ import (
 func main() {
     language := "language_example" // string | a valid language code
     game := "dofus2" // string | 
-    query := "cape" // string | case sensitive search query
-    filterTypeName := "filterTypeName_example" // string | only results with the translated type name (optional)
-    filterMinLevel := int32(56) // int32 | only results which level is equal or above this value (optional)
-    filterMaxLevel := int32(56) // int32 | only results which level is equal or below this value (optional)
+    query := "nedora" // string | case sensitive search query
+    filterTypeName := "Costume" // string | only results with the translated type name (optional)
+    filterMinLevel := int32(1) // int32 | only results which level is equal or above this value (optional)
+    filterMaxLevel := int32(2) // int32 | only results which level is equal or below this value (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

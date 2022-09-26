@@ -54,7 +54,7 @@ info:
     \ to help me keeping them running or simply  donate, consider becoming a [GitHub\
     \ Sponsor](https://github.com/sponsors/dofusdude).\n\n"
   title: Dofusdude
-  version: 0.5.6
+  version: 0.6.0
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -2196,6 +2196,23 @@ paths:
           minimum: 0
           type: integer
         style: form
+      - description: adds fields from their detail endpoint to the item list entries.
+          Multiple comma separated values allowed.
+        explode: false
+        in: query
+        name: "fields[set]"
+        required: false
+        schema:
+          example:
+          - equipment_ids
+          items:
+            enum:
+            - effects
+            - equipment_ids
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -2348,6 +2365,22 @@ paths:
           minimum: 0
           type: integer
         style: form
+      - description: adds fields from their detail endpoint to the item list entries.
+          Multiple comma separated values allowed.
+        explode: false
+        in: query
+        name: "fields[mount]"
+        required: false
+        schema:
+          example:
+          - effects
+          items:
+            enum:
+            - effects
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -2494,13 +2527,31 @@ paths:
         style: form
       - description: adds fields from their detail endpoint to the item list entries.
           Multiple comma separated values allowed.
-        explode: true
+        explode: false
         in: query
         name: "fields[item]"
         required: false
         schema:
-          example: recipe
-          type: string
+          example:
+          - is_weapon
+          items:
+            enum:
+            - recipe
+            - description
+            - conditions
+            - effects
+            - is_weapon
+            - pods
+            - parent_set
+            - critical_hit_probability
+            - critical_hit_bonus
+            - is_two_handed
+            - max_cast_per_turn
+            - ap_cost
+            - range
+            type: string
+          type: array
+          uniqueItems: true
         style: form
       responses:
         "200":
@@ -2649,13 +2700,22 @@ paths:
         style: form
       - description: adds fields from their detail endpoint to the item list entries.
           Multiple comma separated values allowed.
-        explode: true
+        explode: false
         in: query
         name: "fields[item]"
         required: false
         schema:
-          example: recipe
-          type: string
+          example:
+          - recipe
+          items:
+            enum:
+            - recipe
+            - description
+            - conditions
+            - effects
+            type: string
+          type: array
+          uniqueItems: true
         style: form
       responses:
         "200":
@@ -2790,13 +2850,22 @@ paths:
         style: form
       - description: adds fields from their detail endpoint to the item list entries.
           Multiple comma separated values allowed.
-        explode: true
+        explode: false
         in: query
         name: "fields[item]"
         required: false
         schema:
-          example: recipe
-          type: string
+          example:
+          - recipe
+          items:
+            enum:
+            - recipe
+            - description
+            - conditions
+            - effects
+            type: string
+          type: array
+          uniqueItems: true
         style: form
       responses:
         "200":
@@ -2946,13 +3015,22 @@ paths:
         style: form
       - description: adds fields from their detail endpoint to the item list entries.
           Multiple comma separated values allowed.
-        explode: true
+        explode: false
         in: query
         name: "fields[item]"
         required: false
         schema:
-          example: recipe
-          type: string
+          example:
+          - recipe
+          items:
+            enum:
+            - recipe
+            - description
+            - conditions
+            - effects
+            type: string
+          type: array
+          uniqueItems: true
         style: form
       responses:
         "200":
@@ -3089,13 +3167,22 @@ paths:
         style: form
       - description: adds fields from their detail endpoint to the item list entries.
           Multiple comma separated values allowed.
-        explode: true
+        explode: false
         in: query
         name: "fields[item]"
         required: false
         schema:
-          example: recipe
-          type: string
+          example:
+          - recipe
+          items:
+            enum:
+            - recipe
+            - description
+            - conditions
+            - effects
+            type: string
+          type: array
+          uniqueItems: true
         style: form
       responses:
         "200":
@@ -3135,6 +3222,891 @@ paths:
       summary: List Cosmetics
       tags:
       - cosmetics
+  /{game}/{language}/mounts/all:
+    get:
+      description: |-
+        Retrieve all mounts with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
+
+        If you want everything unfiltered, delete the other query parameters.
+
+        Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!
+
+        Tip: set the HTTP Header 'Accept-Encoding: gzip' for saving bandwidth. You will need to uncompress it on your end.
+        Example with cURL:
+        ```
+        curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
+        ```
+      operationId: get-all-mounts-list
+      parameters:
+      - description: a valid language code
+        explode: false
+        in: path
+        name: language
+        required: true
+        schema:
+          enum:
+          - en
+          - fr
+          - de
+          - it
+          - es
+          - pt
+          maxLength: 2
+          minLength: 2
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: game
+        required: true
+        schema:
+          enum:
+          - dofus2
+          - dofus2beta
+          example: dofus2
+          type: string
+        style: simple
+      - description: only results with the translated family name
+        explode: true
+        in: query
+        name: "filter[family_name]"
+        required: false
+        schema:
+          example: Dragoturkey
+          type: string
+        style: form
+      - description: optional compression for saving bandwidth
+        explode: false
+        in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          enum:
+          - gzip
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                defaults:
+                  value:
+                    _links:
+                      first: null
+                      prev: null
+                      next: null
+                      last: null
+                    items:
+                    - ankama_id: 0
+                      name: string
+                      family_name: string
+                      image_urls:
+                        icon: string
+                        sd: string
+                        hq: string
+                        hd: string
+              schema:
+                $ref: '#/components/schemas/Mounts-List-Paged'
+          description: Mounts Found
+        "400":
+          description: |
+            Bad Request
+        "404":
+          description: Not Found
+      summary: List All Mounts
+      tags:
+      - mounts
+  /{game}/{language}/sets/all:
+    get:
+      description: |-
+        Retrieve all sets with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
+
+        If you want everything unfiltered, delete the other query parameters.
+
+        Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!
+
+        Tip: set the HTTP Header 'Accept-Encoding: gzip' for saving bandwidth. You will need to uncompress it on your end.
+        Example with cURL:
+        ```
+        curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
+        ```
+      operationId: get-all-sets-list
+      parameters:
+      - description: a valid language code
+        explode: false
+        in: path
+        name: language
+        required: true
+        schema:
+          enum:
+          - en
+          - fr
+          - de
+          - it
+          - es
+          - pt
+          maxLength: 2
+          minLength: 2
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: game
+        required: true
+        schema:
+          enum:
+          - dofus2
+          - dofus2beta
+          example: dofus2
+          type: string
+        style: simple
+      - description: "sort the resulting list by level, default unsorted"
+        explode: true
+        in: query
+        name: "sort[level]"
+        required: false
+        schema:
+          enum:
+          - asc
+          - desc
+          example: asc
+          type: string
+        style: form
+      - description: only results where the equipment with the highest level is above
+          or equal to this value
+        explode: true
+        in: query
+        name: "filter[min_highest_equipment_level]"
+        required: false
+        schema:
+          example: 190
+          format: int32
+          maximum: 200
+          minimum: 1
+          type: integer
+        style: form
+      - description: only results where the equipment with the highest level is below
+          or equal to this value
+        explode: true
+        in: query
+        name: "filter[max_highest_equipment_level]"
+        required: false
+        schema:
+          example: 200
+          format: int32
+          maximum: 200
+          minimum: 1
+          type: integer
+        style: form
+      - description: optional compression for saving bandwidth
+        explode: false
+        in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          enum:
+          - gzip
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                defaults:
+                  value:
+                    _links:
+                      first: null
+                      prev: null
+                      next: null
+                      last: null
+                    items:
+                    - ankama_id: 0
+                      name: string
+                      items: 0
+                      level: 0
+              schema:
+                $ref: '#/components/schemas/Sets-List-Paged'
+          description: Set Found
+        "400":
+          description: |
+            Bad Request
+        "404":
+          description: Not Found
+      summary: List All Sets
+      tags:
+      - sets
+  /{game}/{language}/items/cosmetics/all:
+    get:
+      description: |-
+        Retrieve all cosmetic items with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
+
+        If you want everything unfiltered, delete the other query parameters.
+
+        Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!
+
+        Tip: set the HTTP Header 'Accept-Encoding: gzip' for saving bandwidth. You will need to uncompress it on your end.
+        Example with cURL:
+        ```
+        curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
+        ```
+      operationId: get-all-cosmetics-list
+      parameters:
+      - description: a valid language code
+        explode: false
+        in: path
+        name: language
+        required: true
+        schema:
+          enum:
+          - en
+          - fr
+          - de
+          - it
+          - es
+          - pt
+          example: fr
+          maxLength: 2
+          minLength: 2
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: game
+        required: true
+        schema:
+          enum:
+          - dofus2
+          - dofus2beta
+          example: dofus2
+          type: string
+        style: simple
+      - description: "sort the resulting list by level, default unsorted"
+        explode: true
+        in: query
+        name: "sort[level]"
+        required: false
+        schema:
+          enum:
+          - asc
+          - desc
+          example: asc
+          type: string
+        style: form
+      - description: only results with the translated type name
+        explode: true
+        in: query
+        name: "filter[type_name]"
+        required: false
+        schema:
+          example: Chapeau d'apparat
+          type: string
+        style: form
+      - description: only results which level is equal or above this value
+        explode: true
+        in: query
+        name: "filter[min_level]"
+        required: false
+        schema:
+          example: 1
+          type: integer
+        style: form
+      - description: only results which level is equal or below this value
+        explode: true
+        in: query
+        name: "filter[max_level]"
+        required: false
+        schema:
+          example: 5
+          type: integer
+        style: form
+      - description: optional compression for saving bandwidth
+        explode: false
+        in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          enum:
+          - gzip
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                defaults:
+                  value:
+                    _links:
+                      first: null
+                      prev: null
+                      next: null
+                      last: null
+                    items:
+                    - ankama_id: 0
+                      name: string
+                      type:
+                        name: string
+                      level: 0
+                      image_urls:
+                        icon: string
+                        sd: string
+                        hq: string
+                        hd: string
+                      recipe:
+                      - item_ankama_id: 0
+                        item_subtype: string
+                        quantity: 0
+              schema:
+                $ref: '#/components/schemas/Items-List-Paged'
+          description: Cosmetics Found
+        "400":
+          description: |
+            Bad Request
+        "404":
+          description: Not Found
+      summary: List All Cosmetics
+      tags:
+      - cosmetics
+  /{game}/{language}/items/quest/all:
+    get:
+      description: |-
+        Retrieve all quest items with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
+
+        If you want everything unfiltered, delete the other query parameters.
+
+        Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!
+
+        Tip: set the HTTP Header 'Accept-Encoding: gzip' for saving bandwidth. You will need to uncompress it on your end.
+        Example with cURL:
+        ```
+        curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
+        ```
+      operationId: get-all-items-quest-list
+      parameters:
+      - description: a valid language code
+        explode: false
+        in: path
+        name: language
+        required: true
+        schema:
+          enum:
+          - en
+          - fr
+          - de
+          - it
+          - es
+          - pt
+          example: fr
+          maxLength: 2
+          minLength: 2
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: game
+        required: true
+        schema:
+          enum:
+          - dofus2
+          - dofus2beta
+          example: dofus2
+          type: string
+        style: simple
+      - description: "sort the resulting list by level, default unsorted"
+        explode: true
+        in: query
+        name: "sort[level]"
+        required: false
+        schema:
+          enum:
+          - asc
+          - desc
+          example: desc
+          type: string
+        style: form
+      - description: only results with the translated type name
+        explode: true
+        in: query
+        name: "filter[type_name]"
+        required: false
+        schema:
+          example: Sufokia
+          type: string
+        style: form
+      - description: only results which level is equal or above this value
+        explode: true
+        in: query
+        name: "filter[min_level]"
+        required: false
+        schema:
+          example: 1
+          format: int32
+          maximum: 200
+          minimum: 0
+          type: integer
+        style: form
+      - description: only results which level is equal or below this value
+        explode: true
+        in: query
+        name: "filter[max_level]"
+        required: false
+        schema:
+          example: 50
+          format: int32
+          maximum: 200
+          minimum: 0
+          type: integer
+        style: form
+      - description: optional compression for saving bandwidth
+        explode: false
+        in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          enum:
+          - gzip
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                defaults:
+                  value:
+                    _links:
+                      first: null
+                      prev: null
+                      next: null
+                      last: null
+                    items:
+                    - ankama_id: 0
+                      name: string
+                      type:
+                        name: string
+                      level: 0
+                      image_urls:
+                        icon: string
+                        sd: string
+                        hq: string
+                        hd: string
+                      recipe:
+                      - item_ankama_id: 0
+                        item_subtype: string
+                        quantity: 0
+              schema:
+                $ref: '#/components/schemas/Items-List-Paged'
+          description: Quest Items Found
+        "400":
+          description: |
+            Bad Request
+        "404":
+          description: Not Found
+      summary: List All Quest Items
+      tags:
+      - quest items
+  /{game}/{language}/items/consumables/all:
+    get:
+      description: |-
+        Retrieve all consumable items with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
+
+        If you want everything unfiltered, delete the other query parameters.
+
+        Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!
+
+        Tip: set the HTTP Header 'Accept-Encoding: gzip' for saving bandwidth. You will need to uncompress it on your end.
+        Example with cURL:
+        ```
+        curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
+        ```
+      operationId: get-all-items-consumables-list
+      parameters:
+      - description: a valid language code
+        explode: false
+        in: path
+        name: language
+        required: true
+        schema:
+          enum:
+          - en
+          - fr
+          - de
+          - it
+          - es
+          - pt
+          maxLength: 2
+          minLength: 2
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: game
+        required: true
+        schema:
+          enum:
+          - dofus2
+          - dofus2beta
+          example: dofus2
+          type: string
+        style: simple
+      - description: "sort the resulting list by level, default unsorted"
+        explode: true
+        in: query
+        name: "sort[level]"
+        required: false
+        schema:
+          enum:
+          - asc
+          - desc
+          example: asc
+          type: string
+        style: form
+      - description: only results with the translated type name
+        explode: true
+        in: query
+        name: "filter[type_name]"
+        required: false
+        schema:
+          example: Chest
+          type: string
+        style: form
+      - description: only results which level is equal or above this value
+        explode: true
+        in: query
+        name: "filter[min_level]"
+        required: false
+        schema:
+          example: 150
+          type: integer
+        style: form
+      - description: only results which level is equal or below this value
+        explode: true
+        in: query
+        name: "filter[max_level]"
+        required: false
+        schema:
+          example: 180
+          type: integer
+        style: form
+      - description: optional compression for saving bandwidth
+        explode: false
+        in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          enum:
+          - gzip
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                defaults:
+                  value:
+                    _links:
+                      first: null
+                      prev: null
+                      next: null
+                      last: null
+                    items:
+                    - ankama_id: 0
+                      name: string
+                      type:
+                        name: string
+                      level: 0
+                      image_urls:
+                        icon: string
+                        sd: string
+                        hq: string
+                        hd: string
+                      recipe:
+                      - item_ankama_id: 0
+                        item_subtype: string
+                        quantity: 0
+              schema:
+                $ref: '#/components/schemas/Items-List-Paged'
+          description: Consumables Found
+        "400":
+          description: |
+            Bad Request
+        "404":
+          description: Not Found
+      summary: List All Consumables
+      tags:
+      - consumables
+  /{game}/{language}/items/resources/all:
+    get:
+      description: |-
+        Retrieve all resource items with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
+
+        If you want everything unfiltered, delete the other query parameters.
+
+        Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!
+
+        Tip: set the HTTP Header 'Accept-Encoding: gzip' for saving bandwidth. You will need to uncompress it on your end.
+        Example with cURL:
+        ```
+        curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
+        ```
+      operationId: get-all-items-resources-list
+      parameters:
+      - description: a valid language code
+        explode: false
+        in: path
+        name: language
+        required: true
+        schema:
+          enum:
+          - en
+          - fr
+          - de
+          - it
+          - es
+          - pt
+          maxLength: 2
+          minLength: 2
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: game
+        required: true
+        schema:
+          enum:
+          - dofus2
+          - dofus2beta
+          example: dofus2
+          type: string
+        style: simple
+      - description: "sort the resulting list by level, default unsorted"
+        explode: true
+        in: query
+        name: "sort[level]"
+        required: false
+        schema:
+          enum:
+          - asc
+          - desc
+          example: desc
+          type: string
+        style: form
+      - description: only results with the translated type name
+        explode: true
+        in: query
+        name: "filter[type_name]"
+        required: false
+        schema:
+          example: miscellaneous resources
+          type: string
+        style: form
+      - description: only results which level is equal or above this value
+        explode: true
+        in: query
+        name: "filter[min_level]"
+        required: false
+        schema:
+          example: 160
+          format: int32
+          maximum: 200
+          minimum: 1
+          type: integer
+        style: form
+      - description: only results which level is equal or below this value
+        explode: true
+        in: query
+        name: "filter[max_level]"
+        required: false
+        schema:
+          example: 190
+          format: int32
+          maximum: 200
+          minimum: 1
+          type: integer
+        style: form
+      - description: optional compression for saving bandwidth
+        explode: false
+        in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          enum:
+          - gzip
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                defaults:
+                  value:
+                    _links:
+                      first: null
+                      prev: null
+                      next: null
+                      last: null
+                    items:
+                    - ankama_id: 0
+                      name: string
+                      type:
+                        name: string
+                      level: 0
+                      image_urls:
+                        icon: string
+                        sd: string
+                        hq: string
+                        hd: string
+                      recipe:
+                      - item_ankama_id: 0
+                        item_subtype: string
+                        quantity: 0
+              schema:
+                $ref: '#/components/schemas/Items-List-Paged'
+          description: Resources Found
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+      summary: List All Resources
+      tags:
+      - resources
+  /{game}/{language}/items/equipment/all:
+    get:
+      description: |-
+        Retrieve all equipment items with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
+
+        If you want everything unfiltered, delete the other query parameters.
+
+        Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!
+
+        Tip: set the HTTP Header 'Accept-Encoding: gzip' for saving bandwidth. You will need to uncompress it on your end.
+        Example with cURL:
+        ```
+        curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
+        ```
+      operationId: get-all-items-equipment-list
+      parameters:
+      - description: a valid language code
+        explode: false
+        in: path
+        name: language
+        required: true
+        schema:
+          enum:
+          - en
+          - fr
+          - de
+          - it
+          - es
+          - pt
+          example: en
+          maxLength: 2
+          minLength: 2
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: game
+        required: true
+        schema:
+          enum:
+          - dofus2
+          - dofus2beta
+          example: dofus2
+          type: string
+        style: simple
+      - description: "sort the resulting list by level, default unsorted"
+        explode: true
+        in: query
+        name: "sort[level]"
+        required: false
+        schema:
+          enum:
+          - asc
+          - desc
+          example: desc
+          type: string
+        style: form
+      - description: only results with the translated type name
+        explode: true
+        in: query
+        name: "filter[type_name]"
+        required: false
+        schema:
+          example: Sword
+          type: string
+        style: form
+      - description: only results which level is equal or above this value
+        explode: true
+        in: query
+        name: "filter[min_level]"
+        required: false
+        schema:
+          example: 10
+          type: integer
+        style: form
+      - description: only results which level is equal or below this value
+        explode: true
+        in: query
+        name: "filter[max_level]"
+        required: false
+        schema:
+          example: 60
+          minimum: 0
+          type: integer
+        style: form
+      - description: optional compression for saving bandwidth
+        explode: false
+        in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          enum:
+          - gzip
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                defaults:
+                  value:
+                    _links:
+                      first: null
+                      prev: null
+                      next: null
+                      last: null
+                    items:
+                    - ankama_id: 0
+                      name: string
+                      type:
+                        name: string
+                      level: 0
+                      image_urls:
+                        icon: string
+                        sd: string
+                        hq: string
+                        hd: string
+                      recipe:
+                      - item_ankama_id: 0
+                        item_subtype: string
+                        quantity: 0
+              schema:
+                $ref: '#/components/schemas/Items-List-Paged'
+          description: Equipment Found
+        "400":
+          description: |
+            Bad Request
+        "404":
+          description: Not Found
+      summary: List All Equipment
+      tags:
+      - equipment
   /dofus2/{language}/almanax:
     get:
       description: "Get a range of dates, defaults to today + 6 following days but\

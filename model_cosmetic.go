@@ -1,9 +1,9 @@
 /*
 Dofusdude
 
-# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina - [luwnarya.fr](https://luwnarya.fr)  I highly recommend using the SDKs for quick results. I use them myself for microservices for the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).  
+# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina - [luwnarya.fr](https://luwnarya.fr)  I highly recommend using the SDKs for quick results. I use them myself for microservices for the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).  
 
-API version: 0.6.0
+API version: 0.7.0
 Contact: stelzo@steado.de
 */
 
@@ -48,7 +48,7 @@ func NewCosmeticWithDefaults() *Cosmetic {
 
 // GetAnkamaId returns the AnkamaId field value if set, zero value otherwise.
 func (o *Cosmetic) GetAnkamaId() int32 {
-	if o == nil || o.AnkamaId == nil {
+	if o == nil || isNil(o.AnkamaId) {
 		var ret int32
 		return ret
 	}
@@ -58,15 +58,15 @@ func (o *Cosmetic) GetAnkamaId() int32 {
 // GetAnkamaIdOk returns a tuple with the AnkamaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetAnkamaIdOk() (*int32, bool) {
-	if o == nil || o.AnkamaId == nil {
-		return nil, false
+	if o == nil || isNil(o.AnkamaId) {
+    return nil, false
 	}
 	return o.AnkamaId, true
 }
 
 // HasAnkamaId returns a boolean if a field has been set.
 func (o *Cosmetic) HasAnkamaId() bool {
-	if o != nil && o.AnkamaId != nil {
+	if o != nil && !isNil(o.AnkamaId) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *Cosmetic) SetAnkamaId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *Cosmetic) GetName() string {
-	if o == nil || o.Name == nil {
+	if o == nil || isNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -90,15 +90,15 @@ func (o *Cosmetic) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
+	if o == nil || isNil(o.Name) {
+    return nil, false
 	}
 	return o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *Cosmetic) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && !isNil(o.Name) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *Cosmetic) SetName(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *Cosmetic) GetDescription() string {
-	if o == nil || o.Description == nil {
+	if o == nil || isNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -122,15 +122,15 @@ func (o *Cosmetic) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetDescriptionOk() (*string, bool) {
-	if o == nil || o.Description == nil {
-		return nil, false
+	if o == nil || isNil(o.Description) {
+    return nil, false
 	}
 	return o.Description, true
 }
 
 // HasDescription returns a boolean if a field has been set.
 func (o *Cosmetic) HasDescription() bool {
-	if o != nil && o.Description != nil {
+	if o != nil && !isNil(o.Description) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *Cosmetic) SetDescription(v string) {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *Cosmetic) GetType() ItemsListEntryTypedType {
-	if o == nil || o.Type == nil {
+	if o == nil || isNil(o.Type) {
 		var ret ItemsListEntryTypedType
 		return ret
 	}
@@ -154,15 +154,15 @@ func (o *Cosmetic) GetType() ItemsListEntryTypedType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetTypeOk() (*ItemsListEntryTypedType, bool) {
-	if o == nil || o.Type == nil {
-		return nil, false
+	if o == nil || isNil(o.Type) {
+    return nil, false
 	}
 	return o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *Cosmetic) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && !isNil(o.Type) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *Cosmetic) SetType(v ItemsListEntryTypedType) {
 
 // GetLevel returns the Level field value if set, zero value otherwise.
 func (o *Cosmetic) GetLevel() int32 {
-	if o == nil || o.Level == nil {
+	if o == nil || isNil(o.Level) {
 		var ret int32
 		return ret
 	}
@@ -186,15 +186,15 @@ func (o *Cosmetic) GetLevel() int32 {
 // GetLevelOk returns a tuple with the Level field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetLevelOk() (*int32, bool) {
-	if o == nil || o.Level == nil {
-		return nil, false
+	if o == nil || isNil(o.Level) {
+    return nil, false
 	}
 	return o.Level, true
 }
 
 // HasLevel returns a boolean if a field has been set.
 func (o *Cosmetic) HasLevel() bool {
-	if o != nil && o.Level != nil {
+	if o != nil && !isNil(o.Level) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *Cosmetic) SetLevel(v int32) {
 
 // GetPods returns the Pods field value if set, zero value otherwise.
 func (o *Cosmetic) GetPods() int32 {
-	if o == nil || o.Pods == nil {
+	if o == nil || isNil(o.Pods) {
 		var ret int32
 		return ret
 	}
@@ -218,15 +218,15 @@ func (o *Cosmetic) GetPods() int32 {
 // GetPodsOk returns a tuple with the Pods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetPodsOk() (*int32, bool) {
-	if o == nil || o.Pods == nil {
-		return nil, false
+	if o == nil || isNil(o.Pods) {
+    return nil, false
 	}
 	return o.Pods, true
 }
 
 // HasPods returns a boolean if a field has been set.
 func (o *Cosmetic) HasPods() bool {
-	if o != nil && o.Pods != nil {
+	if o != nil && !isNil(o.Pods) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *Cosmetic) SetPods(v int32) {
 
 // GetImageUrls returns the ImageUrls field value if set, zero value otherwise.
 func (o *Cosmetic) GetImageUrls() ImageUrls {
-	if o == nil || o.ImageUrls == nil {
+	if o == nil || isNil(o.ImageUrls) {
 		var ret ImageUrls
 		return ret
 	}
@@ -250,15 +250,15 @@ func (o *Cosmetic) GetImageUrls() ImageUrls {
 // GetImageUrlsOk returns a tuple with the ImageUrls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetImageUrlsOk() (*ImageUrls, bool) {
-	if o == nil || o.ImageUrls == nil {
-		return nil, false
+	if o == nil || isNil(o.ImageUrls) {
+    return nil, false
 	}
 	return o.ImageUrls, true
 }
 
 // HasImageUrls returns a boolean if a field has been set.
 func (o *Cosmetic) HasImageUrls() bool {
-	if o != nil && o.ImageUrls != nil {
+	if o != nil && !isNil(o.ImageUrls) {
 		return true
 	}
 
@@ -283,15 +283,15 @@ func (o *Cosmetic) GetEffects() []EffectsEntry {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Cosmetic) GetEffectsOk() ([]EffectsEntry, bool) {
-	if o == nil || o.Effects == nil {
-		return nil, false
+	if o == nil || isNil(o.Effects) {
+    return nil, false
 	}
 	return o.Effects, true
 }
 
 // HasEffects returns a boolean if a field has been set.
 func (o *Cosmetic) HasEffects() bool {
-	if o != nil && o.Effects != nil {
+	if o != nil && isNil(o.Effects) {
 		return true
 	}
 
@@ -316,15 +316,15 @@ func (o *Cosmetic) GetConditions() []ConditionEntry {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Cosmetic) GetConditionsOk() ([]ConditionEntry, bool) {
-	if o == nil || o.Conditions == nil {
-		return nil, false
+	if o == nil || isNil(o.Conditions) {
+    return nil, false
 	}
 	return o.Conditions, true
 }
 
 // HasConditions returns a boolean if a field has been set.
 func (o *Cosmetic) HasConditions() bool {
-	if o != nil && o.Conditions != nil {
+	if o != nil && isNil(o.Conditions) {
 		return true
 	}
 
@@ -349,15 +349,15 @@ func (o *Cosmetic) GetRecipe() []RecipeEntry {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Cosmetic) GetRecipeOk() ([]RecipeEntry, bool) {
-	if o == nil || o.Recipe == nil {
-		return nil, false
+	if o == nil || isNil(o.Recipe) {
+    return nil, false
 	}
 	return o.Recipe, true
 }
 
 // HasRecipe returns a boolean if a field has been set.
 func (o *Cosmetic) HasRecipe() bool {
-	if o != nil && o.Recipe != nil {
+	if o != nil && isNil(o.Recipe) {
 		return true
 	}
 
@@ -371,25 +371,25 @@ func (o *Cosmetic) SetRecipe(v []RecipeEntry) {
 
 func (o Cosmetic) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AnkamaId != nil {
+	if !isNil(o.AnkamaId) {
 		toSerialize["ankama_id"] = o.AnkamaId
 	}
-	if o.Name != nil {
+	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if o.Description != nil {
+	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if o.Type != nil {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if o.Level != nil {
+	if !isNil(o.Level) {
 		toSerialize["level"] = o.Level
 	}
-	if o.Pods != nil {
+	if !isNil(o.Pods) {
 		toSerialize["pods"] = o.Pods
 	}
-	if o.ImageUrls != nil {
+	if !isNil(o.ImageUrls) {
 		toSerialize["image_urls"] = o.ImageUrls
 	}
 	if o.Effects != nil {

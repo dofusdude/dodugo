@@ -1,9 +1,9 @@
 /*
 Dofusdude
 
-# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina - [luwnarya.fr](https://luwnarya.fr)  I highly recommend using the SDKs for quick results. I use them myself for microservices for the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).  
+# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina - [luwnarya.fr](https://luwnarya.fr)  I highly recommend using the SDKs for quick results. I use them myself for microservices for the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).  
 
-API version: 0.6.0
+API version: 0.7.0
 Contact: stelzo@steado.de
 */
 
@@ -57,7 +57,7 @@ func NewWeaponWithDefaults() *Weapon {
 
 // GetAnkamaId returns the AnkamaId field value if set, zero value otherwise.
 func (o *Weapon) GetAnkamaId() int32 {
-	if o == nil || o.AnkamaId == nil {
+	if o == nil || isNil(o.AnkamaId) {
 		var ret int32
 		return ret
 	}
@@ -67,15 +67,15 @@ func (o *Weapon) GetAnkamaId() int32 {
 // GetAnkamaIdOk returns a tuple with the AnkamaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetAnkamaIdOk() (*int32, bool) {
-	if o == nil || o.AnkamaId == nil {
-		return nil, false
+	if o == nil || isNil(o.AnkamaId) {
+    return nil, false
 	}
 	return o.AnkamaId, true
 }
 
 // HasAnkamaId returns a boolean if a field has been set.
 func (o *Weapon) HasAnkamaId() bool {
-	if o != nil && o.AnkamaId != nil {
+	if o != nil && !isNil(o.AnkamaId) {
 		return true
 	}
 
@@ -89,7 +89,7 @@ func (o *Weapon) SetAnkamaId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *Weapon) GetName() string {
-	if o == nil || o.Name == nil {
+	if o == nil || isNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -99,15 +99,15 @@ func (o *Weapon) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
+	if o == nil || isNil(o.Name) {
+    return nil, false
 	}
 	return o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *Weapon) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && !isNil(o.Name) {
 		return true
 	}
 
@@ -121,7 +121,7 @@ func (o *Weapon) SetName(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *Weapon) GetDescription() string {
-	if o == nil || o.Description == nil {
+	if o == nil || isNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -131,15 +131,15 @@ func (o *Weapon) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetDescriptionOk() (*string, bool) {
-	if o == nil || o.Description == nil {
-		return nil, false
+	if o == nil || isNil(o.Description) {
+    return nil, false
 	}
 	return o.Description, true
 }
 
 // HasDescription returns a boolean if a field has been set.
 func (o *Weapon) HasDescription() bool {
-	if o != nil && o.Description != nil {
+	if o != nil && !isNil(o.Description) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *Weapon) SetDescription(v string) {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *Weapon) GetType() ItemsListEntryTypedType {
-	if o == nil || o.Type == nil {
+	if o == nil || isNil(o.Type) {
 		var ret ItemsListEntryTypedType
 		return ret
 	}
@@ -163,15 +163,15 @@ func (o *Weapon) GetType() ItemsListEntryTypedType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetTypeOk() (*ItemsListEntryTypedType, bool) {
-	if o == nil || o.Type == nil {
-		return nil, false
+	if o == nil || isNil(o.Type) {
+    return nil, false
 	}
 	return o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *Weapon) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && !isNil(o.Type) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *Weapon) SetType(v ItemsListEntryTypedType) {
 
 // GetIsWeapon returns the IsWeapon field value if set, zero value otherwise.
 func (o *Weapon) GetIsWeapon() bool {
-	if o == nil || o.IsWeapon == nil {
+	if o == nil || isNil(o.IsWeapon) {
 		var ret bool
 		return ret
 	}
@@ -195,15 +195,15 @@ func (o *Weapon) GetIsWeapon() bool {
 // GetIsWeaponOk returns a tuple with the IsWeapon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetIsWeaponOk() (*bool, bool) {
-	if o == nil || o.IsWeapon == nil {
-		return nil, false
+	if o == nil || isNil(o.IsWeapon) {
+    return nil, false
 	}
 	return o.IsWeapon, true
 }
 
 // HasIsWeapon returns a boolean if a field has been set.
 func (o *Weapon) HasIsWeapon() bool {
-	if o != nil && o.IsWeapon != nil {
+	if o != nil && !isNil(o.IsWeapon) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *Weapon) SetIsWeapon(v bool) {
 
 // GetLevel returns the Level field value if set, zero value otherwise.
 func (o *Weapon) GetLevel() int32 {
-	if o == nil || o.Level == nil {
+	if o == nil || isNil(o.Level) {
 		var ret int32
 		return ret
 	}
@@ -227,15 +227,15 @@ func (o *Weapon) GetLevel() int32 {
 // GetLevelOk returns a tuple with the Level field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetLevelOk() (*int32, bool) {
-	if o == nil || o.Level == nil {
-		return nil, false
+	if o == nil || isNil(o.Level) {
+    return nil, false
 	}
 	return o.Level, true
 }
 
 // HasLevel returns a boolean if a field has been set.
 func (o *Weapon) HasLevel() bool {
-	if o != nil && o.Level != nil {
+	if o != nil && !isNil(o.Level) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *Weapon) SetLevel(v int32) {
 
 // GetPods returns the Pods field value if set, zero value otherwise.
 func (o *Weapon) GetPods() int32 {
-	if o == nil || o.Pods == nil {
+	if o == nil || isNil(o.Pods) {
 		var ret int32
 		return ret
 	}
@@ -259,15 +259,15 @@ func (o *Weapon) GetPods() int32 {
 // GetPodsOk returns a tuple with the Pods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetPodsOk() (*int32, bool) {
-	if o == nil || o.Pods == nil {
-		return nil, false
+	if o == nil || isNil(o.Pods) {
+    return nil, false
 	}
 	return o.Pods, true
 }
 
 // HasPods returns a boolean if a field has been set.
 func (o *Weapon) HasPods() bool {
-	if o != nil && o.Pods != nil {
+	if o != nil && !isNil(o.Pods) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *Weapon) SetPods(v int32) {
 
 // GetImageUrls returns the ImageUrls field value if set, zero value otherwise.
 func (o *Weapon) GetImageUrls() ImageUrls {
-	if o == nil || o.ImageUrls == nil {
+	if o == nil || isNil(o.ImageUrls) {
 		var ret ImageUrls
 		return ret
 	}
@@ -291,15 +291,15 @@ func (o *Weapon) GetImageUrls() ImageUrls {
 // GetImageUrlsOk returns a tuple with the ImageUrls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetImageUrlsOk() (*ImageUrls, bool) {
-	if o == nil || o.ImageUrls == nil {
-		return nil, false
+	if o == nil || isNil(o.ImageUrls) {
+    return nil, false
 	}
 	return o.ImageUrls, true
 }
 
 // HasImageUrls returns a boolean if a field has been set.
 func (o *Weapon) HasImageUrls() bool {
-	if o != nil && o.ImageUrls != nil {
+	if o != nil && !isNil(o.ImageUrls) {
 		return true
 	}
 
@@ -324,15 +324,15 @@ func (o *Weapon) GetEffects() []EffectsEntry {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Weapon) GetEffectsOk() ([]EffectsEntry, bool) {
-	if o == nil || o.Effects == nil {
-		return nil, false
+	if o == nil || isNil(o.Effects) {
+    return nil, false
 	}
 	return o.Effects, true
 }
 
 // HasEffects returns a boolean if a field has been set.
 func (o *Weapon) HasEffects() bool {
-	if o != nil && o.Effects != nil {
+	if o != nil && isNil(o.Effects) {
 		return true
 	}
 
@@ -357,15 +357,15 @@ func (o *Weapon) GetConditions() []ConditionEntry {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Weapon) GetConditionsOk() ([]ConditionEntry, bool) {
-	if o == nil || o.Conditions == nil {
-		return nil, false
+	if o == nil || isNil(o.Conditions) {
+    return nil, false
 	}
 	return o.Conditions, true
 }
 
 // HasConditions returns a boolean if a field has been set.
 func (o *Weapon) HasConditions() bool {
-	if o != nil && o.Conditions != nil {
+	if o != nil && isNil(o.Conditions) {
 		return true
 	}
 
@@ -379,7 +379,7 @@ func (o *Weapon) SetConditions(v []ConditionEntry) {
 
 // GetCriticalHitProbability returns the CriticalHitProbability field value if set, zero value otherwise.
 func (o *Weapon) GetCriticalHitProbability() int32 {
-	if o == nil || o.CriticalHitProbability == nil {
+	if o == nil || isNil(o.CriticalHitProbability) {
 		var ret int32
 		return ret
 	}
@@ -389,15 +389,15 @@ func (o *Weapon) GetCriticalHitProbability() int32 {
 // GetCriticalHitProbabilityOk returns a tuple with the CriticalHitProbability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetCriticalHitProbabilityOk() (*int32, bool) {
-	if o == nil || o.CriticalHitProbability == nil {
-		return nil, false
+	if o == nil || isNil(o.CriticalHitProbability) {
+    return nil, false
 	}
 	return o.CriticalHitProbability, true
 }
 
 // HasCriticalHitProbability returns a boolean if a field has been set.
 func (o *Weapon) HasCriticalHitProbability() bool {
-	if o != nil && o.CriticalHitProbability != nil {
+	if o != nil && !isNil(o.CriticalHitProbability) {
 		return true
 	}
 
@@ -411,7 +411,7 @@ func (o *Weapon) SetCriticalHitProbability(v int32) {
 
 // GetCriticalHitBonus returns the CriticalHitBonus field value if set, zero value otherwise.
 func (o *Weapon) GetCriticalHitBonus() int32 {
-	if o == nil || o.CriticalHitBonus == nil {
+	if o == nil || isNil(o.CriticalHitBonus) {
 		var ret int32
 		return ret
 	}
@@ -421,15 +421,15 @@ func (o *Weapon) GetCriticalHitBonus() int32 {
 // GetCriticalHitBonusOk returns a tuple with the CriticalHitBonus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetCriticalHitBonusOk() (*int32, bool) {
-	if o == nil || o.CriticalHitBonus == nil {
-		return nil, false
+	if o == nil || isNil(o.CriticalHitBonus) {
+    return nil, false
 	}
 	return o.CriticalHitBonus, true
 }
 
 // HasCriticalHitBonus returns a boolean if a field has been set.
 func (o *Weapon) HasCriticalHitBonus() bool {
-	if o != nil && o.CriticalHitBonus != nil {
+	if o != nil && !isNil(o.CriticalHitBonus) {
 		return true
 	}
 
@@ -443,7 +443,7 @@ func (o *Weapon) SetCriticalHitBonus(v int32) {
 
 // GetIsTwoHanded returns the IsTwoHanded field value if set, zero value otherwise.
 func (o *Weapon) GetIsTwoHanded() bool {
-	if o == nil || o.IsTwoHanded == nil {
+	if o == nil || isNil(o.IsTwoHanded) {
 		var ret bool
 		return ret
 	}
@@ -453,15 +453,15 @@ func (o *Weapon) GetIsTwoHanded() bool {
 // GetIsTwoHandedOk returns a tuple with the IsTwoHanded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetIsTwoHandedOk() (*bool, bool) {
-	if o == nil || o.IsTwoHanded == nil {
-		return nil, false
+	if o == nil || isNil(o.IsTwoHanded) {
+    return nil, false
 	}
 	return o.IsTwoHanded, true
 }
 
 // HasIsTwoHanded returns a boolean if a field has been set.
 func (o *Weapon) HasIsTwoHanded() bool {
-	if o != nil && o.IsTwoHanded != nil {
+	if o != nil && !isNil(o.IsTwoHanded) {
 		return true
 	}
 
@@ -475,7 +475,7 @@ func (o *Weapon) SetIsTwoHanded(v bool) {
 
 // GetMaxCastPerTurn returns the MaxCastPerTurn field value if set, zero value otherwise.
 func (o *Weapon) GetMaxCastPerTurn() int32 {
-	if o == nil || o.MaxCastPerTurn == nil {
+	if o == nil || isNil(o.MaxCastPerTurn) {
 		var ret int32
 		return ret
 	}
@@ -485,15 +485,15 @@ func (o *Weapon) GetMaxCastPerTurn() int32 {
 // GetMaxCastPerTurnOk returns a tuple with the MaxCastPerTurn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetMaxCastPerTurnOk() (*int32, bool) {
-	if o == nil || o.MaxCastPerTurn == nil {
-		return nil, false
+	if o == nil || isNil(o.MaxCastPerTurn) {
+    return nil, false
 	}
 	return o.MaxCastPerTurn, true
 }
 
 // HasMaxCastPerTurn returns a boolean if a field has been set.
 func (o *Weapon) HasMaxCastPerTurn() bool {
-	if o != nil && o.MaxCastPerTurn != nil {
+	if o != nil && !isNil(o.MaxCastPerTurn) {
 		return true
 	}
 
@@ -507,7 +507,7 @@ func (o *Weapon) SetMaxCastPerTurn(v int32) {
 
 // GetApCost returns the ApCost field value if set, zero value otherwise.
 func (o *Weapon) GetApCost() int32 {
-	if o == nil || o.ApCost == nil {
+	if o == nil || isNil(o.ApCost) {
 		var ret int32
 		return ret
 	}
@@ -517,15 +517,15 @@ func (o *Weapon) GetApCost() int32 {
 // GetApCostOk returns a tuple with the ApCost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetApCostOk() (*int32, bool) {
-	if o == nil || o.ApCost == nil {
-		return nil, false
+	if o == nil || isNil(o.ApCost) {
+    return nil, false
 	}
 	return o.ApCost, true
 }
 
 // HasApCost returns a boolean if a field has been set.
 func (o *Weapon) HasApCost() bool {
-	if o != nil && o.ApCost != nil {
+	if o != nil && !isNil(o.ApCost) {
 		return true
 	}
 
@@ -539,7 +539,7 @@ func (o *Weapon) SetApCost(v int32) {
 
 // GetRange returns the Range field value if set, zero value otherwise.
 func (o *Weapon) GetRange() WeaponRange {
-	if o == nil || o.Range == nil {
+	if o == nil || isNil(o.Range) {
 		var ret WeaponRange
 		return ret
 	}
@@ -549,15 +549,15 @@ func (o *Weapon) GetRange() WeaponRange {
 // GetRangeOk returns a tuple with the Range field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetRangeOk() (*WeaponRange, bool) {
-	if o == nil || o.Range == nil {
-		return nil, false
+	if o == nil || isNil(o.Range) {
+    return nil, false
 	}
 	return o.Range, true
 }
 
 // HasRange returns a boolean if a field has been set.
 func (o *Weapon) HasRange() bool {
-	if o != nil && o.Range != nil {
+	if o != nil && !isNil(o.Range) {
 		return true
 	}
 
@@ -582,15 +582,15 @@ func (o *Weapon) GetRecipe() []RecipeEntry {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Weapon) GetRecipeOk() ([]RecipeEntry, bool) {
-	if o == nil || o.Recipe == nil {
-		return nil, false
+	if o == nil || isNil(o.Recipe) {
+    return nil, false
 	}
 	return o.Recipe, true
 }
 
 // HasRecipe returns a boolean if a field has been set.
 func (o *Weapon) HasRecipe() bool {
-	if o != nil && o.Recipe != nil {
+	if o != nil && isNil(o.Recipe) {
 		return true
 	}
 
@@ -604,7 +604,7 @@ func (o *Weapon) SetRecipe(v []RecipeEntry) {
 
 // GetParentSet returns the ParentSet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Weapon) GetParentSet() EquipmentParentSet {
-	if o == nil || o.ParentSet.Get() == nil {
+	if o == nil || isNil(o.ParentSet.Get()) {
 		var ret EquipmentParentSet
 		return ret
 	}
@@ -616,7 +616,7 @@ func (o *Weapon) GetParentSet() EquipmentParentSet {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Weapon) GetParentSetOk() (*EquipmentParentSet, bool) {
 	if o == nil {
-		return nil, false
+    return nil, false
 	}
 	return o.ParentSet.Get(), o.ParentSet.IsSet()
 }
@@ -646,28 +646,28 @@ func (o *Weapon) UnsetParentSet() {
 
 func (o Weapon) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AnkamaId != nil {
+	if !isNil(o.AnkamaId) {
 		toSerialize["ankama_id"] = o.AnkamaId
 	}
-	if o.Name != nil {
+	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if o.Description != nil {
+	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if o.Type != nil {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if o.IsWeapon != nil {
+	if !isNil(o.IsWeapon) {
 		toSerialize["is_weapon"] = o.IsWeapon
 	}
-	if o.Level != nil {
+	if !isNil(o.Level) {
 		toSerialize["level"] = o.Level
 	}
-	if o.Pods != nil {
+	if !isNil(o.Pods) {
 		toSerialize["pods"] = o.Pods
 	}
-	if o.ImageUrls != nil {
+	if !isNil(o.ImageUrls) {
 		toSerialize["image_urls"] = o.ImageUrls
 	}
 	if o.Effects != nil {
@@ -676,22 +676,22 @@ func (o Weapon) MarshalJSON() ([]byte, error) {
 	if o.Conditions != nil {
 		toSerialize["conditions"] = o.Conditions
 	}
-	if o.CriticalHitProbability != nil {
+	if !isNil(o.CriticalHitProbability) {
 		toSerialize["critical_hit_probability"] = o.CriticalHitProbability
 	}
-	if o.CriticalHitBonus != nil {
+	if !isNil(o.CriticalHitBonus) {
 		toSerialize["critical_hit_bonus"] = o.CriticalHitBonus
 	}
-	if o.IsTwoHanded != nil {
+	if !isNil(o.IsTwoHanded) {
 		toSerialize["is_two_handed"] = o.IsTwoHanded
 	}
-	if o.MaxCastPerTurn != nil {
+	if !isNil(o.MaxCastPerTurn) {
 		toSerialize["max_cast_per_turn"] = o.MaxCastPerTurn
 	}
-	if o.ApCost != nil {
+	if !isNil(o.ApCost) {
 		toSerialize["ap_cost"] = o.ApCost
 	}
-	if o.Range != nil {
+	if !isNil(o.Range) {
 		toSerialize["range"] = o.Range
 	}
 	if o.Recipe != nil {

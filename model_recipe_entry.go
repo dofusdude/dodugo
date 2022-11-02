@@ -1,9 +1,9 @@
 /*
 Dofusdude
 
-# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina - [luwnarya.fr](https://luwnarya.fr)  I highly recommend using the SDKs for quick results. I use them myself for microservices for the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).  
+# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina - [luwnarya.fr](https://luwnarya.fr)  I highly recommend using the SDKs for quick results. I use them myself for microservices for the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).  
 
-API version: 0.6.0
+API version: 0.7.0
 Contact: stelzo@steado.de
 */
 
@@ -41,7 +41,7 @@ func NewRecipeEntryWithDefaults() *RecipeEntry {
 
 // GetItemAnkamaId returns the ItemAnkamaId field value if set, zero value otherwise.
 func (o *RecipeEntry) GetItemAnkamaId() int32 {
-	if o == nil || o.ItemAnkamaId == nil {
+	if o == nil || isNil(o.ItemAnkamaId) {
 		var ret int32
 		return ret
 	}
@@ -51,15 +51,15 @@ func (o *RecipeEntry) GetItemAnkamaId() int32 {
 // GetItemAnkamaIdOk returns a tuple with the ItemAnkamaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecipeEntry) GetItemAnkamaIdOk() (*int32, bool) {
-	if o == nil || o.ItemAnkamaId == nil {
-		return nil, false
+	if o == nil || isNil(o.ItemAnkamaId) {
+    return nil, false
 	}
 	return o.ItemAnkamaId, true
 }
 
 // HasItemAnkamaId returns a boolean if a field has been set.
 func (o *RecipeEntry) HasItemAnkamaId() bool {
-	if o != nil && o.ItemAnkamaId != nil {
+	if o != nil && !isNil(o.ItemAnkamaId) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *RecipeEntry) SetItemAnkamaId(v int32) {
 
 // GetItemSubtype returns the ItemSubtype field value if set, zero value otherwise.
 func (o *RecipeEntry) GetItemSubtype() string {
-	if o == nil || o.ItemSubtype == nil {
+	if o == nil || isNil(o.ItemSubtype) {
 		var ret string
 		return ret
 	}
@@ -83,15 +83,15 @@ func (o *RecipeEntry) GetItemSubtype() string {
 // GetItemSubtypeOk returns a tuple with the ItemSubtype field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecipeEntry) GetItemSubtypeOk() (*string, bool) {
-	if o == nil || o.ItemSubtype == nil {
-		return nil, false
+	if o == nil || isNil(o.ItemSubtype) {
+    return nil, false
 	}
 	return o.ItemSubtype, true
 }
 
 // HasItemSubtype returns a boolean if a field has been set.
 func (o *RecipeEntry) HasItemSubtype() bool {
-	if o != nil && o.ItemSubtype != nil {
+	if o != nil && !isNil(o.ItemSubtype) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *RecipeEntry) SetItemSubtype(v string) {
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise.
 func (o *RecipeEntry) GetQuantity() int32 {
-	if o == nil || o.Quantity == nil {
+	if o == nil || isNil(o.Quantity) {
 		var ret int32
 		return ret
 	}
@@ -115,15 +115,15 @@ func (o *RecipeEntry) GetQuantity() int32 {
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecipeEntry) GetQuantityOk() (*int32, bool) {
-	if o == nil || o.Quantity == nil {
-		return nil, false
+	if o == nil || isNil(o.Quantity) {
+    return nil, false
 	}
 	return o.Quantity, true
 }
 
 // HasQuantity returns a boolean if a field has been set.
 func (o *RecipeEntry) HasQuantity() bool {
-	if o != nil && o.Quantity != nil {
+	if o != nil && !isNil(o.Quantity) {
 		return true
 	}
 
@@ -137,13 +137,13 @@ func (o *RecipeEntry) SetQuantity(v int32) {
 
 func (o RecipeEntry) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ItemAnkamaId != nil {
+	if !isNil(o.ItemAnkamaId) {
 		toSerialize["item_ankama_id"] = o.ItemAnkamaId
 	}
-	if o.ItemSubtype != nil {
+	if !isNil(o.ItemSubtype) {
 		toSerialize["item_subtype"] = o.ItemSubtype
 	}
-	if o.Quantity != nil {
+	if !isNil(o.Quantity) {
 		toSerialize["quantity"] = o.Quantity
 	}
 	return json.Marshal(toSerialize)

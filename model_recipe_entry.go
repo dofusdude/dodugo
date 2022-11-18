@@ -52,7 +52,7 @@ func (o *RecipeEntry) GetItemAnkamaId() int32 {
 // and a boolean to check if the value has been set.
 func (o *RecipeEntry) GetItemAnkamaIdOk() (*int32, bool) {
 	if o == nil || isNil(o.ItemAnkamaId) {
-    return nil, false
+		return nil, false
 	}
 	return o.ItemAnkamaId, true
 }
@@ -84,7 +84,7 @@ func (o *RecipeEntry) GetItemSubtype() string {
 // and a boolean to check if the value has been set.
 func (o *RecipeEntry) GetItemSubtypeOk() (*string, bool) {
 	if o == nil || isNil(o.ItemSubtype) {
-    return nil, false
+		return nil, false
 	}
 	return o.ItemSubtype, true
 }
@@ -116,7 +116,7 @@ func (o *RecipeEntry) GetQuantity() int32 {
 // and a boolean to check if the value has been set.
 func (o *RecipeEntry) GetQuantityOk() (*int32, bool) {
 	if o == nil || isNil(o.Quantity) {
-    return nil, false
+		return nil, false
 	}
 	return o.Quantity, true
 }

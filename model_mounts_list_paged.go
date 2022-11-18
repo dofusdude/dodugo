@@ -51,7 +51,7 @@ func (o *MountsListPaged) GetLinks() LinksPaged {
 // and a boolean to check if the value has been set.
 func (o *MountsListPaged) GetLinksOk() (*LinksPaged, bool) {
 	if o == nil || isNil(o.Links) {
-    return nil, false
+		return nil, false
 	}
 	return o.Links, true
 }
@@ -83,7 +83,7 @@ func (o *MountsListPaged) GetItems() []MountListEntry {
 // and a boolean to check if the value has been set.
 func (o *MountsListPaged) GetItemsOk() ([]MountListEntry, bool) {
 	if o == nil || isNil(o.Items) {
-    return nil, false
+		return nil, false
 	}
 	return o.Items, true
 }

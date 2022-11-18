@@ -51,7 +51,7 @@ func (o *GetMetaAlmanaxBonuses200ResponseInner) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *GetMetaAlmanaxBonuses200ResponseInner) GetIdOk() (*string, bool) {
 	if o == nil || isNil(o.Id) {
-    return nil, false
+		return nil, false
 	}
 	return o.Id, true
 }
@@ -83,7 +83,7 @@ func (o *GetMetaAlmanaxBonuses200ResponseInner) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *GetMetaAlmanaxBonuses200ResponseInner) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }

@@ -57,7 +57,7 @@ func (o *ImageUrls) GetIcon() string {
 // and a boolean to check if the value has been set.
 func (o *ImageUrls) GetIconOk() (*string, bool) {
 	if o == nil || isNil(o.Icon) {
-    return nil, false
+		return nil, false
 	}
 	return o.Icon, true
 }
@@ -90,7 +90,7 @@ func (o *ImageUrls) GetSd() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImageUrls) GetSdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Sd.Get(), o.Sd.IsSet()
 }
@@ -132,7 +132,7 @@ func (o *ImageUrls) GetHq() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImageUrls) GetHqOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Hq.Get(), o.Hq.IsSet()
 }
@@ -174,7 +174,7 @@ func (o *ImageUrls) GetHd() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImageUrls) GetHdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Hd.Get(), o.Hd.IsSet()
 }

@@ -54,7 +54,7 @@ func (o *LinksPaged) GetFirst() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LinksPaged) GetFirstOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.First.Get(), o.First.IsSet()
 }
@@ -96,7 +96,7 @@ func (o *LinksPaged) GetPrev() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LinksPaged) GetPrevOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Prev.Get(), o.Prev.IsSet()
 }
@@ -138,7 +138,7 @@ func (o *LinksPaged) GetNext() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LinksPaged) GetNextOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Next.Get(), o.Next.IsSet()
 }
@@ -180,7 +180,7 @@ func (o *LinksPaged) GetLast() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LinksPaged) GetLastOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Last.Get(), o.Last.IsSet()
 }

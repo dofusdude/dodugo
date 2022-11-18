@@ -62,7 +62,7 @@ func (o *CreateAlmanaxWebhookDailySettings) GetTimezone() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateAlmanaxWebhookDailySettings) GetTimezoneOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Timezone.Get(), o.Timezone.IsSet()
 }
@@ -104,7 +104,7 @@ func (o *CreateAlmanaxWebhookDailySettings) GetMidnightOffset() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateAlmanaxWebhookDailySettings) GetMidnightOffsetOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MidnightOffset.Get(), o.MidnightOffset.IsSet()
 }

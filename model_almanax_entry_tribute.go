@@ -51,7 +51,7 @@ func (o *AlmanaxEntryTribute) GetItem() AlmanaxEntryTributeItem {
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntryTribute) GetItemOk() (*AlmanaxEntryTributeItem, bool) {
 	if o == nil || isNil(o.Item) {
-    return nil, false
+		return nil, false
 	}
 	return o.Item, true
 }
@@ -83,7 +83,7 @@ func (o *AlmanaxEntryTribute) GetQuantity() int32 {
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntryTribute) GetQuantityOk() (*int32, bool) {
 	if o == nil || isNil(o.Quantity) {
-    return nil, false
+		return nil, false
 	}
 	return o.Quantity, true
 }

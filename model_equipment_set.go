@@ -54,7 +54,7 @@ func (o *EquipmentSet) GetAnkamaId() int32 {
 // and a boolean to check if the value has been set.
 func (o *EquipmentSet) GetAnkamaIdOk() (*int32, bool) {
 	if o == nil || isNil(o.AnkamaId) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnkamaId, true
 }
@@ -86,7 +86,7 @@ func (o *EquipmentSet) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *EquipmentSet) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -118,7 +118,7 @@ func (o *EquipmentSet) GetEquipmentIds() []int32 {
 // and a boolean to check if the value has been set.
 func (o *EquipmentSet) GetEquipmentIdsOk() ([]int32, bool) {
 	if o == nil || isNil(o.EquipmentIds) {
-    return nil, false
+		return nil, false
 	}
 	return o.EquipmentIds, true
 }
@@ -151,7 +151,7 @@ func (o *EquipmentSet) GetEffects() [][]EffectsEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EquipmentSet) GetEffectsOk() ([][]EffectsEntry, bool) {
 	if o == nil || isNil(o.Effects) {
-    return nil, false
+		return nil, false
 	}
 	return o.Effects, true
 }
@@ -183,7 +183,7 @@ func (o *EquipmentSet) GetLevel() int32 {
 // and a boolean to check if the value has been set.
 func (o *EquipmentSet) GetLevelOk() (*int32, bool) {
 	if o == nil || isNil(o.Level) {
-    return nil, false
+		return nil, false
 	}
 	return o.Level, true
 }

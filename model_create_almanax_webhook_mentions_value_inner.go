@@ -55,7 +55,7 @@ func (o *CreateAlmanaxWebhookMentionsValueInner) GetDiscordId() int32 {
 // and a boolean to check if the value has been set.
 func (o *CreateAlmanaxWebhookMentionsValueInner) GetDiscordIdOk() (*int32, bool) {
 	if o == nil || isNil(o.DiscordId) {
-    return nil, false
+		return nil, false
 	}
 	return o.DiscordId, true
 }
@@ -87,7 +87,7 @@ func (o *CreateAlmanaxWebhookMentionsValueInner) GetIsRole() bool {
 // and a boolean to check if the value has been set.
 func (o *CreateAlmanaxWebhookMentionsValueInner) GetIsRoleOk() (*bool, bool) {
 	if o == nil || isNil(o.IsRole) {
-    return nil, false
+		return nil, false
 	}
 	return o.IsRole, true
 }
@@ -120,7 +120,7 @@ func (o *CreateAlmanaxWebhookMentionsValueInner) GetPingDaysBefore() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateAlmanaxWebhookMentionsValueInner) GetPingDaysBeforeOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PingDaysBefore.Get(), o.PingDaysBefore.IsSet()
 }

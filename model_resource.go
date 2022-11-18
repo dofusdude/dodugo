@@ -59,7 +59,7 @@ func (o *Resource) GetAnkamaId() int32 {
 // and a boolean to check if the value has been set.
 func (o *Resource) GetAnkamaIdOk() (*int32, bool) {
 	if o == nil || isNil(o.AnkamaId) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnkamaId, true
 }
@@ -91,7 +91,7 @@ func (o *Resource) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *Resource) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -123,7 +123,7 @@ func (o *Resource) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *Resource) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -155,7 +155,7 @@ func (o *Resource) GetType() ItemsListEntryTypedType {
 // and a boolean to check if the value has been set.
 func (o *Resource) GetTypeOk() (*ItemsListEntryTypedType, bool) {
 	if o == nil || isNil(o.Type) {
-    return nil, false
+		return nil, false
 	}
 	return o.Type, true
 }
@@ -187,7 +187,7 @@ func (o *Resource) GetLevel() int32 {
 // and a boolean to check if the value has been set.
 func (o *Resource) GetLevelOk() (*int32, bool) {
 	if o == nil || isNil(o.Level) {
-    return nil, false
+		return nil, false
 	}
 	return o.Level, true
 }
@@ -219,7 +219,7 @@ func (o *Resource) GetPods() int32 {
 // and a boolean to check if the value has been set.
 func (o *Resource) GetPodsOk() (*int32, bool) {
 	if o == nil || isNil(o.Pods) {
-    return nil, false
+		return nil, false
 	}
 	return o.Pods, true
 }
@@ -251,7 +251,7 @@ func (o *Resource) GetImageUrls() ImageUrls {
 // and a boolean to check if the value has been set.
 func (o *Resource) GetImageUrlsOk() (*ImageUrls, bool) {
 	if o == nil || isNil(o.ImageUrls) {
-    return nil, false
+		return nil, false
 	}
 	return o.ImageUrls, true
 }
@@ -284,7 +284,7 @@ func (o *Resource) GetEffects() []EffectsEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Resource) GetEffectsOk() ([]EffectsEntry, bool) {
 	if o == nil || isNil(o.Effects) {
-    return nil, false
+		return nil, false
 	}
 	return o.Effects, true
 }
@@ -317,7 +317,7 @@ func (o *Resource) GetConditions() []ConditionEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Resource) GetConditionsOk() ([]ConditionEntry, bool) {
 	if o == nil || isNil(o.Conditions) {
-    return nil, false
+		return nil, false
 	}
 	return o.Conditions, true
 }
@@ -350,7 +350,7 @@ func (o *Resource) GetRecipe() []RecipeEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Resource) GetRecipeOk() ([]RecipeEntry, bool) {
 	if o == nil || isNil(o.Recipe) {
-    return nil, false
+		return nil, false
 	}
 	return o.Recipe, true
 }

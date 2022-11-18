@@ -68,7 +68,7 @@ func (o *Weapon) GetAnkamaId() int32 {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetAnkamaIdOk() (*int32, bool) {
 	if o == nil || isNil(o.AnkamaId) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnkamaId, true
 }
@@ -100,7 +100,7 @@ func (o *Weapon) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -132,7 +132,7 @@ func (o *Weapon) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -164,7 +164,7 @@ func (o *Weapon) GetType() ItemsListEntryTypedType {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetTypeOk() (*ItemsListEntryTypedType, bool) {
 	if o == nil || isNil(o.Type) {
-    return nil, false
+		return nil, false
 	}
 	return o.Type, true
 }
@@ -196,7 +196,7 @@ func (o *Weapon) GetIsWeapon() bool {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetIsWeaponOk() (*bool, bool) {
 	if o == nil || isNil(o.IsWeapon) {
-    return nil, false
+		return nil, false
 	}
 	return o.IsWeapon, true
 }
@@ -228,7 +228,7 @@ func (o *Weapon) GetLevel() int32 {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetLevelOk() (*int32, bool) {
 	if o == nil || isNil(o.Level) {
-    return nil, false
+		return nil, false
 	}
 	return o.Level, true
 }
@@ -260,7 +260,7 @@ func (o *Weapon) GetPods() int32 {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetPodsOk() (*int32, bool) {
 	if o == nil || isNil(o.Pods) {
-    return nil, false
+		return nil, false
 	}
 	return o.Pods, true
 }
@@ -292,7 +292,7 @@ func (o *Weapon) GetImageUrls() ImageUrls {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetImageUrlsOk() (*ImageUrls, bool) {
 	if o == nil || isNil(o.ImageUrls) {
-    return nil, false
+		return nil, false
 	}
 	return o.ImageUrls, true
 }
@@ -325,7 +325,7 @@ func (o *Weapon) GetEffects() []EffectsEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Weapon) GetEffectsOk() ([]EffectsEntry, bool) {
 	if o == nil || isNil(o.Effects) {
-    return nil, false
+		return nil, false
 	}
 	return o.Effects, true
 }
@@ -358,7 +358,7 @@ func (o *Weapon) GetConditions() []ConditionEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Weapon) GetConditionsOk() ([]ConditionEntry, bool) {
 	if o == nil || isNil(o.Conditions) {
-    return nil, false
+		return nil, false
 	}
 	return o.Conditions, true
 }
@@ -390,7 +390,7 @@ func (o *Weapon) GetCriticalHitProbability() int32 {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetCriticalHitProbabilityOk() (*int32, bool) {
 	if o == nil || isNil(o.CriticalHitProbability) {
-    return nil, false
+		return nil, false
 	}
 	return o.CriticalHitProbability, true
 }
@@ -422,7 +422,7 @@ func (o *Weapon) GetCriticalHitBonus() int32 {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetCriticalHitBonusOk() (*int32, bool) {
 	if o == nil || isNil(o.CriticalHitBonus) {
-    return nil, false
+		return nil, false
 	}
 	return o.CriticalHitBonus, true
 }
@@ -454,7 +454,7 @@ func (o *Weapon) GetIsTwoHanded() bool {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetIsTwoHandedOk() (*bool, bool) {
 	if o == nil || isNil(o.IsTwoHanded) {
-    return nil, false
+		return nil, false
 	}
 	return o.IsTwoHanded, true
 }
@@ -486,7 +486,7 @@ func (o *Weapon) GetMaxCastPerTurn() int32 {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetMaxCastPerTurnOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxCastPerTurn) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxCastPerTurn, true
 }
@@ -518,7 +518,7 @@ func (o *Weapon) GetApCost() int32 {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetApCostOk() (*int32, bool) {
 	if o == nil || isNil(o.ApCost) {
-    return nil, false
+		return nil, false
 	}
 	return o.ApCost, true
 }
@@ -550,7 +550,7 @@ func (o *Weapon) GetRange() WeaponRange {
 // and a boolean to check if the value has been set.
 func (o *Weapon) GetRangeOk() (*WeaponRange, bool) {
 	if o == nil || isNil(o.Range) {
-    return nil, false
+		return nil, false
 	}
 	return o.Range, true
 }
@@ -583,7 +583,7 @@ func (o *Weapon) GetRecipe() []RecipeEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Weapon) GetRecipeOk() ([]RecipeEntry, bool) {
 	if o == nil || isNil(o.Recipe) {
-    return nil, false
+		return nil, false
 	}
 	return o.Recipe, true
 }
@@ -616,7 +616,7 @@ func (o *Weapon) GetParentSet() EquipmentParentSet {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Weapon) GetParentSetOk() (*EquipmentParentSet, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ParentSet.Get(), o.ParentSet.IsSet()
 }

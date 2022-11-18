@@ -10,77 +10,77 @@ Testing CosmeticsApiService
 package dodugo
 
 import (
-    "context"
-    "github.com/stretchr/testify/assert"
-    "github.com/stretchr/testify/require"
-    "testing"
-    openapiclient "./openapi"
+	"context"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+	"testing"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func Test_dodugo_CosmeticsApiService(t *testing.T) {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 
-    t.Run("Test CosmeticsApiService GetAllCosmeticsList", func(t *testing.T) {
+	t.Run("Test CosmeticsApiService GetAllCosmeticsList", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var language string
-        var game string
+		var language string
+		var game string
 
-        resp, httpRes, err := apiClient.CosmeticsApi.GetAllCosmeticsList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.CosmeticsApi.GetAllCosmeticsList(context.Background(), language, game).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test CosmeticsApiService GetCosmeticsList", func(t *testing.T) {
+	t.Run("Test CosmeticsApiService GetCosmeticsList", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var language string
-        var game string
+		var language string
+		var game string
 
-        resp, httpRes, err := apiClient.CosmeticsApi.GetCosmeticsList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.CosmeticsApi.GetCosmeticsList(context.Background(), language, game).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test CosmeticsApiService GetCosmeticsSearch", func(t *testing.T) {
+	t.Run("Test CosmeticsApiService GetCosmeticsSearch", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var language string
-        var game string
+		var language string
+		var game string
 
-        resp, httpRes, err := apiClient.CosmeticsApi.GetCosmeticsSearch(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.CosmeticsApi.GetCosmeticsSearch(context.Background(), language, game).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test CosmeticsApiService GetCosmeticsSingle", func(t *testing.T) {
+	t.Run("Test CosmeticsApiService GetCosmeticsSingle", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var language string
-        var ankamaId int32
-        var game string
+		var language string
+		var ankamaId int32
+		var game string
 
-        resp, httpRes, err := apiClient.CosmeticsApi.GetCosmeticsSingle(context.Background(), language, ankamaId, game).Execute()
+		resp, httpRes, err := apiClient.CosmeticsApi.GetCosmeticsSingle(context.Background(), language, ankamaId, game).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
 }

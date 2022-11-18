@@ -54,7 +54,7 @@ func (o *SetListEntry) GetAnkamaId() int32 {
 // and a boolean to check if the value has been set.
 func (o *SetListEntry) GetAnkamaIdOk() (*int32, bool) {
 	if o == nil || isNil(o.AnkamaId) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnkamaId, true
 }
@@ -86,7 +86,7 @@ func (o *SetListEntry) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *SetListEntry) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -118,7 +118,7 @@ func (o *SetListEntry) GetItems() int32 {
 // and a boolean to check if the value has been set.
 func (o *SetListEntry) GetItemsOk() (*int32, bool) {
 	if o == nil || isNil(o.Items) {
-    return nil, false
+		return nil, false
 	}
 	return o.Items, true
 }
@@ -150,7 +150,7 @@ func (o *SetListEntry) GetLevel() int32 {
 // and a boolean to check if the value has been set.
 func (o *SetListEntry) GetLevelOk() (*int32, bool) {
 	if o == nil || isNil(o.Level) {
-    return nil, false
+		return nil, false
 	}
 	return o.Level, true
 }

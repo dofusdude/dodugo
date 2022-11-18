@@ -61,7 +61,7 @@ func (o *AlmanaxWebhookDailySettings) GetTimezone() string {
 // and a boolean to check if the value has been set.
 func (o *AlmanaxWebhookDailySettings) GetTimezoneOk() (*string, bool) {
 	if o == nil || isNil(o.Timezone) {
-    return nil, false
+		return nil, false
 	}
 	return o.Timezone, true
 }
@@ -93,7 +93,7 @@ func (o *AlmanaxWebhookDailySettings) GetMidnightOffset() int32 {
 // and a boolean to check if the value has been set.
 func (o *AlmanaxWebhookDailySettings) GetMidnightOffsetOk() (*int32, bool) {
 	if o == nil || isNil(o.MidnightOffset) {
-    return nil, false
+		return nil, false
 	}
 	return o.MidnightOffset, true
 }

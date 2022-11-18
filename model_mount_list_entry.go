@@ -53,7 +53,7 @@ func (o *MountListEntry) GetAnkamaId() int32 {
 // and a boolean to check if the value has been set.
 func (o *MountListEntry) GetAnkamaIdOk() (*int32, bool) {
 	if o == nil || isNil(o.AnkamaId) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnkamaId, true
 }
@@ -85,7 +85,7 @@ func (o *MountListEntry) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *MountListEntry) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -117,7 +117,7 @@ func (o *MountListEntry) GetFamilyName() string {
 // and a boolean to check if the value has been set.
 func (o *MountListEntry) GetFamilyNameOk() (*string, bool) {
 	if o == nil || isNil(o.FamilyName) {
-    return nil, false
+		return nil, false
 	}
 	return o.FamilyName, true
 }
@@ -149,7 +149,7 @@ func (o *MountListEntry) GetImageUrls() ImageUrls {
 // and a boolean to check if the value has been set.
 func (o *MountListEntry) GetImageUrlsOk() (*ImageUrls, bool) {
 	if o == nil || isNil(o.ImageUrls) {
-    return nil, false
+		return nil, false
 	}
 	return o.ImageUrls, true
 }

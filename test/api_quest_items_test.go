@@ -10,77 +10,77 @@ Testing QuestItemsApiService
 package dodugo
 
 import (
-    "context"
-    "github.com/stretchr/testify/assert"
-    "github.com/stretchr/testify/require"
-    "testing"
-    openapiclient "./openapi"
+	"context"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+	"testing"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func Test_dodugo_QuestItemsApiService(t *testing.T) {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 
-    t.Run("Test QuestItemsApiService GetAllItemsQuestList", func(t *testing.T) {
+	t.Run("Test QuestItemsApiService GetAllItemsQuestList", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var language string
-        var game string
+		var language string
+		var game string
 
-        resp, httpRes, err := apiClient.QuestItemsApi.GetAllItemsQuestList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.QuestItemsApi.GetAllItemsQuestList(context.Background(), language, game).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test QuestItemsApiService GetItemQuestSingle", func(t *testing.T) {
+	t.Run("Test QuestItemsApiService GetItemQuestSingle", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var language string
-        var ankamaId int32
-        var game string
+		var language string
+		var ankamaId int32
+		var game string
 
-        resp, httpRes, err := apiClient.QuestItemsApi.GetItemQuestSingle(context.Background(), language, ankamaId, game).Execute()
+		resp, httpRes, err := apiClient.QuestItemsApi.GetItemQuestSingle(context.Background(), language, ankamaId, game).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test QuestItemsApiService GetItemsQuestList", func(t *testing.T) {
+	t.Run("Test QuestItemsApiService GetItemsQuestList", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var language string
-        var game string
+		var language string
+		var game string
 
-        resp, httpRes, err := apiClient.QuestItemsApi.GetItemsQuestList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.QuestItemsApi.GetItemsQuestList(context.Background(), language, game).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test QuestItemsApiService GetItemsQuestSearch", func(t *testing.T) {
+	t.Run("Test QuestItemsApiService GetItemsQuestSearch", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var language string
-        var game string
+		var language string
+		var game string
 
-        resp, httpRes, err := apiClient.QuestItemsApi.GetItemsQuestSearch(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.QuestItemsApi.GetItemsQuestSearch(context.Background(), language, game).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
 }

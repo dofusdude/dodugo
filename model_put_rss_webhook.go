@@ -55,7 +55,7 @@ func (o *PutRSSWebhook) GetWhitelist() []string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PutRSSWebhook) GetWhitelistOk() ([]string, bool) {
 	if o == nil || isNil(o.Whitelist) {
-    return nil, false
+		return nil, false
 	}
 	return o.Whitelist, true
 }
@@ -88,7 +88,7 @@ func (o *PutRSSWebhook) GetBlacklist() []string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PutRSSWebhook) GetBlacklistOk() ([]string, bool) {
 	if o == nil || isNil(o.Blacklist) {
-    return nil, false
+		return nil, false
 	}
 	return o.Blacklist, true
 }
@@ -121,7 +121,7 @@ func (o *PutRSSWebhook) GetSubscriptions() []string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PutRSSWebhook) GetSubscriptionsOk() ([]string, bool) {
 	if o == nil || isNil(o.Subscriptions) {
-    return nil, false
+		return nil, false
 	}
 	return o.Subscriptions, true
 }
@@ -154,7 +154,7 @@ func (o *PutRSSWebhook) GetPreviewLength() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PutRSSWebhook) GetPreviewLengthOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PreviewLength.Get(), o.PreviewLength.IsSet()
 }

@@ -60,7 +60,7 @@ func (o *EffectsEntry) GetIntMinimum() int32 {
 // and a boolean to check if the value has been set.
 func (o *EffectsEntry) GetIntMinimumOk() (*int32, bool) {
 	if o == nil || isNil(o.IntMinimum) {
-    return nil, false
+		return nil, false
 	}
 	return o.IntMinimum, true
 }
@@ -92,7 +92,7 @@ func (o *EffectsEntry) GetIntMaximum() int32 {
 // and a boolean to check if the value has been set.
 func (o *EffectsEntry) GetIntMaximumOk() (*int32, bool) {
 	if o == nil || isNil(o.IntMaximum) {
-    return nil, false
+		return nil, false
 	}
 	return o.IntMaximum, true
 }
@@ -124,7 +124,7 @@ func (o *EffectsEntry) GetType() EffectsEntryType {
 // and a boolean to check if the value has been set.
 func (o *EffectsEntry) GetTypeOk() (*EffectsEntryType, bool) {
 	if o == nil || isNil(o.Type) {
-    return nil, false
+		return nil, false
 	}
 	return o.Type, true
 }
@@ -156,7 +156,7 @@ func (o *EffectsEntry) GetIgnoreIntMin() bool {
 // and a boolean to check if the value has been set.
 func (o *EffectsEntry) GetIgnoreIntMinOk() (*bool, bool) {
 	if o == nil || isNil(o.IgnoreIntMin) {
-    return nil, false
+		return nil, false
 	}
 	return o.IgnoreIntMin, true
 }
@@ -188,7 +188,7 @@ func (o *EffectsEntry) GetIgnoreIntMax() bool {
 // and a boolean to check if the value has been set.
 func (o *EffectsEntry) GetIgnoreIntMaxOk() (*bool, bool) {
 	if o == nil || isNil(o.IgnoreIntMax) {
-    return nil, false
+		return nil, false
 	}
 	return o.IgnoreIntMax, true
 }
@@ -220,7 +220,7 @@ func (o *EffectsEntry) GetFormatted() string {
 // and a boolean to check if the value has been set.
 func (o *EffectsEntry) GetFormattedOk() (*string, bool) {
 	if o == nil || isNil(o.Formatted) {
-    return nil, false
+		return nil, false
 	}
 	return o.Formatted, true
 }

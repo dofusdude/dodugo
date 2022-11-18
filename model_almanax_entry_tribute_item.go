@@ -53,7 +53,7 @@ func (o *AlmanaxEntryTributeItem) GetAnkamaId() int32 {
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntryTributeItem) GetAnkamaIdOk() (*int32, bool) {
 	if o == nil || isNil(o.AnkamaId) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnkamaId, true
 }
@@ -85,7 +85,7 @@ func (o *AlmanaxEntryTributeItem) GetImageUrls() ImageUrls {
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntryTributeItem) GetImageUrlsOk() (*ImageUrls, bool) {
 	if o == nil || isNil(o.ImageUrls) {
-    return nil, false
+		return nil, false
 	}
 	return o.ImageUrls, true
 }
@@ -117,7 +117,7 @@ func (o *AlmanaxEntryTributeItem) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntryTributeItem) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -149,7 +149,7 @@ func (o *AlmanaxEntryTributeItem) GetSubtype() string {
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntryTributeItem) GetSubtypeOk() (*string, bool) {
 	if o == nil || isNil(o.Subtype) {
-    return nil, false
+		return nil, false
 	}
 	return o.Subtype, true
 }

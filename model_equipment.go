@@ -61,7 +61,7 @@ func (o *Equipment) GetAnkamaId() int32 {
 // and a boolean to check if the value has been set.
 func (o *Equipment) GetAnkamaIdOk() (*int32, bool) {
 	if o == nil || isNil(o.AnkamaId) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnkamaId, true
 }
@@ -93,7 +93,7 @@ func (o *Equipment) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *Equipment) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -125,7 +125,7 @@ func (o *Equipment) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *Equipment) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -157,7 +157,7 @@ func (o *Equipment) GetType() ItemsListEntryTypedType {
 // and a boolean to check if the value has been set.
 func (o *Equipment) GetTypeOk() (*ItemsListEntryTypedType, bool) {
 	if o == nil || isNil(o.Type) {
-    return nil, false
+		return nil, false
 	}
 	return o.Type, true
 }
@@ -189,7 +189,7 @@ func (o *Equipment) GetIsWeapon() bool {
 // and a boolean to check if the value has been set.
 func (o *Equipment) GetIsWeaponOk() (*bool, bool) {
 	if o == nil || isNil(o.IsWeapon) {
-    return nil, false
+		return nil, false
 	}
 	return o.IsWeapon, true
 }
@@ -221,7 +221,7 @@ func (o *Equipment) GetLevel() int32 {
 // and a boolean to check if the value has been set.
 func (o *Equipment) GetLevelOk() (*int32, bool) {
 	if o == nil || isNil(o.Level) {
-    return nil, false
+		return nil, false
 	}
 	return o.Level, true
 }
@@ -253,7 +253,7 @@ func (o *Equipment) GetPods() int32 {
 // and a boolean to check if the value has been set.
 func (o *Equipment) GetPodsOk() (*int32, bool) {
 	if o == nil || isNil(o.Pods) {
-    return nil, false
+		return nil, false
 	}
 	return o.Pods, true
 }
@@ -285,7 +285,7 @@ func (o *Equipment) GetImageUrls() ImageUrls {
 // and a boolean to check if the value has been set.
 func (o *Equipment) GetImageUrlsOk() (*ImageUrls, bool) {
 	if o == nil || isNil(o.ImageUrls) {
-    return nil, false
+		return nil, false
 	}
 	return o.ImageUrls, true
 }
@@ -318,7 +318,7 @@ func (o *Equipment) GetEffects() []EffectsEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Equipment) GetEffectsOk() ([]EffectsEntry, bool) {
 	if o == nil || isNil(o.Effects) {
-    return nil, false
+		return nil, false
 	}
 	return o.Effects, true
 }
@@ -351,7 +351,7 @@ func (o *Equipment) GetConditions() []ConditionEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Equipment) GetConditionsOk() ([]ConditionEntry, bool) {
 	if o == nil || isNil(o.Conditions) {
-    return nil, false
+		return nil, false
 	}
 	return o.Conditions, true
 }
@@ -384,7 +384,7 @@ func (o *Equipment) GetRecipe() []RecipeEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Equipment) GetRecipeOk() ([]RecipeEntry, bool) {
 	if o == nil || isNil(o.Recipe) {
-    return nil, false
+		return nil, false
 	}
 	return o.Recipe, true
 }
@@ -417,7 +417,7 @@ func (o *Equipment) GetParentSet() EquipmentParentSet {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Equipment) GetParentSetOk() (*EquipmentParentSet, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ParentSet.Get(), o.ParentSet.IsSet()
 }

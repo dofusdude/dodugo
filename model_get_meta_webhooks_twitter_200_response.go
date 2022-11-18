@@ -50,7 +50,7 @@ func (o *GetMetaWebhooksTwitter200Response) GetSubscriptions() []string {
 // and a boolean to check if the value has been set.
 func (o *GetMetaWebhooksTwitter200Response) GetSubscriptionsOk() ([]string, bool) {
 	if o == nil || isNil(o.Subscriptions) {
-    return nil, false
+		return nil, false
 	}
 	return o.Subscriptions, true
 }

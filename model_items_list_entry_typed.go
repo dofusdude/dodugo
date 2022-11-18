@@ -56,7 +56,7 @@ func (o *ItemsListEntryTyped) GetAnkamaId() int32 {
 // and a boolean to check if the value has been set.
 func (o *ItemsListEntryTyped) GetAnkamaIdOk() (*int32, bool) {
 	if o == nil || isNil(o.AnkamaId) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnkamaId, true
 }
@@ -88,7 +88,7 @@ func (o *ItemsListEntryTyped) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *ItemsListEntryTyped) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -120,7 +120,7 @@ func (o *ItemsListEntryTyped) GetType() ItemsListEntryTypedType {
 // and a boolean to check if the value has been set.
 func (o *ItemsListEntryTyped) GetTypeOk() (*ItemsListEntryTypedType, bool) {
 	if o == nil || isNil(o.Type) {
-    return nil, false
+		return nil, false
 	}
 	return o.Type, true
 }
@@ -152,7 +152,7 @@ func (o *ItemsListEntryTyped) GetItemSubtype() string {
 // and a boolean to check if the value has been set.
 func (o *ItemsListEntryTyped) GetItemSubtypeOk() (*string, bool) {
 	if o == nil || isNil(o.ItemSubtype) {
-    return nil, false
+		return nil, false
 	}
 	return o.ItemSubtype, true
 }
@@ -184,7 +184,7 @@ func (o *ItemsListEntryTyped) GetLevel() int32 {
 // and a boolean to check if the value has been set.
 func (o *ItemsListEntryTyped) GetLevelOk() (*int32, bool) {
 	if o == nil || isNil(o.Level) {
-    return nil, false
+		return nil, false
 	}
 	return o.Level, true
 }
@@ -216,7 +216,7 @@ func (o *ItemsListEntryTyped) GetImageUrls() ImageUrls {
 // and a boolean to check if the value has been set.
 func (o *ItemsListEntryTyped) GetImageUrlsOk() (*ImageUrls, bool) {
 	if o == nil || isNil(o.ImageUrls) {
-    return nil, false
+		return nil, false
 	}
 	return o.ImageUrls, true
 }

@@ -54,7 +54,7 @@ func (o *Mount) GetAnkamaId() int32 {
 // and a boolean to check if the value has been set.
 func (o *Mount) GetAnkamaIdOk() (*int32, bool) {
 	if o == nil || isNil(o.AnkamaId) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnkamaId, true
 }
@@ -86,7 +86,7 @@ func (o *Mount) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *Mount) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -118,7 +118,7 @@ func (o *Mount) GetFamilyName() string {
 // and a boolean to check if the value has been set.
 func (o *Mount) GetFamilyNameOk() (*string, bool) {
 	if o == nil || isNil(o.FamilyName) {
-    return nil, false
+		return nil, false
 	}
 	return o.FamilyName, true
 }
@@ -150,7 +150,7 @@ func (o *Mount) GetImageUrls() ImageUrls {
 // and a boolean to check if the value has been set.
 func (o *Mount) GetImageUrlsOk() (*ImageUrls, bool) {
 	if o == nil || isNil(o.ImageUrls) {
-    return nil, false
+		return nil, false
 	}
 	return o.ImageUrls, true
 }
@@ -183,7 +183,7 @@ func (o *Mount) GetEffects() []EffectsEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Mount) GetEffectsOk() ([]EffectsEntry, bool) {
 	if o == nil || isNil(o.Effects) {
-    return nil, false
+		return nil, false
 	}
 	return o.Effects, true
 }

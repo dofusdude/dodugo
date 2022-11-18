@@ -61,7 +61,7 @@ func (o *CreateRSSWebhook) GetWhitelist() []string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateRSSWebhook) GetWhitelistOk() ([]string, bool) {
 	if o == nil || isNil(o.Whitelist) {
-    return nil, false
+		return nil, false
 	}
 	return o.Whitelist, true
 }
@@ -94,7 +94,7 @@ func (o *CreateRSSWebhook) GetBlacklist() []string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateRSSWebhook) GetBlacklistOk() ([]string, bool) {
 	if o == nil || isNil(o.Blacklist) {
-    return nil, false
+		return nil, false
 	}
 	return o.Blacklist, true
 }
@@ -127,7 +127,7 @@ func (o *CreateRSSWebhook) GetSubscriptions() []string {
 // and a boolean to check if the value has been set.
 func (o *CreateRSSWebhook) GetSubscriptionsOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Subscriptions, true
 }
@@ -151,7 +151,7 @@ func (o *CreateRSSWebhook) GetFormat() string {
 // and a boolean to check if the value has been set.
 func (o *CreateRSSWebhook) GetFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Format, true
 }
@@ -175,7 +175,7 @@ func (o *CreateRSSWebhook) GetPreviewLength() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateRSSWebhook) GetPreviewLengthOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PreviewLength.Get(), o.PreviewLength.IsSet()
 }
@@ -217,7 +217,7 @@ func (o *CreateRSSWebhook) GetCallback() string {
 // and a boolean to check if the value has been set.
 func (o *CreateRSSWebhook) GetCallbackOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Callback, true
 }

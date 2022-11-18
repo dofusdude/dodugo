@@ -52,7 +52,7 @@ func (o *AlmanaxEntry) GetBonus() AlmanaxEntryBonus {
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntry) GetBonusOk() (*AlmanaxEntryBonus, bool) {
 	if o == nil || isNil(o.Bonus) {
-    return nil, false
+		return nil, false
 	}
 	return o.Bonus, true
 }
@@ -84,7 +84,7 @@ func (o *AlmanaxEntry) GetDate() string {
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntry) GetDateOk() (*string, bool) {
 	if o == nil || isNil(o.Date) {
-    return nil, false
+		return nil, false
 	}
 	return o.Date, true
 }
@@ -116,7 +116,7 @@ func (o *AlmanaxEntry) GetTribute() AlmanaxEntryTribute {
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntry) GetTributeOk() (*AlmanaxEntryTribute, bool) {
 	if o == nil || isNil(o.Tribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.Tribute, true
 }

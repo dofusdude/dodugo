@@ -51,7 +51,7 @@ func (o *AlmanaxEntryBonus) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntryBonus) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -83,7 +83,7 @@ func (o *AlmanaxEntryBonus) GetType() GetMetaAlmanaxBonuses200ResponseInner {
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntryBonus) GetTypeOk() (*GetMetaAlmanaxBonuses200ResponseInner, bool) {
 	if o == nil || isNil(o.Type) {
-    return nil, false
+		return nil, false
 	}
 	return o.Type, true
 }

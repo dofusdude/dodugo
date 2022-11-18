@@ -51,7 +51,7 @@ func (o *ItemsListPaged) GetLinks() LinksPaged {
 // and a boolean to check if the value has been set.
 func (o *ItemsListPaged) GetLinksOk() (*LinksPaged, bool) {
 	if o == nil || isNil(o.Links) {
-    return nil, false
+		return nil, false
 	}
 	return o.Links, true
 }
@@ -83,7 +83,7 @@ func (o *ItemsListPaged) GetItems() []ItemListEntry {
 // and a boolean to check if the value has been set.
 func (o *ItemsListPaged) GetItemsOk() ([]ItemListEntry, bool) {
 	if o == nil || isNil(o.Items) {
-    return nil, false
+		return nil, false
 	}
 	return o.Items, true
 }

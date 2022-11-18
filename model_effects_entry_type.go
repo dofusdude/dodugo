@@ -53,7 +53,7 @@ func (o *EffectsEntryType) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *EffectsEntryType) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -85,7 +85,7 @@ func (o *EffectsEntryType) GetId() int32 {
 // and a boolean to check if the value has been set.
 func (o *EffectsEntryType) GetIdOk() (*int32, bool) {
 	if o == nil || isNil(o.Id) {
-    return nil, false
+		return nil, false
 	}
 	return o.Id, true
 }
@@ -117,7 +117,7 @@ func (o *EffectsEntryType) GetIsMeta() bool {
 // and a boolean to check if the value has been set.
 func (o *EffectsEntryType) GetIsMetaOk() (*bool, bool) {
 	if o == nil || isNil(o.IsMeta) {
-    return nil, false
+		return nil, false
 	}
 	return o.IsMeta, true
 }

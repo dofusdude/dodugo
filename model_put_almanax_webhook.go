@@ -68,7 +68,7 @@ func (o *PutAlmanaxWebhook) GetBonusWhitelist() []string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PutAlmanaxWebhook) GetBonusWhitelistOk() ([]string, bool) {
 	if o == nil || isNil(o.BonusWhitelist) {
-    return nil, false
+		return nil, false
 	}
 	return o.BonusWhitelist, true
 }
@@ -101,7 +101,7 @@ func (o *PutAlmanaxWebhook) GetBonusBlacklist() []string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PutAlmanaxWebhook) GetBonusBlacklistOk() ([]string, bool) {
 	if o == nil || isNil(o.BonusBlacklist) {
-    return nil, false
+		return nil, false
 	}
 	return o.BonusBlacklist, true
 }
@@ -134,7 +134,7 @@ func (o *PutAlmanaxWebhook) GetSubscriptions() []string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PutAlmanaxWebhook) GetSubscriptionsOk() ([]string, bool) {
 	if o == nil || isNil(o.Subscriptions) {
-    return nil, false
+		return nil, false
 	}
 	return o.Subscriptions, true
 }
@@ -167,7 +167,7 @@ func (o *PutAlmanaxWebhook) GetDailySettings() CreateAlmanaxWebhookDailySettings
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PutAlmanaxWebhook) GetDailySettingsOk() (*CreateAlmanaxWebhookDailySettings, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DailySettings.Get(), o.DailySettings.IsSet()
 }
@@ -209,7 +209,7 @@ func (o *PutAlmanaxWebhook) GetIsoDate() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PutAlmanaxWebhook) GetIsoDateOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.IsoDate.Get(), o.IsoDate.IsSet()
 }
@@ -250,7 +250,7 @@ func (o *PutAlmanaxWebhook) GetMentions() map[string][]CreateAlmanaxWebhookMenti
 // and a boolean to check if the value has been set.
 func (o *PutAlmanaxWebhook) GetMentionsOk() (*map[string][]CreateAlmanaxWebhookMentionsValueInner, bool) {
 	if o == nil || isNil(o.Mentions) {
-    return nil, false
+		return nil, false
 	}
 	return o.Mentions, true
 }
@@ -283,7 +283,7 @@ func (o *PutAlmanaxWebhook) GetIntervals() []string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PutAlmanaxWebhook) GetIntervalsOk() ([]string, bool) {
 	if o == nil || isNil(o.Intervals) {
-    return nil, false
+		return nil, false
 	}
 	return o.Intervals, true
 }
@@ -316,7 +316,7 @@ func (o *PutAlmanaxWebhook) GetWeeklyWeekday() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PutAlmanaxWebhook) GetWeeklyWeekdayOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.WeeklyWeekday.Get(), o.WeeklyWeekday.IsSet()
 }

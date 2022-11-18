@@ -10,45 +10,45 @@ Testing AlmanaxApiService
 package dodugo
 
 import (
-    "context"
-    "github.com/stretchr/testify/assert"
-    "github.com/stretchr/testify/require"
-    "testing"
-    openapiclient "./openapi"
+	"context"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+	"testing"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func Test_dodugo_AlmanaxApiService(t *testing.T) {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 
-    t.Run("Test AlmanaxApiService GetAlmanaxDate", func(t *testing.T) {
+	t.Run("Test AlmanaxApiService GetAlmanaxDate", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var language string
-        var date string
+		var language string
+		var date string
 
-        resp, httpRes, err := apiClient.AlmanaxApi.GetAlmanaxDate(context.Background(), language, date).Execute()
+		resp, httpRes, err := apiClient.AlmanaxApi.GetAlmanaxDate(context.Background(), language, date).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test AlmanaxApiService GetAlmanaxRange", func(t *testing.T) {
+	t.Run("Test AlmanaxApiService GetAlmanaxRange", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var language string
+		var language string
 
-        resp, httpRes, err := apiClient.AlmanaxApi.GetAlmanaxRange(context.Background(), language).Execute()
+		resp, httpRes, err := apiClient.AlmanaxApi.GetAlmanaxRange(context.Background(), language).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
 }

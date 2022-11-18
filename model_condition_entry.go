@@ -52,7 +52,7 @@ func (o *ConditionEntry) GetOperator() string {
 // and a boolean to check if the value has been set.
 func (o *ConditionEntry) GetOperatorOk() (*string, bool) {
 	if o == nil || isNil(o.Operator) {
-    return nil, false
+		return nil, false
 	}
 	return o.Operator, true
 }
@@ -84,7 +84,7 @@ func (o *ConditionEntry) GetIntValue() int32 {
 // and a boolean to check if the value has been set.
 func (o *ConditionEntry) GetIntValueOk() (*int32, bool) {
 	if o == nil || isNil(o.IntValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.IntValue, true
 }
@@ -116,7 +116,7 @@ func (o *ConditionEntry) GetElement() EffectsEntryType {
 // and a boolean to check if the value has been set.
 func (o *ConditionEntry) GetElementOk() (*EffectsEntryType, bool) {
 	if o == nil || isNil(o.Element) {
-    return nil, false
+		return nil, false
 	}
 	return o.Element, true
 }

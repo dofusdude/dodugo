@@ -59,7 +59,7 @@ func (o *RssWebhook) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *RssWebhook) GetIdOk() (*string, bool) {
 	if o == nil || isNil(o.Id) {
-    return nil, false
+		return nil, false
 	}
 	return o.Id, true
 }
@@ -92,7 +92,7 @@ func (o *RssWebhook) GetWhitelist() []string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RssWebhook) GetWhitelistOk() ([]string, bool) {
 	if o == nil || isNil(o.Whitelist) {
-    return nil, false
+		return nil, false
 	}
 	return o.Whitelist, true
 }
@@ -125,7 +125,7 @@ func (o *RssWebhook) GetBlacklist() []string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RssWebhook) GetBlacklistOk() ([]string, bool) {
 	if o == nil || isNil(o.Blacklist) {
-    return nil, false
+		return nil, false
 	}
 	return o.Blacklist, true
 }
@@ -157,7 +157,7 @@ func (o *RssWebhook) GetSubscriptions() []string {
 // and a boolean to check if the value has been set.
 func (o *RssWebhook) GetSubscriptionsOk() ([]string, bool) {
 	if o == nil || isNil(o.Subscriptions) {
-    return nil, false
+		return nil, false
 	}
 	return o.Subscriptions, true
 }
@@ -189,7 +189,7 @@ func (o *RssWebhook) GetFormat() string {
 // and a boolean to check if the value has been set.
 func (o *RssWebhook) GetFormatOk() (*string, bool) {
 	if o == nil || isNil(o.Format) {
-    return nil, false
+		return nil, false
 	}
 	return o.Format, true
 }
@@ -221,7 +221,7 @@ func (o *RssWebhook) GetPreviewLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *RssWebhook) GetPreviewLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.PreviewLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.PreviewLength, true
 }
@@ -253,7 +253,7 @@ func (o *RssWebhook) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 func (o *RssWebhook) GetCreatedAtOk() (*time.Time, bool) {
 	if o == nil || isNil(o.CreatedAt) {
-    return nil, false
+		return nil, false
 	}
 	return o.CreatedAt, true
 }
@@ -286,7 +286,7 @@ func (o *RssWebhook) GetLastFiredAt() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RssWebhook) GetLastFiredAtOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.LastFiredAt.Get(), o.LastFiredAt.IsSet()
 }
@@ -327,7 +327,7 @@ func (o *RssWebhook) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 func (o *RssWebhook) GetUpdatedAtOk() (*time.Time, bool) {
 	if o == nil || isNil(o.UpdatedAt) {
-    return nil, false
+		return nil, false
 	}
 	return o.UpdatedAt, true
 }

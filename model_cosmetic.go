@@ -59,7 +59,7 @@ func (o *Cosmetic) GetAnkamaId() int32 {
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetAnkamaIdOk() (*int32, bool) {
 	if o == nil || isNil(o.AnkamaId) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnkamaId, true
 }
@@ -91,7 +91,7 @@ func (o *Cosmetic) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -123,7 +123,7 @@ func (o *Cosmetic) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -155,7 +155,7 @@ func (o *Cosmetic) GetType() ItemsListEntryTypedType {
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetTypeOk() (*ItemsListEntryTypedType, bool) {
 	if o == nil || isNil(o.Type) {
-    return nil, false
+		return nil, false
 	}
 	return o.Type, true
 }
@@ -187,7 +187,7 @@ func (o *Cosmetic) GetLevel() int32 {
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetLevelOk() (*int32, bool) {
 	if o == nil || isNil(o.Level) {
-    return nil, false
+		return nil, false
 	}
 	return o.Level, true
 }
@@ -219,7 +219,7 @@ func (o *Cosmetic) GetPods() int32 {
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetPodsOk() (*int32, bool) {
 	if o == nil || isNil(o.Pods) {
-    return nil, false
+		return nil, false
 	}
 	return o.Pods, true
 }
@@ -251,7 +251,7 @@ func (o *Cosmetic) GetImageUrls() ImageUrls {
 // and a boolean to check if the value has been set.
 func (o *Cosmetic) GetImageUrlsOk() (*ImageUrls, bool) {
 	if o == nil || isNil(o.ImageUrls) {
-    return nil, false
+		return nil, false
 	}
 	return o.ImageUrls, true
 }
@@ -284,7 +284,7 @@ func (o *Cosmetic) GetEffects() []EffectsEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Cosmetic) GetEffectsOk() ([]EffectsEntry, bool) {
 	if o == nil || isNil(o.Effects) {
-    return nil, false
+		return nil, false
 	}
 	return o.Effects, true
 }
@@ -317,7 +317,7 @@ func (o *Cosmetic) GetConditions() []ConditionEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Cosmetic) GetConditionsOk() ([]ConditionEntry, bool) {
 	if o == nil || isNil(o.Conditions) {
-    return nil, false
+		return nil, false
 	}
 	return o.Conditions, true
 }
@@ -350,7 +350,7 @@ func (o *Cosmetic) GetRecipe() []RecipeEntry {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Cosmetic) GetRecipeOk() ([]RecipeEntry, bool) {
 	if o == nil || isNil(o.Recipe) {
-    return nil, false
+		return nil, false
 	}
 	return o.Recipe, true
 }

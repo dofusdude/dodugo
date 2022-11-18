@@ -51,7 +51,7 @@ func (o *WeaponRange) GetMin() int32 {
 // and a boolean to check if the value has been set.
 func (o *WeaponRange) GetMinOk() (*int32, bool) {
 	if o == nil || isNil(o.Min) {
-    return nil, false
+		return nil, false
 	}
 	return o.Min, true
 }
@@ -83,7 +83,7 @@ func (o *WeaponRange) GetMax() int32 {
 // and a boolean to check if the value has been set.
 func (o *WeaponRange) GetMaxOk() (*int32, bool) {
 	if o == nil || isNil(o.Max) {
-    return nil, false
+		return nil, false
 	}
 	return o.Max, true
 }

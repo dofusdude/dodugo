@@ -96,7 +96,7 @@ No authorization required
 
 ## GetItemsResourceSearch
 
-> []ItemListEntry GetItemsResourceSearch(ctx, language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Execute()
+> []ItemListEntry GetItemsResourceSearch(ctx, language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
 
 Search Resources
 
@@ -121,10 +121,11 @@ func main() {
     filterTypeName := "plant" // string | only results with the translated type name (optional)
     filterMinLevel := int32(150) // int32 | only results which level is equal or above this value (optional)
     filterMaxLevel := int32(200) // int32 | only results which level is equal or below this value (optional)
+    limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ResourcesApi.GetItemsResourceSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Execute()
+    resp, r, err := apiClient.ResourcesApi.GetItemsResourceSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ResourcesApi.GetItemsResourceSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -156,6 +157,7 @@ Name | Type | Description  | Notes
  **filterTypeName** | **string** | only results with the translated type name | 
  **filterMinLevel** | **int32** | only results which level is equal or above this value | 
  **filterMaxLevel** | **int32** | only results which level is equal or below this value | 
+ **limit** | **int32** | maximum number of returned results | [default to 8]
 
 ### Return type
 

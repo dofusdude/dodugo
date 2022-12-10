@@ -171,7 +171,7 @@ No authorization required
 
 ## GetMountsSearch
 
-> []MountListEntry GetMountsSearch(ctx, language, game).Query(query).FilterFamilyName(filterFamilyName).Execute()
+> []MountListEntry GetMountsSearch(ctx, language, game).Query(query).FilterFamilyName(filterFamilyName).Limit(limit).Execute()
 
 Search Mounts
 
@@ -194,10 +194,11 @@ func main() {
     game := "dofus2" // string | 
     query := "Dorée" // string | case sensitive search query
     filterFamilyName := "Dragodinde" // string | only results with the translated family name (optional)
+    limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MountsApi.GetMountsSearch(context.Background(), language, game).Query(query).FilterFamilyName(filterFamilyName).Execute()
+    resp, r, err := apiClient.MountsApi.GetMountsSearch(context.Background(), language, game).Query(query).FilterFamilyName(filterFamilyName).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MountsApi.GetMountsSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -227,6 +228,7 @@ Name | Type | Description  | Notes
 
  **query** | **string** | case sensitive search query | 
  **filterFamilyName** | **string** | only results with the translated family name | 
+ **limit** | **int32** | maximum number of returned results | [default to 8]
 
 ### Return type
 

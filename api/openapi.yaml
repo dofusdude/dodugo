@@ -10,8 +10,9 @@ info:
     \ 😉\n- [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js\
     \ --save\n- [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts\
     \ --save\n- [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo\n\
-    - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude\n\n\
-    Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs).\
+    - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude\n\
+    - [PHP](https://github.com/dofusdude/dofusdude-php)\n\nEverything, including this\
+    \ site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs).\
     \ Consider it the Single Source of Truth. If there is a problem with the SDKs,\
     \ create an issue there.\n\nYour favorite language is missing? Please let me know!\n\
     \n# Main Features\n- 🥷 **Seamless Auto-Update** load data in the background when\
@@ -48,15 +49,14 @@ info:
     \ down and try it for yourself!\n\nOr see how these other awesome projects use\
     \ it:\n- [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro\n- [Dofus\
     \ Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina\n- [AlmanaxApp](https://almanaxapp.netlify.app)\
-    \ by Lystina\n- [luwnarya.fr](https://luwnarya.fr)\n\nI highly recommend using\
-    \ the SDKs for quick results. I use them myself for microservices for the API.\n\
-    \n## Thank you!\nI highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h)\
-    \ to just talk about projects and use cases or give feedback of any kind.\n\n\
-    The servers have a fixed monthly cost to provide very fast responses. If you want\
-    \ to help me keeping them running or simply  donate, consider becoming a [GitHub\
-    \ Sponsor](https://github.com/sponsors/dofusdude).\n\n"
+    \ by Lystina\n\nI highly recommend using the SDKs for quick results. I use them\
+    \ myself for microservices for the API.\n\n## Thank you!\nI highly welcome everyone\
+    \ on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and\
+    \ use cases or give feedback of any kind.\n\nThe servers have a fixed monthly\
+    \ cost to provide very fast responses. If you want to help me keeping them running\
+    \ or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).\n"
   title: Dofusdude
-  version: 0.7.0
+  version: 0.7.1
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -92,6 +92,7 @@ paths:
           - it
           - es
           - pt
+          example: fr
           maxLength: 2
           minLength: 2
           type: string
@@ -147,6 +148,18 @@ paths:
           format: int32
           maximum: 200
           minimum: 0
+          type: integer
+        style: form
+      - description: maximum number of returned results
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 8
+          example: 8
+          maximum: 100
+          minimum: 1
           type: integer
         style: form
       responses:
@@ -249,6 +262,18 @@ paths:
         schema:
           example: Dragodinde
           type: string
+        style: form
+      - description: maximum number of returned results
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 8
+          example: 8
+          maximum: 100
+          minimum: 1
+          type: integer
         style: form
       responses:
         "200":
@@ -358,6 +383,18 @@ paths:
           example: 200
           format: int32
           maximum: 200
+          minimum: 1
+          type: integer
+        style: form
+      - description: maximum number of returned results
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 8
+          example: 8
+          maximum: 100
           minimum: 1
           type: integer
         style: form
@@ -474,6 +511,18 @@ paths:
           format: int32
           maximum: 200
           minimum: 0
+          type: integer
+        style: form
+      - description: maximum number of returned results
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 8
+          example: 8
+          maximum: 100
+          minimum: 1
           type: integer
         style: form
       responses:
@@ -599,6 +648,18 @@ paths:
           minimum: 1
           type: integer
         style: form
+      - description: maximum number of returned results
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 8
+          example: 8
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -718,6 +779,18 @@ paths:
           example: 200
           format: int32
           maximum: 200
+          minimum: 1
+          type: integer
+        style: form
+      - description: maximum number of returned results
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 8
+          example: 8
+          maximum: 100
           minimum: 1
           type: integer
         style: form
@@ -844,6 +917,18 @@ paths:
           minimum: 1
           type: integer
         style: form
+      - description: maximum number of returned results
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 8
+          example: 8
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -966,6 +1051,18 @@ paths:
           minimum: 1
           type: integer
         style: form
+      - description: maximum number of returned results
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 8
+          example: 8
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -1083,6 +1180,7 @@ paths:
                         name: 'Exchangeable:'
                         id: 0
                         is_meta: false
+                        is_active: false
                       ignore_int_min: true
                       ignore_int_max: true
                       formatted: "Exchangeable: 0"
@@ -1273,6 +1371,7 @@ paths:
                         name: Initiative
                         id: 24
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 201 to 300 Initiative
@@ -1282,6 +1381,7 @@ paths:
                         name: Vitality
                         id: 9
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 301 to 350 Vitality
@@ -1300,6 +1400,7 @@ paths:
                         name: Chance
                         id: 22
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 31 to 40 Chance
@@ -1318,6 +1419,7 @@ paths:
                         name: Wisdom
                         id: 10
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 26 to 35 Wisdom
@@ -1327,6 +1429,7 @@ paths:
                         name: Lock
                         id: 26
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 9 to 12 Lock
@@ -1336,6 +1439,7 @@ paths:
                         name: Fire Damage
                         id: 61
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 14 to 18 Fire Damage
@@ -1345,6 +1449,7 @@ paths:
                         name: Water Damage
                         id: 27
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 14 to 18 Water Damage
@@ -1354,6 +1459,7 @@ paths:
                         name: '% Water Resistance'
                         id: 17
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 7 to 10% Water Resistance
@@ -1363,6 +1469,7 @@ paths:
                         name: Heals
                         id: 11
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 9 to 12 Heals
@@ -1372,6 +1479,7 @@ paths:
                         name: Critical Damage
                         id: 38
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: true
                       formatted: -15 Critical Damage
@@ -1381,6 +1489,7 @@ paths:
                         name: Range
                         id: 31
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: true
                       formatted: -1 Range
@@ -1390,6 +1499,7 @@ paths:
                         name: MP
                         id: 8
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: true
                       formatted: 1 MP
@@ -1399,6 +1509,7 @@ paths:
                         name: (Neutral damage)
                         id: 42
                         is_meta: false
+                        is_active: true
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 21 to 25 (Neutral damage)
@@ -1408,6 +1519,7 @@ paths:
                         name: (Fire steal)
                         id: 57
                         is_meta: false
+                        is_active: true
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 16 to 20 (Fire steal)
@@ -1417,6 +1529,7 @@ paths:
                         name: (Water steal)
                         id: 44
                         is_meta: false
+                        is_active: true
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 16 to 20 (Water steal)
@@ -1719,6 +1832,7 @@ paths:
                         name: HP
                         id: 21
                         is_meta: false
+                        is_active: true
                       ignore_int_min: false
                       ignore_int_max: true
                       formatted: 70 HP
@@ -1895,6 +2009,7 @@ paths:
                         name: Vitalidade
                         id: 9
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 0 a 300 Vitalidade
@@ -1904,6 +2019,7 @@ paths:
                         name: invocaç
                         id: 28
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 0 a 1 invocaç
@@ -1913,6 +2029,7 @@ paths:
                         name: Iniciativa
                         id: 24
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 0 a 1000 Iniciativa
@@ -1996,6 +2113,7 @@ paths:
                           name: Intelligenz
                           id: 13
                           is_meta: false
+                          is_active: false
                         ignore_int_min: false
                         ignore_int_max: true
                         formatted: 30 Intelligenz
@@ -2005,6 +2123,7 @@ paths:
                           name: Flinkheit
                           id: 36
                           is_meta: false
+                          is_active: false
                         ignore_int_min: false
                         ignore_int_max: true
                         formatted: 30 Flinkheit
@@ -2014,6 +2133,7 @@ paths:
                           name: Glück
                           id: 22
                           is_meta: false
+                          is_active: false
                         ignore_int_min: false
                         ignore_int_max: true
                         formatted: 30 Glück
@@ -2023,6 +2143,7 @@ paths:
                           name: AP-Entzug
                           id: 64
                           is_meta: false
+                          is_active: false
                         ignore_int_min: false
                         ignore_int_max: true
                         formatted: 5 AP-Entzug
@@ -2032,6 +2153,7 @@ paths:
                           name: Kritischer Schaden
                           id: 38
                           is_meta: false
+                          is_active: false
                         ignore_int_min: false
                         ignore_int_max: true
                         formatted: 10 Kritischer Schaden
@@ -2041,6 +2163,7 @@ paths:
                           name: Intelligenz
                           id: 13
                           is_meta: false
+                          is_active: false
                         ignore_int_min: false
                         ignore_int_max: true
                         formatted: 30 Intelligenz
@@ -2050,6 +2173,7 @@ paths:
                           name: Flinkheit
                           id: 36
                           is_meta: false
+                          is_active: false
                         ignore_int_min: false
                         ignore_int_max: true
                         formatted: 30 Flinkheit
@@ -2059,6 +2183,7 @@ paths:
                           name: Glück
                           id: 22
                           is_meta: false
+                          is_active: false
                         ignore_int_min: false
                         ignore_int_max: true
                         formatted: 30 Glück
@@ -2068,6 +2193,7 @@ paths:
                           name: AP-Entzug
                           id: 64
                           is_meta: false
+                          is_active: false
                         ignore_int_min: false
                         ignore_int_max: true
                         formatted: 5 AP-Entzug
@@ -2077,6 +2203,7 @@ paths:
                           name: Kritischer Schaden
                           id: 38
                           is_meta: false
+                          is_active: false
                         ignore_int_min: false
                         ignore_int_max: true
                         formatted: 10 Kritischer Schaden
@@ -2086,6 +2213,7 @@ paths:
                           name: AP
                           id: 12
                           is_meta: false
+                          is_active: false
                         ignore_int_min: false
                         ignore_int_max: true
                         formatted: 1 AP
@@ -4396,6 +4524,11 @@ paths:
         "200":
           content:
             application/json:
+              examples:
+                Example 1:
+                  value:
+                    subscriptions:
+                    - string
               schema:
                 $ref: '#/components/schemas/get_meta_webhooks_twitter_200_response'
           description: OK
@@ -4907,6 +5040,7 @@ components:
           int_maximum: 5
           type:
             is_meta: true
+            is_active: true
             name: name
             id: 2
           int_minimum: 5
@@ -4916,6 +5050,7 @@ components:
           int_maximum: 5
           type:
             is_meta: true
+            is_active: true
             name: name
             id: 2
           int_minimum: 5
@@ -4943,13 +5078,13 @@ components:
           element:
             is_meta: true
             name: name
-            id: 2
+            id: 9
         - operator: operator
           int_value: 7
           element:
             is_meta: true
             name: name
-            id: 2
+            id: 9
         ankama_id: 0
       properties:
         ankama_id:
@@ -5006,6 +5141,7 @@ components:
         int_maximum: 5
         type:
           is_meta: true
+          is_active: true
           name: name
           id: 2
         int_minimum: 5
@@ -5082,6 +5218,7 @@ components:
           int_maximum: 5
           type:
             is_meta: true
+            is_active: true
             name: name
             id: 2
           int_minimum: 5
@@ -5091,6 +5228,7 @@ components:
           int_maximum: 5
           type:
             is_meta: true
+            is_active: true
             name: name
             id: 2
           int_minimum: 5
@@ -5118,13 +5256,13 @@ components:
           element:
             is_meta: true
             name: name
-            id: 2
+            id: 9
         - operator: operator
           int_value: 7
           element:
             is_meta: true
             name: name
-            id: 2
+            id: 9
         ankama_id: 0
       properties:
         ankama_id:
@@ -5206,6 +5344,7 @@ components:
             int_maximum: 5
             type:
               is_meta: true
+              is_active: true
               name: name
               id: 2
             int_minimum: 5
@@ -5215,6 +5354,7 @@ components:
             int_maximum: 5
             type:
               is_meta: true
+              is_active: true
               name: name
               id: 2
             int_minimum: 5
@@ -5224,6 +5364,7 @@ components:
             int_maximum: 5
             type:
               is_meta: true
+              is_active: true
               name: name
               id: 2
             int_minimum: 5
@@ -5233,6 +5374,7 @@ components:
             int_maximum: 5
             type:
               is_meta: true
+              is_active: true
               name: name
               id: 2
             int_minimum: 5
@@ -5292,6 +5434,7 @@ components:
           int_maximum: 5
           type:
             is_meta: true
+            is_active: true
             name: name
             id: 2
           int_minimum: 5
@@ -5301,6 +5444,7 @@ components:
           int_maximum: 5
           type:
             is_meta: true
+            is_active: true
             name: name
             id: 2
           int_minimum: 5
@@ -5497,14 +5641,14 @@ components:
         element:
           is_meta: true
           name: name
-          id: 2
+          id: 9
       properties:
         operator:
           type: string
         int_value:
           type: integer
         element:
-          $ref: '#/components/schemas/Effects_Entry_type'
+          $ref: '#/components/schemas/Condition_Entry_element'
       title: ""
       type: object
       x-stoplight:
@@ -5583,6 +5727,7 @@ components:
           int_maximum: 5
           type:
             is_meta: true
+            is_active: true
             name: name
             id: 2
           int_minimum: 5
@@ -5592,6 +5737,7 @@ components:
           int_maximum: 5
           type:
             is_meta: true
+            is_active: true
             name: name
             id: 2
           int_minimum: 5
@@ -5605,13 +5751,13 @@ components:
           element:
             is_meta: true
             name: name
-            id: 2
+            id: 9
         - operator: operator
           int_value: 7
           element:
             is_meta: true
             name: name
-            id: 2
+            id: 9
         critical_hit_bonus: 5
         ankama_id: 0
       properties:
@@ -6457,8 +6603,29 @@ components:
     Effects_Entry_type:
       example:
         is_meta: true
+        is_active: true
         name: name
         id: 2
+      properties:
+        name:
+          type: string
+        id:
+          type: integer
+        is_meta:
+          description: "true if a type is generated from the Api instead of Ankama.\
+            \ In that case, always prefer showing the templated string and omit everything\
+            \ else. The \"name\" field will have an english description of the meta\
+            \ type. An example for such effects are class sets effects."
+          type: boolean
+        is_active:
+          description: Affects target or source actively.
+          type: boolean
+      type: object
+    Condition_Entry_element:
+      example:
+        is_meta: true
+        name: name
+        id: 9
       properties:
         name:
           type: string

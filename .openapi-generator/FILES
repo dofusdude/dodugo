@@ -25,6 +25,7 @@ docs/AlmanaxEntryTributeItem.md
 docs/AlmanaxWebhook.md
 docs/AlmanaxWebhookDailySettings.md
 docs/ConditionEntry.md
+docs/ConditionEntryElement.md
 docs/ConsumablesApi.md
 docs/Cosmetic.md
 docs/CosmeticsApi.md
@@ -77,6 +78,7 @@ model_almanax_entry_tribute_item.go
 model_almanax_webhook.go
 model_almanax_webhook_daily_settings.go
 model_condition_entry.go
+model_condition_entry_element.go
 model_cosmetic.go
 model_create_almanax_webhook.go
 model_create_almanax_webhook_daily_settings.go

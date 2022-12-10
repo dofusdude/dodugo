@@ -183,7 +183,7 @@ No authorization required
 
 ## GetCosmeticsSearch
 
-> []ItemListEntry GetCosmeticsSearch(ctx, language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Execute()
+> []ItemListEntry GetCosmeticsSearch(ctx, language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
 
 Search Cosmetics
 
@@ -208,10 +208,11 @@ func main() {
     filterTypeName := "Costume" // string | only results with the translated type name (optional)
     filterMinLevel := int32(1) // int32 | only results which level is equal or above this value (optional)
     filterMaxLevel := int32(2) // int32 | only results which level is equal or below this value (optional)
+    limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CosmeticsApi.GetCosmeticsSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Execute()
+    resp, r, err := apiClient.CosmeticsApi.GetCosmeticsSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CosmeticsApi.GetCosmeticsSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -243,6 +244,7 @@ Name | Type | Description  | Notes
  **filterTypeName** | **string** | only results with the translated type name | 
  **filterMinLevel** | **int32** | only results which level is equal or above this value | 
  **filterMaxLevel** | **int32** | only results which level is equal or below this value | 
+ **limit** | **int32** | maximum number of returned results | [default to 8]
 
 ### Return type
 

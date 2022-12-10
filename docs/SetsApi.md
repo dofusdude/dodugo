@@ -179,7 +179,7 @@ No authorization required
 
 ## GetSetsSearch
 
-> []SetListEntry GetSetsSearch(ctx, language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Execute()
+> []SetListEntry GetSetsSearch(ctx, language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Limit(limit).Execute()
 
 Search Sets
 
@@ -203,10 +203,11 @@ func main() {
     query := "Des" // string | case sensitive search query
     filterMinHighestEquipmentLevel := int32(195) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
     filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
+    limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SetsApi.GetSetsSearch(context.Background(), language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Execute()
+    resp, r, err := apiClient.SetsApi.GetSetsSearch(context.Background(), language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SetsApi.GetSetsSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -237,6 +238,7 @@ Name | Type | Description  | Notes
  **query** | **string** | case sensitive search query | 
  **filterMinHighestEquipmentLevel** | **int32** | only results where the equipment with the highest level is above or equal to this value | 
  **filterMaxHighestEquipmentLevel** | **int32** | only results where the equipment with the highest level is below or equal to this value | 
+ **limit** | **int32** | maximum number of returned results | [default to 8]
 
 ### Return type
 

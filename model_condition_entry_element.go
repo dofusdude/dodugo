@@ -15,68 +15,36 @@ import (
 	"encoding/json"
 )
 
-// checks if the MountListEntry type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &MountListEntry{}
+// checks if the ConditionEntryElement type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConditionEntryElement{}
 
-// MountListEntry struct for MountListEntry
-type MountListEntry struct {
-	AnkamaId *int32 `json:"ankama_id,omitempty"`
+// ConditionEntryElement struct for ConditionEntryElement
+type ConditionEntryElement struct {
 	Name *string `json:"name,omitempty"`
-	FamilyName *string `json:"family_name,omitempty"`
-	ImageUrls *ImageUrls `json:"image_urls,omitempty"`
+	Id *int32 `json:"id,omitempty"`
+	// true if a type is generated from the Api instead of Ankama. In that case, always prefer showing the templated string and omit everything else. The \"name\" field will have an english description of the meta type. An example for such effects are class sets effects.
+	IsMeta *bool `json:"is_meta,omitempty"`
 }
 
-// NewMountListEntry instantiates a new MountListEntry object
+// NewConditionEntryElement instantiates a new ConditionEntryElement object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMountListEntry() *MountListEntry {
-	this := MountListEntry{}
+func NewConditionEntryElement() *ConditionEntryElement {
+	this := ConditionEntryElement{}
 	return &this
 }
 
-// NewMountListEntryWithDefaults instantiates a new MountListEntry object
+// NewConditionEntryElementWithDefaults instantiates a new ConditionEntryElement object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewMountListEntryWithDefaults() *MountListEntry {
-	this := MountListEntry{}
+func NewConditionEntryElementWithDefaults() *ConditionEntryElement {
+	this := ConditionEntryElement{}
 	return &this
-}
-
-// GetAnkamaId returns the AnkamaId field value if set, zero value otherwise.
-func (o *MountListEntry) GetAnkamaId() int32 {
-	if o == nil || isNil(o.AnkamaId) {
-		var ret int32
-		return ret
-	}
-	return *o.AnkamaId
-}
-
-// GetAnkamaIdOk returns a tuple with the AnkamaId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MountListEntry) GetAnkamaIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AnkamaId) {
-		return nil, false
-	}
-	return o.AnkamaId, true
-}
-
-// HasAnkamaId returns a boolean if a field has been set.
-func (o *MountListEntry) HasAnkamaId() bool {
-	if o != nil && !isNil(o.AnkamaId) {
-		return true
-	}
-
-	return false
-}
-
-// SetAnkamaId gets a reference to the given int32 and assigns it to the AnkamaId field.
-func (o *MountListEntry) SetAnkamaId(v int32) {
-	o.AnkamaId = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *MountListEntry) GetName() string {
+func (o *ConditionEntryElement) GetName() string {
 	if o == nil || isNil(o.Name) {
 		var ret string
 		return ret
@@ -86,7 +54,7 @@ func (o *MountListEntry) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MountListEntry) GetNameOk() (*string, bool) {
+func (o *ConditionEntryElement) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
 		return nil, false
 	}
@@ -94,7 +62,7 @@ func (o *MountListEntry) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *MountListEntry) HasName() bool {
+func (o *ConditionEntryElement) HasName() bool {
 	if o != nil && !isNil(o.Name) {
 		return true
 	}
@@ -103,75 +71,75 @@ func (o *MountListEntry) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *MountListEntry) SetName(v string) {
+func (o *ConditionEntryElement) SetName(v string) {
 	o.Name = &v
 }
 
-// GetFamilyName returns the FamilyName field value if set, zero value otherwise.
-func (o *MountListEntry) GetFamilyName() string {
-	if o == nil || isNil(o.FamilyName) {
-		var ret string
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *ConditionEntryElement) GetId() int32 {
+	if o == nil || isNil(o.Id) {
+		var ret int32
 		return ret
 	}
-	return *o.FamilyName
+	return *o.Id
 }
 
-// GetFamilyNameOk returns a tuple with the FamilyName field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MountListEntry) GetFamilyNameOk() (*string, bool) {
-	if o == nil || isNil(o.FamilyName) {
+func (o *ConditionEntryElement) GetIdOk() (*int32, bool) {
+	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
-	return o.FamilyName, true
+	return o.Id, true
 }
 
-// HasFamilyName returns a boolean if a field has been set.
-func (o *MountListEntry) HasFamilyName() bool {
-	if o != nil && !isNil(o.FamilyName) {
+// HasId returns a boolean if a field has been set.
+func (o *ConditionEntryElement) HasId() bool {
+	if o != nil && !isNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetFamilyName gets a reference to the given string and assigns it to the FamilyName field.
-func (o *MountListEntry) SetFamilyName(v string) {
-	o.FamilyName = &v
+// SetId gets a reference to the given int32 and assigns it to the Id field.
+func (o *ConditionEntryElement) SetId(v int32) {
+	o.Id = &v
 }
 
-// GetImageUrls returns the ImageUrls field value if set, zero value otherwise.
-func (o *MountListEntry) GetImageUrls() ImageUrls {
-	if o == nil || isNil(o.ImageUrls) {
-		var ret ImageUrls
+// GetIsMeta returns the IsMeta field value if set, zero value otherwise.
+func (o *ConditionEntryElement) GetIsMeta() bool {
+	if o == nil || isNil(o.IsMeta) {
+		var ret bool
 		return ret
 	}
-	return *o.ImageUrls
+	return *o.IsMeta
 }
 
-// GetImageUrlsOk returns a tuple with the ImageUrls field value if set, nil otherwise
+// GetIsMetaOk returns a tuple with the IsMeta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MountListEntry) GetImageUrlsOk() (*ImageUrls, bool) {
-	if o == nil || isNil(o.ImageUrls) {
+func (o *ConditionEntryElement) GetIsMetaOk() (*bool, bool) {
+	if o == nil || isNil(o.IsMeta) {
 		return nil, false
 	}
-	return o.ImageUrls, true
+	return o.IsMeta, true
 }
 
-// HasImageUrls returns a boolean if a field has been set.
-func (o *MountListEntry) HasImageUrls() bool {
-	if o != nil && !isNil(o.ImageUrls) {
+// HasIsMeta returns a boolean if a field has been set.
+func (o *ConditionEntryElement) HasIsMeta() bool {
+	if o != nil && !isNil(o.IsMeta) {
 		return true
 	}
 
 	return false
 }
 
-// SetImageUrls gets a reference to the given ImageUrls and assigns it to the ImageUrls field.
-func (o *MountListEntry) SetImageUrls(v ImageUrls) {
-	o.ImageUrls = &v
+// SetIsMeta gets a reference to the given bool and assigns it to the IsMeta field.
+func (o *ConditionEntryElement) SetIsMeta(v bool) {
+	o.IsMeta = &v
 }
 
-func (o MountListEntry) MarshalJSON() ([]byte, error) {
+func (o ConditionEntryElement) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -179,55 +147,52 @@ func (o MountListEntry) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o MountListEntry) ToMap() (map[string]interface{}, error) {
+func (o ConditionEntryElement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AnkamaId) {
-		toSerialize["ankama_id"] = o.AnkamaId
-	}
 	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.FamilyName) {
-		toSerialize["family_name"] = o.FamilyName
+	if !isNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.ImageUrls) {
-		toSerialize["image_urls"] = o.ImageUrls
+	if !isNil(o.IsMeta) {
+		toSerialize["is_meta"] = o.IsMeta
 	}
 	return toSerialize, nil
 }
 
-type NullableMountListEntry struct {
-	value *MountListEntry
+type NullableConditionEntryElement struct {
+	value *ConditionEntryElement
 	isSet bool
 }
 
-func (v NullableMountListEntry) Get() *MountListEntry {
+func (v NullableConditionEntryElement) Get() *ConditionEntryElement {
 	return v.value
 }
 
-func (v *NullableMountListEntry) Set(val *MountListEntry) {
+func (v *NullableConditionEntryElement) Set(val *ConditionEntryElement) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableMountListEntry) IsSet() bool {
+func (v NullableConditionEntryElement) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableMountListEntry) Unset() {
+func (v *NullableConditionEntryElement) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableMountListEntry(val *MountListEntry) *NullableMountListEntry {
-	return &NullableMountListEntry{value: val, isSet: true}
+func NewNullableConditionEntryElement(val *ConditionEntryElement) *NullableConditionEntryElement {
+	return &NullableConditionEntryElement{value: val, isSet: true}
 }
 
-func (v NullableMountListEntry) MarshalJSON() ([]byte, error) {
+func (v NullableConditionEntryElement) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableMountListEntry) UnmarshalJSON(src []byte) error {
+func (v *NullableConditionEntryElement) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

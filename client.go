@@ -1,9 +1,9 @@
 /*
 Dofusdude
 
-# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina  I highly recommend using the SDKs for quick results. I use them myself for microservices for the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude). 
+# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina - [DofuStuffSimulator](https://dofusstuffsimulator.netlify.app/)  I highly recommend using the SDKs for quick results. I use them myself for parts of the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude). 
 
-API version: 0.7.1
+API version: 0.7.2
 Contact: stelzo@steado.de
 */
 
@@ -19,7 +19,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"mime/multipart"
 	"net/http"
@@ -43,7 +42,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the Dofusdude API v0.7.1
+// APIClient manages communication with the Dofusdude API v0.7.2
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -51,27 +50,27 @@ type APIClient struct {
 
 	// API Services
 
-	AllItemsApi *AllItemsApiService
+	AllItemsAPI *AllItemsAPIService
 
-	AlmanaxApi *AlmanaxApiService
+	AlmanaxAPI *AlmanaxAPIService
 
-	ConsumablesApi *ConsumablesApiService
+	ConsumablesAPI *ConsumablesAPIService
 
-	CosmeticsApi *CosmeticsApiService
+	CosmeticsAPI *CosmeticsAPIService
 
-	EquipmentApi *EquipmentApiService
+	EquipmentAPI *EquipmentAPIService
 
-	MetaApi *MetaApiService
+	MetaAPI *MetaAPIService
 
-	MountsApi *MountsApiService
+	MountsAPI *MountsAPIService
 
-	QuestItemsApi *QuestItemsApiService
+	QuestItemsAPI *QuestItemsAPIService
 
-	ResourcesApi *ResourcesApiService
+	ResourcesAPI *ResourcesAPIService
 
-	SetsApi *SetsApiService
+	SetsAPI *SetsAPIService
 
-	WebhooksApi *WebhooksApiService
+	WebhooksAPI *WebhooksAPIService
 }
 
 type service struct {
@@ -90,17 +89,17 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.AllItemsApi = (*AllItemsApiService)(&c.common)
-	c.AlmanaxApi = (*AlmanaxApiService)(&c.common)
-	c.ConsumablesApi = (*ConsumablesApiService)(&c.common)
-	c.CosmeticsApi = (*CosmeticsApiService)(&c.common)
-	c.EquipmentApi = (*EquipmentApiService)(&c.common)
-	c.MetaApi = (*MetaApiService)(&c.common)
-	c.MountsApi = (*MountsApiService)(&c.common)
-	c.QuestItemsApi = (*QuestItemsApiService)(&c.common)
-	c.ResourcesApi = (*ResourcesApiService)(&c.common)
-	c.SetsApi = (*SetsApiService)(&c.common)
-	c.WebhooksApi = (*WebhooksApiService)(&c.common)
+	c.AllItemsAPI = (*AllItemsAPIService)(&c.common)
+	c.AlmanaxAPI = (*AlmanaxAPIService)(&c.common)
+	c.ConsumablesAPI = (*ConsumablesAPIService)(&c.common)
+	c.CosmeticsAPI = (*CosmeticsAPIService)(&c.common)
+	c.EquipmentAPI = (*EquipmentAPIService)(&c.common)
+	c.MetaAPI = (*MetaAPIService)(&c.common)
+	c.MountsAPI = (*MountsAPIService)(&c.common)
+	c.QuestItemsAPI = (*QuestItemsAPIService)(&c.common)
+	c.ResourcesAPI = (*ResourcesAPIService)(&c.common)
+	c.SetsAPI = (*SetsAPIService)(&c.common)
+	c.WebhooksAPI = (*WebhooksAPIService)(&c.common)
 
 	return c
 }
@@ -172,8 +171,9 @@ func parameterValueToString( obj interface{}, key string ) string {
 	return fmt.Sprintf("%v", dataMap[key])
 }
 
-// parameterAddToQuery adds the provided object to the url query supporting deep object syntax
-func parameterAddToQuery(queryParams interface{}, keyPrefix string, obj interface{}, collectionType string) {
+// parameterAddToHeaderOrQuery adds the provided object to the request header or url query
+// supporting deep object syntax
+func parameterAddToHeaderOrQuery(headerOrQueryParams interface{}, keyPrefix string, obj interface{}, collectionType string) {
 	var v = reflect.ValueOf(obj)
 	var value = ""
 	if v == reflect.ValueOf(nil) {
@@ -189,11 +189,11 @@ func parameterAddToQuery(queryParams interface{}, keyPrefix string, obj interfac
 					if err != nil {
 						return
 					}
-					parameterAddToQuery(queryParams, keyPrefix, dataMap, collectionType)
+					parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefix, dataMap, collectionType)
 					return
 				}
 				if t, ok := obj.(time.Time); ok {
-					parameterAddToQuery(queryParams, keyPrefix, t.Format(time.RFC3339), collectionType)
+					parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefix, t.Format(time.RFC3339), collectionType)
 					return
 				}
 				value = v.Type().String() + " value"
@@ -205,7 +205,7 @@ func parameterAddToQuery(queryParams interface{}, keyPrefix string, obj interfac
 				var lenIndValue = indValue.Len()
 				for i:=0;i<lenIndValue;i++ {
 					var arrayValue = indValue.Index(i)
-					parameterAddToQuery(queryParams, keyPrefix, arrayValue.Interface(), collectionType)
+					parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefix, arrayValue.Interface(), collectionType)
 				}
 				return
 
@@ -217,14 +217,14 @@ func parameterAddToQuery(queryParams interface{}, keyPrefix string, obj interfac
 				iter := indValue.MapRange()
 				for iter.Next() {
 					k,v := iter.Key(), iter.Value()
-					parameterAddToQuery(queryParams, fmt.Sprintf("%s[%s]", keyPrefix, k.String()), v.Interface(), collectionType)
+					parameterAddToHeaderOrQuery(headerOrQueryParams, fmt.Sprintf("%s[%s]", keyPrefix, k.String()), v.Interface(), collectionType)
 				}
 				return
 
 			case reflect.Interface:
 				fallthrough
 			case reflect.Ptr:
-				parameterAddToQuery(queryParams, keyPrefix, v.Elem().Interface(), collectionType)
+				parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefix, v.Elem().Interface(), collectionType)
 				return
 
 			case reflect.Int, reflect.Int8, reflect.Int16,
@@ -244,9 +244,13 @@ func parameterAddToQuery(queryParams interface{}, keyPrefix string, obj interfac
 		}
 	}
 
-	switch valuesMap := queryParams.(type) {
+	switch valuesMap := headerOrQueryParams.(type) {
 		case url.Values:
-			valuesMap.Add( keyPrefix, value )
+			if collectionType == "csv" && valuesMap.Get(keyPrefix) != "" {
+				valuesMap.Set(keyPrefix, valuesMap.Get(keyPrefix) + "," + value)
+			} else {
+				valuesMap.Add(keyPrefix, value)
+			}
 			break
 		case map[string]string:
 			valuesMap[keyPrefix] = value
@@ -454,7 +458,7 @@ func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err err
 		return nil
 	}
 	if f, ok := v.(*os.File); ok {
-		f, err = ioutil.TempFile("", "HttpClientFile")
+		f, err = os.CreateTemp("", "HttpClientFile")
 		if err != nil {
 			return
 		}
@@ -466,7 +470,7 @@ func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err err
 		return
 	}
 	if f, ok := v.(**os.File); ok {
-		*f, err = ioutil.TempFile("", "HttpClientFile")
+		*f, err = os.CreateTemp("", "HttpClientFile")
 		if err != nil {
 			return
 		}
@@ -667,16 +671,17 @@ func formatErrorMessage(status string, v interface{}) string {
 	str := ""
 	metaValue := reflect.ValueOf(v).Elem()
 
-	field := metaValue.FieldByName("Title")
-	if field != (reflect.Value{}) {
-		str = fmt.Sprintf("%s", field.Interface())
+	if metaValue.Kind() == reflect.Struct {
+		field := metaValue.FieldByName("Title")
+		if field != (reflect.Value{}) {
+			str = fmt.Sprintf("%s", field.Interface())
+		}
+
+		field = metaValue.FieldByName("Detail")
+		if field != (reflect.Value{}) {
+			str = fmt.Sprintf("%s (%s)", str, field.Interface())
+		}
 	}
 
-	field = metaValue.FieldByName("Detail")
-	if field != (reflect.Value{}) {
-		str = fmt.Sprintf("%s (%s)", str, field.Interface())
-	}
-
-	// status title (detail)
 	return strings.TrimSpace(fmt.Sprintf("%s %s", status, str))
 }

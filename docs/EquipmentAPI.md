@@ -1,13 +1,13 @@
-# \EquipmentApi
+# \EquipmentAPI
 
 All URIs are relative to *https://api.dofusdu.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAllItemsEquipmentList**](EquipmentApi.md#GetAllItemsEquipmentList) | **Get** /{game}/{language}/items/equipment/all | List All Equipment
-[**GetItemsEquipmentList**](EquipmentApi.md#GetItemsEquipmentList) | **Get** /{game}/{language}/items/equipment | List Equipment
-[**GetItemsEquipmentSearch**](EquipmentApi.md#GetItemsEquipmentSearch) | **Get** /{game}/{language}/items/equipment/search | Search Equipment
-[**GetItemsEquipmentSingle**](EquipmentApi.md#GetItemsEquipmentSingle) | **Get** /{game}/{language}/items/equipment/{ankama_id} | Single Equipment
+[**GetAllItemsEquipmentList**](EquipmentAPI.md#GetAllItemsEquipmentList) | **Get** /{game}/{language}/items/equipment/all | List All Equipment
+[**GetItemsEquipmentList**](EquipmentAPI.md#GetItemsEquipmentList) | **Get** /{game}/{language}/items/equipment | List Equipment
+[**GetItemsEquipmentSearch**](EquipmentAPI.md#GetItemsEquipmentSearch) | **Get** /{game}/{language}/items/equipment/search | Search Equipment
+[**GetItemsEquipmentSingle**](EquipmentAPI.md#GetItemsEquipmentSingle) | **Get** /{game}/{language}/items/equipment/{ankama_id} | Single Equipment
 
 
 
@@ -28,7 +28,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -42,13 +42,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EquipmentApi.GetAllItemsEquipmentList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
+    resp, r, err := apiClient.EquipmentAPI.GetAllItemsEquipmentList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EquipmentApi.GetAllItemsEquipmentList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EquipmentAPI.GetAllItemsEquipmentList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAllItemsEquipmentList`: ItemsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `EquipmentApi.GetAllItemsEquipmentList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EquipmentAPI.GetAllItemsEquipmentList`: %v\n", resp)
 }
 ```
 
@@ -111,7 +111,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -127,13 +127,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EquipmentApi.GetItemsEquipmentList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsItem(fieldsItem).Execute()
+    resp, r, err := apiClient.EquipmentAPI.GetItemsEquipmentList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsItem(fieldsItem).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EquipmentApi.GetItemsEquipmentList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EquipmentAPI.GetItemsEquipmentList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetItemsEquipmentList`: ItemsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `EquipmentApi.GetItemsEquipmentList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EquipmentAPI.GetItemsEquipmentList`: %v\n", resp)
 }
 ```
 
@@ -198,7 +198,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -212,13 +212,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EquipmentApi.GetItemsEquipmentSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
+    resp, r, err := apiClient.EquipmentAPI.GetItemsEquipmentSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EquipmentApi.GetItemsEquipmentSearch``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EquipmentAPI.GetItemsEquipmentSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetItemsEquipmentSearch`: []ItemListEntry
-    fmt.Fprintf(os.Stdout, "Response from `EquipmentApi.GetItemsEquipmentSearch`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EquipmentAPI.GetItemsEquipmentSearch`: %v\n", resp)
 }
 ```
 
@@ -281,7 +281,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -291,13 +291,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EquipmentApi.GetItemsEquipmentSingle(context.Background(), language, ankamaId, game).Execute()
+    resp, r, err := apiClient.EquipmentAPI.GetItemsEquipmentSingle(context.Background(), language, ankamaId, game).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EquipmentApi.GetItemsEquipmentSingle``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EquipmentAPI.GetItemsEquipmentSingle``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetItemsEquipmentSingle`: Weapon
-    fmt.Fprintf(os.Stdout, "Response from `EquipmentApi.GetItemsEquipmentSingle`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EquipmentAPI.GetItemsEquipmentSingle`: %v\n", resp)
 }
 ```
 

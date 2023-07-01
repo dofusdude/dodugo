@@ -1,11 +1,11 @@
-# \AlmanaxApi
+# \AlmanaxAPI
 
 All URIs are relative to *https://api.dofusdu.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAlmanaxDate**](AlmanaxApi.md#GetAlmanaxDate) | **Get** /dofus2/{language}/almanax/{date} | Single Almanax Date
-[**GetAlmanaxRange**](AlmanaxApi.md#GetAlmanaxRange) | **Get** /dofus2/{language}/almanax | Almanax Range
+[**GetAlmanaxDate**](AlmanaxAPI.md#GetAlmanaxDate) | **Get** /dofus2/{language}/almanax/{date} | Single Almanax Date
+[**GetAlmanaxRange**](AlmanaxAPI.md#GetAlmanaxRange) | **Get** /dofus2/{language}/almanax | Almanax Range
 
 
 
@@ -27,7 +27,7 @@ import (
     "fmt"
     "os"
     "time"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -36,13 +36,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlmanaxApi.GetAlmanaxDate(context.Background(), language, date).Execute()
+    resp, r, err := apiClient.AlmanaxAPI.GetAlmanaxDate(context.Background(), language, date).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlmanaxApi.GetAlmanaxDate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlmanaxAPI.GetAlmanaxDate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAlmanaxDate`: AlmanaxEntry
-    fmt.Fprintf(os.Stdout, "Response from `AlmanaxApi.GetAlmanaxDate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AlmanaxAPI.GetAlmanaxDate`: %v\n", resp)
 }
 ```
 
@@ -101,7 +101,7 @@ import (
     "fmt"
     "os"
     "time"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -114,13 +114,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlmanaxApi.GetAlmanaxRange(context.Background(), language).FilterBonusType(filterBonusType).RangeFrom(rangeFrom).RangeTo(rangeTo).RangeSize(rangeSize).Timezone(timezone).Execute()
+    resp, r, err := apiClient.AlmanaxAPI.GetAlmanaxRange(context.Background(), language).FilterBonusType(filterBonusType).RangeFrom(rangeFrom).RangeTo(rangeTo).RangeSize(rangeSize).Timezone(timezone).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlmanaxApi.GetAlmanaxRange``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlmanaxAPI.GetAlmanaxRange``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAlmanaxRange`: []AlmanaxEntry
-    fmt.Fprintf(os.Stdout, "Response from `AlmanaxApi.GetAlmanaxRange`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AlmanaxAPI.GetAlmanaxRange`: %v\n", resp)
 }
 ```
 

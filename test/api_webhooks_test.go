@@ -1,7 +1,7 @@
 /*
 Dofusdude
 
-Testing WebhooksApiService
+Testing WebhooksAPIService
 
 */
 
@@ -17,55 +17,55 @@ import (
 	openapiclient "github.com/dofusdude/dodugo"
 )
 
-func Test_dodugo_WebhooksApiService(t *testing.T) {
+func Test_dodugo_WebhooksAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test WebhooksApiService DeleteWebhooksAlmanaxId", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService DeleteWebhooksAlmanaxId", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		httpRes, err := apiClient.WebhooksApi.DeleteWebhooksAlmanaxId(context.Background(), id).Execute()
+		httpRes, err := apiClient.WebhooksAPI.DeleteWebhooksAlmanaxId(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WebhooksApiService DeleteWebhooksRssId", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService DeleteWebhooksRssId", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		httpRes, err := apiClient.WebhooksApi.DeleteWebhooksRssId(context.Background(), id).Execute()
+		httpRes, err := apiClient.WebhooksAPI.DeleteWebhooksRssId(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WebhooksApiService DeleteWebhooksTwitterId", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService DeleteWebhooksTwitterId", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		httpRes, err := apiClient.WebhooksApi.DeleteWebhooksTwitterId(context.Background(), id).Execute()
+		httpRes, err := apiClient.WebhooksAPI.DeleteWebhooksTwitterId(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WebhooksApiService GetMetaWebhooksAlmanax", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService GetMetaWebhooksAlmanax", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.WebhooksApi.GetMetaWebhooksAlmanax(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WebhooksAPI.GetMetaWebhooksAlmanax(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -73,11 +73,11 @@ func Test_dodugo_WebhooksApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebhooksApiService GetMetaWebhooksRss", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService GetMetaWebhooksRss", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.WebhooksApi.GetMetaWebhooksRss(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WebhooksAPI.GetMetaWebhooksRss(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -85,11 +85,11 @@ func Test_dodugo_WebhooksApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebhooksApiService GetMetaWebhooksTwitter", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService GetMetaWebhooksTwitter", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.WebhooksApi.GetMetaWebhooksTwitter(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WebhooksAPI.GetMetaWebhooksTwitter(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -97,13 +97,13 @@ func Test_dodugo_WebhooksApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebhooksApiService GetWebhooksAlmanaxId", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService GetWebhooksAlmanaxId", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		resp, httpRes, err := apiClient.WebhooksApi.GetWebhooksAlmanaxId(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WebhooksAPI.GetWebhooksAlmanaxId(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -111,13 +111,13 @@ func Test_dodugo_WebhooksApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebhooksApiService GetWebhooksRssId", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService GetWebhooksRssId", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		resp, httpRes, err := apiClient.WebhooksApi.GetWebhooksRssId(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WebhooksAPI.GetWebhooksRssId(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -125,13 +125,13 @@ func Test_dodugo_WebhooksApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebhooksApiService GetWebhooksTwitterId", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService GetWebhooksTwitterId", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		resp, httpRes, err := apiClient.WebhooksApi.GetWebhooksTwitterId(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WebhooksAPI.GetWebhooksTwitterId(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -139,46 +139,46 @@ func Test_dodugo_WebhooksApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebhooksApiService PostWebhooksAlmanax", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService PostWebhooksAlmanax", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.WebhooksApi.PostWebhooksAlmanax(context.Background()).Execute()
+		httpRes, err := apiClient.WebhooksAPI.PostWebhooksAlmanax(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WebhooksApiService PostWebhooksRss", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService PostWebhooksRss", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.WebhooksApi.PostWebhooksRss(context.Background()).Execute()
+		httpRes, err := apiClient.WebhooksAPI.PostWebhooksRss(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WebhooksApiService PostWebhooksTwitter", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService PostWebhooksTwitter", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.WebhooksApi.PostWebhooksTwitter(context.Background()).Execute()
+		httpRes, err := apiClient.WebhooksAPI.PostWebhooksTwitter(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WebhooksApiService PutWebhooksAlmanaxId", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService PutWebhooksAlmanaxId", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		resp, httpRes, err := apiClient.WebhooksApi.PutWebhooksAlmanaxId(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WebhooksAPI.PutWebhooksAlmanaxId(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -186,13 +186,13 @@ func Test_dodugo_WebhooksApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebhooksApiService PutWebhooksRssId", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService PutWebhooksRssId", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		resp, httpRes, err := apiClient.WebhooksApi.PutWebhooksRssId(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WebhooksAPI.PutWebhooksRssId(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -200,13 +200,13 @@ func Test_dodugo_WebhooksApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebhooksApiService PutWebhooksTwitterId", func(t *testing.T) {
+	t.Run("Test WebhooksAPIService PutWebhooksTwitterId", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		resp, httpRes, err := apiClient.WebhooksApi.PutWebhooksTwitterId(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WebhooksAPI.PutWebhooksTwitterId(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

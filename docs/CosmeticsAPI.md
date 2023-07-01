@@ -1,21 +1,21 @@
-# \ConsumablesApi
+# \CosmeticsAPI
 
 All URIs are relative to *https://api.dofusdu.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAllItemsConsumablesList**](ConsumablesApi.md#GetAllItemsConsumablesList) | **Get** /{game}/{language}/items/consumables/all | List All Consumables
-[**GetItemsConsumablesList**](ConsumablesApi.md#GetItemsConsumablesList) | **Get** /{game}/{language}/items/consumables | List Consumables
-[**GetItemsConsumablesSearch**](ConsumablesApi.md#GetItemsConsumablesSearch) | **Get** /{game}/{language}/items/consumables/search | Search Consumables
-[**GetItemsConsumablesSingle**](ConsumablesApi.md#GetItemsConsumablesSingle) | **Get** /{game}/{language}/items/consumables/{ankama_id} | Single Consumables
+[**GetAllCosmeticsList**](CosmeticsAPI.md#GetAllCosmeticsList) | **Get** /{game}/{language}/items/cosmetics/all | List All Cosmetics
+[**GetCosmeticsList**](CosmeticsAPI.md#GetCosmeticsList) | **Get** /{game}/{language}/items/cosmetics | List Cosmetics
+[**GetCosmeticsSearch**](CosmeticsAPI.md#GetCosmeticsSearch) | **Get** /{game}/{language}/items/cosmetics/search | Search Cosmetics
+[**GetCosmeticsSingle**](CosmeticsAPI.md#GetCosmeticsSingle) | **Get** /{game}/{language}/items/cosmetics/{ankama_id} | Single Cosmetics
 
 
 
-## GetAllItemsConsumablesList
+## GetAllCosmeticsList
 
-> ItemsListPaged GetAllItemsConsumablesList(ctx, language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
+> ItemsListPaged GetAllCosmeticsList(ctx, language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
 
-List All Consumables
+List All Cosmetics
 
 
 
@@ -28,27 +28,27 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
+    language := "fr" // string | a valid language code
     game := "dofus2" // string | 
     sortLevel := "asc" // string | sort the resulting list by level, default unsorted (optional)
-    filterTypeName := "Chest" // string | only results with the translated type name (optional)
-    filterMinLevel := int32(150) // int32 | only results which level is equal or above this value (optional)
-    filterMaxLevel := int32(180) // int32 | only results which level is equal or below this value (optional)
+    filterTypeName := "Chapeau d'apparat" // string | only results with the translated type name (optional)
+    filterMinLevel := int32(1) // int32 | only results which level is equal or above this value (optional)
+    filterMaxLevel := int32(5) // int32 | only results which level is equal or below this value (optional)
     acceptEncoding := "acceptEncoding_example" // string | optional compression for saving bandwidth (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsumablesApi.GetAllItemsConsumablesList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
+    resp, r, err := apiClient.CosmeticsAPI.GetAllCosmeticsList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsumablesApi.GetAllItemsConsumablesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CosmeticsAPI.GetAllCosmeticsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAllItemsConsumablesList`: ItemsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `ConsumablesApi.GetAllItemsConsumablesList`: %v\n", resp)
+    // response from `GetAllCosmeticsList`: ItemsListPaged
+    fmt.Fprintf(os.Stdout, "Response from `CosmeticsAPI.GetAllCosmeticsList`: %v\n", resp)
 }
 ```
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAllItemsConsumablesListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAllCosmeticsListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -94,11 +94,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetItemsConsumablesList
+## GetCosmeticsList
 
-> ItemsListPaged GetItemsConsumablesList(ctx, language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsItem(fieldsItem).Execute()
+> ItemsListPaged GetCosmeticsList(ctx, language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsItem(fieldsItem).Execute()
 
-List Consumables
+List Cosmetics
 
 
 
@@ -111,29 +111,29 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
+    language := "fr" // string | a valid language code
     game := "dofus2" // string | 
     sortLevel := "asc" // string | sort the resulting list by level, default unsorted (optional)
-    filterTypeName := "Chest" // string | only results with the translated type name (optional)
-    filterMinLevel := int32(150) // int32 | only results which level is equal or above this value (optional)
-    filterMaxLevel := int32(180) // int32 | only results which level is equal or below this value (optional)
-    pageSize := int32(2) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
+    filterTypeName := "Chapeau d'apparat" // string | only results with the translated type name (optional)
+    filterMinLevel := int32(1) // int32 | only results which level is equal or above this value (optional)
+    filterMaxLevel := int32(5) // int32 | only results which level is equal or below this value (optional)
+    pageSize := int32(5) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
     pageNumber := int32(1) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
     fieldsItem := []string{"FieldsItem_example"} // []string | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsumablesApi.GetItemsConsumablesList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsItem(fieldsItem).Execute()
+    resp, r, err := apiClient.CosmeticsAPI.GetCosmeticsList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsItem(fieldsItem).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsumablesApi.GetItemsConsumablesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CosmeticsAPI.GetCosmeticsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetItemsConsumablesList`: ItemsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `ConsumablesApi.GetItemsConsumablesList`: %v\n", resp)
+    // response from `GetCosmeticsList`: ItemsListPaged
+    fmt.Fprintf(os.Stdout, "Response from `CosmeticsAPI.GetCosmeticsList`: %v\n", resp)
 }
 ```
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetItemsConsumablesListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCosmeticsListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -181,11 +181,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetItemsConsumablesSearch
+## GetCosmeticsSearch
 
-> []ItemListEntry GetItemsConsumablesSearch(ctx, language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
+> []ItemListEntry GetCosmeticsSearch(ctx, language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
 
-Search Consumables
+Search Cosmetics
 
 
 
@@ -198,27 +198,27 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
     language := "language_example" // string | a valid language code
     game := "dofus2" // string | 
-    query := "Wholewrite" // string | case sensitive search query
-    filterTypeName := "Bread" // string | only results with the translated type name (optional)
+    query := "nedora" // string | case sensitive search query
+    filterTypeName := "Costume" // string | only results with the translated type name (optional)
     filterMinLevel := int32(1) // int32 | only results which level is equal or above this value (optional)
-    filterMaxLevel := int32(200) // int32 | only results which level is equal or below this value (optional)
+    filterMaxLevel := int32(2) // int32 | only results which level is equal or below this value (optional)
     limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsumablesApi.GetItemsConsumablesSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
+    resp, r, err := apiClient.CosmeticsAPI.GetCosmeticsSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsumablesApi.GetItemsConsumablesSearch``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CosmeticsAPI.GetCosmeticsSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetItemsConsumablesSearch`: []ItemListEntry
-    fmt.Fprintf(os.Stdout, "Response from `ConsumablesApi.GetItemsConsumablesSearch`: %v\n", resp)
+    // response from `GetCosmeticsSearch`: []ItemListEntry
+    fmt.Fprintf(os.Stdout, "Response from `CosmeticsAPI.GetCosmeticsSearch`: %v\n", resp)
 }
 ```
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetItemsConsumablesSearchRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCosmeticsSearchRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -264,11 +264,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetItemsConsumablesSingle
+## GetCosmeticsSingle
 
-> Resource GetItemsConsumablesSingle(ctx, language, ankamaId, game).Execute()
+> Cosmetic GetCosmeticsSingle(ctx, language, ankamaId, game).Execute()
 
-Single Consumables
+Single Cosmetics
 
 
 
@@ -281,23 +281,23 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
     language := "language_example" // string | a valid language code
-    ankamaId := int32(17206) // int32 | identifier
+    ankamaId := int32(24132) // int32 | identifier
     game := "dofus2" // string | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsumablesApi.GetItemsConsumablesSingle(context.Background(), language, ankamaId, game).Execute()
+    resp, r, err := apiClient.CosmeticsAPI.GetCosmeticsSingle(context.Background(), language, ankamaId, game).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsumablesApi.GetItemsConsumablesSingle``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CosmeticsAPI.GetCosmeticsSingle``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetItemsConsumablesSingle`: Resource
-    fmt.Fprintf(os.Stdout, "Response from `ConsumablesApi.GetItemsConsumablesSingle`: %v\n", resp)
+    // response from `GetCosmeticsSingle`: Cosmetic
+    fmt.Fprintf(os.Stdout, "Response from `CosmeticsAPI.GetCosmeticsSingle`: %v\n", resp)
 }
 ```
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetItemsConsumablesSingleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCosmeticsSingleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Resource**](Resource.md)
+[**Cosmetic**](Cosmetic.md)
 
 ### Authorization
 

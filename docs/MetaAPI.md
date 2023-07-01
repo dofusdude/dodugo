@@ -1,11 +1,11 @@
-# \MetaApi
+# \MetaAPI
 
 All URIs are relative to *https://api.dofusdu.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetMetaAlmanaxBonuses**](MetaApi.md#GetMetaAlmanaxBonuses) | **Get** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses
-[**GetMetaElements**](MetaApi.md#GetMetaElements) | **Get** /dofus2/meta/elements | Effects and Condition Elements
+[**GetMetaAlmanaxBonuses**](MetaAPI.md#GetMetaAlmanaxBonuses) | **Get** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses
+[**GetMetaElements**](MetaAPI.md#GetMetaElements) | **Get** /dofus2/meta/elements | Effects and Condition Elements
 
 
 
@@ -26,7 +26,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -34,13 +34,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetaApi.GetMetaAlmanaxBonuses(context.Background(), language).Execute()
+    resp, r, err := apiClient.MetaAPI.GetMetaAlmanaxBonuses(context.Background(), language).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetaApi.GetMetaAlmanaxBonuses``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetaAPI.GetMetaAlmanaxBonuses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetMetaAlmanaxBonuses`: []GetMetaAlmanaxBonuses200ResponseInner
-    fmt.Fprintf(os.Stdout, "Response from `MetaApi.GetMetaAlmanaxBonuses`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MetaAPI.GetMetaAlmanaxBonuses`: %v\n", resp)
 }
 ```
 
@@ -96,20 +96,20 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetaApi.GetMetaElements(context.Background()).Execute()
+    resp, r, err := apiClient.MetaAPI.GetMetaElements(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetaApi.GetMetaElements``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetaAPI.GetMetaElements``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetMetaElements`: []string
-    fmt.Fprintf(os.Stdout, "Response from `MetaApi.GetMetaElements`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MetaAPI.GetMetaElements`: %v\n", resp)
 }
 ```
 

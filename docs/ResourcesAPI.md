@@ -1,21 +1,21 @@
-# \QuestItemsApi
+# \ResourcesAPI
 
 All URIs are relative to *https://api.dofusdu.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAllItemsQuestList**](QuestItemsApi.md#GetAllItemsQuestList) | **Get** /{game}/{language}/items/quest/all | List All Quest Items
-[**GetItemQuestSingle**](QuestItemsApi.md#GetItemQuestSingle) | **Get** /{game}/{language}/items/quest/{ankama_id} | Single Quest Items
-[**GetItemsQuestList**](QuestItemsApi.md#GetItemsQuestList) | **Get** /{game}/{language}/items/quest | List Quest Items
-[**GetItemsQuestSearch**](QuestItemsApi.md#GetItemsQuestSearch) | **Get** /{game}/{language}/items/quest/search | Search Quest Items
+[**GetAllItemsResourcesList**](ResourcesAPI.md#GetAllItemsResourcesList) | **Get** /{game}/{language}/items/resources/all | List All Resources
+[**GetItemsResourceSearch**](ResourcesAPI.md#GetItemsResourceSearch) | **Get** /{game}/{language}/items/resources/search | Search Resources
+[**GetItemsResourcesList**](ResourcesAPI.md#GetItemsResourcesList) | **Get** /{game}/{language}/items/resources | List Resources
+[**GetItemsResourcesSingle**](ResourcesAPI.md#GetItemsResourcesSingle) | **Get** /{game}/{language}/items/resources/{ankama_id} | Single Resources
 
 
 
-## GetAllItemsQuestList
+## GetAllItemsResourcesList
 
-> ItemsListPaged GetAllItemsQuestList(ctx, language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
+> ItemsListPaged GetAllItemsResourcesList(ctx, language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
 
-List All Quest Items
+List All Resources
 
 
 
@@ -28,27 +28,27 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "fr" // string | a valid language code
+    language := "language_example" // string | a valid language code
     game := "dofus2" // string | 
     sortLevel := "desc" // string | sort the resulting list by level, default unsorted (optional)
-    filterTypeName := "Sufokia" // string | only results with the translated type name (optional)
-    filterMinLevel := int32(1) // int32 | only results which level is equal or above this value (optional)
-    filterMaxLevel := int32(50) // int32 | only results which level is equal or below this value (optional)
+    filterTypeName := "miscellaneous resources" // string | only results with the translated type name (optional)
+    filterMinLevel := int32(160) // int32 | only results which level is equal or above this value (optional)
+    filterMaxLevel := int32(190) // int32 | only results which level is equal or below this value (optional)
     acceptEncoding := "acceptEncoding_example" // string | optional compression for saving bandwidth (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QuestItemsApi.GetAllItemsQuestList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
+    resp, r, err := apiClient.ResourcesAPI.GetAllItemsResourcesList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QuestItemsApi.GetAllItemsQuestList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ResourcesAPI.GetAllItemsResourcesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAllItemsQuestList`: ItemsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `QuestItemsApi.GetAllItemsQuestList`: %v\n", resp)
+    // response from `GetAllItemsResourcesList`: ItemsListPaged
+    fmt.Fprintf(os.Stdout, "Response from `ResourcesAPI.GetAllItemsResourcesList`: %v\n", resp)
 }
 ```
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAllItemsQuestListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAllItemsResourcesListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -94,11 +94,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetItemQuestSingle
+## GetItemsResourceSearch
 
-> Resource GetItemQuestSingle(ctx, language, ankamaId, game).Execute()
+> []ItemListEntry GetItemsResourceSearch(ctx, language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
 
-Single Quest Items
+Search Resources
 
 
 
@@ -111,23 +111,27 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
     language := "language_example" // string | a valid language code
-    ankamaId := int32(25256) // int32 | identifier
     game := "dofus2" // string | 
+    query := "snowdew" // string | case sensitive search query
+    filterTypeName := "plant" // string | only results with the translated type name (optional)
+    filterMinLevel := int32(150) // int32 | only results which level is equal or above this value (optional)
+    filterMaxLevel := int32(200) // int32 | only results which level is equal or below this value (optional)
+    limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QuestItemsApi.GetItemQuestSingle(context.Background(), language, ankamaId, game).Execute()
+    resp, r, err := apiClient.ResourcesAPI.GetItemsResourceSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QuestItemsApi.GetItemQuestSingle``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ResourcesAPI.GetItemsResourceSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetItemQuestSingle`: Resource
-    fmt.Fprintf(os.Stdout, "Response from `QuestItemsApi.GetItemQuestSingle`: %v\n", resp)
+    // response from `GetItemsResourceSearch`: []ItemListEntry
+    fmt.Fprintf(os.Stdout, "Response from `ResourcesAPI.GetItemsResourceSearch`: %v\n", resp)
 }
 ```
 
@@ -138,23 +142,26 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
-**ankamaId** | **int32** | identifier | 
 **game** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetItemQuestSingleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetItemsResourceSearchRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
+ **query** | **string** | case sensitive search query | 
+ **filterTypeName** | **string** | only results with the translated type name | 
+ **filterMinLevel** | **int32** | only results which level is equal or above this value | 
+ **filterMaxLevel** | **int32** | only results which level is equal or below this value | 
+ **limit** | **int32** | maximum number of returned results | [default to 8]
 
 ### Return type
 
-[**Resource**](Resource.md)
+[**[]ItemListEntry**](ItemListEntry.md)
 
 ### Authorization
 
@@ -170,11 +177,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetItemsQuestList
+## GetItemsResourcesList
 
-> ItemsListPaged GetItemsQuestList(ctx, language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsItem(fieldsItem).Execute()
+> ItemsListPaged GetItemsResourcesList(ctx, language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsItem(fieldsItem).Execute()
 
-List Quest Items
+List Resources
 
 
 
@@ -187,29 +194,29 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "fr" // string | a valid language code
+    language := "language_example" // string | a valid language code
     game := "dofus2" // string | 
     sortLevel := "desc" // string | sort the resulting list by level, default unsorted (optional)
-    filterTypeName := "Sufokia" // string | only results with the translated type name (optional)
-    filterMinLevel := int32(1) // int32 | only results which level is equal or above this value (optional)
-    filterMaxLevel := int32(50) // int32 | only results which level is equal or below this value (optional)
-    pageSize := int32(5) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
+    filterTypeName := "miscellaneous resources" // string | only results with the translated type name (optional)
+    filterMinLevel := int32(160) // int32 | only results which level is equal or above this value (optional)
+    filterMaxLevel := int32(190) // int32 | only results which level is equal or below this value (optional)
+    pageSize := int32(10) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
     pageNumber := int32(1) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
     fieldsItem := []string{"FieldsItem_example"} // []string | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QuestItemsApi.GetItemsQuestList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsItem(fieldsItem).Execute()
+    resp, r, err := apiClient.ResourcesAPI.GetItemsResourcesList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsItem(fieldsItem).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QuestItemsApi.GetItemsQuestList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ResourcesAPI.GetItemsResourcesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetItemsQuestList`: ItemsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `QuestItemsApi.GetItemsQuestList`: %v\n", resp)
+    // response from `GetItemsResourcesList`: ItemsListPaged
+    fmt.Fprintf(os.Stdout, "Response from `ResourcesAPI.GetItemsResourcesList`: %v\n", resp)
 }
 ```
 
@@ -224,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetItemsQuestListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetItemsResourcesListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -257,11 +264,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetItemsQuestSearch
+## GetItemsResourcesSingle
 
-> []ItemListEntry GetItemsQuestSearch(ctx, language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
+> Resource GetItemsResourcesSingle(ctx, language, ankamaId, game).Execute()
 
-Search Quest Items
+Single Resources
 
 
 
@@ -274,27 +281,23 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "es" // string | a valid language code
+    language := "language_example" // string | a valid language code
+    ankamaId := int32(7295) // int32 | identifier
     game := "dofus2" // string | 
-    query := "Ficha" // string | case sensitive search query
-    filterTypeName := "Justicieros" // string | only results with the translated type name (optional)
-    filterMinLevel := int32(60) // int32 | only results which level is equal or above this value (optional)
-    filterMaxLevel := int32(70) // int32 | only results which level is equal or below this value (optional)
-    limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QuestItemsApi.GetItemsQuestSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
+    resp, r, err := apiClient.ResourcesAPI.GetItemsResourcesSingle(context.Background(), language, ankamaId, game).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QuestItemsApi.GetItemsQuestSearch``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ResourcesAPI.GetItemsResourcesSingle``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetItemsQuestSearch`: []ItemListEntry
-    fmt.Fprintf(os.Stdout, "Response from `QuestItemsApi.GetItemsQuestSearch`: %v\n", resp)
+    // response from `GetItemsResourcesSingle`: Resource
+    fmt.Fprintf(os.Stdout, "Response from `ResourcesAPI.GetItemsResourcesSingle`: %v\n", resp)
 }
 ```
 
@@ -305,26 +308,23 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
+**ankamaId** | **int32** | identifier | 
 **game** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetItemsQuestSearchRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetItemsResourcesSingleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **query** | **string** | case sensitive search query | 
- **filterTypeName** | **string** | only results with the translated type name | 
- **filterMinLevel** | **int32** | only results which level is equal or above this value | 
- **filterMaxLevel** | **int32** | only results which level is equal or below this value | 
- **limit** | **int32** | maximum number of returned results | [default to 8]
+
 
 ### Return type
 
-[**[]ItemListEntry**](ItemListEntry.md)
+[**Resource**](Resource.md)
 
 ### Authorization
 

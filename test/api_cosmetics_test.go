@@ -1,7 +1,7 @@
 /*
 Dofusdude
 
-Testing CosmeticsApiService
+Testing CosmeticsAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/dofusdude/dodugo"
 )
 
-func Test_dodugo_CosmeticsApiService(t *testing.T) {
+func Test_dodugo_CosmeticsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test CosmeticsApiService GetAllCosmeticsList", func(t *testing.T) {
+	t.Run("Test CosmeticsAPIService GetAllCosmeticsList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.CosmeticsApi.GetAllCosmeticsList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.CosmeticsAPI.GetAllCosmeticsList(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,14 +37,14 @@ func Test_dodugo_CosmeticsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test CosmeticsApiService GetCosmeticsList", func(t *testing.T) {
+	t.Run("Test CosmeticsAPIService GetCosmeticsList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.CosmeticsApi.GetCosmeticsList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.CosmeticsAPI.GetCosmeticsList(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -52,14 +52,14 @@ func Test_dodugo_CosmeticsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test CosmeticsApiService GetCosmeticsSearch", func(t *testing.T) {
+	t.Run("Test CosmeticsAPIService GetCosmeticsSearch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.CosmeticsApi.GetCosmeticsSearch(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.CosmeticsAPI.GetCosmeticsSearch(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -67,7 +67,7 @@ func Test_dodugo_CosmeticsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test CosmeticsApiService GetCosmeticsSingle", func(t *testing.T) {
+	t.Run("Test CosmeticsAPIService GetCosmeticsSingle", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -75,7 +75,7 @@ func Test_dodugo_CosmeticsApiService(t *testing.T) {
 		var ankamaId int32
 		var game string
 
-		resp, httpRes, err := apiClient.CosmeticsApi.GetCosmeticsSingle(context.Background(), language, ankamaId, game).Execute()
+		resp, httpRes, err := apiClient.CosmeticsAPI.GetCosmeticsSingle(context.Background(), language, ankamaId, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

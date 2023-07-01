@@ -1,10 +1,10 @@
-# \AllItemsApi
+# \AllItemsAPI
 
 All URIs are relative to *https://api.dofusdu.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetItemsAllSearch**](AllItemsApi.md#GetItemsAllSearch) | **Get** /{game}/{language}/items/search | Search All Items
+[**GetItemsAllSearch**](AllItemsAPI.md#GetItemsAllSearch) | **Get** /{game}/{language}/items/search | Search All Items
 
 
 
@@ -25,7 +25,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -39,13 +39,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AllItemsApi.GetItemsAllSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
+    resp, r, err := apiClient.AllItemsAPI.GetItemsAllSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AllItemsApi.GetItemsAllSearch``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AllItemsAPI.GetItemsAllSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetItemsAllSearch`: []ItemsListEntryTyped
-    fmt.Fprintf(os.Stdout, "Response from `AllItemsApi.GetItemsAllSearch`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AllItemsAPI.GetItemsAllSearch`: %v\n", resp)
 }
 ```
 

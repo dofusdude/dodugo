@@ -1,24 +1,24 @@
-# \WebhooksApi
+# \WebhooksAPI
 
 All URIs are relative to *https://api.dofusdu.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteWebhooksAlmanaxId**](WebhooksApi.md#DeleteWebhooksAlmanaxId) | **Delete** /webhooks/almanax/{id} | Unregister Almanax Hook
-[**DeleteWebhooksRssId**](WebhooksApi.md#DeleteWebhooksRssId) | **Delete** /webhooks/rss/{id} | Unregister RSS Hook
-[**DeleteWebhooksTwitterId**](WebhooksApi.md#DeleteWebhooksTwitterId) | **Delete** /webhooks/twitter/{id} | Unregister Twitter Hook
-[**GetMetaWebhooksAlmanax**](WebhooksApi.md#GetMetaWebhooksAlmanax) | **Get** /meta/webhooks/almanax | Get Almanax Hook Metainfo
-[**GetMetaWebhooksRss**](WebhooksApi.md#GetMetaWebhooksRss) | **Get** /meta/webhooks/rss | Get RSS Hook Metainfo
-[**GetMetaWebhooksTwitter**](WebhooksApi.md#GetMetaWebhooksTwitter) | **Get** /meta/webhooks/twitter | Get Twitter Hook Metainfo
-[**GetWebhooksAlmanaxId**](WebhooksApi.md#GetWebhooksAlmanaxId) | **Get** /webhooks/almanax/{id} | Get Almanax Hook
-[**GetWebhooksRssId**](WebhooksApi.md#GetWebhooksRssId) | **Get** /webhooks/rss/{id} | Get RSS Hook
-[**GetWebhooksTwitterId**](WebhooksApi.md#GetWebhooksTwitterId) | **Get** /webhooks/twitter/{id} | Get Twitter Hook
-[**PostWebhooksAlmanax**](WebhooksApi.md#PostWebhooksAlmanax) | **Post** /webhooks/almanax | Register Almanax Hook
-[**PostWebhooksRss**](WebhooksApi.md#PostWebhooksRss) | **Post** /webhooks/rss | Register RSS Hook
-[**PostWebhooksTwitter**](WebhooksApi.md#PostWebhooksTwitter) | **Post** /webhooks/twitter | Register Twitter Hook
-[**PutWebhooksAlmanaxId**](WebhooksApi.md#PutWebhooksAlmanaxId) | **Put** /webhooks/almanax/{id} | Update Almanax Hook
-[**PutWebhooksRssId**](WebhooksApi.md#PutWebhooksRssId) | **Put** /webhooks/rss/{id} | Update RSS Hook
-[**PutWebhooksTwitterId**](WebhooksApi.md#PutWebhooksTwitterId) | **Put** /webhooks/twitter/{id} | Update Twitter Hook
+[**DeleteWebhooksAlmanaxId**](WebhooksAPI.md#DeleteWebhooksAlmanaxId) | **Delete** /webhooks/almanax/{id} | Unregister Almanax Hook
+[**DeleteWebhooksRssId**](WebhooksAPI.md#DeleteWebhooksRssId) | **Delete** /webhooks/rss/{id} | Unregister RSS Hook
+[**DeleteWebhooksTwitterId**](WebhooksAPI.md#DeleteWebhooksTwitterId) | **Delete** /webhooks/twitter/{id} | Unregister Twitter Hook
+[**GetMetaWebhooksAlmanax**](WebhooksAPI.md#GetMetaWebhooksAlmanax) | **Get** /meta/webhooks/almanax | Get Almanax Hook Metainfo
+[**GetMetaWebhooksRss**](WebhooksAPI.md#GetMetaWebhooksRss) | **Get** /meta/webhooks/rss | Get RSS Hook Metainfo
+[**GetMetaWebhooksTwitter**](WebhooksAPI.md#GetMetaWebhooksTwitter) | **Get** /meta/webhooks/twitter | Get Twitter Hook Metainfo
+[**GetWebhooksAlmanaxId**](WebhooksAPI.md#GetWebhooksAlmanaxId) | **Get** /webhooks/almanax/{id} | Get Almanax Hook
+[**GetWebhooksRssId**](WebhooksAPI.md#GetWebhooksRssId) | **Get** /webhooks/rss/{id} | Get RSS Hook
+[**GetWebhooksTwitterId**](WebhooksAPI.md#GetWebhooksTwitterId) | **Get** /webhooks/twitter/{id} | Get Twitter Hook
+[**PostWebhooksAlmanax**](WebhooksAPI.md#PostWebhooksAlmanax) | **Post** /webhooks/almanax | Register Almanax Hook
+[**PostWebhooksRss**](WebhooksAPI.md#PostWebhooksRss) | **Post** /webhooks/rss | Register RSS Hook
+[**PostWebhooksTwitter**](WebhooksAPI.md#PostWebhooksTwitter) | **Post** /webhooks/twitter | Register Twitter Hook
+[**PutWebhooksAlmanaxId**](WebhooksAPI.md#PutWebhooksAlmanaxId) | **Put** /webhooks/almanax/{id} | Update Almanax Hook
+[**PutWebhooksRssId**](WebhooksAPI.md#PutWebhooksRssId) | **Put** /webhooks/rss/{id} | Update RSS Hook
+[**PutWebhooksTwitterId**](WebhooksAPI.md#PutWebhooksTwitterId) | **Put** /webhooks/twitter/{id} | Update Twitter Hook
 
 
 
@@ -39,7 +39,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -47,9 +47,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.DeleteWebhooksAlmanaxId(context.Background(), id).Execute()
+    r, err := apiClient.WebhooksAPI.DeleteWebhooksAlmanaxId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.DeleteWebhooksAlmanaxId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.DeleteWebhooksAlmanaxId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -107,7 +107,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -115,9 +115,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.DeleteWebhooksRssId(context.Background(), id).Execute()
+    r, err := apiClient.WebhooksAPI.DeleteWebhooksRssId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.DeleteWebhooksRssId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.DeleteWebhooksRssId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,7 +175,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -183,9 +183,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.DeleteWebhooksTwitterId(context.Background(), id).Execute()
+    r, err := apiClient.WebhooksAPI.DeleteWebhooksTwitterId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.DeleteWebhooksTwitterId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.DeleteWebhooksTwitterId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -243,20 +243,20 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.GetMetaWebhooksAlmanax(context.Background()).Execute()
+    resp, r, err := apiClient.WebhooksAPI.GetMetaWebhooksAlmanax(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GetMetaWebhooksAlmanax``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.GetMetaWebhooksAlmanax``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetMetaWebhooksAlmanax`: GetMetaWebhooksTwitter200Response
-    fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.GetMetaWebhooksAlmanax`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WebhooksAPI.GetMetaWebhooksAlmanax`: %v\n", resp)
 }
 ```
 
@@ -304,20 +304,20 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.GetMetaWebhooksRss(context.Background()).Execute()
+    resp, r, err := apiClient.WebhooksAPI.GetMetaWebhooksRss(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GetMetaWebhooksRss``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.GetMetaWebhooksRss``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetMetaWebhooksRss`: GetMetaWebhooksTwitter200Response
-    fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.GetMetaWebhooksRss`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WebhooksAPI.GetMetaWebhooksRss`: %v\n", resp)
 }
 ```
 
@@ -365,20 +365,20 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.GetMetaWebhooksTwitter(context.Background()).Execute()
+    resp, r, err := apiClient.WebhooksAPI.GetMetaWebhooksTwitter(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GetMetaWebhooksTwitter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.GetMetaWebhooksTwitter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetMetaWebhooksTwitter`: GetMetaWebhooksTwitter200Response
-    fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.GetMetaWebhooksTwitter`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WebhooksAPI.GetMetaWebhooksTwitter`: %v\n", resp)
 }
 ```
 
@@ -426,7 +426,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -434,13 +434,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.GetWebhooksAlmanaxId(context.Background(), id).Execute()
+    resp, r, err := apiClient.WebhooksAPI.GetWebhooksAlmanaxId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GetWebhooksAlmanaxId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.GetWebhooksAlmanaxId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetWebhooksAlmanaxId`: AlmanaxWebhook
-    fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.GetWebhooksAlmanaxId`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WebhooksAPI.GetWebhooksAlmanaxId`: %v\n", resp)
 }
 ```
 
@@ -496,7 +496,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -504,13 +504,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.GetWebhooksRssId(context.Background(), id).Execute()
+    resp, r, err := apiClient.WebhooksAPI.GetWebhooksRssId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GetWebhooksRssId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.GetWebhooksRssId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetWebhooksRssId`: RssWebhook
-    fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.GetWebhooksRssId`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WebhooksAPI.GetWebhooksRssId`: %v\n", resp)
 }
 ```
 
@@ -566,7 +566,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -574,13 +574,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.GetWebhooksTwitterId(context.Background(), id).Execute()
+    resp, r, err := apiClient.WebhooksAPI.GetWebhooksTwitterId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GetWebhooksTwitterId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.GetWebhooksTwitterId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetWebhooksTwitterId`: TwitterWebhook
-    fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.GetWebhooksTwitterId`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WebhooksAPI.GetWebhooksTwitterId`: %v\n", resp)
 }
 ```
 
@@ -636,7 +636,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -644,9 +644,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.PostWebhooksAlmanax(context.Background()).CreateAlmanaxWebhook(createAlmanaxWebhook).Execute()
+    r, err := apiClient.WebhooksAPI.PostWebhooksAlmanax(context.Background()).CreateAlmanaxWebhook(createAlmanaxWebhook).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.PostWebhooksAlmanax``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.PostWebhooksAlmanax``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -700,7 +700,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -708,9 +708,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.PostWebhooksRss(context.Background()).CreateRSSWebhook(createRSSWebhook).Execute()
+    r, err := apiClient.WebhooksAPI.PostWebhooksRss(context.Background()).CreateRSSWebhook(createRSSWebhook).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.PostWebhooksRss``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.PostWebhooksRss``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -764,7 +764,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -772,9 +772,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.PostWebhooksTwitter(context.Background()).CreateTwitterWebhook(createTwitterWebhook).Execute()
+    r, err := apiClient.WebhooksAPI.PostWebhooksTwitter(context.Background()).CreateTwitterWebhook(createTwitterWebhook).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.PostWebhooksTwitter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.PostWebhooksTwitter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -828,7 +828,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -837,13 +837,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.PutWebhooksAlmanaxId(context.Background(), id).PutAlmanaxWebhook(putAlmanaxWebhook).Execute()
+    resp, r, err := apiClient.WebhooksAPI.PutWebhooksAlmanaxId(context.Background(), id).PutAlmanaxWebhook(putAlmanaxWebhook).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.PutWebhooksAlmanaxId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.PutWebhooksAlmanaxId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `PutWebhooksAlmanaxId`: AlmanaxWebhook
-    fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.PutWebhooksAlmanaxId`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WebhooksAPI.PutWebhooksAlmanaxId`: %v\n", resp)
 }
 ```
 
@@ -900,7 +900,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -909,13 +909,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.PutWebhooksRssId(context.Background(), id).PutRSSWebhook(putRSSWebhook).Execute()
+    resp, r, err := apiClient.WebhooksAPI.PutWebhooksRssId(context.Background(), id).PutRSSWebhook(putRSSWebhook).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.PutWebhooksRssId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.PutWebhooksRssId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `PutWebhooksRssId`: RssWebhook
-    fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.PutWebhooksRssId`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WebhooksAPI.PutWebhooksRssId`: %v\n", resp)
 }
 ```
 
@@ -972,7 +972,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -981,13 +981,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.PutWebhooksTwitterId(context.Background(), id).PutTwitterWebhook(putTwitterWebhook).Execute()
+    resp, r, err := apiClient.WebhooksAPI.PutWebhooksTwitterId(context.Background(), id).PutTwitterWebhook(putTwitterWebhook).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.PutWebhooksTwitterId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksAPI.PutWebhooksTwitterId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `PutWebhooksTwitterId`: TwitterWebhook
-    fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.PutWebhooksTwitterId`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WebhooksAPI.PutWebhooksTwitterId`: %v\n", resp)
 }
 ```
 

@@ -1,9 +1,9 @@
 /*
 Dofusdude
 
-# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina  I highly recommend using the SDKs for quick results. I use them myself for microservices for the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude). 
+# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina - [DofuStuffSimulator](https://dofusstuffsimulator.netlify.app/)  I highly recommend using the SDKs for quick results. I use them myself for parts of the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude). 
 
-API version: 0.7.1
+API version: 0.7.2
 Contact: stelzo@steado.de
 */
 
@@ -14,19 +14,19 @@ package dodugo
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
 
-// ConsumablesApiService ConsumablesApi service
-type ConsumablesApiService service
+// ConsumablesAPIService ConsumablesAPI service
+type ConsumablesAPIService service
 
 type ApiGetAllItemsConsumablesListRequest struct {
 	ctx context.Context
-	ApiService *ConsumablesApiService
+	ApiService *ConsumablesAPIService
 	language string
 	game string
 	sortLevel *string
@@ -90,7 +90,7 @@ curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
  @param game
  @return ApiGetAllItemsConsumablesListRequest
 */
-func (a *ConsumablesApiService) GetAllItemsConsumablesList(ctx context.Context, language string, game string) ApiGetAllItemsConsumablesListRequest {
+func (a *ConsumablesAPIService) GetAllItemsConsumablesList(ctx context.Context, language string, game string) ApiGetAllItemsConsumablesListRequest {
 	return ApiGetAllItemsConsumablesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -101,7 +101,7 @@ func (a *ConsumablesApiService) GetAllItemsConsumablesList(ctx context.Context, 
 
 // Execute executes the request
 //  @return ItemsListPaged
-func (a *ConsumablesApiService) GetAllItemsConsumablesListExecute(r ApiGetAllItemsConsumablesListRequest) (*ItemsListPaged, *http.Response, error) {
+func (a *ConsumablesAPIService) GetAllItemsConsumablesListExecute(r ApiGetAllItemsConsumablesListRequest) (*ItemsListPaged, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -109,7 +109,7 @@ func (a *ConsumablesApiService) GetAllItemsConsumablesListExecute(r ApiGetAllIte
 		localVarReturnValue  *ItemsListPaged
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsumablesApiService.GetAllItemsConsumablesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsumablesAPIService.GetAllItemsConsumablesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -129,16 +129,16 @@ func (a *ConsumablesApiService) GetAllItemsConsumablesListExecute(r ApiGetAllIte
 	}
 
 	if r.sortLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "sort[level]", r.sortLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort[level]", r.sortLevel, "")
 	}
 	if r.filterTypeName != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[type_name]", r.filterTypeName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type_name]", r.filterTypeName, "")
 	}
 	if r.filterMinLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[min_level]", r.filterMinLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_level]", r.filterMinLevel, "")
 	}
 	if r.filterMaxLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[max_level]", r.filterMaxLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_level]", r.filterMaxLevel, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -158,7 +158,7 @@ func (a *ConsumablesApiService) GetAllItemsConsumablesListExecute(r ApiGetAllIte
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.acceptEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Accept-Encoding", r.acceptEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -170,9 +170,9 @@ func (a *ConsumablesApiService) GetAllItemsConsumablesListExecute(r ApiGetAllIte
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -199,7 +199,7 @@ func (a *ConsumablesApiService) GetAllItemsConsumablesListExecute(r ApiGetAllIte
 
 type ApiGetItemsConsumablesListRequest struct {
 	ctx context.Context
-	ApiService *ConsumablesApiService
+	ApiService *ConsumablesAPIService
 	language string
 	game string
 	sortLevel *string
@@ -267,7 +267,7 @@ Retrieve a list of consumable items.
  @param game
  @return ApiGetItemsConsumablesListRequest
 */
-func (a *ConsumablesApiService) GetItemsConsumablesList(ctx context.Context, language string, game string) ApiGetItemsConsumablesListRequest {
+func (a *ConsumablesAPIService) GetItemsConsumablesList(ctx context.Context, language string, game string) ApiGetItemsConsumablesListRequest {
 	return ApiGetItemsConsumablesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -278,7 +278,7 @@ func (a *ConsumablesApiService) GetItemsConsumablesList(ctx context.Context, lan
 
 // Execute executes the request
 //  @return ItemsListPaged
-func (a *ConsumablesApiService) GetItemsConsumablesListExecute(r ApiGetItemsConsumablesListRequest) (*ItemsListPaged, *http.Response, error) {
+func (a *ConsumablesAPIService) GetItemsConsumablesListExecute(r ApiGetItemsConsumablesListRequest) (*ItemsListPaged, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -286,7 +286,7 @@ func (a *ConsumablesApiService) GetItemsConsumablesListExecute(r ApiGetItemsCons
 		localVarReturnValue  *ItemsListPaged
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsumablesApiService.GetItemsConsumablesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsumablesAPIService.GetItemsConsumablesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -306,25 +306,25 @@ func (a *ConsumablesApiService) GetItemsConsumablesListExecute(r ApiGetItemsCons
 	}
 
 	if r.sortLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "sort[level]", r.sortLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort[level]", r.sortLevel, "")
 	}
 	if r.filterTypeName != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[type_name]", r.filterTypeName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type_name]", r.filterTypeName, "")
 	}
 	if r.filterMinLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[min_level]", r.filterMinLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_level]", r.filterMinLevel, "")
 	}
 	if r.filterMaxLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[max_level]", r.filterMaxLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_level]", r.filterMaxLevel, "")
 	}
 	if r.pageSize != nil {
-		parameterAddToQuery(localVarQueryParams, "page[size]", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page[size]", r.pageSize, "")
 	}
 	if r.pageNumber != nil {
-		parameterAddToQuery(localVarQueryParams, "page[number]", r.pageNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page[number]", r.pageNumber, "")
 	}
 	if r.fieldsItem != nil {
-		parameterAddToQuery(localVarQueryParams, "fields[item]", r.fieldsItem, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields[item]", r.fieldsItem, "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -353,9 +353,9 @@ func (a *ConsumablesApiService) GetItemsConsumablesListExecute(r ApiGetItemsCons
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -382,7 +382,7 @@ func (a *ConsumablesApiService) GetItemsConsumablesListExecute(r ApiGetItemsCons
 
 type ApiGetItemsConsumablesSearchRequest struct {
 	ctx context.Context
-	ApiService *ConsumablesApiService
+	ApiService *ConsumablesAPIService
 	language string
 	game string
 	query *string
@@ -436,7 +436,7 @@ Search in all names and descriptions of consumable items with a query.
  @param game
  @return ApiGetItemsConsumablesSearchRequest
 */
-func (a *ConsumablesApiService) GetItemsConsumablesSearch(ctx context.Context, language string, game string) ApiGetItemsConsumablesSearchRequest {
+func (a *ConsumablesAPIService) GetItemsConsumablesSearch(ctx context.Context, language string, game string) ApiGetItemsConsumablesSearchRequest {
 	return ApiGetItemsConsumablesSearchRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -447,7 +447,7 @@ func (a *ConsumablesApiService) GetItemsConsumablesSearch(ctx context.Context, l
 
 // Execute executes the request
 //  @return []ItemListEntry
-func (a *ConsumablesApiService) GetItemsConsumablesSearchExecute(r ApiGetItemsConsumablesSearchRequest) ([]ItemListEntry, *http.Response, error) {
+func (a *ConsumablesAPIService) GetItemsConsumablesSearchExecute(r ApiGetItemsConsumablesSearchRequest) ([]ItemListEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -455,7 +455,7 @@ func (a *ConsumablesApiService) GetItemsConsumablesSearchExecute(r ApiGetItemsCo
 		localVarReturnValue  []ItemListEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsumablesApiService.GetItemsConsumablesSearch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsumablesAPIService.GetItemsConsumablesSearch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -477,18 +477,18 @@ func (a *ConsumablesApiService) GetItemsConsumablesSearchExecute(r ApiGetItemsCo
 		return localVarReturnValue, nil, reportError("query is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "query", r.query, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "")
 	if r.filterTypeName != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[type_name]", r.filterTypeName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type_name]", r.filterTypeName, "")
 	}
 	if r.filterMinLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[min_level]", r.filterMinLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_level]", r.filterMinLevel, "")
 	}
 	if r.filterMaxLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[max_level]", r.filterMaxLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_level]", r.filterMaxLevel, "")
 	}
 	if r.limit != nil {
-		parameterAddToQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -517,9 +517,9 @@ func (a *ConsumablesApiService) GetItemsConsumablesSearchExecute(r ApiGetItemsCo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -546,7 +546,7 @@ func (a *ConsumablesApiService) GetItemsConsumablesSearchExecute(r ApiGetItemsCo
 
 type ApiGetItemsConsumablesSingleRequest struct {
 	ctx context.Context
-	ApiService *ConsumablesApiService
+	ApiService *ConsumablesAPIService
 	language string
 	ankamaId int32
 	game string
@@ -567,7 +567,7 @@ Retrieve a specific consumable item with id.
  @param game
  @return ApiGetItemsConsumablesSingleRequest
 */
-func (a *ConsumablesApiService) GetItemsConsumablesSingle(ctx context.Context, language string, ankamaId int32, game string) ApiGetItemsConsumablesSingleRequest {
+func (a *ConsumablesAPIService) GetItemsConsumablesSingle(ctx context.Context, language string, ankamaId int32, game string) ApiGetItemsConsumablesSingleRequest {
 	return ApiGetItemsConsumablesSingleRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -579,7 +579,7 @@ func (a *ConsumablesApiService) GetItemsConsumablesSingle(ctx context.Context, l
 
 // Execute executes the request
 //  @return Resource
-func (a *ConsumablesApiService) GetItemsConsumablesSingleExecute(r ApiGetItemsConsumablesSingleRequest) (*Resource, *http.Response, error) {
+func (a *ConsumablesAPIService) GetItemsConsumablesSingleExecute(r ApiGetItemsConsumablesSingleRequest) (*Resource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -587,7 +587,7 @@ func (a *ConsumablesApiService) GetItemsConsumablesSingleExecute(r ApiGetItemsCo
 		localVarReturnValue  *Resource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsumablesApiService.GetItemsConsumablesSingle")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsumablesAPIService.GetItemsConsumablesSingle")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -634,9 +634,9 @@ func (a *ConsumablesApiService) GetItemsConsumablesSingleExecute(r ApiGetItemsCo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

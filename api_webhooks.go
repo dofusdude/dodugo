@@ -1,9 +1,9 @@
 /*
 Dofusdude
 
-# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina  I highly recommend using the SDKs for quick results. I use them myself for microservices for the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude). 
+# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina - [DofuStuffSimulator](https://dofusstuffsimulator.netlify.app/)  I highly recommend using the SDKs for quick results. I use them myself for parts of the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude). 
 
-API version: 0.7.1
+API version: 0.7.2
 Contact: stelzo@steado.de
 */
 
@@ -14,19 +14,19 @@ package dodugo
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
 
-// WebhooksApiService WebhooksApi service
-type WebhooksApiService service
+// WebhooksAPIService WebhooksAPI service
+type WebhooksAPIService service
 
 type ApiDeleteWebhooksAlmanaxIdRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	id string
 }
 
@@ -43,7 +43,7 @@ Delete a Webhook from the service.
  @param id
  @return ApiDeleteWebhooksAlmanaxIdRequest
 */
-func (a *WebhooksApiService) DeleteWebhooksAlmanaxId(ctx context.Context, id string) ApiDeleteWebhooksAlmanaxIdRequest {
+func (a *WebhooksAPIService) DeleteWebhooksAlmanaxId(ctx context.Context, id string) ApiDeleteWebhooksAlmanaxIdRequest {
 	return ApiDeleteWebhooksAlmanaxIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -52,14 +52,14 @@ func (a *WebhooksApiService) DeleteWebhooksAlmanaxId(ctx context.Context, id str
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) DeleteWebhooksAlmanaxIdExecute(r ApiDeleteWebhooksAlmanaxIdRequest) (*http.Response, error) {
+func (a *WebhooksAPIService) DeleteWebhooksAlmanaxIdExecute(r ApiDeleteWebhooksAlmanaxIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.DeleteWebhooksAlmanaxId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.DeleteWebhooksAlmanaxId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -98,9 +98,9 @@ func (a *WebhooksApiService) DeleteWebhooksAlmanaxIdExecute(r ApiDeleteWebhooksA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *WebhooksApiService) DeleteWebhooksAlmanaxIdExecute(r ApiDeleteWebhooksA
 
 type ApiDeleteWebhooksRssIdRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	id string
 }
 
@@ -135,7 +135,7 @@ Delete a Webhook from the service.
  @param id
  @return ApiDeleteWebhooksRssIdRequest
 */
-func (a *WebhooksApiService) DeleteWebhooksRssId(ctx context.Context, id string) ApiDeleteWebhooksRssIdRequest {
+func (a *WebhooksAPIService) DeleteWebhooksRssId(ctx context.Context, id string) ApiDeleteWebhooksRssIdRequest {
 	return ApiDeleteWebhooksRssIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -144,14 +144,14 @@ func (a *WebhooksApiService) DeleteWebhooksRssId(ctx context.Context, id string)
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) DeleteWebhooksRssIdExecute(r ApiDeleteWebhooksRssIdRequest) (*http.Response, error) {
+func (a *WebhooksAPIService) DeleteWebhooksRssIdExecute(r ApiDeleteWebhooksRssIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.DeleteWebhooksRssId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.DeleteWebhooksRssId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -190,9 +190,9 @@ func (a *WebhooksApiService) DeleteWebhooksRssIdExecute(r ApiDeleteWebhooksRssId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *WebhooksApiService) DeleteWebhooksRssIdExecute(r ApiDeleteWebhooksRssId
 
 type ApiDeleteWebhooksTwitterIdRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	id string
 }
 
@@ -227,7 +227,7 @@ Delete a Webhook from the service.
  @param id
  @return ApiDeleteWebhooksTwitterIdRequest
 */
-func (a *WebhooksApiService) DeleteWebhooksTwitterId(ctx context.Context, id string) ApiDeleteWebhooksTwitterIdRequest {
+func (a *WebhooksAPIService) DeleteWebhooksTwitterId(ctx context.Context, id string) ApiDeleteWebhooksTwitterIdRequest {
 	return ApiDeleteWebhooksTwitterIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -236,14 +236,14 @@ func (a *WebhooksApiService) DeleteWebhooksTwitterId(ctx context.Context, id str
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) DeleteWebhooksTwitterIdExecute(r ApiDeleteWebhooksTwitterIdRequest) (*http.Response, error) {
+func (a *WebhooksAPIService) DeleteWebhooksTwitterIdExecute(r ApiDeleteWebhooksTwitterIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.DeleteWebhooksTwitterId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.DeleteWebhooksTwitterId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -282,9 +282,9 @@ func (a *WebhooksApiService) DeleteWebhooksTwitterIdExecute(r ApiDeleteWebhooksT
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,7 +302,7 @@ func (a *WebhooksApiService) DeleteWebhooksTwitterIdExecute(r ApiDeleteWebhooksT
 
 type ApiGetMetaWebhooksAlmanaxRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 }
 
 func (r ApiGetMetaWebhooksAlmanaxRequest) Execute() (*GetMetaWebhooksTwitter200Response, *http.Response, error) {
@@ -317,7 +317,7 @@ Get a list of all available subscriptions.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetMetaWebhooksAlmanaxRequest
 */
-func (a *WebhooksApiService) GetMetaWebhooksAlmanax(ctx context.Context) ApiGetMetaWebhooksAlmanaxRequest {
+func (a *WebhooksAPIService) GetMetaWebhooksAlmanax(ctx context.Context) ApiGetMetaWebhooksAlmanaxRequest {
 	return ApiGetMetaWebhooksAlmanaxRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -326,7 +326,7 @@ func (a *WebhooksApiService) GetMetaWebhooksAlmanax(ctx context.Context) ApiGetM
 
 // Execute executes the request
 //  @return GetMetaWebhooksTwitter200Response
-func (a *WebhooksApiService) GetMetaWebhooksAlmanaxExecute(r ApiGetMetaWebhooksAlmanaxRequest) (*GetMetaWebhooksTwitter200Response, *http.Response, error) {
+func (a *WebhooksAPIService) GetMetaWebhooksAlmanaxExecute(r ApiGetMetaWebhooksAlmanaxRequest) (*GetMetaWebhooksTwitter200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -334,7 +334,7 @@ func (a *WebhooksApiService) GetMetaWebhooksAlmanaxExecute(r ApiGetMetaWebhooksA
 		localVarReturnValue  *GetMetaWebhooksTwitter200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetMetaWebhooksAlmanax")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetMetaWebhooksAlmanax")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -372,9 +372,9 @@ func (a *WebhooksApiService) GetMetaWebhooksAlmanaxExecute(r ApiGetMetaWebhooksA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -401,7 +401,7 @@ func (a *WebhooksApiService) GetMetaWebhooksAlmanaxExecute(r ApiGetMetaWebhooksA
 
 type ApiGetMetaWebhooksRssRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 }
 
 func (r ApiGetMetaWebhooksRssRequest) Execute() (*GetMetaWebhooksTwitter200Response, *http.Response, error) {
@@ -416,7 +416,7 @@ Get a list of all available subscriptions.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetMetaWebhooksRssRequest
 */
-func (a *WebhooksApiService) GetMetaWebhooksRss(ctx context.Context) ApiGetMetaWebhooksRssRequest {
+func (a *WebhooksAPIService) GetMetaWebhooksRss(ctx context.Context) ApiGetMetaWebhooksRssRequest {
 	return ApiGetMetaWebhooksRssRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -425,7 +425,7 @@ func (a *WebhooksApiService) GetMetaWebhooksRss(ctx context.Context) ApiGetMetaW
 
 // Execute executes the request
 //  @return GetMetaWebhooksTwitter200Response
-func (a *WebhooksApiService) GetMetaWebhooksRssExecute(r ApiGetMetaWebhooksRssRequest) (*GetMetaWebhooksTwitter200Response, *http.Response, error) {
+func (a *WebhooksAPIService) GetMetaWebhooksRssExecute(r ApiGetMetaWebhooksRssRequest) (*GetMetaWebhooksTwitter200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -433,7 +433,7 @@ func (a *WebhooksApiService) GetMetaWebhooksRssExecute(r ApiGetMetaWebhooksRssRe
 		localVarReturnValue  *GetMetaWebhooksTwitter200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetMetaWebhooksRss")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetMetaWebhooksRss")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -471,9 +471,9 @@ func (a *WebhooksApiService) GetMetaWebhooksRssExecute(r ApiGetMetaWebhooksRssRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -500,7 +500,7 @@ func (a *WebhooksApiService) GetMetaWebhooksRssExecute(r ApiGetMetaWebhooksRssRe
 
 type ApiGetMetaWebhooksTwitterRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 }
 
 func (r ApiGetMetaWebhooksTwitterRequest) Execute() (*GetMetaWebhooksTwitter200Response, *http.Response, error) {
@@ -515,7 +515,7 @@ Get a list of all available subscriptions.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetMetaWebhooksTwitterRequest
 */
-func (a *WebhooksApiService) GetMetaWebhooksTwitter(ctx context.Context) ApiGetMetaWebhooksTwitterRequest {
+func (a *WebhooksAPIService) GetMetaWebhooksTwitter(ctx context.Context) ApiGetMetaWebhooksTwitterRequest {
 	return ApiGetMetaWebhooksTwitterRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -524,7 +524,7 @@ func (a *WebhooksApiService) GetMetaWebhooksTwitter(ctx context.Context) ApiGetM
 
 // Execute executes the request
 //  @return GetMetaWebhooksTwitter200Response
-func (a *WebhooksApiService) GetMetaWebhooksTwitterExecute(r ApiGetMetaWebhooksTwitterRequest) (*GetMetaWebhooksTwitter200Response, *http.Response, error) {
+func (a *WebhooksAPIService) GetMetaWebhooksTwitterExecute(r ApiGetMetaWebhooksTwitterRequest) (*GetMetaWebhooksTwitter200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -532,7 +532,7 @@ func (a *WebhooksApiService) GetMetaWebhooksTwitterExecute(r ApiGetMetaWebhooksT
 		localVarReturnValue  *GetMetaWebhooksTwitter200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetMetaWebhooksTwitter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetMetaWebhooksTwitter")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -570,9 +570,9 @@ func (a *WebhooksApiService) GetMetaWebhooksTwitterExecute(r ApiGetMetaWebhooksT
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -599,7 +599,7 @@ func (a *WebhooksApiService) GetMetaWebhooksTwitterExecute(r ApiGetMetaWebhooksT
 
 type ApiGetWebhooksAlmanaxIdRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	id string
 }
 
@@ -616,7 +616,7 @@ Retrieve details about an existing Almanax Webhook with a given uuid.
  @param id
  @return ApiGetWebhooksAlmanaxIdRequest
 */
-func (a *WebhooksApiService) GetWebhooksAlmanaxId(ctx context.Context, id string) ApiGetWebhooksAlmanaxIdRequest {
+func (a *WebhooksAPIService) GetWebhooksAlmanaxId(ctx context.Context, id string) ApiGetWebhooksAlmanaxIdRequest {
 	return ApiGetWebhooksAlmanaxIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -626,7 +626,7 @@ func (a *WebhooksApiService) GetWebhooksAlmanaxId(ctx context.Context, id string
 
 // Execute executes the request
 //  @return AlmanaxWebhook
-func (a *WebhooksApiService) GetWebhooksAlmanaxIdExecute(r ApiGetWebhooksAlmanaxIdRequest) (*AlmanaxWebhook, *http.Response, error) {
+func (a *WebhooksAPIService) GetWebhooksAlmanaxIdExecute(r ApiGetWebhooksAlmanaxIdRequest) (*AlmanaxWebhook, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -634,7 +634,7 @@ func (a *WebhooksApiService) GetWebhooksAlmanaxIdExecute(r ApiGetWebhooksAlmanax
 		localVarReturnValue  *AlmanaxWebhook
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetWebhooksAlmanaxId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetWebhooksAlmanaxId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -673,9 +673,9 @@ func (a *WebhooksApiService) GetWebhooksAlmanaxIdExecute(r ApiGetWebhooksAlmanax
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -702,7 +702,7 @@ func (a *WebhooksApiService) GetWebhooksAlmanaxIdExecute(r ApiGetWebhooksAlmanax
 
 type ApiGetWebhooksRssIdRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	id string
 }
 
@@ -719,7 +719,7 @@ Retrieve details about an existing RSS Webhook with a given uuid.
  @param id
  @return ApiGetWebhooksRssIdRequest
 */
-func (a *WebhooksApiService) GetWebhooksRssId(ctx context.Context, id string) ApiGetWebhooksRssIdRequest {
+func (a *WebhooksAPIService) GetWebhooksRssId(ctx context.Context, id string) ApiGetWebhooksRssIdRequest {
 	return ApiGetWebhooksRssIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -729,7 +729,7 @@ func (a *WebhooksApiService) GetWebhooksRssId(ctx context.Context, id string) Ap
 
 // Execute executes the request
 //  @return RssWebhook
-func (a *WebhooksApiService) GetWebhooksRssIdExecute(r ApiGetWebhooksRssIdRequest) (*RssWebhook, *http.Response, error) {
+func (a *WebhooksAPIService) GetWebhooksRssIdExecute(r ApiGetWebhooksRssIdRequest) (*RssWebhook, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -737,7 +737,7 @@ func (a *WebhooksApiService) GetWebhooksRssIdExecute(r ApiGetWebhooksRssIdReques
 		localVarReturnValue  *RssWebhook
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetWebhooksRssId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetWebhooksRssId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -776,9 +776,9 @@ func (a *WebhooksApiService) GetWebhooksRssIdExecute(r ApiGetWebhooksRssIdReques
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -805,7 +805,7 @@ func (a *WebhooksApiService) GetWebhooksRssIdExecute(r ApiGetWebhooksRssIdReques
 
 type ApiGetWebhooksTwitterIdRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	id string
 }
 
@@ -822,7 +822,7 @@ Retrieve details about an existing Twitter Webhook with a given uuid.
  @param id
  @return ApiGetWebhooksTwitterIdRequest
 */
-func (a *WebhooksApiService) GetWebhooksTwitterId(ctx context.Context, id string) ApiGetWebhooksTwitterIdRequest {
+func (a *WebhooksAPIService) GetWebhooksTwitterId(ctx context.Context, id string) ApiGetWebhooksTwitterIdRequest {
 	return ApiGetWebhooksTwitterIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -832,7 +832,7 @@ func (a *WebhooksApiService) GetWebhooksTwitterId(ctx context.Context, id string
 
 // Execute executes the request
 //  @return TwitterWebhook
-func (a *WebhooksApiService) GetWebhooksTwitterIdExecute(r ApiGetWebhooksTwitterIdRequest) (*TwitterWebhook, *http.Response, error) {
+func (a *WebhooksAPIService) GetWebhooksTwitterIdExecute(r ApiGetWebhooksTwitterIdRequest) (*TwitterWebhook, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -840,7 +840,7 @@ func (a *WebhooksApiService) GetWebhooksTwitterIdExecute(r ApiGetWebhooksTwitter
 		localVarReturnValue  *TwitterWebhook
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetWebhooksTwitterId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetWebhooksTwitterId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -879,9 +879,9 @@ func (a *WebhooksApiService) GetWebhooksTwitterIdExecute(r ApiGetWebhooksTwitter
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -908,7 +908,7 @@ func (a *WebhooksApiService) GetWebhooksTwitterIdExecute(r ApiGetWebhooksTwitter
 
 type ApiPostWebhooksAlmanaxRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	createAlmanaxWebhook *CreateAlmanaxWebhook
 }
 
@@ -930,7 +930,7 @@ Register a new Webhook to post Almanax updates.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostWebhooksAlmanaxRequest
 */
-func (a *WebhooksApiService) PostWebhooksAlmanax(ctx context.Context) ApiPostWebhooksAlmanaxRequest {
+func (a *WebhooksAPIService) PostWebhooksAlmanax(ctx context.Context) ApiPostWebhooksAlmanaxRequest {
 	return ApiPostWebhooksAlmanaxRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -938,14 +938,14 @@ func (a *WebhooksApiService) PostWebhooksAlmanax(ctx context.Context) ApiPostWeb
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) PostWebhooksAlmanaxExecute(r ApiPostWebhooksAlmanaxRequest) (*http.Response, error) {
+func (a *WebhooksAPIService) PostWebhooksAlmanaxExecute(r ApiPostWebhooksAlmanaxRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.PostWebhooksAlmanax")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.PostWebhooksAlmanax")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -985,9 +985,9 @@ func (a *WebhooksApiService) PostWebhooksAlmanaxExecute(r ApiPostWebhooksAlmanax
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1005,7 +1005,7 @@ func (a *WebhooksApiService) PostWebhooksAlmanaxExecute(r ApiPostWebhooksAlmanax
 
 type ApiPostWebhooksRssRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	createRSSWebhook *CreateRSSWebhook
 }
 
@@ -1027,7 +1027,7 @@ Register a new Webhook to post RSS news as soon as they are posted.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostWebhooksRssRequest
 */
-func (a *WebhooksApiService) PostWebhooksRss(ctx context.Context) ApiPostWebhooksRssRequest {
+func (a *WebhooksAPIService) PostWebhooksRss(ctx context.Context) ApiPostWebhooksRssRequest {
 	return ApiPostWebhooksRssRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1035,14 +1035,14 @@ func (a *WebhooksApiService) PostWebhooksRss(ctx context.Context) ApiPostWebhook
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) PostWebhooksRssExecute(r ApiPostWebhooksRssRequest) (*http.Response, error) {
+func (a *WebhooksAPIService) PostWebhooksRssExecute(r ApiPostWebhooksRssRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.PostWebhooksRss")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.PostWebhooksRss")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1082,9 +1082,9 @@ func (a *WebhooksApiService) PostWebhooksRssExecute(r ApiPostWebhooksRssRequest)
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1102,7 +1102,7 @@ func (a *WebhooksApiService) PostWebhooksRssExecute(r ApiPostWebhooksRssRequest)
 
 type ApiPostWebhooksTwitterRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	createTwitterWebhook *CreateTwitterWebhook
 }
 
@@ -1124,7 +1124,7 @@ Register a new Webhook to post Twitter updates as soon as they are posted.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostWebhooksTwitterRequest
 */
-func (a *WebhooksApiService) PostWebhooksTwitter(ctx context.Context) ApiPostWebhooksTwitterRequest {
+func (a *WebhooksAPIService) PostWebhooksTwitter(ctx context.Context) ApiPostWebhooksTwitterRequest {
 	return ApiPostWebhooksTwitterRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1132,14 +1132,14 @@ func (a *WebhooksApiService) PostWebhooksTwitter(ctx context.Context) ApiPostWeb
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) PostWebhooksTwitterExecute(r ApiPostWebhooksTwitterRequest) (*http.Response, error) {
+func (a *WebhooksAPIService) PostWebhooksTwitterExecute(r ApiPostWebhooksTwitterRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.PostWebhooksTwitter")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.PostWebhooksTwitter")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1179,9 +1179,9 @@ func (a *WebhooksApiService) PostWebhooksTwitterExecute(r ApiPostWebhooksTwitter
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1199,7 +1199,7 @@ func (a *WebhooksApiService) PostWebhooksTwitterExecute(r ApiPostWebhooksTwitter
 
 type ApiPutWebhooksAlmanaxIdRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	id string
 	putAlmanaxWebhook *PutAlmanaxWebhook
 }
@@ -1222,7 +1222,7 @@ Update the details of an Almanax Webhook. All fields are optional and arrays wil
  @param id
  @return ApiPutWebhooksAlmanaxIdRequest
 */
-func (a *WebhooksApiService) PutWebhooksAlmanaxId(ctx context.Context, id string) ApiPutWebhooksAlmanaxIdRequest {
+func (a *WebhooksAPIService) PutWebhooksAlmanaxId(ctx context.Context, id string) ApiPutWebhooksAlmanaxIdRequest {
 	return ApiPutWebhooksAlmanaxIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1232,7 +1232,7 @@ func (a *WebhooksApiService) PutWebhooksAlmanaxId(ctx context.Context, id string
 
 // Execute executes the request
 //  @return AlmanaxWebhook
-func (a *WebhooksApiService) PutWebhooksAlmanaxIdExecute(r ApiPutWebhooksAlmanaxIdRequest) (*AlmanaxWebhook, *http.Response, error) {
+func (a *WebhooksAPIService) PutWebhooksAlmanaxIdExecute(r ApiPutWebhooksAlmanaxIdRequest) (*AlmanaxWebhook, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1240,7 +1240,7 @@ func (a *WebhooksApiService) PutWebhooksAlmanaxIdExecute(r ApiPutWebhooksAlmanax
 		localVarReturnValue  *AlmanaxWebhook
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.PutWebhooksAlmanaxId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.PutWebhooksAlmanaxId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1281,9 +1281,9 @@ func (a *WebhooksApiService) PutWebhooksAlmanaxIdExecute(r ApiPutWebhooksAlmanax
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1310,7 +1310,7 @@ func (a *WebhooksApiService) PutWebhooksAlmanaxIdExecute(r ApiPutWebhooksAlmanax
 
 type ApiPutWebhooksRssIdRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	id string
 	putRSSWebhook *PutRSSWebhook
 }
@@ -1334,7 +1334,7 @@ Update the details of a RSS Webhook. All fields are optional and arrays will be 
  @param id
  @return ApiPutWebhooksRssIdRequest
 */
-func (a *WebhooksApiService) PutWebhooksRssId(ctx context.Context, id string) ApiPutWebhooksRssIdRequest {
+func (a *WebhooksAPIService) PutWebhooksRssId(ctx context.Context, id string) ApiPutWebhooksRssIdRequest {
 	return ApiPutWebhooksRssIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1344,7 +1344,7 @@ func (a *WebhooksApiService) PutWebhooksRssId(ctx context.Context, id string) Ap
 
 // Execute executes the request
 //  @return RssWebhook
-func (a *WebhooksApiService) PutWebhooksRssIdExecute(r ApiPutWebhooksRssIdRequest) (*RssWebhook, *http.Response, error) {
+func (a *WebhooksAPIService) PutWebhooksRssIdExecute(r ApiPutWebhooksRssIdRequest) (*RssWebhook, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1352,7 +1352,7 @@ func (a *WebhooksApiService) PutWebhooksRssIdExecute(r ApiPutWebhooksRssIdReques
 		localVarReturnValue  *RssWebhook
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.PutWebhooksRssId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.PutWebhooksRssId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1393,9 +1393,9 @@ func (a *WebhooksApiService) PutWebhooksRssIdExecute(r ApiPutWebhooksRssIdReques
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1422,7 +1422,7 @@ func (a *WebhooksApiService) PutWebhooksRssIdExecute(r ApiPutWebhooksRssIdReques
 
 type ApiPutWebhooksTwitterIdRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	id string
 	putTwitterWebhook *PutTwitterWebhook
 }
@@ -1446,7 +1446,7 @@ Update the details of a Twitter Webhook. All fields are optional and arrays will
  @param id
  @return ApiPutWebhooksTwitterIdRequest
 */
-func (a *WebhooksApiService) PutWebhooksTwitterId(ctx context.Context, id string) ApiPutWebhooksTwitterIdRequest {
+func (a *WebhooksAPIService) PutWebhooksTwitterId(ctx context.Context, id string) ApiPutWebhooksTwitterIdRequest {
 	return ApiPutWebhooksTwitterIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1456,7 +1456,7 @@ func (a *WebhooksApiService) PutWebhooksTwitterId(ctx context.Context, id string
 
 // Execute executes the request
 //  @return TwitterWebhook
-func (a *WebhooksApiService) PutWebhooksTwitterIdExecute(r ApiPutWebhooksTwitterIdRequest) (*TwitterWebhook, *http.Response, error) {
+func (a *WebhooksAPIService) PutWebhooksTwitterIdExecute(r ApiPutWebhooksTwitterIdRequest) (*TwitterWebhook, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1464,7 +1464,7 @@ func (a *WebhooksApiService) PutWebhooksTwitterIdExecute(r ApiPutWebhooksTwitter
 		localVarReturnValue  *TwitterWebhook
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.PutWebhooksTwitterId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.PutWebhooksTwitterId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1505,9 +1505,9 @@ func (a *WebhooksApiService) PutWebhooksTwitterIdExecute(r ApiPutWebhooksTwitter
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -1,7 +1,7 @@
 /*
 Dofusdude
 
-Testing AllItemsApiService
+Testing AllItemsAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/dofusdude/dodugo"
 )
 
-func Test_dodugo_AllItemsApiService(t *testing.T) {
+func Test_dodugo_AllItemsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test AllItemsApiService GetItemsAllSearch", func(t *testing.T) {
+	t.Run("Test AllItemsAPIService GetItemsAllSearch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.AllItemsApi.GetItemsAllSearch(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.AllItemsAPI.GetItemsAllSearch(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

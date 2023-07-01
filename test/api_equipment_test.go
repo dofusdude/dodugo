@@ -1,7 +1,7 @@
 /*
 Dofusdude
 
-Testing EquipmentApiService
+Testing EquipmentAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/dofusdude/dodugo"
 )
 
-func Test_dodugo_EquipmentApiService(t *testing.T) {
+func Test_dodugo_EquipmentAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test EquipmentApiService GetAllItemsEquipmentList", func(t *testing.T) {
+	t.Run("Test EquipmentAPIService GetAllItemsEquipmentList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.EquipmentApi.GetAllItemsEquipmentList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.EquipmentAPI.GetAllItemsEquipmentList(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,14 +37,14 @@ func Test_dodugo_EquipmentApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test EquipmentApiService GetItemsEquipmentList", func(t *testing.T) {
+	t.Run("Test EquipmentAPIService GetItemsEquipmentList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.EquipmentApi.GetItemsEquipmentList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.EquipmentAPI.GetItemsEquipmentList(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -52,14 +52,14 @@ func Test_dodugo_EquipmentApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test EquipmentApiService GetItemsEquipmentSearch", func(t *testing.T) {
+	t.Run("Test EquipmentAPIService GetItemsEquipmentSearch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.EquipmentApi.GetItemsEquipmentSearch(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.EquipmentAPI.GetItemsEquipmentSearch(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -67,7 +67,7 @@ func Test_dodugo_EquipmentApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test EquipmentApiService GetItemsEquipmentSingle", func(t *testing.T) {
+	t.Run("Test EquipmentAPIService GetItemsEquipmentSingle", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -75,7 +75,7 @@ func Test_dodugo_EquipmentApiService(t *testing.T) {
 		var ankamaId int32
 		var game string
 
-		resp, httpRes, err := apiClient.EquipmentApi.GetItemsEquipmentSingle(context.Background(), language, ankamaId, game).Execute()
+		resp, httpRes, err := apiClient.EquipmentAPI.GetItemsEquipmentSingle(context.Background(), language, ankamaId, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

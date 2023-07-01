@@ -1,7 +1,7 @@
 /*
 Dofusdude
 
-Testing MetaApiService
+Testing MetaAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/dofusdude/dodugo"
 )
 
-func Test_dodugo_MetaApiService(t *testing.T) {
+func Test_dodugo_MetaAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test MetaApiService GetMetaAlmanaxBonuses", func(t *testing.T) {
+	t.Run("Test MetaAPIService GetMetaAlmanaxBonuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 
-		resp, httpRes, err := apiClient.MetaApi.GetMetaAlmanaxBonuses(context.Background(), language).Execute()
+		resp, httpRes, err := apiClient.MetaAPI.GetMetaAlmanaxBonuses(context.Background(), language).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,11 +36,11 @@ func Test_dodugo_MetaApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MetaApiService GetMetaElements", func(t *testing.T) {
+	t.Run("Test MetaAPIService GetMetaElements", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.MetaApi.GetMetaElements(context.Background()).Execute()
+		resp, httpRes, err := apiClient.MetaAPI.GetMetaElements(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

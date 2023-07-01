@@ -1,13 +1,13 @@
-# \SetsApi
+# \SetsAPI
 
 All URIs are relative to *https://api.dofusdu.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAllSetsList**](SetsApi.md#GetAllSetsList) | **Get** /{game}/{language}/sets/all | List All Sets
-[**GetSetsList**](SetsApi.md#GetSetsList) | **Get** /{game}/{language}/sets | List Sets
-[**GetSetsSearch**](SetsApi.md#GetSetsSearch) | **Get** /{game}/{language}/sets/search | Search Sets
-[**GetSetsSingle**](SetsApi.md#GetSetsSingle) | **Get** /{game}/{language}/sets/{ankama_id} | Single Sets
+[**GetAllSetsList**](SetsAPI.md#GetAllSetsList) | **Get** /{game}/{language}/sets/all | List All Sets
+[**GetSetsList**](SetsAPI.md#GetSetsList) | **Get** /{game}/{language}/sets | List Sets
+[**GetSetsSearch**](SetsAPI.md#GetSetsSearch) | **Get** /{game}/{language}/sets/search | Search Sets
+[**GetSetsSingle**](SetsAPI.md#GetSetsSingle) | **Get** /{game}/{language}/sets/{ankama_id} | Single Sets
 
 
 
@@ -28,7 +28,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -41,13 +41,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SetsApi.GetAllSetsList(context.Background(), language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).AcceptEncoding(acceptEncoding).Execute()
+    resp, r, err := apiClient.SetsAPI.GetAllSetsList(context.Background(), language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).AcceptEncoding(acceptEncoding).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SetsApi.GetAllSetsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetAllSetsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAllSetsList`: SetsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `SetsApi.GetAllSetsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetAllSetsList`: %v\n", resp)
 }
 ```
 
@@ -109,7 +109,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -124,13 +124,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SetsApi.GetSetsList(context.Background(), language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsSet(fieldsSet).Execute()
+    resp, r, err := apiClient.SetsAPI.GetSetsList(context.Background(), language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsSet(fieldsSet).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SetsApi.GetSetsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSetsList`: SetsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `SetsApi.GetSetsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetSetsList`: %v\n", resp)
 }
 ```
 
@@ -194,7 +194,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -207,13 +207,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SetsApi.GetSetsSearch(context.Background(), language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Limit(limit).Execute()
+    resp, r, err := apiClient.SetsAPI.GetSetsSearch(context.Background(), language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Limit(limit).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SetsApi.GetSetsSearch``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSetsSearch`: []SetListEntry
-    fmt.Fprintf(os.Stdout, "Response from `SetsApi.GetSetsSearch`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetSetsSearch`: %v\n", resp)
 }
 ```
 
@@ -275,7 +275,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
@@ -285,13 +285,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SetsApi.GetSetsSingle(context.Background(), language, ankamaId, game).Execute()
+    resp, r, err := apiClient.SetsAPI.GetSetsSingle(context.Background(), language, ankamaId, game).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SetsApi.GetSetsSingle``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsSingle``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSetsSingle`: EquipmentSet
-    fmt.Fprintf(os.Stdout, "Response from `SetsApi.GetSetsSingle`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetSetsSingle`: %v\n", resp)
 }
 ```
 

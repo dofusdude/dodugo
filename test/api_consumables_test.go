@@ -1,7 +1,7 @@
 /*
 Dofusdude
 
-Testing ConsumablesApiService
+Testing ConsumablesAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/dofusdude/dodugo"
 )
 
-func Test_dodugo_ConsumablesApiService(t *testing.T) {
+func Test_dodugo_ConsumablesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ConsumablesApiService GetAllItemsConsumablesList", func(t *testing.T) {
+	t.Run("Test ConsumablesAPIService GetAllItemsConsumablesList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.ConsumablesApi.GetAllItemsConsumablesList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.ConsumablesAPI.GetAllItemsConsumablesList(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,14 +37,14 @@ func Test_dodugo_ConsumablesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConsumablesApiService GetItemsConsumablesList", func(t *testing.T) {
+	t.Run("Test ConsumablesAPIService GetItemsConsumablesList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.ConsumablesApi.GetItemsConsumablesList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.ConsumablesAPI.GetItemsConsumablesList(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -52,14 +52,14 @@ func Test_dodugo_ConsumablesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConsumablesApiService GetItemsConsumablesSearch", func(t *testing.T) {
+	t.Run("Test ConsumablesAPIService GetItemsConsumablesSearch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.ConsumablesApi.GetItemsConsumablesSearch(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.ConsumablesAPI.GetItemsConsumablesSearch(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -67,7 +67,7 @@ func Test_dodugo_ConsumablesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConsumablesApiService GetItemsConsumablesSingle", func(t *testing.T) {
+	t.Run("Test ConsumablesAPIService GetItemsConsumablesSingle", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -75,7 +75,7 @@ func Test_dodugo_ConsumablesApiService(t *testing.T) {
 		var ankamaId int32
 		var game string
 
-		resp, httpRes, err := apiClient.ConsumablesApi.GetItemsConsumablesSingle(context.Background(), language, ankamaId, game).Execute()
+		resp, httpRes, err := apiClient.ConsumablesAPI.GetItemsConsumablesSingle(context.Background(), language, ankamaId, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

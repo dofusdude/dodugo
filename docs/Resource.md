@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **AnkamaId** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to [**ItemsListEntryTypedType**](ItemsListEntryTypedType.md) |  | [optional] 
+**Type** | Pointer to [**CosmeticType**](CosmeticType.md) |  | [optional] 
 **Level** | Pointer to **int32** |  | [optional] 
 **Pods** | Pointer to **int32** |  | [optional] 
 **ImageUrls** | Pointer to [**ImageUrls**](ImageUrls.md) |  | [optional] 
@@ -111,20 +111,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *Resource) GetType() ItemsListEntryTypedType`
+`func (o *Resource) GetType() CosmeticType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *Resource) GetTypeOk() (*ItemsListEntryTypedType, bool)`
+`func (o *Resource) GetTypeOk() (*CosmeticType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *Resource) SetType(v ItemsListEntryTypedType)`
+`func (o *Resource) SetType(v CosmeticType)`
 
 SetType sets Type field to given value.
 

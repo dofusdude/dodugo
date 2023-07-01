@@ -1,7 +1,7 @@
 /*
 Dofusdude
 
-Testing MountsApiService
+Testing MountsAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/dofusdude/dodugo"
 )
 
-func Test_dodugo_MountsApiService(t *testing.T) {
+func Test_dodugo_MountsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test MountsApiService GetAllMountsList", func(t *testing.T) {
+	t.Run("Test MountsAPIService GetAllMountsList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.MountsApi.GetAllMountsList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.MountsAPI.GetAllMountsList(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,14 +37,14 @@ func Test_dodugo_MountsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MountsApiService GetMountsList", func(t *testing.T) {
+	t.Run("Test MountsAPIService GetMountsList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.MountsApi.GetMountsList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.MountsAPI.GetMountsList(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -52,14 +52,14 @@ func Test_dodugo_MountsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MountsApiService GetMountsSearch", func(t *testing.T) {
+	t.Run("Test MountsAPIService GetMountsSearch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.MountsApi.GetMountsSearch(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.MountsAPI.GetMountsSearch(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -67,7 +67,7 @@ func Test_dodugo_MountsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MountsApiService GetMountsSingle", func(t *testing.T) {
+	t.Run("Test MountsAPIService GetMountsSingle", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -75,7 +75,7 @@ func Test_dodugo_MountsApiService(t *testing.T) {
 		var ankamaId int32
 		var game string
 
-		resp, httpRes, err := apiClient.MountsApi.GetMountsSingle(context.Background(), language, ankamaId, game).Execute()
+		resp, httpRes, err := apiClient.MountsAPI.GetMountsSingle(context.Background(), language, ankamaId, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

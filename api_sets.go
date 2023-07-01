@@ -1,9 +1,9 @@
 /*
 Dofusdude
 
-# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina  I highly recommend using the SDKs for quick results. I use them myself for microservices for the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude). 
+# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina - [DofuStuffSimulator](https://dofusstuffsimulator.netlify.app/)  I highly recommend using the SDKs for quick results. I use them myself for parts of the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude). 
 
-API version: 0.7.1
+API version: 0.7.2
 Contact: stelzo@steado.de
 */
 
@@ -14,19 +14,19 @@ package dodugo
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
 
-// SetsApiService SetsApi service
-type SetsApiService service
+// SetsAPIService SetsAPI service
+type SetsAPIService service
 
 type ApiGetAllSetsListRequest struct {
 	ctx context.Context
-	ApiService *SetsApiService
+	ApiService *SetsAPIService
 	language string
 	game string
 	sortLevel *string
@@ -83,7 +83,7 @@ curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
  @param game
  @return ApiGetAllSetsListRequest
 */
-func (a *SetsApiService) GetAllSetsList(ctx context.Context, language string, game string) ApiGetAllSetsListRequest {
+func (a *SetsAPIService) GetAllSetsList(ctx context.Context, language string, game string) ApiGetAllSetsListRequest {
 	return ApiGetAllSetsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -94,7 +94,7 @@ func (a *SetsApiService) GetAllSetsList(ctx context.Context, language string, ga
 
 // Execute executes the request
 //  @return SetsListPaged
-func (a *SetsApiService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*SetsListPaged, *http.Response, error) {
+func (a *SetsAPIService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*SetsListPaged, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -102,7 +102,7 @@ func (a *SetsApiService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*Set
 		localVarReturnValue  *SetsListPaged
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsApiService.GetAllSetsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsAPIService.GetAllSetsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -122,13 +122,13 @@ func (a *SetsApiService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*Set
 	}
 
 	if r.sortLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "sort[level]", r.sortLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort[level]", r.sortLevel, "")
 	}
 	if r.filterMinHighestEquipmentLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[min_highest_equipment_level]", r.filterMinHighestEquipmentLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_highest_equipment_level]", r.filterMinHighestEquipmentLevel, "")
 	}
 	if r.filterMaxHighestEquipmentLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -148,7 +148,7 @@ func (a *SetsApiService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*Set
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.acceptEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Accept-Encoding", r.acceptEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -160,9 +160,9 @@ func (a *SetsApiService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*Set
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -189,7 +189,7 @@ func (a *SetsApiService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*Set
 
 type ApiGetSetsListRequest struct {
 	ctx context.Context
-	ApiService *SetsApiService
+	ApiService *SetsAPIService
 	language string
 	game string
 	sortLevel *string
@@ -250,7 +250,7 @@ Retrieve a list of sets.
  @param game
  @return ApiGetSetsListRequest
 */
-func (a *SetsApiService) GetSetsList(ctx context.Context, language string, game string) ApiGetSetsListRequest {
+func (a *SetsAPIService) GetSetsList(ctx context.Context, language string, game string) ApiGetSetsListRequest {
 	return ApiGetSetsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -261,7 +261,7 @@ func (a *SetsApiService) GetSetsList(ctx context.Context, language string, game 
 
 // Execute executes the request
 //  @return SetsListPaged
-func (a *SetsApiService) GetSetsListExecute(r ApiGetSetsListRequest) (*SetsListPaged, *http.Response, error) {
+func (a *SetsAPIService) GetSetsListExecute(r ApiGetSetsListRequest) (*SetsListPaged, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -269,7 +269,7 @@ func (a *SetsApiService) GetSetsListExecute(r ApiGetSetsListRequest) (*SetsListP
 		localVarReturnValue  *SetsListPaged
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsApiService.GetSetsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsAPIService.GetSetsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -289,22 +289,22 @@ func (a *SetsApiService) GetSetsListExecute(r ApiGetSetsListRequest) (*SetsListP
 	}
 
 	if r.sortLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "sort[level]", r.sortLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort[level]", r.sortLevel, "")
 	}
 	if r.filterMinHighestEquipmentLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[min_highest_equipment_level]", r.filterMinHighestEquipmentLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_highest_equipment_level]", r.filterMinHighestEquipmentLevel, "")
 	}
 	if r.filterMaxHighestEquipmentLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "")
 	}
 	if r.pageSize != nil {
-		parameterAddToQuery(localVarQueryParams, "page[size]", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page[size]", r.pageSize, "")
 	}
 	if r.pageNumber != nil {
-		parameterAddToQuery(localVarQueryParams, "page[number]", r.pageNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page[number]", r.pageNumber, "")
 	}
 	if r.fieldsSet != nil {
-		parameterAddToQuery(localVarQueryParams, "fields[set]", r.fieldsSet, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields[set]", r.fieldsSet, "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -333,9 +333,9 @@ func (a *SetsApiService) GetSetsListExecute(r ApiGetSetsListRequest) (*SetsListP
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -362,7 +362,7 @@ func (a *SetsApiService) GetSetsListExecute(r ApiGetSetsListRequest) (*SetsListP
 
 type ApiGetSetsSearchRequest struct {
 	ctx context.Context
-	ApiService *SetsApiService
+	ApiService *SetsAPIService
 	language string
 	game string
 	query *string
@@ -409,7 +409,7 @@ Search in all names and descriptions of sets with a query.
  @param game
  @return ApiGetSetsSearchRequest
 */
-func (a *SetsApiService) GetSetsSearch(ctx context.Context, language string, game string) ApiGetSetsSearchRequest {
+func (a *SetsAPIService) GetSetsSearch(ctx context.Context, language string, game string) ApiGetSetsSearchRequest {
 	return ApiGetSetsSearchRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -420,7 +420,7 @@ func (a *SetsApiService) GetSetsSearch(ctx context.Context, language string, gam
 
 // Execute executes the request
 //  @return []SetListEntry
-func (a *SetsApiService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]SetListEntry, *http.Response, error) {
+func (a *SetsAPIService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]SetListEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -428,7 +428,7 @@ func (a *SetsApiService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]SetL
 		localVarReturnValue  []SetListEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsApiService.GetSetsSearch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsAPIService.GetSetsSearch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,15 +450,15 @@ func (a *SetsApiService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]SetL
 		return localVarReturnValue, nil, reportError("query is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "query", r.query, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "")
 	if r.filterMinHighestEquipmentLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[min_highest_equipment_level]", r.filterMinHighestEquipmentLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_highest_equipment_level]", r.filterMinHighestEquipmentLevel, "")
 	}
 	if r.filterMaxHighestEquipmentLevel != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "")
 	}
 	if r.limit != nil {
-		parameterAddToQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -487,9 +487,9 @@ func (a *SetsApiService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]SetL
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -516,7 +516,7 @@ func (a *SetsApiService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]SetL
 
 type ApiGetSetsSingleRequest struct {
 	ctx context.Context
-	ApiService *SetsApiService
+	ApiService *SetsAPIService
 	language string
 	ankamaId int32
 	game string
@@ -537,7 +537,7 @@ Retrieve a specific set with id.
  @param game
  @return ApiGetSetsSingleRequest
 */
-func (a *SetsApiService) GetSetsSingle(ctx context.Context, language string, ankamaId int32, game string) ApiGetSetsSingleRequest {
+func (a *SetsAPIService) GetSetsSingle(ctx context.Context, language string, ankamaId int32, game string) ApiGetSetsSingleRequest {
 	return ApiGetSetsSingleRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -549,7 +549,7 @@ func (a *SetsApiService) GetSetsSingle(ctx context.Context, language string, ank
 
 // Execute executes the request
 //  @return EquipmentSet
-func (a *SetsApiService) GetSetsSingleExecute(r ApiGetSetsSingleRequest) (*EquipmentSet, *http.Response, error) {
+func (a *SetsAPIService) GetSetsSingleExecute(r ApiGetSetsSingleRequest) (*EquipmentSet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -557,7 +557,7 @@ func (a *SetsApiService) GetSetsSingleExecute(r ApiGetSetsSingleRequest) (*Equip
 		localVarReturnValue  *EquipmentSet
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsApiService.GetSetsSingle")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsAPIService.GetSetsSingle")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -604,9 +604,9 @@ func (a *SetsApiService) GetSetsSingleExecute(r ApiGetSetsSingleRequest) (*Equip
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

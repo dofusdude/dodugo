@@ -1,9 +1,9 @@
 /*
 Dofusdude
 
-# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina  I highly recommend using the SDKs for quick results. I use them myself for microservices for the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude). 
+# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina - [DofuStuffSimulator](https://dofusstuffsimulator.netlify.app/)  I highly recommend using the SDKs for quick results. I use them myself for parts of the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude). 
 
-API version: 0.7.1
+API version: 0.7.2
 Contact: stelzo@steado.de
 */
 
@@ -14,19 +14,19 @@ package dodugo
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
 
-// AlmanaxApiService AlmanaxApi service
-type AlmanaxApiService service
+// AlmanaxAPIService AlmanaxAPI service
+type AlmanaxAPIService service
 
 type ApiGetAlmanaxDateRequest struct {
 	ctx context.Context
-	ApiService *AlmanaxApiService
+	ApiService *AlmanaxAPIService
 	language string
 	date string
 }
@@ -45,7 +45,7 @@ Get a single date. There are not more details in the returned object than the no
  @param date yyyy-mm-dd
  @return ApiGetAlmanaxDateRequest
 */
-func (a *AlmanaxApiService) GetAlmanaxDate(ctx context.Context, language string, date string) ApiGetAlmanaxDateRequest {
+func (a *AlmanaxAPIService) GetAlmanaxDate(ctx context.Context, language string, date string) ApiGetAlmanaxDateRequest {
 	return ApiGetAlmanaxDateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -56,7 +56,7 @@ func (a *AlmanaxApiService) GetAlmanaxDate(ctx context.Context, language string,
 
 // Execute executes the request
 //  @return AlmanaxEntry
-func (a *AlmanaxApiService) GetAlmanaxDateExecute(r ApiGetAlmanaxDateRequest) (*AlmanaxEntry, *http.Response, error) {
+func (a *AlmanaxAPIService) GetAlmanaxDateExecute(r ApiGetAlmanaxDateRequest) (*AlmanaxEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -64,7 +64,7 @@ func (a *AlmanaxApiService) GetAlmanaxDateExecute(r ApiGetAlmanaxDateRequest) (*
 		localVarReturnValue  *AlmanaxEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlmanaxApiService.GetAlmanaxDate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlmanaxAPIService.GetAlmanaxDate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -104,9 +104,9 @@ func (a *AlmanaxApiService) GetAlmanaxDateExecute(r ApiGetAlmanaxDateRequest) (*
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -133,7 +133,7 @@ func (a *AlmanaxApiService) GetAlmanaxDateExecute(r ApiGetAlmanaxDateRequest) (*
 
 type ApiGetAlmanaxRangeRequest struct {
 	ctx context.Context
-	ApiService *AlmanaxApiService
+	ApiService *AlmanaxAPIService
 	language string
 	filterBonusType *string
 	rangeFrom *string
@@ -197,7 +197,7 @@ Not all combinations are listed but this should give you an idea how to they cou
  @param language code
  @return ApiGetAlmanaxRangeRequest
 */
-func (a *AlmanaxApiService) GetAlmanaxRange(ctx context.Context, language string) ApiGetAlmanaxRangeRequest {
+func (a *AlmanaxAPIService) GetAlmanaxRange(ctx context.Context, language string) ApiGetAlmanaxRangeRequest {
 	return ApiGetAlmanaxRangeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -207,7 +207,7 @@ func (a *AlmanaxApiService) GetAlmanaxRange(ctx context.Context, language string
 
 // Execute executes the request
 //  @return []AlmanaxEntry
-func (a *AlmanaxApiService) GetAlmanaxRangeExecute(r ApiGetAlmanaxRangeRequest) ([]AlmanaxEntry, *http.Response, error) {
+func (a *AlmanaxAPIService) GetAlmanaxRangeExecute(r ApiGetAlmanaxRangeRequest) ([]AlmanaxEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -215,7 +215,7 @@ func (a *AlmanaxApiService) GetAlmanaxRangeExecute(r ApiGetAlmanaxRangeRequest) 
 		localVarReturnValue  []AlmanaxEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlmanaxApiService.GetAlmanaxRange")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlmanaxAPIService.GetAlmanaxRange")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -228,19 +228,19 @@ func (a *AlmanaxApiService) GetAlmanaxRangeExecute(r ApiGetAlmanaxRangeRequest) 
 	localVarFormParams := url.Values{}
 
 	if r.filterBonusType != nil {
-		parameterAddToQuery(localVarQueryParams, "filter[bonus_type]", r.filterBonusType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[bonus_type]", r.filterBonusType, "")
 	}
 	if r.rangeFrom != nil {
-		parameterAddToQuery(localVarQueryParams, "range[from]", r.rangeFrom, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "range[from]", r.rangeFrom, "")
 	}
 	if r.rangeTo != nil {
-		parameterAddToQuery(localVarQueryParams, "range[to]", r.rangeTo, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "range[to]", r.rangeTo, "")
 	}
 	if r.rangeSize != nil {
-		parameterAddToQuery(localVarQueryParams, "range[size]", r.rangeSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "range[size]", r.rangeSize, "")
 	}
 	if r.timezone != nil {
-		parameterAddToQuery(localVarQueryParams, "timezone", r.timezone, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "timezone", r.timezone, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -269,9 +269,9 @@ func (a *AlmanaxApiService) GetAlmanaxRangeExecute(r ApiGetAlmanaxRangeRequest) 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

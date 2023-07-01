@@ -49,14 +49,15 @@ info:
     \ down and try it for yourself!\n\nOr see how these other awesome projects use\
     \ it:\n- [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro\n- [Dofus\
     \ Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina\n- [AlmanaxApp](https://almanaxapp.netlify.app)\
-    \ by Lystina\n\nI highly recommend using the SDKs for quick results. I use them\
-    \ myself for microservices for the API.\n\n## Thank you!\nI highly welcome everyone\
-    \ on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and\
-    \ use cases or give feedback of any kind.\n\nThe servers have a fixed monthly\
-    \ cost to provide very fast responses. If you want to help me keeping them running\
-    \ or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).\n"
+    \ by Lystina\n- [DofuStuffSimulator](https://dofusstuffsimulator.netlify.app/)\n\
+    \nI highly recommend using the SDKs for quick results. I use them myself for parts\
+    \ of the API.\n\n## Thank you!\nI highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h)\
+    \ to just talk about projects and use cases or give feedback of any kind.\n\n\
+    The servers have a fixed monthly cost to provide very fast responses. If you want\
+    \ to help me keeping them running or simply  donate, consider becoming a [GitHub\
+    \ Sponsor](https://github.com/sponsors/dofusdude).\n"
   title: Dofusdude
-  version: 0.7.1
+  version: 0.7.2
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -173,6 +174,7 @@ paths:
                     name: Apple Core
                     type:
                       name: Event
+                      id: 12
                     item_subtype: quest
                     level: 1
                     image_urls:
@@ -536,6 +538,7 @@ paths:
                     name: Koutoulou Moth
                     type:
                       name: Sufokia
+                      id: 7
                     level: 200
                     image_urls:
                       icon: https://api.dofusdu.de/dofus2/img/item/15936.png
@@ -671,6 +674,7 @@ paths:
                     name: Barbeerd
                     type:
                       name: Beer
+                      id: 5
                     level: 1
                     image_urls:
                       icon: https://api.dofusdu.de/dofus2/img/item/37004.png
@@ -805,6 +809,7 @@ paths:
                     name: Tiwabbit Whiskers
                     type:
                       name: Hair
+                      id: 3
                     level: 45
                     image_urls:
                       icon: https://api.dofusdu.de/dofus2/img/item/54693.png
@@ -940,6 +945,7 @@ paths:
                     name: Hatter Lily
                     type:
                       name: Hat
+                      id: 9
                     level: 40
                     image_urls:
                       icon: https://api.dofusdu.de/dofus2/img/item/16177.png
@@ -1074,6 +1080,7 @@ paths:
                     name: Falcodove
                     type:
                       name: Ceremonial petsmount
+                      id: 19
                     level: 1
                     image_urls:
                       icon: https://api.dofusdu.de/dofus2/img/item/121061.png
@@ -1166,6 +1173,7 @@ paths:
                       \ sessions."
                     type:
                       name: Ceremonial cape
+                      id: 18
                     level: 180
                     pods: 0
                     image_urls:
@@ -1267,6 +1275,7 @@ paths:
                       del pan.
                     type:
                       name: Polvo
+                      id: 156
                     level: 1
                     pods: 1
                     image_urls:
@@ -1356,6 +1365,7 @@ paths:
                       — Oskar Wyld
                     type:
                       name: Scythe
+                      id: 163
                     is_weapon: true
                     level: 200
                     pods: 10
@@ -1818,6 +1828,7 @@ paths:
                     description: This flask restores some Health Points.
                     type:
                       name: Potion
+                      id: 96
                     level: 60
                     pods: 2
                     image_urls:
@@ -1920,6 +1931,7 @@ paths:
                       Pronto per essere riempito da Welloy Cab
                     type:
                       name: Varie
+                      id: 110
                     level: 1
                     pods: 0
                     image_urls:
@@ -2697,27 +2709,28 @@ paths:
                       next: https://api.dofusdu.de/dofus2/es/items/equipment?page%5Bnumber%5D%3D2%26page%5Bsize%5D%3D3
                       last: https://api.dofusdu.de/dofus2/es/items/equipment?page%5Bnumber%5D%3D1241%26page%5Bsize%5D%3D3
                     items:
-                    - ankama_id: 17105
-                      name: Botas de Dambeldoro
+                    - ankama_id: 19244
+                      name: Amuleto del Corazón Sangriento
                       type:
-                        name: Bota
+                        name: Amuleto
+                        id: 18
                       level: 200
                       image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/11291.png
-                    - ankama_id: 26009
-                      name: Guadaña serafina
+                        icon: https://api.dofusdu.de/dofus2/img/item/1299.png
+                        sd: https://api.dofusdu.de/dofus2/img/item/1299-200.png
+                        hq: https://api.dofusdu.de/dofus2/img/item/1299-400.png
+                        hd: https://api.dofusdu.de/dofus2/img/item/1299-800.png
+                    - ankama_id: 15696
+                      name: Capachalote
                       type:
-                        name: Guadaña
+                        name: Capa
+                        id: 72
                       level: 200
                       image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/22008.png
-                    - ankama_id: 15188
-                      name: Chanclas de Nidas
-                      type:
-                        name: Bota
-                      level: 200
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/11258.png
+                        icon: https://api.dofusdu.de/dofus2/img/item/17331.png
+                        sd: https://api.dofusdu.de/dofus2/img/item/17331-200.png
+                        hq: https://api.dofusdu.de/dofus2/img/item/17331-400.png
+                        hd: https://api.dofusdu.de/dofus2/img/item/17331-800.png
               schema:
                 $ref: '#/components/schemas/Items-List-Paged'
           description: Equipment Found
@@ -2865,6 +2878,7 @@ paths:
                       name: Stück des Klauenpuzzles
                       type:
                         name: Rohstein
+                        id: 92
                       level: 43
                       image_urls:
                         icon: https://api.dofusdu.de/dofus2/img/item/51267.png
@@ -2872,6 +2886,7 @@ paths:
                       name: Münze des Schatzes von Badoul
                       type:
                         name: Verschiedene Ressourcen
+                        id: 1
                       level: 43
                       image_urls:
                         icon: https://api.dofusdu.de/dofus2/img/item/15268.png
@@ -3015,6 +3030,7 @@ paths:
                       name: Api
                       type:
                         name: Treat
+                        id: 6
                       level: 1
                       image_urls:
                         icon: https://api.dofusdu.de/dofus2/img/item/42001.png
@@ -3022,6 +3038,7 @@ paths:
                       name: Superior Health Flask
                       type:
                         name: Potion
+                        id: 42
                       level: 60
                       image_urls:
                         icon: https://api.dofusdu.de/dofus2/img/item/12039.png
@@ -3029,6 +3046,7 @@ paths:
                       name: Health Flask
                       type:
                         name: Potion
+                        id: 42
                       level: 40
                       image_urls:
                         icon: https://api.dofusdu.de/dofus2/img/item/12003.png
@@ -3180,6 +3198,7 @@ paths:
                       name: Liebesbrief für Poochan
                       type:
                         name: Pandala
+                        id: 4
                       level: 0
                       image_urls:
                         icon: https://api.dofusdu.de/dofus2/img/item/24050.png
@@ -3187,6 +3206,7 @@ paths:
                       name: Feudala-Dojo-Siegerurkunde
                       type:
                         name: Pandala
+                        id: 4
                       level: 0
                       image_urls:
                         icon: https://api.dofusdu.de/dofus2/img/item/24255.png
@@ -3332,6 +3352,7 @@ paths:
                       name: Astrocoiffe
                       type:
                         name: Chapeau d'apparat
+                        id: 11
                       level: 1
                       image_urls:
                         icon: https://api.dofusdu.de/dofus2/img/item/16027.png
@@ -3339,6 +3360,7 @@ paths:
                       name: Oreilles de Lapineupe
                       type:
                         name: Chapeau d'apparat
+                        id: 11
                       level: 1
                       image_urls:
                         icon: https://api.dofusdu.de/dofus2/img/item/16030.png
@@ -5003,7 +5025,7 @@ components:
   schemas:
     Items-List-Entry-Typed:
       example:
-        level: 6
+        level: 1
         item_subtype: item_subtype
         name: name
         image_urls:
@@ -5013,6 +5035,7 @@ components:
           hd: hd
         type:
           name: name
+          id: 6
         ankama_id: 0
       properties:
         ankama_id:
@@ -5037,24 +5060,24 @@ components:
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 5
+          int_maximum: 2
           type:
             is_meta: true
             is_active: true
             name: name
-            id: 2
+            id: 7
           int_minimum: 5
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 5
+          int_maximum: 2
           type:
             is_meta: true
             is_active: true
             name: name
-            id: 2
+            id: 7
           int_minimum: 5
-        level: 6
+        level: 1
         name: name
         recipe:
         - quantity: 5
@@ -5069,22 +5092,23 @@ components:
           icon: icon
           hq: hq
           hd: hd
-        pods: 1
+        pods: 5
         type:
           name: name
+          id: 0
         conditions:
         - operator: operator
-          int_value: 7
+          int_value: 9
           element:
             is_meta: true
             name: name
-            id: 9
+            id: 3
         - operator: operator
-          int_value: 7
+          int_value: 9
           element:
             is_meta: true
             name: name
-            id: 9
+            id: 3
         ankama_id: 0
       properties:
         ankama_id:
@@ -5094,7 +5118,7 @@ components:
         description:
           type: string
         type:
-          $ref: '#/components/schemas/Items_List_Entry_Typed_type'
+          $ref: '#/components/schemas/Cosmetic_type'
         level:
           type: integer
         pods:
@@ -5138,12 +5162,12 @@ components:
         ignore_int_min: true
         ignore_int_max: true
         formatted: formatted
-        int_maximum: 5
+        int_maximum: 2
         type:
           is_meta: true
           is_active: true
           name: name
-          id: 2
+          id: 7
         int_minimum: 5
       properties:
         int_minimum:
@@ -5215,22 +5239,22 @@ components:
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 5
+          int_maximum: 2
           type:
             is_meta: true
             is_active: true
             name: name
-            id: 2
+            id: 7
           int_minimum: 5
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 5
+          int_maximum: 2
           type:
             is_meta: true
             is_active: true
             name: name
-            id: 2
+            id: 7
           int_minimum: 5
         level: 6
         name: name
@@ -5250,19 +5274,20 @@ components:
         pods: 1
         type:
           name: name
+          id: 0
         conditions:
         - operator: operator
-          int_value: 7
+          int_value: 9
           element:
             is_meta: true
             name: name
-            id: 9
+            id: 3
         - operator: operator
-          int_value: 7
+          int_value: 9
           element:
             is_meta: true
             name: name
-            id: 9
+            id: 3
         ankama_id: 0
       properties:
         ankama_id:
@@ -5272,7 +5297,7 @@ components:
         description:
           type: string
         type:
-          $ref: '#/components/schemas/Items_List_Entry_Typed_type'
+          $ref: '#/components/schemas/Cosmetic_type'
         level:
           type: integer
         pods:
@@ -5294,7 +5319,6 @@ components:
             $ref: '#/components/schemas/Recipe-Entry'
           nullable: true
           type: array
-      title: ""
       type: object
       x-examples: {}
     Item-List-Entry:
@@ -5315,6 +5339,7 @@ components:
           hd: hd
         type:
           name: name
+          id: 6
         ankama_id: 0
       properties:
         ankama_id:
@@ -5332,7 +5357,6 @@ components:
             $ref: '#/components/schemas/Recipe-Entry'
           nullable: true
           type: array
-      title: ""
       type: object
       x-examples: {}
     Equipment-Set:
@@ -5341,44 +5365,44 @@ components:
         - - ignore_int_min: true
             ignore_int_max: true
             formatted: formatted
-            int_maximum: 5
+            int_maximum: 2
             type:
               is_meta: true
               is_active: true
               name: name
-              id: 2
+              id: 7
             int_minimum: 5
           - ignore_int_min: true
             ignore_int_max: true
             formatted: formatted
-            int_maximum: 5
+            int_maximum: 2
             type:
               is_meta: true
               is_active: true
               name: name
-              id: 2
+              id: 7
             int_minimum: 5
         - - ignore_int_min: true
             ignore_int_max: true
             formatted: formatted
-            int_maximum: 5
+            int_maximum: 2
             type:
               is_meta: true
               is_active: true
               name: name
-              id: 2
+              id: 7
             int_minimum: 5
           - ignore_int_min: true
             ignore_int_max: true
             formatted: formatted
-            int_maximum: 5
+            int_maximum: 2
             type:
               is_meta: true
               is_active: true
               name: name
-              id: 2
+              id: 7
             int_minimum: 5
-        level: 1
+        highest_equipment_level: 1
         name: name
         equipment_ids:
         - 6
@@ -5400,7 +5424,7 @@ components:
             type: array
           nullable: true
           type: array
-        level:
+        highest_equipment_level:
           type: integer
       title: ""
       type: object
@@ -5431,22 +5455,22 @@ components:
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 5
+          int_maximum: 2
           type:
             is_meta: true
             is_active: true
             name: name
-            id: 2
+            id: 7
           int_minimum: 5
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 5
+          int_maximum: 2
           type:
             is_meta: true
             is_active: true
             name: name
-            id: 2
+            id: 7
           int_minimum: 5
         name: name
         image_urls:
@@ -5520,6 +5544,7 @@ components:
             hd: hd
           type:
             name: name
+            id: 6
           ankama_id: 0
         - level: 6
           name: name
@@ -5537,6 +5562,7 @@ components:
             hd: hd
           type:
             name: name
+            id: 6
           ankama_id: 0
       properties:
         _links:
@@ -5637,11 +5663,11 @@ components:
     Condition-Entry:
       example:
         operator: operator
-        int_value: 7
+        int_value: 9
         element:
           is_meta: true
           name: name
-          id: 9
+          id: 3
       properties:
         operator:
           type: string
@@ -5654,7 +5680,6 @@ components:
       x-stoplight:
         id: vo32jgj5t95xh
     Equipment:
-      description: ""
       properties:
         ankama_id:
           type: integer
@@ -5689,11 +5714,9 @@ components:
           type: array
         parent_set:
           $ref: '#/components/schemas/Equipment_parent_set'
-      title: ""
       type: object
       x-examples: {}
     Weapon:
-      description: ""
       example:
         critical_hit_probability: 5
         parent_set:
@@ -5720,26 +5743,27 @@ components:
           max: 3
         type:
           name: name
+          id: 6
         effects:
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 5
+          int_maximum: 2
           type:
             is_meta: true
             is_active: true
             name: name
-            id: 2
+            id: 7
           int_minimum: 5
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 5
+          int_maximum: 2
           type:
             is_meta: true
             is_active: true
             name: name
-            id: 2
+            id: 7
           int_minimum: 5
         max_cast_per_turn: 2
         name: name
@@ -5747,17 +5771,17 @@ components:
         pods: 1
         conditions:
         - operator: operator
-          int_value: 7
+          int_value: 9
           element:
             is_meta: true
             name: name
-            id: 9
+            id: 3
         - operator: operator
-          int_value: 7
+          int_value: 9
           element:
             is_meta: true
             name: name
-            id: 9
+            id: 3
         critical_hit_bonus: 5
         ankama_id: 0
       properties:
@@ -6596,16 +6620,30 @@ components:
     Items_List_Entry_Typed_type:
       example:
         name: name
+        id: 6
       properties:
         name:
           type: string
+        id:
+          type: integer
+      type: object
+    Cosmetic_type:
+      example:
+        name: name
+        id: 0
+      properties:
+        name:
+          type: string
+        id:
+          minimum: 0
+          type: integer
       type: object
     Effects_Entry_type:
       example:
         is_meta: true
         is_active: true
         name: name
-        id: 2
+        id: 7
       properties:
         name:
           type: string
@@ -6625,7 +6663,7 @@ components:
       example:
         is_meta: true
         name: name
-        id: 9
+        id: 3
       properties:
         name:
           type: string

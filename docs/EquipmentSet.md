@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **EquipmentIds** | Pointer to **[]int32** |  | [optional] 
 **Effects** | Pointer to [**[][]EffectsEntry**]([]EffectsEntry.md) |  | [optional] 
-**Level** | Pointer to **int32** |  | [optional] 
+**HighestEquipmentLevel** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -139,30 +139,30 @@ HasEffects returns a boolean if a field has been set.
 `func (o *EquipmentSet) UnsetEffects()`
 
 UnsetEffects ensures that no value is present for Effects, not even an explicit nil
-### GetLevel
+### GetHighestEquipmentLevel
 
-`func (o *EquipmentSet) GetLevel() int32`
+`func (o *EquipmentSet) GetHighestEquipmentLevel() int32`
 
-GetLevel returns the Level field if non-nil, zero value otherwise.
+GetHighestEquipmentLevel returns the HighestEquipmentLevel field if non-nil, zero value otherwise.
 
-### GetLevelOk
+### GetHighestEquipmentLevelOk
 
-`func (o *EquipmentSet) GetLevelOk() (*int32, bool)`
+`func (o *EquipmentSet) GetHighestEquipmentLevelOk() (*int32, bool)`
 
-GetLevelOk returns a tuple with the Level field if it's non-nil, zero value otherwise
+GetHighestEquipmentLevelOk returns a tuple with the HighestEquipmentLevel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLevel
+### SetHighestEquipmentLevel
 
-`func (o *EquipmentSet) SetLevel(v int32)`
+`func (o *EquipmentSet) SetHighestEquipmentLevel(v int32)`
 
-SetLevel sets Level field to given value.
+SetHighestEquipmentLevel sets HighestEquipmentLevel field to given value.
 
-### HasLevel
+### HasHighestEquipmentLevel
 
-`func (o *EquipmentSet) HasLevel() bool`
+`func (o *EquipmentSet) HasHighestEquipmentLevel() bool`
 
-HasLevel returns a boolean if a field has been set.
+HasHighestEquipmentLevel returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

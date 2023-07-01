@@ -1,9 +1,9 @@
 /*
 Dofusdude
 
-# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina  I highly recommend using the SDKs for quick results. I use them myself for microservices for the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude). 
+# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina - [DofuStuffSimulator](https://dofusstuffsimulator.netlify.app/)  I highly recommend using the SDKs for quick results. I use them myself for parts of the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude). 
 
-API version: 0.7.1
+API version: 0.7.2
 Contact: stelzo@steado.de
 */
 
@@ -44,7 +44,7 @@ func NewAlmanaxEntryWithDefaults() *AlmanaxEntry {
 
 // GetBonus returns the Bonus field value if set, zero value otherwise.
 func (o *AlmanaxEntry) GetBonus() AlmanaxEntryBonus {
-	if o == nil || isNil(o.Bonus) {
+	if o == nil || IsNil(o.Bonus) {
 		var ret AlmanaxEntryBonus
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AlmanaxEntry) GetBonus() AlmanaxEntryBonus {
 // GetBonusOk returns a tuple with the Bonus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntry) GetBonusOk() (*AlmanaxEntryBonus, bool) {
-	if o == nil || isNil(o.Bonus) {
+	if o == nil || IsNil(o.Bonus) {
 		return nil, false
 	}
 	return o.Bonus, true
@@ -62,7 +62,7 @@ func (o *AlmanaxEntry) GetBonusOk() (*AlmanaxEntryBonus, bool) {
 
 // HasBonus returns a boolean if a field has been set.
 func (o *AlmanaxEntry) HasBonus() bool {
-	if o != nil && !isNil(o.Bonus) {
+	if o != nil && !IsNil(o.Bonus) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AlmanaxEntry) SetBonus(v AlmanaxEntryBonus) {
 
 // GetDate returns the Date field value if set, zero value otherwise.
 func (o *AlmanaxEntry) GetDate() string {
-	if o == nil || isNil(o.Date) {
+	if o == nil || IsNil(o.Date) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AlmanaxEntry) GetDate() string {
 // GetDateOk returns a tuple with the Date field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntry) GetDateOk() (*string, bool) {
-	if o == nil || isNil(o.Date) {
+	if o == nil || IsNil(o.Date) {
 		return nil, false
 	}
 	return o.Date, true
@@ -94,7 +94,7 @@ func (o *AlmanaxEntry) GetDateOk() (*string, bool) {
 
 // HasDate returns a boolean if a field has been set.
 func (o *AlmanaxEntry) HasDate() bool {
-	if o != nil && !isNil(o.Date) {
+	if o != nil && !IsNil(o.Date) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AlmanaxEntry) SetDate(v string) {
 
 // GetTribute returns the Tribute field value if set, zero value otherwise.
 func (o *AlmanaxEntry) GetTribute() AlmanaxEntryTribute {
-	if o == nil || isNil(o.Tribute) {
+	if o == nil || IsNil(o.Tribute) {
 		var ret AlmanaxEntryTribute
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AlmanaxEntry) GetTribute() AlmanaxEntryTribute {
 // GetTributeOk returns a tuple with the Tribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlmanaxEntry) GetTributeOk() (*AlmanaxEntryTribute, bool) {
-	if o == nil || isNil(o.Tribute) {
+	if o == nil || IsNil(o.Tribute) {
 		return nil, false
 	}
 	return o.Tribute, true
@@ -126,7 +126,7 @@ func (o *AlmanaxEntry) GetTributeOk() (*AlmanaxEntryTribute, bool) {
 
 // HasTribute returns a boolean if a field has been set.
 func (o *AlmanaxEntry) HasTribute() bool {
-	if o != nil && !isNil(o.Tribute) {
+	if o != nil && !IsNil(o.Tribute) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o AlmanaxEntry) MarshalJSON() ([]byte, error) {
 
 func (o AlmanaxEntry) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Bonus) {
+	if !IsNil(o.Bonus) {
 		toSerialize["bonus"] = o.Bonus
 	}
-	if !isNil(o.Date) {
+	if !IsNil(o.Date) {
 		toSerialize["date"] = o.Date
 	}
-	if !isNil(o.Tribute) {
+	if !IsNil(o.Tribute) {
 		toSerialize["tribute"] = o.Tribute
 	}
 	return toSerialize, nil

@@ -1,7 +1,7 @@
 /*
 Dofusdude
 
-Testing SetsApiService
+Testing SetsAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/dofusdude/dodugo"
 )
 
-func Test_dodugo_SetsApiService(t *testing.T) {
+func Test_dodugo_SetsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SetsApiService GetAllSetsList", func(t *testing.T) {
+	t.Run("Test SetsAPIService GetAllSetsList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.SetsApi.GetAllSetsList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.SetsAPI.GetAllSetsList(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,14 +37,14 @@ func Test_dodugo_SetsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SetsApiService GetSetsList", func(t *testing.T) {
+	t.Run("Test SetsAPIService GetSetsList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.SetsApi.GetSetsList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.SetsAPI.GetSetsList(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -52,14 +52,14 @@ func Test_dodugo_SetsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SetsApiService GetSetsSearch", func(t *testing.T) {
+	t.Run("Test SetsAPIService GetSetsSearch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.SetsApi.GetSetsSearch(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.SetsAPI.GetSetsSearch(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -67,7 +67,7 @@ func Test_dodugo_SetsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SetsApiService GetSetsSingle", func(t *testing.T) {
+	t.Run("Test SetsAPIService GetSetsSingle", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -75,7 +75,7 @@ func Test_dodugo_SetsApiService(t *testing.T) {
 		var ankamaId int32
 		var game string
 
-		resp, httpRes, err := apiClient.SetsApi.GetSetsSingle(context.Background(), language, ankamaId, game).Execute()
+		resp, httpRes, err := apiClient.SetsAPI.GetSetsSingle(context.Background(), language, ankamaId, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

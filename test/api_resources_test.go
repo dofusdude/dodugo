@@ -1,7 +1,7 @@
 /*
 Dofusdude
 
-Testing ResourcesApiService
+Testing ResourcesAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/dofusdude/dodugo"
 )
 
-func Test_dodugo_ResourcesApiService(t *testing.T) {
+func Test_dodugo_ResourcesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ResourcesApiService GetAllItemsResourcesList", func(t *testing.T) {
+	t.Run("Test ResourcesAPIService GetAllItemsResourcesList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.ResourcesApi.GetAllItemsResourcesList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.ResourcesAPI.GetAllItemsResourcesList(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,14 +37,14 @@ func Test_dodugo_ResourcesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ResourcesApiService GetItemsResourceSearch", func(t *testing.T) {
+	t.Run("Test ResourcesAPIService GetItemsResourceSearch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.ResourcesApi.GetItemsResourceSearch(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.ResourcesAPI.GetItemsResourceSearch(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -52,14 +52,14 @@ func Test_dodugo_ResourcesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ResourcesApiService GetItemsResourcesList", func(t *testing.T) {
+	t.Run("Test ResourcesAPIService GetItemsResourcesList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var language string
 		var game string
 
-		resp, httpRes, err := apiClient.ResourcesApi.GetItemsResourcesList(context.Background(), language, game).Execute()
+		resp, httpRes, err := apiClient.ResourcesAPI.GetItemsResourcesList(context.Background(), language, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -67,7 +67,7 @@ func Test_dodugo_ResourcesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ResourcesApiService GetItemsResourcesSingle", func(t *testing.T) {
+	t.Run("Test ResourcesAPIService GetItemsResourcesSingle", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -75,7 +75,7 @@ func Test_dodugo_ResourcesApiService(t *testing.T) {
 		var ankamaId int32
 		var game string
 
-		resp, httpRes, err := apiClient.ResourcesApi.GetItemsResourcesSingle(context.Background(), language, ankamaId, game).Execute()
+		resp, httpRes, err := apiClient.ResourcesAPI.GetItemsResourcesSingle(context.Background(), language, ankamaId, game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

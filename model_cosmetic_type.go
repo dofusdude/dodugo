@@ -15,127 +15,97 @@ import (
 	"encoding/json"
 )
 
-// checks if the CreateAlmanaxWebhookDailySettings type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CreateAlmanaxWebhookDailySettings{}
+// checks if the CosmeticType type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CosmeticType{}
 
-// CreateAlmanaxWebhookDailySettings struct for CreateAlmanaxWebhookDailySettings
-type CreateAlmanaxWebhookDailySettings struct {
-	// Timezone of your community to determine midnight.
-	Timezone NullableString `json:"timezone,omitempty"`
-	// Hours added to midnight at the selected timezone. 8 = 8:00 in the morning.
-	MidnightOffset NullableInt32 `json:"midnight_offset,omitempty"`
+// CosmeticType struct for CosmeticType
+type CosmeticType struct {
+	Name *string `json:"name,omitempty"`
+	Id *int32 `json:"id,omitempty"`
 }
 
-// NewCreateAlmanaxWebhookDailySettings instantiates a new CreateAlmanaxWebhookDailySettings object
+// NewCosmeticType instantiates a new CosmeticType object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateAlmanaxWebhookDailySettings() *CreateAlmanaxWebhookDailySettings {
-	this := CreateAlmanaxWebhookDailySettings{}
-	var timezone string = "Europe/Paris"
-	this.Timezone = *NewNullableString(&timezone)
-	var midnightOffset int32 = 0
-	this.MidnightOffset = *NewNullableInt32(&midnightOffset)
+func NewCosmeticType() *CosmeticType {
+	this := CosmeticType{}
 	return &this
 }
 
-// NewCreateAlmanaxWebhookDailySettingsWithDefaults instantiates a new CreateAlmanaxWebhookDailySettings object
+// NewCosmeticTypeWithDefaults instantiates a new CosmeticType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewCreateAlmanaxWebhookDailySettingsWithDefaults() *CreateAlmanaxWebhookDailySettings {
-	this := CreateAlmanaxWebhookDailySettings{}
-	var timezone string = "Europe/Paris"
-	this.Timezone = *NewNullableString(&timezone)
-	var midnightOffset int32 = 0
-	this.MidnightOffset = *NewNullableInt32(&midnightOffset)
+func NewCosmeticTypeWithDefaults() *CosmeticType {
+	this := CosmeticType{}
 	return &this
 }
 
-// GetTimezone returns the Timezone field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateAlmanaxWebhookDailySettings) GetTimezone() string {
-	if o == nil || IsNil(o.Timezone.Get()) {
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *CosmeticType) GetName() string {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-	return *o.Timezone.Get()
+	return *o.Name
 }
 
-// GetTimezoneOk returns a tuple with the Timezone field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateAlmanaxWebhookDailySettings) GetTimezoneOk() (*string, bool) {
-	if o == nil {
+func (o *CosmeticType) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return o.Timezone.Get(), o.Timezone.IsSet()
+	return o.Name, true
 }
 
-// HasTimezone returns a boolean if a field has been set.
-func (o *CreateAlmanaxWebhookDailySettings) HasTimezone() bool {
-	if o != nil && o.Timezone.IsSet() {
+// HasName returns a boolean if a field has been set.
+func (o *CosmeticType) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetTimezone gets a reference to the given NullableString and assigns it to the Timezone field.
-func (o *CreateAlmanaxWebhookDailySettings) SetTimezone(v string) {
-	o.Timezone.Set(&v)
-}
-// SetTimezoneNil sets the value for Timezone to be an explicit nil
-func (o *CreateAlmanaxWebhookDailySettings) SetTimezoneNil() {
-	o.Timezone.Set(nil)
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *CosmeticType) SetName(v string) {
+	o.Name = &v
 }
 
-// UnsetTimezone ensures that no value is present for Timezone, not even an explicit nil
-func (o *CreateAlmanaxWebhookDailySettings) UnsetTimezone() {
-	o.Timezone.Unset()
-}
-
-// GetMidnightOffset returns the MidnightOffset field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateAlmanaxWebhookDailySettings) GetMidnightOffset() int32 {
-	if o == nil || IsNil(o.MidnightOffset.Get()) {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *CosmeticType) GetId() int32 {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
-	return *o.MidnightOffset.Get()
+	return *o.Id
 }
 
-// GetMidnightOffsetOk returns a tuple with the MidnightOffset field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateAlmanaxWebhookDailySettings) GetMidnightOffsetOk() (*int32, bool) {
-	if o == nil {
+func (o *CosmeticType) GetIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.MidnightOffset.Get(), o.MidnightOffset.IsSet()
+	return o.Id, true
 }
 
-// HasMidnightOffset returns a boolean if a field has been set.
-func (o *CreateAlmanaxWebhookDailySettings) HasMidnightOffset() bool {
-	if o != nil && o.MidnightOffset.IsSet() {
+// HasId returns a boolean if a field has been set.
+func (o *CosmeticType) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetMidnightOffset gets a reference to the given NullableInt32 and assigns it to the MidnightOffset field.
-func (o *CreateAlmanaxWebhookDailySettings) SetMidnightOffset(v int32) {
-	o.MidnightOffset.Set(&v)
-}
-// SetMidnightOffsetNil sets the value for MidnightOffset to be an explicit nil
-func (o *CreateAlmanaxWebhookDailySettings) SetMidnightOffsetNil() {
-	o.MidnightOffset.Set(nil)
+// SetId gets a reference to the given int32 and assigns it to the Id field.
+func (o *CosmeticType) SetId(v int32) {
+	o.Id = &v
 }
 
-// UnsetMidnightOffset ensures that no value is present for MidnightOffset, not even an explicit nil
-func (o *CreateAlmanaxWebhookDailySettings) UnsetMidnightOffset() {
-	o.MidnightOffset.Unset()
-}
-
-func (o CreateAlmanaxWebhookDailySettings) MarshalJSON() ([]byte, error) {
+func (o CosmeticType) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -143,49 +113,49 @@ func (o CreateAlmanaxWebhookDailySettings) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o CreateAlmanaxWebhookDailySettings) ToMap() (map[string]interface{}, error) {
+func (o CosmeticType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Timezone.IsSet() {
-		toSerialize["timezone"] = o.Timezone.Get()
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
 	}
-	if o.MidnightOffset.IsSet() {
-		toSerialize["midnight_offset"] = o.MidnightOffset.Get()
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	return toSerialize, nil
 }
 
-type NullableCreateAlmanaxWebhookDailySettings struct {
-	value *CreateAlmanaxWebhookDailySettings
+type NullableCosmeticType struct {
+	value *CosmeticType
 	isSet bool
 }
 
-func (v NullableCreateAlmanaxWebhookDailySettings) Get() *CreateAlmanaxWebhookDailySettings {
+func (v NullableCosmeticType) Get() *CosmeticType {
 	return v.value
 }
 
-func (v *NullableCreateAlmanaxWebhookDailySettings) Set(val *CreateAlmanaxWebhookDailySettings) {
+func (v *NullableCosmeticType) Set(val *CosmeticType) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableCreateAlmanaxWebhookDailySettings) IsSet() bool {
+func (v NullableCosmeticType) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableCreateAlmanaxWebhookDailySettings) Unset() {
+func (v *NullableCosmeticType) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableCreateAlmanaxWebhookDailySettings(val *CreateAlmanaxWebhookDailySettings) *NullableCreateAlmanaxWebhookDailySettings {
-	return &NullableCreateAlmanaxWebhookDailySettings{value: val, isSet: true}
+func NewNullableCosmeticType(val *CosmeticType) *NullableCosmeticType {
+	return &NullableCosmeticType{value: val, isSet: true}
 }
 
-func (v NullableCreateAlmanaxWebhookDailySettings) MarshalJSON() ([]byte, error) {
+func (v NullableCosmeticType) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableCreateAlmanaxWebhookDailySettings) UnmarshalJSON(src []byte) error {
+func (v *NullableCosmeticType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

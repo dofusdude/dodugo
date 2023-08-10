@@ -15,69 +15,38 @@ import (
 	"encoding/json"
 )
 
-// checks if the EquipmentSet type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &EquipmentSet{}
+// checks if the GetGameSearch200ResponseInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GetGameSearch200ResponseInner{}
 
-// EquipmentSet struct for EquipmentSet
-type EquipmentSet struct {
-	AnkamaId *int32 `json:"ankama_id,omitempty"`
+// GetGameSearch200ResponseInner struct for GetGameSearch200ResponseInner
+type GetGameSearch200ResponseInner struct {
+	// Name of the hit. The query could still have matched with the description only.
 	Name *string `json:"name,omitempty"`
-	EquipmentIds []int32 `json:"equipment_ids,omitempty"`
-	Effects [][]EffectsEntry `json:"effects,omitempty"`
-	HighestEquipmentLevel *int32 `json:"highest_equipment_level,omitempty"`
+	// Ankama ID for retrieving more details in the type specific endpoint.
+	AnkamaId *int32 `json:"ankama_id,omitempty"`
+	// Type classification
+	Type *string `json:"type,omitempty"`
 }
 
-// NewEquipmentSet instantiates a new EquipmentSet object
+// NewGetGameSearch200ResponseInner instantiates a new GetGameSearch200ResponseInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEquipmentSet() *EquipmentSet {
-	this := EquipmentSet{}
+func NewGetGameSearch200ResponseInner() *GetGameSearch200ResponseInner {
+	this := GetGameSearch200ResponseInner{}
 	return &this
 }
 
-// NewEquipmentSetWithDefaults instantiates a new EquipmentSet object
+// NewGetGameSearch200ResponseInnerWithDefaults instantiates a new GetGameSearch200ResponseInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewEquipmentSetWithDefaults() *EquipmentSet {
-	this := EquipmentSet{}
+func NewGetGameSearch200ResponseInnerWithDefaults() *GetGameSearch200ResponseInner {
+	this := GetGameSearch200ResponseInner{}
 	return &this
-}
-
-// GetAnkamaId returns the AnkamaId field value if set, zero value otherwise.
-func (o *EquipmentSet) GetAnkamaId() int32 {
-	if o == nil || IsNil(o.AnkamaId) {
-		var ret int32
-		return ret
-	}
-	return *o.AnkamaId
-}
-
-// GetAnkamaIdOk returns a tuple with the AnkamaId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EquipmentSet) GetAnkamaIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.AnkamaId) {
-		return nil, false
-	}
-	return o.AnkamaId, true
-}
-
-// HasAnkamaId returns a boolean if a field has been set.
-func (o *EquipmentSet) HasAnkamaId() bool {
-	if o != nil && !IsNil(o.AnkamaId) {
-		return true
-	}
-
-	return false
-}
-
-// SetAnkamaId gets a reference to the given int32 and assigns it to the AnkamaId field.
-func (o *EquipmentSet) SetAnkamaId(v int32) {
-	o.AnkamaId = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *EquipmentSet) GetName() string {
+func (o *GetGameSearch200ResponseInner) GetName() string {
 	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
@@ -87,7 +56,7 @@ func (o *EquipmentSet) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EquipmentSet) GetNameOk() (*string, bool) {
+func (o *GetGameSearch200ResponseInner) GetNameOk() (*string, bool) {
 	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
@@ -95,7 +64,7 @@ func (o *EquipmentSet) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *EquipmentSet) HasName() bool {
+func (o *GetGameSearch200ResponseInner) HasName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -104,108 +73,75 @@ func (o *EquipmentSet) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *EquipmentSet) SetName(v string) {
+func (o *GetGameSearch200ResponseInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetEquipmentIds returns the EquipmentIds field value if set, zero value otherwise.
-func (o *EquipmentSet) GetEquipmentIds() []int32 {
-	if o == nil || IsNil(o.EquipmentIds) {
-		var ret []int32
-		return ret
-	}
-	return o.EquipmentIds
-}
-
-// GetEquipmentIdsOk returns a tuple with the EquipmentIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EquipmentSet) GetEquipmentIdsOk() ([]int32, bool) {
-	if o == nil || IsNil(o.EquipmentIds) {
-		return nil, false
-	}
-	return o.EquipmentIds, true
-}
-
-// HasEquipmentIds returns a boolean if a field has been set.
-func (o *EquipmentSet) HasEquipmentIds() bool {
-	if o != nil && !IsNil(o.EquipmentIds) {
-		return true
-	}
-
-	return false
-}
-
-// SetEquipmentIds gets a reference to the given []int32 and assigns it to the EquipmentIds field.
-func (o *EquipmentSet) SetEquipmentIds(v []int32) {
-	o.EquipmentIds = v
-}
-
-// GetEffects returns the Effects field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *EquipmentSet) GetEffects() [][]EffectsEntry {
-	if o == nil {
-		var ret [][]EffectsEntry
-		return ret
-	}
-	return o.Effects
-}
-
-// GetEffectsOk returns a tuple with the Effects field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EquipmentSet) GetEffectsOk() ([][]EffectsEntry, bool) {
-	if o == nil || IsNil(o.Effects) {
-		return nil, false
-	}
-	return o.Effects, true
-}
-
-// HasEffects returns a boolean if a field has been set.
-func (o *EquipmentSet) HasEffects() bool {
-	if o != nil && IsNil(o.Effects) {
-		return true
-	}
-
-	return false
-}
-
-// SetEffects gets a reference to the given [][]EffectsEntry and assigns it to the Effects field.
-func (o *EquipmentSet) SetEffects(v [][]EffectsEntry) {
-	o.Effects = v
-}
-
-// GetHighestEquipmentLevel returns the HighestEquipmentLevel field value if set, zero value otherwise.
-func (o *EquipmentSet) GetHighestEquipmentLevel() int32 {
-	if o == nil || IsNil(o.HighestEquipmentLevel) {
+// GetAnkamaId returns the AnkamaId field value if set, zero value otherwise.
+func (o *GetGameSearch200ResponseInner) GetAnkamaId() int32 {
+	if o == nil || IsNil(o.AnkamaId) {
 		var ret int32
 		return ret
 	}
-	return *o.HighestEquipmentLevel
+	return *o.AnkamaId
 }
 
-// GetHighestEquipmentLevelOk returns a tuple with the HighestEquipmentLevel field value if set, nil otherwise
+// GetAnkamaIdOk returns a tuple with the AnkamaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EquipmentSet) GetHighestEquipmentLevelOk() (*int32, bool) {
-	if o == nil || IsNil(o.HighestEquipmentLevel) {
+func (o *GetGameSearch200ResponseInner) GetAnkamaIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.AnkamaId) {
 		return nil, false
 	}
-	return o.HighestEquipmentLevel, true
+	return o.AnkamaId, true
 }
 
-// HasHighestEquipmentLevel returns a boolean if a field has been set.
-func (o *EquipmentSet) HasHighestEquipmentLevel() bool {
-	if o != nil && !IsNil(o.HighestEquipmentLevel) {
+// HasAnkamaId returns a boolean if a field has been set.
+func (o *GetGameSearch200ResponseInner) HasAnkamaId() bool {
+	if o != nil && !IsNil(o.AnkamaId) {
 		return true
 	}
 
 	return false
 }
 
-// SetHighestEquipmentLevel gets a reference to the given int32 and assigns it to the HighestEquipmentLevel field.
-func (o *EquipmentSet) SetHighestEquipmentLevel(v int32) {
-	o.HighestEquipmentLevel = &v
+// SetAnkamaId gets a reference to the given int32 and assigns it to the AnkamaId field.
+func (o *GetGameSearch200ResponseInner) SetAnkamaId(v int32) {
+	o.AnkamaId = &v
 }
 
-func (o EquipmentSet) MarshalJSON() ([]byte, error) {
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *GetGameSearch200ResponseInner) GetType() string {
+	if o == nil || IsNil(o.Type) {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetGameSearch200ResponseInner) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *GetGameSearch200ResponseInner) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *GetGameSearch200ResponseInner) SetType(v string) {
+	o.Type = &v
+}
+
+func (o GetGameSearch200ResponseInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -213,58 +149,52 @@ func (o EquipmentSet) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o EquipmentSet) ToMap() (map[string]interface{}, error) {
+func (o GetGameSearch200ResponseInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AnkamaId) {
-		toSerialize["ankama_id"] = o.AnkamaId
-	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.EquipmentIds) {
-		toSerialize["equipment_ids"] = o.EquipmentIds
+	if !IsNil(o.AnkamaId) {
+		toSerialize["ankama_id"] = o.AnkamaId
 	}
-	if o.Effects != nil {
-		toSerialize["effects"] = o.Effects
-	}
-	if !IsNil(o.HighestEquipmentLevel) {
-		toSerialize["highest_equipment_level"] = o.HighestEquipmentLevel
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
 	}
 	return toSerialize, nil
 }
 
-type NullableEquipmentSet struct {
-	value *EquipmentSet
+type NullableGetGameSearch200ResponseInner struct {
+	value *GetGameSearch200ResponseInner
 	isSet bool
 }
 
-func (v NullableEquipmentSet) Get() *EquipmentSet {
+func (v NullableGetGameSearch200ResponseInner) Get() *GetGameSearch200ResponseInner {
 	return v.value
 }
 
-func (v *NullableEquipmentSet) Set(val *EquipmentSet) {
+func (v *NullableGetGameSearch200ResponseInner) Set(val *GetGameSearch200ResponseInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableEquipmentSet) IsSet() bool {
+func (v NullableGetGameSearch200ResponseInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableEquipmentSet) Unset() {
+func (v *NullableGetGameSearch200ResponseInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableEquipmentSet(val *EquipmentSet) *NullableEquipmentSet {
-	return &NullableEquipmentSet{value: val, isSet: true}
+func NewNullableGetGameSearch200ResponseInner(val *GetGameSearch200ResponseInner) *NullableGetGameSearch200ResponseInner {
+	return &NullableGetGameSearch200ResponseInner{value: val, isSet: true}
 }
 
-func (v NullableEquipmentSet) MarshalJSON() ([]byte, error) {
+func (v NullableGetGameSearch200ResponseInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableEquipmentSet) UnmarshalJSON(src []byte) error {
+func (v *NullableGetGameSearch200ResponseInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

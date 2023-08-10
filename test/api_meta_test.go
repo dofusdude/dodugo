@@ -22,6 +22,18 @@ func Test_dodugo_MetaAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test MetaAPIService GetGameSearchTypes", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MetaAPI.GetGameSearchTypes(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MetaAPIService GetMetaAlmanaxBonuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

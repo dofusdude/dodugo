@@ -3,11 +3,11 @@
 .travis.yml
 README.md
 api/openapi.yaml
-api_all_items.go
 api_almanax.go
 api_consumables.go
 api_cosmetics.go
 api_equipment.go
+api_game.go
 api_meta.go
 api_mounts.go
 api_quest_items.go
@@ -16,7 +16,6 @@ api_sets.go
 api_webhooks.go
 client.go
 configuration.go
-docs/AllItemsAPI.md
 docs/AlmanaxAPI.md
 docs/AlmanaxEntry.md
 docs/AlmanaxEntryBonus.md
@@ -41,6 +40,8 @@ docs/Equipment.md
 docs/EquipmentAPI.md
 docs/EquipmentParentSet.md
 docs/EquipmentSet.md
+docs/GameAPI.md
+docs/GetGameSearch200ResponseInner.md
 docs/GetMetaAlmanaxBonuses200ResponseInner.md
 docs/GetMetaWebhooksTwitter200Response.md
 docs/ImageUrls.md
@@ -92,6 +93,7 @@ model_effects_entry_type.go
 model_equipment.go
 model_equipment_parent_set.go
 model_equipment_set.go
+model_get_game_search_200_response_inner.go
 model_get_meta_almanax_bonuses_200_response_inner.go
 model_get_meta_webhooks_twitter_200_response.go
 model_image_urls.go
@@ -115,11 +117,11 @@ model_twitter_webhook.go
 model_weapon.go
 model_weapon_range.go
 response.go
-test/api_all_items_test.go
 test/api_almanax_test.go
 test/api_consumables_test.go
 test/api_cosmetics_test.go
 test/api_equipment_test.go
+test/api_game_test.go
 test/api_meta_test.go
 test/api_mounts_test.go
 test/api_quest_items_test.go

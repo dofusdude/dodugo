@@ -57,16 +57,16 @@ info:
     \ to help me keeping them running or simply  donate, consider becoming a [GitHub\
     \ Sponsor](https://github.com/sponsors/dofusdude).\n"
   title: Dofusdude
-  version: 0.7.2
+  version: 0.8.0
 servers:
 - description: API
   url: https://api.dofusdu.de
 tags:
-- name: all items
 - name: almanax
 - name: consumables
 - name: cosmetics
 - name: equipment
+- name: game
 - name: meta
 - name: mounts
 - name: quest items
@@ -212,7 +212,7 @@ paths:
             - no hits for query
       summary: Search All Items
       tags:
-      - all items
+      - game
   /{game}/{language}/mounts/search:
     get:
       description: Search in all names and descriptions of mounts with a query.
@@ -846,6 +846,148 @@ paths:
       summary: Search Resources
       tags:
       - resources
+  /{game}/{language}/search:
+    get:
+      description: Search in all names and descriptions of all supported types in
+        the game. For the list of supported types see the endpoint /dofus2/meta/search/types.
+      operationId: get-game-search
+      parameters:
+      - description: a valid language code
+        explode: false
+        in: path
+        name: language
+        required: true
+        schema:
+          enum:
+          - en
+          - fr
+          - de
+          - it
+          - es
+          - pt
+          maxLength: 2
+          minLength: 2
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: game
+        required: true
+        schema:
+          enum:
+          - dofus2
+          - dofus2beta
+          example: dofus2
+          type: string
+        style: simple
+      - description: search query
+        explode: true
+        in: query
+        name: query
+        required: true
+        schema:
+          example: paztek
+          type: string
+        style: form
+      - description: only results with all specific type
+        explode: false
+        in: query
+        name: "filter[type]"
+        required: false
+        schema:
+          example:
+          - items-equipment
+          items:
+            enum:
+            - items-consumables
+            - items-cosmetics
+            - items-resources
+            - items-equipment
+            - items-quest_items
+            - mounts
+            - sets
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      - description: maximum number of returned results
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 8
+          example: 8
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
+      - description: adds fields from the item search to the list entries if the hit
+          is a item. Multiple comma separated values allowed.
+        explode: false
+        in: query
+        name: "fields[item]"
+        required: false
+        schema:
+          example:
+          - level
+          items:
+            enum:
+            - level
+            - image_urls
+            - type
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                query "paztek", filter[type] "beer":
+                  value:
+                  - name: Paztek Sandals
+                    ankama_id: 20463
+                    type: items-equipment
+                  - name: Paztek Mask
+                    ankama_id: 20465
+                    type: items-equipment
+                  - name: Paztek Cloak
+                    ankama_id: 20464
+                    type: items-equipment
+              schema:
+                items:
+                  $ref: '#/components/schemas/get_game_search_200_response_inner'
+                type: array
+                x-examples:
+                  Example 1:
+                  - name: Paztek Sandals
+                    ankama_id: 20463
+                    type: items-equipment
+                  - name: Paztek Mask
+                    ankama_id: 20465
+                    type: items-equipment
+                  - name: Paztek Cloak
+                    ankama_id: 20464
+                    type: items-equipment
+          description: Game Search Result
+        "400":
+          description: |
+            Bad Request
+
+            Possibilities:
+            - empty or no query
+            - filter[type] does not exist
+        "404":
+          description: |-
+            Not Found
+
+            Possibilities:
+            - no hits for query
+      summary: Game Search
+      tags:
+      - game
   /{game}/{language}/items/equipment/search:
     get:
       description: Search in all names and descriptions of equipment items with a
@@ -4489,6 +4631,35 @@ paths:
       summary: Effects and Condition Elements
       tags:
       - meta
+  /dofus2/meta/search/types:
+    get:
+      description: "Get all types for /{game}/{lang}/search available for filtering.\
+        \ All names are english for comparing them inside applications. Order is fixed\
+        \ so you can compare indices instead of strings."
+      operationId: get-game-search-types
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                List:
+                  value:
+                  - items-consumables
+                  - items-cosmetics
+                  - items-resources
+                  - items-equipment
+                  - items-quest_items
+                  - mounts
+                  - sets
+              schema:
+                items:
+                  type: string
+                type: array
+          description: OK
+      summary: Available Game Search Types
+      tags:
+      - meta
   /dofus2/meta/{language}/almanax/bonuses:
     get:
       description: Get all the available bonuses and their id for filtering them in
@@ -6588,6 +6759,24 @@ components:
           created_at: 2019-08-24T14:15:22Z
           last_fired_at: 2019-08-24T14:15:22Z
           updated_at: 2019-08-24T14:15:22Z
+    get_game_search_200_response_inner:
+      example:
+        name: name
+        type: type
+        ankama_id: 0
+      properties:
+        name:
+          description: Name of the hit. The query could still have matched with the
+            description only.
+          type: string
+        ankama_id:
+          description: Ankama ID for retrieving more details in the type specific
+            endpoint.
+          type: integer
+        type:
+          description: Type classification
+          type: string
+      type: object
     get_meta_almanax_bonuses_200_response_inner:
       example:
         name: name

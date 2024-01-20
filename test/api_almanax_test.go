@@ -1,5 +1,5 @@
 /*
-Dofusdude
+dofusdude
 
 Testing AlmanaxAPIService
 

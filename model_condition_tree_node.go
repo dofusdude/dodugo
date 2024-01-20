@@ -13,149 +13,135 @@ package dodugo
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
-// checks if the CosmeticType type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CosmeticType{}
-
-// CosmeticType struct for CosmeticType
-type CosmeticType struct {
-	Name *string `json:"name,omitempty"`
-	Id *int32 `json:"id,omitempty"`
+// ConditionTreeNode - struct for ConditionTreeNode
+type ConditionTreeNode struct {
+	ConditionTreeLeaf *ConditionTreeLeaf
+	ConditionTreeRelation *ConditionTreeRelation
 }
 
-// NewCosmeticType instantiates a new CosmeticType object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCosmeticType() *CosmeticType {
-	this := CosmeticType{}
-	return &this
-}
-
-// NewCosmeticTypeWithDefaults instantiates a new CosmeticType object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCosmeticTypeWithDefaults() *CosmeticType {
-	this := CosmeticType{}
-	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *CosmeticType) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
+// ConditionTreeLeafAsConditionTreeNode is a convenience function that returns ConditionTreeLeaf wrapped in ConditionTreeNode
+func ConditionTreeLeafAsConditionTreeNode(v *ConditionTreeLeaf) ConditionTreeNode {
+	return ConditionTreeNode{
+		ConditionTreeLeaf: v,
 	}
-	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CosmeticType) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
+// ConditionTreeRelationAsConditionTreeNode is a convenience function that returns ConditionTreeRelation wrapped in ConditionTreeNode
+func ConditionTreeRelationAsConditionTreeNode(v *ConditionTreeRelation) ConditionTreeNode {
+	return ConditionTreeNode{
+		ConditionTreeRelation: v,
 	}
-	return o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *CosmeticType) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
+
+// Unmarshal JSON data into one of the pointers in the struct
+func (dst *ConditionTreeNode) UnmarshalJSON(data []byte) error {
+	var err error
+	match := 0
+	// try to unmarshal data into ConditionTreeLeaf
+	err = newStrictDecoder(data).Decode(&dst.ConditionTreeLeaf)
+	if err == nil {
+		jsonConditionTreeLeaf, _ := json.Marshal(dst.ConditionTreeLeaf)
+		if string(jsonConditionTreeLeaf) == "{}" { // empty struct
+			dst.ConditionTreeLeaf = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.ConditionTreeLeaf = nil
 	}
 
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *CosmeticType) SetName(v string) {
-	o.Name = &v
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *CosmeticType) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CosmeticType) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *CosmeticType) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
+	// try to unmarshal data into ConditionTreeRelation
+	err = newStrictDecoder(data).Decode(&dst.ConditionTreeRelation)
+	if err == nil {
+		jsonConditionTreeRelation, _ := json.Marshal(dst.ConditionTreeRelation)
+		if string(jsonConditionTreeRelation) == "{}" { // empty struct
+			dst.ConditionTreeRelation = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.ConditionTreeRelation = nil
 	}
 
-	return false
-}
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.ConditionTreeLeaf = nil
+		dst.ConditionTreeRelation = nil
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *CosmeticType) SetId(v int32) {
-	o.Id = &v
-}
-
-func (o CosmeticType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+		return fmt.Errorf("data matches more than one schema in oneOf(ConditionTreeNode)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(ConditionTreeNode)")
 	}
-	return json.Marshal(toSerialize)
 }
 
-func (o CosmeticType) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
+// Marshal data from the first non-nil pointers in the struct to JSON
+func (src ConditionTreeNode) MarshalJSON() ([]byte, error) {
+	if src.ConditionTreeLeaf != nil {
+		return json.Marshal(&src.ConditionTreeLeaf)
 	}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
+
+	if src.ConditionTreeRelation != nil {
+		return json.Marshal(&src.ConditionTreeRelation)
 	}
-	return toSerialize, nil
+
+	return nil, nil // no data in oneOf schemas
 }
 
-type NullableCosmeticType struct {
-	value *CosmeticType
+// Get the actual instance
+func (obj *ConditionTreeNode) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.ConditionTreeLeaf != nil {
+		return obj.ConditionTreeLeaf
+	}
+
+	if obj.ConditionTreeRelation != nil {
+		return obj.ConditionTreeRelation
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+type NullableConditionTreeNode struct {
+	value *ConditionTreeNode
 	isSet bool
 }
 
-func (v NullableCosmeticType) Get() *CosmeticType {
+func (v NullableConditionTreeNode) Get() *ConditionTreeNode {
 	return v.value
 }
 
-func (v *NullableCosmeticType) Set(val *CosmeticType) {
+func (v *NullableConditionTreeNode) Set(val *ConditionTreeNode) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableCosmeticType) IsSet() bool {
+func (v NullableConditionTreeNode) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableCosmeticType) Unset() {
+func (v *NullableConditionTreeNode) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableCosmeticType(val *CosmeticType) *NullableCosmeticType {
-	return &NullableCosmeticType{value: val, isSet: true}
+func NewNullableConditionTreeNode(val *ConditionTreeNode) *NullableConditionTreeNode {
+	return &NullableConditionTreeNode{value: val, isSet: true}
 }
 
-func (v NullableCosmeticType) MarshalJSON() ([]byte, error) {
+func (v NullableConditionTreeNode) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableCosmeticType) UnmarshalJSON(src []byte) error {
+func (v *NullableConditionTreeNode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

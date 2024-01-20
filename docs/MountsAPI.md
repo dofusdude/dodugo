@@ -25,27 +25,27 @@ List All Mounts
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/dofusdude/dodugo"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
-    game := "dofus2" // string | 
-    filterFamilyName := "Dragoturkey" // string | only results with the translated family name (optional)
-    acceptEncoding := "acceptEncoding_example" // string | optional compression for saving bandwidth (optional)
+	language := "language_example" // string | a valid language code
+	game := "dofus2" // string | 
+	filterFamilyName := "Dragoturkey" // string | only results with the translated family name (optional)
+	acceptEncoding := "acceptEncoding_example" // string | optional compression for saving bandwidth (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MountsAPI.GetAllMountsList(context.Background(), language, game).FilterFamilyName(filterFamilyName).AcceptEncoding(acceptEncoding).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MountsAPI.GetAllMountsList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAllMountsList`: MountsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `MountsAPI.GetAllMountsList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MountsAPI.GetAllMountsList(context.Background(), language, game).FilterFamilyName(filterFamilyName).AcceptEncoding(acceptEncoding).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MountsAPI.GetAllMountsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAllMountsList`: MountsListPaged
+	fmt.Fprintf(os.Stdout, "Response from `MountsAPI.GetAllMountsList`: %v\n", resp)
 }
 ```
 
@@ -102,29 +102,29 @@ List Mounts
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/dofusdude/dodugo"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
-    game := "dofus2" // string | 
-    filterFamilyName := "Dragoturkey" // string | only results with the translated family name (optional)
-    pageSize := int32(10) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
-    pageNumber := int32(1) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
-    fieldsMount := []string{"FieldsMount_example"} // []string | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
+	language := "language_example" // string | a valid language code
+	game := "dofus2" // string | 
+	filterFamilyName := "Dragoturkey" // string | only results with the translated family name (optional)
+	pageSize := int32(10) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
+	pageNumber := int32(1) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
+	fieldsMount := []string{"FieldsMount_example"} // []string | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MountsAPI.GetMountsList(context.Background(), language, game).FilterFamilyName(filterFamilyName).PageSize(pageSize).PageNumber(pageNumber).FieldsMount(fieldsMount).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MountsAPI.GetMountsList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetMountsList`: MountsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `MountsAPI.GetMountsList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MountsAPI.GetMountsList(context.Background(), language, game).FilterFamilyName(filterFamilyName).PageSize(pageSize).PageNumber(pageNumber).FieldsMount(fieldsMount).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MountsAPI.GetMountsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMountsList`: MountsListPaged
+	fmt.Fprintf(os.Stdout, "Response from `MountsAPI.GetMountsList`: %v\n", resp)
 }
 ```
 
@@ -183,28 +183,28 @@ Search Mounts
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/dofusdude/dodugo"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "fr" // string | a valid language code
-    game := "dofus2" // string | 
-    query := "Dorée" // string | case sensitive search query
-    filterFamilyName := "Dragodinde" // string | only results with the translated family name (optional)
-    limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
+	language := "fr" // string | a valid language code
+	game := "dofus2" // string | 
+	query := "Dorée" // string | case sensitive search query
+	filterFamilyName := "Dragodinde" // string | only results with the translated family name (optional)
+	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MountsAPI.GetMountsSearch(context.Background(), language, game).Query(query).FilterFamilyName(filterFamilyName).Limit(limit).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MountsAPI.GetMountsSearch``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetMountsSearch`: []MountListEntry
-    fmt.Fprintf(os.Stdout, "Response from `MountsAPI.GetMountsSearch`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MountsAPI.GetMountsSearch(context.Background(), language, game).Query(query).FilterFamilyName(filterFamilyName).Limit(limit).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MountsAPI.GetMountsSearch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMountsSearch`: []MountListEntry
+	fmt.Fprintf(os.Stdout, "Response from `MountsAPI.GetMountsSearch`: %v\n", resp)
 }
 ```
 
@@ -262,26 +262,26 @@ Single Mounts
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/dofusdude/dodugo"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
-    ankamaId := int32(180) // int32 | identifier
-    game := "dofus2" // string | 
+	language := "language_example" // string | a valid language code
+	ankamaId := int32(180) // int32 | identifier
+	game := "dofus2" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MountsAPI.GetMountsSingle(context.Background(), language, ankamaId, game).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MountsAPI.GetMountsSingle``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetMountsSingle`: Mount
-    fmt.Fprintf(os.Stdout, "Response from `MountsAPI.GetMountsSingle`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MountsAPI.GetMountsSingle(context.Background(), language, ankamaId, game).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MountsAPI.GetMountsSingle``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMountsSingle`: Mount
+	fmt.Fprintf(os.Stdout, "Response from `MountsAPI.GetMountsSingle`: %v\n", resp)
 }
 ```
 

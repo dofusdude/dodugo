@@ -25,29 +25,29 @@ List All Sets
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/dofusdude/dodugo"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
-    game := "dofus2" // string | 
-    sortLevel := "asc" // string | sort the resulting list by level, default unsorted (optional)
-    filterMinHighestEquipmentLevel := int32(190) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
-    filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
-    acceptEncoding := "acceptEncoding_example" // string | optional compression for saving bandwidth (optional)
+	language := "language_example" // string | a valid language code
+	game := "dofus2" // string | 
+	sortLevel := "asc" // string | sort the resulting list by level, default unsorted (optional)
+	filterMinHighestEquipmentLevel := int32(190) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
+	filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
+	acceptEncoding := "acceptEncoding_example" // string | optional compression for saving bandwidth (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SetsAPI.GetAllSetsList(context.Background(), language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).AcceptEncoding(acceptEncoding).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetAllSetsList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAllSetsList`: SetsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetAllSetsList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SetsAPI.GetAllSetsList(context.Background(), language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).AcceptEncoding(acceptEncoding).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetAllSetsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAllSetsList`: SetsListPaged
+	fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetAllSetsList`: %v\n", resp)
 }
 ```
 
@@ -106,31 +106,31 @@ List Sets
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/dofusdude/dodugo"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
-    game := "dofus2" // string | 
-    sortLevel := "asc" // string | sort the resulting list by level, default unsorted (optional)
-    filterMinHighestEquipmentLevel := int32(190) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
-    filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
-    pageSize := int32(20) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
-    pageNumber := int32(1) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
-    fieldsSet := []string{"FieldsSet_example"} // []string | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
+	language := "language_example" // string | a valid language code
+	game := "dofus2" // string | 
+	sortLevel := "asc" // string | sort the resulting list by level, default unsorted (optional)
+	filterMinHighestEquipmentLevel := int32(190) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
+	filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
+	pageSize := int32(20) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
+	pageNumber := int32(1) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
+	fieldsSet := []string{"FieldsSet_example"} // []string | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SetsAPI.GetSetsList(context.Background(), language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsSet(fieldsSet).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSetsList`: SetsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetSetsList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SetsAPI.GetSetsList(context.Background(), language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsSet(fieldsSet).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSetsList`: SetsListPaged
+	fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetSetsList`: %v\n", resp)
 }
 ```
 
@@ -191,29 +191,29 @@ Search Sets
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/dofusdude/dodugo"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
-    game := "dofus2" // string | 
-    query := "Des" // string | case sensitive search query
-    filterMinHighestEquipmentLevel := int32(195) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
-    filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
-    limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
+	language := "language_example" // string | a valid language code
+	game := "dofus2" // string | 
+	query := "Des" // string | case sensitive search query
+	filterMinHighestEquipmentLevel := int32(195) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
+	filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
+	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SetsAPI.GetSetsSearch(context.Background(), language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Limit(limit).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsSearch``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSetsSearch`: []SetListEntry
-    fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetSetsSearch`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SetsAPI.GetSetsSearch(context.Background(), language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Limit(limit).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsSearch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSetsSearch`: []SetListEntry
+	fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetSetsSearch`: %v\n", resp)
 }
 ```
 
@@ -272,26 +272,26 @@ Single Sets
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/dofusdude/dodugo"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
-    ankamaId := int32(499) // int32 | identifier
-    game := "dofus2" // string | 
+	language := "language_example" // string | a valid language code
+	ankamaId := int32(499) // int32 | identifier
+	game := "dofus2" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SetsAPI.GetSetsSingle(context.Background(), language, ankamaId, game).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsSingle``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSetsSingle`: EquipmentSet
-    fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetSetsSingle`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SetsAPI.GetSetsSingle(context.Background(), language, ankamaId, game).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsSingle``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSetsSingle`: EquipmentSet
+	fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetSetsSingle`: %v\n", resp)
 }
 ```
 

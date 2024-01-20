@@ -1,5 +1,5 @@
 /*
-Dofusdude
+dofusdude
 
 Testing MetaAPIService
 
@@ -41,6 +41,20 @@ func Test_dodugo_MetaAPIService(t *testing.T) {
 		var language string
 
 		resp, httpRes, err := apiClient.MetaAPI.GetMetaAlmanaxBonuses(context.Background(), language).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MetaAPIService GetMetaAlmanaxBonusesSearch", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var language string
+
+		resp, httpRes, err := apiClient.MetaAPI.GetMetaAlmanaxBonusesSearch(context.Background(), language).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

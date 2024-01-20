@@ -1,9 +1,9 @@
 /*
-Dofusdude
+dofusdude
 
-# A project for you - the developer. The free, always-up-to-date, low-latency, insert-buzzword-here Ankama API for your next cool project!  ## Client SDKs Don't write types or functions yourself - I already (kinda) did! 😉 - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related Twitter, RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing by the powerful [Meilisearch](https://www.meilisearch.com) written in Rust.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering vector graphics into PNGs up to 800x800 px in the background.   ## Current state - Weapons ✅ - Equipment ✅ - Sets ✅ - Resources ✅ - Consumables ✅ - Pets ✅ - Mounts ✅ - Cosmetics/Ceremonial Items ✅ - Harnesses ✅ - Quest Items ✅ - Almanax ✅ - Monsters ❌ - Spells ❌  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility, so no field or parameter will be deleted.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Only the beginning... 🤯 I want this project to be useful and not just add plain GET-categories no one needs.  There is a long list of features I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)). But they are all focussed on you, the developers. So please let me know what you need. I will change the list based on demand.  # Get started! 🥳 Scroll down and try it for yourself!  Or see how these other awesome projects use it: - [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro - [Dofus Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina - [AlmanaxApp](https://almanaxapp.netlify.app) by Lystina - [DofuStuffSimulator](https://dofusstuffsimulator.netlify.app/)  I highly recommend using the SDKs for quick results. I use them myself for parts of the API.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply  donate, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude). 
+# A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).
 
-API version: 0.8.0
+API version: 0.8.1
 Contact: stelzo@steado.de
 */
 
@@ -29,7 +29,9 @@ type Equipment struct {
 	Pods *int32 `json:"pods,omitempty"`
 	ImageUrls *ImageUrls `json:"image_urls,omitempty"`
 	Effects []EffectsEntry `json:"effects,omitempty"`
+	// Deprecated
 	Conditions []ConditionEntry `json:"conditions,omitempty"`
+	ConditionTree *ConditionTreeNode `json:"condition_tree,omitempty"`
 	Recipe []RecipeEntry `json:"recipe,omitempty"`
 	ParentSet NullableEquipmentParentSet `json:"parent_set,omitempty"`
 }
@@ -341,6 +343,7 @@ func (o *Equipment) SetEffects(v []EffectsEntry) {
 }
 
 // GetConditions returns the Conditions field value if set, zero value otherwise (both if not set or set to explicit null).
+// Deprecated
 func (o *Equipment) GetConditions() []ConditionEntry {
 	if o == nil {
 		var ret []ConditionEntry
@@ -352,6 +355,7 @@ func (o *Equipment) GetConditions() []ConditionEntry {
 // GetConditionsOk returns a tuple with the Conditions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
+// Deprecated
 func (o *Equipment) GetConditionsOk() ([]ConditionEntry, bool) {
 	if o == nil || IsNil(o.Conditions) {
 		return nil, false
@@ -369,8 +373,41 @@ func (o *Equipment) HasConditions() bool {
 }
 
 // SetConditions gets a reference to the given []ConditionEntry and assigns it to the Conditions field.
+// Deprecated
 func (o *Equipment) SetConditions(v []ConditionEntry) {
 	o.Conditions = v
+}
+
+// GetConditionTree returns the ConditionTree field value if set, zero value otherwise.
+func (o *Equipment) GetConditionTree() ConditionTreeNode {
+	if o == nil || IsNil(o.ConditionTree) {
+		var ret ConditionTreeNode
+		return ret
+	}
+	return *o.ConditionTree
+}
+
+// GetConditionTreeOk returns a tuple with the ConditionTree field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Equipment) GetConditionTreeOk() (*ConditionTreeNode, bool) {
+	if o == nil || IsNil(o.ConditionTree) {
+		return nil, false
+	}
+	return o.ConditionTree, true
+}
+
+// HasConditionTree returns a boolean if a field has been set.
+func (o *Equipment) HasConditionTree() bool {
+	if o != nil && !IsNil(o.ConditionTree) {
+		return true
+	}
+
+	return false
+}
+
+// SetConditionTree gets a reference to the given ConditionTreeNode and assigns it to the ConditionTree field.
+func (o *Equipment) SetConditionTree(v ConditionTreeNode) {
+	o.ConditionTree = &v
 }
 
 // GetRecipe returns the Recipe field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -487,6 +524,9 @@ func (o Equipment) ToMap() (map[string]interface{}, error) {
 	}
 	if o.Conditions != nil {
 		toSerialize["conditions"] = o.Conditions
+	}
+	if !IsNil(o.ConditionTree) {
+		toSerialize["condition_tree"] = o.ConditionTree
 	}
 	if o.Recipe != nil {
 		toSerialize["recipe"] = o.Recipe

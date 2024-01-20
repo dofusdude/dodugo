@@ -25,30 +25,30 @@ List All Resources
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/dofusdude/dodugo"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
-    game := "dofus2" // string | 
-    sortLevel := "desc" // string | sort the resulting list by level, default unsorted (optional)
-    filterTypeName := "miscellaneous resources" // string | only results with the translated type name (optional)
-    filterMinLevel := int32(160) // int32 | only results which level is equal or above this value (optional)
-    filterMaxLevel := int32(190) // int32 | only results which level is equal or below this value (optional)
-    acceptEncoding := "acceptEncoding_example" // string | optional compression for saving bandwidth (optional)
+	language := "language_example" // string | a valid language code
+	game := "dofus2" // string | 
+	sortLevel := "desc" // string | sort the resulting list by level, default unsorted (optional)
+	filterTypeName := "miscellaneous resources" // string | only results with the translated type name (optional)
+	filterMinLevel := int32(160) // int32 | only results which level is equal or above this value (optional)
+	filterMaxLevel := int32(190) // int32 | only results which level is equal or below this value (optional)
+	acceptEncoding := "acceptEncoding_example" // string | optional compression for saving bandwidth (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ResourcesAPI.GetAllItemsResourcesList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ResourcesAPI.GetAllItemsResourcesList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAllItemsResourcesList`: ItemsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `ResourcesAPI.GetAllItemsResourcesList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ResourcesAPI.GetAllItemsResourcesList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ResourcesAPI.GetAllItemsResourcesList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAllItemsResourcesList`: ItemsListPaged
+	fmt.Fprintf(os.Stdout, "Response from `ResourcesAPI.GetAllItemsResourcesList`: %v\n", resp)
 }
 ```
 
@@ -108,30 +108,30 @@ Search Resources
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/dofusdude/dodugo"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
-    game := "dofus2" // string | 
-    query := "snowdew" // string | case sensitive search query
-    filterTypeName := "plant" // string | only results with the translated type name (optional)
-    filterMinLevel := int32(150) // int32 | only results which level is equal or above this value (optional)
-    filterMaxLevel := int32(200) // int32 | only results which level is equal or below this value (optional)
-    limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
+	language := "language_example" // string | a valid language code
+	game := "dofus2" // string | 
+	query := "snowdew" // string | case sensitive search query
+	filterTypeName := "plant" // string | only results with the translated type name (optional)
+	filterMinLevel := int32(150) // int32 | only results which level is equal or above this value (optional)
+	filterMaxLevel := int32(200) // int32 | only results which level is equal or below this value (optional)
+	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ResourcesAPI.GetItemsResourceSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ResourcesAPI.GetItemsResourceSearch``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetItemsResourceSearch`: []ItemListEntry
-    fmt.Fprintf(os.Stdout, "Response from `ResourcesAPI.GetItemsResourceSearch`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ResourcesAPI.GetItemsResourceSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ResourcesAPI.GetItemsResourceSearch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetItemsResourceSearch`: []ItemListEntry
+	fmt.Fprintf(os.Stdout, "Response from `ResourcesAPI.GetItemsResourceSearch`: %v\n", resp)
 }
 ```
 
@@ -191,32 +191,32 @@ List Resources
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/dofusdude/dodugo"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
-    game := "dofus2" // string | 
-    sortLevel := "desc" // string | sort the resulting list by level, default unsorted (optional)
-    filterTypeName := "miscellaneous resources" // string | only results with the translated type name (optional)
-    filterMinLevel := int32(160) // int32 | only results which level is equal or above this value (optional)
-    filterMaxLevel := int32(190) // int32 | only results which level is equal or below this value (optional)
-    pageSize := int32(10) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
-    pageNumber := int32(1) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
-    fieldsItem := []string{"FieldsItem_example"} // []string | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
+	language := "language_example" // string | a valid language code
+	game := "dofus2" // string | 
+	sortLevel := "desc" // string | sort the resulting list by level, default unsorted (optional)
+	filterTypeName := "miscellaneous resources" // string | only results with the translated type name (optional)
+	filterMinLevel := int32(160) // int32 | only results which level is equal or above this value (optional)
+	filterMaxLevel := int32(190) // int32 | only results which level is equal or below this value (optional)
+	pageSize := int32(10) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
+	pageNumber := int32(1) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
+	fieldsItem := []string{"FieldsItem_example"} // []string | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ResourcesAPI.GetItemsResourcesList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsItem(fieldsItem).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ResourcesAPI.GetItemsResourcesList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetItemsResourcesList`: ItemsListPaged
-    fmt.Fprintf(os.Stdout, "Response from `ResourcesAPI.GetItemsResourcesList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ResourcesAPI.GetItemsResourcesList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsItem(fieldsItem).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ResourcesAPI.GetItemsResourcesList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetItemsResourcesList`: ItemsListPaged
+	fmt.Fprintf(os.Stdout, "Response from `ResourcesAPI.GetItemsResourcesList`: %v\n", resp)
 }
 ```
 
@@ -278,26 +278,26 @@ Single Resources
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/dofusdude/dodugo"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
 )
 
 func main() {
-    language := "language_example" // string | a valid language code
-    ankamaId := int32(7295) // int32 | identifier
-    game := "dofus2" // string | 
+	language := "language_example" // string | a valid language code
+	ankamaId := int32(7295) // int32 | identifier
+	game := "dofus2" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ResourcesAPI.GetItemsResourcesSingle(context.Background(), language, ankamaId, game).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ResourcesAPI.GetItemsResourcesSingle``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetItemsResourcesSingle`: Resource
-    fmt.Fprintf(os.Stdout, "Response from `ResourcesAPI.GetItemsResourcesSingle`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ResourcesAPI.GetItemsResourcesSingle(context.Background(), language, ankamaId, game).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ResourcesAPI.GetItemsResourcesSingle``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetItemsResourcesSingle`: Resource
+	fmt.Fprintf(os.Stdout, "Response from `ResourcesAPI.GetItemsResourcesSingle`: %v\n", resp)
 }
 ```
 

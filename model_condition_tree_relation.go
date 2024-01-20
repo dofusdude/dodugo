@@ -15,130 +15,140 @@ import (
 	"encoding/json"
 )
 
-// checks if the ConditionEntry type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ConditionEntry{}
+// checks if the ConditionTreeRelation type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConditionTreeRelation{}
 
-// ConditionEntry 
-type ConditionEntry struct {
-	Operator *string `json:"operator,omitempty"`
-	IntValue *int32 `json:"int_value,omitempty"`
-	Element *ItemsListEntryTypedType `json:"element,omitempty"`
+// ConditionTreeRelation struct for ConditionTreeRelation
+type ConditionTreeRelation struct {
+	// always \"false\" for relations
+	IsOperand *bool `json:"is_operand,omitempty"`
+	// \"and\", \"or\"
+	Relation *string `json:"relation,omitempty"`
+	Children []ConditionTreeNode `json:"children,omitempty"`
 }
 
-// NewConditionEntry instantiates a new ConditionEntry object
+// NewConditionTreeRelation instantiates a new ConditionTreeRelation object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConditionEntry() *ConditionEntry {
-	this := ConditionEntry{}
+func NewConditionTreeRelation() *ConditionTreeRelation {
+	this := ConditionTreeRelation{}
+	var isOperand bool = false
+	this.IsOperand = &isOperand
+	var relation string = "and"
+	this.Relation = &relation
 	return &this
 }
 
-// NewConditionEntryWithDefaults instantiates a new ConditionEntry object
+// NewConditionTreeRelationWithDefaults instantiates a new ConditionTreeRelation object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewConditionEntryWithDefaults() *ConditionEntry {
-	this := ConditionEntry{}
+func NewConditionTreeRelationWithDefaults() *ConditionTreeRelation {
+	this := ConditionTreeRelation{}
+	var isOperand bool = false
+	this.IsOperand = &isOperand
+	var relation string = "and"
+	this.Relation = &relation
 	return &this
 }
 
-// GetOperator returns the Operator field value if set, zero value otherwise.
-func (o *ConditionEntry) GetOperator() string {
-	if o == nil || IsNil(o.Operator) {
+// GetIsOperand returns the IsOperand field value if set, zero value otherwise.
+func (o *ConditionTreeRelation) GetIsOperand() bool {
+	if o == nil || IsNil(o.IsOperand) {
+		var ret bool
+		return ret
+	}
+	return *o.IsOperand
+}
+
+// GetIsOperandOk returns a tuple with the IsOperand field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConditionTreeRelation) GetIsOperandOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsOperand) {
+		return nil, false
+	}
+	return o.IsOperand, true
+}
+
+// HasIsOperand returns a boolean if a field has been set.
+func (o *ConditionTreeRelation) HasIsOperand() bool {
+	if o != nil && !IsNil(o.IsOperand) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsOperand gets a reference to the given bool and assigns it to the IsOperand field.
+func (o *ConditionTreeRelation) SetIsOperand(v bool) {
+	o.IsOperand = &v
+}
+
+// GetRelation returns the Relation field value if set, zero value otherwise.
+func (o *ConditionTreeRelation) GetRelation() string {
+	if o == nil || IsNil(o.Relation) {
 		var ret string
 		return ret
 	}
-	return *o.Operator
+	return *o.Relation
 }
 
-// GetOperatorOk returns a tuple with the Operator field value if set, nil otherwise
+// GetRelationOk returns a tuple with the Relation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConditionEntry) GetOperatorOk() (*string, bool) {
-	if o == nil || IsNil(o.Operator) {
+func (o *ConditionTreeRelation) GetRelationOk() (*string, bool) {
+	if o == nil || IsNil(o.Relation) {
 		return nil, false
 	}
-	return o.Operator, true
+	return o.Relation, true
 }
 
-// HasOperator returns a boolean if a field has been set.
-func (o *ConditionEntry) HasOperator() bool {
-	if o != nil && !IsNil(o.Operator) {
+// HasRelation returns a boolean if a field has been set.
+func (o *ConditionTreeRelation) HasRelation() bool {
+	if o != nil && !IsNil(o.Relation) {
 		return true
 	}
 
 	return false
 }
 
-// SetOperator gets a reference to the given string and assigns it to the Operator field.
-func (o *ConditionEntry) SetOperator(v string) {
-	o.Operator = &v
+// SetRelation gets a reference to the given string and assigns it to the Relation field.
+func (o *ConditionTreeRelation) SetRelation(v string) {
+	o.Relation = &v
 }
 
-// GetIntValue returns the IntValue field value if set, zero value otherwise.
-func (o *ConditionEntry) GetIntValue() int32 {
-	if o == nil || IsNil(o.IntValue) {
-		var ret int32
+// GetChildren returns the Children field value if set, zero value otherwise.
+func (o *ConditionTreeRelation) GetChildren() []ConditionTreeNode {
+	if o == nil || IsNil(o.Children) {
+		var ret []ConditionTreeNode
 		return ret
 	}
-	return *o.IntValue
+	return o.Children
 }
 
-// GetIntValueOk returns a tuple with the IntValue field value if set, nil otherwise
+// GetChildrenOk returns a tuple with the Children field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConditionEntry) GetIntValueOk() (*int32, bool) {
-	if o == nil || IsNil(o.IntValue) {
+func (o *ConditionTreeRelation) GetChildrenOk() ([]ConditionTreeNode, bool) {
+	if o == nil || IsNil(o.Children) {
 		return nil, false
 	}
-	return o.IntValue, true
+	return o.Children, true
 }
 
-// HasIntValue returns a boolean if a field has been set.
-func (o *ConditionEntry) HasIntValue() bool {
-	if o != nil && !IsNil(o.IntValue) {
+// HasChildren returns a boolean if a field has been set.
+func (o *ConditionTreeRelation) HasChildren() bool {
+	if o != nil && !IsNil(o.Children) {
 		return true
 	}
 
 	return false
 }
 
-// SetIntValue gets a reference to the given int32 and assigns it to the IntValue field.
-func (o *ConditionEntry) SetIntValue(v int32) {
-	o.IntValue = &v
+// SetChildren gets a reference to the given []ConditionTreeNode and assigns it to the Children field.
+func (o *ConditionTreeRelation) SetChildren(v []ConditionTreeNode) {
+	o.Children = v
 }
 
-// GetElement returns the Element field value if set, zero value otherwise.
-func (o *ConditionEntry) GetElement() ItemsListEntryTypedType {
-	if o == nil || IsNil(o.Element) {
-		var ret ItemsListEntryTypedType
-		return ret
-	}
-	return *o.Element
-}
-
-// GetElementOk returns a tuple with the Element field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ConditionEntry) GetElementOk() (*ItemsListEntryTypedType, bool) {
-	if o == nil || IsNil(o.Element) {
-		return nil, false
-	}
-	return o.Element, true
-}
-
-// HasElement returns a boolean if a field has been set.
-func (o *ConditionEntry) HasElement() bool {
-	if o != nil && !IsNil(o.Element) {
-		return true
-	}
-
-	return false
-}
-
-// SetElement gets a reference to the given ItemsListEntryTypedType and assigns it to the Element field.
-func (o *ConditionEntry) SetElement(v ItemsListEntryTypedType) {
-	o.Element = &v
-}
-
-func (o ConditionEntry) MarshalJSON() ([]byte, error) {
+func (o ConditionTreeRelation) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -146,52 +156,52 @@ func (o ConditionEntry) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ConditionEntry) ToMap() (map[string]interface{}, error) {
+func (o ConditionTreeRelation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Operator) {
-		toSerialize["operator"] = o.Operator
+	if !IsNil(o.IsOperand) {
+		toSerialize["is_operand"] = o.IsOperand
 	}
-	if !IsNil(o.IntValue) {
-		toSerialize["int_value"] = o.IntValue
+	if !IsNil(o.Relation) {
+		toSerialize["relation"] = o.Relation
 	}
-	if !IsNil(o.Element) {
-		toSerialize["element"] = o.Element
+	if !IsNil(o.Children) {
+		toSerialize["children"] = o.Children
 	}
 	return toSerialize, nil
 }
 
-type NullableConditionEntry struct {
-	value *ConditionEntry
+type NullableConditionTreeRelation struct {
+	value *ConditionTreeRelation
 	isSet bool
 }
 
-func (v NullableConditionEntry) Get() *ConditionEntry {
+func (v NullableConditionTreeRelation) Get() *ConditionTreeRelation {
 	return v.value
 }
 
-func (v *NullableConditionEntry) Set(val *ConditionEntry) {
+func (v *NullableConditionTreeRelation) Set(val *ConditionTreeRelation) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableConditionEntry) IsSet() bool {
+func (v NullableConditionTreeRelation) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableConditionEntry) Unset() {
+func (v *NullableConditionTreeRelation) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableConditionEntry(val *ConditionEntry) *NullableConditionEntry {
-	return &NullableConditionEntry{value: val, isSet: true}
+func NewNullableConditionTreeRelation(val *ConditionTreeRelation) *NullableConditionTreeRelation {
+	return &NullableConditionTreeRelation{value: val, isSet: true}
 }
 
-func (v NullableConditionEntry) MarshalJSON() ([]byte, error) {
+func (v NullableConditionTreeRelation) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableConditionEntry) UnmarshalJSON(src []byte) error {
+func (v *NullableConditionTreeRelation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

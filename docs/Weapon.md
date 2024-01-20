@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ImageUrls** | Pointer to [**ImageUrls**](ImageUrls.md) |  | [optional] 
 **Effects** | Pointer to [**[]EffectsEntry**](EffectsEntry.md) |  | [optional] 
 **Conditions** | Pointer to [**[]ConditionEntry**](ConditionEntry.md) |  | [optional] 
+**ConditionTree** | Pointer to [**ConditionTreeNode**](ConditionTreeNode.md) |  | [optional] 
 **CriticalHitProbability** | Pointer to **int32** |  | [optional] 
 **CriticalHitBonus** | Pointer to **int32** |  | [optional] 
 **IsTwoHanded** | Pointer to **bool** |  | [optional] 
@@ -312,6 +313,31 @@ HasConditions returns a boolean if a field has been set.
 `func (o *Weapon) UnsetConditions()`
 
 UnsetConditions ensures that no value is present for Conditions, not even an explicit nil
+### GetConditionTree
+
+`func (o *Weapon) GetConditionTree() ConditionTreeNode`
+
+GetConditionTree returns the ConditionTree field if non-nil, zero value otherwise.
+
+### GetConditionTreeOk
+
+`func (o *Weapon) GetConditionTreeOk() (*ConditionTreeNode, bool)`
+
+GetConditionTreeOk returns a tuple with the ConditionTree field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConditionTree
+
+`func (o *Weapon) SetConditionTree(v ConditionTreeNode)`
+
+SetConditionTree sets ConditionTree field to given value.
+
+### HasConditionTree
+
+`func (o *Weapon) HasConditionTree() bool`
+
+HasConditionTree returns a boolean if a field has been set.
+
 ### GetCriticalHitProbability
 
 `func (o *Weapon) GetCriticalHitProbability() int32`

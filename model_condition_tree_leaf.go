@@ -15,107 +15,102 @@ import (
 	"encoding/json"
 )
 
-// checks if the AlmanaxWebhookDailySettings type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AlmanaxWebhookDailySettings{}
+// checks if the ConditionTreeLeaf type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConditionTreeLeaf{}
 
-// AlmanaxWebhookDailySettings struct for AlmanaxWebhookDailySettings
-type AlmanaxWebhookDailySettings struct {
-	// Timezone of your community to determine midnight.
-	Timezone *string `json:"timezone,omitempty"`
-	// Hours added to midnight at the selected timezone. 8 = 8:00 in the morning.
-	MidnightOffset *int32 `json:"midnight_offset,omitempty"`
+// ConditionTreeLeaf struct for ConditionTreeLeaf
+type ConditionTreeLeaf struct {
+	// always \"true\" for the leaf of a tree
+	IsOperand *bool `json:"is_operand,omitempty"`
+	Condition *ConditionEntry `json:"condition,omitempty"`
 }
 
-// NewAlmanaxWebhookDailySettings instantiates a new AlmanaxWebhookDailySettings object
+// NewConditionTreeLeaf instantiates a new ConditionTreeLeaf object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAlmanaxWebhookDailySettings() *AlmanaxWebhookDailySettings {
-	this := AlmanaxWebhookDailySettings{}
-	var timezone string = "Europe/Paris"
-	this.Timezone = &timezone
-	var midnightOffset int32 = 0
-	this.MidnightOffset = &midnightOffset
+func NewConditionTreeLeaf() *ConditionTreeLeaf {
+	this := ConditionTreeLeaf{}
+	var isOperand bool = true
+	this.IsOperand = &isOperand
 	return &this
 }
 
-// NewAlmanaxWebhookDailySettingsWithDefaults instantiates a new AlmanaxWebhookDailySettings object
+// NewConditionTreeLeafWithDefaults instantiates a new ConditionTreeLeaf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAlmanaxWebhookDailySettingsWithDefaults() *AlmanaxWebhookDailySettings {
-	this := AlmanaxWebhookDailySettings{}
-	var timezone string = "Europe/Paris"
-	this.Timezone = &timezone
-	var midnightOffset int32 = 0
-	this.MidnightOffset = &midnightOffset
+func NewConditionTreeLeafWithDefaults() *ConditionTreeLeaf {
+	this := ConditionTreeLeaf{}
+	var isOperand bool = true
+	this.IsOperand = &isOperand
 	return &this
 }
 
-// GetTimezone returns the Timezone field value if set, zero value otherwise.
-func (o *AlmanaxWebhookDailySettings) GetTimezone() string {
-	if o == nil || IsNil(o.Timezone) {
-		var ret string
+// GetIsOperand returns the IsOperand field value if set, zero value otherwise.
+func (o *ConditionTreeLeaf) GetIsOperand() bool {
+	if o == nil || IsNil(o.IsOperand) {
+		var ret bool
 		return ret
 	}
-	return *o.Timezone
+	return *o.IsOperand
 }
 
-// GetTimezoneOk returns a tuple with the Timezone field value if set, nil otherwise
+// GetIsOperandOk returns a tuple with the IsOperand field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlmanaxWebhookDailySettings) GetTimezoneOk() (*string, bool) {
-	if o == nil || IsNil(o.Timezone) {
+func (o *ConditionTreeLeaf) GetIsOperandOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsOperand) {
 		return nil, false
 	}
-	return o.Timezone, true
+	return o.IsOperand, true
 }
 
-// HasTimezone returns a boolean if a field has been set.
-func (o *AlmanaxWebhookDailySettings) HasTimezone() bool {
-	if o != nil && !IsNil(o.Timezone) {
+// HasIsOperand returns a boolean if a field has been set.
+func (o *ConditionTreeLeaf) HasIsOperand() bool {
+	if o != nil && !IsNil(o.IsOperand) {
 		return true
 	}
 
 	return false
 }
 
-// SetTimezone gets a reference to the given string and assigns it to the Timezone field.
-func (o *AlmanaxWebhookDailySettings) SetTimezone(v string) {
-	o.Timezone = &v
+// SetIsOperand gets a reference to the given bool and assigns it to the IsOperand field.
+func (o *ConditionTreeLeaf) SetIsOperand(v bool) {
+	o.IsOperand = &v
 }
 
-// GetMidnightOffset returns the MidnightOffset field value if set, zero value otherwise.
-func (o *AlmanaxWebhookDailySettings) GetMidnightOffset() int32 {
-	if o == nil || IsNil(o.MidnightOffset) {
-		var ret int32
+// GetCondition returns the Condition field value if set, zero value otherwise.
+func (o *ConditionTreeLeaf) GetCondition() ConditionEntry {
+	if o == nil || IsNil(o.Condition) {
+		var ret ConditionEntry
 		return ret
 	}
-	return *o.MidnightOffset
+	return *o.Condition
 }
 
-// GetMidnightOffsetOk returns a tuple with the MidnightOffset field value if set, nil otherwise
+// GetConditionOk returns a tuple with the Condition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlmanaxWebhookDailySettings) GetMidnightOffsetOk() (*int32, bool) {
-	if o == nil || IsNil(o.MidnightOffset) {
+func (o *ConditionTreeLeaf) GetConditionOk() (*ConditionEntry, bool) {
+	if o == nil || IsNil(o.Condition) {
 		return nil, false
 	}
-	return o.MidnightOffset, true
+	return o.Condition, true
 }
 
-// HasMidnightOffset returns a boolean if a field has been set.
-func (o *AlmanaxWebhookDailySettings) HasMidnightOffset() bool {
-	if o != nil && !IsNil(o.MidnightOffset) {
+// HasCondition returns a boolean if a field has been set.
+func (o *ConditionTreeLeaf) HasCondition() bool {
+	if o != nil && !IsNil(o.Condition) {
 		return true
 	}
 
 	return false
 }
 
-// SetMidnightOffset gets a reference to the given int32 and assigns it to the MidnightOffset field.
-func (o *AlmanaxWebhookDailySettings) SetMidnightOffset(v int32) {
-	o.MidnightOffset = &v
+// SetCondition gets a reference to the given ConditionEntry and assigns it to the Condition field.
+func (o *ConditionTreeLeaf) SetCondition(v ConditionEntry) {
+	o.Condition = &v
 }
 
-func (o AlmanaxWebhookDailySettings) MarshalJSON() ([]byte, error) {
+func (o ConditionTreeLeaf) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -123,49 +118,49 @@ func (o AlmanaxWebhookDailySettings) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o AlmanaxWebhookDailySettings) ToMap() (map[string]interface{}, error) {
+func (o ConditionTreeLeaf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Timezone) {
-		toSerialize["timezone"] = o.Timezone
+	if !IsNil(o.IsOperand) {
+		toSerialize["is_operand"] = o.IsOperand
 	}
-	if !IsNil(o.MidnightOffset) {
-		toSerialize["midnight_offset"] = o.MidnightOffset
+	if !IsNil(o.Condition) {
+		toSerialize["condition"] = o.Condition
 	}
 	return toSerialize, nil
 }
 
-type NullableAlmanaxWebhookDailySettings struct {
-	value *AlmanaxWebhookDailySettings
+type NullableConditionTreeLeaf struct {
+	value *ConditionTreeLeaf
 	isSet bool
 }
 
-func (v NullableAlmanaxWebhookDailySettings) Get() *AlmanaxWebhookDailySettings {
+func (v NullableConditionTreeLeaf) Get() *ConditionTreeLeaf {
 	return v.value
 }
 
-func (v *NullableAlmanaxWebhookDailySettings) Set(val *AlmanaxWebhookDailySettings) {
+func (v *NullableConditionTreeLeaf) Set(val *ConditionTreeLeaf) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAlmanaxWebhookDailySettings) IsSet() bool {
+func (v NullableConditionTreeLeaf) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAlmanaxWebhookDailySettings) Unset() {
+func (v *NullableConditionTreeLeaf) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAlmanaxWebhookDailySettings(val *AlmanaxWebhookDailySettings) *NullableAlmanaxWebhookDailySettings {
-	return &NullableAlmanaxWebhookDailySettings{value: val, isSet: true}
+func NewNullableConditionTreeLeaf(val *ConditionTreeLeaf) *NullableConditionTreeLeaf {
+	return &NullableConditionTreeLeaf{value: val, isSet: true}
 }
 
-func (v NullableAlmanaxWebhookDailySettings) MarshalJSON() ([]byte, error) {
+func (v NullableConditionTreeLeaf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAlmanaxWebhookDailySettings) UnmarshalJSON(src []byte) error {
+func (v *NullableConditionTreeLeaf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

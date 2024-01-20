@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ImageUrls** | Pointer to [**ImageUrls**](ImageUrls.md) |  | [optional] 
 **Effects** | Pointer to [**[]EffectsEntry**](EffectsEntry.md) |  | [optional] 
 **Conditions** | Pointer to [**[]ConditionEntry**](ConditionEntry.md) |  | [optional] 
+**ConditionTree** | Pointer to [**ConditionTreeNode**](ConditionTreeNode.md) |  | [optional] 
 **Recipe** | Pointer to [**[]RecipeEntry**](RecipeEntry.md) |  | [optional] 
 
 ## Methods
@@ -279,6 +280,31 @@ HasConditions returns a boolean if a field has been set.
 `func (o *Cosmetic) UnsetConditions()`
 
 UnsetConditions ensures that no value is present for Conditions, not even an explicit nil
+### GetConditionTree
+
+`func (o *Cosmetic) GetConditionTree() ConditionTreeNode`
+
+GetConditionTree returns the ConditionTree field if non-nil, zero value otherwise.
+
+### GetConditionTreeOk
+
+`func (o *Cosmetic) GetConditionTreeOk() (*ConditionTreeNode, bool)`
+
+GetConditionTreeOk returns a tuple with the ConditionTree field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConditionTree
+
+`func (o *Cosmetic) SetConditionTree(v ConditionTreeNode)`
+
+SetConditionTree sets ConditionTree field to given value.
+
+### HasConditionTree
+
+`func (o *Cosmetic) HasConditionTree() bool`
+
+HasConditionTree returns a boolean if a field has been set.
+
 ### GetRecipe
 
 `func (o *Cosmetic) GetRecipe() []RecipeEntry`

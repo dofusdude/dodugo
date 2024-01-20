@@ -4,15 +4,13 @@ info:
     email: stelzo@steado.de
     name: Survival
     url: https://discord.gg/3EtHskZD8h
-  description: "# A project for you - the developer.\nThe free, always-up-to-date,\
-    \ low-latency, insert-buzzword-here Ankama API for your next cool project!\n\n\
-    ## Client SDKs\nDon't write types or functions yourself - I already (kinda) did!\
-    \ 😉\n- [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js\
-    \ --save\n- [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts\
-    \ --save\n- [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo\n\
-    - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude\n\
-    - [PHP](https://github.com/dofusdude/dofusdude-php)\n\nEverything, including this\
-    \ site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs).\
+  description: "# A project for you - the developer.\nThe all-in-one toolbelt for\
+    \ your next Ankama related project.\n\n## Client SDKs\n- [Javascript](https://github.com/dofusdude/dofusdude-js)\
+    \ npm i dofusdude-js --save\n- [Typescript](https://github.com/dofusdude/dofusdude-ts)\
+    \ npm i dofusdude-ts --save\n- [Go](https://github.com/dofusdude/dodugo) go get\
+    \ -u github.com/dofusdude/dodugo\n- [Python](https://github.com/dofusdude/dofusdude-py)\
+    \ pip install dofusdude\n- [PHP](https://github.com/dofusdude/dofusdude-php)\n\
+    \nEverything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs).\
     \ Consider it the Single Source of Truth. If there is a problem with the SDKs,\
     \ create an issue there.\n\nYour favorite language is missing? Please let me know!\n\
     \n# Main Features\n- 🥷 **Seamless Auto-Update** load data in the background when\
@@ -21,43 +19,28 @@ info:
     \ up-to-date.\n\n- ⚡ **Blazingly Fast** all data in-memory, aggressive caching\
     \ over short time spans, HTTP/2 multiplexing, written in Go, optimized for low\
     \ latency, hosted on bare metal in 🇩🇪.\n\n- 📨 **Discord Integration** Ankama\
-    \ related Twitter, RSS and Almanax feeds to post to Discord servers with advanced\
-    \ features like filters or mentions. Use the endpoints as a dev or the official\
-    \ [Web Client](https://discord.dofusdude.com) as a user.\n\n- 🩸 **Dofus 2 Beta**\
-    \ from stable to bleeding edge by replacing /dofus2 with /dofus2beta.\n\n- 🗣️\
-    \ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages\
-    \ from the Dofus website _de_ and _it_.\n\n- 🧠 **Search by Relevance** allowing\
-    \ typos in name and description, handled by language specific text analysis and\
-    \ indexing by the powerful [Meilisearch](https://www.meilisearch.com) written\
-    \ in Rust.\n\n- 🕵️ **Complete** actual data from the game including items invisible\
-    \ to the encyclopedia like quest items.\n\n- 🖼️ **HD Images** rendering vector\
-    \ graphics into PNGs up to 800x800 px in the background.\n\n\n## Current state\n\
-    - Weapons ✅\n- Equipment ✅\n- Sets ✅\n- Resources ✅\n- Consumables ✅\n- Pets ✅\
-    \n- Mounts ✅\n- Cosmetics/Ceremonial Items ✅\n- Harnesses ✅\n- Quest Items ✅\n\
-    - Almanax ✅\n- Monsters ❌\n- Spells ❌\n\n... and much more on the Roadmap on my\
-    \ Discord. \n\n## Deploy now. Use forever.\nEverything you see here on this site,\
-    \ you can use now and forever. Updates could introduce new fields, new paths or\
-    \ parameter but never break backwards compatibility, so no field or parameter\
-    \ will be deleted.\n\nThere is one exception! **The API will _always_ choose being\
-    \ up-to-date over everything else**. So if Ankama decides to drop languages from\
-    \ the game like they did with their website, the API will loose support for them,\
-    \ too.\n\n## Only the beginning... 🤯\nI want this project to be useful and not\
-    \ just add plain GET-categories no one needs.\n\nThere is a long list of features\
-    \ I want to add (see the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h)).\
-    \ But they are all focussed on you, the developers. So please let me know what\
-    \ you need. I will change the list based on demand.\n\n# Get started! 🥳\nScroll\
-    \ down and try it for yourself!\n\nOr see how these other awesome projects use\
-    \ it:\n- [KaellyBot](https://github.com/Kaysoro/KaellyBot) by Kaysoro\n- [Dofus\
-    \ Craftlist](https://dofuscraftlist-dev.netlify.app) by Lystina\n- [AlmanaxApp](https://almanaxapp.netlify.app)\
-    \ by Lystina\n- [DofuStuffSimulator](https://dofusstuffsimulator.netlify.app/)\n\
-    \nI highly recommend using the SDKs for quick results. I use them myself for parts\
-    \ of the API.\n\n## Thank you!\nI highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h)\
-    \ to just talk about projects and use cases or give feedback of any kind.\n\n\
-    The servers have a fixed monthly cost to provide very fast responses. If you want\
-    \ to help me keeping them running or simply  donate, consider becoming a [GitHub\
-    \ Sponsor](https://github.com/sponsors/dofusdude).\n"
-  title: Dofusdude
-  version: 0.8.0
+    \ related RSS and Almanax feeds to post to Discord servers with advanced features\
+    \ like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com)\
+    \ as a user.\n\n- 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing\
+    \ /dofus2 with /dofus2beta.\n\n- 🗣️ **Multilingual** supporting _en_, _fr_, _es_,\
+    \ _pt_ including the dropped languages from the Dofus website _de_ and _it_.\n\
+    \n- 🧠 **Search by Relevance** allowing typos in name and description, handled\
+    \ by language specific text analysis and indexing.\n\n- 🕵️ **Complete** actual\
+    \ data from the game including items invisible to the encyclopedia like quest\
+    \ items.\n\n- 🖼️ **HD Images** rendering game assets to high-res images with\
+    \ up to 800x800 px.\n\n... and much more on the Roadmap on my Discord. \n\n##\
+    \ Deploy now. Use forever.\nEverything you see here on this site, you can use\
+    \ now and forever. Updates could introduce new fields, new paths or parameter\
+    \ but never break backwards compatibility.\n\nThere is one exception! **The API\
+    \ will _always_ choose being up-to-date over everything else**. So if Ankama decides\
+    \ to drop languages from the game like they did with their website, the API will\
+    \ loose support for them, too.\n\n## Thank you!\nI highly welcome everyone on\
+    \ my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and\
+    \ use cases or give feedback of any kind.\n\nThe servers have a fixed monthly\
+    \ cost to provide very fast responses. If you want to help me keeping them running\
+    \ or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude)."
+  title: dofusdude
+  version: 0.8.1
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -213,6 +196,8 @@ paths:
       summary: Search All Items
       tags:
       - game
+      x-stoplight:
+        id: bs7m6mm579s8g
   /{game}/{language}/mounts/search:
     get:
       description: Search in all names and descriptions of mounts with a query.
@@ -320,6 +305,8 @@ paths:
       summary: Search Mounts
       tags:
       - mounts
+      x-stoplight:
+        id: e7vrzwaxlhgv9
   /{game}/{language}/sets/search:
     get:
       description: Search in all names and descriptions of sets with a query.
@@ -439,6 +426,8 @@ paths:
       summary: Search Sets
       tags:
       - sets
+      x-stoplight:
+        id: bsgcr495558lu
   /{game}/{language}/items/quest/search:
     get:
       description: Search in all names and descriptions of quest items with a query.
@@ -575,6 +564,8 @@ paths:
       summary: Search Quest Items
       tags:
       - quest items
+      x-stoplight:
+        id: w7p1uzuakeyop
   /{game}/{language}/items/consumables/search:
     get:
       description: Search in all names and descriptions of consumable items with a
@@ -711,6 +702,8 @@ paths:
       summary: Search Consumables
       tags:
       - consumables
+      x-stoplight:
+        id: b1cp9a59ob30b
   /{game}/{language}/items/resources/search:
     get:
       description: Search in all names and descriptions of resource items with a query.
@@ -846,6 +839,8 @@ paths:
       summary: Search Resources
       tags:
       - resources
+      x-stoplight:
+        id: azw1ewb8uetly
   /{game}/{language}/search:
     get:
       description: Search in all names and descriptions of all supported types in
@@ -988,6 +983,8 @@ paths:
       summary: Game Search
       tags:
       - game
+      x-stoplight:
+        id: 0yml4juh19a25
   /{game}/{language}/items/equipment/search:
     get:
       description: Search in all names and descriptions of equipment items with a
@@ -1124,6 +1121,8 @@ paths:
       summary: Search Equipment
       tags:
       - equipment
+      x-stoplight:
+        id: 6psar2h1uiobx
   /{game}/{language}/items/cosmetics/search:
     get:
       description: Search in all names and descriptions of cosmetic items with a query.
@@ -1259,6 +1258,8 @@ paths:
       summary: Search Cosmetics
       tags:
       - cosmetics
+      x-stoplight:
+        id: 7kcen3uwgm2gx
   /{game}/{language}/items/cosmetics/{ankama_id}:
     get:
       description: Retrieve a specific cosmetic item with id.
@@ -1362,6 +1363,8 @@ paths:
       tags:
       - cosmetics
       x-internal: false
+      x-stoplight:
+        id: tk9pa3me4mc05
   /{game}/{language}/items/resources/{ankama_id}:
     get:
       description: Retrieve a specific resource item with id.
@@ -1450,6 +1453,8 @@ paths:
       summary: Single Resources
       tags:
       - resources
+      x-stoplight:
+        id: pxrclsglno23f
   /{game}/{language}/items/equipment/{ankama_id}:
     get:
       description: Retrieve a specific equipment item with id.
@@ -1543,6 +1548,7 @@ paths:
                         name: Intelligence
                         id: 13
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 31 to 40 Intelligence
@@ -1562,6 +1568,7 @@ paths:
                         name: Power
                         id: 32
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 16 to 20 Power
@@ -1659,7 +1666,7 @@ paths:
                       int_maximum: 25
                       type:
                         name: (Neutral damage)
-                        id: 42
+                        id: 168
                         is_meta: false
                         is_active: true
                       ignore_int_min: false
@@ -1669,7 +1676,7 @@ paths:
                       int_maximum: 20
                       type:
                         name: (Fire steal)
-                        id: 57
+                        id: 174
                         is_meta: false
                         is_active: true
                       ignore_int_min: false
@@ -1679,7 +1686,7 @@ paths:
                       int_maximum: 20
                       type:
                         name: (Water steal)
-                        id: 44
+                        id: 175
                         is_meta: false
                         is_active: true
                       ignore_int_min: false
@@ -1691,7 +1698,14 @@ paths:
                       element:
                         name: AP
                         id: 12
-                        is_meta: false
+                    condition_tree:
+                      condition:
+                        operator: <
+                        int_value: 12
+                        element:
+                          name: AP
+                          id: 12
+                      is_operand: true
                     critical_hit_probability: 10
                     critical_hit_bonus: 3
                     is_two_handed: false
@@ -1706,22 +1720,22 @@ paths:
                       quantity: 71
                     - item_ankama_id: 26035
                       item_subtype: resources
-                      quantity: 27
+                      quantity: 16
                     - item_ankama_id: 26036
                       item_subtype: resources
                       quantity: 7
                     - item_ankama_id: 25181
                       item_subtype: resources
-                      quantity: 13
+                      quantity: 4
                     - item_ankama_id: 22204
                       item_subtype: resources
-                      quantity: 10
+                      quantity: 4
                     - item_ankama_id: 26037
                       item_subtype: resources
-                      quantity: 10
+                      quantity: 2
                     - item_ankama_id: 12728
                       item_subtype: resources
-                      quantity: 3
+                      quantity: 2
                     - item_ankama_id: 24144
                       item_subtype: resources
                       quantity: 2
@@ -1735,6 +1749,7 @@ paths:
                       \ transformations has that face undergone after all these years?"
                     type:
                       name: Hat
+                      id: 27
                     is_weapon: false
                     level: 200
                     pods: 10
@@ -1750,6 +1765,7 @@ paths:
                         name: Vitality
                         id: 9
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 451 to 500 Vitality
@@ -1759,6 +1775,7 @@ paths:
                         name: Strength
                         id: 45
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 71 to 100 Strength
@@ -1768,6 +1785,7 @@ paths:
                         name: Wisdom
                         id: 10
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 41 to 60 Wisdom
@@ -1777,6 +1795,7 @@ paths:
                         name: Range
                         id: 31
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: true
                       formatted: 1 Range
@@ -1786,6 +1805,7 @@ paths:
                         name: Prospecting
                         id: 25
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 21 to 30 Prospecting
@@ -1795,6 +1815,7 @@ paths:
                         name: Neutral Damage
                         id: 49
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 16 to 20 Neutral Damage
@@ -1804,6 +1825,7 @@ paths:
                         name: Earth Damage
                         id: 48
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 16 to 20 Earth Damage
@@ -1813,6 +1835,7 @@ paths:
                         name: '% Neutral Resistance'
                         id: 34
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: -4 to -5% Neutral Resistance
@@ -1822,6 +1845,7 @@ paths:
                         name: '% Earth Resistance'
                         id: 63
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: -4 to -5% Earth Resistance
@@ -1831,6 +1855,7 @@ paths:
                         name: '% Fire Resistance'
                         id: 37
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: -4 to -5% Fire Resistance
@@ -1840,6 +1865,7 @@ paths:
                         name: '% Water Resistance'
                         id: 17
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: -4 to -5% Water Resistance
@@ -1849,6 +1875,7 @@ paths:
                         name: '% Air Resistance'
                         id: 16
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: -4 to -5% Air Resistance
@@ -1858,6 +1885,7 @@ paths:
                         name: AP Reduction
                         id: 64
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 6 to 8 AP Reduction
@@ -1867,6 +1895,7 @@ paths:
                         name: Lock
                         id: 26
                         is_meta: false
+                        is_active: false
                       ignore_int_min: false
                       ignore_int_max: false
                       formatted: 16 to 20 Lock
@@ -1885,10 +1914,10 @@ paths:
                       quantity: 1
                     - item_ankama_id: 13982
                       item_subtype: resources
-                      quantity: 8
+                      quantity: 4
                     - item_ankama_id: 13168
                       item_subtype: resources
-                      quantity: 12
+                      quantity: 5
                     - item_ankama_id: 14145
                       item_subtype: resources
                       quantity: 1
@@ -1916,6 +1945,8 @@ paths:
       summary: Single Equipment
       tags:
       - equipment
+      x-stoplight:
+        id: nmllp5tev7ekb
   /{game}/{language}/items/consumables/{ankama_id}:
     get:
       description: Retrieve a specific consumable item with id.
@@ -2017,6 +2048,8 @@ paths:
       summary: Single Consumables
       tags:
       - consumables
+      x-stoplight:
+        id: 2cb7ev0xox3yz
   /{game}/{language}/items/quest/{ankama_id}:
     get:
       description: Retrieve a specific quest item with id.
@@ -2099,6 +2132,8 @@ paths:
       summary: Single Quest Items
       tags:
       - quest items
+      x-stoplight:
+        id: brkh571dyhd06
   /{game}/{language}/mounts/{ankama_id}:
     get:
       description: Retrieve a specific mount with id.
@@ -2205,6 +2240,8 @@ paths:
       summary: Single Mounts
       tags:
       - mounts
+      x-stoplight:
+        id: dbj3f2b0y9iju
   /{game}/{language}/sets/{ankama_id}:
     get:
       description: Retrieve a specific set with id.
@@ -2386,6 +2423,8 @@ paths:
       summary: Single Sets
       tags:
       - sets
+      x-stoplight:
+        id: ebmqrate36nwx
   /{game}/{language}/sets:
     get:
       description: Retrieve a list of sets.
@@ -2586,6 +2625,8 @@ paths:
       summary: List Sets
       tags:
       - sets
+      x-stoplight:
+        id: h1d7jnvzy2s0r
   /{game}/{language}/mounts:
     get:
       description: Retrieve a list of mounts.
@@ -2714,6 +2755,8 @@ paths:
       summary: List Mounts
       tags:
       - mounts
+      x-stoplight:
+        id: hlqcgs1xannjd
   /{game}/{language}/items/equipment:
     get:
       description: Retrieve a list of equipment items.
@@ -2884,6 +2927,8 @@ paths:
       summary: List Equipment
       tags:
       - equipment
+      x-stoplight:
+        id: ji3tbfqryao0m
   /{game}/{language}/items/resources:
     get:
       description: Retrieve a list of resource items.
@@ -3042,6 +3087,8 @@ paths:
       summary: List Resources
       tags:
       - resources
+      x-stoplight:
+        id: 3tz3aodovfy5r
   /{game}/{language}/items/consumables:
     get:
       description: Retrieve a list of consumable items.
@@ -3203,6 +3250,8 @@ paths:
       summary: List Consumables
       tags:
       - consumables
+      x-stoplight:
+        id: dhoajgkaxyrsp
   /{game}/{language}/items/quest:
     get:
       description: Retrieve a list of quest items.
@@ -3363,6 +3412,8 @@ paths:
       summary: List Quest Items
       tags:
       - quest items
+      x-stoplight:
+        id: e0ea9t2s5u9yu
   /{game}/{language}/items/cosmetics:
     get:
       description: Retrieve a list of cosmetic items.
@@ -3517,6 +3568,8 @@ paths:
       summary: List Cosmetics
       tags:
       - cosmetics
+      x-stoplight:
+        id: 1hioa8q9787xg
   /{game}/{language}/mounts/all:
     get:
       description: |-
@@ -3612,6 +3665,8 @@ paths:
       summary: List All Mounts
       tags:
       - mounts
+      x-stoplight:
+        id: nz5gsdzhiabxg
   /{game}/{language}/sets/all:
     get:
       description: |-
@@ -3732,6 +3787,8 @@ paths:
       summary: List All Sets
       tags:
       - sets
+      x-stoplight:
+        id: 0pwjz7ynq9fe3
   /{game}/{language}/items/cosmetics/all:
     get:
       description: |-
@@ -3864,6 +3921,8 @@ paths:
       summary: List All Cosmetics
       tags:
       - cosmetics
+      x-stoplight:
+        id: kgdnx7l9n6mtd
   /{game}/{language}/items/quest/all:
     get:
       description: |-
@@ -4002,6 +4061,8 @@ paths:
       summary: List All Quest Items
       tags:
       - quest items
+      x-stoplight:
+        id: dk2dp9l0xayec
   /{game}/{language}/items/consumables/all:
     get:
       description: |-
@@ -4133,6 +4194,8 @@ paths:
       summary: List All Consumables
       tags:
       - consumables
+      x-stoplight:
+        id: gjvfdxdl4qord
   /{game}/{language}/items/resources/all:
     get:
       description: |-
@@ -4269,6 +4332,8 @@ paths:
       summary: List All Resources
       tags:
       - resources
+      x-stoplight:
+        id: qy1rbtn91nr2n
   /{game}/{language}/items/equipment/all:
     get:
       description: |-
@@ -4402,6 +4467,8 @@ paths:
       summary: List All Equipment
       tags:
       - equipment
+      x-stoplight:
+        id: e4v6e2gogltsb
   /dofus2/{language}/almanax:
     get:
       description: "Get a range of dates, defaults to today + 6 following days but\
@@ -4540,6 +4607,8 @@ paths:
       summary: Almanax Range
       tags:
       - almanax
+      x-stoplight:
+        id: up5emyrssialv
   /dofus2/{language}/almanax/{date}:
     get:
       description: Get a single date. There are not more details in the returned object
@@ -4606,6 +4675,8 @@ paths:
       summary: Single Almanax Date
       tags:
       - almanax
+      x-stoplight:
+        id: rtcy4tn18y20i
   /dofus2/meta/elements:
     get:
       description: Get the mappings for all specific elements that are linked in the
@@ -4631,6 +4702,8 @@ paths:
       summary: Effects and Condition Elements
       tags:
       - meta
+      x-stoplight:
+        id: elgw539co0qsm
   /dofus2/meta/search/types:
     get:
       description: "Get all types for /{game}/{lang}/search available for filtering.\
@@ -4660,6 +4733,8 @@ paths:
       summary: Available Game Search Types
       tags:
       - meta
+      x-stoplight:
+        id: mid2pytmmpasy
   /dofus2/meta/{language}/almanax/bonuses:
     get:
       description: Get all the available bonuses and their id for filtering them in
@@ -4709,6 +4784,77 @@ paths:
       summary: Available Almanax Bonuses
       tags:
       - meta
+      x-stoplight:
+        id: 0si3syerdipxs
+  /dofus2/meta/{language}/almanax/bonuses/search:
+    get:
+      description: Search all the available bonuses and their id for filtering them
+        in the range endpoint.
+      operationId: get-meta-almanax-bonuses-search
+      parameters:
+      - description: a valid language code
+        explode: false
+        in: path
+        name: language
+        required: true
+        schema:
+          enum:
+          - en
+          - fr
+          - de
+          - it
+          - es
+          example: fr
+          type: string
+        style: simple
+      - description: case sensitive search query
+        explode: true
+        in: query
+        name: query
+        required: true
+        schema:
+          example: abond
+          type: string
+        style: form
+      - description: maximum number of returned results
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                en:
+                  value:
+                  - id: reward-bonus
+                    name: Reward Bonus
+                  - id: loot
+                    name: Loot
+                  - id: plenty-of-fish
+                    name: Plenty of fish
+              schema:
+                items:
+                  $ref: '#/components/schemas/get_meta_almanax_bonuses_200_response_inner'
+                type: array
+                x-examples:
+                  example-1:
+                  - id: reward-bonus
+                    name: Reward Bonus
+                  - id: loot
+                    name: Loot
+                  - id: plenty-of-fish
+                    name: Plenty of fish
+          description: OK
+      summary: Search Available Almanax Bonuses
+      tags:
+      - meta
+      x-stoplight:
+        id: 60nsk2osmamnj
   /meta/webhooks/twitter:
     get:
       description: 'Get a list of all available subscriptions. '
@@ -4728,6 +4874,8 @@ paths:
       summary: Get Twitter Hook Metainfo
       tags:
       - webhooks
+      x-stoplight:
+        id: yv17xgpu6s2zs
   /meta/webhooks/rss:
     get:
       description: 'Get a list of all available subscriptions. '
@@ -4742,6 +4890,8 @@ paths:
       summary: Get RSS Hook Metainfo
       tags:
       - webhooks
+      x-stoplight:
+        id: f7wmitf5otq7g
   /meta/webhooks/almanax:
     get:
       description: 'Get a list of all available subscriptions. '
@@ -4761,6 +4911,8 @@ paths:
       summary: Get Almanax Hook Metainfo
       tags:
       - webhooks
+      x-stoplight:
+        id: hv72ql6n9t3zj
   /webhooks/rss/{id}:
     delete:
       description: Delete a Webhook from the service.
@@ -4779,6 +4931,8 @@ paths:
       summary: Unregister RSS Hook
       tags:
       - webhooks
+      x-stoplight:
+        id: fyyqlyg58bftr
     get:
       description: Retrieve details about an existing RSS Webhook with a given uuid.
       operationId: get-webhooks-rss-id
@@ -4813,6 +4967,8 @@ paths:
       summary: Get RSS Hook
       tags:
       - webhooks
+      x-stoplight:
+        id: syrf6cxpiaf2a
     put:
       description: "Update the details of a RSS Webhook. All fields are optional and\
         \ arrays will be overwritten, so always put all selected items of an array."
@@ -4861,6 +5017,8 @@ paths:
       summary: Update RSS Hook
       tags:
       - webhooks
+      x-stoplight:
+        id: phtkbq6pmyd8a
   /webhooks/twitter/{id}:
     delete:
       description: Delete a Webhook from the service.
@@ -4879,6 +5037,8 @@ paths:
       summary: Unregister Twitter Hook
       tags:
       - webhooks
+      x-stoplight:
+        id: 9jiu4trzv93mr
     get:
       description: Retrieve details about an existing Twitter Webhook with a given
         uuid.
@@ -4916,6 +5076,8 @@ paths:
       summary: Get Twitter Hook
       tags:
       - webhooks
+      x-stoplight:
+        id: jfnxrbq5qthkz
     put:
       description: "Update the details of a Twitter Webhook. All fields are optional\
         \ and arrays will be overwritten, so always put all selected items of an array."
@@ -4968,6 +5130,8 @@ paths:
       summary: Update Twitter Hook
       tags:
       - webhooks
+      x-stoplight:
+        id: si505i93c01ye
   /webhooks/almanax/{id}:
     delete:
       description: Delete a Webhook from the service.
@@ -4986,6 +5150,8 @@ paths:
       summary: Unregister Almanax Hook
       tags:
       - webhooks
+      x-stoplight:
+        id: yl3ahn2jej0ua
     get:
       description: Retrieve details about an existing Almanax Webhook with a given
         uuid.
@@ -5032,6 +5198,8 @@ paths:
       summary: Get Almanax Hook
       tags:
       - webhooks
+      x-stoplight:
+        id: s7d026fjay96v
     put:
       description: "Update the details of an Almanax Webhook. All fields are optional\
         \ and arrays will be overwritten, so always put all selected items of an array."
@@ -5101,6 +5269,8 @@ paths:
       summary: Update Almanax Hook
       tags:
       - webhooks
+      x-stoplight:
+        id: byvpkt15y4gjt
   /webhooks/rss:
     post:
       description: Register a new Webhook to post RSS news as soon as they are posted.
@@ -5128,6 +5298,8 @@ paths:
       summary: Register RSS Hook
       tags:
       - webhooks
+      x-stoplight:
+        id: 4rvi2htpw6875
   /webhooks/twitter:
     post:
       description: Register a new Webhook to post Twitter updates as soon as they
@@ -5155,6 +5327,8 @@ paths:
       summary: Register Twitter Hook
       tags:
       - webhooks
+      x-stoplight:
+        id: sjhpc8irl8j2s
   /webhooks/almanax:
     post:
       description: Register a new Webhook to post Almanax updates.
@@ -5192,6 +5366,8 @@ paths:
       summary: Register Almanax Hook
       tags:
       - webhooks
+      x-stoplight:
+        id: hvv1yiiqwj83f
 components:
   schemas:
     Items-List-Entry-Typed:
@@ -5225,6 +5401,8 @@ components:
           $ref: '#/components/schemas/Image-Urls'
       type: object
       x-examples: {}
+      x-stoplight:
+        id: ox3d1o70kkwnn
     Cosmetic:
       example:
         effects:
@@ -5248,6 +5426,12 @@ components:
             name: name
             id: 7
           int_minimum: 5
+        condition_tree:
+          children:
+          - null
+          - null
+          is_operand: false
+          relation: and
         level: 1
         name: name
         recipe:
@@ -5271,15 +5455,13 @@ components:
         - operator: operator
           int_value: 9
           element:
-            is_meta: true
             name: name
-            id: 3
+            id: 6
         - operator: operator
           int_value: 9
           element:
-            is_meta: true
             name: name
-            id: 3
+            id: 6
         ankama_id: 0
       properties:
         ankama_id:
@@ -5302,10 +5484,13 @@ components:
           nullable: true
           type: array
         conditions:
+          deprecated: true
           items:
             $ref: '#/components/schemas/Condition-Entry'
           nullable: true
           type: array
+        condition_tree:
+          $ref: '#/components/schemas/Condition-Tree-Node'
         recipe:
           items:
             $ref: '#/components/schemas/Recipe-Entry'
@@ -5313,6 +5498,8 @@ components:
           type: array
       type: object
       x-examples: {}
+      x-stoplight:
+        id: 8si9abvpqf95g
     Recipe-Entry:
       example:
         quantity: 5
@@ -5328,6 +5515,8 @@ components:
       title: ""
       type: object
       x-examples: {}
+      x-stoplight:
+        id: xdadfxdzg3gsv
     Effects-Entry:
       example:
         ignore_int_min: true
@@ -5367,6 +5556,8 @@ components:
       x-examples: {}
       x-tags:
       - meta
+      x-stoplight:
+        id: wu24vt5vz6r42
     Image-Urls:
       description: "All images except icon are rendered in the background which can\
         \ take some time (up to hours if all data is completely generated from scratch).\
@@ -5404,7 +5595,10 @@ components:
           icon: https://dofusdu.de/dofus/img/mount/1.png
           sd: https://dofusdu.de/dofus/img/mount/1-200.png
           hq: https://dofusdu.de/dofus/img/mount/1-400.png
+      x-stoplight:
+        id: 7itke5mom5dhx
     Resource:
+      description: ""
       example:
         effects:
         - ignore_int_min: true
@@ -5427,6 +5621,12 @@ components:
             name: name
             id: 7
           int_minimum: 5
+        condition_tree:
+          children:
+          - null
+          - null
+          is_operand: false
+          relation: and
         level: 6
         name: name
         recipe:
@@ -5450,15 +5650,13 @@ components:
         - operator: operator
           int_value: 9
           element:
-            is_meta: true
             name: name
-            id: 3
+            id: 6
         - operator: operator
           int_value: 9
           element:
-            is_meta: true
             name: name
-            id: 3
+            id: 6
         ankama_id: 0
       properties:
         ankama_id:
@@ -5481,10 +5679,13 @@ components:
           nullable: true
           type: array
         conditions:
+          deprecated: true
           items:
             $ref: '#/components/schemas/Condition-Entry'
           nullable: true
           type: array
+        condition_tree:
+          $ref: '#/components/schemas/Condition-Tree-Node'
         recipe:
           items:
             $ref: '#/components/schemas/Recipe-Entry'
@@ -5492,6 +5693,8 @@ components:
           type: array
       type: object
       x-examples: {}
+      x-stoplight:
+        id: 346lkp0ymnytt
     Item-List-Entry:
       example:
         level: 6
@@ -5530,6 +5733,8 @@ components:
           type: array
       type: object
       x-examples: {}
+      x-stoplight:
+        id: 62if77urw3c29
     Equipment-Set:
       example:
         effects:
@@ -5600,7 +5805,7 @@ components:
       title: ""
       type: object
       x-stoplight:
-        id: nfthmjnb0ebpw
+        id: 5dz3jq04cro7p
     Set-List-Entry:
       example:
         level: 1
@@ -5620,6 +5825,8 @@ components:
       title: ""
       type: object
       x-examples: {}
+      x-stoplight:
+        id: ge83fa7ycoy7u
     Mount:
       example:
         effects:
@@ -5668,7 +5875,7 @@ components:
       title: ""
       type: object
       x-stoplight:
-        id: 22zouotzgnrqv
+        id: ub35ova6c05ct
     Mount-List-Entry:
       example:
         name: name
@@ -5691,6 +5898,8 @@ components:
       title: ""
       type: object
       x-examples: {}
+      x-stoplight:
+        id: war4b8430wdde
     Items-List-Paged:
       example:
         _links:
@@ -5745,7 +5954,7 @@ components:
       title: ""
       type: object
       x-stoplight:
-        id: 4d8b3zsb3fca6
+        id: o8g6474tsf8fe
     Sets-List-Paged:
       example:
         _links:
@@ -5772,7 +5981,7 @@ components:
       title: ""
       type: object
       x-stoplight:
-        id: 4d8b3zsb3fca6
+        id: 47l4rc783fkqv
     Mounts-List-Paged:
       example:
         _links:
@@ -5807,7 +6016,7 @@ components:
       title: ""
       type: object
       x-stoplight:
-        id: 4d8b3zsb3fca6
+        id: gpk4st074rdlz
     Links-Paged:
       example:
         next: next
@@ -5830,26 +6039,69 @@ components:
       title: ""
       type: object
       x-stoplight:
-        id: 23yb6w7guw3jh
+        id: el0hhmf393fzf
     Condition-Entry:
+      description: ""
       example:
         operator: operator
         int_value: 9
         element:
-          is_meta: true
           name: name
-          id: 3
+          id: 6
       properties:
         operator:
           type: string
         int_value:
           type: integer
         element:
-          $ref: '#/components/schemas/Condition_Entry_element'
-      title: ""
+          $ref: '#/components/schemas/Items_List_Entry_Typed_type'
       type: object
       x-stoplight:
-        id: vo32jgj5t95xh
+        id: aeaid659jdkvj
+    Condition-Tree-Node:
+      oneOf:
+      - $ref: '#/components/schemas/Condition-Tree-Relation'
+      - $ref: '#/components/schemas/Condition-Tree-Leaf'
+      x-stoplight:
+        id: j4vfod2b9xp0x
+      x-examples: {}
+    Condition-Tree-Leaf:
+      properties:
+        is_operand:
+          default: true
+          description: always "true" for the leaf of a tree
+          type: boolean
+        condition:
+          $ref: '#/components/schemas/Condition-Entry'
+      type: object
+      x-stoplight:
+        id: os7s47h6ylpw1
+      x-examples: {}
+    Condition-Tree-Relation:
+      example:
+        children:
+        - null
+        - null
+        is_operand: false
+        relation: and
+      properties:
+        is_operand:
+          default: false
+          description: always "false" for relations
+          type: boolean
+        relation:
+          default: and
+          description: "\"and\", \"or\""
+          example: and
+          type: string
+        children:
+          items:
+            $ref: '#/components/schemas/Condition-Tree-Node'
+          type: array
+      type: object
+      x-stoplight:
+        id: raelhdlixta0s
+      x-examples: {}
     Equipment:
       properties:
         ankama_id:
@@ -5874,10 +6126,13 @@ components:
           nullable: true
           type: array
         conditions:
+          deprecated: true
           items:
             $ref: '#/components/schemas/Condition-Entry'
           nullable: true
           type: array
+        condition_tree:
+          $ref: '#/components/schemas/Condition-Tree-Node'
         recipe:
           items:
             $ref: '#/components/schemas/Recipe-Entry'
@@ -5887,6 +6142,8 @@ components:
           $ref: '#/components/schemas/Equipment_parent_set'
       type: object
       x-examples: {}
+      x-stoplight:
+        id: 0idcz9ozx0wjy
     Weapon:
       example:
         critical_hit_probability: 5
@@ -5937,6 +6194,12 @@ components:
             id: 7
           int_minimum: 5
         max_cast_per_turn: 2
+        condition_tree:
+          children:
+          - null
+          - null
+          is_operand: false
+          relation: and
         name: name
         ap_cost: 7
         pods: 1
@@ -5944,15 +6207,13 @@ components:
         - operator: operator
           int_value: 9
           element:
-            is_meta: true
             name: name
-            id: 3
+            id: 6
         - operator: operator
           int_value: 9
           element:
-            is_meta: true
             name: name
-            id: 3
+            id: 6
         critical_hit_bonus: 5
         ankama_id: 0
       properties:
@@ -5981,10 +6242,13 @@ components:
           nullable: true
           type: array
         conditions:
+          deprecated: true
           items:
             $ref: '#/components/schemas/Condition-Entry'
           nullable: true
           type: array
+        condition_tree:
+          $ref: '#/components/schemas/Condition-Tree-Node'
         critical_hit_probability:
           type: integer
         critical_hit_bonus:
@@ -6006,6 +6270,8 @@ components:
           $ref: '#/components/schemas/Equipment_parent_set'
       type: object
       x-examples: {}
+      x-stoplight:
+        id: u8lgrwvskwwev
     Almanax-Entry:
       example:
         date: date
@@ -6034,6 +6300,8 @@ components:
           $ref: '#/components/schemas/Almanax_Entry_tribute'
       type: object
       x-examples: {}
+      x-stoplight:
+        id: wmjv9ejxbzmb3
     CreateTwitterWebhook:
       description: ""
       example:
@@ -6096,6 +6364,8 @@ components:
           format: discord
           preview_length: 280
           callback: https://discord.com/api/webhooks/XYZ
+      x-stoplight:
+        id: bejf2mpu2yb1v
     CreateRSSWebhook:
       description: ""
       example:
@@ -6160,6 +6430,8 @@ components:
           format: discord
           preview_length: 2000
           callback: https://discord.com/api/webhooks/XYZ
+      x-stoplight:
+        id: g42j02d7tjkzh
     PutRSSWebhook:
       description: ""
       example:
@@ -6203,6 +6475,8 @@ components:
       x-examples:
         Example:
           preview_length: 60
+      x-stoplight:
+        id: 2yww0rytssdlg
     PutTwitterWebhook:
       description: ""
       example:
@@ -6249,6 +6523,8 @@ components:
           - retro
           subscriptions:
           - dofus2-en-official-changelog
+      x-stoplight:
+        id: 8z40rjn9badoc
     CreateAlmanaxWebhook:
       example:
         weekly_weekday: sunday
@@ -6375,6 +6651,8 @@ components:
           intervals:
           - daily
           weekly_weekday: sunday
+      x-stoplight:
+        id: mcnc9wi9h2hp9
     PutAlmanaxWebhook:
       example:
         weekly_weekday: sunday
@@ -6481,6 +6759,8 @@ components:
           intervals:
           - daily
           weekly_weekday: sunday
+      x-stoplight:
+        id: o49u2pkzt2401
     RssWebhook:
       example:
         subscriptions:
@@ -6550,6 +6830,8 @@ components:
           created_at: 2022-10-25T15:32:37.406281+02:00
           last_fired_at: 2022-10-25T15:35:37.103240+02:00
           updated_at: 2022-10-25T15:32:37.406281+02:00
+      x-stoplight:
+        id: agyu93zx7r9bl
     TwitterWebhook:
       example:
         subscriptions:
@@ -6624,6 +6906,8 @@ components:
           created_at: 2022-10-25T15:32:37.406281+02:00
           last_fired_at: 2022-10-25T15:35:37.103240+02:00
           updated_at: 2022-10-25T15:32:37.406281+02:00
+      x-stoplight:
+        id: nzg926yp1c3i4
     AlmanaxWebhook:
       description: ""
       example:
@@ -6759,6 +7043,8 @@ components:
           created_at: 2019-08-24T14:15:22Z
           last_fired_at: 2019-08-24T14:15:22Z
           updated_at: 2019-08-24T14:15:22Z
+      x-stoplight:
+        id: 85cgwbeo0toii
     get_game_search_200_response_inner:
       example:
         name: name
@@ -6846,23 +7132,6 @@ components:
           type: boolean
         is_active:
           description: Affects target or source actively.
-          type: boolean
-      type: object
-    Condition_Entry_element:
-      example:
-        is_meta: true
-        name: name
-        id: 3
-      properties:
-        name:
-          type: string
-        id:
-          type: integer
-        is_meta:
-          description: "true if a type is generated from the Api instead of Ankama.\
-            \ In that case, always prefer showing the templated string and omit everything\
-            \ else. The \"name\" field will have an english description of the meta\
-            \ type. An example for such effects are class sets effects."
           type: boolean
       type: object
     Equipment_parent_set:
@@ -6998,3 +7267,5 @@ components:
           type: integer
       type: object
   securitySchemes: {}
+x-stoplight:
+  id: 3oy8uk16m6tss

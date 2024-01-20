@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Operator** | Pointer to **string** |  | [optional] 
 **IntValue** | Pointer to **int32** |  | [optional] 
-**Element** | Pointer to [**ConditionEntryElement**](ConditionEntryElement.md) |  | [optional] 
+**Element** | Pointer to [**ItemsListEntryTypedType**](ItemsListEntryTypedType.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasIntValue returns a boolean if a field has been set.
 
 ### GetElement
 
-`func (o *ConditionEntry) GetElement() ConditionEntryElement`
+`func (o *ConditionEntry) GetElement() ItemsListEntryTypedType`
 
 GetElement returns the Element field if non-nil, zero value otherwise.
 
 ### GetElementOk
 
-`func (o *ConditionEntry) GetElementOk() (*ConditionEntryElement, bool)`
+`func (o *ConditionEntry) GetElementOk() (*ItemsListEntryTypedType, bool)`
 
 GetElementOk returns a tuple with the Element field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetElement
 
-`func (o *ConditionEntry) SetElement(v ConditionEntryElement)`
+`func (o *ConditionEntry) SetElement(v ItemsListEntryTypedType)`
 
 SetElement sets Element field to given value.
 

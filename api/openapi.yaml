@@ -40,7 +40,7 @@ info:
     \ cost to provide very fast responses. If you want to help me keeping them running\
     \ or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude)."
   title: dofusdude
-  version: 0.8.1
+  version: 0.8.2
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -4536,7 +4536,7 @@ paths:
         schema:
           example: -1
           format: int32
-          maximum: 35
+          maximum: 370
           minimum: -1
           type: integer
         style: form

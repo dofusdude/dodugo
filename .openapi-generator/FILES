@@ -37,10 +37,8 @@ docs/CreateAlmanaxWebhookMentionsValueInner.md
 docs/CreateRSSWebhook.md
 docs/CreateTwitterWebhook.md
 docs/EffectsEntry.md
-docs/EffectsEntryType.md
 docs/Equipment.md
 docs/EquipmentAPI.md
-docs/EquipmentParentSet.md
 docs/EquipmentSet.md
 docs/GameAPI.md
 docs/GetGameSearch200ResponseInner.md
@@ -48,6 +46,8 @@ docs/GetMetaAlmanaxBonuses200ResponseInner.md
 docs/GetMetaWebhooksTwitter200Response.md
 docs/ImageUrls.md
 docs/ItemListEntry.md
+docs/ItemListEntryParentSet.md
+docs/ItemListEntryRange.md
 docs/ItemsListEntryTyped.md
 docs/ItemsListEntryTypedType.md
 docs/ItemsListPaged.md
@@ -65,6 +65,8 @@ docs/RecipeEntry.md
 docs/Resource.md
 docs/ResourcesAPI.md
 docs/RssWebhook.md
+docs/SetEffectsEntry.md
+docs/SetEffectsEntryType.md
 docs/SetListEntry.md
 docs/SetsAPI.md
 docs/SetsListPaged.md
@@ -93,15 +95,15 @@ model_create_almanax_webhook_mentions_value_inner.go
 model_create_rss_webhook.go
 model_create_twitter_webhook.go
 model_effects_entry.go
-model_effects_entry_type.go
 model_equipment.go
-model_equipment_parent_set.go
 model_equipment_set.go
 model_get_game_search_200_response_inner.go
 model_get_meta_almanax_bonuses_200_response_inner.go
 model_get_meta_webhooks_twitter_200_response.go
 model_image_urls.go
 model_item_list_entry.go
+model_item_list_entry_parent_set.go
+model_item_list_entry_range.go
 model_items_list_entry_typed.go
 model_items_list_entry_typed_type.go
 model_items_list_paged.go
@@ -115,6 +117,8 @@ model_put_twitter_webhook.go
 model_recipe_entry.go
 model_resource.go
 model_rss_webhook.go
+model_set_effects_entry.go
+model_set_effects_entry_type.go
 model_set_list_entry.go
 model_sets_list_paged.go
 model_twitter_webhook.go

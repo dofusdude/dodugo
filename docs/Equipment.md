@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Conditions** | Pointer to [**[]ConditionEntry**](ConditionEntry.md) |  | [optional] 
 **ConditionTree** | Pointer to [**ConditionTreeNode**](ConditionTreeNode.md) |  | [optional] 
 **Recipe** | Pointer to [**[]RecipeEntry**](RecipeEntry.md) |  | [optional] 
-**ParentSet** | Pointer to [**NullableEquipmentParentSet**](EquipmentParentSet.md) |  | [optional] 
+**ParentSet** | Pointer to [**NullableItemListEntryParentSet**](ItemListEntryParentSet.md) |  | [optional] 
 
 ## Methods
 
@@ -369,20 +369,20 @@ HasRecipe returns a boolean if a field has been set.
 UnsetRecipe ensures that no value is present for Recipe, not even an explicit nil
 ### GetParentSet
 
-`func (o *Equipment) GetParentSet() EquipmentParentSet`
+`func (o *Equipment) GetParentSet() ItemListEntryParentSet`
 
 GetParentSet returns the ParentSet field if non-nil, zero value otherwise.
 
 ### GetParentSetOk
 
-`func (o *Equipment) GetParentSetOk() (*EquipmentParentSet, bool)`
+`func (o *Equipment) GetParentSetOk() (*ItemListEntryParentSet, bool)`
 
 GetParentSetOk returns a tuple with the ParentSet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParentSet
 
-`func (o *Equipment) SetParentSet(v EquipmentParentSet)`
+`func (o *Equipment) SetParentSet(v ItemListEntryParentSet)`
 
 SetParentSet sets ParentSet field to given value.
 

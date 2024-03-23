@@ -15,97 +15,97 @@ import (
 	"encoding/json"
 )
 
-// checks if the WeaponRange type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &WeaponRange{}
+// checks if the ItemListEntryParentSet type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ItemListEntryParentSet{}
 
-// WeaponRange struct for WeaponRange
-type WeaponRange struct {
-	Min *int32 `json:"min,omitempty"`
-	Max *int32 `json:"max,omitempty"`
+// ItemListEntryParentSet struct for ItemListEntryParentSet
+type ItemListEntryParentSet struct {
+	Id *int32 `json:"id,omitempty"`
+	Name *string `json:"name,omitempty"`
 }
 
-// NewWeaponRange instantiates a new WeaponRange object
+// NewItemListEntryParentSet instantiates a new ItemListEntryParentSet object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWeaponRange() *WeaponRange {
-	this := WeaponRange{}
+func NewItemListEntryParentSet() *ItemListEntryParentSet {
+	this := ItemListEntryParentSet{}
 	return &this
 }
 
-// NewWeaponRangeWithDefaults instantiates a new WeaponRange object
+// NewItemListEntryParentSetWithDefaults instantiates a new ItemListEntryParentSet object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewWeaponRangeWithDefaults() *WeaponRange {
-	this := WeaponRange{}
+func NewItemListEntryParentSetWithDefaults() *ItemListEntryParentSet {
+	this := ItemListEntryParentSet{}
 	return &this
 }
 
-// GetMin returns the Min field value if set, zero value otherwise.
-func (o *WeaponRange) GetMin() int32 {
-	if o == nil || IsNil(o.Min) {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *ItemListEntryParentSet) GetId() int32 {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
-	return *o.Min
+	return *o.Id
 }
 
-// GetMinOk returns a tuple with the Min field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WeaponRange) GetMinOk() (*int32, bool) {
-	if o == nil || IsNil(o.Min) {
+func (o *ItemListEntryParentSet) GetIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.Min, true
+	return o.Id, true
 }
 
-// HasMin returns a boolean if a field has been set.
-func (o *WeaponRange) HasMin() bool {
-	if o != nil && !IsNil(o.Min) {
+// HasId returns a boolean if a field has been set.
+func (o *ItemListEntryParentSet) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetMin gets a reference to the given int32 and assigns it to the Min field.
-func (o *WeaponRange) SetMin(v int32) {
-	o.Min = &v
+// SetId gets a reference to the given int32 and assigns it to the Id field.
+func (o *ItemListEntryParentSet) SetId(v int32) {
+	o.Id = &v
 }
 
-// GetMax returns the Max field value if set, zero value otherwise.
-func (o *WeaponRange) GetMax() int32 {
-	if o == nil || IsNil(o.Max) {
-		var ret int32
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *ItemListEntryParentSet) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
 		return ret
 	}
-	return *o.Max
+	return *o.Name
 }
 
-// GetMaxOk returns a tuple with the Max field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WeaponRange) GetMaxOk() (*int32, bool) {
-	if o == nil || IsNil(o.Max) {
+func (o *ItemListEntryParentSet) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return o.Max, true
+	return o.Name, true
 }
 
-// HasMax returns a boolean if a field has been set.
-func (o *WeaponRange) HasMax() bool {
-	if o != nil && !IsNil(o.Max) {
+// HasName returns a boolean if a field has been set.
+func (o *ItemListEntryParentSet) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetMax gets a reference to the given int32 and assigns it to the Max field.
-func (o *WeaponRange) SetMax(v int32) {
-	o.Max = &v
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *ItemListEntryParentSet) SetName(v string) {
+	o.Name = &v
 }
 
-func (o WeaponRange) MarshalJSON() ([]byte, error) {
+func (o ItemListEntryParentSet) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -113,49 +113,49 @@ func (o WeaponRange) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o WeaponRange) ToMap() (map[string]interface{}, error) {
+func (o ItemListEntryParentSet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Min) {
-		toSerialize["min"] = o.Min
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Max) {
-		toSerialize["max"] = o.Max
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
 	}
 	return toSerialize, nil
 }
 
-type NullableWeaponRange struct {
-	value *WeaponRange
+type NullableItemListEntryParentSet struct {
+	value *ItemListEntryParentSet
 	isSet bool
 }
 
-func (v NullableWeaponRange) Get() *WeaponRange {
+func (v NullableItemListEntryParentSet) Get() *ItemListEntryParentSet {
 	return v.value
 }
 
-func (v *NullableWeaponRange) Set(val *WeaponRange) {
+func (v *NullableItemListEntryParentSet) Set(val *ItemListEntryParentSet) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableWeaponRange) IsSet() bool {
+func (v NullableItemListEntryParentSet) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableWeaponRange) Unset() {
+func (v *NullableItemListEntryParentSet) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableWeaponRange(val *WeaponRange) *NullableWeaponRange {
-	return &NullableWeaponRange{value: val, isSet: true}
+func NewNullableItemListEntryParentSet(val *ItemListEntryParentSet) *NullableItemListEntryParentSet {
+	return &NullableItemListEntryParentSet{value: val, isSet: true}
 }
 
-func (v NullableWeaponRange) MarshalJSON() ([]byte, error) {
+func (v NullableItemListEntryParentSet) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableWeaponRange) UnmarshalJSON(src []byte) error {
+func (v *NullableItemListEntryParentSet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

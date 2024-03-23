@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **FamilyName** | Pointer to **string** |  | [optional] 
 **ImageUrls** | Pointer to [**ImageUrls**](ImageUrls.md) |  | [optional] 
+**Effects** | Pointer to [**[]EffectsEntry**](EffectsEntry.md) |  | [optional] 
 
 ## Methods
 
@@ -128,6 +129,41 @@ SetImageUrls sets ImageUrls field to given value.
 
 HasImageUrls returns a boolean if a field has been set.
 
+### GetEffects
+
+`func (o *MountListEntry) GetEffects() []EffectsEntry`
+
+GetEffects returns the Effects field if non-nil, zero value otherwise.
+
+### GetEffectsOk
+
+`func (o *MountListEntry) GetEffectsOk() (*[]EffectsEntry, bool)`
+
+GetEffectsOk returns a tuple with the Effects field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEffects
+
+`func (o *MountListEntry) SetEffects(v []EffectsEntry)`
+
+SetEffects sets Effects field to given value.
+
+### HasEffects
+
+`func (o *MountListEntry) HasEffects() bool`
+
+HasEffects returns a boolean if a field has been set.
+
+### SetEffectsNil
+
+`func (o *MountListEntry) SetEffectsNil(b bool)`
+
+ SetEffectsNil sets the value for Effects to be an explicit nil
+
+### UnsetEffects
+`func (o *MountListEntry) UnsetEffects()`
+
+UnsetEffects ensures that no value is present for Effects, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

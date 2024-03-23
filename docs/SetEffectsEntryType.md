@@ -1,4 +1,4 @@
-# EffectsEntryType
+# SetEffectsEntryType
 
 ## Properties
 
@@ -11,120 +11,120 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewEffectsEntryType
+### NewSetEffectsEntryType
 
-`func NewEffectsEntryType() *EffectsEntryType`
+`func NewSetEffectsEntryType() *SetEffectsEntryType`
 
-NewEffectsEntryType instantiates a new EffectsEntryType object
+NewSetEffectsEntryType instantiates a new SetEffectsEntryType object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewEffectsEntryTypeWithDefaults
+### NewSetEffectsEntryTypeWithDefaults
 
-`func NewEffectsEntryTypeWithDefaults() *EffectsEntryType`
+`func NewSetEffectsEntryTypeWithDefaults() *SetEffectsEntryType`
 
-NewEffectsEntryTypeWithDefaults instantiates a new EffectsEntryType object
+NewSetEffectsEntryTypeWithDefaults instantiates a new SetEffectsEntryType object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetName
 
-`func (o *EffectsEntryType) GetName() string`
+`func (o *SetEffectsEntryType) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *EffectsEntryType) GetNameOk() (*string, bool)`
+`func (o *SetEffectsEntryType) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *EffectsEntryType) SetName(v string)`
+`func (o *SetEffectsEntryType) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *EffectsEntryType) HasName() bool`
+`func (o *SetEffectsEntryType) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *EffectsEntryType) GetId() int32`
+`func (o *SetEffectsEntryType) GetId() int32`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *EffectsEntryType) GetIdOk() (*int32, bool)`
+`func (o *SetEffectsEntryType) GetIdOk() (*int32, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *EffectsEntryType) SetId(v int32)`
+`func (o *SetEffectsEntryType) SetId(v int32)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *EffectsEntryType) HasId() bool`
+`func (o *SetEffectsEntryType) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 
 ### GetIsMeta
 
-`func (o *EffectsEntryType) GetIsMeta() bool`
+`func (o *SetEffectsEntryType) GetIsMeta() bool`
 
 GetIsMeta returns the IsMeta field if non-nil, zero value otherwise.
 
 ### GetIsMetaOk
 
-`func (o *EffectsEntryType) GetIsMetaOk() (*bool, bool)`
+`func (o *SetEffectsEntryType) GetIsMetaOk() (*bool, bool)`
 
 GetIsMetaOk returns a tuple with the IsMeta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsMeta
 
-`func (o *EffectsEntryType) SetIsMeta(v bool)`
+`func (o *SetEffectsEntryType) SetIsMeta(v bool)`
 
 SetIsMeta sets IsMeta field to given value.
 
 ### HasIsMeta
 
-`func (o *EffectsEntryType) HasIsMeta() bool`
+`func (o *SetEffectsEntryType) HasIsMeta() bool`
 
 HasIsMeta returns a boolean if a field has been set.
 
 ### GetIsActive
 
-`func (o *EffectsEntryType) GetIsActive() bool`
+`func (o *SetEffectsEntryType) GetIsActive() bool`
 
 GetIsActive returns the IsActive field if non-nil, zero value otherwise.
 
 ### GetIsActiveOk
 
-`func (o *EffectsEntryType) GetIsActiveOk() (*bool, bool)`
+`func (o *SetEffectsEntryType) GetIsActiveOk() (*bool, bool)`
 
 GetIsActiveOk returns a tuple with the IsActive field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsActive
 
-`func (o *EffectsEntryType) SetIsActive(v bool)`
+`func (o *SetEffectsEntryType) SetIsActive(v bool)`
 
 SetIsActive sets IsActive field to given value.
 
 ### HasIsActive
 
-`func (o *EffectsEntryType) HasIsActive() bool`
+`func (o *SetEffectsEntryType) HasIsActive() bool`
 
 HasIsActive returns a boolean if a field has been set.
 

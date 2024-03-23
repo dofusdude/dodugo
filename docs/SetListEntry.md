@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Items** | Pointer to **int32** | amount | [optional] 
 **Level** | Pointer to **int32** |  | [optional] 
+**Effects** | Pointer to [**[][]SetEffectsEntry**]([]SetEffectsEntry.md) |  | [optional] 
+**EquipmentIds** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
 
@@ -128,6 +130,76 @@ SetLevel sets Level field to given value.
 
 HasLevel returns a boolean if a field has been set.
 
+### GetEffects
+
+`func (o *SetListEntry) GetEffects() [][]SetEffectsEntry`
+
+GetEffects returns the Effects field if non-nil, zero value otherwise.
+
+### GetEffectsOk
+
+`func (o *SetListEntry) GetEffectsOk() (*[][]SetEffectsEntry, bool)`
+
+GetEffectsOk returns a tuple with the Effects field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEffects
+
+`func (o *SetListEntry) SetEffects(v [][]SetEffectsEntry)`
+
+SetEffects sets Effects field to given value.
+
+### HasEffects
+
+`func (o *SetListEntry) HasEffects() bool`
+
+HasEffects returns a boolean if a field has been set.
+
+### SetEffectsNil
+
+`func (o *SetListEntry) SetEffectsNil(b bool)`
+
+ SetEffectsNil sets the value for Effects to be an explicit nil
+
+### UnsetEffects
+`func (o *SetListEntry) UnsetEffects()`
+
+UnsetEffects ensures that no value is present for Effects, not even an explicit nil
+### GetEquipmentIds
+
+`func (o *SetListEntry) GetEquipmentIds() []int32`
+
+GetEquipmentIds returns the EquipmentIds field if non-nil, zero value otherwise.
+
+### GetEquipmentIdsOk
+
+`func (o *SetListEntry) GetEquipmentIdsOk() (*[]int32, bool)`
+
+GetEquipmentIdsOk returns a tuple with the EquipmentIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEquipmentIds
+
+`func (o *SetListEntry) SetEquipmentIds(v []int32)`
+
+SetEquipmentIds sets EquipmentIds field to given value.
+
+### HasEquipmentIds
+
+`func (o *SetListEntry) HasEquipmentIds() bool`
+
+HasEquipmentIds returns a boolean if a field has been set.
+
+### SetEquipmentIdsNil
+
+`func (o *SetListEntry) SetEquipmentIdsNil(b bool)`
+
+ SetEquipmentIdsNil sets the value for EquipmentIds to be an explicit nil
+
+### UnsetEquipmentIds
+`func (o *SetListEntry) UnsetEquipmentIds()`
+
+UnsetEquipmentIds ensures that no value is present for EquipmentIds, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

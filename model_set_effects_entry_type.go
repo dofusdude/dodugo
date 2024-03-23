@@ -3,7 +3,7 @@ dofusdude
 
 # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) npm i dofusdude-js --save - [Typescript](https://github.com/dofusdude/dofusdude-ts) npm i dofusdude-ts --save - [Go](https://github.com/dofusdude/dodugo) go get -u github.com/dofusdude/dodugo - [Python](https://github.com/dofusdude/dofusdude-py) pip install dofusdude - [PHP](https://github.com/dofusdude/dofusdude-php)  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 2 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my Discord.   ## Deploy now. Use forever. Everything you see here on this site, you can use now and forever. Updates could introduce new fields, new paths or parameter but never break backwards compatibility.  There is one exception! **The API will _always_ choose being up-to-date over everything else**. So if Ankama decides to drop languages from the game like they did with their website, the API will loose support for them, too.  ## Thank you! I highly welcome everyone on my [Discord](https://discord.gg/3EtHskZD8h) to just talk about projects and use cases or give feedback of any kind.  The servers have a fixed monthly cost to provide very fast responses. If you want to help me keeping them running or simply donate to that cause, consider becoming a [GitHub Sponsor](https://github.com/sponsors/dofusdude).
 
-API version: 0.8.2
+API version: 0.8.3
 Contact: stelzo@steado.de
 */
 
@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the EffectsEntryType type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &EffectsEntryType{}
+// checks if the SetEffectsEntryType type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SetEffectsEntryType{}
 
-// EffectsEntryType struct for EffectsEntryType
-type EffectsEntryType struct {
+// SetEffectsEntryType struct for SetEffectsEntryType
+type SetEffectsEntryType struct {
 	Name *string `json:"name,omitempty"`
 	Id *int32 `json:"id,omitempty"`
 	// true if a type is generated from the Api instead of Ankama. In that case, always prefer showing the templated string and omit everything else. The \"name\" field will have an english description of the meta type. An example for such effects are class sets effects.
@@ -28,25 +28,25 @@ type EffectsEntryType struct {
 	IsActive *bool `json:"is_active,omitempty"`
 }
 
-// NewEffectsEntryType instantiates a new EffectsEntryType object
+// NewSetEffectsEntryType instantiates a new SetEffectsEntryType object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEffectsEntryType() *EffectsEntryType {
-	this := EffectsEntryType{}
+func NewSetEffectsEntryType() *SetEffectsEntryType {
+	this := SetEffectsEntryType{}
 	return &this
 }
 
-// NewEffectsEntryTypeWithDefaults instantiates a new EffectsEntryType object
+// NewSetEffectsEntryTypeWithDefaults instantiates a new SetEffectsEntryType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewEffectsEntryTypeWithDefaults() *EffectsEntryType {
-	this := EffectsEntryType{}
+func NewSetEffectsEntryTypeWithDefaults() *SetEffectsEntryType {
+	this := SetEffectsEntryType{}
 	return &this
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *EffectsEntryType) GetName() string {
+func (o *SetEffectsEntryType) GetName() string {
 	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
@@ -56,7 +56,7 @@ func (o *EffectsEntryType) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EffectsEntryType) GetNameOk() (*string, bool) {
+func (o *SetEffectsEntryType) GetNameOk() (*string, bool) {
 	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
@@ -64,7 +64,7 @@ func (o *EffectsEntryType) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *EffectsEntryType) HasName() bool {
+func (o *SetEffectsEntryType) HasName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -73,12 +73,12 @@ func (o *EffectsEntryType) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *EffectsEntryType) SetName(v string) {
+func (o *SetEffectsEntryType) SetName(v string) {
 	o.Name = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *EffectsEntryType) GetId() int32 {
+func (o *SetEffectsEntryType) GetId() int32 {
 	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
@@ -88,7 +88,7 @@ func (o *EffectsEntryType) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EffectsEntryType) GetIdOk() (*int32, bool) {
+func (o *SetEffectsEntryType) GetIdOk() (*int32, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -96,7 +96,7 @@ func (o *EffectsEntryType) GetIdOk() (*int32, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *EffectsEntryType) HasId() bool {
+func (o *SetEffectsEntryType) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -105,12 +105,12 @@ func (o *EffectsEntryType) HasId() bool {
 }
 
 // SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *EffectsEntryType) SetId(v int32) {
+func (o *SetEffectsEntryType) SetId(v int32) {
 	o.Id = &v
 }
 
 // GetIsMeta returns the IsMeta field value if set, zero value otherwise.
-func (o *EffectsEntryType) GetIsMeta() bool {
+func (o *SetEffectsEntryType) GetIsMeta() bool {
 	if o == nil || IsNil(o.IsMeta) {
 		var ret bool
 		return ret
@@ -120,7 +120,7 @@ func (o *EffectsEntryType) GetIsMeta() bool {
 
 // GetIsMetaOk returns a tuple with the IsMeta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EffectsEntryType) GetIsMetaOk() (*bool, bool) {
+func (o *SetEffectsEntryType) GetIsMetaOk() (*bool, bool) {
 	if o == nil || IsNil(o.IsMeta) {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *EffectsEntryType) GetIsMetaOk() (*bool, bool) {
 }
 
 // HasIsMeta returns a boolean if a field has been set.
-func (o *EffectsEntryType) HasIsMeta() bool {
+func (o *SetEffectsEntryType) HasIsMeta() bool {
 	if o != nil && !IsNil(o.IsMeta) {
 		return true
 	}
@@ -137,12 +137,12 @@ func (o *EffectsEntryType) HasIsMeta() bool {
 }
 
 // SetIsMeta gets a reference to the given bool and assigns it to the IsMeta field.
-func (o *EffectsEntryType) SetIsMeta(v bool) {
+func (o *SetEffectsEntryType) SetIsMeta(v bool) {
 	o.IsMeta = &v
 }
 
 // GetIsActive returns the IsActive field value if set, zero value otherwise.
-func (o *EffectsEntryType) GetIsActive() bool {
+func (o *SetEffectsEntryType) GetIsActive() bool {
 	if o == nil || IsNil(o.IsActive) {
 		var ret bool
 		return ret
@@ -152,7 +152,7 @@ func (o *EffectsEntryType) GetIsActive() bool {
 
 // GetIsActiveOk returns a tuple with the IsActive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EffectsEntryType) GetIsActiveOk() (*bool, bool) {
+func (o *SetEffectsEntryType) GetIsActiveOk() (*bool, bool) {
 	if o == nil || IsNil(o.IsActive) {
 		return nil, false
 	}
@@ -160,7 +160,7 @@ func (o *EffectsEntryType) GetIsActiveOk() (*bool, bool) {
 }
 
 // HasIsActive returns a boolean if a field has been set.
-func (o *EffectsEntryType) HasIsActive() bool {
+func (o *SetEffectsEntryType) HasIsActive() bool {
 	if o != nil && !IsNil(o.IsActive) {
 		return true
 	}
@@ -169,11 +169,11 @@ func (o *EffectsEntryType) HasIsActive() bool {
 }
 
 // SetIsActive gets a reference to the given bool and assigns it to the IsActive field.
-func (o *EffectsEntryType) SetIsActive(v bool) {
+func (o *SetEffectsEntryType) SetIsActive(v bool) {
 	o.IsActive = &v
 }
 
-func (o EffectsEntryType) MarshalJSON() ([]byte, error) {
+func (o SetEffectsEntryType) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -181,7 +181,7 @@ func (o EffectsEntryType) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o EffectsEntryType) ToMap() (map[string]interface{}, error) {
+func (o SetEffectsEntryType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
@@ -198,38 +198,38 @@ func (o EffectsEntryType) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableEffectsEntryType struct {
-	value *EffectsEntryType
+type NullableSetEffectsEntryType struct {
+	value *SetEffectsEntryType
 	isSet bool
 }
 
-func (v NullableEffectsEntryType) Get() *EffectsEntryType {
+func (v NullableSetEffectsEntryType) Get() *SetEffectsEntryType {
 	return v.value
 }
 
-func (v *NullableEffectsEntryType) Set(val *EffectsEntryType) {
+func (v *NullableSetEffectsEntryType) Set(val *SetEffectsEntryType) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableEffectsEntryType) IsSet() bool {
+func (v NullableSetEffectsEntryType) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableEffectsEntryType) Unset() {
+func (v *NullableSetEffectsEntryType) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableEffectsEntryType(val *EffectsEntryType) *NullableEffectsEntryType {
-	return &NullableEffectsEntryType{value: val, isSet: true}
+func NewNullableSetEffectsEntryType(val *SetEffectsEntryType) *NullableSetEffectsEntryType {
+	return &NullableSetEffectsEntryType{value: val, isSet: true}
 }
 
-func (v NullableEffectsEntryType) MarshalJSON() ([]byte, error) {
+func (v NullableSetEffectsEntryType) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableEffectsEntryType) UnmarshalJSON(src []byte) error {
+func (v *NullableSetEffectsEntryType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the EffectsEntry type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &EffectsEntry{}
+// checks if the SetEffectsEntry type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SetEffectsEntry{}
 
-// EffectsEntry struct for EffectsEntry
-type EffectsEntry struct {
+// SetEffectsEntry struct for SetEffectsEntry
+type SetEffectsEntry struct {
 	// minimum int value, can be a single if ignore_int_max and no ignore_int_min
 	IntMinimum *int32 `json:"int_minimum,omitempty"`
 	// maximum int value, if not ignore_int_max and not ignore_int_min, the effect has a range value
@@ -31,27 +31,29 @@ type EffectsEntry struct {
 	IgnoreIntMax *bool `json:"ignore_int_max,omitempty"`
 	// all fields from above encoded in a single string
 	Formatted *string `json:"formatted,omitempty"`
+	// how many items it needs to trigger this effect with the given set
+	ItemCombination *int32 `json:"item_combination,omitempty"`
 }
 
-// NewEffectsEntry instantiates a new EffectsEntry object
+// NewSetEffectsEntry instantiates a new SetEffectsEntry object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEffectsEntry() *EffectsEntry {
-	this := EffectsEntry{}
+func NewSetEffectsEntry() *SetEffectsEntry {
+	this := SetEffectsEntry{}
 	return &this
 }
 
-// NewEffectsEntryWithDefaults instantiates a new EffectsEntry object
+// NewSetEffectsEntryWithDefaults instantiates a new SetEffectsEntry object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewEffectsEntryWithDefaults() *EffectsEntry {
-	this := EffectsEntry{}
+func NewSetEffectsEntryWithDefaults() *SetEffectsEntry {
+	this := SetEffectsEntry{}
 	return &this
 }
 
 // GetIntMinimum returns the IntMinimum field value if set, zero value otherwise.
-func (o *EffectsEntry) GetIntMinimum() int32 {
+func (o *SetEffectsEntry) GetIntMinimum() int32 {
 	if o == nil || IsNil(o.IntMinimum) {
 		var ret int32
 		return ret
@@ -61,7 +63,7 @@ func (o *EffectsEntry) GetIntMinimum() int32 {
 
 // GetIntMinimumOk returns a tuple with the IntMinimum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EffectsEntry) GetIntMinimumOk() (*int32, bool) {
+func (o *SetEffectsEntry) GetIntMinimumOk() (*int32, bool) {
 	if o == nil || IsNil(o.IntMinimum) {
 		return nil, false
 	}
@@ -69,7 +71,7 @@ func (o *EffectsEntry) GetIntMinimumOk() (*int32, bool) {
 }
 
 // HasIntMinimum returns a boolean if a field has been set.
-func (o *EffectsEntry) HasIntMinimum() bool {
+func (o *SetEffectsEntry) HasIntMinimum() bool {
 	if o != nil && !IsNil(o.IntMinimum) {
 		return true
 	}
@@ -78,12 +80,12 @@ func (o *EffectsEntry) HasIntMinimum() bool {
 }
 
 // SetIntMinimum gets a reference to the given int32 and assigns it to the IntMinimum field.
-func (o *EffectsEntry) SetIntMinimum(v int32) {
+func (o *SetEffectsEntry) SetIntMinimum(v int32) {
 	o.IntMinimum = &v
 }
 
 // GetIntMaximum returns the IntMaximum field value if set, zero value otherwise.
-func (o *EffectsEntry) GetIntMaximum() int32 {
+func (o *SetEffectsEntry) GetIntMaximum() int32 {
 	if o == nil || IsNil(o.IntMaximum) {
 		var ret int32
 		return ret
@@ -93,7 +95,7 @@ func (o *EffectsEntry) GetIntMaximum() int32 {
 
 // GetIntMaximumOk returns a tuple with the IntMaximum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EffectsEntry) GetIntMaximumOk() (*int32, bool) {
+func (o *SetEffectsEntry) GetIntMaximumOk() (*int32, bool) {
 	if o == nil || IsNil(o.IntMaximum) {
 		return nil, false
 	}
@@ -101,7 +103,7 @@ func (o *EffectsEntry) GetIntMaximumOk() (*int32, bool) {
 }
 
 // HasIntMaximum returns a boolean if a field has been set.
-func (o *EffectsEntry) HasIntMaximum() bool {
+func (o *SetEffectsEntry) HasIntMaximum() bool {
 	if o != nil && !IsNil(o.IntMaximum) {
 		return true
 	}
@@ -110,12 +112,12 @@ func (o *EffectsEntry) HasIntMaximum() bool {
 }
 
 // SetIntMaximum gets a reference to the given int32 and assigns it to the IntMaximum field.
-func (o *EffectsEntry) SetIntMaximum(v int32) {
+func (o *SetEffectsEntry) SetIntMaximum(v int32) {
 	o.IntMaximum = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *EffectsEntry) GetType() SetEffectsEntryType {
+func (o *SetEffectsEntry) GetType() SetEffectsEntryType {
 	if o == nil || IsNil(o.Type) {
 		var ret SetEffectsEntryType
 		return ret
@@ -125,7 +127,7 @@ func (o *EffectsEntry) GetType() SetEffectsEntryType {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EffectsEntry) GetTypeOk() (*SetEffectsEntryType, bool) {
+func (o *SetEffectsEntry) GetTypeOk() (*SetEffectsEntryType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -133,7 +135,7 @@ func (o *EffectsEntry) GetTypeOk() (*SetEffectsEntryType, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *EffectsEntry) HasType() bool {
+func (o *SetEffectsEntry) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -142,12 +144,12 @@ func (o *EffectsEntry) HasType() bool {
 }
 
 // SetType gets a reference to the given SetEffectsEntryType and assigns it to the Type field.
-func (o *EffectsEntry) SetType(v SetEffectsEntryType) {
+func (o *SetEffectsEntry) SetType(v SetEffectsEntryType) {
 	o.Type = &v
 }
 
 // GetIgnoreIntMin returns the IgnoreIntMin field value if set, zero value otherwise.
-func (o *EffectsEntry) GetIgnoreIntMin() bool {
+func (o *SetEffectsEntry) GetIgnoreIntMin() bool {
 	if o == nil || IsNil(o.IgnoreIntMin) {
 		var ret bool
 		return ret
@@ -157,7 +159,7 @@ func (o *EffectsEntry) GetIgnoreIntMin() bool {
 
 // GetIgnoreIntMinOk returns a tuple with the IgnoreIntMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EffectsEntry) GetIgnoreIntMinOk() (*bool, bool) {
+func (o *SetEffectsEntry) GetIgnoreIntMinOk() (*bool, bool) {
 	if o == nil || IsNil(o.IgnoreIntMin) {
 		return nil, false
 	}
@@ -165,7 +167,7 @@ func (o *EffectsEntry) GetIgnoreIntMinOk() (*bool, bool) {
 }
 
 // HasIgnoreIntMin returns a boolean if a field has been set.
-func (o *EffectsEntry) HasIgnoreIntMin() bool {
+func (o *SetEffectsEntry) HasIgnoreIntMin() bool {
 	if o != nil && !IsNil(o.IgnoreIntMin) {
 		return true
 	}
@@ -174,12 +176,12 @@ func (o *EffectsEntry) HasIgnoreIntMin() bool {
 }
 
 // SetIgnoreIntMin gets a reference to the given bool and assigns it to the IgnoreIntMin field.
-func (o *EffectsEntry) SetIgnoreIntMin(v bool) {
+func (o *SetEffectsEntry) SetIgnoreIntMin(v bool) {
 	o.IgnoreIntMin = &v
 }
 
 // GetIgnoreIntMax returns the IgnoreIntMax field value if set, zero value otherwise.
-func (o *EffectsEntry) GetIgnoreIntMax() bool {
+func (o *SetEffectsEntry) GetIgnoreIntMax() bool {
 	if o == nil || IsNil(o.IgnoreIntMax) {
 		var ret bool
 		return ret
@@ -189,7 +191,7 @@ func (o *EffectsEntry) GetIgnoreIntMax() bool {
 
 // GetIgnoreIntMaxOk returns a tuple with the IgnoreIntMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EffectsEntry) GetIgnoreIntMaxOk() (*bool, bool) {
+func (o *SetEffectsEntry) GetIgnoreIntMaxOk() (*bool, bool) {
 	if o == nil || IsNil(o.IgnoreIntMax) {
 		return nil, false
 	}
@@ -197,7 +199,7 @@ func (o *EffectsEntry) GetIgnoreIntMaxOk() (*bool, bool) {
 }
 
 // HasIgnoreIntMax returns a boolean if a field has been set.
-func (o *EffectsEntry) HasIgnoreIntMax() bool {
+func (o *SetEffectsEntry) HasIgnoreIntMax() bool {
 	if o != nil && !IsNil(o.IgnoreIntMax) {
 		return true
 	}
@@ -206,12 +208,12 @@ func (o *EffectsEntry) HasIgnoreIntMax() bool {
 }
 
 // SetIgnoreIntMax gets a reference to the given bool and assigns it to the IgnoreIntMax field.
-func (o *EffectsEntry) SetIgnoreIntMax(v bool) {
+func (o *SetEffectsEntry) SetIgnoreIntMax(v bool) {
 	o.IgnoreIntMax = &v
 }
 
 // GetFormatted returns the Formatted field value if set, zero value otherwise.
-func (o *EffectsEntry) GetFormatted() string {
+func (o *SetEffectsEntry) GetFormatted() string {
 	if o == nil || IsNil(o.Formatted) {
 		var ret string
 		return ret
@@ -221,7 +223,7 @@ func (o *EffectsEntry) GetFormatted() string {
 
 // GetFormattedOk returns a tuple with the Formatted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EffectsEntry) GetFormattedOk() (*string, bool) {
+func (o *SetEffectsEntry) GetFormattedOk() (*string, bool) {
 	if o == nil || IsNil(o.Formatted) {
 		return nil, false
 	}
@@ -229,7 +231,7 @@ func (o *EffectsEntry) GetFormattedOk() (*string, bool) {
 }
 
 // HasFormatted returns a boolean if a field has been set.
-func (o *EffectsEntry) HasFormatted() bool {
+func (o *SetEffectsEntry) HasFormatted() bool {
 	if o != nil && !IsNil(o.Formatted) {
 		return true
 	}
@@ -238,11 +240,43 @@ func (o *EffectsEntry) HasFormatted() bool {
 }
 
 // SetFormatted gets a reference to the given string and assigns it to the Formatted field.
-func (o *EffectsEntry) SetFormatted(v string) {
+func (o *SetEffectsEntry) SetFormatted(v string) {
 	o.Formatted = &v
 }
 
-func (o EffectsEntry) MarshalJSON() ([]byte, error) {
+// GetItemCombination returns the ItemCombination field value if set, zero value otherwise.
+func (o *SetEffectsEntry) GetItemCombination() int32 {
+	if o == nil || IsNil(o.ItemCombination) {
+		var ret int32
+		return ret
+	}
+	return *o.ItemCombination
+}
+
+// GetItemCombinationOk returns a tuple with the ItemCombination field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SetEffectsEntry) GetItemCombinationOk() (*int32, bool) {
+	if o == nil || IsNil(o.ItemCombination) {
+		return nil, false
+	}
+	return o.ItemCombination, true
+}
+
+// HasItemCombination returns a boolean if a field has been set.
+func (o *SetEffectsEntry) HasItemCombination() bool {
+	if o != nil && !IsNil(o.ItemCombination) {
+		return true
+	}
+
+	return false
+}
+
+// SetItemCombination gets a reference to the given int32 and assigns it to the ItemCombination field.
+func (o *SetEffectsEntry) SetItemCombination(v int32) {
+	o.ItemCombination = &v
+}
+
+func (o SetEffectsEntry) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -250,7 +284,7 @@ func (o EffectsEntry) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o EffectsEntry) ToMap() (map[string]interface{}, error) {
+func (o SetEffectsEntry) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.IntMinimum) {
 		toSerialize["int_minimum"] = o.IntMinimum
@@ -270,41 +304,44 @@ func (o EffectsEntry) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Formatted) {
 		toSerialize["formatted"] = o.Formatted
 	}
+	if !IsNil(o.ItemCombination) {
+		toSerialize["item_combination"] = o.ItemCombination
+	}
 	return toSerialize, nil
 }
 
-type NullableEffectsEntry struct {
-	value *EffectsEntry
+type NullableSetEffectsEntry struct {
+	value *SetEffectsEntry
 	isSet bool
 }
 
-func (v NullableEffectsEntry) Get() *EffectsEntry {
+func (v NullableSetEffectsEntry) Get() *SetEffectsEntry {
 	return v.value
 }
 
-func (v *NullableEffectsEntry) Set(val *EffectsEntry) {
+func (v *NullableSetEffectsEntry) Set(val *SetEffectsEntry) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableEffectsEntry) IsSet() bool {
+func (v NullableSetEffectsEntry) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableEffectsEntry) Unset() {
+func (v *NullableSetEffectsEntry) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableEffectsEntry(val *EffectsEntry) *NullableEffectsEntry {
-	return &NullableEffectsEntry{value: val, isSet: true}
+func NewNullableSetEffectsEntry(val *SetEffectsEntry) *NullableSetEffectsEntry {
+	return &NullableSetEffectsEntry{value: val, isSet: true}
 }
 
-func (v NullableEffectsEntry) MarshalJSON() ([]byte, error) {
+func (v NullableSetEffectsEntry) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableEffectsEntry) UnmarshalJSON(src []byte) error {
+func (v *NullableSetEffectsEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

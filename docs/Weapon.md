@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **ApCost** | Pointer to **int32** |  | [optional] 
 **Range** | Pointer to [**WeaponRange**](WeaponRange.md) |  | [optional] 
 **Recipe** | Pointer to [**[]RecipeEntry**](RecipeEntry.md) |  | [optional] 
-**ParentSet** | Pointer to [**NullableEquipmentParentSet**](EquipmentParentSet.md) |  | [optional] 
+**ParentSet** | Pointer to [**NullableItemListEntryParentSet**](ItemListEntryParentSet.md) |  | [optional] 
 
 ## Methods
 
@@ -525,20 +525,20 @@ HasRecipe returns a boolean if a field has been set.
 UnsetRecipe ensures that no value is present for Recipe, not even an explicit nil
 ### GetParentSet
 
-`func (o *Weapon) GetParentSet() EquipmentParentSet`
+`func (o *Weapon) GetParentSet() ItemListEntryParentSet`
 
 GetParentSet returns the ParentSet field if non-nil, zero value otherwise.
 
 ### GetParentSetOk
 
-`func (o *Weapon) GetParentSetOk() (*EquipmentParentSet, bool)`
+`func (o *Weapon) GetParentSetOk() (*ItemListEntryParentSet, bool)`
 
 GetParentSetOk returns a tuple with the ParentSet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParentSet
 
-`func (o *Weapon) SetParentSet(v EquipmentParentSet)`
+`func (o *Weapon) SetParentSet(v ItemListEntryParentSet)`
 
 SetParentSet sets ParentSet field to given value.
 

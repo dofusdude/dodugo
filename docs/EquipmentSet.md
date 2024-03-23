@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **AnkamaId** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **EquipmentIds** | Pointer to **[]int32** |  | [optional] 
-**Effects** | Pointer to [**[][]EffectsEntry**]([]EffectsEntry.md) |  | [optional] 
+**Effects** | Pointer to [**[][]SetEffectsEntry**]([]SetEffectsEntry.md) |  | [optional] 
 **HighestEquipmentLevel** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -106,20 +106,20 @@ HasEquipmentIds returns a boolean if a field has been set.
 
 ### GetEffects
 
-`func (o *EquipmentSet) GetEffects() [][]EffectsEntry`
+`func (o *EquipmentSet) GetEffects() [][]SetEffectsEntry`
 
 GetEffects returns the Effects field if non-nil, zero value otherwise.
 
 ### GetEffectsOk
 
-`func (o *EquipmentSet) GetEffectsOk() (*[][]EffectsEntry, bool)`
+`func (o *EquipmentSet) GetEffectsOk() (*[][]SetEffectsEntry, bool)`
 
 GetEffectsOk returns a tuple with the Effects field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEffects
 
-`func (o *EquipmentSet) SetEffects(v [][]EffectsEntry)`
+`func (o *EquipmentSet) SetEffects(v [][]SetEffectsEntry)`
 
 SetEffects sets Effects field to given value.
 

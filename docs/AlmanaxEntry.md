@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Bonus** | Pointer to [**AlmanaxEntryBonus**](AlmanaxEntryBonus.md) |  | [optional] 
 **Date** | Pointer to **string** |  | [optional] 
 **Tribute** | Pointer to [**AlmanaxEntryTribute**](AlmanaxEntryTribute.md) |  | [optional] 
+**RewardKamas** | Pointer to **NullableInt32** | Amount of Kamas you get as reward for finishing this Almanax quest. | [optional] 
 
 ## Methods
 
@@ -102,6 +103,41 @@ SetTribute sets Tribute field to given value.
 
 HasTribute returns a boolean if a field has been set.
 
+### GetRewardKamas
+
+`func (o *AlmanaxEntry) GetRewardKamas() int32`
+
+GetRewardKamas returns the RewardKamas field if non-nil, zero value otherwise.
+
+### GetRewardKamasOk
+
+`func (o *AlmanaxEntry) GetRewardKamasOk() (*int32, bool)`
+
+GetRewardKamasOk returns a tuple with the RewardKamas field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRewardKamas
+
+`func (o *AlmanaxEntry) SetRewardKamas(v int32)`
+
+SetRewardKamas sets RewardKamas field to given value.
+
+### HasRewardKamas
+
+`func (o *AlmanaxEntry) HasRewardKamas() bool`
+
+HasRewardKamas returns a boolean if a field has been set.
+
+### SetRewardKamasNil
+
+`func (o *AlmanaxEntry) SetRewardKamasNil(b bool)`
+
+ SetRewardKamasNil sets the value for RewardKamas to be an explicit nil
+
+### UnsetRewardKamas
+`func (o *AlmanaxEntry) UnsetRewardKamas()`
+
+UnsetRewardKamas ensures that no value is present for RewardKamas, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

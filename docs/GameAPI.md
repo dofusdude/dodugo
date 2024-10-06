@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetGameSearch
 
-> []GetGameSearch200ResponseInner GetGameSearch(ctx, language, game).Query(query).FilterType(filterType).Limit(limit).FieldsItem(fieldsItem).Execute()
+> []GetGameSearch200ResponseInner GetGameSearch(ctx, language, game).Query(query).FilterType(filterType).Limit(limit).FieldsItem(fieldsItem).FilterTypeEnum(filterTypeEnum).Execute()
 
 Game Search
 
@@ -36,10 +36,11 @@ func main() {
 	filterType := []string{"FilterType_example"} // []string | only results with all specific type (optional)
 	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
 	fieldsItem := []string{"FieldsItem_example"} // []string | adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. (optional)
+	filterTypeEnum := []string{"Inner_example"} // []string | multi-filter results with the english item type name, including \"mount\" and \"set\" from filter[type]. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GameAPI.GetGameSearch(context.Background(), language, game).Query(query).FilterType(filterType).Limit(limit).FieldsItem(fieldsItem).Execute()
+	resp, r, err := apiClient.GameAPI.GetGameSearch(context.Background(), language, game).Query(query).FilterType(filterType).Limit(limit).FieldsItem(fieldsItem).FilterTypeEnum(filterTypeEnum).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `GameAPI.GetGameSearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -71,6 +72,7 @@ Name | Type | Description  | Notes
  **filterType** | **[]string** | only results with all specific type | 
  **limit** | **int32** | maximum number of returned results | [default to 8]
  **fieldsItem** | **[]string** | adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. | 
+ **filterTypeEnum** | **[]string** | multi-filter results with the english item type name, including \&quot;mount\&quot; and \&quot;set\&quot; from filter[type]. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | 
 
 ### Return type
 
@@ -92,7 +94,7 @@ No authorization required
 
 ## GetItemsAllSearch
 
-> []ItemsListEntryTyped GetItemsAllSearch(ctx, language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
+> []ItemsListEntryTyped GetItemsAllSearch(ctx, language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).FilterTypeEnum(filterTypeEnum).Execute()
 
 Search All Items
 
@@ -118,10 +120,11 @@ func main() {
 	filterMinLevel := int32(190) // int32 | only results which level is equal or above this value (optional)
 	filterMaxLevel := int32(200) // int32 | only results which level is equal or below this value (optional)
 	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
+	filterTypeEnum := []string{"Inner_example"} // []string | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GameAPI.GetItemsAllSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).Execute()
+	resp, r, err := apiClient.GameAPI.GetItemsAllSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).FilterTypeEnum(filterTypeEnum).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `GameAPI.GetItemsAllSearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -154,6 +157,7 @@ Name | Type | Description  | Notes
  **filterMinLevel** | **int32** | only results which level is equal or above this value | 
  **filterMaxLevel** | **int32** | only results which level is equal or below this value | 
  **limit** | **int32** | maximum number of returned results | [default to 8]
+ **filterTypeEnum** | **[]string** | multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | 
 
 ### Return type
 

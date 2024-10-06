@@ -39,7 +39,7 @@ info:
 
     ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h).
   title: dofusdude
-  version: 0.9.0
+  version: 0.9.1
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -144,6 +144,20 @@ paths:
           maximum: 100
           minimum: 1
           type: integer
+        style: form
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - boots
+          items:
+            type: string
+          type: array
+          uniqueItems: true
         style: form
       responses:
         "200":
@@ -515,6 +529,20 @@ paths:
           minimum: 1
           type: integer
         style: form
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - vigilantes
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -653,6 +681,20 @@ paths:
           minimum: 1
           type: integer
         style: form
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - bread
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -789,6 +831,20 @@ paths:
           maximum: 100
           minimum: 1
           type: integer
+        style: form
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - plant
+          items:
+            type: string
+          type: array
+          uniqueItems: true
         style: form
       responses:
         "200":
@@ -934,6 +990,21 @@ paths:
           type: array
           uniqueItems: true
         style: form
+      - description: "multi-filter results with the english item type name, including\
+          \ \"mount\" and \"set\" from filter[type]. Add with \"wood\" or \"+wood\"\
+          \ and exclude with \"-wood\"."
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - boots
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -1072,6 +1143,20 @@ paths:
           minimum: 1
           type: integer
         style: form
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - boots
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -1170,7 +1255,7 @@ paths:
         name: "filter[type_name]"
         required: false
         schema:
-          example: Costume
+          example: Wings
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -1208,6 +1293,20 @@ paths:
           maximum: 100
           minimum: 1
           type: integer
+        style: form
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - wings
+          items:
+            type: string
+          type: array
+          uniqueItems: true
         style: form
       responses:
         "200":
@@ -2891,6 +2990,20 @@ paths:
           type: array
           uniqueItems: true
         style: form
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - sword
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -3058,6 +3171,20 @@ paths:
           type: array
           uniqueItems: true
         style: form
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - wood
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -3208,6 +3335,20 @@ paths:
             - description
             - conditions
             - effects
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - chest
+          items:
             type: string
           type: array
           uniqueItems: true
@@ -3382,6 +3523,20 @@ paths:
           type: array
           uniqueItems: true
         style: form
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - sufokia
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -3534,6 +3689,20 @@ paths:
             - description
             - conditions
             - effects
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - ceremonial-hat
+          items:
             type: string
           type: array
           uniqueItems: true
@@ -4714,6 +4883,29 @@ paths:
       - meta
       x-stoplight:
         id: 4oyiu8nbwwgds
+  /dofus2/meta/version:
+    get:
+      description: The current game version of the hosted data.
+      operationId: get-meta-version
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Main:
+                  value:
+                    version: 2.73.3.5
+                    release: main
+                    update_stamp: 2024-10-03T22:43:10.420677+02:00
+              schema:
+                $ref: '#/components/schemas/get_meta_version_200_response'
+          description: OK
+      summary: Game Version
+      tags:
+      - meta
+      x-stoplight:
+        id: ha9mde87rn0in
   /dofus2/meta/search/types:
     get:
       description: "Get all types for /{game}/{lang}/search available for filtering.\
@@ -4745,6 +4937,38 @@ paths:
       - meta
       x-stoplight:
         id: v67mknkhaif2h
+  /dofus2/meta/items/types:
+    get:
+      description: |-
+        Get all types of all items. Primarily used for filtering more detailed types in listings or search endpoints.
+        All names are english for comparing them inside applications.
+        Ordering is not guaranteed to persist with game updates.
+      operationId: get-item-types
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                List:
+                  value:
+                  - items-consumables
+                  - items-cosmetics
+                  - items-resources
+                  - items-equipment
+                  - items-quest_items
+                  - mounts
+                  - sets
+              schema:
+                items:
+                  type: string
+                type: array
+          description: OK
+      summary: Available Item Types
+      tags:
+      - meta
+      x-stoplight:
+        id: j8a5zpi8i20xe
   /dofus2/meta/{language}/almanax/bonuses:
     get:
       description: Get all the available bonuses and their id for filtering them in
@@ -7552,6 +7776,24 @@ components:
           description: Type classification
           type: string
       type: object
+    get_meta_version_200_response:
+      example:
+        release: release
+        update_stamp: update_stamp
+        version: version
+      properties:
+        version:
+          type: string
+        release:
+          type: string
+        update_stamp:
+          type: string
+      type: object
+      x-examples:
+        Example 1:
+          version: 2.73.3.5
+          release: main
+          update_stamp: 2024-10-03T22:43:10.420677+02:00
     get_meta_almanax_bonuses_200_response_inner:
       example:
         name: name

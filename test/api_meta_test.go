@@ -34,6 +34,18 @@ func Test_dodugo_MetaAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test MetaAPIService GetItemTypes", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MetaAPI.GetItemTypes(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MetaAPIService GetMetaAlmanaxBonuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -67,6 +79,18 @@ func Test_dodugo_MetaAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.MetaAPI.GetMetaElements(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MetaAPIService GetMetaVersion", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MetaAPI.GetMetaVersion(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

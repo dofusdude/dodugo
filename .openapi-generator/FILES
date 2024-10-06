@@ -43,6 +43,7 @@ docs/EquipmentSet.md
 docs/GameAPI.md
 docs/GetGameSearch200ResponseInner.md
 docs/GetMetaAlmanaxBonuses200ResponseInner.md
+docs/GetMetaVersion200Response.md
 docs/GetMetaWebhooksTwitter200Response.md
 docs/ImageUrls.md
 docs/ItemListEntry.md
@@ -99,6 +100,7 @@ model_equipment.go
 model_equipment_set.go
 model_get_game_search_200_response_inner.go
 model_get_meta_almanax_bonuses_200_response_inner.go
+model_get_meta_version_200_response.go
 model_get_meta_webhooks_twitter_200_response.go
 model_image_urls.go
 model_item_list_entry.go

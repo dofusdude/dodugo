@@ -3,7 +3,7 @@ dofusdude
 
 # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.0
+API version: 0.9.1
 Contact: stelzo@steado.de
 */
 
@@ -122,13 +122,13 @@ func (a *SetsAPIService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*Set
 	}
 
 	if r.sortLevel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sort[level]", r.sortLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort[level]", r.sortLevel, "form", "")
 	}
 	if r.filterMinHighestEquipmentLevel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_highest_equipment_level]", r.filterMinHighestEquipmentLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_highest_equipment_level]", r.filterMinHighestEquipmentLevel, "form", "")
 	}
 	if r.filterMaxHighestEquipmentLevel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -148,7 +148,7 @@ func (a *SetsAPIService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*Set
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.acceptEncoding != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -289,22 +289,22 @@ func (a *SetsAPIService) GetSetsListExecute(r ApiGetSetsListRequest) (*SetsListP
 	}
 
 	if r.sortLevel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sort[level]", r.sortLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort[level]", r.sortLevel, "form", "")
 	}
 	if r.filterMinHighestEquipmentLevel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_highest_equipment_level]", r.filterMinHighestEquipmentLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_highest_equipment_level]", r.filterMinHighestEquipmentLevel, "form", "")
 	}
 	if r.filterMaxHighestEquipmentLevel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "form", "")
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page[size]", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page[size]", r.pageSize, "form", "")
 	}
 	if r.pageNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page[number]", r.pageNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page[number]", r.pageNumber, "form", "")
 	}
 	if r.fieldsSet != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fields[set]", r.fieldsSet, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields[set]", r.fieldsSet, "form", "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -450,15 +450,15 @@ func (a *SetsAPIService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]SetL
 		return localVarReturnValue, nil, reportError("query is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "form", "")
 	if r.filterMinHighestEquipmentLevel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_highest_equipment_level]", r.filterMinHighestEquipmentLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_highest_equipment_level]", r.filterMinHighestEquipmentLevel, "form", "")
 	}
 	if r.filterMaxHighestEquipmentLevel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "form", "")
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	} else {
 		var defaultValue int32 = 8
 		r.limit = &defaultValue

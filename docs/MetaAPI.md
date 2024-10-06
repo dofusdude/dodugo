@@ -5,9 +5,11 @@ All URIs are relative to *https://api.dofusdu.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetGameSearchTypes**](MetaAPI.md#GetGameSearchTypes) | **Get** /dofus2/meta/search/types | Available Game Search Types
+[**GetItemTypes**](MetaAPI.md#GetItemTypes) | **Get** /dofus2/meta/items/types | Available Item Types
 [**GetMetaAlmanaxBonuses**](MetaAPI.md#GetMetaAlmanaxBonuses) | **Get** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses
 [**GetMetaAlmanaxBonusesSearch**](MetaAPI.md#GetMetaAlmanaxBonusesSearch) | **Get** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses
 [**GetMetaElements**](MetaAPI.md#GetMetaElements) | **Get** /dofus2/meta/elements | Effects and Condition Elements
+[**GetMetaVersion**](MetaAPI.md#GetMetaVersion) | **Get** /dofus2/meta/version | Game Version
 
 
 
@@ -52,6 +54,67 @@ This endpoint does not need any parameter.
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetGameSearchTypesRequest struct via the builder pattern
+
+
+### Return type
+
+**[]string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetItemTypes
+
+> []string GetItemTypes(ctx).Execute()
+
+Available Item Types
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetaAPI.GetItemTypes(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetaAPI.GetItemTypes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetItemTypes`: []string
+	fmt.Fprintf(os.Stdout, "Response from `MetaAPI.GetItemTypes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetItemTypesRequest struct via the builder pattern
 
 
 ### Return type
@@ -262,6 +325,67 @@ Other parameters are passed through a pointer to a apiGetMetaElementsRequest str
 ### Return type
 
 **[]string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMetaVersion
+
+> GetMetaVersion200Response GetMetaVersion(ctx).Execute()
+
+Game Version
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/dofusdude/dodugo"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetaAPI.GetMetaVersion(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetaAPI.GetMetaVersion``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMetaVersion`: GetMetaVersion200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetaAPI.GetMetaVersion`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMetaVersionRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetMetaVersion200Response**](GetMetaVersion200Response.md)
 
 ### Authorization
 

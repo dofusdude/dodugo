@@ -3,7 +3,7 @@ dofusdude
 
 # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.0
+API version: 0.9.1
 Contact: stelzo@steado.de
 */
 
@@ -33,6 +33,7 @@ type ApiGetGameSearchRequest struct {
 	filterType *[]string
 	limit *int32
 	fieldsItem *[]string
+	filterTypeEnum *[]string
 }
 
 // search query
@@ -56,6 +57,12 @@ func (r ApiGetGameSearchRequest) Limit(limit int32) ApiGetGameSearchRequest {
 // adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed.
 func (r ApiGetGameSearchRequest) FieldsItem(fieldsItem []string) ApiGetGameSearchRequest {
 	r.fieldsItem = &fieldsItem
+	return r
+}
+
+// multi-filter results with the english item type name, including \&quot;mount\&quot; and \&quot;set\&quot; from filter[type]. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;.
+func (r ApiGetGameSearchRequest) FilterTypeEnum(filterTypeEnum []string) ApiGetGameSearchRequest {
+	r.filterTypeEnum = &filterTypeEnum
 	return r
 }
 
@@ -114,18 +121,21 @@ func (a *GameAPIService) GetGameSearchExecute(r ApiGetGameSearchRequest) ([]GetG
 		return localVarReturnValue, nil, reportError("query is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "form", "")
 	if r.filterType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type]", r.filterType, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type]", r.filterType, "form", "csv")
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	} else {
 		var defaultValue int32 = 8
 		r.limit = &defaultValue
 	}
 	if r.fieldsItem != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fields[item]", r.fieldsItem, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields[item]", r.fieldsItem, "form", "csv")
+	}
+	if r.filterTypeEnum != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type_enum]", r.filterTypeEnum, "form", "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -191,6 +201,7 @@ type ApiGetItemsAllSearchRequest struct {
 	filterMinLevel *int32
 	filterMaxLevel *int32
 	limit *int32
+	filterTypeEnum *[]string
 }
 
 // case sensitive search query
@@ -220,6 +231,12 @@ func (r ApiGetItemsAllSearchRequest) FilterMaxLevel(filterMaxLevel int32) ApiGet
 // maximum number of returned results
 func (r ApiGetItemsAllSearchRequest) Limit(limit int32) ApiGetItemsAllSearchRequest {
 	r.limit = &limit
+	return r
+}
+
+// multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;.
+func (r ApiGetItemsAllSearchRequest) FilterTypeEnum(filterTypeEnum []string) ApiGetItemsAllSearchRequest {
+	r.filterTypeEnum = &filterTypeEnum
 	return r
 }
 
@@ -278,21 +295,24 @@ func (a *GameAPIService) GetItemsAllSearchExecute(r ApiGetItemsAllSearchRequest)
 		return localVarReturnValue, nil, reportError("query is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "form", "")
 	if r.filterTypeName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type_name]", r.filterTypeName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type_name]", r.filterTypeName, "form", "")
 	}
 	if r.filterMinLevel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_level]", r.filterMinLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_level]", r.filterMinLevel, "form", "")
 	}
 	if r.filterMaxLevel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_level]", r.filterMaxLevel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_level]", r.filterMaxLevel, "form", "")
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	} else {
 		var defaultValue int32 = 8
 		r.limit = &defaultValue
+	}
+	if r.filterTypeEnum != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type_enum]", r.filterTypeEnum, "form", "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

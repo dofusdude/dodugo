@@ -39,7 +39,7 @@ info:
 
     ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h).
   title: dofusdude
-  version: 0.9.1
+  version: 0.9.2
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -3950,7 +3950,7 @@ paths:
                       prev: null
                       next: null
                       last: null
-                    items:
+                    sets:
                     - ankama_id: 0
                       name: string
                       items: 0
@@ -6524,124 +6524,123 @@ components:
         id: wp54br61flkau
     Sets-List-Paged:
       example:
+        sets:
+        - effects:
+          - - ignore_int_min: true
+              ignore_int_max: true
+              item_combination: 2
+              formatted: formatted
+              int_maximum: 5
+              type:
+                is_meta: true
+                is_active: true
+                name: name
+                id: 5
+              int_minimum: 5
+            - ignore_int_min: true
+              ignore_int_max: true
+              item_combination: 2
+              formatted: formatted
+              int_maximum: 5
+              type:
+                is_meta: true
+                is_active: true
+                name: name
+                id: 5
+              int_minimum: 5
+          - - ignore_int_min: true
+              ignore_int_max: true
+              item_combination: 2
+              formatted: formatted
+              int_maximum: 5
+              type:
+                is_meta: true
+                is_active: true
+                name: name
+                id: 5
+              int_minimum: 5
+            - ignore_int_min: true
+              ignore_int_max: true
+              item_combination: 2
+              formatted: formatted
+              int_maximum: 5
+              type:
+                is_meta: true
+                is_active: true
+                name: name
+                id: 5
+              int_minimum: 5
+          level: 1
+          name: name
+          equipment_ids:
+          - 7
+          - 7
+          items: 6
+          ankama_id: 0
+        - effects:
+          - - ignore_int_min: true
+              ignore_int_max: true
+              item_combination: 2
+              formatted: formatted
+              int_maximum: 5
+              type:
+                is_meta: true
+                is_active: true
+                name: name
+                id: 5
+              int_minimum: 5
+            - ignore_int_min: true
+              ignore_int_max: true
+              item_combination: 2
+              formatted: formatted
+              int_maximum: 5
+              type:
+                is_meta: true
+                is_active: true
+                name: name
+                id: 5
+              int_minimum: 5
+          - - ignore_int_min: true
+              ignore_int_max: true
+              item_combination: 2
+              formatted: formatted
+              int_maximum: 5
+              type:
+                is_meta: true
+                is_active: true
+                name: name
+                id: 5
+              int_minimum: 5
+            - ignore_int_min: true
+              ignore_int_max: true
+              item_combination: 2
+              formatted: formatted
+              int_maximum: 5
+              type:
+                is_meta: true
+                is_active: true
+                name: name
+                id: 5
+              int_minimum: 5
+          level: 1
+          name: name
+          equipment_ids:
+          - 7
+          - 7
+          items: 6
+          ankama_id: 0
         _links:
           next: next
           last: last
           prev: prev
           first: first
-        items:
-        - effects:
-          - - ignore_int_min: true
-              ignore_int_max: true
-              item_combination: 2
-              formatted: formatted
-              int_maximum: 5
-              type:
-                is_meta: true
-                is_active: true
-                name: name
-                id: 5
-              int_minimum: 5
-            - ignore_int_min: true
-              ignore_int_max: true
-              item_combination: 2
-              formatted: formatted
-              int_maximum: 5
-              type:
-                is_meta: true
-                is_active: true
-                name: name
-                id: 5
-              int_minimum: 5
-          - - ignore_int_min: true
-              ignore_int_max: true
-              item_combination: 2
-              formatted: formatted
-              int_maximum: 5
-              type:
-                is_meta: true
-                is_active: true
-                name: name
-                id: 5
-              int_minimum: 5
-            - ignore_int_min: true
-              ignore_int_max: true
-              item_combination: 2
-              formatted: formatted
-              int_maximum: 5
-              type:
-                is_meta: true
-                is_active: true
-                name: name
-                id: 5
-              int_minimum: 5
-          level: 1
-          name: name
-          equipment_ids:
-          - 7
-          - 7
-          items: 6
-          ankama_id: 0
-        - effects:
-          - - ignore_int_min: true
-              ignore_int_max: true
-              item_combination: 2
-              formatted: formatted
-              int_maximum: 5
-              type:
-                is_meta: true
-                is_active: true
-                name: name
-                id: 5
-              int_minimum: 5
-            - ignore_int_min: true
-              ignore_int_max: true
-              item_combination: 2
-              formatted: formatted
-              int_maximum: 5
-              type:
-                is_meta: true
-                is_active: true
-                name: name
-                id: 5
-              int_minimum: 5
-          - - ignore_int_min: true
-              ignore_int_max: true
-              item_combination: 2
-              formatted: formatted
-              int_maximum: 5
-              type:
-                is_meta: true
-                is_active: true
-                name: name
-                id: 5
-              int_minimum: 5
-            - ignore_int_min: true
-              ignore_int_max: true
-              item_combination: 2
-              formatted: formatted
-              int_maximum: 5
-              type:
-                is_meta: true
-                is_active: true
-                name: name
-                id: 5
-              int_minimum: 5
-          level: 1
-          name: name
-          equipment_ids:
-          - 7
-          - 7
-          items: 6
-          ankama_id: 0
       properties:
         _links:
           $ref: '#/components/schemas/Links-Paged'
-        items:
+        sets:
           items:
             $ref: '#/components/schemas/Set-List-Entry'
           type: array
-      title: ""
       type: object
       x-stoplight:
         id: kr369f842c2w9

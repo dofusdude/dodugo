@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**LinksPaged**](LinksPaged.md) |  | [optional] 
-**Items** | Pointer to [**[]SetListEntry**](SetListEntry.md) |  | [optional] 
+**Sets** | Pointer to [**[]SetListEntry**](SetListEntry.md) |  | [optional] 
 
 ## Methods
 
@@ -51,30 +51,30 @@ SetLinks sets Links field to given value.
 
 HasLinks returns a boolean if a field has been set.
 
-### GetItems
+### GetSets
 
-`func (o *SetsListPaged) GetItems() []SetListEntry`
+`func (o *SetsListPaged) GetSets() []SetListEntry`
 
-GetItems returns the Items field if non-nil, zero value otherwise.
+GetSets returns the Sets field if non-nil, zero value otherwise.
 
-### GetItemsOk
+### GetSetsOk
 
-`func (o *SetsListPaged) GetItemsOk() (*[]SetListEntry, bool)`
+`func (o *SetsListPaged) GetSetsOk() (*[]SetListEntry, bool)`
 
-GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
+GetSetsOk returns a tuple with the Sets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetItems
+### SetSets
 
-`func (o *SetsListPaged) SetItems(v []SetListEntry)`
+`func (o *SetsListPaged) SetSets(v []SetListEntry)`
 
-SetItems sets Items field to given value.
+SetSets sets Sets field to given value.
 
-### HasItems
+### HasSets
 
-`func (o *SetsListPaged) HasItems() bool`
+`func (o *SetsListPaged) HasSets() bool`
 
-HasItems returns a boolean if a field has been set.
+HasSets returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

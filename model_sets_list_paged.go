@@ -3,7 +3,7 @@ dofusdude
 
 # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.1
+API version: 0.9.2
 Contact: stelzo@steado.de
 */
 
@@ -21,7 +21,7 @@ var _ MappedNullable = &SetsListPaged{}
 // SetsListPaged struct for SetsListPaged
 type SetsListPaged struct {
 	Links *LinksPaged `json:"_links,omitempty"`
-	Items []SetListEntry `json:"items,omitempty"`
+	Sets []SetListEntry `json:"sets,omitempty"`
 }
 
 // NewSetsListPaged instantiates a new SetsListPaged object
@@ -73,36 +73,36 @@ func (o *SetsListPaged) SetLinks(v LinksPaged) {
 	o.Links = &v
 }
 
-// GetItems returns the Items field value if set, zero value otherwise.
-func (o *SetsListPaged) GetItems() []SetListEntry {
-	if o == nil || IsNil(o.Items) {
+// GetSets returns the Sets field value if set, zero value otherwise.
+func (o *SetsListPaged) GetSets() []SetListEntry {
+	if o == nil || IsNil(o.Sets) {
 		var ret []SetListEntry
 		return ret
 	}
-	return o.Items
+	return o.Sets
 }
 
-// GetItemsOk returns a tuple with the Items field value if set, nil otherwise
+// GetSetsOk returns a tuple with the Sets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SetsListPaged) GetItemsOk() ([]SetListEntry, bool) {
-	if o == nil || IsNil(o.Items) {
+func (o *SetsListPaged) GetSetsOk() ([]SetListEntry, bool) {
+	if o == nil || IsNil(o.Sets) {
 		return nil, false
 	}
-	return o.Items, true
+	return o.Sets, true
 }
 
-// HasItems returns a boolean if a field has been set.
-func (o *SetsListPaged) HasItems() bool {
-	if o != nil && !IsNil(o.Items) {
+// HasSets returns a boolean if a field has been set.
+func (o *SetsListPaged) HasSets() bool {
+	if o != nil && !IsNil(o.Sets) {
 		return true
 	}
 
 	return false
 }
 
-// SetItems gets a reference to the given []SetListEntry and assigns it to the Items field.
-func (o *SetsListPaged) SetItems(v []SetListEntry) {
-	o.Items = v
+// SetSets gets a reference to the given []SetListEntry and assigns it to the Sets field.
+func (o *SetsListPaged) SetSets(v []SetListEntry) {
+	o.Sets = v
 }
 
 func (o SetsListPaged) MarshalJSON() ([]byte, error) {
@@ -118,8 +118,8 @@ func (o SetsListPaged) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
-	if !IsNil(o.Items) {
-		toSerialize["items"] = o.Items
+	if !IsNil(o.Sets) {
+		toSerialize["sets"] = o.Sets
 	}
 	return toSerialize, nil
 }

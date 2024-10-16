@@ -39,7 +39,7 @@ info:
 
     ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h).
   title: dofusdude
-  version: 0.9.2
+  version: 0.9.3
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -399,6 +399,15 @@ paths:
           maximum: 100
           minimum: 1
           type: integer
+        style: form
+      - description: "filter sets based on if they only got cosmetic items in it.\
+          \ If true, the item ids are for the cosmetic endpoints instead of equipment."
+        explode: true
+        in: query
+        name: "filter[is_cosmetic]"
+        required: false
+        schema:
+          type: boolean
         style: form
       responses:
         "200":
@@ -2646,6 +2655,15 @@ paths:
           type: array
           uniqueItems: true
         style: form
+      - description: "filter sets based on if they only got cosmetic items in it.\
+          \ If true, the item ids are for the cosmetic endpoints instead of equipment."
+        explode: true
+        in: query
+        name: "filter[is_cosmetic]"
+        required: false
+        schema:
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -3938,6 +3956,15 @@ paths:
           - gzip
           type: string
         style: simple
+      - description: "filter sets based on if they only got cosmetic items in it.\
+          \ If true, the item ids are for the cosmetic endpoints instead of equipment."
+        explode: true
+        in: query
+        name: "filter[is_cosmetic]"
+        required: false
+        schema:
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -4062,6 +4089,20 @@ paths:
           - gzip
           type: string
         style: simple
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - boots
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -4202,6 +4243,20 @@ paths:
           - gzip
           type: string
         style: simple
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - boots
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -4335,6 +4390,20 @@ paths:
           - gzip
           type: string
         style: simple
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - boots
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -4474,6 +4543,20 @@ paths:
           - gzip
           type: string
         style: simple
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - boots
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -4608,6 +4691,20 @@ paths:
           - gzip
           type: string
         style: simple
+      - description: multi-filter results with the english type name. Add with "wood"
+          or "+wood" and exclude with "-wood".
+        explode: false
+        in: query
+        name: "filter[type_enum]"
+        required: false
+        schema:
+          example:
+          - boots
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -6110,6 +6207,7 @@ components:
         id: t7g4fratmdgkx
     Equipment-Set:
       example:
+        is_cosmetic: true
         effects:
         - - ignore_int_min: true
             ignore_int_max: true
@@ -6179,12 +6277,16 @@ components:
           type: array
         highest_equipment_level:
           type: integer
-      title: ""
+        is_cosmetic:
+          type: boolean
+          x-stoplight:
+            id: 7d1w5073pqtt7
       type: object
       x-stoplight:
         id: xmkp08r20yq44
     Set-List-Entry:
       example:
+        is_cosmetic: true
         effects:
         - - ignore_int_min: true
             ignore_int_max: true
@@ -6259,7 +6361,10 @@ components:
             type: integer
           nullable: true
           type: array
-      title: ""
+        is_cosmetic:
+          type: boolean
+          x-stoplight:
+            id: uztiykrx0bobf
       type: object
       x-examples: {}
       x-stoplight:
@@ -6525,7 +6630,8 @@ components:
     Sets-List-Paged:
       example:
         sets:
-        - effects:
+        - is_cosmetic: true
+          effects:
           - - ignore_int_min: true
               ignore_int_max: true
               item_combination: 2
@@ -6577,7 +6683,8 @@ components:
           - 7
           items: 6
           ankama_id: 0
-        - effects:
+        - is_cosmetic: true
+          effects:
           - - ignore_int_min: true
               ignore_int_max: true
               item_combination: 2

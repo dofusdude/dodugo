@@ -3,7 +3,7 @@ dofusdude
 
 # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.2
+API version: 0.9.3
 Contact: stelzo@steado.de
 */
 
@@ -25,6 +25,7 @@ type EquipmentSet struct {
 	EquipmentIds []int32 `json:"equipment_ids,omitempty"`
 	Effects [][]SetEffectsEntry `json:"effects,omitempty"`
 	HighestEquipmentLevel *int32 `json:"highest_equipment_level,omitempty"`
+	IsCosmetic *bool `json:"is_cosmetic,omitempty"`
 }
 
 // NewEquipmentSet instantiates a new EquipmentSet object
@@ -205,6 +206,38 @@ func (o *EquipmentSet) SetHighestEquipmentLevel(v int32) {
 	o.HighestEquipmentLevel = &v
 }
 
+// GetIsCosmetic returns the IsCosmetic field value if set, zero value otherwise.
+func (o *EquipmentSet) GetIsCosmetic() bool {
+	if o == nil || IsNil(o.IsCosmetic) {
+		var ret bool
+		return ret
+	}
+	return *o.IsCosmetic
+}
+
+// GetIsCosmeticOk returns a tuple with the IsCosmetic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EquipmentSet) GetIsCosmeticOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsCosmetic) {
+		return nil, false
+	}
+	return o.IsCosmetic, true
+}
+
+// HasIsCosmetic returns a boolean if a field has been set.
+func (o *EquipmentSet) HasIsCosmetic() bool {
+	if o != nil && !IsNil(o.IsCosmetic) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCosmetic gets a reference to the given bool and assigns it to the IsCosmetic field.
+func (o *EquipmentSet) SetIsCosmetic(v bool) {
+	o.IsCosmetic = &v
+}
+
 func (o EquipmentSet) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -229,6 +262,9 @@ func (o EquipmentSet) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.HighestEquipmentLevel) {
 		toSerialize["highest_equipment_level"] = o.HighestEquipmentLevel
+	}
+	if !IsNil(o.IsCosmetic) {
+		toSerialize["is_cosmetic"] = o.IsCosmetic
 	}
 	return toSerialize, nil
 }

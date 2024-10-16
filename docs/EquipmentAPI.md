@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## GetAllItemsEquipmentList
 
-> ItemsListPaged GetAllItemsEquipmentList(ctx, language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
+> ItemsListPaged GetAllItemsEquipmentList(ctx, language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).FilterTypeEnum(filterTypeEnum).Execute()
 
 List All Equipment
 
@@ -39,10 +39,11 @@ func main() {
 	filterMinLevel := int32(10) // int32 | only results which level is equal or above this value (optional)
 	filterMaxLevel := int32(60) // int32 | only results which level is equal or below this value (optional)
 	acceptEncoding := "acceptEncoding_example" // string | optional compression for saving bandwidth (optional)
+	filterTypeEnum := []string{"Inner_example"} // []string | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EquipmentAPI.GetAllItemsEquipmentList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).Execute()
+	resp, r, err := apiClient.EquipmentAPI.GetAllItemsEquipmentList(context.Background(), language, game).SortLevel(sortLevel).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).AcceptEncoding(acceptEncoding).FilterTypeEnum(filterTypeEnum).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `EquipmentAPI.GetAllItemsEquipmentList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -75,6 +76,7 @@ Name | Type | Description  | Notes
  **filterMinLevel** | **int32** | only results which level is equal or above this value | 
  **filterMaxLevel** | **int32** | only results which level is equal or below this value | 
  **acceptEncoding** | **string** | optional compression for saving bandwidth | 
+ **filterTypeEnum** | **[]string** | multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | 
 
 ### Return type
 

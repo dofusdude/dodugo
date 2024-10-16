@@ -3,7 +3,7 @@ dofusdude
 
 # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.2
+API version: 0.9.3
 Contact: stelzo@steado.de
 */
 
@@ -33,6 +33,7 @@ type ApiGetAllSetsListRequest struct {
 	filterMinHighestEquipmentLevel *int32
 	filterMaxHighestEquipmentLevel *int32
 	acceptEncoding *string
+	filterIsCosmetic *bool
 }
 
 // sort the resulting list by level, default unsorted
@@ -56,6 +57,12 @@ func (r ApiGetAllSetsListRequest) FilterMaxHighestEquipmentLevel(filterMaxHighes
 // optional compression for saving bandwidth
 func (r ApiGetAllSetsListRequest) AcceptEncoding(acceptEncoding string) ApiGetAllSetsListRequest {
 	r.acceptEncoding = &acceptEncoding
+	return r
+}
+
+// filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
+func (r ApiGetAllSetsListRequest) FilterIsCosmetic(filterIsCosmetic bool) ApiGetAllSetsListRequest {
+	r.filterIsCosmetic = &filterIsCosmetic
 	return r
 }
 
@@ -130,6 +137,9 @@ func (a *SetsAPIService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*Set
 	if r.filterMaxHighestEquipmentLevel != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "form", "")
 	}
+	if r.filterIsCosmetic != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[is_cosmetic]", r.filterIsCosmetic, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -198,6 +208,7 @@ type ApiGetSetsListRequest struct {
 	pageSize *int32
 	pageNumber *int32
 	fieldsSet *[]string
+	filterIsCosmetic *bool
 }
 
 // sort the resulting list by level, default unsorted
@@ -233,6 +244,12 @@ func (r ApiGetSetsListRequest) PageNumber(pageNumber int32) ApiGetSetsListReques
 // adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed.
 func (r ApiGetSetsListRequest) FieldsSet(fieldsSet []string) ApiGetSetsListRequest {
 	r.fieldsSet = &fieldsSet
+	return r
+}
+
+// filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
+func (r ApiGetSetsListRequest) FilterIsCosmetic(filterIsCosmetic bool) ApiGetSetsListRequest {
+	r.filterIsCosmetic = &filterIsCosmetic
 	return r
 }
 
@@ -306,6 +323,9 @@ func (a *SetsAPIService) GetSetsListExecute(r ApiGetSetsListRequest) (*SetsListP
 	if r.fieldsSet != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields[set]", r.fieldsSet, "form", "csv")
 	}
+	if r.filterIsCosmetic != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[is_cosmetic]", r.filterIsCosmetic, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -369,6 +389,7 @@ type ApiGetSetsSearchRequest struct {
 	filterMinHighestEquipmentLevel *int32
 	filterMaxHighestEquipmentLevel *int32
 	limit *int32
+	filterIsCosmetic *bool
 }
 
 // case sensitive search query
@@ -392,6 +413,12 @@ func (r ApiGetSetsSearchRequest) FilterMaxHighestEquipmentLevel(filterMaxHighest
 // maximum number of returned results
 func (r ApiGetSetsSearchRequest) Limit(limit int32) ApiGetSetsSearchRequest {
 	r.limit = &limit
+	return r
+}
+
+// filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
+func (r ApiGetSetsSearchRequest) FilterIsCosmetic(filterIsCosmetic bool) ApiGetSetsSearchRequest {
+	r.filterIsCosmetic = &filterIsCosmetic
 	return r
 }
 
@@ -462,6 +489,9 @@ func (a *SetsAPIService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]SetL
 	} else {
 		var defaultValue int32 = 8
 		r.limit = &defaultValue
+	}
+	if r.filterIsCosmetic != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[is_cosmetic]", r.filterIsCosmetic, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Level** | Pointer to **int32** |  | [optional] 
 **Effects** | Pointer to [**[][]SetEffectsEntry**]([]SetEffectsEntry.md) |  | [optional] 
 **EquipmentIds** | Pointer to **[]int32** |  | [optional] 
+**IsCosmetic** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -200,6 +201,31 @@ HasEquipmentIds returns a boolean if a field has been set.
 `func (o *SetListEntry) UnsetEquipmentIds()`
 
 UnsetEquipmentIds ensures that no value is present for EquipmentIds, not even an explicit nil
+### GetIsCosmetic
+
+`func (o *SetListEntry) GetIsCosmetic() bool`
+
+GetIsCosmetic returns the IsCosmetic field if non-nil, zero value otherwise.
+
+### GetIsCosmeticOk
+
+`func (o *SetListEntry) GetIsCosmeticOk() (*bool, bool)`
+
+GetIsCosmeticOk returns a tuple with the IsCosmetic field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCosmetic
+
+`func (o *SetListEntry) SetIsCosmetic(v bool)`
+
+SetIsCosmetic sets IsCosmetic field to given value.
+
+### HasIsCosmetic
+
+`func (o *SetListEntry) HasIsCosmetic() bool`
+
+HasIsCosmetic returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

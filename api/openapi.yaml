@@ -39,7 +39,7 @@ info:
 
     ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h).
   title: dofusdude
-  version: 0.9.3
+  version: 0.9.4
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -1424,8 +1424,9 @@ paths:
                     type:
                       name: Ceremonial cape
                       id: 18
+                    is_weapon: false
                     level: 180
-                    pods: 0
+                    pods: 1
                     image_urls:
                       icon: https://api.dofusdu.de/dofus2/img/item/17481.png
                       sd: https://api.dofusdu.de/dofus2/img/item/17481-200.png
@@ -1448,11 +1449,12 @@ paths:
                         name: 'Compatible with:'
                         id: 1
                         is_meta: false
+                        is_active: false
                       ignore_int_min: true
                       ignore_int_max: true
                       formatted: "Compatible with: 0"
               schema:
-                $ref: '#/components/schemas/Cosmetic'
+                $ref: '#/components/schemas/Equipment'
           description: Cosmetic Found
         "400":
           description: |
@@ -3707,6 +3709,15 @@ paths:
             - description
             - conditions
             - effects
+            - is_weapon
+            - pods
+            - parent_set
+            - critical_hit_probability
+            - critical_hit_bonus
+            - is_two_handed
+            - max_cast_per_turn
+            - ap_cost
+            - range
             type: string
           type: array
           uniqueItems: true
@@ -3718,8 +3729,6 @@ paths:
         name: "filter[type_enum]"
         required: false
         schema:
-          example:
-          - ceremonial-hat
           items:
             type: string
           type: array
@@ -5734,103 +5743,6 @@ components:
       x-examples: {}
       x-stoplight:
         id: r5b3ia3ectz8q
-    Cosmetic:
-      example:
-        effects:
-        - ignore_int_min: true
-          ignore_int_max: true
-          formatted: formatted
-          int_maximum: 1
-          type:
-            is_meta: true
-            is_active: true
-            name: name
-            id: 5
-          int_minimum: 6
-        - ignore_int_min: true
-          ignore_int_max: true
-          formatted: formatted
-          int_maximum: 1
-          type:
-            is_meta: true
-            is_active: true
-            name: name
-            id: 5
-          int_minimum: 6
-        condition_tree:
-          children:
-          - null
-          - null
-          is_operand: false
-          relation: and
-        level: 1
-        name: name
-        recipe:
-        - quantity: 5
-          item_subtype: item_subtype
-          item_ankama_id: 1
-        - quantity: 5
-          item_subtype: item_subtype
-          item_ankama_id: 1
-        description: description
-        image_urls:
-          sd: sd
-          icon: icon
-          hq: hq
-          hd: hd
-        pods: 5
-        type:
-          name: name
-          id: 0
-        conditions:
-        - operator: operator
-          int_value: 5
-          element:
-            name: name
-            id: 6
-        - operator: operator
-          int_value: 5
-          element:
-            name: name
-            id: 6
-        ankama_id: 0
-      properties:
-        ankama_id:
-          type: integer
-        name:
-          type: string
-        description:
-          type: string
-        type:
-          $ref: '#/components/schemas/Cosmetic_type'
-        level:
-          type: integer
-        pods:
-          type: integer
-        image_urls:
-          $ref: '#/components/schemas/Image-Urls'
-        effects:
-          items:
-            $ref: '#/components/schemas/Effects-Entry'
-          nullable: true
-          type: array
-        conditions:
-          deprecated: true
-          items:
-            $ref: '#/components/schemas/Condition-Entry'
-          nullable: true
-          type: array
-        condition_tree:
-          $ref: '#/components/schemas/Condition-Tree-Node'
-        recipe:
-          items:
-            $ref: '#/components/schemas/Recipe-Entry'
-          nullable: true
-          type: array
-      type: object
-      x-examples: {}
-      x-stoplight:
-        id: rfawtzjwbqvco
     Recipe-Entry:
       example:
         quantity: 5
@@ -6002,7 +5914,7 @@ components:
           - null
           is_operand: false
           relation: and
-        level: 6
+        level: 1
         name: name
         recipe:
         - quantity: 5
@@ -6017,7 +5929,7 @@ components:
           icon: icon
           hq: hq
           hd: hd
-        pods: 1
+        pods: 5
         type:
           name: name
           id: 0
@@ -6041,7 +5953,7 @@ components:
         description:
           type: string
         type:
-          $ref: '#/components/schemas/Cosmetic_type'
+          $ref: '#/components/schemas/Resource_type'
         level:
           type: integer
         pods:
@@ -6914,6 +6826,69 @@ components:
         id: 1ubaw97npzw7b
       x-examples: {}
     Equipment:
+      example:
+        parent_set:
+          name: name
+          id: 7
+        level: 6
+        is_weapon: true
+        recipe:
+        - quantity: 5
+          item_subtype: item_subtype
+          item_ankama_id: 1
+        - quantity: 5
+          item_subtype: item_subtype
+          item_ankama_id: 1
+        description: description
+        image_urls:
+          sd: sd
+          icon: icon
+          hq: hq
+          hd: hd
+        type:
+          name: name
+          id: 6
+        effects:
+        - ignore_int_min: true
+          ignore_int_max: true
+          formatted: formatted
+          int_maximum: 1
+          type:
+            is_meta: true
+            is_active: true
+            name: name
+            id: 5
+          int_minimum: 6
+        - ignore_int_min: true
+          ignore_int_max: true
+          formatted: formatted
+          int_maximum: 1
+          type:
+            is_meta: true
+            is_active: true
+            name: name
+            id: 5
+          int_minimum: 6
+        condition_tree:
+          children:
+          - null
+          - null
+          is_operand: false
+          relation: and
+        name: name
+        pods: 1
+        conditions:
+        - operator: operator
+          int_value: 5
+          element:
+            name: name
+            id: 6
+        - operator: operator
+          int_value: 5
+          element:
+            name: name
+            id: 6
+        ankama_id: 0
       properties:
         ankama_id:
           type: integer
@@ -7939,17 +7914,6 @@ components:
         id:
           type: integer
       type: object
-    Cosmetic_type:
-      example:
-        name: name
-        id: 0
-      properties:
-        name:
-          type: string
-        id:
-          minimum: 0
-          type: integer
-      type: object
     Set_Effects_Entry_type:
       example:
         is_meta: true
@@ -7970,6 +7934,17 @@ components:
         is_active:
           description: Affects target or source actively.
           type: boolean
+      type: object
+    Resource_type:
+      example:
+        name: name
+        id: 0
+      properties:
+        name:
+          type: string
+        id:
+          minimum: 0
+          type: integer
       type: object
     Item_List_Entry_parent_set:
       example:

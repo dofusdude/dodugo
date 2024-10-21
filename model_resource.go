@@ -3,7 +3,7 @@ dofusdude
 
 # A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.3
+API version: 0.9.4
 Contact: stelzo@steado.de
 */
 
@@ -23,7 +23,7 @@ type Resource struct {
 	AnkamaId *int32 `json:"ankama_id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
-	Type *CosmeticType `json:"type,omitempty"`
+	Type *ResourceType `json:"type,omitempty"`
 	Level *int32 `json:"level,omitempty"`
 	Pods *int32 `json:"pods,omitempty"`
 	ImageUrls *ImageUrls `json:"image_urls,omitempty"`
@@ -148,9 +148,9 @@ func (o *Resource) SetDescription(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *Resource) GetType() CosmeticType {
+func (o *Resource) GetType() ResourceType {
 	if o == nil || IsNil(o.Type) {
-		var ret CosmeticType
+		var ret ResourceType
 		return ret
 	}
 	return *o.Type
@@ -158,7 +158,7 @@ func (o *Resource) GetType() CosmeticType {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Resource) GetTypeOk() (*CosmeticType, bool) {
+func (o *Resource) GetTypeOk() (*ResourceType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -174,8 +174,8 @@ func (o *Resource) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given CosmeticType and assigns it to the Type field.
-func (o *Resource) SetType(v CosmeticType) {
+// SetType gets a reference to the given ResourceType and assigns it to the Type field.
+func (o *Resource) SetType(v ResourceType) {
 	o.Type = &v
 }
 

@@ -1,4 +1,4 @@
-# CosmeticType
+# ResourceType
 
 ## Properties
 
@@ -9,70 +9,70 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewCosmeticType
+### NewResourceType
 
-`func NewCosmeticType() *CosmeticType`
+`func NewResourceType() *ResourceType`
 
-NewCosmeticType instantiates a new CosmeticType object
+NewResourceType instantiates a new ResourceType object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCosmeticTypeWithDefaults
+### NewResourceTypeWithDefaults
 
-`func NewCosmeticTypeWithDefaults() *CosmeticType`
+`func NewResourceTypeWithDefaults() *ResourceType`
 
-NewCosmeticTypeWithDefaults instantiates a new CosmeticType object
+NewResourceTypeWithDefaults instantiates a new ResourceType object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetName
 
-`func (o *CosmeticType) GetName() string`
+`func (o *ResourceType) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *CosmeticType) GetNameOk() (*string, bool)`
+`func (o *ResourceType) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *CosmeticType) SetName(v string)`
+`func (o *ResourceType) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *CosmeticType) HasName() bool`
+`func (o *ResourceType) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *CosmeticType) GetId() int32`
+`func (o *ResourceType) GetId() int32`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *CosmeticType) GetIdOk() (*int32, bool)`
+`func (o *ResourceType) GetIdOk() (*int32, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *CosmeticType) SetId(v int32)`
+`func (o *ResourceType) SetId(v int32)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *CosmeticType) HasId() bool`
+`func (o *ResourceType) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 

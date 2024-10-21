@@ -28,8 +28,6 @@ docs/ConditionTreeLeaf.md
 docs/ConditionTreeNode.md
 docs/ConditionTreeRelation.md
 docs/ConsumablesAPI.md
-docs/Cosmetic.md
-docs/CosmeticType.md
 docs/CosmeticsAPI.md
 docs/CreateAlmanaxWebhook.md
 docs/CreateAlmanaxWebhookDailySettings.md
@@ -64,6 +62,7 @@ docs/PutTwitterWebhook.md
 docs/QuestItemsAPI.md
 docs/RecipeEntry.md
 docs/Resource.md
+docs/ResourceType.md
 docs/ResourcesAPI.md
 docs/RssWebhook.md
 docs/SetEffectsEntry.md
@@ -88,8 +87,6 @@ model_condition_entry.go
 model_condition_tree_leaf.go
 model_condition_tree_node.go
 model_condition_tree_relation.go
-model_cosmetic.go
-model_cosmetic_type.go
 model_create_almanax_webhook.go
 model_create_almanax_webhook_daily_settings.go
 model_create_almanax_webhook_mentions_value_inner.go
@@ -118,6 +115,7 @@ model_put_rss_webhook.go
 model_put_twitter_webhook.go
 model_recipe_entry.go
 model_resource.go
+model_resource_type.go
 model_rss_webhook.go
 model_set_effects_entry.go
 model_set_effects_entry_type.go

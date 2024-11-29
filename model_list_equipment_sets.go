@@ -15,34 +15,34 @@ import (
 	"encoding/json"
 )
 
-// checks if the ListSets type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ListSets{}
+// checks if the ListEquipmentSets type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ListEquipmentSets{}
 
-// ListSets struct for ListSets
-type ListSets struct {
+// ListEquipmentSets struct for ListEquipmentSets
+type ListEquipmentSets struct {
 	Links *PagedLinks `json:"_links,omitempty"`
-	Sets []ListSet `json:"sets,omitempty"`
+	Sets []ListEquipmentSet `json:"sets,omitempty"`
 }
 
-// NewListSets instantiates a new ListSets object
+// NewListEquipmentSets instantiates a new ListEquipmentSets object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListSets() *ListSets {
-	this := ListSets{}
+func NewListEquipmentSets() *ListEquipmentSets {
+	this := ListEquipmentSets{}
 	return &this
 }
 
-// NewListSetsWithDefaults instantiates a new ListSets object
+// NewListEquipmentSetsWithDefaults instantiates a new ListEquipmentSets object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewListSetsWithDefaults() *ListSets {
-	this := ListSets{}
+func NewListEquipmentSetsWithDefaults() *ListEquipmentSets {
+	this := ListEquipmentSets{}
 	return &this
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *ListSets) GetLinks() PagedLinks {
+func (o *ListEquipmentSets) GetLinks() PagedLinks {
 	if o == nil || IsNil(o.Links) {
 		var ret PagedLinks
 		return ret
@@ -52,7 +52,7 @@ func (o *ListSets) GetLinks() PagedLinks {
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListSets) GetLinksOk() (*PagedLinks, bool) {
+func (o *ListEquipmentSets) GetLinksOk() (*PagedLinks, bool) {
 	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *ListSets) GetLinksOk() (*PagedLinks, bool) {
 }
 
 // HasLinks returns a boolean if a field has been set.
-func (o *ListSets) HasLinks() bool {
+func (o *ListEquipmentSets) HasLinks() bool {
 	if o != nil && !IsNil(o.Links) {
 		return true
 	}
@@ -69,14 +69,14 @@ func (o *ListSets) HasLinks() bool {
 }
 
 // SetLinks gets a reference to the given PagedLinks and assigns it to the Links field.
-func (o *ListSets) SetLinks(v PagedLinks) {
+func (o *ListEquipmentSets) SetLinks(v PagedLinks) {
 	o.Links = &v
 }
 
 // GetSets returns the Sets field value if set, zero value otherwise.
-func (o *ListSets) GetSets() []ListSet {
+func (o *ListEquipmentSets) GetSets() []ListEquipmentSet {
 	if o == nil || IsNil(o.Sets) {
-		var ret []ListSet
+		var ret []ListEquipmentSet
 		return ret
 	}
 	return o.Sets
@@ -84,7 +84,7 @@ func (o *ListSets) GetSets() []ListSet {
 
 // GetSetsOk returns a tuple with the Sets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListSets) GetSetsOk() ([]ListSet, bool) {
+func (o *ListEquipmentSets) GetSetsOk() ([]ListEquipmentSet, bool) {
 	if o == nil || IsNil(o.Sets) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *ListSets) GetSetsOk() ([]ListSet, bool) {
 }
 
 // HasSets returns a boolean if a field has been set.
-func (o *ListSets) HasSets() bool {
+func (o *ListEquipmentSets) HasSets() bool {
 	if o != nil && !IsNil(o.Sets) {
 		return true
 	}
@@ -100,12 +100,12 @@ func (o *ListSets) HasSets() bool {
 	return false
 }
 
-// SetSets gets a reference to the given []ListSet and assigns it to the Sets field.
-func (o *ListSets) SetSets(v []ListSet) {
+// SetSets gets a reference to the given []ListEquipmentSet and assigns it to the Sets field.
+func (o *ListEquipmentSets) SetSets(v []ListEquipmentSet) {
 	o.Sets = v
 }
 
-func (o ListSets) MarshalJSON() ([]byte, error) {
+func (o ListEquipmentSets) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -113,7 +113,7 @@ func (o ListSets) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ListSets) ToMap() (map[string]interface{}, error) {
+func (o ListEquipmentSets) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
@@ -124,38 +124,38 @@ func (o ListSets) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableListSets struct {
-	value *ListSets
+type NullableListEquipmentSets struct {
+	value *ListEquipmentSets
 	isSet bool
 }
 
-func (v NullableListSets) Get() *ListSets {
+func (v NullableListEquipmentSets) Get() *ListEquipmentSets {
 	return v.value
 }
 
-func (v *NullableListSets) Set(val *ListSets) {
+func (v *NullableListEquipmentSets) Set(val *ListEquipmentSets) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableListSets) IsSet() bool {
+func (v NullableListEquipmentSets) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableListSets) Unset() {
+func (v *NullableListEquipmentSets) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableListSets(val *ListSets) *NullableListSets {
-	return &NullableListSets{value: val, isSet: true}
+func NewNullableListEquipmentSets(val *ListEquipmentSets) *NullableListEquipmentSets {
+	return &NullableListEquipmentSets{value: val, isSet: true}
 }
 
-func (v NullableListSets) MarshalJSON() ([]byte, error) {
+func (v NullableListEquipmentSets) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableListSets) UnmarshalJSON(src []byte) error {
+func (v *NullableListEquipmentSets) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

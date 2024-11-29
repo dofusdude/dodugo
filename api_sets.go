@@ -73,7 +73,7 @@ func (r ApiGetAllSetsListRequest) FilterContainsCosmetics(filterContainsCosmetic
 	return r
 }
 
-func (r ApiGetAllSetsListRequest) Execute() (*ListSets, *http.Response, error) {
+func (r ApiGetAllSetsListRequest) Execute() (*ListEquipmentSets, *http.Response, error) {
 	return r.ApiService.GetAllSetsListExecute(r)
 }
 
@@ -107,13 +107,13 @@ func (a *SetsAPIService) GetAllSetsList(ctx context.Context, language string, ga
 }
 
 // Execute executes the request
-//  @return ListSets
-func (a *SetsAPIService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*ListSets, *http.Response, error) {
+//  @return ListEquipmentSets
+func (a *SetsAPIService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*ListEquipmentSets, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListSets
+		localVarReturnValue  *ListEquipmentSets
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsAPIService.GetAllSetsList")
@@ -291,7 +291,7 @@ func (r ApiGetSetsListRequest) FilterContainsCosmetics(filterContainsCosmetics b
 	return r
 }
 
-func (r ApiGetSetsListRequest) Execute() (*ListSets, *http.Response, error) {
+func (r ApiGetSetsListRequest) Execute() (*ListEquipmentSet, *http.Response, error) {
 	return r.ApiService.GetSetsListExecute(r)
 }
 
@@ -315,13 +315,13 @@ func (a *SetsAPIService) GetSetsList(ctx context.Context, language string, game 
 }
 
 // Execute executes the request
-//  @return ListSets
-func (a *SetsAPIService) GetSetsListExecute(r ApiGetSetsListRequest) (*ListSets, *http.Response, error) {
+//  @return ListEquipmentSet
+func (a *SetsAPIService) GetSetsListExecute(r ApiGetSetsListRequest) (*ListEquipmentSet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListSets
+		localVarReturnValue  *ListEquipmentSet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsAPIService.GetSetsList")
@@ -484,7 +484,7 @@ func (r ApiGetSetsSearchRequest) FilterIsCosmetic(filterIsCosmetic bool) ApiGetS
 	return r
 }
 
-func (r ApiGetSetsSearchRequest) Execute() ([]ListSet, *http.Response, error) {
+func (r ApiGetSetsSearchRequest) Execute() ([]ListEquipmentSet, *http.Response, error) {
 	return r.ApiService.GetSetsSearchExecute(r)
 }
 
@@ -508,13 +508,13 @@ func (a *SetsAPIService) GetSetsSearch(ctx context.Context, language string, gam
 }
 
 // Execute executes the request
-//  @return []ListSet
-func (a *SetsAPIService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]ListSet, *http.Response, error) {
+//  @return []ListEquipmentSet
+func (a *SetsAPIService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]ListEquipmentSet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ListSet
+		localVarReturnValue  []ListEquipmentSet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsAPIService.GetSetsSearch")
@@ -638,7 +638,7 @@ type ApiGetSetsSingleRequest struct {
 	game string
 }
 
-func (r ApiGetSetsSingleRequest) Execute() (*Set, *http.Response, error) {
+func (r ApiGetSetsSingleRequest) Execute() (*EquipmentSet, *http.Response, error) {
 	return r.ApiService.GetSetsSingleExecute(r)
 }
 
@@ -664,13 +664,13 @@ func (a *SetsAPIService) GetSetsSingle(ctx context.Context, language string, ank
 }
 
 // Execute executes the request
-//  @return Set
-func (a *SetsAPIService) GetSetsSingleExecute(r ApiGetSetsSingleRequest) (*Set, *http.Response, error) {
+//  @return EquipmentSet
+func (a *SetsAPIService) GetSetsSingleExecute(r ApiGetSetsSingleRequest) (*EquipmentSet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Set
+		localVarReturnValue  *EquipmentSet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsAPIService.GetSetsSingle")

@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the Set type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &Set{}
+// checks if the EquipmentSet type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &EquipmentSet{}
 
-// Set struct for Set
-type Set struct {
+// EquipmentSet struct for EquipmentSet
+type EquipmentSet struct {
 	AnkamaId *int32 `json:"ankama_id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	EquipmentIds []int32 `json:"equipment_ids,omitempty"`
@@ -28,25 +28,25 @@ type Set struct {
 	IsCosmetic *bool `json:"is_cosmetic,omitempty"`
 }
 
-// NewSet instantiates a new Set object
+// NewEquipmentSet instantiates a new EquipmentSet object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSet() *Set {
-	this := Set{}
+func NewEquipmentSet() *EquipmentSet {
+	this := EquipmentSet{}
 	return &this
 }
 
-// NewSetWithDefaults instantiates a new Set object
+// NewEquipmentSetWithDefaults instantiates a new EquipmentSet object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewSetWithDefaults() *Set {
-	this := Set{}
+func NewEquipmentSetWithDefaults() *EquipmentSet {
+	this := EquipmentSet{}
 	return &this
 }
 
 // GetAnkamaId returns the AnkamaId field value if set, zero value otherwise.
-func (o *Set) GetAnkamaId() int32 {
+func (o *EquipmentSet) GetAnkamaId() int32 {
 	if o == nil || IsNil(o.AnkamaId) {
 		var ret int32
 		return ret
@@ -56,7 +56,7 @@ func (o *Set) GetAnkamaId() int32 {
 
 // GetAnkamaIdOk returns a tuple with the AnkamaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Set) GetAnkamaIdOk() (*int32, bool) {
+func (o *EquipmentSet) GetAnkamaIdOk() (*int32, bool) {
 	if o == nil || IsNil(o.AnkamaId) {
 		return nil, false
 	}
@@ -64,7 +64,7 @@ func (o *Set) GetAnkamaIdOk() (*int32, bool) {
 }
 
 // HasAnkamaId returns a boolean if a field has been set.
-func (o *Set) HasAnkamaId() bool {
+func (o *EquipmentSet) HasAnkamaId() bool {
 	if o != nil && !IsNil(o.AnkamaId) {
 		return true
 	}
@@ -73,12 +73,12 @@ func (o *Set) HasAnkamaId() bool {
 }
 
 // SetAnkamaId gets a reference to the given int32 and assigns it to the AnkamaId field.
-func (o *Set) SetAnkamaId(v int32) {
+func (o *EquipmentSet) SetAnkamaId(v int32) {
 	o.AnkamaId = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *Set) GetName() string {
+func (o *EquipmentSet) GetName() string {
 	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
@@ -88,7 +88,7 @@ func (o *Set) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Set) GetNameOk() (*string, bool) {
+func (o *EquipmentSet) GetNameOk() (*string, bool) {
 	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
@@ -96,7 +96,7 @@ func (o *Set) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *Set) HasName() bool {
+func (o *EquipmentSet) HasName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -105,12 +105,12 @@ func (o *Set) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *Set) SetName(v string) {
+func (o *EquipmentSet) SetName(v string) {
 	o.Name = &v
 }
 
 // GetEquipmentIds returns the EquipmentIds field value if set, zero value otherwise.
-func (o *Set) GetEquipmentIds() []int32 {
+func (o *EquipmentSet) GetEquipmentIds() []int32 {
 	if o == nil || IsNil(o.EquipmentIds) {
 		var ret []int32
 		return ret
@@ -120,7 +120,7 @@ func (o *Set) GetEquipmentIds() []int32 {
 
 // GetEquipmentIdsOk returns a tuple with the EquipmentIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Set) GetEquipmentIdsOk() ([]int32, bool) {
+func (o *EquipmentSet) GetEquipmentIdsOk() ([]int32, bool) {
 	if o == nil || IsNil(o.EquipmentIds) {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *Set) GetEquipmentIdsOk() ([]int32, bool) {
 }
 
 // HasEquipmentIds returns a boolean if a field has been set.
-func (o *Set) HasEquipmentIds() bool {
+func (o *EquipmentSet) HasEquipmentIds() bool {
 	if o != nil && !IsNil(o.EquipmentIds) {
 		return true
 	}
@@ -137,12 +137,12 @@ func (o *Set) HasEquipmentIds() bool {
 }
 
 // SetEquipmentIds gets a reference to the given []int32 and assigns it to the EquipmentIds field.
-func (o *Set) SetEquipmentIds(v []int32) {
+func (o *EquipmentSet) SetEquipmentIds(v []int32) {
 	o.EquipmentIds = v
 }
 
 // GetEffects returns the Effects field value if set, zero value otherwise.
-func (o *Set) GetEffects() map[string][]Effect {
+func (o *EquipmentSet) GetEffects() map[string][]Effect {
 	if o == nil || IsNil(o.Effects) {
 		var ret map[string][]Effect
 		return ret
@@ -152,7 +152,7 @@ func (o *Set) GetEffects() map[string][]Effect {
 
 // GetEffectsOk returns a tuple with the Effects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Set) GetEffectsOk() (*map[string][]Effect, bool) {
+func (o *EquipmentSet) GetEffectsOk() (*map[string][]Effect, bool) {
 	if o == nil || IsNil(o.Effects) {
 		return nil, false
 	}
@@ -160,7 +160,7 @@ func (o *Set) GetEffectsOk() (*map[string][]Effect, bool) {
 }
 
 // HasEffects returns a boolean if a field has been set.
-func (o *Set) HasEffects() bool {
+func (o *EquipmentSet) HasEffects() bool {
 	if o != nil && !IsNil(o.Effects) {
 		return true
 	}
@@ -169,12 +169,12 @@ func (o *Set) HasEffects() bool {
 }
 
 // SetEffects gets a reference to the given map[string][]Effect and assigns it to the Effects field.
-func (o *Set) SetEffects(v map[string][]Effect) {
+func (o *EquipmentSet) SetEffects(v map[string][]Effect) {
 	o.Effects = &v
 }
 
 // GetHighestEquipmentLevel returns the HighestEquipmentLevel field value if set, zero value otherwise.
-func (o *Set) GetHighestEquipmentLevel() int32 {
+func (o *EquipmentSet) GetHighestEquipmentLevel() int32 {
 	if o == nil || IsNil(o.HighestEquipmentLevel) {
 		var ret int32
 		return ret
@@ -184,7 +184,7 @@ func (o *Set) GetHighestEquipmentLevel() int32 {
 
 // GetHighestEquipmentLevelOk returns a tuple with the HighestEquipmentLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Set) GetHighestEquipmentLevelOk() (*int32, bool) {
+func (o *EquipmentSet) GetHighestEquipmentLevelOk() (*int32, bool) {
 	if o == nil || IsNil(o.HighestEquipmentLevel) {
 		return nil, false
 	}
@@ -192,7 +192,7 @@ func (o *Set) GetHighestEquipmentLevelOk() (*int32, bool) {
 }
 
 // HasHighestEquipmentLevel returns a boolean if a field has been set.
-func (o *Set) HasHighestEquipmentLevel() bool {
+func (o *EquipmentSet) HasHighestEquipmentLevel() bool {
 	if o != nil && !IsNil(o.HighestEquipmentLevel) {
 		return true
 	}
@@ -201,12 +201,12 @@ func (o *Set) HasHighestEquipmentLevel() bool {
 }
 
 // SetHighestEquipmentLevel gets a reference to the given int32 and assigns it to the HighestEquipmentLevel field.
-func (o *Set) SetHighestEquipmentLevel(v int32) {
+func (o *EquipmentSet) SetHighestEquipmentLevel(v int32) {
 	o.HighestEquipmentLevel = &v
 }
 
 // GetIsCosmetic returns the IsCosmetic field value if set, zero value otherwise.
-func (o *Set) GetIsCosmetic() bool {
+func (o *EquipmentSet) GetIsCosmetic() bool {
 	if o == nil || IsNil(o.IsCosmetic) {
 		var ret bool
 		return ret
@@ -216,7 +216,7 @@ func (o *Set) GetIsCosmetic() bool {
 
 // GetIsCosmeticOk returns a tuple with the IsCosmetic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Set) GetIsCosmeticOk() (*bool, bool) {
+func (o *EquipmentSet) GetIsCosmeticOk() (*bool, bool) {
 	if o == nil || IsNil(o.IsCosmetic) {
 		return nil, false
 	}
@@ -224,7 +224,7 @@ func (o *Set) GetIsCosmeticOk() (*bool, bool) {
 }
 
 // HasIsCosmetic returns a boolean if a field has been set.
-func (o *Set) HasIsCosmetic() bool {
+func (o *EquipmentSet) HasIsCosmetic() bool {
 	if o != nil && !IsNil(o.IsCosmetic) {
 		return true
 	}
@@ -233,11 +233,11 @@ func (o *Set) HasIsCosmetic() bool {
 }
 
 // SetIsCosmetic gets a reference to the given bool and assigns it to the IsCosmetic field.
-func (o *Set) SetIsCosmetic(v bool) {
+func (o *EquipmentSet) SetIsCosmetic(v bool) {
 	o.IsCosmetic = &v
 }
 
-func (o Set) MarshalJSON() ([]byte, error) {
+func (o EquipmentSet) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -245,7 +245,7 @@ func (o Set) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o Set) ToMap() (map[string]interface{}, error) {
+func (o EquipmentSet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.AnkamaId) {
 		toSerialize["ankama_id"] = o.AnkamaId
@@ -268,38 +268,38 @@ func (o Set) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableSet struct {
-	value *Set
+type NullableEquipmentSet struct {
+	value *EquipmentSet
 	isSet bool
 }
 
-func (v NullableSet) Get() *Set {
+func (v NullableEquipmentSet) Get() *EquipmentSet {
 	return v.value
 }
 
-func (v *NullableSet) Set(val *Set) {
+func (v *NullableEquipmentSet) Set(val *EquipmentSet) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableSet) IsSet() bool {
+func (v NullableEquipmentSet) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableSet) Unset() {
+func (v *NullableEquipmentSet) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableSet(val *Set) *NullableSet {
-	return &NullableSet{value: val, isSet: true}
+func NewNullableEquipmentSet(val *EquipmentSet) *NullableEquipmentSet {
+	return &NullableEquipmentSet{value: val, isSet: true}
 }
 
-func (v NullableSet) MarshalJSON() ([]byte, error) {
+func (v NullableEquipmentSet) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableSet) UnmarshalJSON(src []byte) error {
+func (v *NullableEquipmentSet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

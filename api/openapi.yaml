@@ -371,7 +371,7 @@ paths:
               examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/ListSet'
+                  $ref: '#/components/schemas/ListEquipmentSet'
                 type: array
           description: ""
         "400":
@@ -1608,7 +1608,7 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/Set'
+                $ref: '#/components/schemas/EquipmentSet'
           description: ""
         "400":
           content:
@@ -1761,81 +1761,8 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                filter[min_highest_equipment_level] >= 150, sort[level] "desc":
-                  value:
-                    _links:
-                      first: https://api.dofusdu.de/dofus3/fr/sets/?page%5Bnumber%5D%3D1%26page%5Bsize%5D%3D16
-                      prev: ""
-                      next: https://api.dofusdu.de/dofus3/fr/sets/?page%5Bnumber%5D%3D2%26page%5Bsize%5D%3D16
-                      last: https://api.dofusdu.de/dofus3/fr/sets/?page%5Bnumber%5D%3D11%26page%5Bsize%5D%3D16
-                    sets:
-                    - ankama_id: 406
-                      name: Panoplie d'Atcham
-                      items: 3
-                      level: 200
-                    - ankama_id: 460
-                      name: Panoplie Volkorne
-                      items: 4
-                      level: 200
-                    - ankama_id: 499
-                      name: Reliques de l'Aurore Pourpre
-                      items: 6
-                      level: 200
-                    - ankama_id: 498
-                      name: Panoplie des Ravageurs
-                      items: 3
-                      level: 200
-                    - ankama_id: 496
-                      name: Panoplie du Pandamonium
-                      items: 3
-                      level: 200
-                    - ankama_id: 495
-                      name: Panoplie Possédée
-                      items: 3
-                      level: 200
-                    - ankama_id: 491
-                      name: Panoplie de Wulan
-                      items: 3
-                      level: 200
-                    - ankama_id: 489
-                      name: Panoplie du Wukang
-                      items: 3
-                      level: 200
-                    - ankama_id: 488
-                      name: Panoplie du Wukin
-                      items: 3
-                      level: 200
-                    - ankama_id: 477
-                      name: Panoplie de Corruption
-                      items: 3
-                      level: 200
-                    - ankama_id: 476
-                      name: Panoplie de Servitude
-                      items: 3
-                      level: 200
-                    - ankama_id: 475
-                      name: Panoplie de Guerre
-                      items: 3
-                      level: 200
-                    - ankama_id: 474
-                      name: Panoplie de Misère
-                      items: 3
-                      level: 200
-                    - ankama_id: 472
-                      name: Panoplie de Torkélonia
-                      items: 3
-                      level: 200
-                    - ankama_id: 471
-                      name: Panoplie Lunaire
-                      items: 3
-                      level: 200
-                    - ankama_id: 343
-                      name: Panoplie de Gein
-                      items: 3
-                      level: 200
               schema:
-                $ref: '#/components/schemas/ListSets'
+                $ref: '#/components/schemas/ListEquipmentSet'
           description: ""
         "400":
           content:
@@ -2954,7 +2881,7 @@ paths:
                       items: 0
                       level: 0
               schema:
-                $ref: '#/components/schemas/ListSets'
+                $ref: '#/components/schemas/ListEquipmentSets'
           description: ""
         "400":
           content:
@@ -4910,7 +4837,7 @@ components:
       x-examples: {}
       x-stoplight:
         id: 10otndsm7bw3k
-    Set:
+    EquipmentSet:
       example:
         is_cosmetic: true
         effects:
@@ -4968,11 +4895,11 @@ components:
           type: boolean
           x-stoplight:
             id: 7d1w5073pqtt7
-      title: Set
+      title: EquipmentSet
       type: object
       x-stoplight:
         id: xmkp08r20yq44
-    ListSet:
+    ListEquipmentSet:
       example:
         is_cosmetic: true
         effects:
@@ -5212,7 +5139,7 @@ components:
       type: object
       x-stoplight:
         id: wp54br61flkau
-    ListSets:
+    ListEquipmentSets:
       example:
         sets:
         - is_cosmetic: true
@@ -5285,7 +5212,7 @@ components:
           $ref: '#/components/schemas/PagedLinks'
         sets:
           items:
-            $ref: '#/components/schemas/ListSet'
+            $ref: '#/components/schemas/ListEquipmentSet'
           type: array
       title: ListSetPaged
       type: object
@@ -5660,7 +5587,7 @@ components:
       type: object
       x-stoplight:
         id: vhpfmq2ovxmfg
-    SetEffects:
+    EquipmentSetEffects:
       additionalProperties:
         items:
           $ref: '#/components/schemas/Effect'

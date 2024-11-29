@@ -38,6 +38,7 @@ docs/Effect.md
 docs/EffectType.md
 docs/Equipment.md
 docs/EquipmentAPI.md
+docs/EquipmentSet.md
 docs/Error.md
 docs/GameAPI.md
 docs/GameSearch.md
@@ -47,12 +48,12 @@ docs/GetMetaAlmanaxBonuses200ResponseInner.md
 docs/GetMetaWebhooksTwitter200Response.md
 docs/Images.md
 docs/ItemSubtype.md
+docs/ListEquipmentSet.md
+docs/ListEquipmentSets.md
 docs/ListItem.md
 docs/ListItemGeneral.md
 docs/ListItems.md
 docs/ListMounts.md
-docs/ListSet.md
-docs/ListSets.md
 docs/MetaAPI.md
 docs/Mount.md
 docs/MountFamily.md
@@ -67,7 +68,6 @@ docs/Recipe.md
 docs/Resource.md
 docs/ResourcesAPI.md
 docs/RssWebhook.md
-docs/Set.md
 docs/SetsAPI.md
 docs/TranslatedId.md
 docs/TwitterWebhook.md
@@ -95,6 +95,7 @@ model_create_twitter_webhook.go
 model_effect.go
 model_effect_type.go
 model_equipment.go
+model_equipment_set.go
 model_error.go
 model_game_search.go
 model_game_search_item.go
@@ -103,12 +104,12 @@ model_get_meta_almanax_bonuses_200_response_inner.go
 model_get_meta_webhooks_twitter_200_response.go
 model_images.go
 model_item_subtype.go
+model_list_equipment_set.go
+model_list_equipment_sets.go
 model_list_item.go
 model_list_item_general.go
 model_list_items.go
 model_list_mounts.go
-model_list_set.go
-model_list_sets.go
 model_mount.go
 model_mount_family.go
 model_paged_links.go
@@ -119,7 +120,6 @@ model_range.go
 model_recipe.go
 model_resource.go
 model_rss_webhook.go
-model_set.go
 model_translated_id.go
 model_twitter_webhook.go
 model_version.go

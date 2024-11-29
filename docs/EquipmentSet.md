@@ -1,4 +1,4 @@
-# Set
+# EquipmentSet
 
 ## Properties
 
@@ -13,170 +13,170 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewSet
+### NewEquipmentSet
 
-`func NewSet() *Set`
+`func NewEquipmentSet() *EquipmentSet`
 
-NewSet instantiates a new Set object
+NewEquipmentSet instantiates a new EquipmentSet object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSetWithDefaults
+### NewEquipmentSetWithDefaults
 
-`func NewSetWithDefaults() *Set`
+`func NewEquipmentSetWithDefaults() *EquipmentSet`
 
-NewSetWithDefaults instantiates a new Set object
+NewEquipmentSetWithDefaults instantiates a new EquipmentSet object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAnkamaId
 
-`func (o *Set) GetAnkamaId() int32`
+`func (o *EquipmentSet) GetAnkamaId() int32`
 
 GetAnkamaId returns the AnkamaId field if non-nil, zero value otherwise.
 
 ### GetAnkamaIdOk
 
-`func (o *Set) GetAnkamaIdOk() (*int32, bool)`
+`func (o *EquipmentSet) GetAnkamaIdOk() (*int32, bool)`
 
 GetAnkamaIdOk returns a tuple with the AnkamaId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAnkamaId
 
-`func (o *Set) SetAnkamaId(v int32)`
+`func (o *EquipmentSet) SetAnkamaId(v int32)`
 
 SetAnkamaId sets AnkamaId field to given value.
 
 ### HasAnkamaId
 
-`func (o *Set) HasAnkamaId() bool`
+`func (o *EquipmentSet) HasAnkamaId() bool`
 
 HasAnkamaId returns a boolean if a field has been set.
 
 ### GetName
 
-`func (o *Set) GetName() string`
+`func (o *EquipmentSet) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *Set) GetNameOk() (*string, bool)`
+`func (o *EquipmentSet) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *Set) SetName(v string)`
+`func (o *EquipmentSet) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *Set) HasName() bool`
+`func (o *EquipmentSet) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetEquipmentIds
 
-`func (o *Set) GetEquipmentIds() []int32`
+`func (o *EquipmentSet) GetEquipmentIds() []int32`
 
 GetEquipmentIds returns the EquipmentIds field if non-nil, zero value otherwise.
 
 ### GetEquipmentIdsOk
 
-`func (o *Set) GetEquipmentIdsOk() (*[]int32, bool)`
+`func (o *EquipmentSet) GetEquipmentIdsOk() (*[]int32, bool)`
 
 GetEquipmentIdsOk returns a tuple with the EquipmentIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEquipmentIds
 
-`func (o *Set) SetEquipmentIds(v []int32)`
+`func (o *EquipmentSet) SetEquipmentIds(v []int32)`
 
 SetEquipmentIds sets EquipmentIds field to given value.
 
 ### HasEquipmentIds
 
-`func (o *Set) HasEquipmentIds() bool`
+`func (o *EquipmentSet) HasEquipmentIds() bool`
 
 HasEquipmentIds returns a boolean if a field has been set.
 
 ### GetEffects
 
-`func (o *Set) GetEffects() map[string][]Effect`
+`func (o *EquipmentSet) GetEffects() map[string][]Effect`
 
 GetEffects returns the Effects field if non-nil, zero value otherwise.
 
 ### GetEffectsOk
 
-`func (o *Set) GetEffectsOk() (*map[string][]Effect, bool)`
+`func (o *EquipmentSet) GetEffectsOk() (*map[string][]Effect, bool)`
 
 GetEffectsOk returns a tuple with the Effects field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEffects
 
-`func (o *Set) SetEffects(v map[string][]Effect)`
+`func (o *EquipmentSet) SetEffects(v map[string][]Effect)`
 
 SetEffects sets Effects field to given value.
 
 ### HasEffects
 
-`func (o *Set) HasEffects() bool`
+`func (o *EquipmentSet) HasEffects() bool`
 
 HasEffects returns a boolean if a field has been set.
 
 ### GetHighestEquipmentLevel
 
-`func (o *Set) GetHighestEquipmentLevel() int32`
+`func (o *EquipmentSet) GetHighestEquipmentLevel() int32`
 
 GetHighestEquipmentLevel returns the HighestEquipmentLevel field if non-nil, zero value otherwise.
 
 ### GetHighestEquipmentLevelOk
 
-`func (o *Set) GetHighestEquipmentLevelOk() (*int32, bool)`
+`func (o *EquipmentSet) GetHighestEquipmentLevelOk() (*int32, bool)`
 
 GetHighestEquipmentLevelOk returns a tuple with the HighestEquipmentLevel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHighestEquipmentLevel
 
-`func (o *Set) SetHighestEquipmentLevel(v int32)`
+`func (o *EquipmentSet) SetHighestEquipmentLevel(v int32)`
 
 SetHighestEquipmentLevel sets HighestEquipmentLevel field to given value.
 
 ### HasHighestEquipmentLevel
 
-`func (o *Set) HasHighestEquipmentLevel() bool`
+`func (o *EquipmentSet) HasHighestEquipmentLevel() bool`
 
 HasHighestEquipmentLevel returns a boolean if a field has been set.
 
 ### GetIsCosmetic
 
-`func (o *Set) GetIsCosmetic() bool`
+`func (o *EquipmentSet) GetIsCosmetic() bool`
 
 GetIsCosmetic returns the IsCosmetic field if non-nil, zero value otherwise.
 
 ### GetIsCosmeticOk
 
-`func (o *Set) GetIsCosmeticOk() (*bool, bool)`
+`func (o *EquipmentSet) GetIsCosmeticOk() (*bool, bool)`
 
 GetIsCosmeticOk returns a tuple with the IsCosmetic field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsCosmetic
 
-`func (o *Set) SetIsCosmetic(v bool)`
+`func (o *EquipmentSet) SetIsCosmetic(v bool)`
 
 SetIsCosmetic sets IsCosmetic field to given value.
 
 ### HasIsCosmetic
 
-`func (o *Set) HasIsCosmetic() bool`
+`func (o *EquipmentSet) HasIsCosmetic() bool`
 
 HasIsCosmetic returns a boolean if a field has been set.
 

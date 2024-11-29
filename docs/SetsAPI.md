@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## GetAllSetsList
 
-> ListSets GetAllSetsList(ctx, language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).AcceptEncoding(acceptEncoding).FilterContainsCosmeticsOnly(filterContainsCosmeticsOnly).FilterContainsCosmetics(filterContainsCosmetics).Execute()
+> ListEquipmentSets GetAllSetsList(ctx, language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).AcceptEncoding(acceptEncoding).FilterContainsCosmeticsOnly(filterContainsCosmeticsOnly).FilterContainsCosmetics(filterContainsCosmetics).Execute()
 
 List All Sets
 
@@ -48,7 +48,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetAllSetsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAllSetsList`: ListSets
+	// response from `GetAllSetsList`: ListEquipmentSets
 	fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetAllSetsList`: %v\n", resp)
 }
 ```
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListSets**](ListSets.md)
+[**ListEquipmentSets**](ListEquipmentSets.md)
 
 ### Authorization
 
@@ -98,7 +98,7 @@ No authorization required
 
 ## GetSetsList
 
-> ListSets GetSetsList(ctx, language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsSet(fieldsSet).FilterContainsCosmeticsOnly(filterContainsCosmeticsOnly).FilterContainsCosmetics(filterContainsCosmetics).Execute()
+> ListEquipmentSet GetSetsList(ctx, language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsSet(fieldsSet).FilterContainsCosmeticsOnly(filterContainsCosmeticsOnly).FilterContainsCosmetics(filterContainsCosmetics).Execute()
 
 List Sets
 
@@ -135,7 +135,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSetsList`: ListSets
+	// response from `GetSetsList`: ListEquipmentSet
 	fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetSetsList`: %v\n", resp)
 }
 ```
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListSets**](ListSets.md)
+[**ListEquipmentSet**](ListEquipmentSet.md)
 
 ### Authorization
 
@@ -187,7 +187,7 @@ No authorization required
 
 ## GetSetsSearch
 
-> []ListSet GetSetsSearch(ctx, language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Limit(limit).FilterIsCosmetic(filterIsCosmetic).Execute()
+> []ListEquipmentSet GetSetsSearch(ctx, language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Limit(limit).FilterIsCosmetic(filterIsCosmetic).Execute()
 
 Search Sets
 
@@ -221,7 +221,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsSearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSetsSearch`: []ListSet
+	// response from `GetSetsSearch`: []ListEquipmentSet
 	fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetSetsSearch`: %v\n", resp)
 }
 ```
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ListSet**](ListSet.md)
+[**[]ListEquipmentSet**](ListEquipmentSet.md)
 
 ### Authorization
 
@@ -270,7 +270,7 @@ No authorization required
 
 ## GetSetsSingle
 
-> Set GetSetsSingle(ctx, language, ankamaId, game).Execute()
+> EquipmentSet GetSetsSingle(ctx, language, ankamaId, game).Execute()
 
 Single Sets
 
@@ -300,7 +300,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsSingle``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSetsSingle`: Set
+	// response from `GetSetsSingle`: EquipmentSet
 	fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetSetsSingle`: %v\n", resp)
 }
 ```
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Set**](Set.md)
+[**EquipmentSet**](EquipmentSet.md)
 
 ### Authorization
 

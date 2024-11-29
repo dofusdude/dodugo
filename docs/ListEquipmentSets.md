@@ -1,78 +1,78 @@
-# ListSets
+# ListEquipmentSets
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**PagedLinks**](PagedLinks.md) |  | [optional] 
-**Sets** | Pointer to [**[]ListSet**](ListSet.md) |  | [optional] 
+**Sets** | Pointer to [**[]ListEquipmentSet**](ListEquipmentSet.md) |  | [optional] 
 
 ## Methods
 
-### NewListSets
+### NewListEquipmentSets
 
-`func NewListSets() *ListSets`
+`func NewListEquipmentSets() *ListEquipmentSets`
 
-NewListSets instantiates a new ListSets object
+NewListEquipmentSets instantiates a new ListEquipmentSets object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListSetsWithDefaults
+### NewListEquipmentSetsWithDefaults
 
-`func NewListSetsWithDefaults() *ListSets`
+`func NewListEquipmentSetsWithDefaults() *ListEquipmentSets`
 
-NewListSetsWithDefaults instantiates a new ListSets object
+NewListEquipmentSetsWithDefaults instantiates a new ListEquipmentSets object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetLinks
 
-`func (o *ListSets) GetLinks() PagedLinks`
+`func (o *ListEquipmentSets) GetLinks() PagedLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListSets) GetLinksOk() (*PagedLinks, bool)`
+`func (o *ListEquipmentSets) GetLinksOk() (*PagedLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListSets) SetLinks(v PagedLinks)`
+`func (o *ListEquipmentSets) SetLinks(v PagedLinks)`
 
 SetLinks sets Links field to given value.
 
 ### HasLinks
 
-`func (o *ListSets) HasLinks() bool`
+`func (o *ListEquipmentSets) HasLinks() bool`
 
 HasLinks returns a boolean if a field has been set.
 
 ### GetSets
 
-`func (o *ListSets) GetSets() []ListSet`
+`func (o *ListEquipmentSets) GetSets() []ListEquipmentSet`
 
 GetSets returns the Sets field if non-nil, zero value otherwise.
 
 ### GetSetsOk
 
-`func (o *ListSets) GetSetsOk() (*[]ListSet, bool)`
+`func (o *ListEquipmentSets) GetSetsOk() (*[]ListEquipmentSet, bool)`
 
 GetSetsOk returns a tuple with the Sets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSets
 
-`func (o *ListSets) SetSets(v []ListSet)`
+`func (o *ListEquipmentSets) SetSets(v []ListEquipmentSet)`
 
 SetSets sets Sets field to given value.
 
 ### HasSets
 
-`func (o *ListSets) HasSets() bool`
+`func (o *ListEquipmentSets) HasSets() bool`
 
 HasSets returns a boolean if a field has been set.
 

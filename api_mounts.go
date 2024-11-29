@@ -1,9 +1,9 @@
 /*
 dofusdude
 
-# A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
+# Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.4
+API version: 1.0.0-rc.2
 Contact: stelzo@steado.de
 */
 
@@ -31,6 +31,7 @@ type ApiGetAllMountsListRequest struct {
 	game string
 	filterFamilyName *string
 	acceptEncoding *string
+	filterFamilyId *int32
 }
 
 // only results with the translated family name
@@ -45,7 +46,13 @@ func (r ApiGetAllMountsListRequest) AcceptEncoding(acceptEncoding string) ApiGet
 	return r
 }
 
-func (r ApiGetAllMountsListRequest) Execute() (*MountsListPaged, *http.Response, error) {
+// only results with the unique family id
+func (r ApiGetAllMountsListRequest) FilterFamilyId(filterFamilyId int32) ApiGetAllMountsListRequest {
+	r.filterFamilyId = &filterFamilyId
+	return r
+}
+
+func (r ApiGetAllMountsListRequest) Execute() (*ListMounts, *http.Response, error) {
 	return r.ApiService.GetAllMountsListExecute(r)
 }
 
@@ -66,7 +73,7 @@ curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game
+ @param game dofus3 | dofus3beta
  @return ApiGetAllMountsListRequest
 */
 func (a *MountsAPIService) GetAllMountsList(ctx context.Context, language string, game string) ApiGetAllMountsListRequest {
@@ -79,13 +86,13 @@ func (a *MountsAPIService) GetAllMountsList(ctx context.Context, language string
 }
 
 // Execute executes the request
-//  @return MountsListPaged
-func (a *MountsAPIService) GetAllMountsListExecute(r ApiGetAllMountsListRequest) (*MountsListPaged, *http.Response, error) {
+//  @return ListMounts
+func (a *MountsAPIService) GetAllMountsListExecute(r ApiGetAllMountsListRequest) (*ListMounts, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *MountsListPaged
+		localVarReturnValue  *ListMounts
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MountsAPIService.GetAllMountsList")
@@ -93,7 +100,7 @@ func (a *MountsAPIService) GetAllMountsListExecute(r ApiGetAllMountsListRequest)
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/{game}/{language}/mounts/all"
+	localVarPath := localBasePath + "/{game}/v1/{language}/mounts/all"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
 
@@ -108,7 +115,10 @@ func (a *MountsAPIService) GetAllMountsListExecute(r ApiGetAllMountsListRequest)
 	}
 
 	if r.filterFamilyName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[family_name]", r.filterFamilyName, "form", "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[family.name]", r.filterFamilyName, "form", "")
+	}
+	if r.filterFamilyId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[family.id]", r.filterFamilyId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -152,6 +162,27 @@ func (a *MountsAPIService) GetAllMountsListExecute(r ApiGetAllMountsListRequest)
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -176,6 +207,7 @@ type ApiGetMountsListRequest struct {
 	pageSize *int32
 	pageNumber *int32
 	fieldsMount *[]string
+	filterFamilyId *int32
 }
 
 // only results with the translated family name
@@ -202,7 +234,13 @@ func (r ApiGetMountsListRequest) FieldsMount(fieldsMount []string) ApiGetMountsL
 	return r
 }
 
-func (r ApiGetMountsListRequest) Execute() (*MountsListPaged, *http.Response, error) {
+// only results with the unique family id
+func (r ApiGetMountsListRequest) FilterFamilyId(filterFamilyId int32) ApiGetMountsListRequest {
+	r.filterFamilyId = &filterFamilyId
+	return r
+}
+
+func (r ApiGetMountsListRequest) Execute() (*ListMounts, *http.Response, error) {
 	return r.ApiService.GetMountsListExecute(r)
 }
 
@@ -213,7 +251,7 @@ Retrieve a list of mounts.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game
+ @param game dofus3 | dofus3beta
  @return ApiGetMountsListRequest
 */
 func (a *MountsAPIService) GetMountsList(ctx context.Context, language string, game string) ApiGetMountsListRequest {
@@ -226,13 +264,13 @@ func (a *MountsAPIService) GetMountsList(ctx context.Context, language string, g
 }
 
 // Execute executes the request
-//  @return MountsListPaged
-func (a *MountsAPIService) GetMountsListExecute(r ApiGetMountsListRequest) (*MountsListPaged, *http.Response, error) {
+//  @return ListMounts
+func (a *MountsAPIService) GetMountsListExecute(r ApiGetMountsListRequest) (*ListMounts, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *MountsListPaged
+		localVarReturnValue  *ListMounts
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MountsAPIService.GetMountsList")
@@ -240,7 +278,7 @@ func (a *MountsAPIService) GetMountsListExecute(r ApiGetMountsListRequest) (*Mou
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/{game}/{language}/mounts"
+	localVarPath := localBasePath + "/{game}/v1/{language}/mounts"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
 
@@ -255,7 +293,7 @@ func (a *MountsAPIService) GetMountsListExecute(r ApiGetMountsListRequest) (*Mou
 	}
 
 	if r.filterFamilyName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[family_name]", r.filterFamilyName, "form", "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[family.name]", r.filterFamilyName, "form", "")
 	}
 	if r.pageSize != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page[size]", r.pageSize, "form", "")
@@ -265,6 +303,9 @@ func (a *MountsAPIService) GetMountsListExecute(r ApiGetMountsListRequest) (*Mou
 	}
 	if r.fieldsMount != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields[mount]", r.fieldsMount, "form", "csv")
+	}
+	if r.filterFamilyId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[family.id]", r.filterFamilyId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -304,6 +345,27 @@ func (a *MountsAPIService) GetMountsListExecute(r ApiGetMountsListRequest) (*Mou
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -348,7 +410,7 @@ func (r ApiGetMountsSearchRequest) Limit(limit int32) ApiGetMountsSearchRequest 
 	return r
 }
 
-func (r ApiGetMountsSearchRequest) Execute() ([]MountListEntry, *http.Response, error) {
+func (r ApiGetMountsSearchRequest) Execute() ([]Mount, *http.Response, error) {
 	return r.ApiService.GetMountsSearchExecute(r)
 }
 
@@ -359,7 +421,7 @@ Search in all names and descriptions of mounts with a query.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game
+ @param game dofus3 | dofus3beta
  @return ApiGetMountsSearchRequest
 */
 func (a *MountsAPIService) GetMountsSearch(ctx context.Context, language string, game string) ApiGetMountsSearchRequest {
@@ -372,13 +434,13 @@ func (a *MountsAPIService) GetMountsSearch(ctx context.Context, language string,
 }
 
 // Execute executes the request
-//  @return []MountListEntry
-func (a *MountsAPIService) GetMountsSearchExecute(r ApiGetMountsSearchRequest) ([]MountListEntry, *http.Response, error) {
+//  @return []Mount
+func (a *MountsAPIService) GetMountsSearchExecute(r ApiGetMountsSearchRequest) ([]Mount, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []MountListEntry
+		localVarReturnValue  []Mount
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MountsAPIService.GetMountsSearch")
@@ -386,7 +448,7 @@ func (a *MountsAPIService) GetMountsSearchExecute(r ApiGetMountsSearchRequest) (
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/{game}/{language}/mounts/search"
+	localVarPath := localBasePath + "/{game}/v1/{language}/mounts/search"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
 
@@ -452,6 +514,27 @@ func (a *MountsAPIService) GetMountsSearchExecute(r ApiGetMountsSearchRequest) (
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -487,7 +570,7 @@ Retrieve a specific mount with id.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
  @param ankamaId identifier
- @param game
+ @param game dofus3 | dofus3beta
  @return ApiGetMountsSingleRequest
 */
 func (a *MountsAPIService) GetMountsSingle(ctx context.Context, language string, ankamaId int32, game string) ApiGetMountsSingleRequest {
@@ -515,7 +598,7 @@ func (a *MountsAPIService) GetMountsSingleExecute(r ApiGetMountsSingleRequest) (
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/{game}/{language}/mounts/{ankama_id}"
+	localVarPath := localBasePath + "/{game}/v1/{language}/mounts/{ankama_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ankama_id"+"}", url.PathEscape(parameterValueToString(r.ankamaId, "ankamaId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
@@ -568,6 +651,27 @@ func (a *MountsAPIService) GetMountsSingleExecute(r ApiGetMountsSingleRequest) (
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

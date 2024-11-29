@@ -4,12 +4,12 @@ All URIs are relative to *https://api.dofusdu.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetGameSearchTypes**](MetaAPI.md#GetGameSearchTypes) | **Get** /dofus2/meta/search/types | Available Game Search Types
-[**GetItemTypes**](MetaAPI.md#GetItemTypes) | **Get** /dofus2/meta/items/types | Available Item Types
-[**GetMetaAlmanaxBonuses**](MetaAPI.md#GetMetaAlmanaxBonuses) | **Get** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses
-[**GetMetaAlmanaxBonusesSearch**](MetaAPI.md#GetMetaAlmanaxBonusesSearch) | **Get** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses
-[**GetMetaElements**](MetaAPI.md#GetMetaElements) | **Get** /dofus2/meta/elements | Effects and Condition Elements
-[**GetMetaVersion**](MetaAPI.md#GetMetaVersion) | **Get** /dofus2/meta/version | Game Version
+[**GetGameSearchTypes**](MetaAPI.md#GetGameSearchTypes) | **Get** /dofus3/meta/search/types | Available Game Search Types
+[**GetItemTypes**](MetaAPI.md#GetItemTypes) | **Get** /dofus3/meta/items/types | Available Item Types
+[**GetMetaAlmanaxBonuses**](MetaAPI.md#GetMetaAlmanaxBonuses) | **Get** /dofus3/meta/{language}/almanax/bonuses | Available Almanax Bonuses
+[**GetMetaAlmanaxBonusesSearch**](MetaAPI.md#GetMetaAlmanaxBonusesSearch) | **Get** /dofus3/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses
+[**GetMetaElements**](MetaAPI.md#GetMetaElements) | **Get** /dofus3/meta/elements | Effects and Condition Elements
+[**GetMetaVersion**](MetaAPI.md#GetMetaVersion) | **Get** /dofus3/meta/version | Game Version
 
 
 
@@ -156,7 +156,7 @@ import (
 )
 
 func main() {
-	language := "fr" // string | 
+	language := "fr" // string | a valid language code
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -176,7 +176,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**language** | **string** |  | 
+**language** | **string** | a valid language code | 
 
 ### Other Parameters
 
@@ -342,7 +342,7 @@ No authorization required
 
 ## GetMetaVersion
 
-> GetMetaVersion200Response GetMetaVersion(ctx).Execute()
+> Version GetMetaVersion(ctx).Execute()
 
 Game Version
 
@@ -369,7 +369,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaAPI.GetMetaVersion``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetMetaVersion`: GetMetaVersion200Response
+	// response from `GetMetaVersion`: Version
 	fmt.Fprintf(os.Stdout, "Response from `MetaAPI.GetMetaVersion`: %v\n", resp)
 }
 ```
@@ -385,7 +385,7 @@ Other parameters are passed through a pointer to a apiGetMetaVersionRequest stru
 
 ### Return type
 
-[**GetMetaVersion200Response**](GetMetaVersion200Response.md)
+[**Version**](Version.md)
 
 ### Authorization
 

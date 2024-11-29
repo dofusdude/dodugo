@@ -4,59 +4,63 @@ info:
     email: stelzo@steado.de
     name: Survival
     url: https://discord.gg/3EtHskZD8h
-  description: |
-    # A project for you - the developer.
-    The all-in-one toolbelt for your next Ankama related project.
-
-    ## Client SDKs
-    - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save`
-    - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save`
-    - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo`
-    - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude`
-    - [PHP](https://github.com/dofusdude/dofusdude-php)
-    - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup
-
-    Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.
-
-    Your favorite language is missing? Please let me know!
-
-    # Main Features
-    - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.
-
-    - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.
-
-    - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.
-
-    - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.
-
-    - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.
-
-    - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.
-
-    - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.
-
-    - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.
-
-    ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h).
+  description: "# Open Ankama Developer Community\nThe all-in-one toolbelt for your\
+    \ next Ankama related project.\n\n## Versions\n- [Dofus 2](https://docs.dofusdu.de/dofus2/)\n\
+    - [Dofus 3](https://docs.dofusdu.de/dofus3/)\n  - v1 [latest] (you are here) \n\
+    \n## Client SDKs\n- [Javascript](https://github.com/dofusdude/dofusdude-js) `npm\
+    \ i dofusdude-js --save`\n- [Typescript](https://github.com/dofusdude/dofusdude-ts)\
+    \ `npm i dofusdude-ts --save`\n- [Go](https://github.com/dofusdude/dodugo) `go\
+    \ get -u github.com/dofusdude/dodugo`\n- [Python](https://github.com/dofusdude/dofusdude-py)\
+    \ `pip install dofusdude`\n- [Java](https://github.com/dofusdude/dofusdude-java)\
+    \ Maven with GitHub packages setup\n\nEverything, including this site, is generated\
+    \ out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the\
+    \ Single Source of Truth. If there is a problem with the SDKs, create an issue\
+    \ there.\n\nYour favorite language is missing? Please let me know!\n\n# Main Features\n\
+    - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version\
+    \ is released and serving it within 10 minutes with atomic data source switching.\
+    \ No downtime and no effects for the user, just always up-to-date.\n\n- ⚡ **Blazingly\
+    \ Fast** all data in-memory, aggressive caching over short time spans, HTTP/2\
+    \ multiplexing, written in Go, optimized for low latency, hosted on bare metal\
+    \ in 🇩🇪.\n\n- 📨 **Almanax Discord Integration** Use the endpoints as a dev\
+    \ or the official [Web Client](https://discord.dofusdude.com) as a user.\n\n-\
+    \ 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.\n\
+    \n- 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.\n\n- 🧠 **Search\
+    \ by Relevance** allowing typos in name and description, handled by language specific\
+    \ text analysis and indexing.\n\n- 🕵️ **Official Sources** generated from actual\
+    \ data from the game.\n\n... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h).\n"
+  license:
+    name: GPL-3.0
+    url: https://github.com/dofusdude/doduapi/blob/main/LICENSE
   title: dofusdude
-  version: 0.9.4
+  version: 1.0.0-rc.2
 servers:
 - description: API
   url: https://api.dofusdu.de
 tags:
-- name: almanax
-- name: consumables
-- name: cosmetics
-- name: equipment
-- name: game
-- name: meta
-- name: mounts
-- name: quest items
-- name: resources
-- name: sets
-- name: webhooks
+- description: The Dofus Almanax
+  name: almanax
+- description: Consumable Items
+  name: consumables
+- description: Cosmetic Equipment
+  name: cosmetics
+- description: Weapons and Equipment
+  name: equipment
+- description: General Overview Endpoints
+  name: game
+- description: Metadata for using the API more efficiently
+  name: meta
+- description: Mounts
+  name: mounts
+- description: Quest Items
+  name: quest items
+- description: Resources
+  name: resources
+- description: Sets
+  name: sets
+- description: Actively calling you for updates for various events
+  name: webhooks
 paths:
-  /{game}/{language}/items/search:
+  /{game}/v1/{language}/items/search:
     get:
       description: Search in all names and descriptions of Dofus items (including
         all subtypes) with a query.
@@ -80,15 +84,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: case sensitive search query
@@ -98,15 +103,6 @@ paths:
         required: true
         schema:
           example: atcham
-          type: string
-        style: form
-      - description: only results with the translated type name across all item_subtypes
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: Bottes
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -149,7 +145,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -163,55 +159,30 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                query "apple":
-                  value:
-                  - ankama_id: 21445
-                    name: Apple Core
-                    type:
-                      name: Event
-                      id: 12
-                    item_subtype: quest
-                    level: 1
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/126095.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/126095-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/126095-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/126095-800.png
-                  - ankama_id: 18332
-                    name: Crate of Apis
-                    type:
-                      name: Ohwymi
-                    item_subtype: quest
-                    level: 80
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/15056.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/15056-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/15056-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/15056-800.png
+              examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/Items-List-Entry-Typed'
+                  $ref: '#/components/schemas/ListItemGeneral'
                 type: array
-          description: Items Found
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - empty or no query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - no hits for query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Search All Items
       tags:
       - game
       x-stoplight:
         id: eeoi1h7wagrmw
-  /{game}/{language}/mounts/search:
+  /{game}/v1/{language}/mounts/search:
     get:
       description: Search in all names and descriptions of mounts with a query.
       operationId: get-mounts-search
@@ -234,15 +205,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: case sensitive search query
@@ -279,48 +251,30 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                almond rhineetle:
-                  value:
-                  - ankama_id: 199
-                    name: Almond and Indigo Rhineetle
-                    family_name: Rhineetle
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/mount/199.png
-                      sd: https://api.dofusdu.de/dofus2/img/mount/199-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/mount/199-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/mount/199-800.png
-                  - ankama_id: 198
-                    name: Almond and Orchid Rhineetle
-                    family_name: Rhineetle
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/mount/198.png
-                      sd: https://api.dofusdu.de/dofus2/img/mount/198-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/mount/198-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/mount/198-800.png
+              examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/Mount-List-Entry'
+                  $ref: '#/components/schemas/Mount'
                 type: array
-          description: Mounts Found
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - empty or no query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - no hits for query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Search Mounts
       tags:
       - mounts
       x-stoplight:
         id: 55fkjddmfhh7n
-  /{game}/{language}/sets/search:
+  /{game}/v1/{language}/sets/search:
     get:
       description: Search in all names and descriptions of sets with a query.
       operationId: get-sets-search
@@ -342,15 +296,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: case sensitive search query
@@ -413,44 +368,30 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Bouftou:
-                  value:
-                  - ankama_id: 4
-                    name: Panoplie du Bouftou Royal
-                    items: 7
-                    level: 32
-                  - ankama_id: 1
-                    name: Panoplie du Bouftou
-                    items: 7
-                    level: 20
-                  - ankama_id: 43
-                    name: Panoplie du Boufcoul
-                    items: 7
-                    level: 55
+              examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/Set-List-Entry'
+                  $ref: '#/components/schemas/ListSet'
                 type: array
-          description: Sets Found
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - empty or no query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - no hits for query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Search Sets
       tags:
       - sets
       x-stoplight:
         id: 7pwfbuzuxnnuq
-  /{game}/{language}/items/quest/search:
+  /{game}/v1/{language}/items/quest/search:
     get:
       description: Search in all names and descriptions of quest items with a query.
       operationId: get-items-quest-search
@@ -473,15 +414,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: case sensitive search query
@@ -556,53 +498,29 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                kouto:
-                  value:
-                  - ankama_id: 18114
-                    name: Koutoulou Moth
-                    type:
-                      name: Sufokia
-                      id: 7
-                    level: 200
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/15936.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/15936-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/15936-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/15936-800.png
-                  - ankama_id: 18109
-                    name: P'Koutoulou Zothoth
-                    type:
-                      name: Sufokia
-                    level: 1
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/8019.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/8019-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/8019-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/8019-800.png
               schema:
                 items:
-                  $ref: '#/components/schemas/Item-List-Entry'
+                  $ref: '#/components/schemas/ListItem'
                 type: array
           description: Quest Items Found
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - empty or no query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - no hits for query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Search Quest Items
       tags:
       - quest items
       x-stoplight:
         id: e7dmshthuyg5m
-  /{game}/{language}/items/consumables/search:
+  /{game}/v1/{language}/items/consumables/search:
     get:
       description: Search in all names and descriptions of consumable items with a
         query.
@@ -625,15 +543,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: case sensitive search query
@@ -643,15 +562,6 @@ paths:
         required: true
         schema:
           example: Wholewrite
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: Bread
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -694,7 +604,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -708,53 +618,30 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                query "bar", filter[type_name] "beer":
-                  value:
-                  - ankama_id: 19954
-                    name: Barbeerd
-                    type:
-                      name: Beer
-                      id: 5
-                    level: 1
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/37004.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/37004-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/37004-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/37004-800.png
-                  - ankama_id: 24042
-                    name: Barroll Brewski
-                    type:
-                      name: Beer
-                    level: 1
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/164790.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/164790-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/164790-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/164790-800.png
+              examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/Item-List-Entry'
+                  $ref: '#/components/schemas/ListItem'
                 type: array
           description: Consumables Found
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - empty or no query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - no hits for query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Search Consumables
       tags:
       - consumables
       x-stoplight:
         id: 6ogh4aj4k3vns
-  /{game}/{language}/items/resources/search:
+  /{game}/v1/{language}/items/resources/search:
     get:
       description: Search in all names and descriptions of resource items with a query.
       operationId: get-items-resource-search
@@ -776,15 +663,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: case sensitive search query
@@ -794,15 +682,6 @@ paths:
         required: true
         schema:
           example: snowdew
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: plant
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -845,7 +724,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -859,56 +738,33 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                query "tiwabbit", filter[type_name] "hair":
-                  value:
-                  - ankama_id: 14459
-                    name: Tiwabbit Whiskers
-                    type:
-                      name: Hair
-                      id: 3
-                    level: 45
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/54693.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/54693-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/54693-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/54693-800.png
-                  - ankama_id: 646
-                    name: Black Tiwabbit Hair
-                    type:
-                      name: Hair
-                    level: 46
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/54195.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/54195-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/54195-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/54195-800.png
+              examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/Item-List-Entry'
+                  $ref: '#/components/schemas/ListItem'
                 type: array
-          description: Resources Found
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - empty or no query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - no hits for query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Search Resources
       tags:
       - resources
       x-stoplight:
         id: l2f1uw9hdicac
-  /{game}/{language}/search:
+  /{game}/v1/{language}/search:
     get:
       description: Search in all names and descriptions of all supported types in
-        the game. For the list of supported types see the endpoint /dofus2/meta/search/types.
+        the game. For the list of supported types see the endpoint /dofus3/meta/search/types.
       operationId: get-game-search
       parameters:
       - description: a valid language code
@@ -928,15 +784,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: search query
@@ -951,7 +808,7 @@ paths:
       - description: only results with all specific type
         explode: false
         in: query
-        name: "filter[type]"
+        name: "filter[search_index]"
         required: false
         schema:
           example:
@@ -1004,7 +861,7 @@ paths:
           \ and exclude with \"-wood\"."
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -1018,21 +875,10 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                query "paztek", filter[type] "beer":
-                  value:
-                  - name: Paztek Sandals
-                    ankama_id: 20463
-                    type: items-equipment
-                  - name: Paztek Mask
-                    ankama_id: 20465
-                    type: items-equipment
-                  - name: Paztek Cloak
-                    ankama_id: 20464
-                    type: items-equipment
+              examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/get_game_search_200_response_inner'
+                  $ref: '#/components/schemas/GameSearch'
                 type: array
                 x-examples:
                   Example 1:
@@ -1045,26 +891,25 @@ paths:
                   - name: Paztek Cloak
                     ankama_id: 20464
                     type: items-equipment
-          description: Game Search Result
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - empty or no query
-            - filter[type] does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - no hits for query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Game Search
       tags:
       - game
       x-stoplight:
         id: zxx3tt0z25gz8
-  /{game}/{language}/items/equipment/search:
+  /{game}/v1/{language}/items/equipment/search:
     get:
       description: Search in all names and descriptions of equipment items with a
         query.
@@ -1087,15 +932,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: case sensitive search query
@@ -1105,15 +951,6 @@ paths:
         required: true
         schema:
           example: nidas
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: boots
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -1156,7 +993,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -1170,53 +1007,30 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                query "hat":
-                  value:
-                  - ankama_id: 8630
-                    name: Hatter Lily
-                    type:
-                      name: Hat
-                      id: 9
-                    level: 40
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/16177.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/16177-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/16177-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/16177-800.png
-                  - ankama_id: 8629
-                    name: Hat Tsokey
-                    type:
-                      name: Hat
-                    level: 40
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/16179.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/16179-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/16179-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/16179-800.png
+              examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/Item-List-Entry'
+                  $ref: '#/components/schemas/ListItem'
                 type: array
-          description: Equipment Found
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - empty or no query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - no hits for query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Search Equipment
       tags:
       - equipment
       x-stoplight:
         id: 4lzcb55gkjj2z
-  /{game}/{language}/items/cosmetics/search:
+  /{game}/v1/{language}/items/cosmetics/search:
     get:
       description: Search in all names and descriptions of cosmetic items with a query.
       operationId: get-cosmetics-search
@@ -1238,15 +1052,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: case sensitive search query
@@ -1256,15 +1071,6 @@ paths:
         required: true
         schema:
           example: nedora
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: Wings
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -1307,7 +1113,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -1321,53 +1127,30 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                query "fal":
-                  value:
-                  - ankama_id: 23711
-                    name: Falcodove
-                    type:
-                      name: Ceremonial petsmount
-                      id: 19
-                    level: 1
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/121061.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/121061-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/121061-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/121061-800.png
-                  - ankama_id: 21400
-                    name: Bone Falchion
-                    type:
-                      name: Ceremonial weapon
-                    level: 1
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/6741.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/6741-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/6741-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/6741-800.png
+              examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/Item-List-Entry'
+                  $ref: '#/components/schemas/ListItem'
                 type: array
-          description: Cosmetics found
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - empty or no query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - no hits for query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Search Cosmetics
       tags:
       - cosmetics
       x-stoplight:
         id: mw8gyg65z17wf
-  /{game}/{language}/items/cosmetics/{ankama_id}:
+  /{game}/v1/{language}/items/cosmetics/{ankama_id}:
     get:
       description: Retrieve a specific cosmetic item with id.
       operationId: get-cosmetics-single
@@ -1398,83 +1181,45 @@ paths:
           example: 24132
           type: integer
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       responses:
         "200":
           content:
             application/json:
-              examples:
-                Master Tor:
-                  value:
-                    ankama_id: 24132
-                    name: Master Tor Toise's Shell
-                    description: "Weighing at least 20 kilo-pods, this shell is used\
-                      \ for muscle strengthening during Master Tor Toise's training\
-                      \ sessions."
-                    type:
-                      name: Ceremonial cape
-                      id: 18
-                    is_weapon: false
-                    level: 180
-                    pods: 1
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/17481.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/17481-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/17481-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/17481-800.png
-                    effects:
-                    - int_minimum: 0
-                      int_maximum: 0
-                      type:
-                        name: 'Exchangeable:'
-                        id: 0
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: true
-                      ignore_int_max: true
-                      formatted: "Exchangeable: 0"
-                    - int_minimum: 0
-                      int_maximum: 0
-                      type:
-                        name: 'Compatible with:'
-                        id: 1
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: true
-                      ignore_int_max: true
-                      formatted: "Compatible with: 0"
+              examples: {}
               schema:
                 $ref: '#/components/schemas/Equipment'
-          description: Cosmetic Found
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - invalid ankama id format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - nothing found for this ankama_id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Single Cosmetics
       tags:
       - cosmetics
       x-internal: false
       x-stoplight:
         id: a0ks17l0zqqaj
-  /{game}/{language}/items/resources/{ankama_id}:
+  /{game}/v1/{language}/items/resources/{ankama_id}:
     get:
       description: Retrieve a specific resource item with id.
       operationId: get-items-resources-single
@@ -1505,66 +1250,44 @@ paths:
           example: 7295
           type: integer
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       responses:
         "200":
           content:
             application/json:
-              examples:
-                Levadura de panadero:
-                  value:
-                    ankama_id: 286
-                    name: Levadura de panadero
-                    description: Es un ingrediente indispensable para la fermentación
-                      del pan.
-                    type:
-                      name: Polvo
-                      id: 156
-                    level: 1
-                    pods: 1
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/48137.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/48137-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/48137-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/48137-800.png
-                    recipe:
-                    - item_ankama_id: 519
-                      item_subtype: resources
-                      quantity: 1
-                    - item_ankama_id: 311
-                      item_subtype: resources
-                      quantity: 1
+              examples: {}
               schema:
                 $ref: '#/components/schemas/Resource'
-          description: Resource Found
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - invalid ankama id format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - nothing found for this ankama_id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Single Resources
       tags:
       - resources
       x-stoplight:
         id: viqn5ujmwoi9s
-  /{game}/{language}/items/equipment/{ankama_id}:
+  /{game}/v1/{language}/items/equipment/{ankama_id}:
     get:
       description: Retrieve a specific equipment item with id.
       operationId: get-items-equipment-single
@@ -1595,468 +1318,44 @@ paths:
           example: 26009
           type: integer
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       responses:
         "200":
           content:
             application/json:
-              examples:
-                Weapon:
-                  value:
-                    ankama_id: 26011
-                    name: Chaotic Scythe
-                    description: |-
-                      "Actual life was chaos, but there was something terribly logical in the imagination."
-
-                      — Oskar Wyld
-                    type:
-                      name: Scythe
-                      id: 163
-                    is_weapon: true
-                    level: 200
-                    pods: 10
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/22009.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/22009-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/22009-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/22009-800.png
-                    effects:
-                    - int_minimum: 201
-                      int_maximum: 300
-                      type:
-                        name: Initiative
-                        id: 24
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 201 to 300 Initiative
-                    - int_minimum: 301
-                      int_maximum: 350
-                      type:
-                        name: Vitality
-                        id: 9
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 301 to 350 Vitality
-                    - int_minimum: 31
-                      int_maximum: 40
-                      type:
-                        name: Intelligence
-                        id: 13
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 31 to 40 Intelligence
-                    - int_minimum: 31
-                      int_maximum: 40
-                      type:
-                        name: Chance
-                        id: 22
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 31 to 40 Chance
-                    - int_minimum: 16
-                      int_maximum: 20
-                      type:
-                        name: Power
-                        id: 32
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 16 to 20 Power
-                    - int_minimum: 26
-                      int_maximum: 35
-                      type:
-                        name: Wisdom
-                        id: 10
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 26 to 35 Wisdom
-                    - int_minimum: 9
-                      int_maximum: 12
-                      type:
-                        name: Lock
-                        id: 26
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 9 to 12 Lock
-                    - int_minimum: 14
-                      int_maximum: 18
-                      type:
-                        name: Fire Damage
-                        id: 61
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 14 to 18 Fire Damage
-                    - int_minimum: 14
-                      int_maximum: 18
-                      type:
-                        name: Water Damage
-                        id: 27
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 14 to 18 Water Damage
-                    - int_minimum: 7
-                      int_maximum: 10
-                      type:
-                        name: '% Water Resistance'
-                        id: 17
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 7 to 10% Water Resistance
-                    - int_minimum: 9
-                      int_maximum: 12
-                      type:
-                        name: Heals
-                        id: 11
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 9 to 12 Heals
-                    - int_minimum: -15
-                      int_maximum: 0
-                      type:
-                        name: Critical Damage
-                        id: 38
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: true
-                      formatted: -15 Critical Damage
-                    - int_minimum: -1
-                      int_maximum: 0
-                      type:
-                        name: Range
-                        id: 31
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: true
-                      formatted: -1 Range
-                    - int_minimum: 1
-                      int_maximum: 0
-                      type:
-                        name: MP
-                        id: 8
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: true
-                      formatted: 1 MP
-                    - int_minimum: 21
-                      int_maximum: 25
-                      type:
-                        name: (Neutral damage)
-                        id: 168
-                        is_meta: false
-                        is_active: true
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 21 to 25 (Neutral damage)
-                    - int_minimum: 16
-                      int_maximum: 20
-                      type:
-                        name: (Fire steal)
-                        id: 174
-                        is_meta: false
-                        is_active: true
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 16 to 20 (Fire steal)
-                    - int_minimum: 16
-                      int_maximum: 20
-                      type:
-                        name: (Water steal)
-                        id: 175
-                        is_meta: false
-                        is_active: true
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 16 to 20 (Water steal)
-                    conditions:
-                    - operator: <
-                      int_value: 12
-                      element:
-                        name: AP
-                        id: 12
-                    condition_tree:
-                      condition:
-                        operator: <
-                        int_value: 12
-                        element:
-                          name: AP
-                          id: 12
-                      is_operand: true
-                    critical_hit_probability: 10
-                    critical_hit_bonus: 3
-                    is_two_handed: false
-                    max_cast_per_turn: 1
-                    ap_cost: 5
-                    range:
-                      min: 1
-                      max: 2
-                    recipe:
-                    - item_ankama_id: 26033
-                      item_subtype: resources
-                      quantity: 71
-                    - item_ankama_id: 26035
-                      item_subtype: resources
-                      quantity: 16
-                    - item_ankama_id: 26036
-                      item_subtype: resources
-                      quantity: 7
-                    - item_ankama_id: 25181
-                      item_subtype: resources
-                      quantity: 4
-                    - item_ankama_id: 22204
-                      item_subtype: resources
-                      quantity: 4
-                    - item_ankama_id: 26037
-                      item_subtype: resources
-                      quantity: 2
-                    - item_ankama_id: 12728
-                      item_subtype: resources
-                      quantity: 2
-                    - item_ankama_id: 24144
-                      item_subtype: resources
-                      quantity: 2
-                Equipment:
-                  value:
-                    ankama_id: 14076
-                    name: Count Harebourg's Hat
-                    description: "Count Harebourg was forced to become a recluse after\
-                      \ the big freeze, but even back then, no living soul had ever\
-                      \ seen his face. What is he hiding behind this hat, and what\
-                      \ transformations has that face undergone after all these years?"
-                    type:
-                      name: Hat
-                      id: 27
-                    is_weapon: false
-                    level: 200
-                    pods: 10
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/16362.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/16362-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/16362-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/16362-800.png
-                    effects:
-                    - int_minimum: 451
-                      int_maximum: 500
-                      type:
-                        name: Vitality
-                        id: 9
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 451 to 500 Vitality
-                    - int_minimum: 71
-                      int_maximum: 100
-                      type:
-                        name: Strength
-                        id: 45
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 71 to 100 Strength
-                    - int_minimum: 41
-                      int_maximum: 60
-                      type:
-                        name: Wisdom
-                        id: 10
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 41 to 60 Wisdom
-                    - int_minimum: 1
-                      int_maximum: 0
-                      type:
-                        name: Range
-                        id: 31
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: true
-                      formatted: 1 Range
-                    - int_minimum: 21
-                      int_maximum: 30
-                      type:
-                        name: Prospecting
-                        id: 25
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 21 to 30 Prospecting
-                    - int_minimum: 16
-                      int_maximum: 20
-                      type:
-                        name: Neutral Damage
-                        id: 49
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 16 to 20 Neutral Damage
-                    - int_minimum: 16
-                      int_maximum: 20
-                      type:
-                        name: Earth Damage
-                        id: 48
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 16 to 20 Earth Damage
-                    - int_minimum: -4
-                      int_maximum: -5
-                      type:
-                        name: '% Neutral Resistance'
-                        id: 34
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: -4 to -5% Neutral Resistance
-                    - int_minimum: -4
-                      int_maximum: -5
-                      type:
-                        name: '% Earth Resistance'
-                        id: 63
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: -4 to -5% Earth Resistance
-                    - int_minimum: -4
-                      int_maximum: -5
-                      type:
-                        name: '% Fire Resistance'
-                        id: 37
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: -4 to -5% Fire Resistance
-                    - int_minimum: -4
-                      int_maximum: -5
-                      type:
-                        name: '% Water Resistance'
-                        id: 17
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: -4 to -5% Water Resistance
-                    - int_minimum: -4
-                      int_maximum: -5
-                      type:
-                        name: '% Air Resistance'
-                        id: 16
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: -4 to -5% Air Resistance
-                    - int_minimum: 6
-                      int_maximum: 8
-                      type:
-                        name: AP Reduction
-                        id: 64
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 6 to 8 AP Reduction
-                    - int_minimum: 16
-                      int_maximum: 20
-                      type:
-                        name: Lock
-                        id: 26
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 16 to 20 Lock
-                    recipe:
-                    - item_ankama_id: 13990
-                      item_subtype: resources
-                      quantity: 30
-                    - item_ankama_id: 13993
-                      item_subtype: resources
-                      quantity: 4
-                    - item_ankama_id: 13914
-                      item_subtype: resources
-                      quantity: 5
-                    - item_ankama_id: 13995
-                      item_subtype: resources
-                      quantity: 1
-                    - item_ankama_id: 13982
-                      item_subtype: resources
-                      quantity: 4
-                    - item_ankama_id: 13168
-                      item_subtype: resources
-                      quantity: 5
-                    - item_ankama_id: 14145
-                      item_subtype: resources
-                      quantity: 1
-                    - item_ankama_id: 12740
-                      item_subtype: resources
-                      quantity: 3
-                    parent_set:
-                      id: 270
-                      name: Count Harebourg Set
+              examples: {}
               schema:
                 $ref: '#/components/schemas/Weapon'
-          description: Equipment Found
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - invalid ankama id format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - nothing found for this ankama_id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Single Equipment
       tags:
       - equipment
       x-stoplight:
         id: e2j6pr8n8112g
-  /{game}/{language}/items/consumables/{ankama_id}:
+  /{game}/v1/{language}/items/consumables/{ankama_id}:
     get:
       description: Retrieve a specific consumable item with id.
       operationId: get-items-consumables-single
@@ -2087,79 +1386,44 @@ paths:
           example: 17206
           type: integer
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       responses:
         "200":
           content:
             application/json:
-              examples:
-                Superior Health Flask:
-                  value:
-                    ankama_id: 282
-                    name: Superior Health Flask
-                    description: This flask restores some Health Points.
-                    type:
-                      name: Potion
-                      id: 96
-                    level: 60
-                    pods: 2
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/12039.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/12039-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/12039-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/12039-800.png
-                    effects:
-                    - int_minimum: 70
-                      int_maximum: 0
-                      type:
-                        name: HP
-                        id: 21
-                        is_meta: false
-                        is_active: true
-                      ignore_int_min: false
-                      ignore_int_max: true
-                      formatted: 70 HP
-                    recipe:
-                    - item_ankama_id: 380
-                      item_subtype: resources
-                      quantity: 5
-                    - item_ankama_id: 1731
-                      item_subtype: resources
-                      quantity: 1
-                    - item_ankama_id: 533
-                      item_subtype: resources
-                      quantity: 1
+              examples: {}
               schema:
                 $ref: '#/components/schemas/Resource'
-          description: Consumable Found
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - invalid ankama id format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - nothing found for this ankama_id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Single Consumables
       tags:
       - consumables
       x-stoplight:
         id: n40tefsprc7oq
-  /{game}/{language}/items/quest/{ankama_id}:
+  /{game}/v1/{language}/items/quest/{ankama_id}:
     get:
       description: Retrieve a specific quest item with id.
       operationId: get-item-quest-single
@@ -2190,60 +1454,44 @@ paths:
           example: 25256
           type: integer
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       responses:
         "200":
           content:
             application/json:
-              examples:
-                Modulo di Rapporto Vergine:
-                  value:
-                    ankama_id: 2105
-                    name: Modulo di Rapporto Vergine
-                    description: |-
-                      Modulo di rapporto vergine.
-                      Pronto per essere riempito da Welloy Cab
-                    type:
-                      name: Varie
-                      id: 110
-                    level: 1
-                    pods: 0
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/item/24041.png
-                      sd: https://api.dofusdu.de/dofus2/img/item/24041-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/item/24041-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/item/24041-800.png
+              examples: {}
               schema:
                 $ref: '#/components/schemas/Resource'
-          description: Quest Item Found
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - invalid ankama id format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - nothing found for this ankama_id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Single Quest Items
       tags:
       - quest items
       x-stoplight:
         id: 74dxhpw46pxzc
-  /{game}/{language}/mounts/{ankama_id}:
+  /{game}/v1/{language}/mounts/{ankama_id}:
     get:
       description: Retrieve a specific mount with id.
       operationId: get-mounts-single
@@ -2274,84 +1522,44 @@ paths:
           example: 180
           type: integer
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       responses:
         "200":
           content:
             application/json:
-              examples:
-                Dragoperu amêndoa e dourado:
-                  value:
-                    ankama_id: 33
-                    name: Dragoperu amêndoa e dourado
-                    family_name: Dragoperu
-                    image_urls:
-                      icon: https://api.dofusdu.de/dofus2/img/mount/33.png
-                      sd: https://api.dofusdu.de/dofus2/img/mount/33-200.png
-                      hq: https://api.dofusdu.de/dofus2/img/mount/33-400.png
-                      hd: https://api.dofusdu.de/dofus2/img/mount/33-800.png
-                    effects:
-                    - int_minimum: 0
-                      int_maximum: 300
-                      type:
-                        name: Vitalidade
-                        id: 9
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 0 a 300 Vitalidade
-                    - int_minimum: 0
-                      int_maximum: 1
-                      type:
-                        name: invocaç
-                        id: 28
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 0 a 1 invocaç
-                    - int_minimum: 0
-                      int_maximum: 1000
-                      type:
-                        name: Iniciativa
-                        id: 24
-                        is_meta: false
-                        is_active: false
-                      ignore_int_min: false
-                      ignore_int_max: false
-                      formatted: 0 a 1000 Iniciativa
+              examples: {}
               schema:
                 $ref: '#/components/schemas/Mount'
-          description: Mount Found
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - invalid ankama id format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: |-
-            Not Found
-
-            Possibilities:
-            - nothing found for this ankama_id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Single Mounts
       tags:
       - mounts
       x-stoplight:
         id: pzqoy2btp2qkn
-  /{game}/{language}/sets/{ankama_id}:
+  /{game}/v1/{language}/sets/{ankama_id}:
     get:
       description: Retrieve a specific set with id.
       operationId: get-sets-single
@@ -2382,170 +1590,44 @@ paths:
           example: 499
           type: integer
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       responses:
         "200":
           content:
             application/json:
-              examples:
-                Atcham:
-                  value:
-                    ankama_id: 406
-                    name: Atcham-Set
-                    equipment_ids:
-                    - 17584
-                    - 17585
-                    - 17586
-                    effects:
-                    - - int_minimum: 30
-                        int_maximum: 0
-                        type:
-                          name: Intelligenz
-                          id: 13
-                          is_meta: false
-                          is_active: false
-                        ignore_int_min: false
-                        ignore_int_max: true
-                        formatted: 30 Intelligenz
-                        item_combination: 2
-                      - int_minimum: 30
-                        int_maximum: 0
-                        type:
-                          name: Flinkheit
-                          id: 36
-                          is_meta: false
-                          is_active: false
-                        ignore_int_min: false
-                        ignore_int_max: true
-                        formatted: 30 Flinkheit
-                        item_combination: 2
-                      - int_minimum: 30
-                        int_maximum: 0
-                        type:
-                          name: Glück
-                          id: 22
-                          is_meta: false
-                          is_active: false
-                        ignore_int_min: false
-                        ignore_int_max: true
-                        formatted: 30 Glück
-                        item_combination: 2
-                      - int_minimum: 5
-                        int_maximum: 0
-                        type:
-                          name: AP-Entzug
-                          id: 64
-                          is_meta: false
-                          is_active: false
-                        ignore_int_min: false
-                        ignore_int_max: true
-                        formatted: 5 AP-Entzug
-                        item_combination: 2
-                      - int_minimum: 10
-                        int_maximum: 0
-                        type:
-                          name: Kritischer Schaden
-                          id: 38
-                          is_meta: false
-                          is_active: false
-                        ignore_int_min: false
-                        ignore_int_max: true
-                        formatted: 10 Kritischer Schaden
-                        item_combination: 2
-                    - - int_minimum: 30
-                        int_maximum: 0
-                        type:
-                          name: Intelligenz
-                          id: 13
-                          is_meta: false
-                          is_active: false
-                        ignore_int_min: false
-                        ignore_int_max: true
-                        formatted: 30 Intelligenz
-                        item_combination: 3
-                      - int_minimum: 30
-                        int_maximum: 0
-                        type:
-                          name: Flinkheit
-                          id: 36
-                          is_meta: false
-                          is_active: false
-                        ignore_int_min: false
-                        ignore_int_max: true
-                        formatted: 30 Flinkheit
-                        item_combination: 3
-                      - int_minimum: 30
-                        int_maximum: 0
-                        type:
-                          name: Glück
-                          id: 22
-                          is_meta: false
-                          is_active: false
-                        ignore_int_min: false
-                        ignore_int_max: true
-                        formatted: 30 Glück
-                        item_combination: 3
-                      - int_minimum: 5
-                        int_maximum: 0
-                        type:
-                          name: AP-Entzug
-                          id: 64
-                          is_meta: false
-                          is_active: false
-                        ignore_int_min: false
-                        ignore_int_max: true
-                        formatted: 5 AP-Entzug
-                        item_combination: 3
-                      - int_minimum: 10
-                        int_maximum: 0
-                        type:
-                          name: Kritischer Schaden
-                          id: 38
-                          is_meta: false
-                          is_active: false
-                        ignore_int_min: false
-                        ignore_int_max: true
-                        formatted: 10 Kritischer Schaden
-                        item_combination: 3
-                      - int_minimum: 1
-                        int_maximum: 0
-                        type:
-                          name: AP
-                          id: 12
-                          is_meta: false
-                          is_active: false
-                        ignore_int_min: false
-                        ignore_int_max: true
-                        formatted: 1 AP
-                        item_combination: 3
-                    highest_equipment_level: 200
+              examples: {}
               schema:
-                $ref: '#/components/schemas/Equipment-Set'
-          description: Set Found
+                $ref: '#/components/schemas/Set'
+          description: ""
         "400":
-          description: |
-            Bad Request
-
-            Possibilities:
-            - invalid ankama id format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: Single Sets
       tags:
       - sets
       x-stoplight:
         id: 7h3o04n689qab
-  /{game}/{language}/sets:
+  /{game}/v1/{language}/sets:
     get:
       description: Retrieve a list of sets.
       operationId: get-sets-list
@@ -2567,15 +1649,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -2661,7 +1744,15 @@ paths:
           \ If true, the item ids are for the cosmetic endpoints instead of equipment."
         explode: true
         in: query
-        name: "filter[is_cosmetic]"
+        name: "filter[contains_cosmetics_only]"
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: filter sets based on if they got cosmetic items in it.
+        explode: true
+        in: query
+        name: "filter[contains_cosmetics]"
         required: false
         schema:
           type: boolean
@@ -2674,10 +1765,10 @@ paths:
                 filter[min_highest_equipment_level] >= 150, sort[level] "desc":
                   value:
                     _links:
-                      first: https://api.dofusdu.de/dofus2/fr/sets/?page%5Bnumber%5D%3D1%26page%5Bsize%5D%3D16
+                      first: https://api.dofusdu.de/dofus3/fr/sets/?page%5Bnumber%5D%3D1%26page%5Bsize%5D%3D16
                       prev: ""
-                      next: https://api.dofusdu.de/dofus2/fr/sets/?page%5Bnumber%5D%3D2%26page%5Bsize%5D%3D16
-                      last: https://api.dofusdu.de/dofus2/fr/sets/?page%5Bnumber%5D%3D11%26page%5Bsize%5D%3D16
+                      next: https://api.dofusdu.de/dofus3/fr/sets/?page%5Bnumber%5D%3D2%26page%5Bsize%5D%3D16
+                      last: https://api.dofusdu.de/dofus3/fr/sets/?page%5Bnumber%5D%3D11%26page%5Bsize%5D%3D16
                     sets:
                     - ankama_id: 406
                       name: Panoplie d'Atcham
@@ -2744,19 +1835,26 @@ paths:
                       items: 3
                       level: 200
               schema:
-                $ref: '#/components/schemas/Sets-List-Paged'
-          description: Set Found
+                $ref: '#/components/schemas/ListSets'
+          description: ""
         "400":
-          description: |
-            Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List Sets
       tags:
       - sets
       x-stoplight:
         id: s3zlet293u7sh
-  /{game}/{language}/mounts:
+  /{game}/v1/{language}/mounts:
     get:
       description: Retrieve a list of mounts.
       operationId: get-mounts-list
@@ -2778,21 +1876,22 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: only results with the translated family name
         explode: true
         in: query
-        name: "filter[family_name]"
+        name: "filter[family.name]"
         required: false
         schema:
           example: Dragoturkey
@@ -2836,57 +1935,40 @@ paths:
           type: array
           uniqueItems: true
         style: form
+      - description: only results with the unique family id
+        explode: true
+        in: query
+        name: "filter[family.id]"
+        required: false
+        schema:
+          type: integer
+        style: form
       responses:
         "200":
           content:
             application/json:
-              examples:
-                page[size] 3:
-                  value:
-                    _links:
-                      first: https://api.dofusdu.de/dofus2/es/mounts/?page%5Bnumber%5D%3D1%26page%5Bsize%5D%3D3
-                      prev: ""
-                      next: https://api.dofusdu.de/dofus2/es/mounts/?page%5Bnumber%5D%3D2%26page%5Bsize%5D%3D3
-                      last: https://api.dofusdu.de/dofus2/es/mounts/?page%5Bnumber%5D%3D89%26page%5Bsize%5D%3D3
-                    mounts:
-                    - ankama_id: 1
-                      name: Dragopavo almendrado salvaje
-                      family_name: Dragopavo
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/mount/1.png
-                        sd: https://api.dofusdu.de/dofus2/img/mount/1-200.png
-                        hq: https://api.dofusdu.de/dofus2/img/mount/1-400.png
-                        hd: https://api.dofusdu.de/dofus2/img/mount/1-800.png
-                    - ankama_id: 3
-                      name: Dragopavo ébano
-                      family_name: Dragopavo
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/mount/3.png
-                        sd: https://api.dofusdu.de/dofus2/img/mount/3-200.png
-                        hq: https://api.dofusdu.de/dofus2/img/mount/3-400.png
-                        hd: https://api.dofusdu.de/dofus2/img/mount/3-800.png
-                    - ankama_id: 6
-                      name: Dragopavo pelirrojo salvaje
-                      family_name: Dragopavo
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/mount/6.png
-                        sd: https://api.dofusdu.de/dofus2/img/mount/6-200.png
-                        hq: https://api.dofusdu.de/dofus2/img/mount/6-400.png
-                        hd: https://api.dofusdu.de/dofus2/img/mount/6-800.png
+              examples: {}
               schema:
-                $ref: '#/components/schemas/Mounts-List-Paged'
-          description: Mounts Found
+                $ref: '#/components/schemas/ListMounts'
+          description: ""
         "400":
-          description: |
-            Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List Mounts
       tags:
       - mounts
       x-stoplight:
         id: gy9ldukmg67hy
-  /{game}/{language}/items/equipment:
+  /{game}/v1/{language}/items/equipment:
     get:
       description: Retrieve a list of equipment items.
       operationId: get-items-equipment-list
@@ -2909,15 +1991,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -2930,15 +2013,6 @@ paths:
           - asc
           - desc
           example: desc
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: Sword
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -3002,7 +2076,6 @@ paths:
             - parent_set
             - critical_hit_probability
             - critical_hit_bonus
-            - is_two_handed
             - max_cast_per_turn
             - ap_cost
             - range
@@ -3014,7 +2087,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -3028,51 +2101,27 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                page[size] 3, sort[level] desc:
-                  value:
-                    _links:
-                      first: https://api.dofusdu.de/dofus2/es/items/equipment?page%5Bnumber%5D%3D1%26page%5Bsize%5D%3D3
-                      prev: null
-                      next: https://api.dofusdu.de/dofus2/es/items/equipment?page%5Bnumber%5D%3D2%26page%5Bsize%5D%3D3
-                      last: https://api.dofusdu.de/dofus2/es/items/equipment?page%5Bnumber%5D%3D1241%26page%5Bsize%5D%3D3
-                    items:
-                    - ankama_id: 19244
-                      name: Amuleto del Corazón Sangriento
-                      type:
-                        name: Amuleto
-                        id: 18
-                      level: 200
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/1299.png
-                        sd: https://api.dofusdu.de/dofus2/img/item/1299-200.png
-                        hq: https://api.dofusdu.de/dofus2/img/item/1299-400.png
-                        hd: https://api.dofusdu.de/dofus2/img/item/1299-800.png
-                    - ankama_id: 15696
-                      name: Capachalote
-                      type:
-                        name: Capa
-                        id: 72
-                      level: 200
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/17331.png
-                        sd: https://api.dofusdu.de/dofus2/img/item/17331-200.png
-                        hq: https://api.dofusdu.de/dofus2/img/item/17331-400.png
-                        hd: https://api.dofusdu.de/dofus2/img/item/17331-800.png
               schema:
-                $ref: '#/components/schemas/Items-List-Paged'
-          description: Equipment Found
+                $ref: '#/components/schemas/ListItems'
+          description: ""
         "400":
-          description: |
-            Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List Equipment
       tags:
       - equipment
       x-stoplight:
         id: z7ihi4fuba4rk
-  /{game}/{language}/items/resources:
+  /{game}/v1/{language}/items/resources:
     get:
       description: Retrieve a list of resource items.
       operationId: get-items-resources-list
@@ -3094,15 +2143,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -3115,15 +2165,6 @@ paths:
           - asc
           - desc
           example: desc
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: miscellaneous resources
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -3195,7 +2236,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -3209,44 +2250,27 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                page[size] 2:
-                  value:
-                    _links:
-                      first: https://api.dofusdu.de/dofus2/de/items/resources?page%5Bnumber%5D%3D1%26page%5Bsize%5D%3D2
-                      prev: null
-                      next: https://api.dofusdu.de/dofus2/de/items/resources?page%5Bnumber%5D%3D2%26page%5Bsize%5D%3D2
-                      last: https://api.dofusdu.de/dofus2/de/items/resources?page%5Bnumber%5D%3D1534%26page%5Bsize%5D%3D2
-                    items:
-                    - ankama_id: 274
-                      name: Stück des Klauenpuzzles
-                      type:
-                        name: Rohstein
-                        id: 92
-                      level: 43
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/51267.png
-                    - ankama_id: 276
-                      name: Münze des Schatzes von Badoul
-                      type:
-                        name: Verschiedene Ressourcen
-                        id: 1
-                      level: 43
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/15268.png
               schema:
-                $ref: '#/components/schemas/Items-List-Paged'
-          description: Resources Found
+                $ref: '#/components/schemas/ListItems'
+          description: ""
         "400":
-          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List Resources
       tags:
       - resources
       x-stoplight:
         id: z2jx5o5pjumhs
-  /{game}/{language}/items/consumables:
+  /{game}/v1/{language}/items/consumables:
     get:
       description: Retrieve a list of consumable items.
       operationId: get-items-consumables-list
@@ -3268,15 +2292,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -3289,15 +2314,6 @@ paths:
           - asc
           - desc
           example: asc
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: Chest
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -3363,7 +2379,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -3377,53 +2393,27 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                No query, just defaults:
-                  value:
-                    _links:
-                      first: https://api.dofusdu.de/dofus2/en/items/consumables?page%5Bnumber%5D%3D1%26page%5Bsize%5D%3D16
-                      prev: null
-                      next: https://api.dofusdu.de/dofus2/en/items/consumables?page%5Bnumber%5D%3D2%26page%5Bsize%5D%3D16
-                      last: https://api.dofusdu.de/dofus2/en/items/consumables?page%5Bnumber%5D%3D213%26page%5Bsize%5D%3D16
-                    items:
-                    - ankama_id: 281
-                      name: Api
-                      type:
-                        name: Treat
-                        id: 6
-                      level: 1
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/42001.png
-                    - ankama_id: 282
-                      name: Superior Health Flask
-                      type:
-                        name: Potion
-                        id: 42
-                      level: 60
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/12039.png
-                    - ankama_id: 283
-                      name: Health Flask
-                      type:
-                        name: Potion
-                        id: 42
-                      level: 40
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/12003.png
               schema:
-                $ref: '#/components/schemas/Items-List-Paged'
-          description: Consumables Found
+                $ref: '#/components/schemas/ListItems'
+          description: ""
         "400":
-          description: |
-            Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List Consumables
       tags:
       - consumables
       x-stoplight:
         id: g2xcp6fribgyf
-  /{game}/{language}/items/quest:
+  /{game}/v1/{language}/items/quest:
     get:
       description: Retrieve a list of quest items.
       operationId: get-items-quest-list
@@ -3446,15 +2436,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -3467,15 +2458,6 @@ paths:
           - asc
           - desc
           example: desc
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: Sufokia
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -3547,7 +2529,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -3561,45 +2543,27 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                sort[level] asc, page[number] 5, page[size] 2:
-                  value:
-                    _links:
-                      first: https://api.dofusdu.de/dofus2/de/items/quest?page%5Bnumber%5D%3D1%26page%5Bsize%5D%3D2
-                      prev: https://api.dofusdu.de/dofus2/de/items/quest?page%5Bnumber%5D%3D4%26page%5Bsize%5D%3D2
-                      next: https://api.dofusdu.de/dofus2/de/items/quest?page%5Bnumber%5D%3D6%26page%5Bsize%5D%3D2
-                      last: https://api.dofusdu.de/dofus2/de/items/quest?page%5Bnumber%5D%3D1454%26page%5Bsize%5D%3D2
-                    items:
-                    - ankama_id: 7349
-                      name: Liebesbrief für Poochan
-                      type:
-                        name: Pandala
-                        id: 4
-                      level: 0
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/24050.png
-                    - ankama_id: 7348
-                      name: Feudala-Dojo-Siegerurkunde
-                      type:
-                        name: Pandala
-                        id: 4
-                      level: 0
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/24255.png
               schema:
-                $ref: '#/components/schemas/Items-List-Paged'
-          description: Quest Items Found
+                $ref: '#/components/schemas/ListItems'
+          description: ""
         "400":
-          description: |
-            Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List Quest Items
       tags:
       - quest items
       x-stoplight:
         id: qsq51akecj0r0
-  /{game}/{language}/items/cosmetics:
+  /{game}/v1/{language}/items/cosmetics:
     get:
       description: Retrieve a list of cosmetic items.
       operationId: get-cosmetics-list
@@ -3622,15 +2586,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -3643,15 +2608,6 @@ paths:
           - asc
           - desc
           example: asc
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: Chapeau d'apparat
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -3714,7 +2670,6 @@ paths:
             - parent_set
             - critical_hit_probability
             - critical_hit_bonus
-            - is_two_handed
             - max_cast_per_turn
             - ap_cost
             - range
@@ -3726,7 +2681,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           items:
@@ -3738,45 +2693,27 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                page[size] 2:
-                  value:
-                    _links:
-                      first: https://api.dofusdu.de/dofus2/fr/items/cosmetics?page%5Bnumber%5D%3D1%26page%5Bsize%5D%3D2
-                      prev: null
-                      next: https://api.dofusdu.de/dofus2/fr/items/cosmetics?page%5Bnumber%5D%3D2%26page%5Bsize%5D%3D2
-                      last: https://api.dofusdu.de/dofus2/fr/items/cosmetics?page%5Bnumber%5D%3D704%26page%5Bsize%5D%3D2
-                    items:
-                    - ankama_id: 1090
-                      name: Astrocoiffe
-                      type:
-                        name: Chapeau d'apparat
-                        id: 11
-                      level: 1
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/16027.png
-                    - ankama_id: 1907
-                      name: Oreilles de Lapineupe
-                      type:
-                        name: Chapeau d'apparat
-                        id: 11
-                      level: 1
-                      image_urls:
-                        icon: https://api.dofusdu.de/dofus2/img/item/16030.png
               schema:
-                $ref: '#/components/schemas/Items-List-Paged'
-          description: Cosmetics Found
+                $ref: '#/components/schemas/ListItems'
+          description: ""
         "400":
-          description: |
-            Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List Cosmetics
       tags:
       - cosmetics
       x-stoplight:
         id: mlmwp9s8utn2j
-  /{game}/{language}/mounts/all:
+  /{game}/v1/{language}/mounts/all:
     get:
       description: |-
         Retrieve all mounts with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
@@ -3809,21 +2746,22 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: only results with the translated family name
         explode: true
         in: query
-        name: "filter[family_name]"
+        name: "filter[family.name]"
         required: false
         schema:
           example: Dragoturkey
@@ -3839,6 +2777,14 @@ paths:
           - gzip
           type: string
         style: simple
+      - description: only results with the unique family id
+        explode: true
+        in: query
+        name: "filter[family.id]"
+        required: false
+        schema:
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -3861,19 +2807,26 @@ paths:
                         hq: string
                         hd: string
               schema:
-                $ref: '#/components/schemas/Mounts-List-Paged'
-          description: Mounts Found
+                $ref: '#/components/schemas/ListMounts'
+          description: ""
         "400":
-          description: |
-            Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List All Mounts
       tags:
       - mounts
       x-stoplight:
         id: 35hwizajcz3g7
-  /{game}/{language}/sets/all:
+  /{game}/v1/{language}/sets/all:
     get:
       description: |-
         Retrieve all sets with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
@@ -3906,15 +2859,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -3969,7 +2923,15 @@ paths:
           \ If true, the item ids are for the cosmetic endpoints instead of equipment."
         explode: true
         in: query
-        name: "filter[is_cosmetic]"
+        name: "filter[contains_cosmetics_only]"
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: filter sets based on if they got cosmetic items in it.
+        explode: true
+        in: query
+        name: "filter[contains_cosmetics]"
         required: false
         schema:
           type: boolean
@@ -3992,19 +2954,26 @@ paths:
                       items: 0
                       level: 0
               schema:
-                $ref: '#/components/schemas/Sets-List-Paged'
-          description: Set Found
+                $ref: '#/components/schemas/ListSets'
+          description: ""
         "400":
-          description: |
-            Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List All Sets
       tags:
       - sets
       x-stoplight:
         id: rzxp5sotapqe6
-  /{game}/{language}/items/cosmetics/all:
+  /{game}/v1/{language}/items/cosmetics/all:
     get:
       description: |-
         Retrieve all cosmetic items with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
@@ -4038,15 +3007,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -4059,15 +3029,6 @@ paths:
           - asc
           - desc
           example: asc
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: Chapeau d'apparat
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -4102,7 +3063,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -4116,43 +3077,27 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                defaults:
-                  value:
-                    _links:
-                      first: null
-                      prev: null
-                      next: null
-                      last: null
-                    items:
-                    - ankama_id: 0
-                      name: string
-                      type:
-                        name: string
-                      level: 0
-                      image_urls:
-                        icon: string
-                        sd: string
-                        hq: string
-                        hd: string
-                      recipe:
-                      - item_ankama_id: 0
-                        item_subtype: string
-                        quantity: 0
               schema:
-                $ref: '#/components/schemas/Items-List-Paged'
-          description: Cosmetics Found
+                $ref: '#/components/schemas/ListItems'
+          description: ""
         "400":
-          description: |
-            Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List All Cosmetics
       tags:
       - cosmetics
       x-stoplight:
         id: 07si7hjof1qpt
-  /{game}/{language}/items/quest/all:
+  /{game}/v1/{language}/items/quest/all:
     get:
       description: |-
         Retrieve all quest items with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
@@ -4186,15 +3131,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -4207,15 +3153,6 @@ paths:
           - asc
           - desc
           example: desc
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: Sufokia
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -4256,7 +3193,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -4270,43 +3207,27 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                defaults:
-                  value:
-                    _links:
-                      first: null
-                      prev: null
-                      next: null
-                      last: null
-                    items:
-                    - ankama_id: 0
-                      name: string
-                      type:
-                        name: string
-                      level: 0
-                      image_urls:
-                        icon: string
-                        sd: string
-                        hq: string
-                        hd: string
-                      recipe:
-                      - item_ankama_id: 0
-                        item_subtype: string
-                        quantity: 0
               schema:
-                $ref: '#/components/schemas/Items-List-Paged'
-          description: Quest Items Found
+                $ref: '#/components/schemas/ListItems'
+          description: ""
         "400":
-          description: |
-            Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List All Quest Items
       tags:
       - quest items
       x-stoplight:
         id: mgmt97sgtrhja
-  /{game}/{language}/items/consumables/all:
+  /{game}/v1/{language}/items/consumables/all:
     get:
       description: |-
         Retrieve all consumable items with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
@@ -4339,15 +3260,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -4360,15 +3282,6 @@ paths:
           - asc
           - desc
           example: asc
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: Chest
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -4403,7 +3316,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -4417,43 +3330,27 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                defaults:
-                  value:
-                    _links:
-                      first: null
-                      prev: null
-                      next: null
-                      last: null
-                    items:
-                    - ankama_id: 0
-                      name: string
-                      type:
-                        name: string
-                      level: 0
-                      image_urls:
-                        icon: string
-                        sd: string
-                        hq: string
-                        hd: string
-                      recipe:
-                      - item_ankama_id: 0
-                        item_subtype: string
-                        quantity: 0
               schema:
-                $ref: '#/components/schemas/Items-List-Paged'
-          description: Consumables Found
+                $ref: '#/components/schemas/ListItems'
+          description: ""
         "400":
-          description: |
-            Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List All Consumables
       tags:
       - consumables
       x-stoplight:
         id: llcg4hmp9wucr
-  /{game}/{language}/items/resources/all:
+  /{game}/v1/{language}/items/resources/all:
     get:
       description: |-
         Retrieve all resource items with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
@@ -4486,15 +3383,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -4507,15 +3405,6 @@ paths:
           - asc
           - desc
           example: desc
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: miscellaneous resources
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -4556,7 +3445,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -4570,42 +3459,27 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                defaults:
-                  value:
-                    _links:
-                      first: null
-                      prev: null
-                      next: null
-                      last: null
-                    items:
-                    - ankama_id: 0
-                      name: string
-                      type:
-                        name: string
-                      level: 0
-                      image_urls:
-                        icon: string
-                        sd: string
-                        hq: string
-                        hd: string
-                      recipe:
-                      - item_ankama_id: 0
-                        item_subtype: string
-                        quantity: 0
               schema:
-                $ref: '#/components/schemas/Items-List-Paged'
-          description: Resources Found
+                $ref: '#/components/schemas/ListItems'
+          description: ""
         "400":
-          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List All Resources
       tags:
       - resources
       x-stoplight:
         id: 1wtcbwhh04jmq
-  /{game}/{language}/items/equipment/all:
+  /{game}/v1/{language}/items/equipment/all:
     get:
       description: |-
         Retrieve all equipment items with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.
@@ -4639,15 +3513,16 @@ paths:
           minLength: 2
           type: string
         style: simple
-      - explode: false
+      - description: dofus3 | dofus3beta
+        explode: false
         in: path
         name: game
         required: true
         schema:
           enum:
-          - dofus2
-          - dofus2beta
-          example: dofus2
+          - dofus3
+          - dofus3beta
+          example: dofus3
           type: string
         style: simple
       - description: "sort the resulting list by level, default unsorted"
@@ -4660,15 +3535,6 @@ paths:
           - asc
           - desc
           example: desc
-          type: string
-        style: form
-      - description: only results with the translated type name
-        explode: true
-        in: query
-        name: "filter[type_name]"
-        required: false
-        schema:
-          example: Sword
           type: string
         style: form
       - description: only results which level is equal or above this value
@@ -4704,7 +3570,7 @@ paths:
           or "+wood" and exclude with "-wood".
         explode: false
         in: query
-        name: "filter[type_enum]"
+        name: "filter[type.name_id]"
         required: false
         schema:
           example:
@@ -4718,43 +3584,27 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                defaults:
-                  value:
-                    _links:
-                      first: null
-                      prev: null
-                      next: null
-                      last: null
-                    items:
-                    - ankama_id: 0
-                      name: string
-                      type:
-                        name: string
-                      level: 0
-                      image_urls:
-                        icon: string
-                        sd: string
-                        hq: string
-                        hd: string
-                      recipe:
-                      - item_ankama_id: 0
-                        item_subtype: string
-                        quantity: 0
               schema:
-                $ref: '#/components/schemas/Items-List-Paged'
-          description: Equipment Found
+                $ref: '#/components/schemas/ListItems'
+          description: ""
         "400":
-          description: |
-            Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
         "404":
-          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: ""
       summary: List All Equipment
       tags:
       - equipment
       x-stoplight:
         id: wbxzhlcid1l0w
-  /dofus2/{language}/almanax:
+  /dofus3/{language}/almanax:
     get:
       description: "Get a range of dates, defaults to today + 6 following days but\
         \ can specified by the query parameters. \n\nfilter[bonus_type] can be used\
@@ -4859,10 +3709,10 @@ paths:
                       item:
                         ankama_id: 14284
                         image_urls:
-                          hd: https://api.dofusdu.de/dofus2/img/item/15247-800.png
-                          hq: https://api.dofusdu.de/dofus2/img/item/15247-400.png
-                          icon: https://api.dofusdu.de/dofus2/img/item/15247.png
-                          sd: https://api.dofusdu.de/dofus2/img/item/15247-200.png
+                          hd: https://api.dofusdu.de/dofus3/img/item/15247-800.png
+                          hq: https://api.dofusdu.de/dofus3/img/item/15247-400.png
+                          icon: https://api.dofusdu.de/dofus3/img/item/15247.png
+                          sd: https://api.dofusdu.de/dofus3/img/item/15247-200.png
                         name: Spectral Flame
                         subtype: resources
                       quantity: 2
@@ -4877,24 +3727,24 @@ paths:
                       item:
                         ankama_id: 423
                         image_urls:
-                          hd: https://api.dofusdu.de/dofus2/img/item/34122-800.png
-                          hq: https://api.dofusdu.de/dofus2/img/item/34122-400.png
-                          icon: https://api.dofusdu.de/dofus2/img/item/34122.png
-                          sd: https://api.dofusdu.de/dofus2/img/item/34122-200.png
+                          hd: https://api.dofusdu.de/dofus3/img/item/34122-800.png
+                          hq: https://api.dofusdu.de/dofus3/img/item/34122-400.png
+                          icon: https://api.dofusdu.de/dofus3/img/item/34122.png
+                          sd: https://api.dofusdu.de/dofus3/img/item/34122-200.png
                         name: Flax
                         subtype: resources
                       quantity: 20
               schema:
                 items:
-                  $ref: '#/components/schemas/Almanax-Entry'
+                  $ref: '#/components/schemas/Almanax'
                 type: array
-          description: OK
+          description: ""
       summary: Almanax Range
       tags:
       - almanax
       x-stoplight:
         id: fy8l7o3sz1jyo
-  /dofus2/{language}/almanax/{date}:
+  /dofus3/{language}/almanax/{date}:
     get:
       description: Get a single date. There are not more details in the returned object
         than the normal range endpoint.
@@ -4947,22 +3797,22 @@ paths:
                       item:
                         ankama_id: 8362
                         image_urls:
-                          hd: https://api.dofusdu.de/dofus2/img/item/59611-800.png
-                          hq: https://api.dofusdu.de/dofus2/img/item/59611-400.png
-                          icon: https://api.dofusdu.de/dofus2/img/item/59611.png
-                          sd: https://api.dofusdu.de/dofus2/img/item/59611-200.png
+                          hd: https://api.dofusdu.de/dofus3/img/item/59611-800.png
+                          hq: https://api.dofusdu.de/dofus3/img/item/59611-400.png
+                          icon: https://api.dofusdu.de/dofus3/img/item/59611.png
+                          sd: https://api.dofusdu.de/dofus3/img/item/59611-200.png
                         name: Peau de Dragnarok
                         subtype: resources
                       quantity: 2
               schema:
-                $ref: '#/components/schemas/Almanax-Entry'
-          description: OK
+                $ref: '#/components/schemas/Almanax'
+          description: ""
       summary: Single Almanax Date
       tags:
       - almanax
       x-stoplight:
         id: d0000xjgaenyh
-  /dofus2/meta/elements:
+  /dofus3/meta/elements:
     get:
       description: Get the mappings for all specific elements that are linked in the
         dataset. All names are english. Translations are not needed because of a global
@@ -4989,7 +3839,7 @@ paths:
       - meta
       x-stoplight:
         id: 4oyiu8nbwwgds
-  /dofus2/meta/version:
+  /dofus3/meta/version:
     get:
       description: The current game version of the hosted data.
       operationId: get-meta-version
@@ -4998,23 +3848,18 @@ paths:
         "200":
           content:
             application/json:
-              examples:
-                Main:
-                  value:
-                    version: 2.73.3.5
-                    release: main
-                    update_stamp: 2024-10-03T22:43:10.420677+02:00
+              examples: {}
               schema:
-                $ref: '#/components/schemas/get_meta_version_200_response'
-          description: OK
+                $ref: '#/components/schemas/Version'
+          description: ""
       summary: Game Version
       tags:
       - meta
       x-stoplight:
         id: ha9mde87rn0in
-  /dofus2/meta/search/types:
+  /dofus3/meta/search/types:
     get:
-      description: "Get all types for /{game}/{lang}/search available for filtering.\
+      description: "Get all types for /{game}/v1/{lang}/search available for filtering.\
         \ All names are english for comparing them inside applications. Order is fixed\
         \ so you can compare indices instead of strings."
       operationId: get-game-search-types
@@ -5043,7 +3888,7 @@ paths:
       - meta
       x-stoplight:
         id: v67mknkhaif2h
-  /dofus2/meta/items/types:
+  /dofus3/meta/items/types:
     get:
       description: |-
         Get all types of all items. Primarily used for filtering more detailed types in listings or search endpoints.
@@ -5075,13 +3920,14 @@ paths:
       - meta
       x-stoplight:
         id: j8a5zpi8i20xe
-  /dofus2/meta/{language}/almanax/bonuses:
+  /dofus3/meta/{language}/almanax/bonuses:
     get:
       description: Get all the available bonuses and their id for filtering them in
         the range endpoint.
       operationId: get-meta-almanax-bonuses
       parameters:
-      - explode: false
+      - description: a valid language code
+        explode: false
         in: path
         name: language
         required: true
@@ -5126,7 +3972,7 @@ paths:
       - meta
       x-stoplight:
         id: y3rp6gd28quli
-  /dofus2/meta/{language}/almanax/bonuses/search:
+  /dofus3/meta/{language}/almanax/bonuses/search:
     get:
       description: Search all the available bonuses and their id for filtering them
         in the range endpoint.
@@ -5258,7 +4104,8 @@ paths:
       description: Delete a Webhook from the service.
       operationId: delete-webhooks-rss-id
       parameters:
-      - explode: false
+      - description: the ID returned from the API when creating the webhook
+        explode: false
         in: path
         name: id
         required: true
@@ -5277,7 +4124,8 @@ paths:
       description: Retrieve details about an existing RSS Webhook with a given uuid.
       operationId: get-webhooks-rss-id
       parameters:
-      - explode: false
+      - description: the ID returned from the API when creating the webhook
+        explode: false
         in: path
         name: id
         required: true
@@ -5295,7 +4143,7 @@ paths:
                     whitelist: null
                     blacklist: null
                     subscriptions:
-                    - dofus2-fr-official-news
+                    - dofus3-fr-official-news
                     format: discord
                     preview_length: 150
                     created_at: 2022-10-25T15:32:37.406281+02:00
@@ -5314,7 +4162,8 @@ paths:
         \ arrays will be overwritten, so always put all selected items of an array."
       operationId: put-webhooks-rss-id
       parameters:
-      - explode: false
+      - description: the ID returned from the API when creating the webhook
+        explode: false
         in: path
         name: id
         required: true
@@ -5345,7 +4194,7 @@ paths:
                     whitelist: null
                     blacklist: null
                     subscriptions:
-                    - dofus2-fr-official-news
+                    - dofus3-fr-official-news
                     format: discord
                     preview_length: 150
                     created_at: 2022-10-25T15:32:37.406281+02:00
@@ -5364,7 +4213,8 @@ paths:
       description: Delete a Webhook from the service.
       operationId: delete-webhooks-twitter-id
       parameters:
-      - explode: false
+      - description: the ID returned from the API when creating the webhook
+        explode: false
         in: path
         name: id
         required: true
@@ -5384,7 +4234,8 @@ paths:
         uuid.
       operationId: get-webhooks-twitter-id
       parameters:
-      - explode: false
+      - description: the ID returned from the API when creating the webhook
+        explode: false
         in: path
         name: id
         required: true
@@ -5423,7 +4274,8 @@ paths:
         \ and arrays will be overwritten, so always put all selected items of an array."
       operationId: put-webhooks-twitter-id
       parameters:
-      - explode: false
+      - description: the ID returned from the API when creating the webhook
+        explode: false
         in: path
         name: id
         required: true
@@ -5440,7 +4292,7 @@ paths:
                   - retro
                   blacklist: null
                   subscriptions:
-                  - dofus2-en-official-changelog
+                  - dofus3-en-official-changelog
                   preview_length: null
             schema:
               $ref: '#/components/schemas/PutTwitterWebhook'
@@ -5477,7 +4329,8 @@ paths:
       description: Delete a Webhook from the service.
       operationId: delete-webhooks-almanax-id
       parameters:
-      - explode: false
+      - description: the ID returned from the API when creating the webhook
+        explode: false
         in: path
         name: id
         required: true
@@ -5497,7 +4350,8 @@ paths:
         uuid.
       operationId: get-webhooks-almanax-id
       parameters:
-      - explode: false
+      - description: the ID returned from the API when creating the webhook
+        explode: false
         in: path
         name: id
         required: true
@@ -5519,7 +4373,7 @@ paths:
                     - plenty-to-harvest
                     bonus_blacklist: null
                     subscriptions:
-                    - dofus2_en
+                    - dofus3_en
                     iso_date: false
                     mentions:
                       kolossium-experience:
@@ -5545,7 +4399,8 @@ paths:
         \ and arrays will be overwritten, so always put all selected items of an array."
       operationId: put-webhooks-almanax-id
       parameters:
-      - explode: false
+      - description: the ID returned from the API when creating the webhook
+        explode: false
         in: path
         name: id
         required: true
@@ -5590,7 +4445,7 @@ paths:
                     - plenty-to-harvest
                     bonus_blacklist: null
                     subscriptions:
-                    - dofus2_en
+                    - dofus3_en
                     iso_date: false
                     mentions:
                       kolossium-experience:
@@ -5625,7 +4480,7 @@ paths:
                   - retro
                   blacklist: null
                   subscriptions:
-                  - dofus2-en-official-news
+                  - dofus3-en-official-news
                   format: discord
                   preview_length: 2000
                   callback: https://discord.com/api/webhooks/XYZ
@@ -5682,7 +4537,7 @@ paths:
                   bonus_whitelist: null
                   bonus_blacklist: null
                   subscriptions:
-                  - dofus2_fr
+                  - dofus3_fr
                   format: discord
                   callback: https://discord.com/api/webhooks/XYZ
                   daily_settings:
@@ -5710,10 +4565,12 @@ paths:
         id: rgb2d0j47fr0l
 components:
   schemas:
-    Items-List-Entry-Typed:
+    ListItemGeneral:
       example:
-        level: 1
-        item_subtype: item_subtype
+        level: 5
+        item_subtype:
+          name_id: name_id
+          ankama_id: 1
         name: name
         image_urls:
           sd: sd
@@ -5730,265 +4587,22 @@ components:
         name:
           type: string
         type:
-          $ref: '#/components/schemas/Items_List_Entry_Typed_type'
+          $ref: '#/components/schemas/TranslatedId'
         item_subtype:
-          description: The API item category. Can be used to build the request URL
-            for this particular item. Always english.
-          type: string
+          $ref: '#/components/schemas/ItemSubtype'
         level:
           type: integer
         image_urls:
-          $ref: '#/components/schemas/Image-Urls'
+          $ref: '#/components/schemas/Images'
+      title: ListItemGeneral
       type: object
       x-examples: {}
       x-stoplight:
         id: r5b3ia3ectz8q
-    Recipe-Entry:
+    ListItem:
       example:
-        quantity: 5
-        item_subtype: item_subtype
-        item_ankama_id: 1
-      properties:
-        item_ankama_id:
-          type: integer
-        item_subtype:
-          type: string
-        quantity:
-          type: integer
-      title: ""
-      type: object
-      x-examples: {}
-      x-stoplight:
-        id: mb2ht06tym8se
-    Set-Effects-Entry:
-      example:
-        ignore_int_min: true
-        ignore_int_max: true
-        item_combination: 2
-        formatted: formatted
-        int_maximum: 5
-        type:
-          is_meta: true
-          is_active: true
-          name: name
-          id: 5
-        int_minimum: 5
-      properties:
-        int_minimum:
-          description: "minimum int value, can be a single if ignore_int_max and no\
-            \ ignore_int_min"
-          type: integer
-        int_maximum:
-          description: "maximum int value, if not ignore_int_max and not ignore_int_min,\
-            \ the effect has a range value"
-          type: integer
-        type:
-          $ref: '#/components/schemas/Set_Effects_Entry_type'
-        ignore_int_min:
-          description: 'ignore the int min field because the actual value is a string.
-            For readability the templated field is the only important field in this
-            case. '
-          type: boolean
-        ignore_int_max:
-          description: "ignore the int max field, if ignore_int_min is true, int min\
-            \ is a single value"
-          type: boolean
-        formatted:
-          description: all fields from above encoded in a single string
-          type: string
-        item_combination:
-          description: how many items it needs to trigger this effect with the given
-            set
-          type: integer
-      type: object
-      x-examples: {}
-      x-tags:
-      - meta
-    Effects-Entry:
-      example:
-        ignore_int_min: true
-        ignore_int_max: true
-        formatted: formatted
-        int_maximum: 1
-        type:
-          is_meta: true
-          is_active: true
-          name: name
-          id: 5
-        int_minimum: 6
-      properties:
-        int_minimum:
-          description: "minimum int value, can be a single if ignore_int_max and no\
-            \ ignore_int_min"
-          type: integer
-        int_maximum:
-          description: "maximum int value, if not ignore_int_max and not ignore_int_min,\
-            \ the effect has a range value"
-          type: integer
-        type:
-          $ref: '#/components/schemas/Set_Effects_Entry_type'
-        ignore_int_min:
-          description: 'ignore the int min field because the actual value is a string.
-            For readability the templated field is the only important field in this
-            case. '
-          type: boolean
-        ignore_int_max:
-          description: "ignore the int max field, if ignore_int_min is true, int min\
-            \ is a single value"
-          type: boolean
-        formatted:
-          description: all fields from above encoded in a single string
-          type: string
-      type: object
-      x-examples: {}
-      x-tags:
-      - meta
-      x-stoplight:
-        id: frixo5s02x57v
-    Image-Urls:
-      description: "All images except icon are rendered in the background which can\
-        \ take some time (up to hours if all data is completely generated from scratch).\
-        \ Because of this, they can be null if they are not yet rendered."
-      example:
-        sd: sd
-        icon: icon
-        hq: hq
-        hd: hd
-      properties:
-        icon:
-          description: "60x60 px, always available"
-          type: string
-        sd:
-          description: 200x200 px
-          nullable: true
-          type: string
-        hq:
-          description: 400x400 px
-          nullable: true
-          type: string
-        hd:
-          description: 800x800 px
-          nullable: true
-          type: string
-      title: ""
-      type: object
-      x-examples:
-        All available:
-          icon: https://dofusdu.de/dofus/img/mount/1.png
-          sd: https://dofusdu.de/dofus/img/mount/1-200.png
-          hq: https://dofusdu.de/dofus/img/mount/1-400.png
-          hd: https://dofusdu.de/dofus/img/mount/1-800.png
-        HD not rendered:
-          icon: https://dofusdu.de/dofus/img/mount/1.png
-          sd: https://dofusdu.de/dofus/img/mount/1-200.png
-          hq: https://dofusdu.de/dofus/img/mount/1-400.png
-      x-stoplight:
-        id: ebvisb0pnf46t
-    Resource:
-      description: ""
-      example:
-        effects:
-        - ignore_int_min: true
-          ignore_int_max: true
-          formatted: formatted
-          int_maximum: 1
-          type:
-            is_meta: true
-            is_active: true
-            name: name
-            id: 5
-          int_minimum: 6
-        - ignore_int_min: true
-          ignore_int_max: true
-          formatted: formatted
-          int_maximum: 1
-          type:
-            is_meta: true
-            is_active: true
-            name: name
-            id: 5
-          int_minimum: 6
-        condition_tree:
-          children:
-          - null
-          - null
-          is_operand: false
-          relation: and
-        level: 1
-        name: name
-        recipe:
-        - quantity: 5
-          item_subtype: item_subtype
-          item_ankama_id: 1
-        - quantity: 5
-          item_subtype: item_subtype
-          item_ankama_id: 1
-        description: description
-        image_urls:
-          sd: sd
-          icon: icon
-          hq: hq
-          hd: hd
-        pods: 5
-        type:
-          name: name
-          id: 0
-        conditions:
-        - operator: operator
-          int_value: 5
-          element:
-            name: name
-            id: 6
-        - operator: operator
-          int_value: 5
-          element:
-            name: name
-            id: 6
-        ankama_id: 0
-      properties:
-        ankama_id:
-          type: integer
-        name:
-          type: string
-        description:
-          type: string
-        type:
-          $ref: '#/components/schemas/Resource_type'
-        level:
-          type: integer
-        pods:
-          type: integer
-        image_urls:
-          $ref: '#/components/schemas/Image-Urls'
-        effects:
-          items:
-            $ref: '#/components/schemas/Effects-Entry'
-          nullable: true
-          type: array
-        conditions:
-          deprecated: true
-          items:
-            $ref: '#/components/schemas/Condition-Entry'
-          nullable: true
-          type: array
-        condition_tree:
-          $ref: '#/components/schemas/Condition-Tree-Node'
-        recipe:
-          items:
-            $ref: '#/components/schemas/Recipe-Entry'
-          nullable: true
-          type: array
-      type: object
-      x-examples: {}
-      x-stoplight:
-        id: 10otndsm7bw3k
-    Item-List-Entry:
-      example:
-        critical_hit_probability: 9
-        parent_set:
-          name: name
-          id: 7
-        is_two_handed: true
+        critical_hit_probability: 2
+        parent_set: ""
         level: 6
         is_weapon: true
         recipe:
@@ -6005,8 +4619,8 @@ components:
           hd: hd
         description: description
         range:
-          min: 7
-          max: 1
+          min: 2
+          max: 4
         type:
           name: name
           id: 6
@@ -6014,45 +4628,29 @@ components:
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 1
+          int_maximum: 5
           type:
-            is_meta: true
             is_active: true
+            is_meta: true
             name: name
             id: 5
-          int_minimum: 6
+          int_minimum: 1
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 1
+          int_maximum: 5
           type:
-            is_meta: true
             is_active: true
+            is_meta: true
             name: name
             id: 5
-          int_minimum: 6
-        max_cast_per_turn: 2
-        condition_tree:
-          children:
-          - null
-          - null
-          is_operand: false
-          relation: and
+          int_minimum: 1
+        max_cast_per_turn: 9
         name: name
-        ap_cost: 4
-        pods: 2
-        conditions:
-        - operator: operator
-          int_value: 5
-          element:
-            name: name
-            id: 6
-        - operator: operator
-          int_value: 5
-          element:
-            name: name
-            id: 6
-        critical_hit_bonus: 3
+        ap_cost: 3
+        pods: 5
+        conditions: ""
+        critical_hit_bonus: 7
         ankama_id: 0
       properties:
         ankama_id:
@@ -6060,14 +4658,14 @@ components:
         name:
           type: string
         type:
-          $ref: '#/components/schemas/Items_List_Entry_Typed_type'
+          $ref: '#/components/schemas/TranslatedId'
         level:
           type: integer
         image_urls:
-          $ref: '#/components/schemas/Image-Urls'
+          $ref: '#/components/schemas/Images'
         recipe:
           items:
-            $ref: '#/components/schemas/Recipe-Entry'
+            $ref: '#/components/schemas/Recipe'
           nullable: true
           type: array
         description:
@@ -6076,16 +4674,12 @@ components:
           x-stoplight:
             id: t04qfhnlgc4kw
         conditions:
-          deprecated: true
-          items:
-            $ref: '#/components/schemas/Condition-Entry'
+          allOf:
+          - $ref: '#/components/schemas/ConditionNode'
           nullable: true
-          type: array
-        condition_tree:
-          $ref: '#/components/schemas/Condition-Tree-Node'
         effects:
           items:
-            $ref: '#/components/schemas/Effects-Entry'
+            $ref: '#/components/schemas/Effect'
           nullable: true
           type: array
         is_weapon:
@@ -6095,16 +4689,15 @@ components:
           nullable: true
           type: integer
         parent_set:
-          $ref: '#/components/schemas/Item_List_Entry_parent_set'
+          allOf:
+          - $ref: '#/components/schemas/TranslatedId'
+          nullable: true
         critical_hit_probability:
           nullable: true
           type: integer
         critical_hit_bonus:
           nullable: true
           type: integer
-        is_two_handed:
-          nullable: true
-          type: boolean
         max_cast_per_turn:
           nullable: true
           type: integer
@@ -6112,59 +4705,236 @@ components:
           nullable: true
           type: integer
         range:
-          $ref: '#/components/schemas/Item_List_Entry_range'
+          $ref: '#/components/schemas/Range'
+      title: ListItem
       type: object
       x-examples: {}
       x-stoplight:
         id: t7g4fratmdgkx
-    Equipment-Set:
+    Recipe:
+      example:
+        quantity: 5
+        item_subtype: item_subtype
+        item_ankama_id: 1
+      properties:
+        item_ankama_id:
+          type: integer
+        item_subtype:
+          type: string
+        quantity:
+          type: integer
+      title: Recipe
+      type: object
+      x-examples: {}
+      x-stoplight:
+        id: mb2ht06tym8se
+    Effect:
+      example:
+        ignore_int_min: true
+        ignore_int_max: true
+        formatted: formatted
+        int_maximum: 5
+        type:
+          is_active: true
+          is_meta: true
+          name: name
+          id: 5
+        int_minimum: 1
+      properties:
+        int_minimum:
+          description: "minimum int value, can be a single if ignore_int_max and no\
+            \ ignore_int_min"
+          type: integer
+        int_maximum:
+          description: "maximum int value, if not ignore_int_max and not ignore_int_min,\
+            \ the effect has a range value"
+          type: integer
+        type:
+          $ref: '#/components/schemas/EffectType'
+        ignore_int_min:
+          description: 'ignore the int min field because the actual value is a string.
+            For readability the templated field is the only important field in this
+            case. '
+          type: boolean
+        ignore_int_max:
+          description: "ignore the int max field, if ignore_int_min is true, int min\
+            \ is a single value"
+          type: boolean
+        formatted:
+          description: all fields from above encoded in a single string
+          type: string
+      title: Effect
+      type: object
+      x-examples: {}
+      x-tags:
+      - meta
+      x-stoplight:
+        id: frixo5s02x57v
+    EffectType:
+      example:
+        is_active: true
+        is_meta: true
+        name: name
+        id: 5
+      properties:
+        id:
+          type: integer
+          x-stoplight:
+            id: 8tu8tzm9pnpyl
+        name:
+          type: string
+          x-stoplight:
+            id: 57dfic9du6d6s
+        is_active:
+          description: Affects target or source actively.
+          type: boolean
+          x-stoplight:
+            id: adhrzfp84g758
+        is_meta:
+          description: "true if a type is generated from the Api instead of Ankama.\
+            \ In that case, always prefer showing the templated string and omit everything\
+            \ else. The \"name\" field will have an english description of the meta\
+            \ type. An example for such effects are class sets effects."
+          type: boolean
+          x-stoplight:
+            id: 26vqqj1u5rff2
+      title: EffectType
+      type: object
+      x-stoplight:
+        id: h9lje70zy2774
+    Images:
+      description: "All images except icon are rendered in the background which can\
+        \ take some time (up to hours if all data is completely generated from scratch).\
+        \ Because of this, they can be null if they are not yet rendered."
+      example:
+        sd: sd
+        icon: icon
+        hq: hq
+        hd: hd
+      properties:
+        icon:
+          description: "64x64 px, always available"
+          type: string
+        sd:
+          description: around 2x the resolution of icon
+          nullable: true
+          type: string
+        hq:
+          description: around 2x the resolution of sd
+          nullable: true
+          type: string
+        hd:
+          description: around 2x the resolution of hd
+          nullable: true
+          type: string
+      title: Images
+      type: object
+      x-examples: {}
+      x-stoplight:
+        id: ebvisb0pnf46t
+    Resource:
+      example:
+        effects:
+        - ignore_int_min: true
+          ignore_int_max: true
+          formatted: formatted
+          int_maximum: 5
+          type:
+            is_active: true
+            is_meta: true
+            name: name
+            id: 5
+          int_minimum: 1
+        - ignore_int_min: true
+          ignore_int_max: true
+          formatted: formatted
+          int_maximum: 5
+          type:
+            is_active: true
+            is_meta: true
+            name: name
+            id: 5
+          int_minimum: 1
+        level: 6
+        name: name
+        recipe:
+        - quantity: 5
+          item_subtype: item_subtype
+          item_ankama_id: 1
+        - quantity: 5
+          item_subtype: item_subtype
+          item_ankama_id: 1
+        description: description
+        image_urls:
+          sd: sd
+          icon: icon
+          hq: hq
+          hd: hd
+        pods: 1
+        type:
+          name: name
+          id: 6
+        conditions: ""
+        ankama_id: 0
+      properties:
+        ankama_id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        type:
+          $ref: '#/components/schemas/TranslatedId'
+        level:
+          type: integer
+        pods:
+          type: integer
+        image_urls:
+          $ref: '#/components/schemas/Images'
+        effects:
+          items:
+            $ref: '#/components/schemas/Effect'
+          nullable: true
+          type: array
+        conditions:
+          allOf:
+          - $ref: '#/components/schemas/ConditionNode'
+          nullable: true
+        recipe:
+          items:
+            $ref: '#/components/schemas/Recipe'
+          nullable: true
+          type: array
+      title: Resource
+      type: object
+      x-examples: {}
+      x-stoplight:
+        id: 10otndsm7bw3k
+    Set:
       example:
         is_cosmetic: true
         effects:
-        - - ignore_int_min: true
-            ignore_int_max: true
-            item_combination: 2
-            formatted: formatted
-            int_maximum: 5
-            type:
-              is_meta: true
-              is_active: true
-              name: name
-              id: 5
-            int_minimum: 5
+          key:
           - ignore_int_min: true
             ignore_int_max: true
-            item_combination: 2
             formatted: formatted
             int_maximum: 5
             type:
-              is_meta: true
               is_active: true
+              is_meta: true
               name: name
               id: 5
-            int_minimum: 5
-        - - ignore_int_min: true
-            ignore_int_max: true
-            item_combination: 2
-            formatted: formatted
-            int_maximum: 5
-            type:
-              is_meta: true
-              is_active: true
-              name: name
-              id: 5
-            int_minimum: 5
+            int_minimum: 1
           - ignore_int_min: true
             ignore_int_max: true
-            item_combination: 2
             formatted: formatted
             int_maximum: 5
             type:
-              is_meta: true
               is_active: true
+              is_meta: true
               name: name
               id: 5
-            int_minimum: 5
+            int_minimum: 1
         highest_equipment_level: 1
         name: name
         equipment_ids:
@@ -6181,74 +4951,57 @@ components:
             type: integer
           type: array
         effects:
-          items:
+          additionalProperties:
             items:
-              $ref: '#/components/schemas/Set-Effects-Entry'
+              $ref: '#/components/schemas/Effect'
+            minItems: 0
             type: array
-          nullable: true
-          type: array
+            x-stoplight:
+              id: 9zr0rwo061q8o
+          title: SetEffects
+          type: object
+          x-stoplight:
+            id: kdx5a0h3kp09h
         highest_equipment_level:
           type: integer
         is_cosmetic:
           type: boolean
           x-stoplight:
             id: 7d1w5073pqtt7
+      title: Set
       type: object
       x-stoplight:
         id: xmkp08r20yq44
-    Set-List-Entry:
+    ListSet:
       example:
         is_cosmetic: true
         effects:
-        - - ignore_int_min: true
-            ignore_int_max: true
-            item_combination: 2
-            formatted: formatted
-            int_maximum: 5
-            type:
-              is_meta: true
-              is_active: true
-              name: name
-              id: 5
-            int_minimum: 5
+          key:
           - ignore_int_min: true
             ignore_int_max: true
-            item_combination: 2
             formatted: formatted
             int_maximum: 5
             type:
-              is_meta: true
               is_active: true
+              is_meta: true
               name: name
               id: 5
-            int_minimum: 5
-        - - ignore_int_min: true
-            ignore_int_max: true
-            item_combination: 2
-            formatted: formatted
-            int_maximum: 5
-            type:
-              is_meta: true
-              is_active: true
-              name: name
-              id: 5
-            int_minimum: 5
+            int_minimum: 1
           - ignore_int_min: true
             ignore_int_max: true
-            item_combination: 2
             formatted: formatted
             int_maximum: 5
             type:
-              is_meta: true
               is_active: true
+              is_meta: true
               name: name
               id: 5
-            int_minimum: 5
+            int_minimum: 1
         level: 1
         name: name
         equipment_ids:
-        - 7
-        - 7
+        - 5
+        - 5
         items: 6
         ankama_id: 0
       properties:
@@ -6262,12 +5015,17 @@ components:
         level:
           type: integer
         effects:
-          items:
+          additionalProperties:
             items:
-              $ref: '#/components/schemas/Set-Effects-Entry'
+              $ref: '#/components/schemas/Effect'
+            minItems: 0
             type: array
-          nullable: true
-          type: array
+            x-stoplight:
+              id: 9zr0rwo061q8o
+          title: SetEffects
+          type: object
+          x-stoplight:
+            id: kdx5a0h3kp09h
         equipment_ids:
           items:
             type: integer
@@ -6277,6 +5035,7 @@ components:
           type: boolean
           x-stoplight:
             id: uztiykrx0bobf
+      title: ListSet
       type: object
       x-examples: {}
       x-stoplight:
@@ -6287,100 +5046,52 @@ components:
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 1
+          int_maximum: 5
           type:
-            is_meta: true
             is_active: true
+            is_meta: true
             name: name
             id: 5
-          int_minimum: 6
+          int_minimum: 1
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 1
+          int_maximum: 5
           type:
-            is_meta: true
             is_active: true
+            is_meta: true
             name: name
             id: 5
-          int_minimum: 6
+          int_minimum: 1
         name: name
         image_urls:
           sd: sd
           icon: icon
           hq: hq
           hd: hd
-        family_name: family_name
+        family:
+          name: name
+          ankama_id: 6
         ankama_id: 0
       properties:
         ankama_id:
           type: integer
         name:
           type: string
-        family_name:
-          type: string
+        family:
+          $ref: '#/components/schemas/MountFamily'
         image_urls:
-          $ref: '#/components/schemas/Image-Urls'
+          $ref: '#/components/schemas/Images'
         effects:
           items:
-            $ref: '#/components/schemas/Effects-Entry'
+            $ref: '#/components/schemas/Effect'
           nullable: true
           type: array
-      title: ""
+      title: Mount
       type: object
       x-stoplight:
         id: t56c7qu8hapx4
-    Mount-List-Entry:
-      example:
-        effects:
-        - ignore_int_min: true
-          ignore_int_max: true
-          formatted: formatted
-          int_maximum: 1
-          type:
-            is_meta: true
-            is_active: true
-            name: name
-            id: 5
-          int_minimum: 6
-        - ignore_int_min: true
-          ignore_int_max: true
-          formatted: formatted
-          int_maximum: 1
-          type:
-            is_meta: true
-            is_active: true
-            name: name
-            id: 5
-          int_minimum: 6
-        name: name
-        image_urls:
-          sd: sd
-          icon: icon
-          hq: hq
-          hd: hd
-        family_name: family_name
-        ankama_id: 0
-      properties:
-        ankama_id:
-          type: integer
-        name:
-          type: string
-        family_name:
-          type: string
-        image_urls:
-          $ref: '#/components/schemas/Image-Urls'
-        effects:
-          items:
-            $ref: '#/components/schemas/Effects-Entry'
-          nullable: true
-          type: array
-      title: ""
-      type: object
-      x-examples: {}
-      x-stoplight:
-        id: rie41mn8llctq
-    Items-List-Paged:
+    ListItems:
       example:
         _links:
           next: next
@@ -6388,11 +5099,8 @@ components:
           prev: prev
           first: first
         items:
-        - critical_hit_probability: 9
-          parent_set:
-            name: name
-            id: 7
-          is_two_handed: true
+        - critical_hit_probability: 2
+          parent_set: ""
           level: 6
           is_weapon: true
           recipe:
@@ -6409,8 +5117,8 @@ components:
             hd: hd
           description: description
           range:
-            min: 7
-            max: 1
+            min: 2
+            max: 4
           type:
             name: name
             id: 6
@@ -6418,51 +5126,32 @@ components:
           - ignore_int_min: true
             ignore_int_max: true
             formatted: formatted
-            int_maximum: 1
+            int_maximum: 5
             type:
-              is_meta: true
               is_active: true
+              is_meta: true
               name: name
               id: 5
-            int_minimum: 6
+            int_minimum: 1
           - ignore_int_min: true
             ignore_int_max: true
             formatted: formatted
-            int_maximum: 1
+            int_maximum: 5
             type:
-              is_meta: true
               is_active: true
+              is_meta: true
               name: name
               id: 5
-            int_minimum: 6
-          max_cast_per_turn: 2
-          condition_tree:
-            children:
-            - null
-            - null
-            is_operand: false
-            relation: and
+            int_minimum: 1
+          max_cast_per_turn: 9
           name: name
-          ap_cost: 4
-          pods: 2
-          conditions:
-          - operator: operator
-            int_value: 5
-            element:
-              name: name
-              id: 6
-          - operator: operator
-            int_value: 5
-            element:
-              name: name
-              id: 6
-          critical_hit_bonus: 3
+          ap_cost: 3
+          pods: 5
+          conditions: ""
+          critical_hit_bonus: 7
           ankama_id: 0
-        - critical_hit_probability: 9
-          parent_set:
-            name: name
-            id: 7
-          is_two_handed: true
+        - critical_hit_probability: 2
+          parent_set: ""
           level: 6
           is_weapon: true
           recipe:
@@ -6479,8 +5168,8 @@ components:
             hd: hd
           description: description
           range:
-            min: 7
-            max: 1
+            min: 2
+            max: 4
           type:
             name: name
             id: 6
@@ -6488,164 +5177,102 @@ components:
           - ignore_int_min: true
             ignore_int_max: true
             formatted: formatted
-            int_maximum: 1
+            int_maximum: 5
             type:
-              is_meta: true
               is_active: true
+              is_meta: true
               name: name
               id: 5
-            int_minimum: 6
+            int_minimum: 1
           - ignore_int_min: true
             ignore_int_max: true
             formatted: formatted
-            int_maximum: 1
+            int_maximum: 5
             type:
-              is_meta: true
               is_active: true
+              is_meta: true
               name: name
               id: 5
-            int_minimum: 6
-          max_cast_per_turn: 2
-          condition_tree:
-            children:
-            - null
-            - null
-            is_operand: false
-            relation: and
+            int_minimum: 1
+          max_cast_per_turn: 9
           name: name
-          ap_cost: 4
-          pods: 2
-          conditions:
-          - operator: operator
-            int_value: 5
-            element:
-              name: name
-              id: 6
-          - operator: operator
-            int_value: 5
-            element:
-              name: name
-              id: 6
-          critical_hit_bonus: 3
+          ap_cost: 3
+          pods: 5
+          conditions: ""
+          critical_hit_bonus: 7
           ankama_id: 0
       properties:
         _links:
-          $ref: '#/components/schemas/Links-Paged'
+          $ref: '#/components/schemas/PagedLinks'
         items:
           items:
-            $ref: '#/components/schemas/Item-List-Entry'
+            $ref: '#/components/schemas/ListItem'
           type: array
-      title: ""
+      title: ListItems
       type: object
       x-stoplight:
         id: wp54br61flkau
-    Sets-List-Paged:
+    ListSets:
       example:
         sets:
         - is_cosmetic: true
           effects:
-          - - ignore_int_min: true
-              ignore_int_max: true
-              item_combination: 2
-              formatted: formatted
-              int_maximum: 5
-              type:
-                is_meta: true
-                is_active: true
-                name: name
-                id: 5
-              int_minimum: 5
+            key:
             - ignore_int_min: true
               ignore_int_max: true
-              item_combination: 2
               formatted: formatted
               int_maximum: 5
               type:
-                is_meta: true
                 is_active: true
+                is_meta: true
                 name: name
                 id: 5
-              int_minimum: 5
-          - - ignore_int_min: true
-              ignore_int_max: true
-              item_combination: 2
-              formatted: formatted
-              int_maximum: 5
-              type:
-                is_meta: true
-                is_active: true
-                name: name
-                id: 5
-              int_minimum: 5
+              int_minimum: 1
             - ignore_int_min: true
               ignore_int_max: true
-              item_combination: 2
               formatted: formatted
               int_maximum: 5
               type:
-                is_meta: true
                 is_active: true
+                is_meta: true
                 name: name
                 id: 5
-              int_minimum: 5
+              int_minimum: 1
           level: 1
           name: name
           equipment_ids:
-          - 7
-          - 7
+          - 5
+          - 5
           items: 6
           ankama_id: 0
         - is_cosmetic: true
           effects:
-          - - ignore_int_min: true
-              ignore_int_max: true
-              item_combination: 2
-              formatted: formatted
-              int_maximum: 5
-              type:
-                is_meta: true
-                is_active: true
-                name: name
-                id: 5
-              int_minimum: 5
+            key:
             - ignore_int_min: true
               ignore_int_max: true
-              item_combination: 2
               formatted: formatted
               int_maximum: 5
               type:
-                is_meta: true
                 is_active: true
+                is_meta: true
                 name: name
                 id: 5
-              int_minimum: 5
-          - - ignore_int_min: true
-              ignore_int_max: true
-              item_combination: 2
-              formatted: formatted
-              int_maximum: 5
-              type:
-                is_meta: true
-                is_active: true
-                name: name
-                id: 5
-              int_minimum: 5
+              int_minimum: 1
             - ignore_int_min: true
               ignore_int_max: true
-              item_combination: 2
               formatted: formatted
               int_maximum: 5
               type:
-                is_meta: true
                 is_active: true
+                is_meta: true
                 name: name
                 id: 5
-              int_minimum: 5
+              int_minimum: 1
           level: 1
           name: name
           equipment_ids:
-          - 7
-          - 7
+          - 5
+          - 5
           items: 6
           ankama_id: 0
         _links:
@@ -6655,15 +5282,16 @@ components:
           first: first
       properties:
         _links:
-          $ref: '#/components/schemas/Links-Paged'
+          $ref: '#/components/schemas/PagedLinks'
         sets:
           items:
-            $ref: '#/components/schemas/Set-List-Entry'
+            $ref: '#/components/schemas/ListSet'
           type: array
+      title: ListSetPaged
       type: object
       x-stoplight:
         id: kr369f842c2w9
-    Mounts-List-Paged:
+    ListMounts:
       example:
         _links:
           next: next
@@ -6675,72 +5303,76 @@ components:
           - ignore_int_min: true
             ignore_int_max: true
             formatted: formatted
-            int_maximum: 1
+            int_maximum: 5
             type:
-              is_meta: true
               is_active: true
+              is_meta: true
               name: name
               id: 5
-            int_minimum: 6
+            int_minimum: 1
           - ignore_int_min: true
             ignore_int_max: true
             formatted: formatted
-            int_maximum: 1
+            int_maximum: 5
             type:
-              is_meta: true
               is_active: true
+              is_meta: true
               name: name
               id: 5
-            int_minimum: 6
+            int_minimum: 1
           name: name
           image_urls:
             sd: sd
             icon: icon
             hq: hq
             hd: hd
-          family_name: family_name
+          family:
+            name: name
+            ankama_id: 6
           ankama_id: 0
         - effects:
           - ignore_int_min: true
             ignore_int_max: true
             formatted: formatted
-            int_maximum: 1
+            int_maximum: 5
             type:
-              is_meta: true
               is_active: true
+              is_meta: true
               name: name
               id: 5
-            int_minimum: 6
+            int_minimum: 1
           - ignore_int_min: true
             ignore_int_max: true
             formatted: formatted
-            int_maximum: 1
+            int_maximum: 5
             type:
-              is_meta: true
               is_active: true
+              is_meta: true
               name: name
               id: 5
-            int_minimum: 6
+            int_minimum: 1
           name: name
           image_urls:
             sd: sd
             icon: icon
             hq: hq
             hd: hd
-          family_name: family_name
+          family:
+            name: name
+            ankama_id: 6
           ankama_id: 0
       properties:
         _links:
-          $ref: '#/components/schemas/Links-Paged'
+          $ref: '#/components/schemas/PagedLinks'
         items:
           items:
-            $ref: '#/components/schemas/Mount-List-Entry'
+            $ref: '#/components/schemas/Mount'
           type: array
-      title: ""
+      title: ListMounts
       type: object
       x-stoplight:
         id: 67iikn0tj64zs
-    Links-Paged:
+    PagedLinks:
       example:
         next: next
         last: last
@@ -6759,54 +5391,43 @@ components:
         last:
           nullable: true
           type: string
-      title: ""
+      title: PagedLinks
       type: object
       x-stoplight:
         id: 60s06npdim49u
-    Condition-Entry:
-      description: ""
-      example:
-        operator: operator
-        int_value: 5
-        element:
-          name: name
-          id: 6
+    Condition:
       properties:
         operator:
           type: string
         int_value:
           type: integer
         element:
-          $ref: '#/components/schemas/Items_List_Entry_Typed_type'
+          $ref: '#/components/schemas/TranslatedId'
       type: object
       x-stoplight:
         id: cfe46yvylz0b5
-    Condition-Tree-Node:
+    ConditionNode:
       oneOf:
-      - $ref: '#/components/schemas/Condition-Tree-Relation'
-      - $ref: '#/components/schemas/Condition-Tree-Leaf'
+      - $ref: '#/components/schemas/ConditionRelation'
+      - $ref: '#/components/schemas/ConditionLeaf'
+      title: ConditionNode
       x-stoplight:
         id: kv2rib65himdt
       x-examples: {}
-    Condition-Tree-Leaf:
+    ConditionLeaf:
       properties:
         is_operand:
           default: true
           description: always "true" for the leaf of a tree
           type: boolean
         condition:
-          $ref: '#/components/schemas/Condition-Entry'
+          $ref: '#/components/schemas/Condition'
       type: object
       x-stoplight:
         id: qpb8of1ljcb4y
       x-examples: {}
-    Condition-Tree-Relation:
-      example:
-        children:
-        - null
-        - null
-        is_operand: false
-        relation: and
+    ConditionRelation:
+      description: ""
       properties:
         is_operand:
           default: false
@@ -6819,19 +5440,45 @@ components:
           type: string
         children:
           items:
-            $ref: '#/components/schemas/Condition-Tree-Node'
+            allOf:
+            - $ref: '#/components/schemas/ConditionNode'
+            nullable: true
+            x-stoplight:
+              id: i3dqn2ib2hjfl
+          minItems: 0
           type: array
+      title: ConditionRelation
       type: object
       x-stoplight:
         id: 1ubaw97npzw7b
       x-examples: {}
     Equipment:
       example:
-        parent_set:
-          name: name
-          id: 7
+        effects:
+        - ignore_int_min: true
+          ignore_int_max: true
+          formatted: formatted
+          int_maximum: 5
+          type:
+            is_active: true
+            is_meta: true
+            name: name
+            id: 5
+          int_minimum: 1
+        - ignore_int_min: true
+          ignore_int_max: true
+          formatted: formatted
+          int_maximum: 5
+          type:
+            is_active: true
+            is_meta: true
+            name: name
+            id: 5
+          int_minimum: 1
+        parent_set: ""
         level: 6
         is_weapon: true
+        name: name
         recipe:
         - quantity: 5
           item_subtype: item_subtype
@@ -6845,49 +5492,11 @@ components:
           icon: icon
           hq: hq
           hd: hd
+        pods: 1
         type:
           name: name
           id: 6
-        effects:
-        - ignore_int_min: true
-          ignore_int_max: true
-          formatted: formatted
-          int_maximum: 1
-          type:
-            is_meta: true
-            is_active: true
-            name: name
-            id: 5
-          int_minimum: 6
-        - ignore_int_min: true
-          ignore_int_max: true
-          formatted: formatted
-          int_maximum: 1
-          type:
-            is_meta: true
-            is_active: true
-            name: name
-            id: 5
-          int_minimum: 6
-        condition_tree:
-          children:
-          - null
-          - null
-          is_operand: false
-          relation: and
-        name: name
-        pods: 1
-        conditions:
-        - operator: operator
-          int_value: 5
-          element:
-            name: name
-            id: 6
-        - operator: operator
-          int_value: 5
-          element:
-            name: name
-            id: 6
+        conditions: ""
         ankama_id: 0
       properties:
         ankama_id:
@@ -6897,7 +5506,7 @@ components:
         description:
           type: string
         type:
-          $ref: '#/components/schemas/Items_List_Entry_Typed_type'
+          $ref: '#/components/schemas/TranslatedId'
         is_weapon:
           type: boolean
         level:
@@ -6905,27 +5514,25 @@ components:
         pods:
           type: integer
         image_urls:
-          $ref: '#/components/schemas/Image-Urls'
+          $ref: '#/components/schemas/Images'
         effects:
           items:
-            $ref: '#/components/schemas/Effects-Entry'
+            $ref: '#/components/schemas/Effect'
           nullable: true
           type: array
         conditions:
-          deprecated: true
-          items:
-            $ref: '#/components/schemas/Condition-Entry'
+          allOf:
+          - $ref: '#/components/schemas/ConditionNode'
           nullable: true
-          type: array
-        condition_tree:
-          $ref: '#/components/schemas/Condition-Tree-Node'
         recipe:
           items:
-            $ref: '#/components/schemas/Recipe-Entry'
+            $ref: '#/components/schemas/Recipe'
           nullable: true
           type: array
         parent_set:
-          $ref: '#/components/schemas/Item_List_Entry_parent_set'
+          allOf:
+          - $ref: '#/components/schemas/TranslatedId'
+          nullable: true
       type: object
       x-examples: {}
       x-stoplight:
@@ -6933,10 +5540,7 @@ components:
     Weapon:
       example:
         critical_hit_probability: 5
-        parent_set:
-          name: name
-          id: 7
-        is_two_handed: true
+        parent_set: ""
         level: 6
         is_weapon: true
         recipe:
@@ -6953,8 +5557,8 @@ components:
           hq: hq
           hd: hd
         range:
-          min: 9
-          max: 3
+          min: 2
+          max: 4
         type:
           name: name
           id: 6
@@ -6962,44 +5566,28 @@ components:
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 1
+          int_maximum: 5
           type:
-            is_meta: true
             is_active: true
+            is_meta: true
             name: name
             id: 5
-          int_minimum: 6
+          int_minimum: 1
         - ignore_int_min: true
           ignore_int_max: true
           formatted: formatted
-          int_maximum: 1
+          int_maximum: 5
           type:
-            is_meta: true
             is_active: true
+            is_meta: true
             name: name
             id: 5
-          int_minimum: 6
+          int_minimum: 1
         max_cast_per_turn: 2
-        condition_tree:
-          children:
-          - null
-          - null
-          is_operand: false
-          relation: and
         name: name
         ap_cost: 7
         pods: 1
-        conditions:
-        - operator: operator
-          int_value: 5
-          element:
-            name: name
-            id: 6
-        - operator: operator
-          int_value: 5
-          element:
-            name: name
-            id: 6
+        conditions: ""
         critical_hit_bonus: 5
         ankama_id: 0
       properties:
@@ -7010,7 +5598,7 @@ components:
         description:
           type: string
         type:
-          $ref: '#/components/schemas/Items_List_Entry_Typed_type'
+          $ref: '#/components/schemas/TranslatedId'
         is_weapon:
           description: always true when the item is a weapon. Many fields are now
             available. Always check for this flag first when getting single equipment
@@ -7021,44 +5609,141 @@ components:
         pods:
           type: integer
         image_urls:
-          $ref: '#/components/schemas/Image-Urls'
+          $ref: '#/components/schemas/Images'
         effects:
           items:
-            $ref: '#/components/schemas/Effects-Entry'
+            $ref: '#/components/schemas/Effect'
           nullable: true
           type: array
         conditions:
-          deprecated: true
-          items:
-            $ref: '#/components/schemas/Condition-Entry'
+          allOf:
+          - $ref: '#/components/schemas/ConditionNode'
           nullable: true
-          type: array
-        condition_tree:
-          $ref: '#/components/schemas/Condition-Tree-Node'
         critical_hit_probability:
           type: integer
         critical_hit_bonus:
           type: integer
-        is_two_handed:
-          type: boolean
         max_cast_per_turn:
           type: integer
         ap_cost:
           type: integer
         range:
-          $ref: '#/components/schemas/Weapon_range'
+          $ref: '#/components/schemas/Range'
         recipe:
           items:
-            $ref: '#/components/schemas/Recipe-Entry'
+            $ref: '#/components/schemas/Recipe'
           nullable: true
           type: array
         parent_set:
-          $ref: '#/components/schemas/Item_List_Entry_parent_set'
+          allOf:
+          - $ref: '#/components/schemas/TranslatedId'
+          nullable: true
       type: object
       x-examples: {}
       x-stoplight:
         id: 904f1afmcifdp
-    Almanax-Entry:
+    ItemSubtype:
+      example:
+        name_id: name_id
+        ankama_id: 1
+      properties:
+        ankama_id:
+          type: integer
+          x-stoplight:
+            id: n5cqko2t6q5kx
+        name_id:
+          description: unique
+          type: string
+          x-stoplight:
+            id: 914m1fu53jptk
+      title: ItemSubtype
+      type: object
+      x-stoplight:
+        id: vhpfmq2ovxmfg
+    SetEffects:
+      additionalProperties:
+        items:
+          $ref: '#/components/schemas/Effect'
+        minItems: 0
+        type: array
+        x-stoplight:
+          id: 9zr0rwo061q8o
+      title: SetEffects
+      type: object
+      x-stoplight:
+        id: kdx5a0h3kp09h
+    TranslatedId:
+      example:
+        name: name
+        id: 6
+      properties:
+        id:
+          description: unique
+          type: integer
+          x-stoplight:
+            id: t60hbquleeyuy
+        name:
+          description: localized name
+          type: string
+          x-stoplight:
+            id: isofaco3r3x4i
+      title: TranslatedId
+      type: object
+    MountFamily:
+      example:
+        name: name
+        ankama_id: 6
+      properties:
+        ankama_id:
+          type: integer
+          x-stoplight:
+            id: ck57mmuv0bl4q
+        name:
+          description: localized name
+          type: string
+      title: MountFamily
+      type: object
+      x-stoplight:
+        id: 7v7yek19r0zo5
+    Error:
+      example:
+        code: code
+        details: details
+        error: error
+        message: message
+        status: 5
+      properties:
+        status:
+          description: HTTP status code
+          type: integer
+          x-stoplight:
+            id: 2m13q0eljxvuk
+        error:
+          description: HTTP status as text
+          type: string
+          x-stoplight:
+            id: f05elfa5kv7m6
+        code:
+          description: API specific error identifier for switch-case handling
+          type: string
+          x-stoplight:
+            id: f29krod4og7ez
+        message:
+          description: "General, human-friendly error description"
+          type: string
+          x-stoplight:
+            id: jqri60r7fsgmj
+        details:
+          description: "Detailed, human-friendly problem description adopting specific\
+            \ inputs of the request"
+          type: string
+          x-stoplight:
+            id: 32jtq681vde1v
+      title: Error
+      type: object
+      x-stoplight:
+        id: 5skvt5sqsw5ic
+    Almanax:
       example:
         date: date
         reward_kamas: 1
@@ -7080,11 +5765,11 @@ components:
           quantity: 6
       properties:
         bonus:
-          $ref: '#/components/schemas/Almanax_Entry_bonus'
+          $ref: '#/components/schemas/Almanax_bonus'
         date:
           type: string
         tribute:
-          $ref: '#/components/schemas/Almanax_Entry_tribute'
+          $ref: '#/components/schemas/Almanax_tribute'
         reward_kamas:
           description: Amount of Kamas you get as reward for finishing this Almanax
             quest.
@@ -7092,6 +5777,7 @@ components:
           type: integer
           x-stoplight:
             id: oneb4usnoodzz
+      title: Almanax
       type: object
       x-examples: {}
       x-stoplight:
@@ -7220,7 +5906,7 @@ components:
           whitelist:
           - retro
           subscriptions:
-          - dofus2-en-official-news
+          - dofus3-en-official-news
           format: discord
           preview_length: 2000
           callback: https://discord.com/api/webhooks/XYZ
@@ -7316,7 +6002,7 @@ components:
           whitelist:
           - retro
           subscriptions:
-          - dofus2-en-official-changelog
+          - dofus3-en-official-changelog
       x-stoplight:
         id: omtuayunn9wfk
     CreateAlmanaxWebhook:
@@ -7346,13 +6032,13 @@ components:
         - bonus_blacklist
       properties:
         bonus_whitelist:
-          description: "from all available bonuses (ids) from /dofus2/meta/{language}/almanax/bonuses"
+          description: "from all available bonuses (ids) from /dofus3/meta/{language}/almanax/bonuses"
           items:
             type: string
           nullable: true
           type: array
         bonus_blacklist:
-          description: "from all available bonuses (ids) from /dofus2/meta/{language}/almanax/bonuses"
+          description: "from all available bonuses (ids) from /dofus3/meta/{language}/almanax/bonuses"
           items:
             type: string
           nullable: true
@@ -7431,7 +6117,7 @@ components:
       x-examples:
         Example:
           subscriptions:
-          - dofus2_fr
+          - dofus3_fr
           format: discord
           callback: https://discord.com/api/webhooks/XYZ
           daily_settings:
@@ -7473,14 +6159,14 @@ components:
       properties:
         bonus_whitelist:
           description: |-
-            from all available bonuses (ids) from /dofus2/meta/{language}/almanax/bonuses.
+            from all available bonuses (ids) from /dofus3/meta/{language}/almanax/bonuses.
             Delete old entries with empty array []. Just null changes nothing.
           items:
             type: string
           nullable: true
           type: array
         bonus_blacklist:
-          description: "from all available bonuses (ids) from /dofus2/meta/{language}/almanax/bonuses.\
+          description: "from all available bonuses (ids) from /dofus3/meta/{language}/almanax/bonuses.\
             \ Delete old entries with empty array []. Just null changes nothing."
           items:
             type: string
@@ -7618,7 +6304,7 @@ components:
         Example:
           id: string
           subscriptions:
-          - dofus2-fr-official-news
+          - dofus3-fr-official-news
           format: discord
           preview_length: 150
           created_at: 2022-10-25T15:32:37.406281+02:00
@@ -7739,7 +6425,7 @@ components:
         bonus_whitelist:
           description: |-
             Only post when these bonuses come up.
-            From all available bonuses (ids) from /dofus2/meta/{language}/almanax/bonuses.
+            From all available bonuses (ids) from /dofus3/meta/{language}/almanax/bonuses.
           items:
             type: string
           nullable: true
@@ -7747,7 +6433,7 @@ components:
         bonus_blacklist:
           description: |-
             Skip the day when these bonuses come up.
-            From all available bonuses (ids) from /dofus2/meta/{language}/almanax/bonuses
+            From all available bonuses (ids) from /dofus3/meta/{language}/almanax/bonuses
           items:
             type: string
           nullable: true
@@ -7825,7 +6511,7 @@ components:
           bonus_whitelist:
           - plenty-to-harvest
           subscriptions:
-          - dofus2_en
+          - dofus3_en
           iso_date: false
           mentions:
             kolossium-experience:
@@ -7839,25 +6525,92 @@ components:
           updated_at: 2019-08-24T14:15:22Z
       x-stoplight:
         id: x3oc9iaxf57wv
-    get_game_search_200_response_inner:
+    Range:
+      example:
+        min: 2
+        max: 4
+      properties:
+        min:
+          type: integer
+          x-stoplight:
+            id: 0gn8zckrxbbr4
+        max:
+          type: integer
+          x-stoplight:
+            id: ujqak9zy7cxer
+      title: Range
+      type: object
+      x-stoplight:
+        id: kan42tn0dy7yf
+    GameSearch:
       example:
         name: name
-        type: type
+        type:
+          name_id: name_id
+        item_fields:
+          level: 6
+          image_urls:
+            sd: sd
+            icon: icon
+            hq: hq
+            hd: hd
+          type:
+            name_id: name_id
         ankama_id: 0
       properties:
-        name:
-          description: Name of the hit. The query could still have matched with the
-            description only.
-          type: string
         ankama_id:
-          description: Ankama ID for retrieving more details in the type specific
-            endpoint.
           type: integer
-        type:
-          description: Type classification
+          x-stoplight:
+            id: qoe7ecpftg215
+        name:
           type: string
+          x-stoplight:
+            id: 8476cadtxa064
+        type:
+          $ref: '#/components/schemas/GameSearchType'
+        item_fields:
+          $ref: '#/components/schemas/GameSearchItem'
+      title: GameSearch
       type: object
-    get_meta_version_200_response:
+      x-stoplight:
+        id: u8xaaojb27p5j
+    GameSearchType:
+      example:
+        name_id: name_id
+      properties:
+        name_id:
+          type: string
+          x-stoplight:
+            id: bc62jam7sk3ta
+      title: GameSearchType
+      type: object
+      x-stoplight:
+        id: ix89xa48iwyu1
+    GameSearchItem:
+      example:
+        level: 6
+        image_urls:
+          sd: sd
+          icon: icon
+          hq: hq
+          hd: hd
+        type:
+          name_id: name_id
+      properties:
+        type:
+          $ref: '#/components/schemas/GameSearchType'
+        level:
+          nullable: true
+          type: integer
+          x-stoplight:
+            id: e80w3jwdolhm5
+        image_urls:
+          $ref: '#/components/schemas/Images'
+      title: GameSearchItem
+      type: object
+      x-stoplight:
+        id: w969rujdj0538
+    Version:
       example:
         release: release
         update_stamp: update_stamp
@@ -7869,12 +6622,13 @@ components:
           type: string
         update_stamp:
           type: string
+      title: Version
       type: object
       x-examples:
-        Example 1:
-          version: 2.73.3.5
-          release: main
-          update_stamp: 2024-10-03T22:43:10.420677+02:00
+        Beta Release:
+          version: 3.0.5.9
+          release: beta
+          update_stamp: 2024-11-28T22:25:42.062971457+01:00
     get_meta_almanax_bonuses_200_response_inner:
       example:
         name: name
@@ -7899,86 +6653,12 @@ components:
       x-examples:
         example-1:
           subscriptions:
-          - dofus2_en
-          - dofus2_fr
-          - dofus2_es
-          - dofus2_it
-          - dofus2_de
-    Items_List_Entry_Typed_type:
-      example:
-        name: name
-        id: 6
-      properties:
-        name:
-          type: string
-        id:
-          type: integer
-      type: object
-    Set_Effects_Entry_type:
-      example:
-        is_meta: true
-        is_active: true
-        name: name
-        id: 5
-      properties:
-        name:
-          type: string
-        id:
-          type: integer
-        is_meta:
-          description: "true if a type is generated from the Api instead of Ankama.\
-            \ In that case, always prefer showing the templated string and omit everything\
-            \ else. The \"name\" field will have an english description of the meta\
-            \ type. An example for such effects are class sets effects."
-          type: boolean
-        is_active:
-          description: Affects target or source actively.
-          type: boolean
-      type: object
-    Resource_type:
-      example:
-        name: name
-        id: 0
-      properties:
-        name:
-          type: string
-        id:
-          minimum: 0
-          type: integer
-      type: object
-    Item_List_Entry_parent_set:
-      example:
-        name: name
-        id: 7
-      nullable: true
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-      type: object
-    Item_List_Entry_range:
-      example:
-        min: 7
-        max: 1
-      nullable: true
-      properties:
-        min:
-          type: integer
-        max:
-          type: integer
-      type: object
-    Weapon_range:
-      example:
-        min: 9
-        max: 3
-      properties:
-        min:
-          type: integer
-        max:
-          type: integer
-      type: object
-    Almanax_Entry_bonus:
+          - dofus3_en
+          - dofus3_fr
+          - dofus3_es
+          - dofus3_it
+          - dofus3_de
+    Almanax_bonus:
       example:
         description: description
         type:
@@ -7990,7 +6670,7 @@ components:
         type:
           $ref: '#/components/schemas/get_meta_almanax_bonuses_200_response_inner'
       type: object
-    Almanax_Entry_tribute_item:
+    Almanax_tribute_item:
       example:
         subtype: subtype
         name: name
@@ -8004,13 +6684,13 @@ components:
         ankama_id:
           type: integer
         image_urls:
-          $ref: '#/components/schemas/Image-Urls'
+          $ref: '#/components/schemas/Images'
         name:
           type: string
         subtype:
           type: string
       type: object
-    Almanax_Entry_tribute:
+    Almanax_tribute:
       example:
         item:
           subtype: subtype
@@ -8024,7 +6704,7 @@ components:
         quantity: 6
       properties:
         item:
-          $ref: '#/components/schemas/Almanax_Entry_tribute_item'
+          $ref: '#/components/schemas/Almanax_tribute_item'
         quantity:
           type: integer
       type: object

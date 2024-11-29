@@ -1,9 +1,9 @@
 /*
 dofusdude
 
-# A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
+# Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.4
+API version: 1.0.0-rc.2
 Contact: stelzo@steado.de
 */
 
@@ -31,7 +31,7 @@ type ApiGetAlmanaxDateRequest struct {
 	date string
 }
 
-func (r ApiGetAlmanaxDateRequest) Execute() (*AlmanaxEntry, *http.Response, error) {
+func (r ApiGetAlmanaxDateRequest) Execute() (*Almanax, *http.Response, error) {
 	return r.ApiService.GetAlmanaxDateExecute(r)
 }
 
@@ -55,13 +55,13 @@ func (a *AlmanaxAPIService) GetAlmanaxDate(ctx context.Context, language string,
 }
 
 // Execute executes the request
-//  @return AlmanaxEntry
-func (a *AlmanaxAPIService) GetAlmanaxDateExecute(r ApiGetAlmanaxDateRequest) (*AlmanaxEntry, *http.Response, error) {
+//  @return Almanax
+func (a *AlmanaxAPIService) GetAlmanaxDateExecute(r ApiGetAlmanaxDateRequest) (*Almanax, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AlmanaxEntry
+		localVarReturnValue  *Almanax
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlmanaxAPIService.GetAlmanaxDate")
@@ -69,7 +69,7 @@ func (a *AlmanaxAPIService) GetAlmanaxDateExecute(r ApiGetAlmanaxDateRequest) (*
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus2/{language}/almanax/{date}"
+	localVarPath := localBasePath + "/dofus3/{language}/almanax/{date}"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"date"+"}", url.PathEscape(parameterValueToString(r.date, "date")), -1)
 
@@ -172,7 +172,7 @@ func (r ApiGetAlmanaxRangeRequest) Timezone(timezone string) ApiGetAlmanaxRangeR
 	return r
 }
 
-func (r ApiGetAlmanaxRangeRequest) Execute() ([]AlmanaxEntry, *http.Response, error) {
+func (r ApiGetAlmanaxRangeRequest) Execute() ([]Almanax, *http.Response, error) {
 	return r.ApiService.GetAlmanaxRangeExecute(r)
 }
 
@@ -206,13 +206,13 @@ func (a *AlmanaxAPIService) GetAlmanaxRange(ctx context.Context, language string
 }
 
 // Execute executes the request
-//  @return []AlmanaxEntry
-func (a *AlmanaxAPIService) GetAlmanaxRangeExecute(r ApiGetAlmanaxRangeRequest) ([]AlmanaxEntry, *http.Response, error) {
+//  @return []Almanax
+func (a *AlmanaxAPIService) GetAlmanaxRangeExecute(r ApiGetAlmanaxRangeRequest) ([]Almanax, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []AlmanaxEntry
+		localVarReturnValue  []Almanax
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlmanaxAPIService.GetAlmanaxRange")
@@ -220,7 +220,7 @@ func (a *AlmanaxAPIService) GetAlmanaxRangeExecute(r ApiGetAlmanaxRangeRequest) 
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus2/{language}/almanax"
+	localVarPath := localBasePath + "/dofus3/{language}/almanax"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 
 	localVarHeaderParams := make(map[string]string)

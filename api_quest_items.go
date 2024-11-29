@@ -1,9 +1,9 @@
 /*
 dofusdude
 
-# A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
+# Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.4
+API version: 1.0.0-rc.2
 Contact: stelzo@steado.de
 */
 
@@ -30,22 +30,15 @@ type ApiGetAllItemsQuestListRequest struct {
 	language string
 	game string
 	sortLevel *string
-	filterTypeName *string
 	filterMinLevel *int32
 	filterMaxLevel *int32
 	acceptEncoding *string
-	filterTypeEnum *[]string
+	filterTypeNameId *[]string
 }
 
 // sort the resulting list by level, default unsorted
 func (r ApiGetAllItemsQuestListRequest) SortLevel(sortLevel string) ApiGetAllItemsQuestListRequest {
 	r.sortLevel = &sortLevel
-	return r
-}
-
-// only results with the translated type name
-func (r ApiGetAllItemsQuestListRequest) FilterTypeName(filterTypeName string) ApiGetAllItemsQuestListRequest {
-	r.filterTypeName = &filterTypeName
 	return r
 }
 
@@ -68,12 +61,12 @@ func (r ApiGetAllItemsQuestListRequest) AcceptEncoding(acceptEncoding string) Ap
 }
 
 // multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;.
-func (r ApiGetAllItemsQuestListRequest) FilterTypeEnum(filterTypeEnum []string) ApiGetAllItemsQuestListRequest {
-	r.filterTypeEnum = &filterTypeEnum
+func (r ApiGetAllItemsQuestListRequest) FilterTypeNameId(filterTypeNameId []string) ApiGetAllItemsQuestListRequest {
+	r.filterTypeNameId = &filterTypeNameId
 	return r
 }
 
-func (r ApiGetAllItemsQuestListRequest) Execute() (*ItemsListPaged, *http.Response, error) {
+func (r ApiGetAllItemsQuestListRequest) Execute() (*ListItems, *http.Response, error) {
 	return r.ApiService.GetAllItemsQuestListExecute(r)
 }
 
@@ -94,7 +87,7 @@ curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game
+ @param game dofus3 | dofus3beta
  @return ApiGetAllItemsQuestListRequest
 */
 func (a *QuestItemsAPIService) GetAllItemsQuestList(ctx context.Context, language string, game string) ApiGetAllItemsQuestListRequest {
@@ -107,13 +100,13 @@ func (a *QuestItemsAPIService) GetAllItemsQuestList(ctx context.Context, languag
 }
 
 // Execute executes the request
-//  @return ItemsListPaged
-func (a *QuestItemsAPIService) GetAllItemsQuestListExecute(r ApiGetAllItemsQuestListRequest) (*ItemsListPaged, *http.Response, error) {
+//  @return ListItems
+func (a *QuestItemsAPIService) GetAllItemsQuestListExecute(r ApiGetAllItemsQuestListRequest) (*ListItems, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ItemsListPaged
+		localVarReturnValue  *ListItems
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QuestItemsAPIService.GetAllItemsQuestList")
@@ -121,7 +114,7 @@ func (a *QuestItemsAPIService) GetAllItemsQuestListExecute(r ApiGetAllItemsQuest
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/{game}/{language}/items/quest/all"
+	localVarPath := localBasePath + "/{game}/v1/{language}/items/quest/all"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
 
@@ -138,17 +131,14 @@ func (a *QuestItemsAPIService) GetAllItemsQuestListExecute(r ApiGetAllItemsQuest
 	if r.sortLevel != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sort[level]", r.sortLevel, "form", "")
 	}
-	if r.filterTypeName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type_name]", r.filterTypeName, "form", "")
-	}
 	if r.filterMinLevel != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_level]", r.filterMinLevel, "form", "")
 	}
 	if r.filterMaxLevel != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_level]", r.filterMaxLevel, "form", "")
 	}
-	if r.filterTypeEnum != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type_enum]", r.filterTypeEnum, "form", "csv")
+	if r.filterTypeNameId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type.name_id]", r.filterTypeNameId, "form", "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -192,6 +182,27 @@ func (a *QuestItemsAPIService) GetAllItemsQuestListExecute(r ApiGetAllItemsQuest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -227,7 +238,7 @@ Retrieve a specific quest item with id.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
  @param ankamaId identifier
- @param game
+ @param game dofus3 | dofus3beta
  @return ApiGetItemQuestSingleRequest
 */
 func (a *QuestItemsAPIService) GetItemQuestSingle(ctx context.Context, language string, ankamaId int32, game string) ApiGetItemQuestSingleRequest {
@@ -255,7 +266,7 @@ func (a *QuestItemsAPIService) GetItemQuestSingleExecute(r ApiGetItemQuestSingle
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/{game}/{language}/items/quest/{ankama_id}"
+	localVarPath := localBasePath + "/{game}/v1/{language}/items/quest/{ankama_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ankama_id"+"}", url.PathEscape(parameterValueToString(r.ankamaId, "ankamaId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
@@ -309,6 +320,27 @@ func (a *QuestItemsAPIService) GetItemQuestSingleExecute(r ApiGetItemQuestSingle
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -330,24 +362,17 @@ type ApiGetItemsQuestListRequest struct {
 	language string
 	game string
 	sortLevel *string
-	filterTypeName *string
 	filterMinLevel *int32
 	filterMaxLevel *int32
 	pageSize *int32
 	pageNumber *int32
 	fieldsItem *[]string
-	filterTypeEnum *[]string
+	filterTypeNameId *[]string
 }
 
 // sort the resulting list by level, default unsorted
 func (r ApiGetItemsQuestListRequest) SortLevel(sortLevel string) ApiGetItemsQuestListRequest {
 	r.sortLevel = &sortLevel
-	return r
-}
-
-// only results with the translated type name
-func (r ApiGetItemsQuestListRequest) FilterTypeName(filterTypeName string) ApiGetItemsQuestListRequest {
-	r.filterTypeName = &filterTypeName
 	return r
 }
 
@@ -382,12 +407,12 @@ func (r ApiGetItemsQuestListRequest) FieldsItem(fieldsItem []string) ApiGetItems
 }
 
 // multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;.
-func (r ApiGetItemsQuestListRequest) FilterTypeEnum(filterTypeEnum []string) ApiGetItemsQuestListRequest {
-	r.filterTypeEnum = &filterTypeEnum
+func (r ApiGetItemsQuestListRequest) FilterTypeNameId(filterTypeNameId []string) ApiGetItemsQuestListRequest {
+	r.filterTypeNameId = &filterTypeNameId
 	return r
 }
 
-func (r ApiGetItemsQuestListRequest) Execute() (*ItemsListPaged, *http.Response, error) {
+func (r ApiGetItemsQuestListRequest) Execute() (*ListItems, *http.Response, error) {
 	return r.ApiService.GetItemsQuestListExecute(r)
 }
 
@@ -398,7 +423,7 @@ Retrieve a list of quest items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game
+ @param game dofus3 | dofus3beta
  @return ApiGetItemsQuestListRequest
 */
 func (a *QuestItemsAPIService) GetItemsQuestList(ctx context.Context, language string, game string) ApiGetItemsQuestListRequest {
@@ -411,13 +436,13 @@ func (a *QuestItemsAPIService) GetItemsQuestList(ctx context.Context, language s
 }
 
 // Execute executes the request
-//  @return ItemsListPaged
-func (a *QuestItemsAPIService) GetItemsQuestListExecute(r ApiGetItemsQuestListRequest) (*ItemsListPaged, *http.Response, error) {
+//  @return ListItems
+func (a *QuestItemsAPIService) GetItemsQuestListExecute(r ApiGetItemsQuestListRequest) (*ListItems, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ItemsListPaged
+		localVarReturnValue  *ListItems
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QuestItemsAPIService.GetItemsQuestList")
@@ -425,7 +450,7 @@ func (a *QuestItemsAPIService) GetItemsQuestListExecute(r ApiGetItemsQuestListRe
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/{game}/{language}/items/quest"
+	localVarPath := localBasePath + "/{game}/v1/{language}/items/quest"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
 
@@ -442,9 +467,6 @@ func (a *QuestItemsAPIService) GetItemsQuestListExecute(r ApiGetItemsQuestListRe
 	if r.sortLevel != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sort[level]", r.sortLevel, "form", "")
 	}
-	if r.filterTypeName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type_name]", r.filterTypeName, "form", "")
-	}
 	if r.filterMinLevel != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_level]", r.filterMinLevel, "form", "")
 	}
@@ -460,8 +482,8 @@ func (a *QuestItemsAPIService) GetItemsQuestListExecute(r ApiGetItemsQuestListRe
 	if r.fieldsItem != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields[item]", r.fieldsItem, "form", "csv")
 	}
-	if r.filterTypeEnum != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type_enum]", r.filterTypeEnum, "form", "csv")
+	if r.filterTypeNameId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type.name_id]", r.filterTypeNameId, "form", "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -501,6 +523,27 @@ func (a *QuestItemsAPIService) GetItemsQuestListExecute(r ApiGetItemsQuestListRe
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -566,7 +609,7 @@ func (r ApiGetItemsQuestSearchRequest) FilterTypeEnum(filterTypeEnum []string) A
 	return r
 }
 
-func (r ApiGetItemsQuestSearchRequest) Execute() ([]ItemListEntry, *http.Response, error) {
+func (r ApiGetItemsQuestSearchRequest) Execute() ([]ListItem, *http.Response, error) {
 	return r.ApiService.GetItemsQuestSearchExecute(r)
 }
 
@@ -577,7 +620,7 @@ Search in all names and descriptions of quest items with a query.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game
+ @param game dofus3 | dofus3beta
  @return ApiGetItemsQuestSearchRequest
 */
 func (a *QuestItemsAPIService) GetItemsQuestSearch(ctx context.Context, language string, game string) ApiGetItemsQuestSearchRequest {
@@ -590,13 +633,13 @@ func (a *QuestItemsAPIService) GetItemsQuestSearch(ctx context.Context, language
 }
 
 // Execute executes the request
-//  @return []ItemListEntry
-func (a *QuestItemsAPIService) GetItemsQuestSearchExecute(r ApiGetItemsQuestSearchRequest) ([]ItemListEntry, *http.Response, error) {
+//  @return []ListItem
+func (a *QuestItemsAPIService) GetItemsQuestSearchExecute(r ApiGetItemsQuestSearchRequest) ([]ListItem, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ItemListEntry
+		localVarReturnValue  []ListItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QuestItemsAPIService.GetItemsQuestSearch")
@@ -604,7 +647,7 @@ func (a *QuestItemsAPIService) GetItemsQuestSearchExecute(r ApiGetItemsQuestSear
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/{game}/{language}/items/quest/search"
+	localVarPath := localBasePath + "/{game}/v1/{language}/items/quest/search"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
 
@@ -678,6 +721,27 @@ func (a *QuestItemsAPIService) GetItemsQuestSearchExecute(r ApiGetItemsQuestSear
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

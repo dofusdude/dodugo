@@ -1,9 +1,9 @@
 /*
 dofusdude
 
-# A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
+# Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.4
+API version: 1.0.0-rc.2
 Contact: stelzo@steado.de
 */
 
@@ -33,7 +33,8 @@ type ApiGetAllSetsListRequest struct {
 	filterMinHighestEquipmentLevel *int32
 	filterMaxHighestEquipmentLevel *int32
 	acceptEncoding *string
-	filterIsCosmetic *bool
+	filterContainsCosmeticsOnly *bool
+	filterContainsCosmetics *bool
 }
 
 // sort the resulting list by level, default unsorted
@@ -61,12 +62,18 @@ func (r ApiGetAllSetsListRequest) AcceptEncoding(acceptEncoding string) ApiGetAl
 }
 
 // filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
-func (r ApiGetAllSetsListRequest) FilterIsCosmetic(filterIsCosmetic bool) ApiGetAllSetsListRequest {
-	r.filterIsCosmetic = &filterIsCosmetic
+func (r ApiGetAllSetsListRequest) FilterContainsCosmeticsOnly(filterContainsCosmeticsOnly bool) ApiGetAllSetsListRequest {
+	r.filterContainsCosmeticsOnly = &filterContainsCosmeticsOnly
 	return r
 }
 
-func (r ApiGetAllSetsListRequest) Execute() (*SetsListPaged, *http.Response, error) {
+// filter sets based on if they got cosmetic items in it.
+func (r ApiGetAllSetsListRequest) FilterContainsCosmetics(filterContainsCosmetics bool) ApiGetAllSetsListRequest {
+	r.filterContainsCosmetics = &filterContainsCosmetics
+	return r
+}
+
+func (r ApiGetAllSetsListRequest) Execute() (*ListSets, *http.Response, error) {
 	return r.ApiService.GetAllSetsListExecute(r)
 }
 
@@ -87,7 +94,7 @@ curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game
+ @param game dofus3 | dofus3beta
  @return ApiGetAllSetsListRequest
 */
 func (a *SetsAPIService) GetAllSetsList(ctx context.Context, language string, game string) ApiGetAllSetsListRequest {
@@ -100,13 +107,13 @@ func (a *SetsAPIService) GetAllSetsList(ctx context.Context, language string, ga
 }
 
 // Execute executes the request
-//  @return SetsListPaged
-func (a *SetsAPIService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*SetsListPaged, *http.Response, error) {
+//  @return ListSets
+func (a *SetsAPIService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*ListSets, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetsListPaged
+		localVarReturnValue  *ListSets
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsAPIService.GetAllSetsList")
@@ -114,7 +121,7 @@ func (a *SetsAPIService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*Set
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/{game}/{language}/sets/all"
+	localVarPath := localBasePath + "/{game}/v1/{language}/sets/all"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
 
@@ -137,8 +144,11 @@ func (a *SetsAPIService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*Set
 	if r.filterMaxHighestEquipmentLevel != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[max_highest_equipment_level]", r.filterMaxHighestEquipmentLevel, "form", "")
 	}
-	if r.filterIsCosmetic != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[is_cosmetic]", r.filterIsCosmetic, "form", "")
+	if r.filterContainsCosmeticsOnly != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[contains_cosmetics_only]", r.filterContainsCosmeticsOnly, "form", "")
+	}
+	if r.filterContainsCosmetics != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[contains_cosmetics]", r.filterContainsCosmetics, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -182,6 +192,27 @@ func (a *SetsAPIService) GetAllSetsListExecute(r ApiGetAllSetsListRequest) (*Set
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -208,7 +239,8 @@ type ApiGetSetsListRequest struct {
 	pageSize *int32
 	pageNumber *int32
 	fieldsSet *[]string
-	filterIsCosmetic *bool
+	filterContainsCosmeticsOnly *bool
+	filterContainsCosmetics *bool
 }
 
 // sort the resulting list by level, default unsorted
@@ -248,12 +280,18 @@ func (r ApiGetSetsListRequest) FieldsSet(fieldsSet []string) ApiGetSetsListReque
 }
 
 // filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment.
-func (r ApiGetSetsListRequest) FilterIsCosmetic(filterIsCosmetic bool) ApiGetSetsListRequest {
-	r.filterIsCosmetic = &filterIsCosmetic
+func (r ApiGetSetsListRequest) FilterContainsCosmeticsOnly(filterContainsCosmeticsOnly bool) ApiGetSetsListRequest {
+	r.filterContainsCosmeticsOnly = &filterContainsCosmeticsOnly
 	return r
 }
 
-func (r ApiGetSetsListRequest) Execute() (*SetsListPaged, *http.Response, error) {
+// filter sets based on if they got cosmetic items in it.
+func (r ApiGetSetsListRequest) FilterContainsCosmetics(filterContainsCosmetics bool) ApiGetSetsListRequest {
+	r.filterContainsCosmetics = &filterContainsCosmetics
+	return r
+}
+
+func (r ApiGetSetsListRequest) Execute() (*ListSets, *http.Response, error) {
 	return r.ApiService.GetSetsListExecute(r)
 }
 
@@ -264,7 +302,7 @@ Retrieve a list of sets.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game
+ @param game dofus3 | dofus3beta
  @return ApiGetSetsListRequest
 */
 func (a *SetsAPIService) GetSetsList(ctx context.Context, language string, game string) ApiGetSetsListRequest {
@@ -277,13 +315,13 @@ func (a *SetsAPIService) GetSetsList(ctx context.Context, language string, game 
 }
 
 // Execute executes the request
-//  @return SetsListPaged
-func (a *SetsAPIService) GetSetsListExecute(r ApiGetSetsListRequest) (*SetsListPaged, *http.Response, error) {
+//  @return ListSets
+func (a *SetsAPIService) GetSetsListExecute(r ApiGetSetsListRequest) (*ListSets, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetsListPaged
+		localVarReturnValue  *ListSets
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsAPIService.GetSetsList")
@@ -291,7 +329,7 @@ func (a *SetsAPIService) GetSetsListExecute(r ApiGetSetsListRequest) (*SetsListP
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/{game}/{language}/sets"
+	localVarPath := localBasePath + "/{game}/v1/{language}/sets"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
 
@@ -323,8 +361,11 @@ func (a *SetsAPIService) GetSetsListExecute(r ApiGetSetsListRequest) (*SetsListP
 	if r.fieldsSet != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "fields[set]", r.fieldsSet, "form", "csv")
 	}
-	if r.filterIsCosmetic != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[is_cosmetic]", r.filterIsCosmetic, "form", "")
+	if r.filterContainsCosmeticsOnly != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[contains_cosmetics_only]", r.filterContainsCosmeticsOnly, "form", "")
+	}
+	if r.filterContainsCosmetics != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[contains_cosmetics]", r.filterContainsCosmetics, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -364,6 +405,27 @@ func (a *SetsAPIService) GetSetsListExecute(r ApiGetSetsListRequest) (*SetsListP
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -422,7 +484,7 @@ func (r ApiGetSetsSearchRequest) FilterIsCosmetic(filterIsCosmetic bool) ApiGetS
 	return r
 }
 
-func (r ApiGetSetsSearchRequest) Execute() ([]SetListEntry, *http.Response, error) {
+func (r ApiGetSetsSearchRequest) Execute() ([]ListSet, *http.Response, error) {
 	return r.ApiService.GetSetsSearchExecute(r)
 }
 
@@ -433,7 +495,7 @@ Search in all names and descriptions of sets with a query.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game
+ @param game dofus3 | dofus3beta
  @return ApiGetSetsSearchRequest
 */
 func (a *SetsAPIService) GetSetsSearch(ctx context.Context, language string, game string) ApiGetSetsSearchRequest {
@@ -446,13 +508,13 @@ func (a *SetsAPIService) GetSetsSearch(ctx context.Context, language string, gam
 }
 
 // Execute executes the request
-//  @return []SetListEntry
-func (a *SetsAPIService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]SetListEntry, *http.Response, error) {
+//  @return []ListSet
+func (a *SetsAPIService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]ListSet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []SetListEntry
+		localVarReturnValue  []ListSet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsAPIService.GetSetsSearch")
@@ -460,7 +522,7 @@ func (a *SetsAPIService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]SetL
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/{game}/{language}/sets/search"
+	localVarPath := localBasePath + "/{game}/v1/{language}/sets/search"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
 
@@ -532,6 +594,27 @@ func (a *SetsAPIService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]SetL
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -555,7 +638,7 @@ type ApiGetSetsSingleRequest struct {
 	game string
 }
 
-func (r ApiGetSetsSingleRequest) Execute() (*EquipmentSet, *http.Response, error) {
+func (r ApiGetSetsSingleRequest) Execute() (*Set, *http.Response, error) {
 	return r.ApiService.GetSetsSingleExecute(r)
 }
 
@@ -567,7 +650,7 @@ Retrieve a specific set with id.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
  @param ankamaId identifier
- @param game
+ @param game dofus3 | dofus3beta
  @return ApiGetSetsSingleRequest
 */
 func (a *SetsAPIService) GetSetsSingle(ctx context.Context, language string, ankamaId int32, game string) ApiGetSetsSingleRequest {
@@ -581,13 +664,13 @@ func (a *SetsAPIService) GetSetsSingle(ctx context.Context, language string, ank
 }
 
 // Execute executes the request
-//  @return EquipmentSet
-func (a *SetsAPIService) GetSetsSingleExecute(r ApiGetSetsSingleRequest) (*EquipmentSet, *http.Response, error) {
+//  @return Set
+func (a *SetsAPIService) GetSetsSingleExecute(r ApiGetSetsSingleRequest) (*Set, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *EquipmentSet
+		localVarReturnValue  *Set
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetsAPIService.GetSetsSingle")
@@ -595,7 +678,7 @@ func (a *SetsAPIService) GetSetsSingleExecute(r ApiGetSetsSingleRequest) (*Equip
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/{game}/{language}/sets/{ankama_id}"
+	localVarPath := localBasePath + "/{game}/v1/{language}/sets/{ankama_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ankama_id"+"}", url.PathEscape(parameterValueToString(r.ankamaId, "ankamaId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
@@ -648,6 +731,27 @@ func (a *SetsAPIService) GetSetsSingleExecute(r ApiGetSetsSingleRequest) (*Equip
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

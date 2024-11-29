@@ -1,9 +1,9 @@
 /*
 dofusdude
 
-# A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
+# Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.4
+API version: 1.0.0-rc.2
 Contact: stelzo@steado.de
 */
 
@@ -23,24 +23,21 @@ type Weapon struct {
 	AnkamaId *int32 `json:"ankama_id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
-	Type *ItemsListEntryTypedType `json:"type,omitempty"`
+	Type *TranslatedId `json:"type,omitempty"`
 	// always true when the item is a weapon. Many fields are now available. Always check for this flag first when getting single equipment items.
 	IsWeapon *bool `json:"is_weapon,omitempty"`
 	Level *int32 `json:"level,omitempty"`
 	Pods *int32 `json:"pods,omitempty"`
-	ImageUrls *ImageUrls `json:"image_urls,omitempty"`
-	Effects []EffectsEntry `json:"effects,omitempty"`
-	// Deprecated
-	Conditions []ConditionEntry `json:"conditions,omitempty"`
-	ConditionTree *ConditionTreeNode `json:"condition_tree,omitempty"`
+	ImageUrls *Images `json:"image_urls,omitempty"`
+	Effects []Effect `json:"effects,omitempty"`
+	Conditions NullableConditionNode `json:"conditions,omitempty"`
 	CriticalHitProbability *int32 `json:"critical_hit_probability,omitempty"`
 	CriticalHitBonus *int32 `json:"critical_hit_bonus,omitempty"`
-	IsTwoHanded *bool `json:"is_two_handed,omitempty"`
 	MaxCastPerTurn *int32 `json:"max_cast_per_turn,omitempty"`
 	ApCost *int32 `json:"ap_cost,omitempty"`
-	Range *WeaponRange `json:"range,omitempty"`
-	Recipe []RecipeEntry `json:"recipe,omitempty"`
-	ParentSet NullableItemListEntryParentSet `json:"parent_set,omitempty"`
+	Range *Range `json:"range,omitempty"`
+	Recipe []Recipe `json:"recipe,omitempty"`
+	ParentSet NullableTranslatedId `json:"parent_set,omitempty"`
 }
 
 // NewWeapon instantiates a new Weapon object
@@ -157,9 +154,9 @@ func (o *Weapon) SetDescription(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *Weapon) GetType() ItemsListEntryTypedType {
+func (o *Weapon) GetType() TranslatedId {
 	if o == nil || IsNil(o.Type) {
-		var ret ItemsListEntryTypedType
+		var ret TranslatedId
 		return ret
 	}
 	return *o.Type
@@ -167,7 +164,7 @@ func (o *Weapon) GetType() ItemsListEntryTypedType {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Weapon) GetTypeOk() (*ItemsListEntryTypedType, bool) {
+func (o *Weapon) GetTypeOk() (*TranslatedId, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -183,8 +180,8 @@ func (o *Weapon) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given ItemsListEntryTypedType and assigns it to the Type field.
-func (o *Weapon) SetType(v ItemsListEntryTypedType) {
+// SetType gets a reference to the given TranslatedId and assigns it to the Type field.
+func (o *Weapon) SetType(v TranslatedId) {
 	o.Type = &v
 }
 
@@ -285,9 +282,9 @@ func (o *Weapon) SetPods(v int32) {
 }
 
 // GetImageUrls returns the ImageUrls field value if set, zero value otherwise.
-func (o *Weapon) GetImageUrls() ImageUrls {
+func (o *Weapon) GetImageUrls() Images {
 	if o == nil || IsNil(o.ImageUrls) {
-		var ret ImageUrls
+		var ret Images
 		return ret
 	}
 	return *o.ImageUrls
@@ -295,7 +292,7 @@ func (o *Weapon) GetImageUrls() ImageUrls {
 
 // GetImageUrlsOk returns a tuple with the ImageUrls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Weapon) GetImageUrlsOk() (*ImageUrls, bool) {
+func (o *Weapon) GetImageUrlsOk() (*Images, bool) {
 	if o == nil || IsNil(o.ImageUrls) {
 		return nil, false
 	}
@@ -311,15 +308,15 @@ func (o *Weapon) HasImageUrls() bool {
 	return false
 }
 
-// SetImageUrls gets a reference to the given ImageUrls and assigns it to the ImageUrls field.
-func (o *Weapon) SetImageUrls(v ImageUrls) {
+// SetImageUrls gets a reference to the given Images and assigns it to the ImageUrls field.
+func (o *Weapon) SetImageUrls(v Images) {
 	o.ImageUrls = &v
 }
 
 // GetEffects returns the Effects field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Weapon) GetEffects() []EffectsEntry {
+func (o *Weapon) GetEffects() []Effect {
 	if o == nil {
-		var ret []EffectsEntry
+		var ret []Effect
 		return ret
 	}
 	return o.Effects
@@ -328,7 +325,7 @@ func (o *Weapon) GetEffects() []EffectsEntry {
 // GetEffectsOk returns a tuple with the Effects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Weapon) GetEffectsOk() ([]EffectsEntry, bool) {
+func (o *Weapon) GetEffectsOk() ([]Effect, bool) {
 	if o == nil || IsNil(o.Effects) {
 		return nil, false
 	}
@@ -344,77 +341,51 @@ func (o *Weapon) HasEffects() bool {
 	return false
 }
 
-// SetEffects gets a reference to the given []EffectsEntry and assigns it to the Effects field.
-func (o *Weapon) SetEffects(v []EffectsEntry) {
+// SetEffects gets a reference to the given []Effect and assigns it to the Effects field.
+func (o *Weapon) SetEffects(v []Effect) {
 	o.Effects = v
 }
 
 // GetConditions returns the Conditions field value if set, zero value otherwise (both if not set or set to explicit null).
-// Deprecated
-func (o *Weapon) GetConditions() []ConditionEntry {
-	if o == nil {
-		var ret []ConditionEntry
+func (o *Weapon) GetConditions() ConditionNode {
+	if o == nil || IsNil(o.Conditions.Get()) {
+		var ret ConditionNode
 		return ret
 	}
-	return o.Conditions
+	return *o.Conditions.Get()
 }
 
 // GetConditionsOk returns a tuple with the Conditions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-// Deprecated
-func (o *Weapon) GetConditionsOk() ([]ConditionEntry, bool) {
-	if o == nil || IsNil(o.Conditions) {
+func (o *Weapon) GetConditionsOk() (*ConditionNode, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Conditions, true
+	return o.Conditions.Get(), o.Conditions.IsSet()
 }
 
 // HasConditions returns a boolean if a field has been set.
 func (o *Weapon) HasConditions() bool {
-	if o != nil && !IsNil(o.Conditions) {
+	if o != nil && o.Conditions.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConditions gets a reference to the given []ConditionEntry and assigns it to the Conditions field.
-// Deprecated
-func (o *Weapon) SetConditions(v []ConditionEntry) {
-	o.Conditions = v
+// SetConditions gets a reference to the given NullableConditionNode and assigns it to the Conditions field.
+func (o *Weapon) SetConditions(v ConditionNode) {
+	o.Conditions.Set(&v)
+}
+// SetConditionsNil sets the value for Conditions to be an explicit nil
+func (o *Weapon) SetConditionsNil() {
+	o.Conditions.Set(nil)
 }
 
-// GetConditionTree returns the ConditionTree field value if set, zero value otherwise.
-func (o *Weapon) GetConditionTree() ConditionTreeNode {
-	if o == nil || IsNil(o.ConditionTree) {
-		var ret ConditionTreeNode
-		return ret
-	}
-	return *o.ConditionTree
-}
-
-// GetConditionTreeOk returns a tuple with the ConditionTree field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Weapon) GetConditionTreeOk() (*ConditionTreeNode, bool) {
-	if o == nil || IsNil(o.ConditionTree) {
-		return nil, false
-	}
-	return o.ConditionTree, true
-}
-
-// HasConditionTree returns a boolean if a field has been set.
-func (o *Weapon) HasConditionTree() bool {
-	if o != nil && !IsNil(o.ConditionTree) {
-		return true
-	}
-
-	return false
-}
-
-// SetConditionTree gets a reference to the given ConditionTreeNode and assigns it to the ConditionTree field.
-func (o *Weapon) SetConditionTree(v ConditionTreeNode) {
-	o.ConditionTree = &v
+// UnsetConditions ensures that no value is present for Conditions, not even an explicit nil
+func (o *Weapon) UnsetConditions() {
+	o.Conditions.Unset()
 }
 
 // GetCriticalHitProbability returns the CriticalHitProbability field value if set, zero value otherwise.
@@ -479,38 +450,6 @@ func (o *Weapon) HasCriticalHitBonus() bool {
 // SetCriticalHitBonus gets a reference to the given int32 and assigns it to the CriticalHitBonus field.
 func (o *Weapon) SetCriticalHitBonus(v int32) {
 	o.CriticalHitBonus = &v
-}
-
-// GetIsTwoHanded returns the IsTwoHanded field value if set, zero value otherwise.
-func (o *Weapon) GetIsTwoHanded() bool {
-	if o == nil || IsNil(o.IsTwoHanded) {
-		var ret bool
-		return ret
-	}
-	return *o.IsTwoHanded
-}
-
-// GetIsTwoHandedOk returns a tuple with the IsTwoHanded field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Weapon) GetIsTwoHandedOk() (*bool, bool) {
-	if o == nil || IsNil(o.IsTwoHanded) {
-		return nil, false
-	}
-	return o.IsTwoHanded, true
-}
-
-// HasIsTwoHanded returns a boolean if a field has been set.
-func (o *Weapon) HasIsTwoHanded() bool {
-	if o != nil && !IsNil(o.IsTwoHanded) {
-		return true
-	}
-
-	return false
-}
-
-// SetIsTwoHanded gets a reference to the given bool and assigns it to the IsTwoHanded field.
-func (o *Weapon) SetIsTwoHanded(v bool) {
-	o.IsTwoHanded = &v
 }
 
 // GetMaxCastPerTurn returns the MaxCastPerTurn field value if set, zero value otherwise.
@@ -578,9 +517,9 @@ func (o *Weapon) SetApCost(v int32) {
 }
 
 // GetRange returns the Range field value if set, zero value otherwise.
-func (o *Weapon) GetRange() WeaponRange {
+func (o *Weapon) GetRange() Range {
 	if o == nil || IsNil(o.Range) {
-		var ret WeaponRange
+		var ret Range
 		return ret
 	}
 	return *o.Range
@@ -588,7 +527,7 @@ func (o *Weapon) GetRange() WeaponRange {
 
 // GetRangeOk returns a tuple with the Range field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Weapon) GetRangeOk() (*WeaponRange, bool) {
+func (o *Weapon) GetRangeOk() (*Range, bool) {
 	if o == nil || IsNil(o.Range) {
 		return nil, false
 	}
@@ -604,15 +543,15 @@ func (o *Weapon) HasRange() bool {
 	return false
 }
 
-// SetRange gets a reference to the given WeaponRange and assigns it to the Range field.
-func (o *Weapon) SetRange(v WeaponRange) {
+// SetRange gets a reference to the given Range and assigns it to the Range field.
+func (o *Weapon) SetRange(v Range) {
 	o.Range = &v
 }
 
 // GetRecipe returns the Recipe field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Weapon) GetRecipe() []RecipeEntry {
+func (o *Weapon) GetRecipe() []Recipe {
 	if o == nil {
-		var ret []RecipeEntry
+		var ret []Recipe
 		return ret
 	}
 	return o.Recipe
@@ -621,7 +560,7 @@ func (o *Weapon) GetRecipe() []RecipeEntry {
 // GetRecipeOk returns a tuple with the Recipe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Weapon) GetRecipeOk() ([]RecipeEntry, bool) {
+func (o *Weapon) GetRecipeOk() ([]Recipe, bool) {
 	if o == nil || IsNil(o.Recipe) {
 		return nil, false
 	}
@@ -637,15 +576,15 @@ func (o *Weapon) HasRecipe() bool {
 	return false
 }
 
-// SetRecipe gets a reference to the given []RecipeEntry and assigns it to the Recipe field.
-func (o *Weapon) SetRecipe(v []RecipeEntry) {
+// SetRecipe gets a reference to the given []Recipe and assigns it to the Recipe field.
+func (o *Weapon) SetRecipe(v []Recipe) {
 	o.Recipe = v
 }
 
 // GetParentSet returns the ParentSet field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Weapon) GetParentSet() ItemListEntryParentSet {
+func (o *Weapon) GetParentSet() TranslatedId {
 	if o == nil || IsNil(o.ParentSet.Get()) {
-		var ret ItemListEntryParentSet
+		var ret TranslatedId
 		return ret
 	}
 	return *o.ParentSet.Get()
@@ -654,7 +593,7 @@ func (o *Weapon) GetParentSet() ItemListEntryParentSet {
 // GetParentSetOk returns a tuple with the ParentSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Weapon) GetParentSetOk() (*ItemListEntryParentSet, bool) {
+func (o *Weapon) GetParentSetOk() (*TranslatedId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -670,8 +609,8 @@ func (o *Weapon) HasParentSet() bool {
 	return false
 }
 
-// SetParentSet gets a reference to the given NullableItemListEntryParentSet and assigns it to the ParentSet field.
-func (o *Weapon) SetParentSet(v ItemListEntryParentSet) {
+// SetParentSet gets a reference to the given NullableTranslatedId and assigns it to the ParentSet field.
+func (o *Weapon) SetParentSet(v TranslatedId) {
 	o.ParentSet.Set(&v)
 }
 // SetParentSetNil sets the value for ParentSet to be an explicit nil
@@ -721,20 +660,14 @@ func (o Weapon) ToMap() (map[string]interface{}, error) {
 	if o.Effects != nil {
 		toSerialize["effects"] = o.Effects
 	}
-	if o.Conditions != nil {
-		toSerialize["conditions"] = o.Conditions
-	}
-	if !IsNil(o.ConditionTree) {
-		toSerialize["condition_tree"] = o.ConditionTree
+	if o.Conditions.IsSet() {
+		toSerialize["conditions"] = o.Conditions.Get()
 	}
 	if !IsNil(o.CriticalHitProbability) {
 		toSerialize["critical_hit_probability"] = o.CriticalHitProbability
 	}
 	if !IsNil(o.CriticalHitBonus) {
 		toSerialize["critical_hit_bonus"] = o.CriticalHitBonus
-	}
-	if !IsNil(o.IsTwoHanded) {
-		toSerialize["is_two_handed"] = o.IsTwoHanded
 	}
 	if !IsNil(o.MaxCastPerTurn) {
 		toSerialize["max_cast_per_turn"] = o.MaxCastPerTurn

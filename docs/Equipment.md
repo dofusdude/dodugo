@@ -7,16 +7,15 @@ Name | Type | Description | Notes
 **AnkamaId** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to [**ItemsListEntryTypedType**](ItemsListEntryTypedType.md) |  | [optional] 
+**Type** | Pointer to [**TranslatedId**](TranslatedId.md) |  | [optional] 
 **IsWeapon** | Pointer to **bool** |  | [optional] 
 **Level** | Pointer to **int32** |  | [optional] 
 **Pods** | Pointer to **int32** |  | [optional] 
-**ImageUrls** | Pointer to [**ImageUrls**](ImageUrls.md) |  | [optional] 
-**Effects** | Pointer to [**[]EffectsEntry**](EffectsEntry.md) |  | [optional] 
-**Conditions** | Pointer to [**[]ConditionEntry**](ConditionEntry.md) |  | [optional] 
-**ConditionTree** | Pointer to [**ConditionTreeNode**](ConditionTreeNode.md) |  | [optional] 
-**Recipe** | Pointer to [**[]RecipeEntry**](RecipeEntry.md) |  | [optional] 
-**ParentSet** | Pointer to [**NullableItemListEntryParentSet**](ItemListEntryParentSet.md) |  | [optional] 
+**ImageUrls** | Pointer to [**Images**](Images.md) |  | [optional] 
+**Effects** | Pointer to [**[]Effect**](Effect.md) |  | [optional] 
+**Conditions** | Pointer to [**NullableConditionNode**](ConditionNode.md) |  | [optional] 
+**Recipe** | Pointer to [**[]Recipe**](Recipe.md) |  | [optional] 
+**ParentSet** | Pointer to [**NullableTranslatedId**](TranslatedId.md) |  | [optional] 
 
 ## Methods
 
@@ -114,20 +113,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *Equipment) GetType() ItemsListEntryTypedType`
+`func (o *Equipment) GetType() TranslatedId`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *Equipment) GetTypeOk() (*ItemsListEntryTypedType, bool)`
+`func (o *Equipment) GetTypeOk() (*TranslatedId, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *Equipment) SetType(v ItemsListEntryTypedType)`
+`func (o *Equipment) SetType(v TranslatedId)`
 
 SetType sets Type field to given value.
 
@@ -214,20 +213,20 @@ HasPods returns a boolean if a field has been set.
 
 ### GetImageUrls
 
-`func (o *Equipment) GetImageUrls() ImageUrls`
+`func (o *Equipment) GetImageUrls() Images`
 
 GetImageUrls returns the ImageUrls field if non-nil, zero value otherwise.
 
 ### GetImageUrlsOk
 
-`func (o *Equipment) GetImageUrlsOk() (*ImageUrls, bool)`
+`func (o *Equipment) GetImageUrlsOk() (*Images, bool)`
 
 GetImageUrlsOk returns a tuple with the ImageUrls field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImageUrls
 
-`func (o *Equipment) SetImageUrls(v ImageUrls)`
+`func (o *Equipment) SetImageUrls(v Images)`
 
 SetImageUrls sets ImageUrls field to given value.
 
@@ -239,20 +238,20 @@ HasImageUrls returns a boolean if a field has been set.
 
 ### GetEffects
 
-`func (o *Equipment) GetEffects() []EffectsEntry`
+`func (o *Equipment) GetEffects() []Effect`
 
 GetEffects returns the Effects field if non-nil, zero value otherwise.
 
 ### GetEffectsOk
 
-`func (o *Equipment) GetEffectsOk() (*[]EffectsEntry, bool)`
+`func (o *Equipment) GetEffectsOk() (*[]Effect, bool)`
 
 GetEffectsOk returns a tuple with the Effects field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEffects
 
-`func (o *Equipment) SetEffects(v []EffectsEntry)`
+`func (o *Equipment) SetEffects(v []Effect)`
 
 SetEffects sets Effects field to given value.
 
@@ -274,20 +273,20 @@ HasEffects returns a boolean if a field has been set.
 UnsetEffects ensures that no value is present for Effects, not even an explicit nil
 ### GetConditions
 
-`func (o *Equipment) GetConditions() []ConditionEntry`
+`func (o *Equipment) GetConditions() ConditionNode`
 
 GetConditions returns the Conditions field if non-nil, zero value otherwise.
 
 ### GetConditionsOk
 
-`func (o *Equipment) GetConditionsOk() (*[]ConditionEntry, bool)`
+`func (o *Equipment) GetConditionsOk() (*ConditionNode, bool)`
 
 GetConditionsOk returns a tuple with the Conditions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConditions
 
-`func (o *Equipment) SetConditions(v []ConditionEntry)`
+`func (o *Equipment) SetConditions(v ConditionNode)`
 
 SetConditions sets Conditions field to given value.
 
@@ -307,47 +306,22 @@ HasConditions returns a boolean if a field has been set.
 `func (o *Equipment) UnsetConditions()`
 
 UnsetConditions ensures that no value is present for Conditions, not even an explicit nil
-### GetConditionTree
-
-`func (o *Equipment) GetConditionTree() ConditionTreeNode`
-
-GetConditionTree returns the ConditionTree field if non-nil, zero value otherwise.
-
-### GetConditionTreeOk
-
-`func (o *Equipment) GetConditionTreeOk() (*ConditionTreeNode, bool)`
-
-GetConditionTreeOk returns a tuple with the ConditionTree field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConditionTree
-
-`func (o *Equipment) SetConditionTree(v ConditionTreeNode)`
-
-SetConditionTree sets ConditionTree field to given value.
-
-### HasConditionTree
-
-`func (o *Equipment) HasConditionTree() bool`
-
-HasConditionTree returns a boolean if a field has been set.
-
 ### GetRecipe
 
-`func (o *Equipment) GetRecipe() []RecipeEntry`
+`func (o *Equipment) GetRecipe() []Recipe`
 
 GetRecipe returns the Recipe field if non-nil, zero value otherwise.
 
 ### GetRecipeOk
 
-`func (o *Equipment) GetRecipeOk() (*[]RecipeEntry, bool)`
+`func (o *Equipment) GetRecipeOk() (*[]Recipe, bool)`
 
 GetRecipeOk returns a tuple with the Recipe field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRecipe
 
-`func (o *Equipment) SetRecipe(v []RecipeEntry)`
+`func (o *Equipment) SetRecipe(v []Recipe)`
 
 SetRecipe sets Recipe field to given value.
 
@@ -369,20 +343,20 @@ HasRecipe returns a boolean if a field has been set.
 UnsetRecipe ensures that no value is present for Recipe, not even an explicit nil
 ### GetParentSet
 
-`func (o *Equipment) GetParentSet() ItemListEntryParentSet`
+`func (o *Equipment) GetParentSet() TranslatedId`
 
 GetParentSet returns the ParentSet field if non-nil, zero value otherwise.
 
 ### GetParentSetOk
 
-`func (o *Equipment) GetParentSetOk() (*ItemListEntryParentSet, bool)`
+`func (o *Equipment) GetParentSetOk() (*TranslatedId, bool)`
 
 GetParentSetOk returns a tuple with the ParentSet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParentSet
 
-`func (o *Equipment) SetParentSet(v ItemListEntryParentSet)`
+`func (o *Equipment) SetParentSet(v TranslatedId)`
 
 SetParentSet sets ParentSet field to given value.
 

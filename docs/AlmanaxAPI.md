@@ -4,14 +4,14 @@ All URIs are relative to *https://api.dofusdu.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAlmanaxDate**](AlmanaxAPI.md#GetAlmanaxDate) | **Get** /dofus2/{language}/almanax/{date} | Single Almanax Date
-[**GetAlmanaxRange**](AlmanaxAPI.md#GetAlmanaxRange) | **Get** /dofus2/{language}/almanax | Almanax Range
+[**GetAlmanaxDate**](AlmanaxAPI.md#GetAlmanaxDate) | **Get** /dofus3/{language}/almanax/{date} | Single Almanax Date
+[**GetAlmanaxRange**](AlmanaxAPI.md#GetAlmanaxRange) | **Get** /dofus3/{language}/almanax | Almanax Range
 
 
 
 ## GetAlmanaxDate
 
-> AlmanaxEntry GetAlmanaxDate(ctx, language, date).Execute()
+> Almanax GetAlmanaxDate(ctx, language, date).Execute()
 
 Single Almanax Date
 
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlmanaxAPI.GetAlmanaxDate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAlmanaxDate`: AlmanaxEntry
+	// response from `GetAlmanaxDate`: Almanax
 	fmt.Fprintf(os.Stdout, "Response from `AlmanaxAPI.GetAlmanaxDate`: %v\n", resp)
 }
 ```
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AlmanaxEntry**](AlmanaxEntry.md)
+[**Almanax**](Almanax.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ No authorization required
 
 ## GetAlmanaxRange
 
-> []AlmanaxEntry GetAlmanaxRange(ctx, language).FilterBonusType(filterBonusType).RangeFrom(rangeFrom).RangeTo(rangeTo).RangeSize(rangeSize).Timezone(timezone).Execute()
+> []Almanax GetAlmanaxRange(ctx, language).FilterBonusType(filterBonusType).RangeFrom(rangeFrom).RangeTo(rangeTo).RangeSize(rangeSize).Timezone(timezone).Execute()
 
 Almanax Range
 
@@ -119,7 +119,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlmanaxAPI.GetAlmanaxRange``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAlmanaxRange`: []AlmanaxEntry
+	// response from `GetAlmanaxRange`: []Almanax
 	fmt.Fprintf(os.Stdout, "Response from `AlmanaxAPI.GetAlmanaxRange`: %v\n", resp)
 }
 ```
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]AlmanaxEntry**](AlmanaxEntry.md)
+[**[]Almanax**](Almanax.md)
 
 ### Authorization
 

@@ -4,14 +4,14 @@ All URIs are relative to *https://api.dofusdu.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetGameSearch**](GameAPI.md#GetGameSearch) | **Get** /{game}/{language}/search | Game Search
-[**GetItemsAllSearch**](GameAPI.md#GetItemsAllSearch) | **Get** /{game}/{language}/items/search | Search All Items
+[**GetGameSearch**](GameAPI.md#GetGameSearch) | **Get** /{game}/v1/{language}/search | Game Search
+[**GetItemsAllSearch**](GameAPI.md#GetItemsAllSearch) | **Get** /{game}/v1/{language}/items/search | Search All Items
 
 
 
 ## GetGameSearch
 
-> []GetGameSearch200ResponseInner GetGameSearch(ctx, language, game).Query(query).FilterType(filterType).Limit(limit).FieldsItem(fieldsItem).FilterTypeEnum(filterTypeEnum).Execute()
+> []GameSearch GetGameSearch(ctx, language, game).Query(query).FilterSearchIndex(filterSearchIndex).Limit(limit).FieldsItem(fieldsItem).FilterTypeNameId(filterTypeNameId).Execute()
 
 Game Search
 
@@ -31,21 +31,21 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus2" // string | 
+	game := "dofus3" // string | dofus3 | dofus3beta
 	query := "paztek" // string | search query
-	filterType := []string{"FilterType_example"} // []string | only results with all specific type (optional)
+	filterSearchIndex := []string{"FilterSearchIndex_example"} // []string | only results with all specific type (optional)
 	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
 	fieldsItem := []string{"FieldsItem_example"} // []string | adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. (optional)
-	filterTypeEnum := []string{"Inner_example"} // []string | multi-filter results with the english item type name, including \"mount\" and \"set\" from filter[type]. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional)
+	filterTypeNameId := []string{"Inner_example"} // []string | multi-filter results with the english item type name, including \"mount\" and \"set\" from filter[type]. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GameAPI.GetGameSearch(context.Background(), language, game).Query(query).FilterType(filterType).Limit(limit).FieldsItem(fieldsItem).FilterTypeEnum(filterTypeEnum).Execute()
+	resp, r, err := apiClient.GameAPI.GetGameSearch(context.Background(), language, game).Query(query).FilterSearchIndex(filterSearchIndex).Limit(limit).FieldsItem(fieldsItem).FilterTypeNameId(filterTypeNameId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `GameAPI.GetGameSearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGameSearch`: []GetGameSearch200ResponseInner
+	// response from `GetGameSearch`: []GameSearch
 	fmt.Fprintf(os.Stdout, "Response from `GameAPI.GetGameSearch`: %v\n", resp)
 }
 ```
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
-**game** | **string** |  | 
+**game** | **string** | dofus3 | dofus3beta | 
 
 ### Other Parameters
 
@@ -69,14 +69,14 @@ Name | Type | Description  | Notes
 
 
  **query** | **string** | search query | 
- **filterType** | **[]string** | only results with all specific type | 
+ **filterSearchIndex** | **[]string** | only results with all specific type | 
  **limit** | **int32** | maximum number of returned results | [default to 8]
  **fieldsItem** | **[]string** | adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. | 
- **filterTypeEnum** | **[]string** | multi-filter results with the english item type name, including \&quot;mount\&quot; and \&quot;set\&quot; from filter[type]. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | 
+ **filterTypeNameId** | **[]string** | multi-filter results with the english item type name, including \&quot;mount\&quot; and \&quot;set\&quot; from filter[type]. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | 
 
 ### Return type
 
-[**[]GetGameSearch200ResponseInner**](GetGameSearch200ResponseInner.md)
+[**[]GameSearch**](GameSearch.md)
 
 ### Authorization
 
@@ -94,7 +94,7 @@ No authorization required
 
 ## GetItemsAllSearch
 
-> []ItemsListEntryTyped GetItemsAllSearch(ctx, language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).FilterTypeEnum(filterTypeEnum).Execute()
+> []ListItemGeneral GetItemsAllSearch(ctx, language, game).Query(query).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).FilterTypeNameId(filterTypeNameId).Execute()
 
 Search All Items
 
@@ -114,22 +114,21 @@ import (
 
 func main() {
 	language := "fr" // string | a valid language code
-	game := "dofus2" // string | 
+	game := "dofus3" // string | dofus3 | dofus3beta
 	query := "atcham" // string | case sensitive search query
-	filterTypeName := "Bottes" // string | only results with the translated type name across all item_subtypes (optional)
 	filterMinLevel := int32(190) // int32 | only results which level is equal or above this value (optional)
 	filterMaxLevel := int32(200) // int32 | only results which level is equal or below this value (optional)
 	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
-	filterTypeEnum := []string{"Inner_example"} // []string | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional)
+	filterTypeNameId := []string{"Inner_example"} // []string | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GameAPI.GetItemsAllSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).FilterTypeEnum(filterTypeEnum).Execute()
+	resp, r, err := apiClient.GameAPI.GetItemsAllSearch(context.Background(), language, game).Query(query).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).FilterTypeNameId(filterTypeNameId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `GameAPI.GetItemsAllSearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetItemsAllSearch`: []ItemsListEntryTyped
+	// response from `GetItemsAllSearch`: []ListItemGeneral
 	fmt.Fprintf(os.Stdout, "Response from `GameAPI.GetItemsAllSearch`: %v\n", resp)
 }
 ```
@@ -141,7 +140,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
-**game** | **string** |  | 
+**game** | **string** | dofus3 | dofus3beta | 
 
 ### Other Parameters
 
@@ -153,15 +152,14 @@ Name | Type | Description  | Notes
 
 
  **query** | **string** | case sensitive search query | 
- **filterTypeName** | **string** | only results with the translated type name across all item_subtypes | 
  **filterMinLevel** | **int32** | only results which level is equal or above this value | 
  **filterMaxLevel** | **int32** | only results which level is equal or below this value | 
  **limit** | **int32** | maximum number of returned results | [default to 8]
- **filterTypeEnum** | **[]string** | multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | 
+ **filterTypeNameId** | **[]string** | multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | 
 
 ### Return type
 
-[**[]ItemsListEntryTyped**](ItemsListEntryTyped.md)
+[**[]ListItemGeneral**](ListItemGeneral.md)
 
 ### Authorization
 

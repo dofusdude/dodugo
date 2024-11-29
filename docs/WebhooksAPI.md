@@ -43,7 +43,7 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string | the ID returned from the API when creating the webhook
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -61,7 +61,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string** | the ID returned from the API when creating the webhook | 
 
 ### Other Parameters
 
@@ -111,7 +111,7 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string | the ID returned from the API when creating the webhook
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -129,7 +129,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string** | the ID returned from the API when creating the webhook | 
 
 ### Other Parameters
 
@@ -179,7 +179,7 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string | the ID returned from the API when creating the webhook
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -197,7 +197,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string** | the ID returned from the API when creating the webhook | 
 
 ### Other Parameters
 
@@ -430,7 +430,7 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string | the ID returned from the API when creating the webhook
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -450,7 +450,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string** | the ID returned from the API when creating the webhook | 
 
 ### Other Parameters
 
@@ -500,7 +500,7 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string | the ID returned from the API when creating the webhook
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -520,7 +520,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string** | the ID returned from the API when creating the webhook | 
 
 ### Other Parameters
 
@@ -570,7 +570,7 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string | the ID returned from the API when creating the webhook
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -590,7 +590,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string** | the ID returned from the API when creating the webhook | 
 
 ### Other Parameters
 
@@ -832,7 +832,7 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string | the ID returned from the API when creating the webhook
 	putAlmanaxWebhook := *openapiclient.NewPutAlmanaxWebhook() // PutAlmanaxWebhook |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -853,7 +853,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string** | the ID returned from the API when creating the webhook | 
 
 ### Other Parameters
 
@@ -904,7 +904,7 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string | the ID returned from the API when creating the webhook
 	putRSSWebhook := *openapiclient.NewPutRSSWebhook() // PutRSSWebhook |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -925,7 +925,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string** | the ID returned from the API when creating the webhook | 
 
 ### Other Parameters
 
@@ -976,7 +976,7 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string | the ID returned from the API when creating the webhook
 	putTwitterWebhook := *openapiclient.NewPutTwitterWebhook() // PutTwitterWebhook |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -997,7 +997,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string** | the ID returned from the API when creating the webhook | 
 
 ### Other Parameters
 

@@ -1,9 +1,9 @@
 /*
 dofusdude
 
-# A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
+# Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.4
+API version: 1.0.0-rc.2
 Contact: stelzo@steado.de
 */
 
@@ -40,7 +40,7 @@ DeleteWebhooksAlmanaxId Unregister Almanax Hook
 Delete a Webhook from the service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
+ @param id the ID returned from the API when creating the webhook
  @return ApiDeleteWebhooksAlmanaxIdRequest
 */
 func (a *WebhooksAPIService) DeleteWebhooksAlmanaxId(ctx context.Context, id string) ApiDeleteWebhooksAlmanaxIdRequest {
@@ -132,7 +132,7 @@ DeleteWebhooksRssId Unregister RSS Hook
 Delete a Webhook from the service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
+ @param id the ID returned from the API when creating the webhook
  @return ApiDeleteWebhooksRssIdRequest
 */
 func (a *WebhooksAPIService) DeleteWebhooksRssId(ctx context.Context, id string) ApiDeleteWebhooksRssIdRequest {
@@ -224,7 +224,7 @@ DeleteWebhooksTwitterId Unregister Twitter Hook
 Delete a Webhook from the service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
+ @param id the ID returned from the API when creating the webhook
  @return ApiDeleteWebhooksTwitterIdRequest
 */
 func (a *WebhooksAPIService) DeleteWebhooksTwitterId(ctx context.Context, id string) ApiDeleteWebhooksTwitterIdRequest {
@@ -613,7 +613,7 @@ GetWebhooksAlmanaxId Get Almanax Hook
 Retrieve details about an existing Almanax Webhook with a given uuid.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
+ @param id the ID returned from the API when creating the webhook
  @return ApiGetWebhooksAlmanaxIdRequest
 */
 func (a *WebhooksAPIService) GetWebhooksAlmanaxId(ctx context.Context, id string) ApiGetWebhooksAlmanaxIdRequest {
@@ -716,7 +716,7 @@ GetWebhooksRssId Get RSS Hook
 Retrieve details about an existing RSS Webhook with a given uuid.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
+ @param id the ID returned from the API when creating the webhook
  @return ApiGetWebhooksRssIdRequest
 */
 func (a *WebhooksAPIService) GetWebhooksRssId(ctx context.Context, id string) ApiGetWebhooksRssIdRequest {
@@ -819,7 +819,7 @@ GetWebhooksTwitterId Get Twitter Hook
 Retrieve details about an existing Twitter Webhook with a given uuid.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
+ @param id the ID returned from the API when creating the webhook
  @return ApiGetWebhooksTwitterIdRequest
 */
 func (a *WebhooksAPIService) GetWebhooksTwitterId(ctx context.Context, id string) ApiGetWebhooksTwitterIdRequest {
@@ -1219,7 +1219,7 @@ PutWebhooksAlmanaxId Update Almanax Hook
 Update the details of an Almanax Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
+ @param id the ID returned from the API when creating the webhook
  @return ApiPutWebhooksAlmanaxIdRequest
 */
 func (a *WebhooksAPIService) PutWebhooksAlmanaxId(ctx context.Context, id string) ApiPutWebhooksAlmanaxIdRequest {
@@ -1331,7 +1331,7 @@ PutWebhooksRssId Update RSS Hook
 Update the details of a RSS Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
+ @param id the ID returned from the API when creating the webhook
  @return ApiPutWebhooksRssIdRequest
 */
 func (a *WebhooksAPIService) PutWebhooksRssId(ctx context.Context, id string) ApiPutWebhooksRssIdRequest {
@@ -1443,7 +1443,7 @@ PutWebhooksTwitterId Update Twitter Hook
 Update the details of a Twitter Webhook. All fields are optional and arrays will be overwritten, so always put all selected items of an array.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
+ @param id the ID returned from the API when creating the webhook
  @return ApiPutWebhooksTwitterIdRequest
 */
 func (a *WebhooksAPIService) PutWebhooksTwitterId(ctx context.Context, id string) ApiPutWebhooksTwitterIdRequest {

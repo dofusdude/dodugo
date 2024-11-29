@@ -7,22 +7,20 @@ Name | Type | Description | Notes
 **AnkamaId** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to [**ItemsListEntryTypedType**](ItemsListEntryTypedType.md) |  | [optional] 
+**Type** | Pointer to [**TranslatedId**](TranslatedId.md) |  | [optional] 
 **IsWeapon** | Pointer to **bool** | always true when the item is a weapon. Many fields are now available. Always check for this flag first when getting single equipment items. | [optional] 
 **Level** | Pointer to **int32** |  | [optional] 
 **Pods** | Pointer to **int32** |  | [optional] 
-**ImageUrls** | Pointer to [**ImageUrls**](ImageUrls.md) |  | [optional] 
-**Effects** | Pointer to [**[]EffectsEntry**](EffectsEntry.md) |  | [optional] 
-**Conditions** | Pointer to [**[]ConditionEntry**](ConditionEntry.md) |  | [optional] 
-**ConditionTree** | Pointer to [**ConditionTreeNode**](ConditionTreeNode.md) |  | [optional] 
+**ImageUrls** | Pointer to [**Images**](Images.md) |  | [optional] 
+**Effects** | Pointer to [**[]Effect**](Effect.md) |  | [optional] 
+**Conditions** | Pointer to [**NullableConditionNode**](ConditionNode.md) |  | [optional] 
 **CriticalHitProbability** | Pointer to **int32** |  | [optional] 
 **CriticalHitBonus** | Pointer to **int32** |  | [optional] 
-**IsTwoHanded** | Pointer to **bool** |  | [optional] 
 **MaxCastPerTurn** | Pointer to **int32** |  | [optional] 
 **ApCost** | Pointer to **int32** |  | [optional] 
-**Range** | Pointer to [**WeaponRange**](WeaponRange.md) |  | [optional] 
-**Recipe** | Pointer to [**[]RecipeEntry**](RecipeEntry.md) |  | [optional] 
-**ParentSet** | Pointer to [**NullableItemListEntryParentSet**](ItemListEntryParentSet.md) |  | [optional] 
+**Range** | Pointer to [**Range**](Range.md) |  | [optional] 
+**Recipe** | Pointer to [**[]Recipe**](Recipe.md) |  | [optional] 
+**ParentSet** | Pointer to [**NullableTranslatedId**](TranslatedId.md) |  | [optional] 
 
 ## Methods
 
@@ -120,20 +118,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *Weapon) GetType() ItemsListEntryTypedType`
+`func (o *Weapon) GetType() TranslatedId`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *Weapon) GetTypeOk() (*ItemsListEntryTypedType, bool)`
+`func (o *Weapon) GetTypeOk() (*TranslatedId, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *Weapon) SetType(v ItemsListEntryTypedType)`
+`func (o *Weapon) SetType(v TranslatedId)`
 
 SetType sets Type field to given value.
 
@@ -220,20 +218,20 @@ HasPods returns a boolean if a field has been set.
 
 ### GetImageUrls
 
-`func (o *Weapon) GetImageUrls() ImageUrls`
+`func (o *Weapon) GetImageUrls() Images`
 
 GetImageUrls returns the ImageUrls field if non-nil, zero value otherwise.
 
 ### GetImageUrlsOk
 
-`func (o *Weapon) GetImageUrlsOk() (*ImageUrls, bool)`
+`func (o *Weapon) GetImageUrlsOk() (*Images, bool)`
 
 GetImageUrlsOk returns a tuple with the ImageUrls field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImageUrls
 
-`func (o *Weapon) SetImageUrls(v ImageUrls)`
+`func (o *Weapon) SetImageUrls(v Images)`
 
 SetImageUrls sets ImageUrls field to given value.
 
@@ -245,20 +243,20 @@ HasImageUrls returns a boolean if a field has been set.
 
 ### GetEffects
 
-`func (o *Weapon) GetEffects() []EffectsEntry`
+`func (o *Weapon) GetEffects() []Effect`
 
 GetEffects returns the Effects field if non-nil, zero value otherwise.
 
 ### GetEffectsOk
 
-`func (o *Weapon) GetEffectsOk() (*[]EffectsEntry, bool)`
+`func (o *Weapon) GetEffectsOk() (*[]Effect, bool)`
 
 GetEffectsOk returns a tuple with the Effects field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEffects
 
-`func (o *Weapon) SetEffects(v []EffectsEntry)`
+`func (o *Weapon) SetEffects(v []Effect)`
 
 SetEffects sets Effects field to given value.
 
@@ -280,20 +278,20 @@ HasEffects returns a boolean if a field has been set.
 UnsetEffects ensures that no value is present for Effects, not even an explicit nil
 ### GetConditions
 
-`func (o *Weapon) GetConditions() []ConditionEntry`
+`func (o *Weapon) GetConditions() ConditionNode`
 
 GetConditions returns the Conditions field if non-nil, zero value otherwise.
 
 ### GetConditionsOk
 
-`func (o *Weapon) GetConditionsOk() (*[]ConditionEntry, bool)`
+`func (o *Weapon) GetConditionsOk() (*ConditionNode, bool)`
 
 GetConditionsOk returns a tuple with the Conditions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConditions
 
-`func (o *Weapon) SetConditions(v []ConditionEntry)`
+`func (o *Weapon) SetConditions(v ConditionNode)`
 
 SetConditions sets Conditions field to given value.
 
@@ -313,31 +311,6 @@ HasConditions returns a boolean if a field has been set.
 `func (o *Weapon) UnsetConditions()`
 
 UnsetConditions ensures that no value is present for Conditions, not even an explicit nil
-### GetConditionTree
-
-`func (o *Weapon) GetConditionTree() ConditionTreeNode`
-
-GetConditionTree returns the ConditionTree field if non-nil, zero value otherwise.
-
-### GetConditionTreeOk
-
-`func (o *Weapon) GetConditionTreeOk() (*ConditionTreeNode, bool)`
-
-GetConditionTreeOk returns a tuple with the ConditionTree field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConditionTree
-
-`func (o *Weapon) SetConditionTree(v ConditionTreeNode)`
-
-SetConditionTree sets ConditionTree field to given value.
-
-### HasConditionTree
-
-`func (o *Weapon) HasConditionTree() bool`
-
-HasConditionTree returns a boolean if a field has been set.
-
 ### GetCriticalHitProbability
 
 `func (o *Weapon) GetCriticalHitProbability() int32`
@@ -387,31 +360,6 @@ SetCriticalHitBonus sets CriticalHitBonus field to given value.
 `func (o *Weapon) HasCriticalHitBonus() bool`
 
 HasCriticalHitBonus returns a boolean if a field has been set.
-
-### GetIsTwoHanded
-
-`func (o *Weapon) GetIsTwoHanded() bool`
-
-GetIsTwoHanded returns the IsTwoHanded field if non-nil, zero value otherwise.
-
-### GetIsTwoHandedOk
-
-`func (o *Weapon) GetIsTwoHandedOk() (*bool, bool)`
-
-GetIsTwoHandedOk returns a tuple with the IsTwoHanded field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsTwoHanded
-
-`func (o *Weapon) SetIsTwoHanded(v bool)`
-
-SetIsTwoHanded sets IsTwoHanded field to given value.
-
-### HasIsTwoHanded
-
-`func (o *Weapon) HasIsTwoHanded() bool`
-
-HasIsTwoHanded returns a boolean if a field has been set.
 
 ### GetMaxCastPerTurn
 
@@ -465,20 +413,20 @@ HasApCost returns a boolean if a field has been set.
 
 ### GetRange
 
-`func (o *Weapon) GetRange() WeaponRange`
+`func (o *Weapon) GetRange() Range`
 
 GetRange returns the Range field if non-nil, zero value otherwise.
 
 ### GetRangeOk
 
-`func (o *Weapon) GetRangeOk() (*WeaponRange, bool)`
+`func (o *Weapon) GetRangeOk() (*Range, bool)`
 
 GetRangeOk returns a tuple with the Range field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRange
 
-`func (o *Weapon) SetRange(v WeaponRange)`
+`func (o *Weapon) SetRange(v Range)`
 
 SetRange sets Range field to given value.
 
@@ -490,20 +438,20 @@ HasRange returns a boolean if a field has been set.
 
 ### GetRecipe
 
-`func (o *Weapon) GetRecipe() []RecipeEntry`
+`func (o *Weapon) GetRecipe() []Recipe`
 
 GetRecipe returns the Recipe field if non-nil, zero value otherwise.
 
 ### GetRecipeOk
 
-`func (o *Weapon) GetRecipeOk() (*[]RecipeEntry, bool)`
+`func (o *Weapon) GetRecipeOk() (*[]Recipe, bool)`
 
 GetRecipeOk returns a tuple with the Recipe field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRecipe
 
-`func (o *Weapon) SetRecipe(v []RecipeEntry)`
+`func (o *Weapon) SetRecipe(v []Recipe)`
 
 SetRecipe sets Recipe field to given value.
 
@@ -525,20 +473,20 @@ HasRecipe returns a boolean if a field has been set.
 UnsetRecipe ensures that no value is present for Recipe, not even an explicit nil
 ### GetParentSet
 
-`func (o *Weapon) GetParentSet() ItemListEntryParentSet`
+`func (o *Weapon) GetParentSet() TranslatedId`
 
 GetParentSet returns the ParentSet field if non-nil, zero value otherwise.
 
 ### GetParentSetOk
 
-`func (o *Weapon) GetParentSetOk() (*ItemListEntryParentSet, bool)`
+`func (o *Weapon) GetParentSetOk() (*TranslatedId, bool)`
 
 GetParentSetOk returns a tuple with the ParentSet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParentSet
 
-`func (o *Weapon) SetParentSet(v ItemListEntryParentSet)`
+`func (o *Weapon) SetParentSet(v TranslatedId)`
 
 SetParentSet sets ParentSet field to given value.
 

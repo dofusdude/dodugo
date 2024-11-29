@@ -1,9 +1,9 @@
 /*
 dofusdude
 
-# A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
+# Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.4
+API version: 1.0.0-rc.2
 Contact: stelzo@steado.de
 */
 
@@ -22,9 +22,9 @@ var _ MappedNullable = &Mount{}
 type Mount struct {
 	AnkamaId *int32 `json:"ankama_id,omitempty"`
 	Name *string `json:"name,omitempty"`
-	FamilyName *string `json:"family_name,omitempty"`
-	ImageUrls *ImageUrls `json:"image_urls,omitempty"`
-	Effects []EffectsEntry `json:"effects,omitempty"`
+	Family *MountFamily `json:"family,omitempty"`
+	ImageUrls *Images `json:"image_urls,omitempty"`
+	Effects []Effect `json:"effects,omitempty"`
 }
 
 // NewMount instantiates a new Mount object
@@ -108,42 +108,42 @@ func (o *Mount) SetName(v string) {
 	o.Name = &v
 }
 
-// GetFamilyName returns the FamilyName field value if set, zero value otherwise.
-func (o *Mount) GetFamilyName() string {
-	if o == nil || IsNil(o.FamilyName) {
-		var ret string
+// GetFamily returns the Family field value if set, zero value otherwise.
+func (o *Mount) GetFamily() MountFamily {
+	if o == nil || IsNil(o.Family) {
+		var ret MountFamily
 		return ret
 	}
-	return *o.FamilyName
+	return *o.Family
 }
 
-// GetFamilyNameOk returns a tuple with the FamilyName field value if set, nil otherwise
+// GetFamilyOk returns a tuple with the Family field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Mount) GetFamilyNameOk() (*string, bool) {
-	if o == nil || IsNil(o.FamilyName) {
+func (o *Mount) GetFamilyOk() (*MountFamily, bool) {
+	if o == nil || IsNil(o.Family) {
 		return nil, false
 	}
-	return o.FamilyName, true
+	return o.Family, true
 }
 
-// HasFamilyName returns a boolean if a field has been set.
-func (o *Mount) HasFamilyName() bool {
-	if o != nil && !IsNil(o.FamilyName) {
+// HasFamily returns a boolean if a field has been set.
+func (o *Mount) HasFamily() bool {
+	if o != nil && !IsNil(o.Family) {
 		return true
 	}
 
 	return false
 }
 
-// SetFamilyName gets a reference to the given string and assigns it to the FamilyName field.
-func (o *Mount) SetFamilyName(v string) {
-	o.FamilyName = &v
+// SetFamily gets a reference to the given MountFamily and assigns it to the Family field.
+func (o *Mount) SetFamily(v MountFamily) {
+	o.Family = &v
 }
 
 // GetImageUrls returns the ImageUrls field value if set, zero value otherwise.
-func (o *Mount) GetImageUrls() ImageUrls {
+func (o *Mount) GetImageUrls() Images {
 	if o == nil || IsNil(o.ImageUrls) {
-		var ret ImageUrls
+		var ret Images
 		return ret
 	}
 	return *o.ImageUrls
@@ -151,7 +151,7 @@ func (o *Mount) GetImageUrls() ImageUrls {
 
 // GetImageUrlsOk returns a tuple with the ImageUrls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Mount) GetImageUrlsOk() (*ImageUrls, bool) {
+func (o *Mount) GetImageUrlsOk() (*Images, bool) {
 	if o == nil || IsNil(o.ImageUrls) {
 		return nil, false
 	}
@@ -167,15 +167,15 @@ func (o *Mount) HasImageUrls() bool {
 	return false
 }
 
-// SetImageUrls gets a reference to the given ImageUrls and assigns it to the ImageUrls field.
-func (o *Mount) SetImageUrls(v ImageUrls) {
+// SetImageUrls gets a reference to the given Images and assigns it to the ImageUrls field.
+func (o *Mount) SetImageUrls(v Images) {
 	o.ImageUrls = &v
 }
 
 // GetEffects returns the Effects field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Mount) GetEffects() []EffectsEntry {
+func (o *Mount) GetEffects() []Effect {
 	if o == nil {
-		var ret []EffectsEntry
+		var ret []Effect
 		return ret
 	}
 	return o.Effects
@@ -184,7 +184,7 @@ func (o *Mount) GetEffects() []EffectsEntry {
 // GetEffectsOk returns a tuple with the Effects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Mount) GetEffectsOk() ([]EffectsEntry, bool) {
+func (o *Mount) GetEffectsOk() ([]Effect, bool) {
 	if o == nil || IsNil(o.Effects) {
 		return nil, false
 	}
@@ -200,8 +200,8 @@ func (o *Mount) HasEffects() bool {
 	return false
 }
 
-// SetEffects gets a reference to the given []EffectsEntry and assigns it to the Effects field.
-func (o *Mount) SetEffects(v []EffectsEntry) {
+// SetEffects gets a reference to the given []Effect and assigns it to the Effects field.
+func (o *Mount) SetEffects(v []Effect) {
 	o.Effects = v
 }
 
@@ -221,8 +221,8 @@ func (o Mount) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.FamilyName) {
-		toSerialize["family_name"] = o.FamilyName
+	if !IsNil(o.Family) {
+		toSerialize["family"] = o.Family
 	}
 	if !IsNil(o.ImageUrls) {
 		toSerialize["image_urls"] = o.ImageUrls

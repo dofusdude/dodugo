@@ -1,9 +1,9 @@
 /*
 dofusdude
 
-# A project for you - the developer. The all-in-one toolbelt for your next Ankama related project.  ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [PHP](https://github.com/dofusdude/dofusdude-php) - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Discord Integration** Ankama related RSS and Almanax feeds to post to Discord servers with advanced features like filters or mentions. Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 2 Beta** from stable to bleeding edge by replacing /dofus2 with /dofus2beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_ including the dropped languages from the Dofus website _de_ and _it_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Complete** actual data from the game including items invisible to the encyclopedia like quest items.  - 🖼️ **HD Images** rendering game assets to high-res images with up to 800x800 px.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
+# Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 0.9.4
+API version: 1.0.0-rc.2
 Contact: stelzo@steado.de
 */
 
@@ -18,20 +18,18 @@ import (
 // checks if the Resource type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Resource{}
 
-// Resource 
+// Resource struct for Resource
 type Resource struct {
 	AnkamaId *int32 `json:"ankama_id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
-	Type *ResourceType `json:"type,omitempty"`
+	Type *TranslatedId `json:"type,omitempty"`
 	Level *int32 `json:"level,omitempty"`
 	Pods *int32 `json:"pods,omitempty"`
-	ImageUrls *ImageUrls `json:"image_urls,omitempty"`
-	Effects []EffectsEntry `json:"effects,omitempty"`
-	// Deprecated
-	Conditions []ConditionEntry `json:"conditions,omitempty"`
-	ConditionTree *ConditionTreeNode `json:"condition_tree,omitempty"`
-	Recipe []RecipeEntry `json:"recipe,omitempty"`
+	ImageUrls *Images `json:"image_urls,omitempty"`
+	Effects []Effect `json:"effects,omitempty"`
+	Conditions NullableConditionNode `json:"conditions,omitempty"`
+	Recipe []Recipe `json:"recipe,omitempty"`
 }
 
 // NewResource instantiates a new Resource object
@@ -148,9 +146,9 @@ func (o *Resource) SetDescription(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *Resource) GetType() ResourceType {
+func (o *Resource) GetType() TranslatedId {
 	if o == nil || IsNil(o.Type) {
-		var ret ResourceType
+		var ret TranslatedId
 		return ret
 	}
 	return *o.Type
@@ -158,7 +156,7 @@ func (o *Resource) GetType() ResourceType {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Resource) GetTypeOk() (*ResourceType, bool) {
+func (o *Resource) GetTypeOk() (*TranslatedId, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -174,8 +172,8 @@ func (o *Resource) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given ResourceType and assigns it to the Type field.
-func (o *Resource) SetType(v ResourceType) {
+// SetType gets a reference to the given TranslatedId and assigns it to the Type field.
+func (o *Resource) SetType(v TranslatedId) {
 	o.Type = &v
 }
 
@@ -244,9 +242,9 @@ func (o *Resource) SetPods(v int32) {
 }
 
 // GetImageUrls returns the ImageUrls field value if set, zero value otherwise.
-func (o *Resource) GetImageUrls() ImageUrls {
+func (o *Resource) GetImageUrls() Images {
 	if o == nil || IsNil(o.ImageUrls) {
-		var ret ImageUrls
+		var ret Images
 		return ret
 	}
 	return *o.ImageUrls
@@ -254,7 +252,7 @@ func (o *Resource) GetImageUrls() ImageUrls {
 
 // GetImageUrlsOk returns a tuple with the ImageUrls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Resource) GetImageUrlsOk() (*ImageUrls, bool) {
+func (o *Resource) GetImageUrlsOk() (*Images, bool) {
 	if o == nil || IsNil(o.ImageUrls) {
 		return nil, false
 	}
@@ -270,15 +268,15 @@ func (o *Resource) HasImageUrls() bool {
 	return false
 }
 
-// SetImageUrls gets a reference to the given ImageUrls and assigns it to the ImageUrls field.
-func (o *Resource) SetImageUrls(v ImageUrls) {
+// SetImageUrls gets a reference to the given Images and assigns it to the ImageUrls field.
+func (o *Resource) SetImageUrls(v Images) {
 	o.ImageUrls = &v
 }
 
 // GetEffects returns the Effects field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Resource) GetEffects() []EffectsEntry {
+func (o *Resource) GetEffects() []Effect {
 	if o == nil {
-		var ret []EffectsEntry
+		var ret []Effect
 		return ret
 	}
 	return o.Effects
@@ -287,7 +285,7 @@ func (o *Resource) GetEffects() []EffectsEntry {
 // GetEffectsOk returns a tuple with the Effects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Resource) GetEffectsOk() ([]EffectsEntry, bool) {
+func (o *Resource) GetEffectsOk() ([]Effect, bool) {
 	if o == nil || IsNil(o.Effects) {
 		return nil, false
 	}
@@ -303,83 +301,57 @@ func (o *Resource) HasEffects() bool {
 	return false
 }
 
-// SetEffects gets a reference to the given []EffectsEntry and assigns it to the Effects field.
-func (o *Resource) SetEffects(v []EffectsEntry) {
+// SetEffects gets a reference to the given []Effect and assigns it to the Effects field.
+func (o *Resource) SetEffects(v []Effect) {
 	o.Effects = v
 }
 
 // GetConditions returns the Conditions field value if set, zero value otherwise (both if not set or set to explicit null).
-// Deprecated
-func (o *Resource) GetConditions() []ConditionEntry {
-	if o == nil {
-		var ret []ConditionEntry
+func (o *Resource) GetConditions() ConditionNode {
+	if o == nil || IsNil(o.Conditions.Get()) {
+		var ret ConditionNode
 		return ret
 	}
-	return o.Conditions
+	return *o.Conditions.Get()
 }
 
 // GetConditionsOk returns a tuple with the Conditions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-// Deprecated
-func (o *Resource) GetConditionsOk() ([]ConditionEntry, bool) {
-	if o == nil || IsNil(o.Conditions) {
+func (o *Resource) GetConditionsOk() (*ConditionNode, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Conditions, true
+	return o.Conditions.Get(), o.Conditions.IsSet()
 }
 
 // HasConditions returns a boolean if a field has been set.
 func (o *Resource) HasConditions() bool {
-	if o != nil && !IsNil(o.Conditions) {
+	if o != nil && o.Conditions.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConditions gets a reference to the given []ConditionEntry and assigns it to the Conditions field.
-// Deprecated
-func (o *Resource) SetConditions(v []ConditionEntry) {
-	o.Conditions = v
+// SetConditions gets a reference to the given NullableConditionNode and assigns it to the Conditions field.
+func (o *Resource) SetConditions(v ConditionNode) {
+	o.Conditions.Set(&v)
+}
+// SetConditionsNil sets the value for Conditions to be an explicit nil
+func (o *Resource) SetConditionsNil() {
+	o.Conditions.Set(nil)
 }
 
-// GetConditionTree returns the ConditionTree field value if set, zero value otherwise.
-func (o *Resource) GetConditionTree() ConditionTreeNode {
-	if o == nil || IsNil(o.ConditionTree) {
-		var ret ConditionTreeNode
-		return ret
-	}
-	return *o.ConditionTree
-}
-
-// GetConditionTreeOk returns a tuple with the ConditionTree field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Resource) GetConditionTreeOk() (*ConditionTreeNode, bool) {
-	if o == nil || IsNil(o.ConditionTree) {
-		return nil, false
-	}
-	return o.ConditionTree, true
-}
-
-// HasConditionTree returns a boolean if a field has been set.
-func (o *Resource) HasConditionTree() bool {
-	if o != nil && !IsNil(o.ConditionTree) {
-		return true
-	}
-
-	return false
-}
-
-// SetConditionTree gets a reference to the given ConditionTreeNode and assigns it to the ConditionTree field.
-func (o *Resource) SetConditionTree(v ConditionTreeNode) {
-	o.ConditionTree = &v
+// UnsetConditions ensures that no value is present for Conditions, not even an explicit nil
+func (o *Resource) UnsetConditions() {
+	o.Conditions.Unset()
 }
 
 // GetRecipe returns the Recipe field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Resource) GetRecipe() []RecipeEntry {
+func (o *Resource) GetRecipe() []Recipe {
 	if o == nil {
-		var ret []RecipeEntry
+		var ret []Recipe
 		return ret
 	}
 	return o.Recipe
@@ -388,7 +360,7 @@ func (o *Resource) GetRecipe() []RecipeEntry {
 // GetRecipeOk returns a tuple with the Recipe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Resource) GetRecipeOk() ([]RecipeEntry, bool) {
+func (o *Resource) GetRecipeOk() ([]Recipe, bool) {
 	if o == nil || IsNil(o.Recipe) {
 		return nil, false
 	}
@@ -404,8 +376,8 @@ func (o *Resource) HasRecipe() bool {
 	return false
 }
 
-// SetRecipe gets a reference to the given []RecipeEntry and assigns it to the Recipe field.
-func (o *Resource) SetRecipe(v []RecipeEntry) {
+// SetRecipe gets a reference to the given []Recipe and assigns it to the Recipe field.
+func (o *Resource) SetRecipe(v []Recipe) {
 	o.Recipe = v
 }
 
@@ -443,11 +415,8 @@ func (o Resource) ToMap() (map[string]interface{}, error) {
 	if o.Effects != nil {
 		toSerialize["effects"] = o.Effects
 	}
-	if o.Conditions != nil {
-		toSerialize["conditions"] = o.Conditions
-	}
-	if !IsNil(o.ConditionTree) {
-		toSerialize["condition_tree"] = o.ConditionTree
+	if o.Conditions.IsSet() {
+		toSerialize["conditions"] = o.Conditions.Get()
 	}
 	if o.Recipe != nil {
 		toSerialize["recipe"] = o.Recipe

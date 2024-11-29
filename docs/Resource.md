@@ -7,14 +7,13 @@ Name | Type | Description | Notes
 **AnkamaId** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to [**ResourceType**](ResourceType.md) |  | [optional] 
+**Type** | Pointer to [**TranslatedId**](TranslatedId.md) |  | [optional] 
 **Level** | Pointer to **int32** |  | [optional] 
 **Pods** | Pointer to **int32** |  | [optional] 
-**ImageUrls** | Pointer to [**ImageUrls**](ImageUrls.md) |  | [optional] 
-**Effects** | Pointer to [**[]EffectsEntry**](EffectsEntry.md) |  | [optional] 
-**Conditions** | Pointer to [**[]ConditionEntry**](ConditionEntry.md) |  | [optional] 
-**ConditionTree** | Pointer to [**ConditionTreeNode**](ConditionTreeNode.md) |  | [optional] 
-**Recipe** | Pointer to [**[]RecipeEntry**](RecipeEntry.md) |  | [optional] 
+**ImageUrls** | Pointer to [**Images**](Images.md) |  | [optional] 
+**Effects** | Pointer to [**[]Effect**](Effect.md) |  | [optional] 
+**Conditions** | Pointer to [**NullableConditionNode**](ConditionNode.md) |  | [optional] 
+**Recipe** | Pointer to [**[]Recipe**](Recipe.md) |  | [optional] 
 
 ## Methods
 
@@ -112,20 +111,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *Resource) GetType() ResourceType`
+`func (o *Resource) GetType() TranslatedId`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *Resource) GetTypeOk() (*ResourceType, bool)`
+`func (o *Resource) GetTypeOk() (*TranslatedId, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *Resource) SetType(v ResourceType)`
+`func (o *Resource) SetType(v TranslatedId)`
 
 SetType sets Type field to given value.
 
@@ -187,20 +186,20 @@ HasPods returns a boolean if a field has been set.
 
 ### GetImageUrls
 
-`func (o *Resource) GetImageUrls() ImageUrls`
+`func (o *Resource) GetImageUrls() Images`
 
 GetImageUrls returns the ImageUrls field if non-nil, zero value otherwise.
 
 ### GetImageUrlsOk
 
-`func (o *Resource) GetImageUrlsOk() (*ImageUrls, bool)`
+`func (o *Resource) GetImageUrlsOk() (*Images, bool)`
 
 GetImageUrlsOk returns a tuple with the ImageUrls field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImageUrls
 
-`func (o *Resource) SetImageUrls(v ImageUrls)`
+`func (o *Resource) SetImageUrls(v Images)`
 
 SetImageUrls sets ImageUrls field to given value.
 
@@ -212,20 +211,20 @@ HasImageUrls returns a boolean if a field has been set.
 
 ### GetEffects
 
-`func (o *Resource) GetEffects() []EffectsEntry`
+`func (o *Resource) GetEffects() []Effect`
 
 GetEffects returns the Effects field if non-nil, zero value otherwise.
 
 ### GetEffectsOk
 
-`func (o *Resource) GetEffectsOk() (*[]EffectsEntry, bool)`
+`func (o *Resource) GetEffectsOk() (*[]Effect, bool)`
 
 GetEffectsOk returns a tuple with the Effects field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEffects
 
-`func (o *Resource) SetEffects(v []EffectsEntry)`
+`func (o *Resource) SetEffects(v []Effect)`
 
 SetEffects sets Effects field to given value.
 
@@ -247,20 +246,20 @@ HasEffects returns a boolean if a field has been set.
 UnsetEffects ensures that no value is present for Effects, not even an explicit nil
 ### GetConditions
 
-`func (o *Resource) GetConditions() []ConditionEntry`
+`func (o *Resource) GetConditions() ConditionNode`
 
 GetConditions returns the Conditions field if non-nil, zero value otherwise.
 
 ### GetConditionsOk
 
-`func (o *Resource) GetConditionsOk() (*[]ConditionEntry, bool)`
+`func (o *Resource) GetConditionsOk() (*ConditionNode, bool)`
 
 GetConditionsOk returns a tuple with the Conditions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConditions
 
-`func (o *Resource) SetConditions(v []ConditionEntry)`
+`func (o *Resource) SetConditions(v ConditionNode)`
 
 SetConditions sets Conditions field to given value.
 
@@ -280,47 +279,22 @@ HasConditions returns a boolean if a field has been set.
 `func (o *Resource) UnsetConditions()`
 
 UnsetConditions ensures that no value is present for Conditions, not even an explicit nil
-### GetConditionTree
-
-`func (o *Resource) GetConditionTree() ConditionTreeNode`
-
-GetConditionTree returns the ConditionTree field if non-nil, zero value otherwise.
-
-### GetConditionTreeOk
-
-`func (o *Resource) GetConditionTreeOk() (*ConditionTreeNode, bool)`
-
-GetConditionTreeOk returns a tuple with the ConditionTree field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConditionTree
-
-`func (o *Resource) SetConditionTree(v ConditionTreeNode)`
-
-SetConditionTree sets ConditionTree field to given value.
-
-### HasConditionTree
-
-`func (o *Resource) HasConditionTree() bool`
-
-HasConditionTree returns a boolean if a field has been set.
-
 ### GetRecipe
 
-`func (o *Resource) GetRecipe() []RecipeEntry`
+`func (o *Resource) GetRecipe() []Recipe`
 
 GetRecipe returns the Recipe field if non-nil, zero value otherwise.
 
 ### GetRecipeOk
 
-`func (o *Resource) GetRecipeOk() (*[]RecipeEntry, bool)`
+`func (o *Resource) GetRecipeOk() (*[]Recipe, bool)`
 
 GetRecipeOk returns a tuple with the Recipe field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRecipe
 
-`func (o *Resource) SetRecipe(v []RecipeEntry)`
+`func (o *Resource) SetRecipe(v []Recipe)`
 
 SetRecipe sets Recipe field to given value.
 

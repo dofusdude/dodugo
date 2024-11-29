@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnkamaId** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**FamilyName** | Pointer to **string** |  | [optional] 
-**ImageUrls** | Pointer to [**ImageUrls**](ImageUrls.md) |  | [optional] 
-**Effects** | Pointer to [**[]EffectsEntry**](EffectsEntry.md) |  | [optional] 
+**Family** | Pointer to [**MountFamily**](MountFamily.md) |  | [optional] 
+**ImageUrls** | Pointer to [**Images**](Images.md) |  | [optional] 
+**Effects** | Pointer to [**[]Effect**](Effect.md) |  | [optional] 
 
 ## Methods
 
@@ -79,47 +79,47 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetFamilyName
+### GetFamily
 
-`func (o *Mount) GetFamilyName() string`
+`func (o *Mount) GetFamily() MountFamily`
 
-GetFamilyName returns the FamilyName field if non-nil, zero value otherwise.
+GetFamily returns the Family field if non-nil, zero value otherwise.
 
-### GetFamilyNameOk
+### GetFamilyOk
 
-`func (o *Mount) GetFamilyNameOk() (*string, bool)`
+`func (o *Mount) GetFamilyOk() (*MountFamily, bool)`
 
-GetFamilyNameOk returns a tuple with the FamilyName field if it's non-nil, zero value otherwise
+GetFamilyOk returns a tuple with the Family field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFamilyName
+### SetFamily
 
-`func (o *Mount) SetFamilyName(v string)`
+`func (o *Mount) SetFamily(v MountFamily)`
 
-SetFamilyName sets FamilyName field to given value.
+SetFamily sets Family field to given value.
 
-### HasFamilyName
+### HasFamily
 
-`func (o *Mount) HasFamilyName() bool`
+`func (o *Mount) HasFamily() bool`
 
-HasFamilyName returns a boolean if a field has been set.
+HasFamily returns a boolean if a field has been set.
 
 ### GetImageUrls
 
-`func (o *Mount) GetImageUrls() ImageUrls`
+`func (o *Mount) GetImageUrls() Images`
 
 GetImageUrls returns the ImageUrls field if non-nil, zero value otherwise.
 
 ### GetImageUrlsOk
 
-`func (o *Mount) GetImageUrlsOk() (*ImageUrls, bool)`
+`func (o *Mount) GetImageUrlsOk() (*Images, bool)`
 
 GetImageUrlsOk returns a tuple with the ImageUrls field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImageUrls
 
-`func (o *Mount) SetImageUrls(v ImageUrls)`
+`func (o *Mount) SetImageUrls(v Images)`
 
 SetImageUrls sets ImageUrls field to given value.
 
@@ -131,20 +131,20 @@ HasImageUrls returns a boolean if a field has been set.
 
 ### GetEffects
 
-`func (o *Mount) GetEffects() []EffectsEntry`
+`func (o *Mount) GetEffects() []Effect`
 
 GetEffects returns the Effects field if non-nil, zero value otherwise.
 
 ### GetEffectsOk
 
-`func (o *Mount) GetEffectsOk() (*[]EffectsEntry, bool)`
+`func (o *Mount) GetEffectsOk() (*[]Effect, bool)`
 
 GetEffectsOk returns a tuple with the Effects field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEffects
 
-`func (o *Mount) SetEffects(v []EffectsEntry)`
+`func (o *Mount) SetEffects(v []Effect)`
 
 SetEffects sets Effects field to given value.
 

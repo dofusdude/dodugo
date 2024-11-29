@@ -33,7 +33,7 @@ import (
 
 func main() {
 	language := "en" // string | a valid language code
-	game := "dofus3" // string | dofus3 | dofus3beta
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	sortLevel := "desc" // string | sort the resulting list by level, default unsorted (optional)
 	filterMinLevel := int32(10) // int32 | only results which level is equal or above this value (optional)
 	filterMaxLevel := int32(60) // int32 | only results which level is equal or below this value (optional)
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
-**game** | **string** | dofus3 | dofus3beta | 
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 
@@ -116,7 +116,7 @@ import (
 
 func main() {
 	language := "en" // string | a valid language code
-	game := "dofus3" // string | dofus3 | dofus3beta
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	sortLevel := "desc" // string | sort the resulting list by level, default unsorted (optional)
 	filterMinLevel := int32(10) // int32 | only results which level is equal or above this value (optional)
 	filterMaxLevel := int32(60) // int32 | only results which level is equal or below this value (optional)
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
-**game** | **string** | dofus3 | dofus3beta | 
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 
@@ -203,7 +203,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus3" // string | dofus3 | dofus3beta
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	query := "nidas" // string | case sensitive search query
 	filterMinLevel := int32(150) // int32 | only results which level is equal or above this value (optional)
 	filterMaxLevel := int32(200) // int32 | only results which level is equal or below this value (optional)
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
-**game** | **string** | dofus3 | dofus3beta | 
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 
@@ -287,7 +287,7 @@ import (
 func main() {
 	language := "language_example" // string | a valid language code
 	ankamaId := int32(26009) // int32 | identifier
-	game := "dofus3" // string | dofus3 | dofus3beta
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
 **ankamaId** | **int32** | identifier | 
-**game** | **string** | dofus3 | dofus3beta | 
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 

@@ -87,7 +87,7 @@ curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetAllItemsConsumablesListRequest
 */
 func (a *ConsumablesAPIService) GetAllItemsConsumablesList(ctx context.Context, language string, game string) ApiGetAllItemsConsumablesListRequest {
@@ -285,7 +285,7 @@ Retrieve a list of consumable items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemsConsumablesListRequest
 */
 func (a *ConsumablesAPIService) GetItemsConsumablesList(ctx context.Context, language string, game string) ApiGetItemsConsumablesListRequest {
@@ -475,7 +475,7 @@ Search in all names and descriptions of consumable items with a query.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemsConsumablesSearchRequest
 */
 func (a *ConsumablesAPIService) GetItemsConsumablesSearch(ctx context.Context, language string, game string) ApiGetItemsConsumablesSearchRequest {
@@ -630,7 +630,7 @@ Retrieve a specific consumable item with id.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
  @param ankamaId identifier
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemsConsumablesSingleRequest
 */
 func (a *ConsumablesAPIService) GetItemsConsumablesSingle(ctx context.Context, language string, ankamaId int32, game string) ApiGetItemsConsumablesSingleRequest {

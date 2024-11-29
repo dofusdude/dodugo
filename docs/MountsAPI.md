@@ -33,7 +33,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus3" // string | dofus3 | dofus3beta
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	filterFamilyName := "Dragoturkey" // string | only results with the translated family name (optional)
 	acceptEncoding := "acceptEncoding_example" // string | optional compression for saving bandwidth (optional)
 	filterFamilyId := int32(56) // int32 | only results with the unique family id (optional)
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
-**game** | **string** | dofus3 | dofus3beta | 
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 
@@ -112,7 +112,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus3" // string | dofus3 | dofus3beta
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	filterFamilyName := "Dragoturkey" // string | only results with the translated family name (optional)
 	pageSize := int32(10) // int32 | size of the results from the list. -1 disables pagination and gets all in one response. (optional)
 	pageNumber := int32(1) // int32 | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
-**game** | **string** | dofus3 | dofus3beta | 
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 
@@ -195,7 +195,7 @@ import (
 
 func main() {
 	language := "fr" // string | a valid language code
-	game := "dofus3" // string | dofus3 | dofus3beta
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	query := "Dorée" // string | case sensitive search query
 	filterFamilyName := "Dragodinde" // string | only results with the translated family name (optional)
 	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
-**game** | **string** | dofus3 | dofus3beta | 
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 
@@ -275,7 +275,7 @@ import (
 func main() {
 	language := "language_example" // string | a valid language code
 	ankamaId := int32(180) // int32 | identifier
-	game := "dofus3" // string | dofus3 | dofus3beta
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
 **ankamaId** | **int32** | identifier | 
-**game** | **string** | dofus3 | dofus3beta | 
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 

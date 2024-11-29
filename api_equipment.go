@@ -87,7 +87,7 @@ curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetAllItemsEquipmentListRequest
 */
 func (a *EquipmentAPIService) GetAllItemsEquipmentList(ctx context.Context, language string, game string) ApiGetAllItemsEquipmentListRequest {
@@ -285,7 +285,7 @@ Retrieve a list of equipment items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemsEquipmentListRequest
 */
 func (a *EquipmentAPIService) GetItemsEquipmentList(ctx context.Context, language string, game string) ApiGetItemsEquipmentListRequest {
@@ -475,7 +475,7 @@ Search in all names and descriptions of equipment items with a query.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemsEquipmentSearchRequest
 */
 func (a *EquipmentAPIService) GetItemsEquipmentSearch(ctx context.Context, language string, game string) ApiGetItemsEquipmentSearchRequest {
@@ -630,7 +630,7 @@ Retrieve a specific equipment item with id.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
  @param ankamaId identifier
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemsEquipmentSingleRequest
 */
 func (a *EquipmentAPIService) GetItemsEquipmentSingle(ctx context.Context, language string, ankamaId int32, game string) ApiGetItemsEquipmentSingleRequest {

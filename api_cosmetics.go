@@ -87,7 +87,7 @@ curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetAllCosmeticsListRequest
 */
 func (a *CosmeticsAPIService) GetAllCosmeticsList(ctx context.Context, language string, game string) ApiGetAllCosmeticsListRequest {
@@ -285,7 +285,7 @@ Retrieve a list of cosmetic items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetCosmeticsListRequest
 */
 func (a *CosmeticsAPIService) GetCosmeticsList(ctx context.Context, language string, game string) ApiGetCosmeticsListRequest {
@@ -475,7 +475,7 @@ Search in all names and descriptions of cosmetic items with a query.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetCosmeticsSearchRequest
 */
 func (a *CosmeticsAPIService) GetCosmeticsSearch(ctx context.Context, language string, game string) ApiGetCosmeticsSearchRequest {
@@ -630,7 +630,7 @@ Retrieve a specific cosmetic item with id.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
  @param ankamaId identifier
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetCosmeticsSingleRequest
 */
 func (a *CosmeticsAPIService) GetCosmeticsSingle(ctx context.Context, language string, ankamaId int32, game string) ApiGetCosmeticsSingleRequest {

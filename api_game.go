@@ -77,7 +77,7 @@ Search in all names and descriptions of all supported types in the game. For the
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetGameSearchRequest
 */
 func (a *GameAPIService) GetGameSearch(ctx context.Context, language string, game string) ApiGetGameSearchRequest {
@@ -265,7 +265,7 @@ Search in all names and descriptions of Dofus items (including all subtypes) wit
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemsAllSearchRequest
 */
 func (a *GameAPIService) GetItemsAllSearch(ctx context.Context, language string, game string) ApiGetItemsAllSearchRequest {

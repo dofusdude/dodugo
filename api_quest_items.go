@@ -87,7 +87,7 @@ curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetAllItemsQuestListRequest
 */
 func (a *QuestItemsAPIService) GetAllItemsQuestList(ctx context.Context, language string, game string) ApiGetAllItemsQuestListRequest {
@@ -238,7 +238,7 @@ Retrieve a specific quest item with id.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
  @param ankamaId identifier
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemQuestSingleRequest
 */
 func (a *QuestItemsAPIService) GetItemQuestSingle(ctx context.Context, language string, ankamaId int32, game string) ApiGetItemQuestSingleRequest {
@@ -423,7 +423,7 @@ Retrieve a list of quest items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemsQuestListRequest
 */
 func (a *QuestItemsAPIService) GetItemsQuestList(ctx context.Context, language string, game string) ApiGetItemsQuestListRequest {
@@ -620,7 +620,7 @@ Search in all names and descriptions of quest items with a query.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemsQuestSearchRequest
 */
 func (a *QuestItemsAPIService) GetItemsQuestSearch(ctx context.Context, language string, game string) ApiGetItemsQuestSearchRequest {

@@ -33,7 +33,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus3" // string | dofus3 | dofus3beta
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	sortLevel := "asc" // string | sort the resulting list by level, default unsorted (optional)
 	filterMinHighestEquipmentLevel := int32(190) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
 	filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
-**game** | **string** | dofus3 | dofus3beta | 
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 
@@ -118,7 +118,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus3" // string | dofus3 | dofus3beta
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	sortLevel := "asc" // string | sort the resulting list by level, default unsorted (optional)
 	filterMinHighestEquipmentLevel := int32(190) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
 	filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
-**game** | **string** | dofus3 | dofus3beta | 
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 
@@ -207,7 +207,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus3" // string | dofus3 | dofus3beta
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	query := "Des" // string | case sensitive search query
 	filterMinHighestEquipmentLevel := int32(195) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
 	filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
-**game** | **string** | dofus3 | dofus3beta | 
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 
@@ -291,7 +291,7 @@ import (
 func main() {
 	language := "language_example" // string | a valid language code
 	ankamaId := int32(499) // int32 | identifier
-	game := "dofus3" // string | dofus3 | dofus3beta
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **language** | **string** | a valid language code | 
 **ankamaId** | **int32** | identifier | 
-**game** | **string** | dofus3 | dofus3beta | 
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 

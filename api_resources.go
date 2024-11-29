@@ -87,7 +87,7 @@ curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip -
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetAllItemsResourcesListRequest
 */
 func (a *ResourcesAPIService) GetAllItemsResourcesList(ctx context.Context, language string, game string) ApiGetAllItemsResourcesListRequest {
@@ -271,7 +271,7 @@ Search in all names and descriptions of resource items with a query.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemsResourceSearchRequest
 */
 func (a *ResourcesAPIService) GetItemsResourceSearch(ctx context.Context, language string, game string) ApiGetItemsResourceSearchRequest {
@@ -473,7 +473,7 @@ Retrieve a list of resource items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemsResourcesListRequest
 */
 func (a *ResourcesAPIService) GetItemsResourcesList(ctx context.Context, language string, game string) ApiGetItemsResourcesListRequest {
@@ -630,7 +630,7 @@ Retrieve a specific resource item with id.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param language a valid language code
  @param ankamaId identifier
- @param game dofus3 | dofus3beta
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemsResourcesSingleRequest
 */
 func (a *ResourcesAPIService) GetItemsResourcesSingle(ctx context.Context, language string, ankamaId int32, game string) ApiGetItemsResourcesSingleRequest {

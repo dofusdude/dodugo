@@ -31,7 +31,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3beta" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	query := "paztek" // string | search query
 	filterSearchIndex := []string{"FilterSearchIndex_example"} // []string | only results with all specific type (optional)
 	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
@@ -114,7 +114,7 @@ import (
 
 func main() {
 	language := "fr" // string | a valid language code
-	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3beta" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	query := "atcham" // string | case sensitive search query
 	filterMinLevel := int32(190) // int32 | only results which level is equal or above this value (optional)
 	filterMaxLevel := int32(200) // int32 | only results which level is equal or below this value (optional)

@@ -63,7 +63,7 @@ func (a *MetaAPIService) GetGameSearchTypesExecute(r ApiGetGameSearchTypesReques
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus3/meta/search/types"
+	localVarPath := localBasePath + "/dofus3beta/v1/meta/search/types"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -164,7 +164,7 @@ func (a *MetaAPIService) GetItemTypesExecute(r ApiGetItemTypesRequest) ([]string
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus3/meta/items/types"
+	localVarPath := localBasePath + "/dofus3beta/v1/meta/items/types"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -266,7 +266,7 @@ func (a *MetaAPIService) GetMetaAlmanaxBonusesExecute(r ApiGetMetaAlmanaxBonuses
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus3/meta/{language}/almanax/bonuses"
+	localVarPath := localBasePath + "/dofus2/meta/{language}/almanax/bonuses"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -383,7 +383,7 @@ func (a *MetaAPIService) GetMetaAlmanaxBonusesSearchExecute(r ApiGetMetaAlmanaxB
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus3/meta/{language}/almanax/bonuses/search"
+	localVarPath := localBasePath + "/dofus2/meta/{language}/almanax/bonuses/search"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -490,7 +490,7 @@ func (a *MetaAPIService) GetMetaElementsExecute(r ApiGetMetaElementsRequest) ([]
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus3/meta/elements"
+	localVarPath := localBasePath + "/dofus3beta/v1/meta/elements"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -589,7 +589,7 @@ func (a *MetaAPIService) GetMetaVersionExecute(r ApiGetMetaVersionRequest) (*Ver
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus3/meta/version"
+	localVarPath := localBasePath + "/dofus3beta/v1/meta/version"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

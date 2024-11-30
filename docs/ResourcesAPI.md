@@ -33,7 +33,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3beta" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	sortLevel := "desc" // string | sort the resulting list by level, default unsorted (optional)
 	filterMinLevel := int32(160) // int32 | only results which level is equal or above this value (optional)
 	filterMaxLevel := int32(190) // int32 | only results which level is equal or below this value (optional)
@@ -116,7 +116,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3beta" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	query := "snowdew" // string | case sensitive search query
 	filterMinLevel := int32(150) // int32 | only results which level is equal or above this value (optional)
 	filterMaxLevel := int32(200) // int32 | only results which level is equal or below this value (optional)
@@ -199,7 +199,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3beta" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	sortLevel := "desc" // string | sort the resulting list by level, default unsorted (optional)
 	filterMinLevel := int32(160) // int32 | only results which level is equal or above this value (optional)
 	filterMaxLevel := int32(190) // int32 | only results which level is equal or below this value (optional)
@@ -287,7 +287,7 @@ import (
 func main() {
 	language := "language_example" // string | a valid language code
 	ankamaId := int32(7295) // int32 | identifier
-	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3beta" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

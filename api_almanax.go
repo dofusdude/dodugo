@@ -69,7 +69,7 @@ func (a *AlmanaxAPIService) GetAlmanaxDateExecute(r ApiGetAlmanaxDateRequest) (*
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus3/{language}/almanax/{date}"
+	localVarPath := localBasePath + "/dofus2/{language}/almanax/{date}"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"date"+"}", url.PathEscape(parameterValueToString(r.date, "date")), -1)
 
@@ -220,7 +220,7 @@ func (a *AlmanaxAPIService) GetAlmanaxRangeExecute(r ApiGetAlmanaxRangeRequest) 
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus3/{language}/almanax"
+	localVarPath := localBasePath + "/dofus2/{language}/almanax"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 
 	localVarHeaderParams := make(map[string]string)

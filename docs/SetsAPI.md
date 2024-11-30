@@ -98,7 +98,7 @@ No authorization required
 
 ## GetSetsList
 
-> ListEquipmentSet GetSetsList(ctx, language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsSet(fieldsSet).FilterContainsCosmeticsOnly(filterContainsCosmeticsOnly).FilterContainsCosmetics(filterContainsCosmetics).Execute()
+> ListEquipmentSets GetSetsList(ctx, language, game).SortLevel(sortLevel).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).PageSize(pageSize).PageNumber(pageNumber).FieldsSet(fieldsSet).FilterContainsCosmeticsOnly(filterContainsCosmeticsOnly).FilterContainsCosmetics(filterContainsCosmetics).Execute()
 
 List Sets
 
@@ -135,7 +135,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSetsList`: ListEquipmentSet
+	// response from `GetSetsList`: ListEquipmentSets
 	fmt.Fprintf(os.Stdout, "Response from `SetsAPI.GetSetsList`: %v\n", resp)
 }
 ```
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListEquipmentSet**](ListEquipmentSet.md)
+[**ListEquipmentSets**](ListEquipmentSets.md)
 
 ### Authorization
 

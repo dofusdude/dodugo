@@ -3,7 +3,7 @@ dofusdude
 
 # Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 1.0.0-rc.4
+API version: 1.0.0-rc.5
 Contact: stelzo@steado.de
 */
 
@@ -27,7 +27,8 @@ type ListEquipmentSet struct {
 	Level *int32 `json:"level,omitempty"`
 	Effects *map[string][]Effect `json:"effects,omitempty"`
 	EquipmentIds []int32 `json:"equipment_ids,omitempty"`
-	IsCosmetic *bool `json:"is_cosmetic,omitempty"`
+	ContainsCosmetics *bool `json:"contains_cosmetics,omitempty"`
+	ContainsCosmeticsOnly *bool `json:"contains_cosmetics_only,omitempty"`
 }
 
 // NewListEquipmentSet instantiates a new ListEquipmentSet object
@@ -240,36 +241,68 @@ func (o *ListEquipmentSet) SetEquipmentIds(v []int32) {
 	o.EquipmentIds = v
 }
 
-// GetIsCosmetic returns the IsCosmetic field value if set, zero value otherwise.
-func (o *ListEquipmentSet) GetIsCosmetic() bool {
-	if o == nil || IsNil(o.IsCosmetic) {
+// GetContainsCosmetics returns the ContainsCosmetics field value if set, zero value otherwise.
+func (o *ListEquipmentSet) GetContainsCosmetics() bool {
+	if o == nil || IsNil(o.ContainsCosmetics) {
 		var ret bool
 		return ret
 	}
-	return *o.IsCosmetic
+	return *o.ContainsCosmetics
 }
 
-// GetIsCosmeticOk returns a tuple with the IsCosmetic field value if set, nil otherwise
+// GetContainsCosmeticsOk returns a tuple with the ContainsCosmetics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListEquipmentSet) GetIsCosmeticOk() (*bool, bool) {
-	if o == nil || IsNil(o.IsCosmetic) {
+func (o *ListEquipmentSet) GetContainsCosmeticsOk() (*bool, bool) {
+	if o == nil || IsNil(o.ContainsCosmetics) {
 		return nil, false
 	}
-	return o.IsCosmetic, true
+	return o.ContainsCosmetics, true
 }
 
-// HasIsCosmetic returns a boolean if a field has been set.
-func (o *ListEquipmentSet) HasIsCosmetic() bool {
-	if o != nil && !IsNil(o.IsCosmetic) {
+// HasContainsCosmetics returns a boolean if a field has been set.
+func (o *ListEquipmentSet) HasContainsCosmetics() bool {
+	if o != nil && !IsNil(o.ContainsCosmetics) {
 		return true
 	}
 
 	return false
 }
 
-// SetIsCosmetic gets a reference to the given bool and assigns it to the IsCosmetic field.
-func (o *ListEquipmentSet) SetIsCosmetic(v bool) {
-	o.IsCosmetic = &v
+// SetContainsCosmetics gets a reference to the given bool and assigns it to the ContainsCosmetics field.
+func (o *ListEquipmentSet) SetContainsCosmetics(v bool) {
+	o.ContainsCosmetics = &v
+}
+
+// GetContainsCosmeticsOnly returns the ContainsCosmeticsOnly field value if set, zero value otherwise.
+func (o *ListEquipmentSet) GetContainsCosmeticsOnly() bool {
+	if o == nil || IsNil(o.ContainsCosmeticsOnly) {
+		var ret bool
+		return ret
+	}
+	return *o.ContainsCosmeticsOnly
+}
+
+// GetContainsCosmeticsOnlyOk returns a tuple with the ContainsCosmeticsOnly field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListEquipmentSet) GetContainsCosmeticsOnlyOk() (*bool, bool) {
+	if o == nil || IsNil(o.ContainsCosmeticsOnly) {
+		return nil, false
+	}
+	return o.ContainsCosmeticsOnly, true
+}
+
+// HasContainsCosmeticsOnly returns a boolean if a field has been set.
+func (o *ListEquipmentSet) HasContainsCosmeticsOnly() bool {
+	if o != nil && !IsNil(o.ContainsCosmeticsOnly) {
+		return true
+	}
+
+	return false
+}
+
+// SetContainsCosmeticsOnly gets a reference to the given bool and assigns it to the ContainsCosmeticsOnly field.
+func (o *ListEquipmentSet) SetContainsCosmeticsOnly(v bool) {
+	o.ContainsCosmeticsOnly = &v
 }
 
 func (o ListEquipmentSet) MarshalJSON() ([]byte, error) {
@@ -300,8 +333,11 @@ func (o ListEquipmentSet) ToMap() (map[string]interface{}, error) {
 	if o.EquipmentIds != nil {
 		toSerialize["equipment_ids"] = o.EquipmentIds
 	}
-	if !IsNil(o.IsCosmetic) {
-		toSerialize["is_cosmetic"] = o.IsCosmetic
+	if !IsNil(o.ContainsCosmetics) {
+		toSerialize["contains_cosmetics"] = o.ContainsCosmetics
+	}
+	if !IsNil(o.ContainsCosmeticsOnly) {
+		toSerialize["contains_cosmetics_only"] = o.ContainsCosmeticsOnly
 	}
 	return toSerialize, nil
 }

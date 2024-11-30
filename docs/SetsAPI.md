@@ -187,7 +187,7 @@ No authorization required
 
 ## GetSetsSearch
 
-> []ListEquipmentSet GetSetsSearch(ctx, language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Limit(limit).FilterIsCosmetic(filterIsCosmetic).Execute()
+> []ListEquipmentSet GetSetsSearch(ctx, language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Limit(limit).FilterContainsCosmeticsOnly(filterContainsCosmeticsOnly).FilterContainsCosmetics(filterContainsCosmetics).Execute()
 
 Search Sets
 
@@ -212,11 +212,12 @@ func main() {
 	filterMinHighestEquipmentLevel := int32(195) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
 	filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
 	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
-	filterIsCosmetic := true // bool | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)
+	filterContainsCosmeticsOnly := true // bool | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)
+	filterContainsCosmetics := true // bool | filter sets based on if they got any cosmetic items in it (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SetsAPI.GetSetsSearch(context.Background(), language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Limit(limit).FilterIsCosmetic(filterIsCosmetic).Execute()
+	resp, r, err := apiClient.SetsAPI.GetSetsSearch(context.Background(), language, game).Query(query).FilterMinHighestEquipmentLevel(filterMinHighestEquipmentLevel).FilterMaxHighestEquipmentLevel(filterMaxHighestEquipmentLevel).Limit(limit).FilterContainsCosmeticsOnly(filterContainsCosmeticsOnly).FilterContainsCosmetics(filterContainsCosmetics).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SetsAPI.GetSetsSearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -248,7 +249,8 @@ Name | Type | Description  | Notes
  **filterMinHighestEquipmentLevel** | **int32** | only results where the equipment with the highest level is above or equal to this value | 
  **filterMaxHighestEquipmentLevel** | **int32** | only results where the equipment with the highest level is below or equal to this value | 
  **limit** | **int32** | maximum number of returned results | [default to 8]
- **filterIsCosmetic** | **bool** | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. | 
+ **filterContainsCosmeticsOnly** | **bool** | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. | 
+ **filterContainsCosmetics** | **bool** | filter sets based on if they got any cosmetic items in it | 
 
 ### Return type
 

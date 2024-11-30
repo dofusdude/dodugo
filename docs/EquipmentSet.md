@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **EquipmentIds** | Pointer to **[]int32** |  | [optional] 
 **Effects** | Pointer to [**map[string][]Effect**](array.md) |  | [optional] 
 **HighestEquipmentLevel** | Pointer to **int32** |  | [optional] 
-**IsCosmetic** | Pointer to **bool** |  | [optional] 
+**ContainsCosmetics** | Pointer to **bool** |  | [optional] 
+**ContainsCosmeticsOnly** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -155,30 +156,55 @@ SetHighestEquipmentLevel sets HighestEquipmentLevel field to given value.
 
 HasHighestEquipmentLevel returns a boolean if a field has been set.
 
-### GetIsCosmetic
+### GetContainsCosmetics
 
-`func (o *EquipmentSet) GetIsCosmetic() bool`
+`func (o *EquipmentSet) GetContainsCosmetics() bool`
 
-GetIsCosmetic returns the IsCosmetic field if non-nil, zero value otherwise.
+GetContainsCosmetics returns the ContainsCosmetics field if non-nil, zero value otherwise.
 
-### GetIsCosmeticOk
+### GetContainsCosmeticsOk
 
-`func (o *EquipmentSet) GetIsCosmeticOk() (*bool, bool)`
+`func (o *EquipmentSet) GetContainsCosmeticsOk() (*bool, bool)`
 
-GetIsCosmeticOk returns a tuple with the IsCosmetic field if it's non-nil, zero value otherwise
+GetContainsCosmeticsOk returns a tuple with the ContainsCosmetics field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIsCosmetic
+### SetContainsCosmetics
 
-`func (o *EquipmentSet) SetIsCosmetic(v bool)`
+`func (o *EquipmentSet) SetContainsCosmetics(v bool)`
 
-SetIsCosmetic sets IsCosmetic field to given value.
+SetContainsCosmetics sets ContainsCosmetics field to given value.
 
-### HasIsCosmetic
+### HasContainsCosmetics
 
-`func (o *EquipmentSet) HasIsCosmetic() bool`
+`func (o *EquipmentSet) HasContainsCosmetics() bool`
 
-HasIsCosmetic returns a boolean if a field has been set.
+HasContainsCosmetics returns a boolean if a field has been set.
+
+### GetContainsCosmeticsOnly
+
+`func (o *EquipmentSet) GetContainsCosmeticsOnly() bool`
+
+GetContainsCosmeticsOnly returns the ContainsCosmeticsOnly field if non-nil, zero value otherwise.
+
+### GetContainsCosmeticsOnlyOk
+
+`func (o *EquipmentSet) GetContainsCosmeticsOnlyOk() (*bool, bool)`
+
+GetContainsCosmeticsOnlyOk returns a tuple with the ContainsCosmeticsOnly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContainsCosmeticsOnly
+
+`func (o *EquipmentSet) SetContainsCosmeticsOnly(v bool)`
+
+SetContainsCosmeticsOnly sets ContainsCosmeticsOnly field to given value.
+
+### HasContainsCosmeticsOnly
+
+`func (o *EquipmentSet) HasContainsCosmeticsOnly() bool`
+
+HasContainsCosmeticsOnly returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

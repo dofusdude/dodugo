@@ -32,7 +32,7 @@ info:
     name: GPL-3.0
     url: https://github.com/dofusdude/doduapi/blob/main/LICENSE
   title: dofusdude
-  version: 1.0.0-rc.4
+  version: 1.0.0-rc.5
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -359,7 +359,15 @@ paths:
           \ If true, the item ids are for the cosmetic endpoints instead of equipment."
         explode: true
         in: query
-        name: "filter[is_cosmetic]"
+        name: "filter[contains_cosmetics_only]"
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: filter sets based on if they got any cosmetic items in it
+        explode: true
+        in: query
+        name: "filter[contains_cosmetics]"
         required: false
         schema:
           type: boolean
@@ -4781,7 +4789,6 @@ components:
         id: 10otndsm7bw3k
     EquipmentSet:
       example:
-        is_cosmetic: true
         effects:
           key:
           - ignore_int_min: true
@@ -4804,8 +4811,10 @@ components:
               name: name
               id: 5
             int_minimum: 1
+        contains_cosmetics: true
         highest_equipment_level: 1
         name: name
+        contains_cosmetics_only: true
         equipment_ids:
         - 6
         - 6
@@ -4833,17 +4842,20 @@ components:
             id: kdx5a0h3kp09h
         highest_equipment_level:
           type: integer
-        is_cosmetic:
+        contains_cosmetics:
           type: boolean
           x-stoplight:
             id: 7d1w5073pqtt7
+        contains_cosmetics_only:
+          type: boolean
+          x-stoplight:
+            id: vcdkkf976dyux
       title: EquipmentSet
       type: object
       x-stoplight:
         id: xmkp08r20yq44
     ListEquipmentSet:
       example:
-        is_cosmetic: true
         effects:
           key:
           - ignore_int_min: true
@@ -4866,8 +4878,10 @@ components:
               name: name
               id: 5
             int_minimum: 1
+        contains_cosmetics: true
         level: 1
         name: name
+        contains_cosmetics_only: true
         equipment_ids:
         - 5
         - 5
@@ -4900,10 +4914,14 @@ components:
             type: integer
           nullable: true
           type: array
-        is_cosmetic:
+        contains_cosmetics:
           type: boolean
           x-stoplight:
             id: uztiykrx0bobf
+        contains_cosmetics_only:
+          type: boolean
+          x-stoplight:
+            id: pv2l87kyv9fxa
       title: ListSet
       type: object
       x-examples: {}
@@ -5084,8 +5102,7 @@ components:
     ListEquipmentSets:
       example:
         sets:
-        - is_cosmetic: true
-          effects:
+        - effects:
             key:
             - ignore_int_min: true
               ignore_int_max: true
@@ -5107,15 +5124,16 @@ components:
                 name: name
                 id: 5
               int_minimum: 1
+          contains_cosmetics: true
           level: 1
           name: name
+          contains_cosmetics_only: true
           equipment_ids:
           - 5
           - 5
           items: 6
           ankama_id: 0
-        - is_cosmetic: true
-          effects:
+        - effects:
             key:
             - ignore_int_min: true
               ignore_int_max: true
@@ -5137,8 +5155,10 @@ components:
                 name: name
                 id: 5
               int_minimum: 1
+          contains_cosmetics: true
           level: 1
           name: name
+          contains_cosmetics_only: true
           equipment_ids:
           - 5
           - 5

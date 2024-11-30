@@ -90,7 +90,9 @@ func Test_dodugo_MetaAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.MetaAPI.GetMetaVersion(context.Background()).Execute()
+		var game string
+
+		resp, httpRes, err := apiClient.MetaAPI.GetMetaVersion(context.Background(), game).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

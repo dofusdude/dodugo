@@ -32,7 +32,7 @@ info:
     name: GPL-3.0
     url: https://github.com/dofusdude/doduapi/blob/main/LICENSE
   title: dofusdude
-  version: 1.0.0-rc.2
+  version: 1.0.0-rc.3
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -3700,11 +3700,23 @@ paths:
       - meta
       x-stoplight:
         id: 4oyiu8nbwwgds
-  /dofus3beta/v1/meta/version:
+  /{game}/v1/meta/version:
     get:
       description: The current game version of the hosted data.
       operationId: get-meta-version
-      parameters: []
+      parameters:
+      - description: game main 'dofus3' or beta channel 'dofus3beta'
+        explode: false
+        in: path
+        name: game
+        required: true
+        schema:
+          enum:
+          - dofus3
+          - dofus3beta
+          example: dofus3beta
+          type: string
+        style: simple
       responses:
         "200":
           content:

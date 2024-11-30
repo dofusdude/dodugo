@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**GetMetaAlmanaxBonuses**](MetaAPI.md#GetMetaAlmanaxBonuses) | **Get** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses
 [**GetMetaAlmanaxBonusesSearch**](MetaAPI.md#GetMetaAlmanaxBonusesSearch) | **Get** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses
 [**GetMetaElements**](MetaAPI.md#GetMetaElements) | **Get** /dofus3beta/v1/meta/elements | Effects and Condition Elements
-[**GetMetaVersion**](MetaAPI.md#GetMetaVersion) | **Get** /dofus3beta/v1/meta/version | Game Version
+[**GetMetaVersion**](MetaAPI.md#GetMetaVersion) | **Get** /{game}/v1/meta/version | Game Version
 
 
 
@@ -342,7 +342,7 @@ No authorization required
 
 ## GetMetaVersion
 
-> Version GetMetaVersion(ctx).Execute()
+> Version GetMetaVersion(ctx, game).Execute()
 
 Game Version
 
@@ -361,10 +361,11 @@ import (
 )
 
 func main() {
+	game := "dofus3beta" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetaAPI.GetMetaVersion(context.Background()).Execute()
+	resp, r, err := apiClient.MetaAPI.GetMetaVersion(context.Background(), game).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaAPI.GetMetaVersion``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -376,11 +377,19 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetMetaVersionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
 ### Return type

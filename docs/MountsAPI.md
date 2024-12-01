@@ -175,7 +175,7 @@ No authorization required
 
 ## GetMountsSearch
 
-> []Mount GetMountsSearch(ctx, language, game).Query(query).FilterFamilyName(filterFamilyName).Limit(limit).Execute()
+> []Mount GetMountsSearch(ctx, language, game).Query(query).FilterFamilyName(filterFamilyName).Limit(limit).FilterFamilyId(filterFamilyId).Execute()
 
 Search Mounts
 
@@ -199,10 +199,11 @@ func main() {
 	query := "Dorée" // string | case sensitive search query
 	filterFamilyName := "Dragodinde" // string | only results with the translated family name (optional)
 	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
+	filterFamilyId := int32(56) // int32 | only results with the unique family id (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MountsAPI.GetMountsSearch(context.Background(), language, game).Query(query).FilterFamilyName(filterFamilyName).Limit(limit).Execute()
+	resp, r, err := apiClient.MountsAPI.GetMountsSearch(context.Background(), language, game).Query(query).FilterFamilyName(filterFamilyName).Limit(limit).FilterFamilyId(filterFamilyId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MountsAPI.GetMountsSearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -233,6 +234,7 @@ Name | Type | Description  | Notes
  **query** | **string** | case sensitive search query | 
  **filterFamilyName** | **string** | only results with the translated family name | 
  **limit** | **int32** | maximum number of returned results | [default to 8]
+ **filterFamilyId** | **int32** | only results with the unique family id | 
 
 ### Return type
 

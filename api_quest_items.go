@@ -3,7 +3,7 @@ dofusdude
 
 # Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 1.0.0-rc.5
+API version: 1.0.0-rc.6
 Contact: stelzo@steado.de
 */
 
@@ -566,22 +566,15 @@ type ApiGetItemsQuestSearchRequest struct {
 	language string
 	game string
 	query *string
-	filterTypeName *string
 	filterMinLevel *int32
 	filterMaxLevel *int32
 	limit *int32
-	filterTypeEnum *[]string
+	filterTypeNameId *[]string
 }
 
 // case sensitive search query
 func (r ApiGetItemsQuestSearchRequest) Query(query string) ApiGetItemsQuestSearchRequest {
 	r.query = &query
-	return r
-}
-
-// only results with the translated type name
-func (r ApiGetItemsQuestSearchRequest) FilterTypeName(filterTypeName string) ApiGetItemsQuestSearchRequest {
-	r.filterTypeName = &filterTypeName
 	return r
 }
 
@@ -604,8 +597,8 @@ func (r ApiGetItemsQuestSearchRequest) Limit(limit int32) ApiGetItemsQuestSearch
 }
 
 // multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;.
-func (r ApiGetItemsQuestSearchRequest) FilterTypeEnum(filterTypeEnum []string) ApiGetItemsQuestSearchRequest {
-	r.filterTypeEnum = &filterTypeEnum
+func (r ApiGetItemsQuestSearchRequest) FilterTypeNameId(filterTypeNameId []string) ApiGetItemsQuestSearchRequest {
+	r.filterTypeNameId = &filterTypeNameId
 	return r
 }
 
@@ -665,9 +658,6 @@ func (a *QuestItemsAPIService) GetItemsQuestSearchExecute(r ApiGetItemsQuestSear
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "form", "")
-	if r.filterTypeName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type_name]", r.filterTypeName, "form", "")
-	}
 	if r.filterMinLevel != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[min_level]", r.filterMinLevel, "form", "")
 	}
@@ -680,8 +670,8 @@ func (a *QuestItemsAPIService) GetItemsQuestSearchExecute(r ApiGetItemsQuestSear
 		var defaultValue int32 = 8
 		r.limit = &defaultValue
 	}
-	if r.filterTypeEnum != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type_enum]", r.filterTypeEnum, "form", "csv")
+	if r.filterTypeNameId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[type.name_id]", r.filterTypeNameId, "form", "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

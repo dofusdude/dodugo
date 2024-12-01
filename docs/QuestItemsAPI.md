@@ -259,7 +259,7 @@ No authorization required
 
 ## GetItemsQuestSearch
 
-> []ListItem GetItemsQuestSearch(ctx, language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).FilterTypeEnum(filterTypeEnum).Execute()
+> []ListItem GetItemsQuestSearch(ctx, language, game).Query(query).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).FilterTypeNameId(filterTypeNameId).Execute()
 
 Search Quest Items
 
@@ -281,15 +281,14 @@ func main() {
 	language := "es" // string | a valid language code
 	game := "dofus3beta" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	query := "Ficha" // string | case sensitive search query
-	filterTypeName := "Justicieros" // string | only results with the translated type name (optional)
 	filterMinLevel := int32(60) // int32 | only results which level is equal or above this value (optional)
 	filterMaxLevel := int32(70) // int32 | only results which level is equal or below this value (optional)
 	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
-	filterTypeEnum := []string{"Inner_example"} // []string | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional)
+	filterTypeNameId := []string{"Inner_example"} // []string | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.QuestItemsAPI.GetItemsQuestSearch(context.Background(), language, game).Query(query).FilterTypeName(filterTypeName).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).FilterTypeEnum(filterTypeEnum).Execute()
+	resp, r, err := apiClient.QuestItemsAPI.GetItemsQuestSearch(context.Background(), language, game).Query(query).FilterMinLevel(filterMinLevel).FilterMaxLevel(filterMaxLevel).Limit(limit).FilterTypeNameId(filterTypeNameId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `QuestItemsAPI.GetItemsQuestSearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -318,11 +317,10 @@ Name | Type | Description  | Notes
 
 
  **query** | **string** | case sensitive search query | 
- **filterTypeName** | **string** | only results with the translated type name | 
  **filterMinLevel** | **int32** | only results which level is equal or above this value | 
  **filterMaxLevel** | **int32** | only results which level is equal or below this value | 
  **limit** | **int32** | maximum number of returned results | [default to 8]
- **filterTypeEnum** | **[]string** | multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | 
+ **filterTypeNameId** | **[]string** | multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | 
 
 ### Return type
 

@@ -35,8 +35,8 @@ func main() {
 	query := "paztek" // string | search query
 	filterSearchIndex := []string{"FilterSearchIndex_example"} // []string | only results with all specific type (optional)
 	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
-	fieldsItem := []string{"FieldsItem_example"} // []string | adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. (optional)
-	filterTypeNameId := []string{"Inner_example"} // []string | multi-filter results with the english item type name, including \"mount\" and \"set\" from filter[type]. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional)
+	fieldsItem := []string{"FieldsItem_example"} // []string | adds fields from the item search to the list entries if the hit is an item. Multiple comma separated values allowed. (optional)
+	filterTypeNameId := []string{"Inner_example"} // []string | multi-filter results with the english item type name, including \"mount\" and \"set\" from filter[search_index]. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -71,8 +71,8 @@ Name | Type | Description  | Notes
  **query** | **string** | search query | 
  **filterSearchIndex** | **[]string** | only results with all specific type | 
  **limit** | **int32** | maximum number of returned results | [default to 8]
- **fieldsItem** | **[]string** | adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. | 
- **filterTypeNameId** | **[]string** | multi-filter results with the english item type name, including \&quot;mount\&quot; and \&quot;set\&quot; from filter[type]. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | 
+ **fieldsItem** | **[]string** | adds fields from the item search to the list entries if the hit is an item. Multiple comma separated values allowed. | 
+ **filterTypeNameId** | **[]string** | multi-filter results with the english item type name, including \&quot;mount\&quot; and \&quot;set\&quot; from filter[search_index]. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | 
 
 ### Return type
 

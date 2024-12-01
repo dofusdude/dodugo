@@ -32,7 +32,7 @@ info:
     name: GPL-3.0
     url: https://github.com/dofusdude/doduapi/blob/main/LICENSE
   title: dofusdude
-  version: 1.0.0-rc.6
+  version: 1.0.0-rc.7
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -839,7 +839,7 @@ paths:
           type: integer
         style: form
       - description: adds fields from the item search to the list entries if the hit
-          is a item. Multiple comma separated values allowed.
+          is an item. Multiple comma separated values allowed.
         explode: false
         in: query
         name: "fields[item]"
@@ -857,8 +857,8 @@ paths:
           uniqueItems: true
         style: form
       - description: "multi-filter results with the english item type name, including\
-          \ \"mount\" and \"set\" from filter[type]. Add with \"wood\" or \"+wood\"\
-          \ and exclude with \"-wood\"."
+          \ \"mount\" and \"set\" from filter[search_index]. Add with \"wood\" or\
+          \ \"+wood\" and exclude with \"-wood\"."
         explode: false
         in: query
         name: "filter[type.name_id]"

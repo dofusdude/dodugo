@@ -4,18 +4,18 @@ All URIs are relative to *https://api.dofusdu.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetGameSearchTypes**](MetaAPI.md#GetGameSearchTypes) | **Get** /dofus3beta/v1/meta/search/types | Available Game Search Types
-[**GetItemTypes**](MetaAPI.md#GetItemTypes) | **Get** /dofus3beta/v1/meta/items/types | Available Item Types
-[**GetMetaAlmanaxBonuses**](MetaAPI.md#GetMetaAlmanaxBonuses) | **Get** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses
-[**GetMetaAlmanaxBonusesSearch**](MetaAPI.md#GetMetaAlmanaxBonusesSearch) | **Get** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses
-[**GetMetaElements**](MetaAPI.md#GetMetaElements) | **Get** /dofus3beta/v1/meta/elements | Effects and Condition Elements
+[**GetGameSearchTypes**](MetaAPI.md#GetGameSearchTypes) | **Get** /{game}/v1/meta/search/types | Available Game Search Types
+[**GetItemTypes**](MetaAPI.md#GetItemTypes) | **Get** /{game}/v1/meta/items/types | Available Item Types
+[**GetMetaAlmanaxBonuses**](MetaAPI.md#GetMetaAlmanaxBonuses) | **Get** /dofus3/v1/meta/{language}/almanax/bonuses | Available Almanax Bonuses
+[**GetMetaAlmanaxBonusesSearch**](MetaAPI.md#GetMetaAlmanaxBonusesSearch) | **Get** /dofus3/v1/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses
+[**GetMetaElements**](MetaAPI.md#GetMetaElements) | **Get** /{game}/v1/meta/elements | Effects and Condition Elements
 [**GetMetaVersion**](MetaAPI.md#GetMetaVersion) | **Get** /{game}/v1/meta/version | Game Version
 
 
 
 ## GetGameSearchTypes
 
-> []string GetGameSearchTypes(ctx).Execute()
+> []string GetGameSearchTypes(ctx, game).Execute()
 
 Available Game Search Types
 
@@ -34,10 +34,11 @@ import (
 )
 
 func main() {
+	game := "game_example" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetaAPI.GetGameSearchTypes(context.Background()).Execute()
+	resp, r, err := apiClient.MetaAPI.GetGameSearchTypes(context.Background(), game).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaAPI.GetGameSearchTypes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -49,11 +50,19 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetGameSearchTypesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
 ### Return type
@@ -76,7 +85,7 @@ No authorization required
 
 ## GetItemTypes
 
-> []string GetItemTypes(ctx).Execute()
+> []string GetItemTypes(ctx, game).Execute()
 
 Available Item Types
 
@@ -95,10 +104,11 @@ import (
 )
 
 func main() {
+	game := "game_example" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetaAPI.GetItemTypes(context.Background()).Execute()
+	resp, r, err := apiClient.MetaAPI.GetItemTypes(context.Background(), game).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaAPI.GetItemTypes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -110,11 +120,19 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetItemTypesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
 ### Return type
@@ -281,7 +299,7 @@ No authorization required
 
 ## GetMetaElements
 
-> []string GetMetaElements(ctx).Execute()
+> []string GetMetaElements(ctx, game).Execute()
 
 Effects and Condition Elements
 
@@ -300,10 +318,11 @@ import (
 )
 
 func main() {
+	game := "game_example" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetaAPI.GetMetaElements(context.Background()).Execute()
+	resp, r, err := apiClient.MetaAPI.GetMetaElements(context.Background(), game).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaAPI.GetMetaElements``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -315,11 +334,19 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetMetaElementsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
 ### Return type

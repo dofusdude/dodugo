@@ -3,7 +3,7 @@ dofusdude
 
 # Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 1.0.0-rc.7
+API version: 1.0.0-rc.8
 Contact: stelzo@steado.de
 */
 
@@ -27,6 +27,7 @@ type MetaAPIService service
 type ApiGetGameSearchTypesRequest struct {
 	ctx context.Context
 	ApiService *MetaAPIService
+	game string
 }
 
 func (r ApiGetGameSearchTypesRequest) Execute() ([]string, *http.Response, error) {
@@ -39,12 +40,14 @@ GetGameSearchTypes Available Game Search Types
 Get all types for /{game}/v1/{lang}/search available for filtering. All names are english for comparing them inside applications. Order is fixed so you can compare indices instead of strings.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetGameSearchTypesRequest
 */
-func (a *MetaAPIService) GetGameSearchTypes(ctx context.Context) ApiGetGameSearchTypesRequest {
+func (a *MetaAPIService) GetGameSearchTypes(ctx context.Context, game string) ApiGetGameSearchTypesRequest {
 	return ApiGetGameSearchTypesRequest{
 		ApiService: a,
 		ctx: ctx,
+		game: game,
 	}
 }
 
@@ -63,7 +66,8 @@ func (a *MetaAPIService) GetGameSearchTypesExecute(r ApiGetGameSearchTypesReques
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus3beta/v1/meta/search/types"
+	localVarPath := localBasePath + "/{game}/v1/meta/search/types"
+	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -126,6 +130,7 @@ func (a *MetaAPIService) GetGameSearchTypesExecute(r ApiGetGameSearchTypesReques
 type ApiGetItemTypesRequest struct {
 	ctx context.Context
 	ApiService *MetaAPIService
+	game string
 }
 
 func (r ApiGetItemTypesRequest) Execute() ([]string, *http.Response, error) {
@@ -140,12 +145,14 @@ All names are english for comparing them inside applications.
 Ordering is not guaranteed to persist with game updates.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetItemTypesRequest
 */
-func (a *MetaAPIService) GetItemTypes(ctx context.Context) ApiGetItemTypesRequest {
+func (a *MetaAPIService) GetItemTypes(ctx context.Context, game string) ApiGetItemTypesRequest {
 	return ApiGetItemTypesRequest{
 		ApiService: a,
 		ctx: ctx,
+		game: game,
 	}
 }
 
@@ -164,7 +171,8 @@ func (a *MetaAPIService) GetItemTypesExecute(r ApiGetItemTypesRequest) ([]string
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus3beta/v1/meta/items/types"
+	localVarPath := localBasePath + "/{game}/v1/meta/items/types"
+	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -266,7 +274,7 @@ func (a *MetaAPIService) GetMetaAlmanaxBonusesExecute(r ApiGetMetaAlmanaxBonuses
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus2/meta/{language}/almanax/bonuses"
+	localVarPath := localBasePath + "/dofus3/v1/meta/{language}/almanax/bonuses"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -383,7 +391,7 @@ func (a *MetaAPIService) GetMetaAlmanaxBonusesSearchExecute(r ApiGetMetaAlmanaxB
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus2/meta/{language}/almanax/bonuses/search"
+	localVarPath := localBasePath + "/dofus3/v1/meta/{language}/almanax/bonuses/search"
 	localVarPath = strings.Replace(localVarPath, "{"+"language"+"}", url.PathEscape(parameterValueToString(r.language, "language")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -454,6 +462,7 @@ func (a *MetaAPIService) GetMetaAlmanaxBonusesSearchExecute(r ApiGetMetaAlmanaxB
 type ApiGetMetaElementsRequest struct {
 	ctx context.Context
 	ApiService *MetaAPIService
+	game string
 }
 
 func (r ApiGetMetaElementsRequest) Execute() ([]string, *http.Response, error) {
@@ -466,12 +475,14 @@ GetMetaElements Effects and Condition Elements
 Get the mappings for all specific elements that are linked in the dataset. All names are english. Translations are not needed because of a global unique id which is the index inside the array. Future elements will get a higher id.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param game game main 'dofus3' or beta channel 'dofus3beta'
  @return ApiGetMetaElementsRequest
 */
-func (a *MetaAPIService) GetMetaElements(ctx context.Context) ApiGetMetaElementsRequest {
+func (a *MetaAPIService) GetMetaElements(ctx context.Context, game string) ApiGetMetaElementsRequest {
 	return ApiGetMetaElementsRequest{
 		ApiService: a,
 		ctx: ctx,
+		game: game,
 	}
 }
 
@@ -490,7 +501,8 @@ func (a *MetaAPIService) GetMetaElementsExecute(r ApiGetMetaElementsRequest) ([]
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/dofus3beta/v1/meta/elements"
+	localVarPath := localBasePath + "/{game}/v1/meta/elements"
+	localVarPath = strings.Replace(localVarPath, "{"+"game"+"}", url.PathEscape(parameterValueToString(r.game, "game")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

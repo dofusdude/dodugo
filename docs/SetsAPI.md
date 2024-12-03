@@ -33,7 +33,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus3beta" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	sortLevel := "asc" // string | sort the resulting list by level, default unsorted (optional)
 	filterMinHighestEquipmentLevel := int32(190) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
 	filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
@@ -118,7 +118,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus3beta" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	sortLevel := "asc" // string | sort the resulting list by level, default unsorted (optional)
 	filterMinHighestEquipmentLevel := int32(190) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
 	filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
@@ -207,7 +207,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	game := "dofus3beta" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 	query := "Des" // string | case sensitive search query
 	filterMinHighestEquipmentLevel := int32(195) // int32 | only results where the equipment with the highest level is above or equal to this value (optional)
 	filterMaxHighestEquipmentLevel := int32(200) // int32 | only results where the equipment with the highest level is below or equal to this value (optional)
@@ -293,7 +293,7 @@ import (
 func main() {
 	language := "language_example" // string | a valid language code
 	ankamaId := int32(499) // int32 | identifier
-	game := "dofus3beta" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

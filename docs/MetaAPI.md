@@ -34,7 +34,7 @@ import (
 )
 
 func main() {
-	game := "game_example" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -104,7 +104,7 @@ import (
 )
 
 func main() {
-	game := "game_example" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -318,7 +318,7 @@ import (
 )
 
 func main() {
-	game := "game_example" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -388,7 +388,7 @@ import (
 )
 
 func main() {
-	game := "dofus3beta" // string | game main 'dofus3' or beta channel 'dofus3beta'
+	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

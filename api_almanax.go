@@ -160,7 +160,7 @@ func (r ApiGetAlmanaxRangeRequest) RangeTo(rangeTo string) ApiGetAlmanaxRangeReq
 	return r
 }
 
-// size of the returned range
+// Size of the returned range. Disable to fully use the range by setting size to -1.
 func (r ApiGetAlmanaxRangeRequest) RangeSize(rangeSize int32) ApiGetAlmanaxRangeRequest {
 	r.rangeSize = &rangeSize
 	return r

@@ -3548,7 +3548,8 @@ paths:
           format: date
           type: string
         style: form
-      - description: size of the returned range
+      - description: Size of the returned range. Disable to fully use the range by
+          setting size to -1.
         explode: true
         in: query
         name: "range[size]"
@@ -3557,7 +3558,6 @@ paths:
           example: -1
           format: int32
           maximum: 370
-          minimum: -1
           type: integer
         style: form
       - description: "determine what the current time is. If you live in Brazil, \"\

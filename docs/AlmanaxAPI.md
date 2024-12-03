@@ -109,7 +109,7 @@ func main() {
 	filterBonusType := "experience-points" // string | ids from meta/{language}/almanax/bonuses (optional)
 	rangeFrom := time.Now() // string | yyyy-mm-dd (optional)
 	rangeTo := time.Now() // string | yyyy-mm-dd (optional)
-	rangeSize := int32(-1) // int32 | size of the returned range (optional)
+	rangeSize := int32(-1) // int32 | Size of the returned range. Disable to fully use the range by setting size to -1. (optional)
 	timezone := "Europe/Paris" // string | determine what the current time is. If you live in Brazil, \"today\" will be hours apart from Paris. Use your timezone to get results relative to your location. (optional) (default to "Europe/Paris")
 
 	configuration := openapiclient.NewConfiguration()
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
  **filterBonusType** | **string** | ids from meta/{language}/almanax/bonuses | 
  **rangeFrom** | **string** | yyyy-mm-dd | 
  **rangeTo** | **string** | yyyy-mm-dd | 
- **rangeSize** | **int32** | size of the returned range | 
+ **rangeSize** | **int32** | Size of the returned range. Disable to fully use the range by setting size to -1. | 
  **timezone** | **string** | determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. | [default to &quot;Europe/Paris&quot;]
 
 ### Return type

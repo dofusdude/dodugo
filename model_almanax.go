@@ -3,7 +3,7 @@ dofusdude
 
 # Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 1.0.0-rc.8
+API version: 1.0.0-rc.9
 Contact: stelzo@steado.de
 */
 
@@ -25,6 +25,8 @@ type Almanax struct {
 	Tribute *AlmanaxTribute `json:"tribute,omitempty"`
 	// Amount of Kamas you get as reward for finishing this Almanax quest.
 	RewardKamas NullableInt32 `json:"reward_kamas,omitempty"`
+	// Optional field that shows when a level is given in the request. Shows the experience points you get this day for finishing this Almanax quest.
+	RewardXp NullableInt32 `json:"reward_xp,omitempty"`
 }
 
 // NewAlmanax instantiates a new Almanax object
@@ -182,6 +184,48 @@ func (o *Almanax) UnsetRewardKamas() {
 	o.RewardKamas.Unset()
 }
 
+// GetRewardXp returns the RewardXp field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Almanax) GetRewardXp() int32 {
+	if o == nil || IsNil(o.RewardXp.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.RewardXp.Get()
+}
+
+// GetRewardXpOk returns a tuple with the RewardXp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Almanax) GetRewardXpOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.RewardXp.Get(), o.RewardXp.IsSet()
+}
+
+// HasRewardXp returns a boolean if a field has been set.
+func (o *Almanax) HasRewardXp() bool {
+	if o != nil && o.RewardXp.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetRewardXp gets a reference to the given NullableInt32 and assigns it to the RewardXp field.
+func (o *Almanax) SetRewardXp(v int32) {
+	o.RewardXp.Set(&v)
+}
+// SetRewardXpNil sets the value for RewardXp to be an explicit nil
+func (o *Almanax) SetRewardXpNil() {
+	o.RewardXp.Set(nil)
+}
+
+// UnsetRewardXp ensures that no value is present for RewardXp, not even an explicit nil
+func (o *Almanax) UnsetRewardXp() {
+	o.RewardXp.Unset()
+}
+
 func (o Almanax) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -203,6 +247,9 @@ func (o Almanax) ToMap() (map[string]interface{}, error) {
 	}
 	if o.RewardKamas.IsSet() {
 		toSerialize["reward_kamas"] = o.RewardKamas.Get()
+	}
+	if o.RewardXp.IsSet() {
+		toSerialize["reward_xp"] = o.RewardXp.Get()
 	}
 	return toSerialize, nil
 }

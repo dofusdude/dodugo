@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetAlmanaxDate
 
-> Almanax GetAlmanaxDate(ctx, language, date).Execute()
+> Almanax GetAlmanaxDate(ctx, language, date).Level(level).Execute()
 
 Single Almanax Date
 
@@ -33,10 +33,11 @@ import (
 func main() {
 	language := "fr" // string | code
 	date := time.Now() // string | yyyy-mm-dd
+	level := int32(56) // int32 | character level for the reward_xp field (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AlmanaxAPI.GetAlmanaxDate(context.Background(), language, date).Execute()
+	resp, r, err := apiClient.AlmanaxAPI.GetAlmanaxDate(context.Background(), language, date).Level(level).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlmanaxAPI.GetAlmanaxDate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,6 +65,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **level** | **int32** | character level for the reward_xp field | 
 
 ### Return type
 
@@ -85,7 +87,7 @@ No authorization required
 
 ## GetAlmanaxRange
 
-> []Almanax GetAlmanaxRange(ctx, language).FilterBonusType(filterBonusType).RangeFrom(rangeFrom).RangeTo(rangeTo).RangeSize(rangeSize).Timezone(timezone).Execute()
+> []Almanax GetAlmanaxRange(ctx, language).FilterBonusType(filterBonusType).RangeFrom(rangeFrom).RangeTo(rangeTo).RangeSize(rangeSize).Timezone(timezone).Level(level).Execute()
 
 Almanax Range
 
@@ -111,10 +113,11 @@ func main() {
 	rangeTo := time.Now() // string | yyyy-mm-dd (optional)
 	rangeSize := int32(-1) // int32 | Size of the returned range. Disable to fully use the range by setting size to -1. (optional)
 	timezone := "Europe/Paris" // string | determine what the current time is. If you live in Brazil, \"today\" will be hours apart from Paris. Use your timezone to get results relative to your location. (optional) (default to "Europe/Paris")
+	level := int32(56) // int32 | character level for the reward_xp field (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AlmanaxAPI.GetAlmanaxRange(context.Background(), language).FilterBonusType(filterBonusType).RangeFrom(rangeFrom).RangeTo(rangeTo).RangeSize(rangeSize).Timezone(timezone).Execute()
+	resp, r, err := apiClient.AlmanaxAPI.GetAlmanaxRange(context.Background(), language).FilterBonusType(filterBonusType).RangeFrom(rangeFrom).RangeTo(rangeTo).RangeSize(rangeSize).Timezone(timezone).Level(level).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlmanaxAPI.GetAlmanaxRange``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -145,6 +148,7 @@ Name | Type | Description  | Notes
  **rangeTo** | **string** | yyyy-mm-dd | 
  **rangeSize** | **int32** | Size of the returned range. Disable to fully use the range by setting size to -1. | 
  **timezone** | **string** | determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. | [default to &quot;Europe/Paris&quot;]
+ **level** | **int32** | character level for the reward_xp field | 
 
 ### Return type
 

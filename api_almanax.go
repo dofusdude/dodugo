@@ -3,7 +3,7 @@ dofusdude
 
 # Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 1.0.0-rc.8
+API version: 1.0.0-rc.9
 Contact: stelzo@steado.de
 */
 
@@ -29,6 +29,13 @@ type ApiGetAlmanaxDateRequest struct {
 	ApiService *AlmanaxAPIService
 	language string
 	date string
+	level *int32
+}
+
+// character level for the reward_xp field
+func (r ApiGetAlmanaxDateRequest) Level(level int32) ApiGetAlmanaxDateRequest {
+	r.level = &level
+	return r
 }
 
 func (r ApiGetAlmanaxDateRequest) Execute() (*Almanax, *http.Response, error) {
@@ -77,6 +84,9 @@ func (a *AlmanaxAPIService) GetAlmanaxDateExecute(r ApiGetAlmanaxDateRequest) (*
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.level != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "level", r.level, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -140,6 +150,7 @@ type ApiGetAlmanaxRangeRequest struct {
 	rangeTo *string
 	rangeSize *int32
 	timezone *string
+	level *int32
 }
 
 // ids from meta/{language}/almanax/bonuses
@@ -169,6 +180,12 @@ func (r ApiGetAlmanaxRangeRequest) RangeSize(rangeSize int32) ApiGetAlmanaxRange
 // determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location.
 func (r ApiGetAlmanaxRangeRequest) Timezone(timezone string) ApiGetAlmanaxRangeRequest {
 	r.timezone = &timezone
+	return r
+}
+
+// character level for the reward_xp field
+func (r ApiGetAlmanaxRangeRequest) Level(level int32) ApiGetAlmanaxRangeRequest {
+	r.level = &level
 	return r
 }
 
@@ -244,6 +261,9 @@ func (a *AlmanaxAPIService) GetAlmanaxRangeExecute(r ApiGetAlmanaxRangeRequest) 
 	} else {
 		var defaultValue string = "Europe/Paris"
 		r.timezone = &defaultValue
+	}
+	if r.level != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "level", r.level, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

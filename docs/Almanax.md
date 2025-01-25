@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Date** | Pointer to **string** |  | [optional] 
 **Tribute** | Pointer to [**AlmanaxTribute**](AlmanaxTribute.md) |  | [optional] 
 **RewardKamas** | Pointer to **NullableInt32** | Amount of Kamas you get as reward for finishing this Almanax quest. | [optional] 
+**RewardXp** | Pointer to **NullableInt32** | Optional field that shows when a level is given in the request. Shows the experience points you get this day for finishing this Almanax quest. | [optional] 
 
 ## Methods
 
@@ -138,6 +139,41 @@ HasRewardKamas returns a boolean if a field has been set.
 `func (o *Almanax) UnsetRewardKamas()`
 
 UnsetRewardKamas ensures that no value is present for RewardKamas, not even an explicit nil
+### GetRewardXp
+
+`func (o *Almanax) GetRewardXp() int32`
+
+GetRewardXp returns the RewardXp field if non-nil, zero value otherwise.
+
+### GetRewardXpOk
+
+`func (o *Almanax) GetRewardXpOk() (*int32, bool)`
+
+GetRewardXpOk returns a tuple with the RewardXp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRewardXp
+
+`func (o *Almanax) SetRewardXp(v int32)`
+
+SetRewardXp sets RewardXp field to given value.
+
+### HasRewardXp
+
+`func (o *Almanax) HasRewardXp() bool`
+
+HasRewardXp returns a boolean if a field has been set.
+
+### SetRewardXpNil
+
+`func (o *Almanax) SetRewardXpNil(b bool)`
+
+ SetRewardXpNil sets the value for RewardXp to be an explicit nil
+
+### UnsetRewardXp
+`func (o *Almanax) UnsetRewardXp()`
+
+UnsetRewardXp ensures that no value is present for RewardXp, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

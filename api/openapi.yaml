@@ -32,7 +32,7 @@ info:
     name: GPL-3.0
     url: https://github.com/dofusdude/doduapi/blob/main/LICENSE
   title: dofusdude
-  version: 1.0.0-rc.8
+  version: 1.0.0-rc.9
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -3572,6 +3572,14 @@ paths:
           example: Europe/Paris
           type: string
         style: form
+      - description: character level for the reward_xp field
+        explode: true
+        in: query
+        name: level
+        required: false
+        schema:
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -3618,6 +3626,14 @@ paths:
           format: date
           type: string
         style: simple
+      - description: character level for the reward_xp field
+        explode: true
+        in: query
+        name: level
+        required: false
+        schema:
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -5627,6 +5643,7 @@ components:
           type:
             name: name
             id: id
+        reward_xp: 5
         tribute:
           item:
             subtype: subtype
@@ -5652,6 +5669,14 @@ components:
           type: integer
           x-stoplight:
             id: oneb4usnoodzz
+        reward_xp:
+          description: Optional field that shows when a level is given in the request.
+            Shows the experience points you get this day for finishing this Almanax
+            quest.
+          nullable: true
+          type: integer
+          x-stoplight:
+            id: d1luifqc9whyg
       title: Almanax
       type: object
       x-examples: {}

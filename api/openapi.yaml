@@ -32,7 +32,7 @@ info:
     name: GPL-3.0
     url: https://github.com/dofusdude/doduapi/blob/main/LICENSE
   title: dofusdude
-  version: 1.0.0-rc.9
+  version: 1.0.0-rc.10
 servers:
 - description: API
   url: https://api.dofusdu.de
@@ -3516,8 +3516,8 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
+          - pt
           example: fr
           type: string
         style: simple
@@ -3611,8 +3611,8 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
+          - pt
           example: fr
           type: string
         style: simple
@@ -3819,8 +3819,8 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
+          - pt
           example: fr
           type: string
         style: simple
@@ -3871,8 +3871,8 @@ paths:
           - en
           - fr
           - de
-          - it
           - es
+          - pt
           example: fr
           type: string
         style: simple

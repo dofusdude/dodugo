@@ -1115,7 +1115,7 @@ paths:
         required: false
         schema:
           example:
-          - wings
+          - ceremonial-wings
           items:
             type: string
           type: array
@@ -1310,7 +1310,7 @@ paths:
         name: ankama_id
         required: true
         schema:
-          example: 26009
+          example: 13971
           type: integer
         style: simple
       - description: game main 'dofus3' or beta channel 'dofus3beta'
@@ -2154,7 +2154,7 @@ paths:
         required: false
         schema:
           example:
-          - wood
+          - key
           items:
             type: string
           type: array
@@ -2958,7 +2958,7 @@ paths:
         required: false
         schema:
           example:
-          - boots
+          - ceremonial-wings
           items:
             type: string
           type: array
@@ -3087,7 +3087,7 @@ paths:
         required: false
         schema:
           example:
-          - boots
+          - kwismas-island
           items:
             type: string
           type: array
@@ -3209,7 +3209,7 @@ paths:
         required: false
         schema:
           example:
-          - boots
+          - chest
           items:
             type: string
           type: array
@@ -3337,7 +3337,7 @@ paths:
         required: false
         schema:
           example:
-          - boots
+          - garment
           items:
             type: string
           type: array

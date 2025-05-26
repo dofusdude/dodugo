@@ -119,6 +119,20 @@ func (obj *ConditionNode) GetActualInstance() (interface{}) {
 	return nil
 }
 
+// Get the actual instance value
+func (obj ConditionNode) GetActualInstanceValue() (interface{}) {
+	if obj.ConditionLeaf != nil {
+		return *obj.ConditionLeaf
+	}
+
+	if obj.ConditionRelation != nil {
+		return *obj.ConditionRelation
+	}
+
+	// all schemas are nil
+	return nil
+}
+
 type NullableConditionNode struct {
 	value *ConditionNode
 	isSet bool

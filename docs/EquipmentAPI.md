@@ -286,7 +286,7 @@ import (
 
 func main() {
 	language := "language_example" // string | a valid language code
-	ankamaId := int32(26009) // int32 | identifier
+	ankamaId := int32(13971) // int32 | identifier
 	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
 
 	configuration := openapiclient.NewConfiguration()

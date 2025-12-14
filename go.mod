@@ -1,9 +1,9 @@
 module github.com/dofusdude/dodugo
 
-go 1.18
+go 1.23
 
 require (
-	github.com/stretchr/testify v1.10.0
+	github.com/stretchr/testify v1.11.1
 	gopkg.in/validator.v2 v2.0.1
 )
 

@@ -556,8 +556,9 @@ func (a *SetsAPIService) GetSetsSearchExecute(r ApiGetSetsSearchRequest) ([]List
 	if r.limit != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	} else {
-		var defaultValue int32 = 8
-		r.limit = &defaultValue
+        var defaultValue int32 = 8
+        parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
+        r.limit = &defaultValue
 	}
 	if r.filterContainsCosmeticsOnly != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filter[contains_cosmetics_only]", r.filterContainsCosmeticsOnly, "form", "")

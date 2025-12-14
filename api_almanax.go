@@ -259,8 +259,9 @@ func (a *AlmanaxAPIService) GetAlmanaxRangeExecute(r ApiGetAlmanaxRangeRequest) 
 	if r.timezone != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "timezone", r.timezone, "form", "")
 	} else {
-		var defaultValue string = "Europe/Paris"
-		r.timezone = &defaultValue
+        var defaultValue string = "Europe/Paris"
+        parameterAddToHeaderOrQuery(localVarQueryParams, "timezone", defaultValue, "form", "")
+        r.timezone = &defaultValue
 	}
 	if r.level != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "level", r.level, "form", "")

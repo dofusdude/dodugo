@@ -1511,7 +1511,7 @@ paths:
         name: ankama_id
         required: true
         schema:
-          example: 180
+          example: 33216
           type: integer
         style: simple
       - description: game main 'dofus3' or beta channel 'dofus3beta'

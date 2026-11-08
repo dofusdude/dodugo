@@ -1,5 +1,5 @@
 /*
-dofusdude
+DoduAPI software beta
 
 Testing CosmeticsAPIService
 

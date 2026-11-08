@@ -245,7 +245,7 @@ import (
 
 func main() {
 	language := "fr" // string | a valid language code
-	query := "abond" // string | case sensitive search query
+	query := "experience" // string | case sensitive search query
 	limit := int32(56) // int32 | maximum number of returned results (optional)
 
 	configuration := openapiclient.NewConfiguration()

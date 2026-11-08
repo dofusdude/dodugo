@@ -194,7 +194,7 @@ import (
 func main() {
 	game := "game_example" // string | 
 	language := "language_example" // string | 
-	include := "include_example" // string | Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. `spells.grade` inlines that grade only; `spells` inlines the complete spell with every available grade. (optional)
+	include := "include_example" // string | Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use `spells.grade` to embed the assigned spell grade. Use `spells` to embed every available grade of each assigned spell. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **include** | **string** | Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. | 
+ **include** | **string** | Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. | 
 
 ### Return type
 
@@ -480,7 +480,7 @@ import (
 func main() {
 	game := "game_example" // string | 
 	language := "language_example" // string | 
-	ankamaId := int32(56) // int32 | 
+	ankamaId := int32(0) // int32 | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -631,7 +631,7 @@ import (
 func main() {
 	game := "game_example" // string | 
 	language := "language_example" // string | 
-	ankamaId := int32(56) // int32 | 
+	ankamaId := int32(1) // int32 | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -782,8 +782,8 @@ import (
 func main() {
 	game := "game_example" // string | 
 	language := "language_example" // string | 
-	ankamaId := int32(56) // int32 | 
-	include := "include_example" // string | Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. `spells.grade` inlines that grade only; `spells` inlines the complete spell with every available grade. (optional)
+	ankamaId := int32(31) // int32 | 
+	include := "include_example" // string | Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use `spells.grade` to embed the assigned spell grade. Use `spells` to embed every available grade of each assigned spell. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -817,7 +817,7 @@ Name | Type | Description  | Notes
 
 
 
- **include** | **string** | Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. | 
+ **include** | **string** | Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. | 
 
 ### Return type
 
@@ -861,7 +861,7 @@ func main() {
 	pageNumber := int32(56) // int32 |  (optional) (default to 1)
 	pageSize := int32(56) // int32 |  (optional) (default to 20)
 	fieldsMonsters := "fieldsMonsters_example" // string |  (optional)
-	include := "include_example" // string | Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. `spells.grade` inlines that grade only; `spells` inlines the complete spell with every available grade. (optional)
+	include := "include_example" // string | Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use `spells.grade` to embed the assigned spell grade. Use `spells` to embed every available grade of each assigned spell. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -896,7 +896,7 @@ Name | Type | Description  | Notes
  **pageNumber** | **int32** |  | [default to 1]
  **pageSize** | **int32** |  | [default to 20]
  **fieldsMonsters** | **string** |  | 
- **include** | **string** | Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. | 
+ **include** | **string** | Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. | 
 
 ### Return type
 
@@ -937,7 +937,7 @@ import (
 func main() {
 	game := "game_example" // string | 
 	language := "language_example" // string | 
-	ankamaId := int32(56) // int32 | 
+	ankamaId := int32(201) // int32 | 
 	grade := int32(56) // int32 | Return only the requested mapped spell grade in `levels`. (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1090,7 +1090,7 @@ import (
 func main() {
 	game := "game_example" // string | 
 	language := "language_example" // string | 
-	ankamaId := int32(56) // int32 | 
+	ankamaId := int32(1) // int32 | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1241,7 +1241,7 @@ import (
 func main() {
 	game := "game_example" // string | 
 	language := "language_example" // string | 
-	ankamaId := int32(56) // int32 | 
+	ankamaId := int32(0) // int32 | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

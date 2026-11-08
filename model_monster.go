@@ -19,7 +19,7 @@ import (
 // checks if the Monster type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Monster{}
 
-// Monster struct for Monster
+// Monster A monster with its grades, family, spawn locations and drops. Spell expansion is optional.
 type Monster struct {
 	AnkamaId int32 `json:"ankama_id"`
 	Name string `json:"name"`

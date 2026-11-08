@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Raw** | Pointer to **string** | Original compact zone encoding when the source provides one. | [optional] 
 **Shape** | [**ZoneShape**](ZoneShape.md) |  | 
-**Size** | Pointer to **NullableInt32** | Effective outer size of the area. A point has size 0; whole-map and custom-cell shapes omit it. | [optional] 
+**Size** | Pointer to **NullableInt32** | Effective outer size of the area. A point has size 0. Whole-map and custom-cell shapes omit it. | [optional] 
 **MinSize** | Pointer to **NullableInt32** | Effective inner size for hollow or minimum-size shapes. Omitted when the shape has no inner boundary. | [optional] 
 **CellIds** | **[]int32** |  | 
 **DamageDecreaseStepPercent** | Pointer to **int32** |  | [optional] 

@@ -26,7 +26,7 @@ type MonsterSpellRelationship struct {
 	Name string `json:"name"`
 	// The spell grade assigned to this monster grade.
 	Grade int32 `json:"grade"`
-	// Grade-specific spell URL; already includes the `grade` query parameter.
+	// URL for the assigned spell grade. Includes the `grade` query parameter.
 	Url string `json:"url"`
 	ImageUrls *Images `json:"image_urls,omitempty"`
 }

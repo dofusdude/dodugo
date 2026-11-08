@@ -242,7 +242,7 @@ type ApiGetAllMonstersRequest struct {
 	include *string
 }
 
-// Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade.
+// Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell.
 func (r ApiGetAllMonstersRequest) Include(include string) ApiGetAllMonstersRequest {
 	r.include = &include
 	return r
@@ -1211,7 +1211,7 @@ type ApiGetMonsterByIdRequest struct {
 	include *string
 }
 
-// Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade.
+// Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell.
 func (r ApiGetMonsterByIdRequest) Include(include string) ApiGetMonsterByIdRequest {
 	r.include = &include
 	return r
@@ -1357,7 +1357,7 @@ func (r ApiGetMonstersRequest) FieldsMonsters(fieldsMonsters string) ApiGetMonst
 	return r
 }
 
-// Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade.
+// Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell.
 func (r ApiGetMonstersRequest) Include(include string) ApiGetMonstersRequest {
 	r.include = &include
 	return r

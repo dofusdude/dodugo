@@ -25,7 +25,7 @@ type EffectZone struct {
 	// Original compact zone encoding when the source provides one.
 	Raw *string `json:"raw,omitempty"`
 	Shape ZoneShape `json:"shape"`
-	// Effective outer size of the area. A point has size 0; whole-map and custom-cell shapes omit it.
+	// Effective outer size of the area. A point has size 0. Whole-map and custom-cell shapes omit it.
 	Size NullableInt32 `json:"size,omitempty"`
 	// Effective inner size for hollow or minimum-size shapes. Omitted when the shape has no inner boundary.
 	MinSize NullableInt32 `json:"min_size,omitempty"`

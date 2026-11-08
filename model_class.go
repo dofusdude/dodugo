@@ -19,7 +19,7 @@ import (
 // checks if the Class type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Class{}
 
-// Class struct for Class
+// Class A playable class with its characteristics, appearance and class spell assignments.
 type Class struct {
 	AnkamaId int32 `json:"ankama_id"`
 	Name string `json:"name"`

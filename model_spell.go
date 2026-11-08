@@ -19,7 +19,7 @@ import (
 // checks if the Spell type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Spell{}
 
-// Spell struct for Spell
+// Spell A spell with its available grades, effects and casting rules.
 type Spell struct {
 	AnkamaId int32 `json:"ankama_id"`
 	Name string `json:"name"`

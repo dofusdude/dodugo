@@ -204,7 +204,7 @@ import (
 func main() {
 	language := "language_example" // string | a valid language code
 	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
-	query := "nedora" // string | case sensitive search query
+	query := "astrowig" // string | case sensitive search query
 	filterMinLevel := int32(1) // int32 | only results which level is equal or above this value (optional)
 	filterMaxLevel := int32(2) // int32 | only results which level is equal or below this value (optional)
 	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)

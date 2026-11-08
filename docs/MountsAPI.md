@@ -196,8 +196,8 @@ import (
 func main() {
 	language := "fr" // string | a valid language code
 	game := "dofus3" // string | game main 'dofus3' or beta channel 'dofus3beta'
-	query := "Dorée" // string | case sensitive search query
-	filterFamilyName := "Dragodinde" // string | only results with the translated family name (optional)
+	query := "almond" // string | case sensitive search query
+	filterFamilyName := "Dragoturkey" // string | only results with the translated family name (optional)
 	limit := int32(8) // int32 | maximum number of returned results (optional) (default to 8)
 	filterFamilyId := int32(56) // int32 | only results with the unique family id (optional)
 

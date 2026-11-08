@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **Range** | Pointer to [**Range**](Range.md) |  | [optional] 
 **Recipe** | Pointer to [**[]Recipe**](Recipe.md) |  | [optional] 
 **ParentSet** | Pointer to [**NullableTranslatedId**](TranslatedId.md) |  | [optional] 
+**Combat** | Pointer to [**WeaponCombat**](WeaponCombat.md) |  | [optional] 
 
 ## Methods
 
@@ -506,6 +507,31 @@ HasParentSet returns a boolean if a field has been set.
 `func (o *Weapon) UnsetParentSet()`
 
 UnsetParentSet ensures that no value is present for ParentSet, not even an explicit nil
+### GetCombat
+
+`func (o *Weapon) GetCombat() WeaponCombat`
+
+GetCombat returns the Combat field if non-nil, zero value otherwise.
+
+### GetCombatOk
+
+`func (o *Weapon) GetCombatOk() (*WeaponCombat, bool)`
+
+GetCombatOk returns a tuple with the Combat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCombat
+
+`func (o *Weapon) SetCombat(v WeaponCombat)`
+
+SetCombat sets Combat field to given value.
+
+### HasCombat
+
+`func (o *Weapon) HasCombat() bool`
+
+HasCombat returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,9 +1,9 @@
 /*
 dofusdude
 
-# Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
+# Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1.1.0 beta [preview] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js@beta --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts@beta --save` - [Go](https://github.com/dofusdude/dodugo) `go get github.com/dofusdude/dodugo@v1.1.0-beta.1` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install --pre dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 1.0.0
+API version: 1.1.0-beta.1
 Contact: stelzo@steado.de
 */
 
@@ -32,6 +32,7 @@ type Equipment struct {
 	Conditions NullableConditionNode `json:"conditions,omitempty"`
 	Recipe []Recipe `json:"recipe,omitempty"`
 	ParentSet NullableTranslatedId `json:"parent_set,omitempty"`
+	Combat *WeaponCombat `json:"combat,omitempty"`
 }
 
 // NewEquipment instantiates a new Equipment object
@@ -457,6 +458,38 @@ func (o *Equipment) UnsetParentSet() {
 	o.ParentSet.Unset()
 }
 
+// GetCombat returns the Combat field value if set, zero value otherwise.
+func (o *Equipment) GetCombat() WeaponCombat {
+	if o == nil || IsNil(o.Combat) {
+		var ret WeaponCombat
+		return ret
+	}
+	return *o.Combat
+}
+
+// GetCombatOk returns a tuple with the Combat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Equipment) GetCombatOk() (*WeaponCombat, bool) {
+	if o == nil || IsNil(o.Combat) {
+		return nil, false
+	}
+	return o.Combat, true
+}
+
+// HasCombat returns a boolean if a field has been set.
+func (o *Equipment) HasCombat() bool {
+	if o != nil && !IsNil(o.Combat) {
+		return true
+	}
+
+	return false
+}
+
+// SetCombat gets a reference to the given WeaponCombat and assigns it to the Combat field.
+func (o *Equipment) SetCombat(v WeaponCombat) {
+	o.Combat = &v
+}
+
 func (o Equipment) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -502,6 +535,9 @@ func (o Equipment) ToMap() (map[string]interface{}, error) {
 	}
 	if o.ParentSet.IsSet() {
 		toSerialize["parent_set"] = o.ParentSet.Get()
+	}
+	if !IsNil(o.Combat) {
+		toSerialize["combat"] = o.Combat
 	}
 	return toSerialize, nil
 }

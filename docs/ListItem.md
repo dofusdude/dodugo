@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **MaxCastPerTurn** | Pointer to **NullableInt32** |  | [optional] 
 **ApCost** | Pointer to **NullableInt32** |  | [optional] 
 **Range** | Pointer to [**Range**](Range.md) |  | [optional] 
+**Combat** | Pointer to [**WeaponCombat**](WeaponCombat.md) |  | [optional] 
 
 ## Methods
 
@@ -575,6 +576,31 @@ SetRange sets Range field to given value.
 `func (o *ListItem) HasRange() bool`
 
 HasRange returns a boolean if a field has been set.
+
+### GetCombat
+
+`func (o *ListItem) GetCombat() WeaponCombat`
+
+GetCombat returns the Combat field if non-nil, zero value otherwise.
+
+### GetCombatOk
+
+`func (o *ListItem) GetCombatOk() (*WeaponCombat, bool)`
+
+GetCombatOk returns a tuple with the Combat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCombat
+
+`func (o *ListItem) SetCombat(v WeaponCombat)`
+
+SetCombat sets Combat field to given value.
+
+### HasCombat
+
+`func (o *ListItem) HasCombat() bool`
+
+HasCombat returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

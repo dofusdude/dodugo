@@ -1,9 +1,9 @@
 /*
 dofusdude
 
-# Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1 [latest] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts --save` - [Go](https://github.com/dofusdude/dodugo) `go get -u github.com/dofusdude/dodugo` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
+# Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1.1.0 beta [preview] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) `npm i dofusdude-js@beta --save` - [Typescript](https://github.com/dofusdude/dofusdude-ts) `npm i dofusdude-ts@beta --save` - [Go](https://github.com/dofusdude/dodugo) `go get github.com/dofusdude/dodugo@v1.1.0-beta.1` - [Python](https://github.com/dofusdude/dofusdude-py) `pip install --pre dofusdude` - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
-API version: 1.0.0
+API version: 1.1.0-beta.1
 Contact: stelzo@steado.de
 */
 
@@ -42,7 +42,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the dofusdude API v1.0.0
+// APIClient manages communication with the dofusdude API v1.1.0-beta.1
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -59,6 +59,8 @@ type APIClient struct {
 	EquipmentAPI *EquipmentAPIService
 
 	GameAPI *GameAPIService
+
+	GameDataAPI *GameDataAPIService
 
 	MetaAPI *MetaAPIService
 
@@ -94,6 +96,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.CosmeticsAPI = (*CosmeticsAPIService)(&c.common)
 	c.EquipmentAPI = (*EquipmentAPIService)(&c.common)
 	c.GameAPI = (*GameAPIService)(&c.common)
+	c.GameDataAPI = (*GameDataAPIService)(&c.common)
 	c.MetaAPI = (*MetaAPIService)(&c.common)
 	c.MountsAPI = (*MountsAPIService)(&c.common)
 	c.QuestItemsAPI = (*QuestItemsAPIService)(&c.common)
@@ -210,10 +213,14 @@ func parameterAddToHeaderOrQuery(headerOrQueryParams interface{}, keyPrefix stri
 				for i:=0;i<lenIndValue;i++ {
 					var arrayValue = indValue.Index(i)
 					var keyPrefixForCollectionType = keyPrefix
+					var styleForElement = style
 					if style == "deepObject" {
 						keyPrefixForCollectionType = keyPrefix + "[" + strconv.Itoa(i) + "]"
+					} else if style == "form" {
+						// only the parameter's own map is flattened; a map inside an array keeps its bracketed path
+						styleForElement = ""
 					}
-					parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefixForCollectionType, arrayValue.Interface(), style, collectionType)
+					parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefixForCollectionType, arrayValue.Interface(), styleForElement, collectionType)
 				}
 				return
 
@@ -225,13 +232,36 @@ func parameterAddToHeaderOrQuery(headerOrQueryParams interface{}, keyPrefix stri
 				iter := indValue.MapRange()
 				for iter.Next() {
 					k,v := iter.Key(), iter.Value()
-					parameterAddToHeaderOrQuery(headerOrQueryParams, fmt.Sprintf("%s[%s]", keyPrefix, k.String()), v.Interface(), style, collectionType)
+					var keyPrefixForMapEntry = fmt.Sprintf("%s[%s]", keyPrefix, k.String())
+					var styleForMapEntry = style
+					if style == "form" {
+						// form style: one query parameter per entry, keyed by the property name; anything nested keeps its bracketed path
+						keyPrefixForMapEntry = k.String()
+						styleForMapEntry = ""
+						// a nil entry, or a nil item of a list entry, is left out rather than sent as "null"
+						entry, ok := parameterValueIndirect(v)
+						if !ok {
+							continue
+						}
+						if entry.Kind() == reflect.Slice {
+							for i := 0; i < entry.Len(); i++ {
+								if element, ok := parameterValueIndirect(entry.Index(i)); ok {
+									parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefixForMapEntry, element.Interface(), styleForMapEntry, collectionType)
+								}
+							}
+							continue
+						}
+					}
+					parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefixForMapEntry, v.Interface(), styleForMapEntry, collectionType)
 				}
 				return
 
 			case reflect.Interface:
 				fallthrough
 			case reflect.Ptr:
+				if v.IsNil() {
+					return
+				}
 				parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefix, v.Elem().Interface(), style, collectionType)
 				return
 
@@ -264,6 +294,18 @@ func parameterAddToHeaderOrQuery(headerOrQueryParams interface{}, keyPrefix stri
 			valuesMap[keyPrefix] = value
 			break
 	}
+}
+
+// parameterValueIndirect unwraps interfaces and pointers down to the value they hold,
+// reporting false when that value is nil
+func parameterValueIndirect(v reflect.Value) (reflect.Value, bool) {
+	for v.Kind() == reflect.Interface || v.Kind() == reflect.Ptr {
+		if v.IsNil() {
+			return v, false
+		}
+		v = v.Elem()
+	}
+	return v, v.IsValid()
 }
 
 // helper for converting interface{} parameters to json strings
@@ -463,6 +505,15 @@ func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err err
 	}
 	if s, ok := v.(*string); ok {
 		*s = string(b)
+		return nil
+	}
+	if r, ok := v.(*io.Reader); ok {
+		*r = bytes.NewReader(b)
+		return nil
+	}
+	// Must stay before the JSON branch: json.Unmarshal would base64-decode into *[]byte.
+	if p, ok := v.(*[]byte); ok {
+		*p = b
 		return nil
 	}
 	if f, ok := v.(*os.File); ok {

@@ -1,15 +1,19 @@
 name: Go
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - beta
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+      - beta
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Go
-      uses: actions/setup-go@v6
-    - name: Build
-      run: go build -v ./...
+      - uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v6
+      - name: Build
+        run: go build -v ./...

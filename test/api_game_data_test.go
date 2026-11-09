@@ -1,5 +1,5 @@
 /*
-DoduAPI software beta
+doduapi beta
 
 Testing GameDataAPIService
 

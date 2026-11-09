@@ -37,6 +37,8 @@ Method | HTTP request | Description
 
 Get all areas
 
+
+
 ### Example
 
 ```go
@@ -108,6 +110,8 @@ No authorization required
 
 Get all classes
 
+
+
 ### Example
 
 ```go
@@ -178,6 +182,8 @@ No authorization required
 > MappedEntityCollection GetAllMonsters(ctx, game, language).Include(include).Execute()
 
 Get all monsters
+
+
 
 ### Example
 
@@ -252,6 +258,8 @@ No authorization required
 
 Get all spells
 
+
+
 ### Example
 
 ```go
@@ -322,6 +330,8 @@ No authorization required
 > MappedEntityCollection GetAllSubareas(ctx, game, language).Execute()
 
 Get all subareas
+
+
 
 ### Example
 
@@ -394,6 +404,8 @@ No authorization required
 
 Get all super-areas
 
+
+
 ### Example
 
 ```go
@@ -464,6 +476,8 @@ No authorization required
 > WorldArea GetAreaById(ctx, game, language, ankamaId).Execute()
 
 Get one area
+
+
 
 ### Example
 
@@ -538,6 +552,8 @@ No authorization required
 > MappedEntityCollection GetAreas(ctx, game, language).PageNumber(pageNumber).PageSize(pageSize).FieldsAreas(fieldsAreas).Execute()
 
 List areas
+
+
 
 ### Example
 
@@ -616,6 +632,8 @@ No authorization required
 
 Get one class
 
+
+
 ### Example
 
 ```go
@@ -689,6 +707,8 @@ No authorization required
 > MappedEntityCollection GetClasses(ctx, game, language).PageNumber(pageNumber).PageSize(pageSize).FieldsClasses(fieldsClasses).Execute()
 
 List classes
+
+
 
 ### Example
 
@@ -767,6 +787,8 @@ No authorization required
 
 Get one monster
 
+
+
 ### Example
 
 ```go
@@ -842,6 +864,8 @@ No authorization required
 > MappedEntityCollection GetMonsters(ctx, game, language).PageNumber(pageNumber).PageSize(pageSize).FieldsMonsters(fieldsMonsters).Include(include).Execute()
 
 List monsters
+
+
 
 ### Example
 
@@ -922,6 +946,8 @@ No authorization required
 
 Get one spell
 
+
+
 ### Example
 
 ```go
@@ -997,6 +1023,8 @@ No authorization required
 > MappedEntityCollection GetSpells(ctx, game, language).PageNumber(pageNumber).PageSize(pageSize).FieldsSpells(fieldsSpells).Execute()
 
 List spells
+
+
 
 ### Example
 
@@ -1075,6 +1103,8 @@ No authorization required
 
 Get one subarea
 
+
+
 ### Example
 
 ```go
@@ -1148,6 +1178,8 @@ No authorization required
 > MappedEntityCollection GetSubareas(ctx, game, language).PageNumber(pageNumber).PageSize(pageSize).FieldsSubareas(fieldsSubareas).Execute()
 
 List subareas
+
+
 
 ### Example
 
@@ -1226,6 +1258,8 @@ No authorization required
 
 Get one super-area
 
+
+
 ### Example
 
 ```go
@@ -1299,6 +1333,8 @@ No authorization required
 > MappedEntityCollection GetSuperAreas(ctx, game, language).PageNumber(pageNumber).PageSize(pageSize).FieldsSuperAreas(fieldsSuperAreas).Execute()
 
 List super-areas
+
+
 
 ### Example
 
@@ -1377,6 +1413,8 @@ No authorization required
 
 Search areas
 
+
+
 ### Example
 
 ```go
@@ -1451,6 +1489,8 @@ No authorization required
 > []MappedEntityListEntry SearchClasses(ctx, game, language).Query(query).Limit(limit).Execute()
 
 Search classes
+
+
 
 ### Example
 
@@ -1527,6 +1567,8 @@ No authorization required
 
 Search monsters
 
+
+
 ### Example
 
 ```go
@@ -1601,6 +1643,8 @@ No authorization required
 > []MappedEntityListEntry SearchSpells(ctx, game, language).Query(query).Limit(limit).Execute()
 
 Search spells
+
+
 
 ### Example
 
@@ -1677,6 +1721,8 @@ No authorization required
 
 Search subareas
 
+
+
 ### Example
 
 ```go
@@ -1751,6 +1797,8 @@ No authorization required
 > []MappedEntityListEntry SearchSuperAreas(ctx, game, language).Query(query).Limit(limit).Execute()
 
 Search super-areas
+
+
 
 ### Example
 

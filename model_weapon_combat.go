@@ -20,7 +20,7 @@ import (
 // checks if the WeaponCombat type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &WeaponCombat{}
 
-// WeaponCombat struct for WeaponCombat
+// WeaponCombat Weapon attack targeting and area geometry. Available for weapon equipment. This is separate from spell effect zones.
 type WeaponCombat struct {
 	Zone EffectZone `json:"zone"`
 	CastInLine bool `json:"cast_in_line"`

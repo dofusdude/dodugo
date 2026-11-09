@@ -20,11 +20,11 @@ import (
 // checks if the MonsterSpellRelationship type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MonsterSpellRelationship{}
 
-// MonsterSpellRelationship struct for MonsterSpellRelationship
+// MonsterSpellRelationship Compact spell assignment inside one monster grade. The assignment's grade identifies the spell variant, not the enclosing monster variant. Follow url unchanged to retrieve it or use an include option to embed it.
 type MonsterSpellRelationship struct {
 	AnkamaId int32 `json:"ankama_id"`
 	Name string `json:"name"`
-	// The spell grade assigned to this monster grade.
+	// Grade of the assigned spell. It does not need to equal the enclosing MonsterGrade.grade.
 	Grade int32 `json:"grade"`
 	// URL for the assigned spell grade. Includes the `grade` query parameter.
 	Url string `json:"url"`

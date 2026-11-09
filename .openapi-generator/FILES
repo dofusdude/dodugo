@@ -101,9 +101,11 @@ docs/SetsAPI.md
 docs/Spell.md
 docs/SpellEffect.md
 docs/SpellLevel.md
+docs/SpellPreviewZone.md
 docs/SpellScriptUsage.md
 docs/SpellTrigger.md
 docs/SpellTriggers.md
+docs/SpellType.md
 docs/TargetMask.md
 docs/TargetSelector.md
 docs/TranslatedId.md
@@ -113,6 +115,7 @@ docs/Weapon.md
 docs/WeaponCombat.md
 docs/WebhooksAPI.md
 docs/WorldArea.md
+docs/WorldMapReference.md
 docs/ZoneShape.md
 git_push.sh
 go.mod
@@ -190,9 +193,11 @@ model_rss_webhook.go
 model_spell.go
 model_spell_effect.go
 model_spell_level.go
+model_spell_preview_zone.go
 model_spell_script_usage.go
 model_spell_trigger.go
 model_spell_triggers.go
+model_spell_type.go
 model_target_mask.go
 model_target_selector.go
 model_translated_id.go
@@ -201,6 +206,7 @@ model_version.go
 model_weapon.go
 model_weapon_combat.go
 model_world_area.go
+model_world_map_reference.go
 model_zone_shape.go
 response.go
 test/api_almanax_test.go

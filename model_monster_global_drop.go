@@ -20,7 +20,7 @@ import (
 // checks if the MonsterGlobalDrop type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MonsterGlobalDrop{}
 
-// MonsterGlobalDrop struct for MonsterGlobalDrop
+// MonsterGlobalDrop A separate global-drop entry with a base percentage range. It is not the per-monster-grade rates table and does not by itself define a final player-specific drop chance.
 type MonsterGlobalDrop struct {
 	HasConditions *bool `json:"has_conditions,omitempty"`
 	Item CombatReference `json:"item"`

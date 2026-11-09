@@ -20,9 +20,19 @@ var _ MappedNullable = &Condition{}
 
 // Condition struct for Condition
 type Condition struct {
+	// Comparison to apply to the interpreted requirement value.
 	Operator *string `json:"operator,omitempty"`
 	IntValue *int32 `json:"int_value,omitempty"`
 	Element *TranslatedId `json:"element,omitempty"`
+	// Interpreted requirement category, such as profession_level or item_received_age. Use this with the operator, values and references rather than decoding original condition tokens.
+	Kind *string `json:"kind,omitempty"`
+	// Unit associated with the requirement value when the interpreted condition supplies one.
+	Unit *string `json:"unit,omitempty"`
+	Quantity *int32 `json:"quantity,omitempty"`
+	StringValue *string `json:"string_value,omitempty"`
+	ValueLabel *string `json:"value_label,omitempty"`
+	Reference *CombatReference `json:"reference,omitempty"`
+	SecondaryReference *CombatReference `json:"secondary_reference,omitempty"`
 }
 
 // NewCondition instantiates a new Condition object
@@ -138,6 +148,230 @@ func (o *Condition) SetElement(v TranslatedId) {
 	o.Element = &v
 }
 
+// GetKind returns the Kind field value if set, zero value otherwise.
+func (o *Condition) GetKind() string {
+	if o == nil || IsNil(o.Kind) {
+		var ret string
+		return ret
+	}
+	return *o.Kind
+}
+
+// GetKindOk returns a tuple with the Kind field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Condition) GetKindOk() (*string, bool) {
+	if o == nil || IsNil(o.Kind) {
+		return nil, false
+	}
+	return o.Kind, true
+}
+
+// HasKind returns a boolean if a field has been set.
+func (o *Condition) HasKind() bool {
+	if o != nil && !IsNil(o.Kind) {
+		return true
+	}
+
+	return false
+}
+
+// SetKind gets a reference to the given string and assigns it to the Kind field.
+func (o *Condition) SetKind(v string) {
+	o.Kind = &v
+}
+
+// GetUnit returns the Unit field value if set, zero value otherwise.
+func (o *Condition) GetUnit() string {
+	if o == nil || IsNil(o.Unit) {
+		var ret string
+		return ret
+	}
+	return *o.Unit
+}
+
+// GetUnitOk returns a tuple with the Unit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Condition) GetUnitOk() (*string, bool) {
+	if o == nil || IsNil(o.Unit) {
+		return nil, false
+	}
+	return o.Unit, true
+}
+
+// HasUnit returns a boolean if a field has been set.
+func (o *Condition) HasUnit() bool {
+	if o != nil && !IsNil(o.Unit) {
+		return true
+	}
+
+	return false
+}
+
+// SetUnit gets a reference to the given string and assigns it to the Unit field.
+func (o *Condition) SetUnit(v string) {
+	o.Unit = &v
+}
+
+// GetQuantity returns the Quantity field value if set, zero value otherwise.
+func (o *Condition) GetQuantity() int32 {
+	if o == nil || IsNil(o.Quantity) {
+		var ret int32
+		return ret
+	}
+	return *o.Quantity
+}
+
+// GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Condition) GetQuantityOk() (*int32, bool) {
+	if o == nil || IsNil(o.Quantity) {
+		return nil, false
+	}
+	return o.Quantity, true
+}
+
+// HasQuantity returns a boolean if a field has been set.
+func (o *Condition) HasQuantity() bool {
+	if o != nil && !IsNil(o.Quantity) {
+		return true
+	}
+
+	return false
+}
+
+// SetQuantity gets a reference to the given int32 and assigns it to the Quantity field.
+func (o *Condition) SetQuantity(v int32) {
+	o.Quantity = &v
+}
+
+// GetStringValue returns the StringValue field value if set, zero value otherwise.
+func (o *Condition) GetStringValue() string {
+	if o == nil || IsNil(o.StringValue) {
+		var ret string
+		return ret
+	}
+	return *o.StringValue
+}
+
+// GetStringValueOk returns a tuple with the StringValue field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Condition) GetStringValueOk() (*string, bool) {
+	if o == nil || IsNil(o.StringValue) {
+		return nil, false
+	}
+	return o.StringValue, true
+}
+
+// HasStringValue returns a boolean if a field has been set.
+func (o *Condition) HasStringValue() bool {
+	if o != nil && !IsNil(o.StringValue) {
+		return true
+	}
+
+	return false
+}
+
+// SetStringValue gets a reference to the given string and assigns it to the StringValue field.
+func (o *Condition) SetStringValue(v string) {
+	o.StringValue = &v
+}
+
+// GetValueLabel returns the ValueLabel field value if set, zero value otherwise.
+func (o *Condition) GetValueLabel() string {
+	if o == nil || IsNil(o.ValueLabel) {
+		var ret string
+		return ret
+	}
+	return *o.ValueLabel
+}
+
+// GetValueLabelOk returns a tuple with the ValueLabel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Condition) GetValueLabelOk() (*string, bool) {
+	if o == nil || IsNil(o.ValueLabel) {
+		return nil, false
+	}
+	return o.ValueLabel, true
+}
+
+// HasValueLabel returns a boolean if a field has been set.
+func (o *Condition) HasValueLabel() bool {
+	if o != nil && !IsNil(o.ValueLabel) {
+		return true
+	}
+
+	return false
+}
+
+// SetValueLabel gets a reference to the given string and assigns it to the ValueLabel field.
+func (o *Condition) SetValueLabel(v string) {
+	o.ValueLabel = &v
+}
+
+// GetReference returns the Reference field value if set, zero value otherwise.
+func (o *Condition) GetReference() CombatReference {
+	if o == nil || IsNil(o.Reference) {
+		var ret CombatReference
+		return ret
+	}
+	return *o.Reference
+}
+
+// GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Condition) GetReferenceOk() (*CombatReference, bool) {
+	if o == nil || IsNil(o.Reference) {
+		return nil, false
+	}
+	return o.Reference, true
+}
+
+// HasReference returns a boolean if a field has been set.
+func (o *Condition) HasReference() bool {
+	if o != nil && !IsNil(o.Reference) {
+		return true
+	}
+
+	return false
+}
+
+// SetReference gets a reference to the given CombatReference and assigns it to the Reference field.
+func (o *Condition) SetReference(v CombatReference) {
+	o.Reference = &v
+}
+
+// GetSecondaryReference returns the SecondaryReference field value if set, zero value otherwise.
+func (o *Condition) GetSecondaryReference() CombatReference {
+	if o == nil || IsNil(o.SecondaryReference) {
+		var ret CombatReference
+		return ret
+	}
+	return *o.SecondaryReference
+}
+
+// GetSecondaryReferenceOk returns a tuple with the SecondaryReference field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Condition) GetSecondaryReferenceOk() (*CombatReference, bool) {
+	if o == nil || IsNil(o.SecondaryReference) {
+		return nil, false
+	}
+	return o.SecondaryReference, true
+}
+
+// HasSecondaryReference returns a boolean if a field has been set.
+func (o *Condition) HasSecondaryReference() bool {
+	if o != nil && !IsNil(o.SecondaryReference) {
+		return true
+	}
+
+	return false
+}
+
+// SetSecondaryReference gets a reference to the given CombatReference and assigns it to the SecondaryReference field.
+func (o *Condition) SetSecondaryReference(v CombatReference) {
+	o.SecondaryReference = &v
+}
+
 func (o Condition) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -156,6 +390,27 @@ func (o Condition) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Element) {
 		toSerialize["element"] = o.Element
+	}
+	if !IsNil(o.Kind) {
+		toSerialize["kind"] = o.Kind
+	}
+	if !IsNil(o.Unit) {
+		toSerialize["unit"] = o.Unit
+	}
+	if !IsNil(o.Quantity) {
+		toSerialize["quantity"] = o.Quantity
+	}
+	if !IsNil(o.StringValue) {
+		toSerialize["string_value"] = o.StringValue
+	}
+	if !IsNil(o.ValueLabel) {
+		toSerialize["value_label"] = o.ValueLabel
+	}
+	if !IsNil(o.Reference) {
+		toSerialize["reference"] = o.Reference
+	}
+	if !IsNil(o.SecondaryReference) {
+		toSerialize["secondary_reference"] = o.SecondaryReference
 	}
 	return toSerialize, nil
 }

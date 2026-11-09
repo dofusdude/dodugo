@@ -938,7 +938,7 @@ func main() {
 	game := "game_example" // string | 
 	language := "language_example" // string | 
 	ankamaId := int32(201) // int32 | 
-	grade := int32(56) // int32 | Return only the requested mapped spell grade in `levels`. (optional)
+	grade := int32(56) // int32 | Select the spell variant identified by its explicit grade number, not its spell-level record ID or a player level. Returns the spell object with only that grade in levels. An unavailable grade returns 404. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -972,7 +972,7 @@ Name | Type | Description  | Notes
 
 
 
- **grade** | **int32** | Return only the requested mapped spell grade in &#x60;levels&#x60;. | 
+ **grade** | **int32** | Select the spell variant identified by its explicit grade number, not its spell-level record ID or a player level. Returns the spell object with only that grade in levels. An unavailable grade returns 404. | 
 
 ### Return type
 

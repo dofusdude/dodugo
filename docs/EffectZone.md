@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Shape** | [**ZoneShape**](ZoneShape.md) |  | 
 **Size** | Pointer to **NullableInt32** | Effective outer size of the area. A point has size 0. Whole-map and custom-cell shapes omit it. | [optional] 
 **MinSize** | Pointer to **NullableInt32** | Effective inner size for hollow or minimum-size shapes. Omitted when the shape has no inner boundary. | [optional] 
-**CellIds** | **[]int32** |  | 
+**CellIds** | **[]int32** | Explicit cells for a custom-cell shape. An empty array is normal for geometric shapes such as circles and does not mean the zone affects no cells. | 
 **DamageDecreaseStepPercent** | Pointer to **int32** |  | [optional] 
 **MaxDamageDecreaseApplyCount** | Pointer to **int32** |  | [optional] 
 **ForcedDirection** | Pointer to **int32** |  | [optional] 

@@ -6,17 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnkamaId** | **int32** |  | 
 **Name** | **string** |  | 
-**Grade** | **int32** | The spell grade assigned to this monster grade. | 
+**Grade** | **int32** | Grade of the assigned spell. It does not need to equal the enclosing MonsterGrade.grade. | 
 **Url** | **string** | URL for the assigned spell grade. Includes the &#x60;grade&#x60; query parameter. | 
 **ImageUrls** | Pointer to [**Images**](Images.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **IconId** | Pointer to **int32** |  | [optional] 
 **AdminName** | Pointer to **string** |  | [optional] 
 **Order** | Pointer to **int32** |  | [optional] 
-**Type** | Pointer to [**CombatReference**](CombatReference.md) |  | [optional] 
-**Classes** | Pointer to [**[]CombatReference**](CombatReference.md) |  | [optional] 
-**Monsters** | Pointer to [**[]CombatReference**](CombatReference.md) |  | [optional] 
-**Levels** | [**[]SpellLevel**](SpellLevel.md) |  | 
+**Type** | Pointer to [**SpellType**](SpellType.md) |  | [optional] 
+**BasePreviewZone** | Pointer to [**EffectZone**](EffectZone.md) |  | [optional] 
+**Classes** | Pointer to [**[]CombatReference**](CombatReference.md) | Reverse references to playable classes associated with this spell. These are compact references, not complete class documents. | [optional] 
+**Monsters** | Pointer to [**[]CombatReference**](CombatReference.md) | Reverse references to monsters associated with this spell. Use a monster&#39;s grade-specific assignments to determine which spell grade it uses. | [optional] 
+**Levels** | [**[]SpellLevel**](SpellLevel.md) | Available spell grades. Despite the field name, entries are not player levels. A grade-filtered detail response contains only the requested entry while retaining the parent spell object. | 
 **Scripts** | Pointer to [**[]SpellScriptUsage**](SpellScriptUsage.md) |  | [optional] 
 **CriticalScripts** | Pointer to [**[]SpellScriptUsage**](SpellScriptUsage.md) |  | [optional] 
 
@@ -246,20 +247,20 @@ HasOrder returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *MonsterGradeSpellsInner) GetType() CombatReference`
+`func (o *MonsterGradeSpellsInner) GetType() SpellType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *MonsterGradeSpellsInner) GetTypeOk() (*CombatReference, bool)`
+`func (o *MonsterGradeSpellsInner) GetTypeOk() (*SpellType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *MonsterGradeSpellsInner) SetType(v CombatReference)`
+`func (o *MonsterGradeSpellsInner) SetType(v SpellType)`
 
 SetType sets Type field to given value.
 
@@ -268,6 +269,31 @@ SetType sets Type field to given value.
 `func (o *MonsterGradeSpellsInner) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetBasePreviewZone
+
+`func (o *MonsterGradeSpellsInner) GetBasePreviewZone() EffectZone`
+
+GetBasePreviewZone returns the BasePreviewZone field if non-nil, zero value otherwise.
+
+### GetBasePreviewZoneOk
+
+`func (o *MonsterGradeSpellsInner) GetBasePreviewZoneOk() (*EffectZone, bool)`
+
+GetBasePreviewZoneOk returns a tuple with the BasePreviewZone field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBasePreviewZone
+
+`func (o *MonsterGradeSpellsInner) SetBasePreviewZone(v EffectZone)`
+
+SetBasePreviewZone sets BasePreviewZone field to given value.
+
+### HasBasePreviewZone
+
+`func (o *MonsterGradeSpellsInner) HasBasePreviewZone() bool`
+
+HasBasePreviewZone returns a boolean if a field has been set.
 
 ### GetClasses
 

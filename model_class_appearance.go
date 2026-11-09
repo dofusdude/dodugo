@@ -20,7 +20,7 @@ import (
 // checks if the ClassAppearance type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ClassAppearance{}
 
-// ClassAppearance struct for ClassAppearance
+// ClassAppearance Structured client appearance data for an asset renderer. Bone and skin IDs are not image URLs. Use the parent record's image_urls for ready-to-display artwork.
 type ClassAppearance struct {
 	BonesId int32 `json:"bones_id"`
 	SkinIds []int32 `json:"skin_ids"`

@@ -20,7 +20,7 @@ import (
 // checks if the SpellTriggers type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SpellTriggers{}
 
-// SpellTriggers struct for SpellTriggers
+// SpellTriggers Determines when an effect activates. Events are not additional effects to apply unconditionally. Use logic with the resolved event names and descriptions instead of parsing raw tokens.
 type SpellTriggers struct {
 	// Original trigger tokens retained for lossless debugging.
 	Raw string `json:"raw"`

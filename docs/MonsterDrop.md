@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Item** | [**CombatReference**](CombatReference.md) |  | 
-**RatesPercent** | [**[]MonsterDropRatesPercentInner**](MonsterDropRatesPercentInner.md) | Base drop percentage for each monster grade. | 
-**HasConditions** | **bool** |  | 
+**RatesPercent** | [**[]MonsterDropRatesPercentInner**](MonsterDropRatesPercentInner.md) | Base drop percentages indexed by MonsterGrade.grade, not spell grade or array position. A value of 5 means 5 percent, not 0.05 percent. These are not spawn percentages. | 
+**HasConditions** | **bool** | The source reports restrictions. Can be true without a complete client-side condition tree because server-only predicates are not exposed. | 
 **DropId** | Pointer to **int32** |  | [optional] 
 **Count** | Pointer to **int32** |  | [optional] 
 **Condition** | Pointer to **map[string]interface{}** |  | [optional] 

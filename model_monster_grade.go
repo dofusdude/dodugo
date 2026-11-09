@@ -19,9 +19,11 @@ import (
 // checks if the MonsterGrade type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MonsterGrade{}
 
-// MonsterGrade struct for MonsterGrade
+// MonsterGrade One variant of this monster, combining combat level, statistics and spell assignments. Match grade-specific drop rates using its grade value. Do not use it to infer a spell grade.
 type MonsterGrade struct {
+	// Number identifying this variant within the monster. Not the combat level, array position or grade of an assigned spell.
 	Grade int32 `json:"grade"`
+	// Combat level of this monster variant. Distinct from its grade number.
 	Level int32 `json:"level"`
 	LifePoints *int32 `json:"life_points,omitempty"`
 	ActionPoints *int32 `json:"action_points,omitempty"`

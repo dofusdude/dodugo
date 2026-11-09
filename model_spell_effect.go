@@ -18,14 +18,18 @@ import (
 // checks if the SpellEffect type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SpellEffect{}
 
-// SpellEffect struct for SpellEffect
+// SpellEffect One normal or critical effect of a particular spell grade. Its zone defines where it applies, target_mask defines eligible targets and triggers defines activation events. Templated text is for display, not a formula to parse.
 type SpellEffect struct {
-	Type *CombatReference `json:"type,omitempty"`
+	// Localized effect category, such as Air damage. This is not a spell ID or a structured game reference.
+	Type *string `json:"type,omitempty"`
 	Min *int32 `json:"min,omitempty"`
 	Max *int32 `json:"max,omitempty"`
+	// Effect duration in fight turns as represented by the source. Not a real-time duration in seconds.
 	Duration *int32 `json:"duration,omitempty"`
+	// Delay before the effect in fight turns as represented by the source.
 	Delay *int32 `json:"delay,omitempty"`
-	Random *int32 `json:"random,omitempty"`
+	// Source random-selection value. Do not interpret it as a percentage without the effect's selection rules.
+	Random *float32 `json:"random,omitempty"`
 	Group *int32 `json:"group,omitempty"`
 	Dispellable *int32 `json:"dispellable,omitempty"`
 	// Stable identifier of this concrete effect instance.
@@ -37,7 +41,8 @@ type SpellEffect struct {
 	Zone *EffectZone `json:"zone,omitempty"`
 	TargetMask *TargetMask `json:"target_mask,omitempty"`
 	Triggers *SpellTriggers `json:"triggers,omitempty"`
-	Templated map[string]interface{} `json:"templated,omitempty"`
+	// Localized effect text suitable for display. Numeric effect properties remain available separately.
+	Templated *string `json:"templated,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -61,9 +66,9 @@ func NewSpellEffectWithDefaults() *SpellEffect {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *SpellEffect) GetType() CombatReference {
+func (o *SpellEffect) GetType() string {
 	if o == nil || IsNil(o.Type) {
-		var ret CombatReference
+		var ret string
 		return ret
 	}
 	return *o.Type
@@ -71,7 +76,7 @@ func (o *SpellEffect) GetType() CombatReference {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SpellEffect) GetTypeOk() (*CombatReference, bool) {
+func (o *SpellEffect) GetTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -87,8 +92,8 @@ func (o *SpellEffect) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given CombatReference and assigns it to the Type field.
-func (o *SpellEffect) SetType(v CombatReference) {
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *SpellEffect) SetType(v string) {
 	o.Type = &v
 }
 
@@ -221,9 +226,9 @@ func (o *SpellEffect) SetDelay(v int32) {
 }
 
 // GetRandom returns the Random field value if set, zero value otherwise.
-func (o *SpellEffect) GetRandom() int32 {
+func (o *SpellEffect) GetRandom() float32 {
 	if o == nil || IsNil(o.Random) {
-		var ret int32
+		var ret float32
 		return ret
 	}
 	return *o.Random
@@ -231,7 +236,7 @@ func (o *SpellEffect) GetRandom() int32 {
 
 // GetRandomOk returns a tuple with the Random field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SpellEffect) GetRandomOk() (*int32, bool) {
+func (o *SpellEffect) GetRandomOk() (*float32, bool) {
 	if o == nil || IsNil(o.Random) {
 		return nil, false
 	}
@@ -247,8 +252,8 @@ func (o *SpellEffect) HasRandom() bool {
 	return false
 }
 
-// SetRandom gets a reference to the given int32 and assigns it to the Random field.
-func (o *SpellEffect) SetRandom(v int32) {
+// SetRandom gets a reference to the given float32 and assigns it to the Random field.
+func (o *SpellEffect) SetRandom(v float32) {
 	o.Random = &v
 }
 
@@ -573,19 +578,19 @@ func (o *SpellEffect) SetTriggers(v SpellTriggers) {
 }
 
 // GetTemplated returns the Templated field value if set, zero value otherwise.
-func (o *SpellEffect) GetTemplated() map[string]interface{} {
+func (o *SpellEffect) GetTemplated() string {
 	if o == nil || IsNil(o.Templated) {
-		var ret map[string]interface{}
+		var ret string
 		return ret
 	}
-	return o.Templated
+	return *o.Templated
 }
 
 // GetTemplatedOk returns a tuple with the Templated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SpellEffect) GetTemplatedOk() (map[string]interface{}, bool) {
+func (o *SpellEffect) GetTemplatedOk() (*string, bool) {
 	if o == nil || IsNil(o.Templated) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Templated, true
 }
@@ -599,9 +604,9 @@ func (o *SpellEffect) HasTemplated() bool {
 	return false
 }
 
-// SetTemplated gets a reference to the given map[string]interface{} and assigns it to the Templated field.
-func (o *SpellEffect) SetTemplated(v map[string]interface{}) {
-	o.Templated = v
+// SetTemplated gets a reference to the given string and assigns it to the Templated field.
+func (o *SpellEffect) SetTemplated(v string) {
+	o.Templated = &v
 }
 
 func (o SpellEffect) MarshalJSON() ([]byte, error) {

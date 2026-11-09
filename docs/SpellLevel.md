@@ -4,22 +4,26 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AnkamaId** | Pointer to **int32** |  | [optional] 
-**Grade** | Pointer to **int32** |  | [optional] 
-**ApCost** | Pointer to **int32** |  | [optional] 
-**MinRange** | Pointer to **int32** |  | [optional] 
-**MaxRange** | Pointer to **int32** |  | [optional] 
-**MaxCastPerTurn** | Pointer to **int32** |  | [optional] 
+**AnkamaId** | Pointer to **int32** | ID of the spell-level definition. Different from the parent spell ID and from the grade number. Used by explicit spell-level references such as script spell_level_ids. | [optional] 
+**Grade** | Pointer to **int32** | Number identifying this variant within its spell. Select by this value, not by the array position. Used by the spell detail endpoint&#39;s grade parameter. | [optional] 
+**ApCost** | Pointer to **int32** | Action points required to cast this spell grade. | [optional] 
+**CriticalHitProbability** | Pointer to **int32** | Base critical-hit percentage recorded for this spell grade, before fighter-specific modifiers. | [optional] 
+**MinPlayerLevel** | Pointer to **int32** | Player-level requirement recorded for this spell grade. This is not its grade number or a monster combat level. | [optional] 
+**MinRange** | Pointer to **int32** | Minimum casting range in combat cells. | [optional] 
+**MaxRange** | Pointer to **int32** | Maximum casting range in combat cells as defined by this grade. | [optional] 
+**MaxCastPerTurn** | Pointer to **int32** | Per-caster cast limit within a turn as recorded by the source. | [optional] 
 **MaxCastPerTarget** | Pointer to **int32** |  | [optional] 
 **MaxGlobalCastPerTurn** | Pointer to **int32** |  | [optional] 
 **MaxGlobalCastPerTarget** | Pointer to **int32** |  | [optional] 
-**MinCastInterval** | Pointer to **int32** |  | [optional] 
-**InitialCooldown** | Pointer to **int32** |  | [optional] 
+**MinCastInterval** | Pointer to **int32** | Minimum interval between casts, measured in fight turns. | [optional] 
+**InitialCooldown** | Pointer to **int32** | Initial wait before casting, measured in fight turns. | [optional] 
 **GlobalCooldown** | Pointer to **int32** |  | [optional] 
 **IgnorePrisonGlyph** | Pointer to **bool** |  | [optional] 
 **SpellBreed** | Pointer to **int32** |  | [optional] 
-**Effects** | Pointer to [**[]SpellEffect**](SpellEffect.md) |  | [optional] 
-**CriticalEffects** | Pointer to [**[]SpellEffect**](SpellEffect.md) |  | [optional] 
+**StatesCriterion** | Pointer to [**NullableEligibilityNode**](EligibilityNode.md) | Available client-side state requirements for this spell grade. Null does not assert that the server imposes no restriction. | [optional] 
+**PreviewZones** | Pointer to [**[]SpellPreviewZone**](SpellPreviewZone.md) | Client preview and activation geometry for this grade. Use each effect&#39;s zone for its actual effect-area definition. | [optional] 
+**Effects** | Pointer to [**[]SpellEffect**](SpellEffect.md) | Normal-cast effects for this grade. Each entry has independent targeting and area geometry. | [optional] 
+**CriticalEffects** | Pointer to [**[]SpellEffect**](SpellEffect.md) | Critical-cast effects for this grade. Keep separate from normal effects rather than applying both arrays to every cast. | [optional] 
 
 ## Methods
 
@@ -114,6 +118,56 @@ SetApCost sets ApCost field to given value.
 `func (o *SpellLevel) HasApCost() bool`
 
 HasApCost returns a boolean if a field has been set.
+
+### GetCriticalHitProbability
+
+`func (o *SpellLevel) GetCriticalHitProbability() int32`
+
+GetCriticalHitProbability returns the CriticalHitProbability field if non-nil, zero value otherwise.
+
+### GetCriticalHitProbabilityOk
+
+`func (o *SpellLevel) GetCriticalHitProbabilityOk() (*int32, bool)`
+
+GetCriticalHitProbabilityOk returns a tuple with the CriticalHitProbability field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCriticalHitProbability
+
+`func (o *SpellLevel) SetCriticalHitProbability(v int32)`
+
+SetCriticalHitProbability sets CriticalHitProbability field to given value.
+
+### HasCriticalHitProbability
+
+`func (o *SpellLevel) HasCriticalHitProbability() bool`
+
+HasCriticalHitProbability returns a boolean if a field has been set.
+
+### GetMinPlayerLevel
+
+`func (o *SpellLevel) GetMinPlayerLevel() int32`
+
+GetMinPlayerLevel returns the MinPlayerLevel field if non-nil, zero value otherwise.
+
+### GetMinPlayerLevelOk
+
+`func (o *SpellLevel) GetMinPlayerLevelOk() (*int32, bool)`
+
+GetMinPlayerLevelOk returns a tuple with the MinPlayerLevel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinPlayerLevel
+
+`func (o *SpellLevel) SetMinPlayerLevel(v int32)`
+
+SetMinPlayerLevel sets MinPlayerLevel field to given value.
+
+### HasMinPlayerLevel
+
+`func (o *SpellLevel) HasMinPlayerLevel() bool`
+
+HasMinPlayerLevel returns a boolean if a field has been set.
 
 ### GetMinRange
 
@@ -389,6 +443,66 @@ SetSpellBreed sets SpellBreed field to given value.
 `func (o *SpellLevel) HasSpellBreed() bool`
 
 HasSpellBreed returns a boolean if a field has been set.
+
+### GetStatesCriterion
+
+`func (o *SpellLevel) GetStatesCriterion() EligibilityNode`
+
+GetStatesCriterion returns the StatesCriterion field if non-nil, zero value otherwise.
+
+### GetStatesCriterionOk
+
+`func (o *SpellLevel) GetStatesCriterionOk() (*EligibilityNode, bool)`
+
+GetStatesCriterionOk returns a tuple with the StatesCriterion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatesCriterion
+
+`func (o *SpellLevel) SetStatesCriterion(v EligibilityNode)`
+
+SetStatesCriterion sets StatesCriterion field to given value.
+
+### HasStatesCriterion
+
+`func (o *SpellLevel) HasStatesCriterion() bool`
+
+HasStatesCriterion returns a boolean if a field has been set.
+
+### SetStatesCriterionNil
+
+`func (o *SpellLevel) SetStatesCriterionNil(b bool)`
+
+ SetStatesCriterionNil sets the value for StatesCriterion to be an explicit nil
+
+### UnsetStatesCriterion
+`func (o *SpellLevel) UnsetStatesCriterion()`
+
+UnsetStatesCriterion ensures that no value is present for StatesCriterion, not even an explicit nil
+### GetPreviewZones
+
+`func (o *SpellLevel) GetPreviewZones() []SpellPreviewZone`
+
+GetPreviewZones returns the PreviewZones field if non-nil, zero value otherwise.
+
+### GetPreviewZonesOk
+
+`func (o *SpellLevel) GetPreviewZonesOk() (*[]SpellPreviewZone, bool)`
+
+GetPreviewZonesOk returns a tuple with the PreviewZones field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreviewZones
+
+`func (o *SpellLevel) SetPreviewZones(v []SpellPreviewZone)`
+
+SetPreviewZones sets PreviewZones field to given value.
+
+### HasPreviewZones
+
+`func (o *SpellLevel) HasPreviewZones() bool`
+
+HasPreviewZones returns a boolean if a field has been set.
 
 ### GetEffects
 

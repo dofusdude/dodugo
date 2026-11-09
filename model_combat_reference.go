@@ -18,7 +18,7 @@ import (
 // checks if the CombatReference type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CombatReference{}
 
-// CombatReference A resolved game reference used by selectors, conditions, and triggers.
+// CombatReference A compact resolved reference, not a complete resource. Interpret the ID in the context of the containing field. IDs in different resource types can have the same numeric value without referring to the same entity.
 type CombatReference struct {
 	AnkamaId *int32 `json:"ankama_id,omitempty"`
 	Name *string `json:"name,omitempty"`

@@ -153,7 +153,7 @@ type ApiGetAlmanaxRangeRequest struct {
 	level *int32
 }
 
-// ids from meta/{language}/almanax/bonuses
+// Optional bonus ID from meta/{language}/almanax/bonuses. Restricts the selected date range and can produce no results when that bonus does not occur in the range.
 func (r ApiGetAlmanaxRangeRequest) FilterBonusType(filterBonusType string) ApiGetAlmanaxRangeRequest {
 	r.filterBonusType = &filterBonusType
 	return r

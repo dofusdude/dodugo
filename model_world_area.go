@@ -19,10 +19,20 @@ import (
 // checks if the WorldArea type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &WorldArea{}
 
-// WorldArea struct for WorldArea
+// WorldArea Geographic data from a super-area, area or subarea endpoint. The hierarchy is super-area to area to subarea to map. Field availability depends on the selected geographic resource. Unrelated to combat-cell effect zones.
 type WorldArea struct {
 	AnkamaId int32 `json:"ankama_id"`
 	Name string `json:"name"`
+	// World-map context supplied on super-area records.
+	WorldMapId *int32 `json:"world_map_id,omitempty"`
+	// Child area references supplied on super-area records.
+	Areas []CombatReference `json:"areas,omitempty"`
+	// Suggested geographic difficulty level supplied on subarea records. Not a monster grade or the level of every monster there.
+	Level *int32 `json:"level,omitempty"`
+	// Dungeon association when supplied by the subarea data.
+	DungeonId *int32 `json:"dungeon_id,omitempty"`
+	// Map membership supplied on subarea records. Does not imply a spawn on every map.
+	Maps []WorldMapReference `json:"maps,omitempty"`
 	SuperArea *CombatReference `json:"super_area,omitempty"`
 	Area *CombatReference `json:"area,omitempty"`
 	Subareas []CombatReference `json:"subareas,omitempty"`
@@ -97,6 +107,166 @@ func (o *WorldArea) GetNameOk() (*string, bool) {
 // SetName sets field value
 func (o *WorldArea) SetName(v string) {
 	o.Name = v
+}
+
+// GetWorldMapId returns the WorldMapId field value if set, zero value otherwise.
+func (o *WorldArea) GetWorldMapId() int32 {
+	if o == nil || IsNil(o.WorldMapId) {
+		var ret int32
+		return ret
+	}
+	return *o.WorldMapId
+}
+
+// GetWorldMapIdOk returns a tuple with the WorldMapId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WorldArea) GetWorldMapIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.WorldMapId) {
+		return nil, false
+	}
+	return o.WorldMapId, true
+}
+
+// HasWorldMapId returns a boolean if a field has been set.
+func (o *WorldArea) HasWorldMapId() bool {
+	if o != nil && !IsNil(o.WorldMapId) {
+		return true
+	}
+
+	return false
+}
+
+// SetWorldMapId gets a reference to the given int32 and assigns it to the WorldMapId field.
+func (o *WorldArea) SetWorldMapId(v int32) {
+	o.WorldMapId = &v
+}
+
+// GetAreas returns the Areas field value if set, zero value otherwise.
+func (o *WorldArea) GetAreas() []CombatReference {
+	if o == nil || IsNil(o.Areas) {
+		var ret []CombatReference
+		return ret
+	}
+	return o.Areas
+}
+
+// GetAreasOk returns a tuple with the Areas field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WorldArea) GetAreasOk() ([]CombatReference, bool) {
+	if o == nil || IsNil(o.Areas) {
+		return nil, false
+	}
+	return o.Areas, true
+}
+
+// HasAreas returns a boolean if a field has been set.
+func (o *WorldArea) HasAreas() bool {
+	if o != nil && !IsNil(o.Areas) {
+		return true
+	}
+
+	return false
+}
+
+// SetAreas gets a reference to the given []CombatReference and assigns it to the Areas field.
+func (o *WorldArea) SetAreas(v []CombatReference) {
+	o.Areas = v
+}
+
+// GetLevel returns the Level field value if set, zero value otherwise.
+func (o *WorldArea) GetLevel() int32 {
+	if o == nil || IsNil(o.Level) {
+		var ret int32
+		return ret
+	}
+	return *o.Level
+}
+
+// GetLevelOk returns a tuple with the Level field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WorldArea) GetLevelOk() (*int32, bool) {
+	if o == nil || IsNil(o.Level) {
+		return nil, false
+	}
+	return o.Level, true
+}
+
+// HasLevel returns a boolean if a field has been set.
+func (o *WorldArea) HasLevel() bool {
+	if o != nil && !IsNil(o.Level) {
+		return true
+	}
+
+	return false
+}
+
+// SetLevel gets a reference to the given int32 and assigns it to the Level field.
+func (o *WorldArea) SetLevel(v int32) {
+	o.Level = &v
+}
+
+// GetDungeonId returns the DungeonId field value if set, zero value otherwise.
+func (o *WorldArea) GetDungeonId() int32 {
+	if o == nil || IsNil(o.DungeonId) {
+		var ret int32
+		return ret
+	}
+	return *o.DungeonId
+}
+
+// GetDungeonIdOk returns a tuple with the DungeonId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WorldArea) GetDungeonIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.DungeonId) {
+		return nil, false
+	}
+	return o.DungeonId, true
+}
+
+// HasDungeonId returns a boolean if a field has been set.
+func (o *WorldArea) HasDungeonId() bool {
+	if o != nil && !IsNil(o.DungeonId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDungeonId gets a reference to the given int32 and assigns it to the DungeonId field.
+func (o *WorldArea) SetDungeonId(v int32) {
+	o.DungeonId = &v
+}
+
+// GetMaps returns the Maps field value if set, zero value otherwise.
+func (o *WorldArea) GetMaps() []WorldMapReference {
+	if o == nil || IsNil(o.Maps) {
+		var ret []WorldMapReference
+		return ret
+	}
+	return o.Maps
+}
+
+// GetMapsOk returns a tuple with the Maps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WorldArea) GetMapsOk() ([]WorldMapReference, bool) {
+	if o == nil || IsNil(o.Maps) {
+		return nil, false
+	}
+	return o.Maps, true
+}
+
+// HasMaps returns a boolean if a field has been set.
+func (o *WorldArea) HasMaps() bool {
+	if o != nil && !IsNil(o.Maps) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaps gets a reference to the given []WorldMapReference and assigns it to the Maps field.
+func (o *WorldArea) SetMaps(v []WorldMapReference) {
+	o.Maps = v
 }
 
 // GetSuperArea returns the SuperArea field value if set, zero value otherwise.
@@ -239,6 +409,21 @@ func (o WorldArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ankama_id"] = o.AnkamaId
 	toSerialize["name"] = o.Name
+	if !IsNil(o.WorldMapId) {
+		toSerialize["world_map_id"] = o.WorldMapId
+	}
+	if !IsNil(o.Areas) {
+		toSerialize["areas"] = o.Areas
+	}
+	if !IsNil(o.Level) {
+		toSerialize["level"] = o.Level
+	}
+	if !IsNil(o.DungeonId) {
+		toSerialize["dungeon_id"] = o.DungeonId
+	}
+	if !IsNil(o.Maps) {
+		toSerialize["maps"] = o.Maps
+	}
 	if !IsNil(o.SuperArea) {
 		toSerialize["super_area"] = o.SuperArea
 	}
@@ -297,6 +482,11 @@ func (o *WorldArea) UnmarshalJSON(data []byte) (err error) {
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "ankama_id")
 		delete(additionalProperties, "name")
+		delete(additionalProperties, "world_map_id")
+		delete(additionalProperties, "areas")
+		delete(additionalProperties, "level")
+		delete(additionalProperties, "dungeon_id")
+		delete(additionalProperties, "maps")
 		delete(additionalProperties, "super_area")
 		delete(additionalProperties, "area")
 		delete(additionalProperties, "subareas")

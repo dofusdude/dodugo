@@ -17,7 +17,7 @@ import (
 	"gopkg.in/validator.v2"
 )
 
-// ConditionNode - struct for ConditionNode
+// ConditionNode - Client-side requirement tree. Leaf nodes contain one condition and relation nodes combine children with and or or. Preserves grouping. Not an authoritative server eligibility decision.
 type ConditionNode struct {
 	ConditionLeaf *ConditionLeaf
 	ConditionRelation *ConditionRelation

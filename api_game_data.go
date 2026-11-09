@@ -1500,7 +1500,7 @@ type ApiGetSpellByIdRequest struct {
 	grade *int32
 }
 
-// Return only the requested mapped spell grade in &#x60;levels&#x60;.
+// Select the spell variant identified by its explicit grade number, not its spell-level record ID or a player level. Returns the spell object with only that grade in levels. An unavailable grade returns 404.
 func (r ApiGetSpellByIdRequest) Grade(grade int32) ApiGetSpellByIdRequest {
 	r.grade = &grade
 	return r

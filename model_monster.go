@@ -25,9 +25,9 @@ type Monster struct {
 	Name string `json:"name"`
 	ImageUrls *Images `json:"image_urls,omitempty"`
 	Race MonsterRace `json:"race"`
-	// Monster statistics and spells grouped by the monster grade that uses them.
+	// Variants of this monster. Each has its own combat level, statistics and assigned spells. The monster grade number is not a spell grade number or combat level.
 	Grades []MonsterGrade `json:"grades"`
-	// Spawn subareas taken from the monster's authoritative subarea list.
+	// Known spawn subareas and their geographic parents. This is not live population data or a per-map spawn probability. Maps listed within a subarea are not guaranteed individual spawn points.
 	SpawnLocations []MonsterSpawnLocation `json:"spawn_locations"`
 	Drops []MonsterDrop `json:"drops"`
 	GlobalDrops []MonsterGlobalDrop `json:"global_drops,omitempty"`

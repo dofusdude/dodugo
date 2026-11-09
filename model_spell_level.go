@@ -18,23 +18,41 @@ import (
 // checks if the SpellLevel type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SpellLevel{}
 
-// SpellLevel struct for SpellLevel
+// SpellLevel One grade of a spell. The levels array contains these spell variants, not player levels. Grade numbers are local to the containing spell and are independent of monster grades.
 type SpellLevel struct {
+	// ID of the spell-level definition. Different from the parent spell ID and from the grade number. Used by explicit spell-level references such as script spell_level_ids.
 	AnkamaId *int32 `json:"ankama_id,omitempty"`
+	// Number identifying this variant within its spell. Select by this value, not by the array position. Used by the spell detail endpoint's grade parameter.
 	Grade *int32 `json:"grade,omitempty"`
+	// Action points required to cast this spell grade.
 	ApCost *int32 `json:"ap_cost,omitempty"`
+	// Base critical-hit percentage recorded for this spell grade, before fighter-specific modifiers.
+	CriticalHitProbability *int32 `json:"critical_hit_probability,omitempty"`
+	// Player-level requirement recorded for this spell grade. This is not its grade number or a monster combat level.
+	MinPlayerLevel *int32 `json:"min_player_level,omitempty"`
+	// Minimum casting range in combat cells.
 	MinRange *int32 `json:"min_range,omitempty"`
+	// Maximum casting range in combat cells as defined by this grade.
 	MaxRange *int32 `json:"max_range,omitempty"`
+	// Per-caster cast limit within a turn as recorded by the source.
 	MaxCastPerTurn *int32 `json:"max_cast_per_turn,omitempty"`
 	MaxCastPerTarget *int32 `json:"max_cast_per_target,omitempty"`
 	MaxGlobalCastPerTurn *int32 `json:"max_global_cast_per_turn,omitempty"`
 	MaxGlobalCastPerTarget *int32 `json:"max_global_cast_per_target,omitempty"`
+	// Minimum interval between casts, measured in fight turns.
 	MinCastInterval *int32 `json:"min_cast_interval,omitempty"`
+	// Initial wait before casting, measured in fight turns.
 	InitialCooldown *int32 `json:"initial_cooldown,omitempty"`
 	GlobalCooldown *int32 `json:"global_cooldown,omitempty"`
 	IgnorePrisonGlyph *bool `json:"ignore_prison_glyph,omitempty"`
 	SpellBreed *int32 `json:"spell_breed,omitempty"`
+	// Available client-side state requirements for this spell grade. Null does not assert that the server imposes no restriction.
+	StatesCriterion NullableEligibilityNode `json:"states_criterion,omitempty"`
+	// Client preview and activation geometry for this grade. Use each effect's zone for its actual effect-area definition.
+	PreviewZones []SpellPreviewZone `json:"preview_zones,omitempty"`
+	// Normal-cast effects for this grade. Each entry has independent targeting and area geometry.
 	Effects []SpellEffect `json:"effects,omitempty"`
+	// Critical-cast effects for this grade. Keep separate from normal effects rather than applying both arrays to every cast.
 	CriticalEffects []SpellEffect `json:"critical_effects,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -152,6 +170,70 @@ func (o *SpellLevel) HasApCost() bool {
 // SetApCost gets a reference to the given int32 and assigns it to the ApCost field.
 func (o *SpellLevel) SetApCost(v int32) {
 	o.ApCost = &v
+}
+
+// GetCriticalHitProbability returns the CriticalHitProbability field value if set, zero value otherwise.
+func (o *SpellLevel) GetCriticalHitProbability() int32 {
+	if o == nil || IsNil(o.CriticalHitProbability) {
+		var ret int32
+		return ret
+	}
+	return *o.CriticalHitProbability
+}
+
+// GetCriticalHitProbabilityOk returns a tuple with the CriticalHitProbability field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpellLevel) GetCriticalHitProbabilityOk() (*int32, bool) {
+	if o == nil || IsNil(o.CriticalHitProbability) {
+		return nil, false
+	}
+	return o.CriticalHitProbability, true
+}
+
+// HasCriticalHitProbability returns a boolean if a field has been set.
+func (o *SpellLevel) HasCriticalHitProbability() bool {
+	if o != nil && !IsNil(o.CriticalHitProbability) {
+		return true
+	}
+
+	return false
+}
+
+// SetCriticalHitProbability gets a reference to the given int32 and assigns it to the CriticalHitProbability field.
+func (o *SpellLevel) SetCriticalHitProbability(v int32) {
+	o.CriticalHitProbability = &v
+}
+
+// GetMinPlayerLevel returns the MinPlayerLevel field value if set, zero value otherwise.
+func (o *SpellLevel) GetMinPlayerLevel() int32 {
+	if o == nil || IsNil(o.MinPlayerLevel) {
+		var ret int32
+		return ret
+	}
+	return *o.MinPlayerLevel
+}
+
+// GetMinPlayerLevelOk returns a tuple with the MinPlayerLevel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpellLevel) GetMinPlayerLevelOk() (*int32, bool) {
+	if o == nil || IsNil(o.MinPlayerLevel) {
+		return nil, false
+	}
+	return o.MinPlayerLevel, true
+}
+
+// HasMinPlayerLevel returns a boolean if a field has been set.
+func (o *SpellLevel) HasMinPlayerLevel() bool {
+	if o != nil && !IsNil(o.MinPlayerLevel) {
+		return true
+	}
+
+	return false
+}
+
+// SetMinPlayerLevel gets a reference to the given int32 and assigns it to the MinPlayerLevel field.
+func (o *SpellLevel) SetMinPlayerLevel(v int32) {
+	o.MinPlayerLevel = &v
 }
 
 // GetMinRange returns the MinRange field value if set, zero value otherwise.
@@ -506,6 +588,80 @@ func (o *SpellLevel) SetSpellBreed(v int32) {
 	o.SpellBreed = &v
 }
 
+// GetStatesCriterion returns the StatesCriterion field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SpellLevel) GetStatesCriterion() EligibilityNode {
+	if o == nil || IsNil(o.StatesCriterion.Get()) {
+		var ret EligibilityNode
+		return ret
+	}
+	return *o.StatesCriterion.Get()
+}
+
+// GetStatesCriterionOk returns a tuple with the StatesCriterion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SpellLevel) GetStatesCriterionOk() (*EligibilityNode, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.StatesCriterion.Get(), o.StatesCriterion.IsSet()
+}
+
+// HasStatesCriterion returns a boolean if a field has been set.
+func (o *SpellLevel) HasStatesCriterion() bool {
+	if o != nil && o.StatesCriterion.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetStatesCriterion gets a reference to the given NullableEligibilityNode and assigns it to the StatesCriterion field.
+func (o *SpellLevel) SetStatesCriterion(v EligibilityNode) {
+	o.StatesCriterion.Set(&v)
+}
+// SetStatesCriterionNil sets the value for StatesCriterion to be an explicit nil
+func (o *SpellLevel) SetStatesCriterionNil() {
+	o.StatesCriterion.Set(nil)
+}
+
+// UnsetStatesCriterion ensures that no value is present for StatesCriterion, not even an explicit nil
+func (o *SpellLevel) UnsetStatesCriterion() {
+	o.StatesCriterion.Unset()
+}
+
+// GetPreviewZones returns the PreviewZones field value if set, zero value otherwise.
+func (o *SpellLevel) GetPreviewZones() []SpellPreviewZone {
+	if o == nil || IsNil(o.PreviewZones) {
+		var ret []SpellPreviewZone
+		return ret
+	}
+	return o.PreviewZones
+}
+
+// GetPreviewZonesOk returns a tuple with the PreviewZones field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpellLevel) GetPreviewZonesOk() ([]SpellPreviewZone, bool) {
+	if o == nil || IsNil(o.PreviewZones) {
+		return nil, false
+	}
+	return o.PreviewZones, true
+}
+
+// HasPreviewZones returns a boolean if a field has been set.
+func (o *SpellLevel) HasPreviewZones() bool {
+	if o != nil && !IsNil(o.PreviewZones) {
+		return true
+	}
+
+	return false
+}
+
+// SetPreviewZones gets a reference to the given []SpellPreviewZone and assigns it to the PreviewZones field.
+func (o *SpellLevel) SetPreviewZones(v []SpellPreviewZone) {
+	o.PreviewZones = v
+}
+
 // GetEffects returns the Effects field value if set, zero value otherwise.
 func (o *SpellLevel) GetEffects() []SpellEffect {
 	if o == nil || IsNil(o.Effects) {
@@ -589,6 +745,12 @@ func (o SpellLevel) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApCost) {
 		toSerialize["ap_cost"] = o.ApCost
 	}
+	if !IsNil(o.CriticalHitProbability) {
+		toSerialize["critical_hit_probability"] = o.CriticalHitProbability
+	}
+	if !IsNil(o.MinPlayerLevel) {
+		toSerialize["min_player_level"] = o.MinPlayerLevel
+	}
 	if !IsNil(o.MinRange) {
 		toSerialize["min_range"] = o.MinRange
 	}
@@ -622,6 +784,12 @@ func (o SpellLevel) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SpellBreed) {
 		toSerialize["spell_breed"] = o.SpellBreed
 	}
+	if o.StatesCriterion.IsSet() {
+		toSerialize["states_criterion"] = o.StatesCriterion.Get()
+	}
+	if !IsNil(o.PreviewZones) {
+		toSerialize["preview_zones"] = o.PreviewZones
+	}
 	if !IsNil(o.Effects) {
 		toSerialize["effects"] = o.Effects
 	}
@@ -653,6 +821,8 @@ func (o *SpellLevel) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "ankama_id")
 		delete(additionalProperties, "grade")
 		delete(additionalProperties, "ap_cost")
+		delete(additionalProperties, "critical_hit_probability")
+		delete(additionalProperties, "min_player_level")
 		delete(additionalProperties, "min_range")
 		delete(additionalProperties, "max_range")
 		delete(additionalProperties, "max_cast_per_turn")
@@ -664,6 +834,8 @@ func (o *SpellLevel) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "global_cooldown")
 		delete(additionalProperties, "ignore_prison_glyph")
 		delete(additionalProperties, "spell_breed")
+		delete(additionalProperties, "states_criterion")
+		delete(additionalProperties, "preview_zones")
 		delete(additionalProperties, "effects")
 		delete(additionalProperties, "critical_effects")
 		o.AdditionalProperties = additionalProperties

@@ -7,6 +7,11 @@ Name | Type | Description | Notes
 **AnkamaId** | **int32** |  | 
 **Name** | **string** |  | 
 **ImageUrls** | Pointer to [**Images**](Images.md) |  | [optional] 
+**WorldMapId** | Pointer to **int32** | World-map context supplied on super-area records. | [optional] 
+**Areas** | Pointer to [**[]CombatReference**](CombatReference.md) | Child area references supplied on super-area records. | [optional] 
+**Level** | Pointer to **int32** | Suggested geographic difficulty level supplied on subarea records. Not a monster grade or the level of every monster there. | [optional] 
+**DungeonId** | Pointer to **int32** | Dungeon association when supplied by the subarea data. | [optional] 
+**Maps** | Pointer to [**[]WorldMapReference**](WorldMapReference.md) | Map membership supplied on subarea records. Does not imply a spawn on every map. | [optional] 
 **SuperArea** | Pointer to [**CombatReference**](CombatReference.md) |  | [optional] 
 **Area** | Pointer to [**CombatReference**](CombatReference.md) |  | [optional] 
 **Subareas** | Pointer to [**[]CombatReference**](CombatReference.md) |  | [optional] 
@@ -95,6 +100,131 @@ SetImageUrls sets ImageUrls field to given value.
 `func (o *MappedEntityCollectionSuperAreasInner) HasImageUrls() bool`
 
 HasImageUrls returns a boolean if a field has been set.
+
+### GetWorldMapId
+
+`func (o *MappedEntityCollectionSuperAreasInner) GetWorldMapId() int32`
+
+GetWorldMapId returns the WorldMapId field if non-nil, zero value otherwise.
+
+### GetWorldMapIdOk
+
+`func (o *MappedEntityCollectionSuperAreasInner) GetWorldMapIdOk() (*int32, bool)`
+
+GetWorldMapIdOk returns a tuple with the WorldMapId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorldMapId
+
+`func (o *MappedEntityCollectionSuperAreasInner) SetWorldMapId(v int32)`
+
+SetWorldMapId sets WorldMapId field to given value.
+
+### HasWorldMapId
+
+`func (o *MappedEntityCollectionSuperAreasInner) HasWorldMapId() bool`
+
+HasWorldMapId returns a boolean if a field has been set.
+
+### GetAreas
+
+`func (o *MappedEntityCollectionSuperAreasInner) GetAreas() []CombatReference`
+
+GetAreas returns the Areas field if non-nil, zero value otherwise.
+
+### GetAreasOk
+
+`func (o *MappedEntityCollectionSuperAreasInner) GetAreasOk() (*[]CombatReference, bool)`
+
+GetAreasOk returns a tuple with the Areas field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAreas
+
+`func (o *MappedEntityCollectionSuperAreasInner) SetAreas(v []CombatReference)`
+
+SetAreas sets Areas field to given value.
+
+### HasAreas
+
+`func (o *MappedEntityCollectionSuperAreasInner) HasAreas() bool`
+
+HasAreas returns a boolean if a field has been set.
+
+### GetLevel
+
+`func (o *MappedEntityCollectionSuperAreasInner) GetLevel() int32`
+
+GetLevel returns the Level field if non-nil, zero value otherwise.
+
+### GetLevelOk
+
+`func (o *MappedEntityCollectionSuperAreasInner) GetLevelOk() (*int32, bool)`
+
+GetLevelOk returns a tuple with the Level field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLevel
+
+`func (o *MappedEntityCollectionSuperAreasInner) SetLevel(v int32)`
+
+SetLevel sets Level field to given value.
+
+### HasLevel
+
+`func (o *MappedEntityCollectionSuperAreasInner) HasLevel() bool`
+
+HasLevel returns a boolean if a field has been set.
+
+### GetDungeonId
+
+`func (o *MappedEntityCollectionSuperAreasInner) GetDungeonId() int32`
+
+GetDungeonId returns the DungeonId field if non-nil, zero value otherwise.
+
+### GetDungeonIdOk
+
+`func (o *MappedEntityCollectionSuperAreasInner) GetDungeonIdOk() (*int32, bool)`
+
+GetDungeonIdOk returns a tuple with the DungeonId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDungeonId
+
+`func (o *MappedEntityCollectionSuperAreasInner) SetDungeonId(v int32)`
+
+SetDungeonId sets DungeonId field to given value.
+
+### HasDungeonId
+
+`func (o *MappedEntityCollectionSuperAreasInner) HasDungeonId() bool`
+
+HasDungeonId returns a boolean if a field has been set.
+
+### GetMaps
+
+`func (o *MappedEntityCollectionSuperAreasInner) GetMaps() []WorldMapReference`
+
+GetMaps returns the Maps field if non-nil, zero value otherwise.
+
+### GetMapsOk
+
+`func (o *MappedEntityCollectionSuperAreasInner) GetMapsOk() (*[]WorldMapReference, bool)`
+
+GetMapsOk returns a tuple with the Maps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaps
+
+`func (o *MappedEntityCollectionSuperAreasInner) SetMaps(v []WorldMapReference)`
+
+SetMaps sets Maps field to given value.
+
+### HasMaps
+
+`func (o *MappedEntityCollectionSuperAreasInner) HasMaps() bool`
+
+HasMaps returns a boolean if a field has been set.
 
 ### GetSuperArea
 

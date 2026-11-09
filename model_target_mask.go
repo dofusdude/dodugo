@@ -20,7 +20,7 @@ import (
 // checks if the TargetMask type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TargetMask{}
 
-// TargetMask struct for TargetMask
+// TargetMask Determines who an effect may affect. Combine the resolved selectors and conditions using logic. This is distinct from the zone geometry and from the event that triggers the effect.
 type TargetMask struct {
 	// Original game mask retained for lossless debugging.
 	Raw string `json:"raw"`

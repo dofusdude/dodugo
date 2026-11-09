@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Condition** | Pointer to **map[string]interface{}** |  | [optional] 
 **TargetsAffectedConcurrently** | Pointer to **bool** |  | [optional] 
 **TargetTreatedAsCaster** | Pointer to **bool** |  | [optional] 
-**SpellLevelIds** | Pointer to **[]int32** |  | [optional] 
+**SpellLevelIds** | Pointer to **[]int32** | Spell-level definition IDs to which this script binding applies. Match SpellLevel.ankama_id, not Spell.ankama_id or SpellLevel.grade. | [optional] 
 
 ## Methods
 

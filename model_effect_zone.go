@@ -20,7 +20,7 @@ import (
 // checks if the EffectZone type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &EffectZone{}
 
-// EffectZone struct for EffectZone
+// EffectZone Combat-cell area for this effect or activation context, not a geographic world area. Shape, size and inner size describe geometry. Actual affected cells can depend on position, direction and fight state. Each spell effect can have a different zone.
 type EffectZone struct {
 	// Original compact zone encoding when the source provides one.
 	Raw *string `json:"raw,omitempty"`
@@ -29,6 +29,7 @@ type EffectZone struct {
 	Size NullableInt32 `json:"size,omitempty"`
 	// Effective inner size for hollow or minimum-size shapes. Omitted when the shape has no inner boundary.
 	MinSize NullableInt32 `json:"min_size,omitempty"`
+	// Explicit cells for a custom-cell shape. An empty array is normal for geometric shapes such as circles and does not mean the zone affects no cells.
 	CellIds []int32 `json:"cell_ids"`
 	DamageDecreaseStepPercent *int32 `json:"damage_decrease_step_percent,omitempty"`
 	MaxDamageDecreaseApplyCount *int32 `json:"max_damage_decrease_apply_count,omitempty"`

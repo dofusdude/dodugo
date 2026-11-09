@@ -20,13 +20,14 @@ import (
 // checks if the MonsterSpawnLocation type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MonsterSpawnLocation{}
 
-// MonsterSpawnLocation struct for MonsterSpawnLocation
+// MonsterSpawnLocation Known spawn subarea with its parent area, super-area and map membership. Does not assert a spawn on each listed map and does not include spawn probabilities.
 type MonsterSpawnLocation struct {
 	Subarea CombatReference `json:"subarea"`
 	Area CombatReference `json:"area"`
 	SuperArea CombatReference `json:"super_area"`
+	// Maps belonging to the referenced subarea. Map membership alone is not proof that the monster spawns on a particular map.
 	SubareaMaps []MonsterSpawnLocationSubareaMapsInner `json:"subarea_maps"`
-	// Whether the game marks this as the monster's preferred subarea.
+	// Whether the source marks this as a preferred subarea. A preference flag, not a spawn percentage or guarantee of presence.
 	Preferred bool `json:"preferred"`
 }
 

@@ -108,7 +108,7 @@ import (
 
 func main() {
 	language := "fr" // string | code
-	filterBonusType := "experience-points" // string | ids from meta/{language}/almanax/bonuses (optional)
+	filterBonusType := "filterBonusType_example" // string | Optional bonus ID from meta/{language}/almanax/bonuses. Restricts the selected date range and can produce no results when that bonus does not occur in the range. (optional)
 	rangeFrom := time.Now() // string | yyyy-mm-dd (optional)
 	rangeTo := time.Now() // string | yyyy-mm-dd (optional)
 	rangeSize := int32(-1) // int32 | Size of the returned range. Disable to fully use the range by setting size to -1. (optional)
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGetAlmanaxRangeRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **filterBonusType** | **string** | ids from meta/{language}/almanax/bonuses | 
+ **filterBonusType** | **string** | Optional bonus ID from meta/{language}/almanax/bonuses. Restricts the selected date range and can produce no results when that bonus does not occur in the range. | 
  **rangeFrom** | **string** | yyyy-mm-dd | 
  **rangeTo** | **string** | yyyy-mm-dd | 
  **rangeSize** | **int32** | Size of the returned range. Disable to fully use the range by setting size to -1. | 

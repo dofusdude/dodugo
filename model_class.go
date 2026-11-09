@@ -33,7 +33,7 @@ type Class struct {
 	CharacteristicCosts *map[string][]ClassCharacteristicCostsValueInner `json:"characteristic_costs,omitempty"`
 	ImageUrls *Images `json:"image_urls,omitempty"`
 	Looks ClassLooks `json:"looks"`
-	// Fully mapped class spells, including levels, effects, targeting, and zones.
+	// Full spell definitions assigned to this playable class, including their own grades, effects and targeting. A class has no monster-grade dimension. The same spells are independently available from the spells endpoint.
 	Spells []Spell `json:"spells"`
 	AdditionalProperties map[string]interface{}
 }

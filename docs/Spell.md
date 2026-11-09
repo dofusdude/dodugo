@@ -11,10 +11,11 @@ Name | Type | Description | Notes
 **AdminName** | Pointer to **string** |  | [optional] 
 **Order** | Pointer to **int32** |  | [optional] 
 **ImageUrls** | Pointer to [**Images**](Images.md) |  | [optional] 
-**Type** | Pointer to [**CombatReference**](CombatReference.md) |  | [optional] 
-**Classes** | Pointer to [**[]CombatReference**](CombatReference.md) |  | [optional] 
-**Monsters** | Pointer to [**[]CombatReference**](CombatReference.md) |  | [optional] 
-**Levels** | [**[]SpellLevel**](SpellLevel.md) |  | 
+**Type** | Pointer to [**SpellType**](SpellType.md) |  | [optional] 
+**BasePreviewZone** | Pointer to [**EffectZone**](EffectZone.md) |  | [optional] 
+**Classes** | Pointer to [**[]CombatReference**](CombatReference.md) | Reverse references to playable classes associated with this spell. These are compact references, not complete class documents. | [optional] 
+**Monsters** | Pointer to [**[]CombatReference**](CombatReference.md) | Reverse references to monsters associated with this spell. Use a monster&#39;s grade-specific assignments to determine which spell grade it uses. | [optional] 
+**Levels** | [**[]SpellLevel**](SpellLevel.md) | Available spell grades. Despite the field name, entries are not player levels. A grade-filtered detail response contains only the requested entry while retaining the parent spell object. | 
 **Scripts** | Pointer to [**[]SpellScriptUsage**](SpellScriptUsage.md) |  | [optional] 
 **CriticalScripts** | Pointer to [**[]SpellScriptUsage**](SpellScriptUsage.md) |  | [optional] 
 
@@ -204,20 +205,20 @@ HasImageUrls returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *Spell) GetType() CombatReference`
+`func (o *Spell) GetType() SpellType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *Spell) GetTypeOk() (*CombatReference, bool)`
+`func (o *Spell) GetTypeOk() (*SpellType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *Spell) SetType(v CombatReference)`
+`func (o *Spell) SetType(v SpellType)`
 
 SetType sets Type field to given value.
 
@@ -226,6 +227,31 @@ SetType sets Type field to given value.
 `func (o *Spell) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetBasePreviewZone
+
+`func (o *Spell) GetBasePreviewZone() EffectZone`
+
+GetBasePreviewZone returns the BasePreviewZone field if non-nil, zero value otherwise.
+
+### GetBasePreviewZoneOk
+
+`func (o *Spell) GetBasePreviewZoneOk() (*EffectZone, bool)`
+
+GetBasePreviewZoneOk returns a tuple with the BasePreviewZone field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBasePreviewZone
+
+`func (o *Spell) SetBasePreviewZone(v EffectZone)`
+
+SetBasePreviewZone sets BasePreviewZone field to given value.
+
+### HasBasePreviewZone
+
+`func (o *Spell) HasBasePreviewZone() bool`
+
+HasBasePreviewZone returns a boolean if a field has been set.
 
 ### GetClasses
 

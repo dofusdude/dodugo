@@ -20,7 +20,7 @@ import (
 // checks if the MonsterRace type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MonsterRace{}
 
-// MonsterRace struct for MonsterRace
+// MonsterRace Monster taxonomy. Race is the monster's family and super_race is the broader grouping. Neither is a playable class or a monster grade.
 type MonsterRace struct {
 	AnkamaId int32 `json:"ankama_id"`
 	Name string `json:"name"`

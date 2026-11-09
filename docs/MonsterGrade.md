@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Grade** | **int32** |  | 
-**Level** | **int32** |  | 
+**Grade** | **int32** | Number identifying this variant within the monster. Not the combat level, array position or grade of an assigned spell. | 
+**Level** | **int32** | Combat level of this monster variant. Distinct from its grade number. | 
 **LifePoints** | Pointer to **int32** |  | [optional] 
 **ActionPoints** | Pointer to **int32** |  | [optional] 
 **MovementPoints** | Pointer to **int32** |  | [optional] 

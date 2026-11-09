@@ -28,9 +28,13 @@ type Spell struct {
 	AdminName *string `json:"admin_name,omitempty"`
 	Order *int32 `json:"order,omitempty"`
 	ImageUrls *Images `json:"image_urls,omitempty"`
-	Type *CombatReference `json:"type,omitempty"`
+	Type *SpellType `json:"type,omitempty"`
+	BasePreviewZone *EffectZone `json:"base_preview_zone,omitempty"`
+	// Reverse references to playable classes associated with this spell. These are compact references, not complete class documents.
 	Classes []CombatReference `json:"classes,omitempty"`
+	// Reverse references to monsters associated with this spell. Use a monster's grade-specific assignments to determine which spell grade it uses.
 	Monsters []CombatReference `json:"monsters,omitempty"`
+	// Available spell grades. Despite the field name, entries are not player levels. A grade-filtered detail response contains only the requested entry while retaining the parent spell object.
 	Levels []SpellLevel `json:"levels"`
 	Scripts []SpellScriptUsage `json:"scripts,omitempty"`
 	CriticalScripts []SpellScriptUsage `json:"critical_scripts,omitempty"`
@@ -268,9 +272,9 @@ func (o *Spell) SetImageUrls(v Images) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *Spell) GetType() CombatReference {
+func (o *Spell) GetType() SpellType {
 	if o == nil || IsNil(o.Type) {
-		var ret CombatReference
+		var ret SpellType
 		return ret
 	}
 	return *o.Type
@@ -278,7 +282,7 @@ func (o *Spell) GetType() CombatReference {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Spell) GetTypeOk() (*CombatReference, bool) {
+func (o *Spell) GetTypeOk() (*SpellType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -294,9 +298,41 @@ func (o *Spell) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given CombatReference and assigns it to the Type field.
-func (o *Spell) SetType(v CombatReference) {
+// SetType gets a reference to the given SpellType and assigns it to the Type field.
+func (o *Spell) SetType(v SpellType) {
 	o.Type = &v
+}
+
+// GetBasePreviewZone returns the BasePreviewZone field value if set, zero value otherwise.
+func (o *Spell) GetBasePreviewZone() EffectZone {
+	if o == nil || IsNil(o.BasePreviewZone) {
+		var ret EffectZone
+		return ret
+	}
+	return *o.BasePreviewZone
+}
+
+// GetBasePreviewZoneOk returns a tuple with the BasePreviewZone field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Spell) GetBasePreviewZoneOk() (*EffectZone, bool) {
+	if o == nil || IsNil(o.BasePreviewZone) {
+		return nil, false
+	}
+	return o.BasePreviewZone, true
+}
+
+// HasBasePreviewZone returns a boolean if a field has been set.
+func (o *Spell) HasBasePreviewZone() bool {
+	if o != nil && !IsNil(o.BasePreviewZone) {
+		return true
+	}
+
+	return false
+}
+
+// SetBasePreviewZone gets a reference to the given EffectZone and assigns it to the BasePreviewZone field.
+func (o *Spell) SetBasePreviewZone(v EffectZone) {
+	o.BasePreviewZone = &v
 }
 
 // GetClasses returns the Classes field value if set, zero value otherwise.
@@ -481,6 +517,9 @@ func (o Spell) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
+	if !IsNil(o.BasePreviewZone) {
+		toSerialize["base_preview_zone"] = o.BasePreviewZone
+	}
 	if !IsNil(o.Classes) {
 		toSerialize["classes"] = o.Classes
 	}
@@ -547,6 +586,7 @@ func (o *Spell) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "order")
 		delete(additionalProperties, "image_urls")
 		delete(additionalProperties, "type")
+		delete(additionalProperties, "base_preview_zone")
 		delete(additionalProperties, "classes")
 		delete(additionalProperties, "monsters")
 		delete(additionalProperties, "levels")

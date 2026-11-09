@@ -25,6 +25,7 @@ type MonsterSpawnLocationSubareaMapsInner struct {
 	AnkamaId int32 `json:"ankama_id"`
 	PositionX int32 `json:"position_x"`
 	PositionY int32 `json:"position_y"`
+	// World-map context for these coordinates. Coordinates alone are not a globally unique map identifier.
 	WorldMapId int32 `json:"world_map_id"`
 }
 

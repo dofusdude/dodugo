@@ -34,6 +34,7 @@ type SpellScriptUsage struct {
 	Condition map[string]interface{} `json:"condition,omitempty"`
 	TargetsAffectedConcurrently *bool `json:"targets_affected_concurrently,omitempty"`
 	TargetTreatedAsCaster *bool `json:"target_treated_as_caster,omitempty"`
+	// Spell-level definition IDs to which this script binding applies. Match SpellLevel.ankama_id, not Spell.ankama_id or SpellLevel.grade.
 	SpellLevelIds []int32 `json:"spell_level_ids,omitempty"`
 }
 

@@ -20,7 +20,7 @@ import (
 // checks if the MappedEntityListEntry type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MappedEntityListEntry{}
 
-// MappedEntityListEntry struct for MappedEntityListEntry
+// MappedEntityListEntry Compact collection summary. A missing detail field here does not mean the resource lacks that data. Request the single-record endpoint or the collection's full fields to obtain details.
 type MappedEntityListEntry struct {
 	AnkamaId int32 `json:"ankama_id"`
 	Name string `json:"name"`

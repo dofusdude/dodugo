@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**CombatReference**](CombatReference.md) |  | [optional] 
+**Type** | Pointer to **string** | Localized effect category, such as Air damage. This is not a spell ID or a structured game reference. | [optional] 
 **Min** | Pointer to **int32** |  | [optional] 
 **Max** | Pointer to **int32** |  | [optional] 
-**Duration** | Pointer to **int32** |  | [optional] 
-**Delay** | Pointer to **int32** |  | [optional] 
-**Random** | Pointer to **int32** |  | [optional] 
+**Duration** | Pointer to **int32** | Effect duration in fight turns as represented by the source. Not a real-time duration in seconds. | [optional] 
+**Delay** | Pointer to **int32** | Delay before the effect in fight turns as represented by the source. | [optional] 
+**Random** | Pointer to **float32** | Source random-selection value. Do not interpret it as a percentage without the effect&#39;s selection rules. | [optional] 
 **Group** | Pointer to **int32** |  | [optional] 
 **Dispellable** | Pointer to **int32** |  | [optional] 
 **EffectUid** | Pointer to **int32** | Stable identifier of this concrete effect instance. | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Zone** | Pointer to [**EffectZone**](EffectZone.md) |  | [optional] 
 **TargetMask** | Pointer to [**TargetMask**](TargetMask.md) |  | [optional] 
 **Triggers** | Pointer to [**SpellTriggers**](SpellTriggers.md) |  | [optional] 
-**Templated** | Pointer to **map[string]interface{}** |  | [optional] 
+**Templated** | Pointer to **string** | Localized effect text suitable for display. Numeric effect properties remain available separately. | [optional] 
 
 ## Methods
 
@@ -43,20 +43,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *SpellEffect) GetType() CombatReference`
+`func (o *SpellEffect) GetType() string`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *SpellEffect) GetTypeOk() (*CombatReference, bool)`
+`func (o *SpellEffect) GetTypeOk() (*string, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *SpellEffect) SetType(v CombatReference)`
+`func (o *SpellEffect) SetType(v string)`
 
 SetType sets Type field to given value.
 
@@ -168,20 +168,20 @@ HasDelay returns a boolean if a field has been set.
 
 ### GetRandom
 
-`func (o *SpellEffect) GetRandom() int32`
+`func (o *SpellEffect) GetRandom() float32`
 
 GetRandom returns the Random field if non-nil, zero value otherwise.
 
 ### GetRandomOk
 
-`func (o *SpellEffect) GetRandomOk() (*int32, bool)`
+`func (o *SpellEffect) GetRandomOk() (*float32, bool)`
 
 GetRandomOk returns a tuple with the Random field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRandom
 
-`func (o *SpellEffect) SetRandom(v int32)`
+`func (o *SpellEffect) SetRandom(v float32)`
 
 SetRandom sets Random field to given value.
 
@@ -443,20 +443,20 @@ HasTriggers returns a boolean if a field has been set.
 
 ### GetTemplated
 
-`func (o *SpellEffect) GetTemplated() map[string]interface{}`
+`func (o *SpellEffect) GetTemplated() string`
 
 GetTemplated returns the Templated field if non-nil, zero value otherwise.
 
 ### GetTemplatedOk
 
-`func (o *SpellEffect) GetTemplatedOk() (*map[string]interface{}, bool)`
+`func (o *SpellEffect) GetTemplatedOk() (*string, bool)`
 
 GetTemplatedOk returns a tuple with the Templated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTemplated
 
-`func (o *SpellEffect) SetTemplated(v map[string]interface{})`
+`func (o *SpellEffect) SetTemplated(v string)`
 
 SetTemplated sets Templated field to given value.
 

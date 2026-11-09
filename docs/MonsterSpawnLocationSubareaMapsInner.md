@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **AnkamaId** | **int32** |  | 
 **PositionX** | **int32** |  | 
 **PositionY** | **int32** |  | 
-**WorldMapId** | **int32** |  | 
+**WorldMapId** | **int32** | World-map context for these coordinates. Coordinates alone are not a globally unique map identifier. | 
 
 ## Methods
 

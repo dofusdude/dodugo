@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **CharacteristicCosts** | Pointer to [**map[string][]ClassCharacteristicCostsValueInner**](array.md) | Characteristic point-cost tiers keyed by characteristic name. | [optional] 
 **ImageUrls** | Pointer to [**Images**](Images.md) |  | [optional] 
 **Looks** | [**ClassLooks**](ClassLooks.md) |  | 
-**Spells** | [**[]Spell**](Spell.md) | Fully mapped class spells, including levels, effects, targeting, and zones. | 
+**Spells** | [**[]Spell**](Spell.md) | Full spell definitions assigned to this playable class, including their own grades, effects and targeting. A class has no monster-grade dimension. The same spells are independently available from the spells endpoint. | 
 
 ## Methods
 
